@@ -1,11 +1,11 @@
-﻿using AutoMapper;
-using EnixerPos.Api.ViewModels.Sale;
+﻿using EnixerPos.Api.ViewModels.Sale;
 using EnixerPos.Domain.DtoModels.Sale;
 using EnixerPos.Domain.Entities;
 using EnixerPos.Domain.Interfaces;
 using EnixerPos.Domain.Repositories;
 using Newtonsoft.Json;
 using System;
+using AutoMapper;
 using System.Collections.Generic;
 using System.Text;
 

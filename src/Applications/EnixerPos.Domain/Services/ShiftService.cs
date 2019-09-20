@@ -1,9 +1,9 @@
-﻿using AutoMapper;
-using EnixerPos.Domain.DtoModels.Shifts;
+﻿using EnixerPos.Domain.DtoModels.Shifts;
 using EnixerPos.Domain.Entities;
 using EnixerPos.Domain.Interfaces;
 using EnixerPos.Domain.Repositories;
 using System;
+using AutoMapper;
 using System.Collections.Generic;
 using System.Text;
 
