@@ -5,9 +5,8 @@ using EnixerPos.Domain.Entities;
 
 namespace EnixerPos.Domain.Repositories
 {
-    public interface IStoreRepository
+    public interface IDeviceRepository
     {
-        int GetStoreIdByEmail(string audience);
-        StoreEntity GetStoreByEmail(string email);
+        DeviceEntity GetDeviceByImei(string imei);
     }
 }

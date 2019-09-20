@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using EnixerPos.Domain.DtoModels.Auth;
+
+namespace EnixerPos.Domain.Interfaces
+{
+    public interface IAuthService
+    {
+        LoginDto LoginMerchant(string email, string password, string imei);
+        string GetRefreshToken(string email, string imei);
+        LoginByPinDto LoginUser(string email, string imei, string pin);
+        bool CheckRefresh(string email, string imei, string refreshToken, int userId);
+        bool CheckRefresh(string email, string imei, string refreshToken);
+    }
+}
