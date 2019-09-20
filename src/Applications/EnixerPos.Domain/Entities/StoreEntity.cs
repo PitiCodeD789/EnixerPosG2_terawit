@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EnixerPos.Domain.Entities
 {
-    public class StoreEntity
+    public class StoreEntity : BaseEntity
     {
         public string Password { get; set; }
         public string Salt { get; set; }

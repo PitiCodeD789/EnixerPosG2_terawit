@@ -1,4 +1,6 @@
-﻿using EnixerPos.Domain.DtoModels.Shifts;
+﻿using AutoMapper;
+using EnixerPos.Api.ViewModels.Helpers;
+using EnixerPos.Domain.DtoModels.Shifts;
 using EnixerPos.Domain.Entities;
 using EnixerPos.Domain.Interfaces;
 using EnixerPos.Domain.Repositories;
@@ -6,16 +8,23 @@ using System;
 using AutoMapper;
 using System.Collections.Generic;
 using System.Text;
+using static EnixerPos.Api.ViewModels.Helpers.Status;
+using Newtonsoft.Json;
+using EnixerPos.Api.ViewModels.Sale;
 
 namespace EnixerPos.Domain.Services
 {
     public class ShiftService : IShiftService
     {
         private readonly IShiftRepository _shiftRepository;
+        private readonly IManageCashRepository _manageCashRepository;
+        private readonly IReceiptRepository _receiptRepository;
         private readonly IMapper _mapper;
-        public ShiftService(IShiftRepository shiftRepository, IMapper mapper)
+        public ShiftService(IShiftRepository shiftRepository, IMapper mapper, IManageCashRepository manageCashRepository, IReceiptRepository receiptRepository)
         {
             _shiftRepository = shiftRepository;
+            _manageCashRepository = manageCashRepository;
+            _receiptRepository = receiptRepository;
             _mapper = mapper;
         }
 
@@ -32,10 +41,7 @@ namespace EnixerPos.Domain.Services
             shiftEntity.StoreEmail = storeEmail;
             shiftEntity.PosIMEI = posIMEI;
             shiftEntity.PosUserId = posUserId;
-            shiftEntity.UpdateDatetime = DateTime.UtcNow;
-
-
-
+            shiftEntity.UpdateDateTime = DateTime.UtcNow;
             return _shiftRepository.Update(shiftEntity);
 
         }
@@ -50,28 +56,109 @@ namespace EnixerPos.Domain.Services
 
            return _mapper.Map<List<ShiftdetailDto>>(shiftEntity);
 
-
-
         }
 
         public ShiftdetailDto GetShiftDetailByShiftId(int shiftId)
         {
-            throw new NotImplementedException();
+            ShiftEntity shiftEntity = _shiftRepository.Get(shiftId);
+            if(shiftEntity == null)
+            {
+                return null;
+            }
+
+            if(shiftEntity.Available == true)
+            {
+                shiftEntity =  GetShiftFormReceipts(shiftEntity);
+            }
+
+            return _mapper.Map<ShiftdetailDto>(shiftEntity);
+        }
+
+        private ShiftEntity GetShiftFormReceipts(ShiftEntity shiftEntity)
+        {
+
+
+            List<ReceiptEntity> receiptEntity  = _receiptRepository.GetReceiptByShiftId(shiftEntity.ShiftId, shiftEntity.StoreEmail,shiftEntity.PosIMEI);
+            
+
+            decimal cashPayment = 0m;
+            decimal cash = 0m;
+            decimal discount = 0m;
+            decimal debitCard = 0m;
+            decimal creditCard = 0m;
+            decimal qrCode = 0m;
+            
+
+
+            foreach (ReceiptEntity receipt in receiptEntity)
+            {
+
+              List<OrderItemModel> order  = JsonConvert.DeserializeObject<List<OrderItemModel>>(receipt.ItemList);
+                foreach(OrderItemModel buff_order in order)
+                {
+                    decimal fullprice = buff_order.ItemPrice * buff_order.Quantity;
+                    decimal discountPrice = 0m;
+                    if(buff_order.IsDiscountPercentage)
+                    {
+                        discountPrice = fullprice * 10m / 100m;
+                    }else
+                    {
+                        discountPrice = buff_order.ItemDiscount;
+                    }
+                    discount = discount + discountPrice;
+
+                }
+
+            }
+
+         
+
+            return shiftEntity;
         }
 
         public bool IsShiftAvailable(string storeEmail, string posIMEI, int posUserId, int shiftId)
         {
-            throw new NotImplementedException();
+            ShiftEntity shiftEntity = _shiftRepository.Get(shiftId);
+            if(shiftEntity == null)
+            {
+                return false;
+            }
+            if(shiftEntity.StoreEmail == storeEmail && shiftEntity.PosIMEI == posIMEI)
+            {
+                return true;
+            }else
+            {
+                return false;
+            }
         }
 
-        public bool ManageCash(int posUserId, string posIMEI, int shiftId, decimal amount, string comment)
+
+
+        public bool ManageCash(ManageCashDto manageCash)
         {
-            throw new NotImplementedException();
+            int posUserId = manageCash.PosUserId;
+            string posIMEI = manageCash.PosIMEI;
+            int shiftId = manageCash.ShiftId;
+            decimal amount = manageCash.Amount;
+            string comment = manageCash.Comment;
+            ManageCashStatus manageCashStatus = manageCash.ManageCashStatus;
+           
+            ManageCashEntity manageCashEntity = _mapper.Map<ManageCashEntity>(manageCash);
+            bool isManageCash =  _manageCashRepository.AddManageCash(manageCashEntity);
+            return isManageCash;
+
         }
 
         public int OpenShift(string storeEmail, string posIMEI, decimal startingCash, int posUserId)
         {
-            throw new NotImplementedException();
+            ShiftEntity shiftEntity = new ShiftEntity();
+            shiftEntity.StoreEmail = storeEmail;
+            shiftEntity.PosIMEI = posIMEI;
+            shiftEntity.StartingCash = startingCash;
+            shiftEntity.PosUserId = posUserId;
+
+            int openShiftId = _shiftRepository.CreateShift(shiftEntity);
+            return openShiftId;
         }
     }
 }

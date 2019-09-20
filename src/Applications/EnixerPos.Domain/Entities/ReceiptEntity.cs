@@ -4,9 +4,9 @@ using System.Text;
 
 namespace EnixerPos.Domain.Entities
 {
-    public class ReceiptEntity
+    public class ReceiptEntity : BaseEntity
     {
-        public int Id { get; set; }
+       
         public string Reference { get; set; }
         public int ShiftId { get; set; }
         public string StoreEmail { get; set; }
@@ -17,6 +17,6 @@ namespace EnixerPos.Domain.Entities
         public decimal Total { get; set; }
         public decimal TotalDiscount { get; set; }
 
-        public DateTime CreateDateTime { get; set; }
+       
     }
 }

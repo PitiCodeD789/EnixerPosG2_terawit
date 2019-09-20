@@ -12,5 +12,8 @@ namespace EnixerPos.Domain.Interfaces
         LoginByPinDto LoginUser(string email, string imei, string pin);
         bool CheckRefresh(string email, string imei, string refreshToken, int userId);
         bool CheckRefresh(string email, string imei, string refreshToken);
+        bool RegisterStore(RegisterStoreDtoCommand command);
+        bool RegisterUserInStore(RegisterUserInStoreDtoCommand command);
+        void ForgotPassword(string email);
     }
 }

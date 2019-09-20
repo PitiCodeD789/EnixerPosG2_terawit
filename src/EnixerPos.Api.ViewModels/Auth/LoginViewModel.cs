@@ -8,7 +8,7 @@ namespace EnixerPos.Api.ViewModels.Auth
     {
         public string RefreshToken { get; set; }
         public string Token { get; set; }
-        public object MerchantName { get; set; }
+        public object StoreName { get; set; }
         public object PosName { get; set; }
     }
 }
