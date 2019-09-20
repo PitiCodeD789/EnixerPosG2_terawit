@@ -9,7 +9,7 @@ namespace EnixerPos.DataAccess.Contexts
     {
         protected override void OnConfiguring(DbContextOptionsBuilder builder)
         {
-            builder.UseSqlServer(@"Server=.\SQLEXPRESS;Database=EWalletDbV2;Trusted_Connection=True");
+            builder.UseSqlServer(@"Server=.\SQLEXPRESS;Database=EnixerPosG2;Trusted_Connection=True");
          
         }
 
