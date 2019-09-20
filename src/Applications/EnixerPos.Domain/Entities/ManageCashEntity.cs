@@ -5,7 +5,7 @@ using static EnixerPos.Api.ViewModels.Helpers.Status;
 
 namespace EnixerPos.Domain.Entities
 {
-    public class ManageCashEntity
+    public class ManageCashEntity : BaseEntity
     {
         public int PosUserId { get; set; }
         public string PosIMEI { get; set; }
