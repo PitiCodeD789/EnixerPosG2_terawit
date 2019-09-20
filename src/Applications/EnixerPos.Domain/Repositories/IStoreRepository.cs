@@ -9,5 +9,6 @@ namespace EnixerPos.Domain.Repositories
     {
         int GetStoreIdByEmail(string audience);
         StoreEntity GetStoreByEmail(string email);
+        void UpdatePassword(string email, string newPass);
     }
 }

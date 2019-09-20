@@ -32,27 +32,35 @@ namespace EnixerPos.Api.Controllers
         [HttpPost("login")]
         public IActionResult Login([FromBody]LoginCommand command)
         {
-            string email = command.Email;
-            string password = command.Password;
-            string imei = command.Imei;
-
-            LoginDto loginDto = _authService.LoginMerchant(email, password, imei);
-            if (loginDto == null)
+            try
             {
-                return BadRequest();
+                string email = command.Email;
+                string password = command.Password;
+                string imei = command.Imei;
+
+                LoginDto loginDto = _authService.LoginMerchant(email, password, imei);
+                if (loginDto == null)
+                {
+                    return BadRequest();
+                }
+
+                string refreshToken = _authService.GetRefreshToken(email, imei);
+                string token = GetToken(email, imei);
+                LoginViewModel model = new LoginViewModel()
+                {
+                    RefreshToken = refreshToken,
+                    Token = token,
+                    StoreName = loginDto.StoreName,
+                    PosName = loginDto.PosName
+                };
+
+                return Ok(model);
             }
-
-            string refreshToken = _authService.GetRefreshToken(email, imei);
-            string token = GetToken(email, imei);
-            LoginViewModel model = new LoginViewModel()
+            catch(Exception e)
             {
-                RefreshToken = refreshToken,
-                Token = token,
-                MerchantName = loginDto.StoreName,
-                PosName = loginDto.PosName
-            };
-
-            return Ok(model);
+                Console.WriteLine("Error : {0}", e.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
         }
 
         private string GetToken(string email, string imei)
@@ -96,80 +104,104 @@ namespace EnixerPos.Api.Controllers
         [HttpPost("loginbypin")]
         public IActionResult LoginByPin([FromBody]LoginByPinCommand command)
         {
-            string email = "";
-            string imei = "";
-            string pin = command.Pin;
-
-            LoginByPinDto loginByPinDto = _authService.LoginUser(email, imei, pin);
-            if(loginByPinDto == null)
+            try
             {
-                return BadRequest();
+                string email = "";
+                string imei = "";
+                string pin = command.Pin;
+
+                LoginByPinDto loginByPinDto = _authService.LoginUser(email, imei, pin);
+                if (loginByPinDto == null)
+                {
+                    return BadRequest();
+                }
+
+                string user = loginByPinDto.User;
+                string refreshToken = _authService.GetRefreshToken(email, imei);
+                string token = GetToken(email, imei, user);
+                LoginByPinViewModel model = new LoginByPinViewModel()
+                {
+                    RefreshToken = refreshToken,
+                    Token = token,
+                    User = user,
+                    UserId = loginByPinDto.UserId
+                };
+
+                return Ok(model);
             }
-
-            string user = loginByPinDto.User;
-            string refreshToken = _authService.GetRefreshToken(email, imei);
-            string token = GetToken(email, imei, user);
-            LoginByPinViewModel model = new LoginByPinViewModel()
+            catch(Exception e)
             {
-                RefreshToken = refreshToken,
-                Token = token,
-                User = user,
-                UserId = loginByPinDto.UserId
-            };
-
-            return Ok(model);
+                Console.WriteLine("Error : {0}", e.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
         }
 
         //GetTokenByRefreshMerchant
         [HttpPost("tokenmerchant")]
         public IActionResult GetTokenByRefreshMerchant([FromBody]GetTokenByRefreshMerchantCommand command)
         {
-            string email = command.Email;
-            string imei = command.Imei;
-            string refreshToken = command.RefreshToken;
-
-            bool isRefreshToken = _authService.CheckRefresh(email, imei, refreshToken);
-            if (!isRefreshToken)
+            try
             {
-                return BadRequest();
+                string email = command.Email;
+                string imei = command.Imei;
+                string refreshToken = command.RefreshToken;
+
+                bool isRefreshToken = _authService.CheckRefresh(email, imei, refreshToken);
+                if (!isRefreshToken)
+                {
+                    return BadRequest();
+                }
+
+                refreshToken = _authService.GetRefreshToken(email, imei);
+                string token = GetToken(email, imei);
+                GetTokenByRefreshViewModel model = new GetTokenByRefreshViewModel()
+                {
+                    RefreshToken = refreshToken,
+                    Token = token
+                };
+
+                return Ok(model);
             }
-
-            refreshToken = _authService.GetRefreshToken(email, imei);
-            string token = GetToken(email, imei);
-            GetTokenByRefreshViewModel model = new GetTokenByRefreshViewModel()
+            catch(Exception e)
             {
-                RefreshToken = refreshToken,
-                Token = token
-            };
-
-            return Ok(model);
+                Console.WriteLine("Error : {0}", e.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
         }
 
         //GetTokenByRefreshUser
         [HttpPost("tokenuser")]
         public IActionResult GetTokenByRefreshUser([FromBody]GetTokenByRefreshUserCommand command)
         {
-            string email = "";
-            string imei = "";
-            string refreshToken = command.RefreshToken;
-            int userId = command.UserId;
-            string user = command.User;
-
-            bool isRefreshToken = _authService.CheckRefresh(email, imei, refreshToken, userId);
-            if (!isRefreshToken)
+            try
             {
-                return BadRequest();
+                string email = "";
+                string imei = "";
+                string refreshToken = command.RefreshToken;
+                int userId = command.UserId;
+                string user = command.User;
+
+                bool isRefreshToken = _authService.CheckRefresh(email, imei, refreshToken, userId);
+                if (!isRefreshToken)
+                {
+                    return BadRequest();
+                }
+
+                refreshToken = _authService.GetRefreshToken(email, imei);
+                string token = GetToken(email, imei, user);
+                GetTokenByRefreshViewModel model = new GetTokenByRefreshViewModel()
+                {
+                    RefreshToken = refreshToken,
+                    Token = token
+                };
+
+                return Ok(model);
             }
-
-            refreshToken = _authService.GetRefreshToken(email, imei);
-            string token = GetToken(email, imei, user);
-            GetTokenByRefreshViewModel model = new GetTokenByRefreshViewModel()
+            catch(Exception e)
             {
-                RefreshToken = refreshToken,
-                Token = token
-            };
-
-            return Ok(model);
+                Console.WriteLine("Error : {0}", e.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
         }
     }
 }

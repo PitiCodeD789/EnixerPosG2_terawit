@@ -5,6 +5,7 @@ using EnixerPos.Domain.Interfaces;
 using EnixerPos.Domain.Repositories;
 using System;
 using System.Collections.Generic;
+using System.Net.Mail;
 using System.Text;
 
 namespace EnixerPos.Domain.Services
@@ -46,6 +47,31 @@ namespace EnixerPos.Domain.Services
                 return false;
             }
             return true;
+        }
+
+        public void ForgotPassword(string email)
+        {
+            string newPass = Generator.GenerateRandomString(10);
+            _storeRepository.UpdatePassword(email, newPass);
+            SendEmail(email, newPass);
+        }
+
+        private void SendEmail(string email, string value)
+        {
+            MailMessage mail = new MailMessage();
+            SmtpClient SmtpServer = new SmtpClient("smtpm.csloxinfo.com");
+
+            mail.From = new MailAddress("student@enixer.net");
+            mail.To.Add(email);
+            mail.Subject = @"New Password";
+            mail.Body = $"New Password : {value}";
+            SmtpServer.Port = 587;
+            SmtpServer.Credentials = new System.Net.NetworkCredential("student@enixer.net", "Gg123456789");
+            SmtpServer.EnableSsl = true;
+
+            SmtpServer.Send(mail);
+
+            SmtpServer.Dispose();
         }
 
         public string GetRefreshToken(string email, string imei)
@@ -123,5 +149,14 @@ namespace EnixerPos.Domain.Services
             return loginByPinDto;
         }
 
+        public bool RegisterStore(RegisterStoreDtoCommand command)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool RegisterUserInStore(RegisterUserInStoreDtoCommand command)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
