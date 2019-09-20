@@ -3,6 +3,7 @@ using EnixerPos.Domain.Entities;
 using EnixerPos.Domain.Repositories;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace EnixerPos.DataAccess.Repositories
@@ -26,6 +27,12 @@ namespace EnixerPos.DataAccess.Repositories
             {
                 return false;
             }
+        }
+
+        public List<ManageCashEntity> GetManageCashByShiftId(int shiftId, string storeEmail, string posIMEI)
+        {
+            List<ManageCashEntity> manageCashes = _context.ManageCash.Where(x => x.ShiftId == shiftId).Where(x => x.StoreEmail == storeEmail.ToLower()).Where(x => x.PosImei == posIMEI).ToList();
+            return manageCashes;
         }
     }
 }

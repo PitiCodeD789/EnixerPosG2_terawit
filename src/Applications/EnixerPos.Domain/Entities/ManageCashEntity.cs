@@ -13,6 +13,8 @@ namespace EnixerPos.Domain.Entities
         public ManageCashStatus ManageCashStatus { get; set; }
         public decimal Amount { get; internal set; }
         public int ShiftId { get; internal set; }
+        public string StoreEmail { get; set; }
+        public string PosImei { get; set; }
 
     }
 }

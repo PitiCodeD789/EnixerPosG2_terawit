@@ -35,6 +35,11 @@ namespace EnixerPos.DataAccess.Repositories
             throw new NotImplementedException();
         }
 
+        public ShiftEntity GetShiftDetailByShiftId(string storeEmail, string posIMEI, int posUserId, int shiftId)
+        {
+            throw new NotImplementedException();
+        }
+
         public bool Update(ShiftEntity shiftEntity)
         {
             throw new NotImplementedException();
