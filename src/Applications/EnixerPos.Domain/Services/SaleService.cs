@@ -16,11 +16,16 @@ namespace EnixerPos.Domain.Services
     {
         private readonly IReceiptRepository _receiptRepository;
         private readonly IMapper _mapper;
+        private readonly IStoreRepository _storeRepository;
+        private readonly IDeviceRepository _deviceRepository;
 
-        public SaleService(IReceiptRepository receiptRepository, IMapper mapper)
+        public SaleService(IReceiptRepository receiptRepository, IMapper mapper
+            ,IStoreRepository storeRepository,IDeviceRepository deviceRepository)
         {
             _receiptRepository = receiptRepository;
             _mapper = mapper;
+            _storeRepository = storeRepository;
+            _deviceRepository = deviceRepository;
         }
         public bool CheckPayment(string paymentRef)
         {
@@ -47,35 +52,46 @@ namespace EnixerPos.Domain.Services
 
         public ReceiptDto CreateReceipt(PaymentCommand payment)
         {
-            
-            string itemList = JsonConvert.SerializeObject(payment.ItemList);
-            ReceiptEntity receiptEntity = new ReceiptEntity()
+            try
             {
-                ShiftId = payment.ShiftId,
-                Store = payment.Store,
-                Pos = payment.Pos,
-                ItemList = itemList,
-                Discount = payment.Discount,
-                Total = payment.Total,
-            };
+                string itemList = JsonConvert.SerializeObject(payment.ItemList);
+                ReceiptEntity receiptEntity = new ReceiptEntity()
+                {
+                    ShiftId = payment.ShiftId,
+                    StoreEmail = payment.StoreEmail,
+                    PosImei = payment.PosImei,
+                    ItemList = itemList,
+                    Discount = payment.Discount,
+                    Total = payment.Total,
+                };
 
-            _receiptRepository.Create(receiptEntity);
+                _receiptRepository.Create(receiptEntity);
 
-            receiptEntity.Reference = GenerateRef(receiptEntity.Id);
+                receiptEntity.Reference = GenerateRef(receiptEntity.Id);
 
-            _receiptRepository.Update(receiptEntity);
+                _receiptRepository.Update(receiptEntity);
 
-            return new ReceiptDto()
+                var storeName = _storeRepository.GetStoreByEmail(payment.StoreEmail).StoreName;
+                var posName = _deviceRepository.GetDeviceByImei(payment.PosImei).PosName;
+
+
+                return new ReceiptDto()
+                {
+                    Reference = receiptEntity.Reference,
+                    ShiftId = payment.ShiftId,
+                    Store = storeName,
+                    Pos = posName,
+                    ItemList = _mapper.Map<List<DtoModels.Sale.OrderItemModel>>(itemList),
+                    Discount = payment.Discount,
+                    Total = payment.Total,
+                    CreateDateTime = receiptEntity.CreateDateTime
+                };
+            }
+            catch (Exception)
             {
-                Reference = receiptEntity.Reference,
-                ShiftId = payment.ShiftId,
-                Store = payment.Store,
-                Pos = payment.Pos,
-                ItemList = _mapper.Map<List<DtoModels.Sale.OrderItemModel>>(itemList),
-                Discount = payment.Discount,
-                Total = payment.Total,
-                CreateDateTime = receiptEntity.CreateDateTime
-            };
+
+                return null;
+            }
         }
 
         private string GenerateRef(int id)
