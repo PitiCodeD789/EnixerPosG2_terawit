@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using EnixerPos.Api.ViewModels.Helpers;
 using EnixerPos.Domain.DtoModels.Shifts;
 using EnixerPos.Domain.Entities;
 using EnixerPos.Domain.Interfaces;
@@ -8,9 +7,9 @@ using System;
 using AutoMapper;
 using System.Collections.Generic;
 using System.Text;
-using static EnixerPos.Api.ViewModels.Helpers.Status;
 using Newtonsoft.Json;
 using EnixerPos.Api.ViewModels.Sale;
+using static EnixerPos.Api.ViewModels.Enixer_Enumerations;
 
 namespace EnixerPos.Domain.Services
 {
@@ -92,22 +91,25 @@ namespace EnixerPos.Domain.Services
 
             foreach (ReceiptEntity receipt in receiptEntity)
             {
+               
 
-              List<OrderItemModel> order  = JsonConvert.DeserializeObject<List<OrderItemModel>>(receipt.ItemList);
-                foreach(OrderItemModel buff_order in order)
-                {
-                    decimal fullprice = buff_order.ItemPrice * buff_order.Quantity;
-                    decimal discountPrice = 0m;
-                    if(buff_order.IsDiscountPercentage)
-                    {
-                        discountPrice = fullprice * 10m / 100m;
-                    }else
-                    {
-                        discountPrice = buff_order.ItemDiscount;
-                    }
-                    discount = discount + discountPrice;
+                cashPayment += receipt.Total;
 
-                }
+              //List<OrderItemModel> order  = JsonConvert.DeserializeObject<List<OrderItemModel>>(receipt.ItemList);
+              //  foreach(OrderItemModel buff_order in order)
+              //  {
+              //      decimal fullprice = buff_order.ItemPrice * buff_order.Quantity;
+              //      decimal discountPrice = 0m;
+              //      if(buff_order.IsDiscountPercentage)
+              //      {
+              //          discountPrice = fullprice * 10m / 100m;
+              //      }else
+              //      {
+              //          discountPrice = buff_order.ItemDiscount;
+              //      }
+              //      discount = discount + discountPrice;
+
+                //  }
 
             }
 

@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
-using EnixerPos.Api.ViewModels.Helpers;
 using EnixerPos.Api.ViewModels.Shifts;
 using EnixerPos.Domain.DtoModels.Shifts;
 using EnixerPos.Domain.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using static EnixerPos.Api.ViewModels.Helpers.Status;
+using static EnixerPos.Api.ViewModels.Enixer_Enumerations;
 
 namespace EnixerPos.Api.Controllers
 {
