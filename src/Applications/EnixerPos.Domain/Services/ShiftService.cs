@@ -31,17 +31,21 @@ namespace EnixerPos.Domain.Services
         public bool CloseShift(string storeEmail, string posIMEI, int posUserId, int shiftId)
         {
 
-            ShiftEntity shiftEntity = _shiftRepository.GetShiftById(shiftId);
+            ShiftEntity shiftEntity = _shiftRepository.GetShiftDetailByShiftId(storeEmail, posIMEI, posUserId, shiftId);
             if(shiftEntity == null)
             {
                 return false;
             }
-            shiftEntity.ShiftId = shiftId;
-            shiftEntity.StoreEmail = storeEmail;
-            shiftEntity.PosIMEI = posIMEI;
-            shiftEntity.PosUserId = posUserId;
-            shiftEntity.UpdateDateTime = DateTime.UtcNow;
-            return _shiftRepository.Update(shiftEntity);
+            if(shiftEntity.Available == true)
+            {
+                shiftEntity = GetShiftFormReceipts(shiftEntity);
+                shiftEntity.UpdateDateTime = DateTime.UtcNow;
+                return _shiftRepository.Update(shiftEntity);
+            }else
+            {
+                return false;
+            }
+          
 
         }
 
@@ -57,10 +61,12 @@ namespace EnixerPos.Domain.Services
 
         }
 
-        public ShiftdetailDto GetShiftDetailByShiftId(int shiftId)
+        public ShiftdetailDto GetShiftDetailByShiftId(string storeEmail, string posIMEI, int posUserId, int shiftId)
         {
-            ShiftEntity shiftEntity = _shiftRepository.Get(shiftId);
-            if(shiftEntity == null)
+           
+                                        //_manageCashRepository
+            ShiftEntity shiftEntity = _shiftRepository.GetShiftDetailByShiftId(storeEmail, posIMEI,posUserId, shiftId);
+            if (shiftEntity == null)
             {
                 return null;
             }
@@ -81,7 +87,6 @@ namespace EnixerPos.Domain.Services
             
 
             decimal cashPayment = 0m;
-            decimal cash = 0m;
             decimal discount = 0m;
             decimal debitCard = 0m;
             decimal creditCard = 0m;
@@ -92,40 +97,67 @@ namespace EnixerPos.Domain.Services
             foreach (ReceiptEntity receipt in receiptEntity)
             {
                
-
+                if(receipt.PaymentType == EP_PaymentTypeEnum.Cash)
+                {
                 cashPayment += receipt.Total;
+                }else if(receipt.PaymentType == EP_PaymentTypeEnum.Credit)
+                {
+                    creditCard += receipt.Total;
+                }
+                else if (receipt.PaymentType == EP_PaymentTypeEnum.Debit)
+                {
+                    debitCard += receipt.Total;
+                }
+                else if (receipt.PaymentType == EP_PaymentTypeEnum.Qr)
+                {
+                    qrCode += receipt.Total;
+                }
 
-              //List<OrderItemModel> order  = JsonConvert.DeserializeObject<List<OrderItemModel>>(receipt.ItemList);
-              //  foreach(OrderItemModel buff_order in order)
-              //  {
-              //      decimal fullprice = buff_order.ItemPrice * buff_order.Quantity;
-              //      decimal discountPrice = 0m;
-              //      if(buff_order.IsDiscountPercentage)
-              //      {
-              //          discountPrice = fullprice * 10m / 100m;
-              //      }else
-              //      {
-              //          discountPrice = buff_order.ItemDiscount;
-              //      }
-              //      discount = discount + discountPrice;
+                discount += receipt.TotalDiscount;
 
-                //  }
+
+
 
             }
 
-         
+
+        
+            shiftEntity.CashPayment = cashPayment;
+            shiftEntity.CreditCard = creditCard;
+            shiftEntity.DebitCard = debitCard;
+            shiftEntity.QRCode = qrCode;
+
+            decimal payIn = 0;
+            decimal payOut = 0;
+            List<ManageCashEntity> manageCash = _manageCashRepository.GetManageCashByShiftId(shiftEntity.ShiftId, shiftEntity.StoreEmail, shiftEntity.PosIMEI);
+            foreach(ManageCashEntity manage in manageCash)
+            {
+                if(manage.ManageCashStatus == ManageCashStatus.PayIn)
+                {
+                    payIn += manage.Amount;
+
+                }else if (manage.ManageCashStatus == ManageCashStatus.PayOut)
+                {
+                    payOut += manage.Amount;
+
+                }
+            }
+
+            shiftEntity.Paidin = payIn;
+            shiftEntity.Paidout = payOut;
+
 
             return shiftEntity;
         }
 
         public bool IsShiftAvailable(string storeEmail, string posIMEI, int posUserId, int shiftId)
         {
-            ShiftEntity shiftEntity = _shiftRepository.Get(shiftId);
+            ShiftEntity shiftEntity = _shiftRepository.GetShiftDetailByShiftId(storeEmail, posIMEI, posUserId, shiftId);
             if(shiftEntity == null)
             {
                 return false;
             }
-            if(shiftEntity.StoreEmail == storeEmail && shiftEntity.PosIMEI == posIMEI)
+            if(shiftEntity.StoreEmail == storeEmail && shiftEntity.PosIMEI == posIMEI && shiftEntity.Available == true)
             {
                 return true;
             }else
@@ -138,12 +170,7 @@ namespace EnixerPos.Domain.Services
 
         public bool ManageCash(ManageCashDto manageCash)
         {
-            int posUserId = manageCash.PosUserId;
-            string posIMEI = manageCash.PosIMEI;
-            int shiftId = manageCash.ShiftId;
-            decimal amount = manageCash.Amount;
-            string comment = manageCash.Comment;
-            ManageCashStatus manageCashStatus = manageCash.ManageCashStatus;
+           
            
             ManageCashEntity manageCashEntity = _mapper.Map<ManageCashEntity>(manageCash);
             bool isManageCash =  _manageCashRepository.AddManageCash(manageCashEntity);

@@ -7,10 +7,10 @@ namespace EnixerPos.Domain.Repositories
 {
     public interface IShiftRepository
     {
-        ShiftEntity GetShiftById(int shiftId);
+       
         bool Update(ShiftEntity shiftEntity);
-        List<ShiftEntity> GetLast30DayShift();
-        ShiftEntity Get(int shiftId);
+        List<ShiftEntity> GetLast30DayShift();        
         int CreateShift(ShiftEntity shiftEntity);
+        ShiftEntity GetShiftDetailByShiftId(string storeEmail, string posIMEI, int posUserId, int shiftId);
     }
 }

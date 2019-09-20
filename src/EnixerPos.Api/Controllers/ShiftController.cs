@@ -71,7 +71,12 @@ namespace EnixerPos.Api.Controllers
                 return BadRequest();
             }
 
-            ShiftdetailDto shiftdetail = _shiftService.GetShiftDetailByShiftId(shiftId);
+            string storeEmail = "sert@gmail.com";
+            string posIMEI = "00200202020000";
+            int posUserId = 12;
+          
+
+            ShiftdetailDto shiftdetail = _shiftService.GetShiftDetailByShiftId(storeEmail,posIMEI,posUserId,shiftId);
 
             if(shiftdetail == null)
             {
