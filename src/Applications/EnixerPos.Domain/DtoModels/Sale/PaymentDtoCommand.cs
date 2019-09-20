@@ -10,7 +10,9 @@ namespace EnixerPos.Domain.DtoModels.Sale
         public string StoreEmail { get; set; }
         public string PosImei { get; set; }
         public List<OrderItemModel> ItemList { get; set; }
-        public int Discount { get; set; }
+        public decimal Discount { get; set; }
+        public bool IsDiscountPercentage { get; set; }
         public decimal Total { get; set; }
+        public decimal TotalDiscount { get; set; }
     }
 }
