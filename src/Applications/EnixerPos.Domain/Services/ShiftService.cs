@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using EnixerPos.Api.ViewModels.Helpers;
 using EnixerPos.Domain.DtoModels.Shifts;
 using EnixerPos.Domain.Entities;
 using EnixerPos.Domain.Interfaces;
@@ -8,7 +7,9 @@ using System;
 using AutoMapper;
 using System.Collections.Generic;
 using System.Text;
-using static EnixerPos.Api.ViewModels.Helpers.Status;
+using Newtonsoft.Json;
+using EnixerPos.Api.ViewModels.Sale;
+using static EnixerPos.Api.ViewModels.Enixer_Enumerations;
 
 namespace EnixerPos.Domain.Services
 {
@@ -16,11 +17,13 @@ namespace EnixerPos.Domain.Services
     {
         private readonly IShiftRepository _shiftRepository;
         private readonly IManageCashRepository _manageCashRepository;
+        private readonly IReceiptRepository _receiptRepository;
         private readonly IMapper _mapper;
-        public ShiftService(IShiftRepository shiftRepository, IMapper mapper, IManageCashRepository manageCashRepository)
+        public ShiftService(IShiftRepository shiftRepository, IMapper mapper, IManageCashRepository manageCashRepository, IReceiptRepository receiptRepository)
         {
             _shiftRepository = shiftRepository;
             _manageCashRepository = manageCashRepository;
+            _receiptRepository = receiptRepository;
             _mapper = mapper;
         }
 
@@ -37,7 +40,7 @@ namespace EnixerPos.Domain.Services
             shiftEntity.StoreEmail = storeEmail;
             shiftEntity.PosIMEI = posIMEI;
             shiftEntity.PosUserId = posUserId;
-            shiftEntity.UpdateDatetime = DateTime.UtcNow;
+            shiftEntity.UpdateDateTime = DateTime.UtcNow;
             return _shiftRepository.Update(shiftEntity);
 
         }
@@ -72,8 +75,45 @@ namespace EnixerPos.Domain.Services
 
         private ShiftEntity GetShiftFormReceipts(ShiftEntity shiftEntity)
         {
-          
 
+
+            List<ReceiptEntity> receiptEntity  = _receiptRepository.GetReceiptByShiftId(shiftEntity.ShiftId, shiftEntity.StoreEmail,shiftEntity.PosIMEI);
+            
+
+            decimal cashPayment = 0m;
+            decimal cash = 0m;
+            decimal discount = 0m;
+            decimal debitCard = 0m;
+            decimal creditCard = 0m;
+            decimal qrCode = 0m;
+            
+
+
+            foreach (ReceiptEntity receipt in receiptEntity)
+            {
+               
+
+                cashPayment += receipt.Total;
+
+              //List<OrderItemModel> order  = JsonConvert.DeserializeObject<List<OrderItemModel>>(receipt.ItemList);
+              //  foreach(OrderItemModel buff_order in order)
+              //  {
+              //      decimal fullprice = buff_order.ItemPrice * buff_order.Quantity;
+              //      decimal discountPrice = 0m;
+              //      if(buff_order.IsDiscountPercentage)
+              //      {
+              //          discountPrice = fullprice * 10m / 100m;
+              //      }else
+              //      {
+              //          discountPrice = buff_order.ItemDiscount;
+              //      }
+              //      discount = discount + discountPrice;
+
+                //  }
+
+            }
+
+         
 
             return shiftEntity;
         }

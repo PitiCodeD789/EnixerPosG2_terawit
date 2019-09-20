@@ -62,7 +62,10 @@ namespace EnixerPos.Domain.Services
                     PosImei = payment.PosImei,
                     ItemList = itemList,
                     Discount = payment.Discount,
+                    IsDiscountPercentage = payment.IsDiscountPercentage,
                     Total = payment.Total,
+                    TotalDiscount = payment.TotalDiscount,
+                    PaymentType = payment.PaymentType
                 };
 
                 _receiptRepository.Create(receiptEntity);
@@ -83,13 +86,15 @@ namespace EnixerPos.Domain.Services
                     Pos = posName,
                     ItemList = _mapper.Map<List<DtoModels.Sale.OrderItemModel>>(itemList),
                     Discount = payment.Discount,
+                    IsDiscountPercentage = payment.IsDiscountPercentage,
                     Total = payment.Total,
-                    CreateDateTime = receiptEntity.CreateDateTime
+                    TotalDiscount = payment.TotalDiscount,
+                    CreateDateTime = receiptEntity.CreateDateTime,
+                    PaymentType = payment.PaymentType
                 };
             }
             catch (Exception)
             {
-
                 return null;
             }
         }

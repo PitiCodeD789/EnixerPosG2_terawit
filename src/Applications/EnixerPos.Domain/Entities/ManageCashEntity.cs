@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using static EnixerPos.Api.ViewModels.Helpers.Status;
+using static EnixerPos.Api.ViewModels.Enixer_Enumerations;
 
 namespace EnixerPos.Domain.Entities
 {
-    public class ManageCashEntity
+    public class ManageCashEntity : BaseEntity
     {
         public int PosUserId { get; set; }
         public string PosIMEI { get; set; }
