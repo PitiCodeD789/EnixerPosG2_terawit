@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using EnixerPos.Domain.DtoModels.Shifts;
+using static EnixerPos.Api.ViewModels.Helpers.Status;
 
 namespace EnixerPos.Domain.Interfaces
 {
@@ -12,6 +13,6 @@ namespace EnixerPos.Domain.Interfaces
         int OpenShift(string storeEmail, string posIMEI, decimal startingCash, int posUserId);
         bool IsShiftAvailable(string storeEmail, string posIMEI, int posUserId, int shiftId);
         bool CloseShift(string storeEmail, string posIMEI, int posUserId, int shiftId);
-        bool ManageCash(int posUserId, string posIMEI, int shiftId, decimal amount, string comment);
+        bool ManageCash(ManageCashDto manageCash);
     }
 }

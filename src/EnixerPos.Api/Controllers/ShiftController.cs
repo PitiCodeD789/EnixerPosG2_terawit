@@ -121,6 +121,7 @@ namespace EnixerPos.Api.Controllers
             string storeEmail = "sert@gmail.com";
             string posIMEI = "00200202020000";
             int posUserId = 12;
+            ManageCashStatus manageType = manageCash.ManageCashStatus;
 
             bool isShift = _shiftService.IsShiftAvailable(storeEmail, posIMEI, posUserId, shiftId);
             if (!isShift)
@@ -128,7 +129,11 @@ namespace EnixerPos.Api.Controllers
                 return BadRequest();
             }
 
-            bool isManageCash = _shiftService.ManageCash(posUserId, posIMEI, shiftId, amount, comment);
+           
+
+            ManageCashDto manageCashDto = _mapper.Map<ManageCashDto>(manageCash);
+
+            bool isManageCash = _shiftService.ManageCash(manageCashDto);
             
             if(!isManageCash)
             {
