@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EnixerPos.Domain.DtoModels.Shifts
 {
-    public class ShiftdetailDto
+    public class ShiftdetailDto : BaseDto
     {
     }
 }

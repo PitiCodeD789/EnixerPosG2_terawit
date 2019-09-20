@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using EnixerPos.Api.ViewModels.Shifts;
 using EnixerPos.Domain.DtoModels.Shifts;
+using EnixerPos.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace EnixerPos.Api.AutoMapperConfig
         public AutoMapperProfile()
         {
             CreateMap<ShiftdetailDto, GetShiftViewModel>();
+            CreateMap<ShiftEntity, ShiftdetailDto>();
         }
 
     }
