@@ -49,22 +49,11 @@ namespace EnixerPos.Domain.Services
 
         }
 
-        public List<ShiftdetailDto> GetLast30DayShift()
-        {
-            List<ShiftEntity> shiftEntity = _shiftRepository.GetLast30DayShift();
-            if(shiftEntity == null)
-            {
-                return null;
-            }
-
-           return _mapper.Map<List<ShiftdetailDto>>(shiftEntity);
-
-        }
+     
 
         public ShiftdetailDto GetShiftDetailByShiftId(string storeEmail, string posIMEI, int posUserId, int shiftId)
         {
            
-                                        //_manageCashRepository
             ShiftEntity shiftEntity = _shiftRepository.GetShiftDetailByShiftId(storeEmail, posIMEI,posUserId, shiftId);
             if (shiftEntity == null)
             {
@@ -171,23 +160,46 @@ namespace EnixerPos.Domain.Services
         public bool ManageCash(ManageCashDto manageCash)
         {
            
-           
             ManageCashEntity manageCashEntity = _mapper.Map<ManageCashEntity>(manageCash);
             bool isManageCash =  _manageCashRepository.AddManageCash(manageCashEntity);
             return isManageCash;
 
         }
 
-        public int OpenShift(string storeEmail, string posIMEI, decimal startingCash, int posUserId)
+        public int OpenShift(string storeEmail, string posIMEI, decimal startingCash)
         {
             ShiftEntity shiftEntity = new ShiftEntity();
             shiftEntity.StoreEmail = storeEmail;
             shiftEntity.PosIMEI = posIMEI;
             shiftEntity.StartingCash = startingCash;
-            shiftEntity.PosUserId = posUserId;
+           
+            bool isCreateShift = _shiftRepository.CreateShift(shiftEntity);
+            if(isCreateShift)
+            {
+               return _shiftRepository.GetShiftId(shiftEntity.StoreEmail, shiftEntity.PosIMEI, shiftEntity.PosUserId);
+            }
+            else
+            {
+                return 0;
+            }
+           
+           
+        }
 
-            int openShiftId = _shiftRepository.CreateShift(shiftEntity);
-            return openShiftId;
+        public List<ShiftdetailDto> GetLast30DayShift(string storeEmail, string posIMEI, int posUserId)
+        {
+            List<ShiftEntity> shiftEntity = _shiftRepository.GetLast30DayShift(storeEmail, posIMEI, posUserId);
+            if (shiftEntity == null)
+            {
+                return null;
+            }
+
+            return _mapper.Map<List<ShiftdetailDto>>(shiftEntity);
+        }
+
+        public int OpenShift(string storeEmail, string posIMEI, decimal startingCash, int posUserId)
+        {
+            throw new NotImplementedException();
         }
     }
 }
