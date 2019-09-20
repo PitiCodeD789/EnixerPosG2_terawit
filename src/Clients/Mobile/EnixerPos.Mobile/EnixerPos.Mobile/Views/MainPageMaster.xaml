@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="EnixerPos.Mobile.Views.MainPageMaster"
+             Title="Master">
+  <StackLayout>
+    <ListView x:Name="MenuItemsListView"
+              SeparatorVisibility="None"
+              HasUnevenRows="true"
+              ItemsSource="{Binding MenuItems}">
+      <ListView.Header>
+        <Grid BackgroundColor="#E85F16">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="10"/>
+          </Grid.ColumnDefinitions>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+          </Grid.RowDefinitions>
+          <Label Text="User1" TextColor="White" FontSize="Medium" FontAttributes="Bold" Grid.Column="1" Grid.Row="1"/>
+          <Label Text="POS1" TextColor="White" FontSize="Medium" Grid.Column="1" Grid.Row="2"/>
+          <Label Text="Enixer" TextColor="White" FontSize="Medium" Grid.Column="1" Grid.Row="3"/>
+          <Image Source="icon_lock_circle" Aspect="AspectFit" Grid.Column="2" Grid.Row="1" Grid.RowSpan="3"/>
+        </Grid>
+      </ListView.Header>
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+              <Image Source="{Binding ImageSource}" Aspect="AspectFit" HeightRequest="20" VerticalOptions="Center" Margin="10,0"/>
+              <Label VerticalOptions="FillAndExpand" 
+                    VerticalTextAlignment="Center" 
+                    Text="{Binding Title}" 
+                    FontSize="24"/>
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+        <ListView.Footer>
+                <StackLayout>
+                    <BoxView BackgroundColor="LightGray" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="10,0"/>
+                    <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                        <Image Source="icon_gear" Aspect="AspectFit" HeightRequest="20" VerticalOptions="Center" Margin="10,0"/>
+                        <Label VerticalOptions="FillAndExpand" 
+                VerticalTextAlignment="Center" 
+                Text="Back Office" 
+                FontSize="24"/>
+                    </StackLayout>
+                </StackLayout>
+        </ListView.Footer>
+    </ListView>
+  </StackLayout>
+</ContentPage>
