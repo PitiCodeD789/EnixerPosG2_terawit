@@ -17,5 +17,10 @@ namespace EnixerPos.Api.ViewModels
             Qr = 3
 
         }
+        public enum ManageCashStatus
+        {
+            PayIn,
+            PayOut
+        }
     }
 }
