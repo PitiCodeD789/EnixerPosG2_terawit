@@ -15,6 +15,7 @@ namespace EnixerPos.Api.ViewModels.Sale
         public bool IsDiscountPercentage { get; set; }
         public decimal Total { get; set; }
         public decimal TotalDiscount { get; set; }
+        public Enixer_Enumerations.EP_PaymentTypeEnum PaymentType { get; set; }
         public DateTime CreateDateTime { get; set; }
     }
 }
