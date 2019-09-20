@@ -9,5 +9,6 @@ namespace EnixerPos.Domain.Repositories
     public interface IManageCashRepository
     {
         bool AddManageCash(ManageCashEntity manageCash);
+        List<ManageCashEntity> GetManageCashByShiftId(int shiftId, string storeEmail, string posIMEI);
     }
 }
