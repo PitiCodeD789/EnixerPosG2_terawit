@@ -11,5 +11,16 @@ namespace EnixerPos.Domain.Entities
         public string PosIMEI { get; internal set; }
         public int PosUserId { get; internal set; }
         public DateTime UpdateDatetime { get; internal set; }
+        public decimal StartingCash { get; internal set; }
+        public decimal CashPayment { get; set; }
+        public decimal CashRefunds { get; set; }
+        public decimal Paidin { get; set; }
+        public decimal Paidout { get; set; }
+        public decimal Refunds { get; set; }
+        public decimal Discount { get; set; }
+        public decimal DebitCard { get; set; }
+        public decimal CreditCard { get; set; }
+        public decimal QRCode { get; set; }
+        public bool Available { get; internal set; }
     }
 }
