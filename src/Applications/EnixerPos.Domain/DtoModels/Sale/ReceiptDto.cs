@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace EnixerPos.Api.ViewModels.Sale
+namespace EnixerPos.Domain.DtoModels.Sale
 {
-    public class ReceiptViewModel
+    public class ReceiptDto
     {
         public string Reference { get; set; }
         public int ShiftId { get; set; }

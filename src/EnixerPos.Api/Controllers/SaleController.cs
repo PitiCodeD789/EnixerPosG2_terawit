@@ -32,7 +32,7 @@ namespace EnixerPos.Api.Controllers
         {
             PaymentDtoCommand paymentDto = _mapper.Map<PaymentDtoCommand>(payment);
 
-            ReceiptViewModel receiptDto = _saleService.CreateReceipt(payment);
+            ReceiptDto receiptDto = _saleService.CreateReceipt(payment);
 
             if (receiptDto != null)
             {
