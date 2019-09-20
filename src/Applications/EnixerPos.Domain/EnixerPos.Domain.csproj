@@ -5,12 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="DtoModels\" />
     <Folder Include="Entities\" />
     <Folder Include="Helpers\" />
-    <Folder Include="Interfaces\" />
-    <Folder Include="Services\" />
-    <Folder Include="Repositories\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\EnixerPos.Api.ViewModels\EnixerPos.Api.ViewModels.csproj" />
   </ItemGroup>
 
 </Project>

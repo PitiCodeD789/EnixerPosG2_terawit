@@ -11,4 +11,14 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Applications\EnixerPos.Domain\EnixerPos.Domain.csproj" />
+    <ProjectReference Include="..\Clients\EnixerPos.Service\EnixerPos.Service.csproj" />
+    <ProjectReference Include="..\EnixerPos.Api.ViewModels\EnixerPos.Api.ViewModels.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Helpers\" />
+  </ItemGroup>
+
 </Project>
