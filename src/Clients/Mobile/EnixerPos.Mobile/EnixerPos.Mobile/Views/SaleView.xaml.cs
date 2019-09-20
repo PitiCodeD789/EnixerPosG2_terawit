@@ -1,4 +1,6 @@
-﻿using System;
+﻿using EnixerPos.Mobile.Views.Popup;
+using Rg.Plugins.Popup.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,11 +12,16 @@ using Xamarin.Forms.Xaml;
 namespace EnixerPos.Mobile.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainPageDetail : ContentPage
+    public partial class SaleView : ContentPage
     {
-        public MainPageDetail()
+        public SaleView()
         {
             InitializeComponent();
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushPopupAsync(new SideMenu());
         }
     }
 }

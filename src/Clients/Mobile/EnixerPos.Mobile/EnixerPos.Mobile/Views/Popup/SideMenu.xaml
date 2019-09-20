@@ -1,0 +1,68 @@
+﻿<pages:PopupPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+    x:Class="EnixerPos.Mobile.Views.Popup.SideMenu">
+    <!--You can set an animation in the xaml file or in the csharp code behind-->
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation 
+            PositionIn="Left"
+            PositionOut="Left"
+            HasBackgroundAnimation="False"/>
+    </pages:PopupPage.Animation>
+    <!--You can use any elements here which are extended from Xamarin.Forms.View-->
+    <Grid x:Name="MenuItemsListView" WidthRequest="500" HorizontalOptions="Start" VerticalOptions="FillAndExpand" BackgroundColor="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid BackgroundColor="#E85F16" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+            <Label Text="User1" TextColor="White" FontSize="Medium" FontAttributes="Bold" Grid.Column="1" Grid.Row="1"/>
+            <Label Text="POS1" TextColor="White" FontSize="Medium" Grid.Column="1" Grid.Row="2"/>
+            <Label Text="Enixer" TextColor="White" FontSize="Medium" Grid.Column="1" Grid.Row="3"/>
+            <Image Source="icon_lock_circle" Aspect="AspectFit" Grid.Column="2" Grid.Row="1" Grid.RowSpan="3"/>
+        </Grid>
+        <StackLayout Grid.Row="1">
+            <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                <Image Source="icon_cart" Aspect="AspectFit" HeightRequest="20" VerticalOptions="Center" Margin="10,0"/>
+                <Label VerticalOptions="FillAndExpand"  VerticalTextAlignment="Center"  Text="Sale" FontSize="24"/>
+            </StackLayout>
+            <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                <Image Source="icon_receipt" Aspect="AspectFit" HeightRequest="20" VerticalOptions="Center" Margin="10,0"/>
+                <Label VerticalOptions="FillAndExpand"  VerticalTextAlignment="Center"  Text="Receipts" FontSize="24"/>
+            </StackLayout>
+            <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                <Image Source="icon_clock" Aspect="AspectFit" HeightRequest="20" VerticalOptions="Center" Margin="10,0"/>
+                <Label VerticalOptions="FillAndExpand"  VerticalTextAlignment="Center"  Text="Shift" FontSize="24"/>
+            </StackLayout>
+            <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                <Image Source="icon_list" Aspect="AspectFit" HeightRequest="20" VerticalOptions="Center" Margin="10,0"/>
+                <Label VerticalOptions="FillAndExpand"  VerticalTextAlignment="Center"  Text="Item" FontSize="24"/>
+            </StackLayout>
+            <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                <Image Source="icon_gear" Aspect="AspectFit" HeightRequest="20" VerticalOptions="Center" Margin="10,0"/>
+                <Label VerticalOptions="FillAndExpand"  VerticalTextAlignment="Center" Text="Setting" FontSize="24"/>
+            </StackLayout>
+            <BoxView BackgroundColor="LightGray" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="10,0"/>
+            <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                <Image Source="icon_gear" Aspect="AspectFit" HeightRequest="20" VerticalOptions="Center" Margin="10,0"/>
+                <Label VerticalOptions="FillAndExpand"  VerticalTextAlignment="Center" Text="Back Office" FontSize="24"/>
+            </StackLayout>
+        </StackLayout>
+    </Grid>
+</pages:PopupPage>
