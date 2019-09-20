@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EnixerPos.Domain.Entities
 {
-    public class DeviceEntity
+    public class DeviceEntity : BaseEntity
     {
         public int StoreId { get; set; }
         public string PosName { get; set; }

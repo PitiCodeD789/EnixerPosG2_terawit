@@ -4,9 +4,9 @@ using System.Text;
 
 namespace EnixerPos.Domain.Entities
 {
-    public class UserEntity
+    public class UserEntity : BaseEntity
     {
         public string User { get; set; }
-        public int Id { get; set; }
+      
     }
 }
