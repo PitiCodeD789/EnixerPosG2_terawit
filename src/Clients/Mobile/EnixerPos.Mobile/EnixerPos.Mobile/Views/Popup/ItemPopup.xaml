@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
+             mc:Ignorable="d"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:components="clr-namespace:EnixerPos.Mobile.Components"
+             x:Class="EnixerPos.Mobile.Views.Popup.ItemPopup">
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation 
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="0.8"
+            ScaleOut="0.8"
+            DurationIn="200"
+            DurationOut="200"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"/>
+    </pages:PopupPage.Animation>
+    <ContentPage.Content>
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+                         WidthRequest="750" 
+                         BackgroundColor="White">
+                <Frame HasShadow="True" HeightRequest="75" WidthRequest="350" Padding="25,0,25,0">
+                    <StackLayout Orientation="Horizontal">
+                        <Label FontSize="20" TextColor="Black" VerticalOptions="CenterAndExpand">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                        <Span Text="Amaricano"/>
+                                        <Span Text="  "/>
+                                        <Span Text="70.00"/>
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    <Label Text="Save" TextColor="Orange" FontSize="20"
+                           VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    </StackLayout>
+                </Frame>
+            <ScrollView>
+                <StackLayout Padding="25" Spacing="10">
+                    <Label Text="Drinks" TextColor="Orange" FontSize="20"
+                           VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"/>
+                    <input:SelectionView x:Name="selectionView" BackgroundColor="White" Color="Orange" IsClippedToBounds="True"/>
+                    <Label Text="Quantity" TextColor="Orange" FontSize="20"
+                           VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"/>
+                    <StackLayout Orientation="Horizontal">
+                        <Button Text="-" FontSize="Title" BorderColor="Black" WidthRequest="50" HeightRequest="50" BackgroundColor="White"
+                                BorderWidth="0.5"/>
+                        <Label Text="1" VerticalOptions="CenterAndExpand" FontSize="25"/>
+                        <Button Text="+" FontSize="Title" BorderColor="Black" WidthRequest="50" HeightRequest="50" BackgroundColor="White"
+                                BorderWidth="0.5"/>
+                    </StackLayout>
+                    <Label Text="Comment" TextColor="Orange" FontSize="20"
+                           VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"/>
+                    <components:Pos_EntryView/>
+                    <Label Text="Discount" TextColor="Orange" FontSize="20"
+                           VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"/>
+                    <StackLayout BindableLayout.ItemsSource="{Binding }" Spacing="10">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <StackLayout Orientation="Horizontal" Grid.Column="0" Grid.Row="0">
+                                <Switch VerticalOptions="CenterAndExpand" />
+                                <Label VerticalOptions="CenterAndExpand"  Text="Discount 10%" />
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="0">
+                                <Switch VerticalOptions="CenterAndExpand" />
+                                <Label VerticalOptions="CenterAndExpand"  Text="Discount 10%" />
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Grid.Column="0" Grid.Row="1">
+                                <Switch VerticalOptions="CenterAndExpand" />
+                                <Label VerticalOptions="CenterAndExpand"  Text="Discount 10%" />
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="1">
+                                <Switch VerticalOptions="CenterAndExpand" />
+                                <Label VerticalOptions="CenterAndExpand"  Text="Discount 10%" />
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Grid.Column="0" Grid.Row="2">
+                                <Switch VerticalOptions="CenterAndExpand" />
+                                <Label VerticalOptions="CenterAndExpand"  Text="Discount 10%" />
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="2">
+                                <Switch VerticalOptions="CenterAndExpand" />
+                                <Label VerticalOptions="CenterAndExpand"  Text="Discount 10%" />
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Grid.Column="0" Grid.Row="3">
+                                <Switch VerticalOptions="CenterAndExpand" />
+                                <Label VerticalOptions="CenterAndExpand"  Text="Discount 10%" />
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="3">
+                                <Switch VerticalOptions="CenterAndExpand" />
+                                <Label VerticalOptions="CenterAndExpand"  Text="Discount 10%" />
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Grid.Column="0" Grid.Row="4">
+                                <Switch VerticalOptions="CenterAndExpand" />
+                                <Label VerticalOptions="CenterAndExpand"  Text="Discount 10%" />
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="4">
+                                <Switch VerticalOptions="CenterAndExpand" />
+                                <Label VerticalOptions="CenterAndExpand"  Text="Discount 10%" />
+                            </StackLayout>
+                        </Grid>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</pages:PopupPage>

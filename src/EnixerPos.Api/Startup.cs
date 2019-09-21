@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
+using EnixerPos.Api.AutoMapperConfig;
 using EnixerPos.DataAccess.Contexts;
 using EnixerPos.DataAccess.Repositories;
 using EnixerPos.Domain.Interfaces;
@@ -49,10 +51,15 @@ namespace EnixerPos.Api
 
             services.AddScoped<DataContext>();
             services.AddScoped<IAuthService, AuthService>();
+            services.AddScoped<IShiftService, ShiftService>();
+            services.AddScoped<IShiftRepository, ShiftRepository>();
             services.AddScoped<IStoreRepository, StoreRepository>();
             services.AddScoped<IDeviceRepository, DeviceRepository>();
             services.AddScoped<ITokenRepository, TokenRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IManageCashRepository, ManageCashRepository>();
+            services.AddScoped<IReceiptRepository, ReceiptRepository>();
+            services.AddAutoMapper(typeof(AutoMapperProfile));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 

@@ -166,25 +166,7 @@ namespace EnixerPos.Domain.Services
 
         }
 
-        public int OpenShift(string storeEmail, string posIMEI, decimal startingCash)
-        {
-            ShiftEntity shiftEntity = new ShiftEntity();
-            shiftEntity.StoreEmail = storeEmail;
-            shiftEntity.PosIMEI = posIMEI;
-            shiftEntity.StartingCash = startingCash;
-           
-            bool isCreateShift = _shiftRepository.CreateShift(shiftEntity);
-            if(isCreateShift)
-            {
-               return _shiftRepository.GetShiftId(shiftEntity.StoreEmail, shiftEntity.PosIMEI, shiftEntity.PosUserId);
-            }
-            else
-            {
-                return 0;
-            }
-           
-           
-        }
+       
 
         public List<ShiftdetailDto> GetLast30DayShift(string storeEmail, string posIMEI, int posUserId)
         {
@@ -199,7 +181,23 @@ namespace EnixerPos.Domain.Services
 
         public int OpenShift(string storeEmail, string posIMEI, decimal startingCash, int posUserId)
         {
-            throw new NotImplementedException();
+            try
+            {
+                ShiftEntity shiftEntity = new ShiftEntity();
+                shiftEntity.StoreEmail = storeEmail;
+                shiftEntity.PosIMEI = posIMEI;
+                shiftEntity.StartingCash = startingCash;
+                shiftEntity.PosUserId = posUserId;
+
+               return _shiftRepository.CreateShift(shiftEntity);
+                
+            }
+            catch (Exception e)
+            {
+
+                return 0;
+            }
+
         }
     }
 }
