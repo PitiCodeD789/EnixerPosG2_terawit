@@ -12,7 +12,7 @@ namespace EnixerPos.Mobile.ViewModels
     {
         public BaseViewModel()
         {
-
+            BackButton = new Command(BackPageMethod);
         }
         public event PropertyChangedEventHandler PropertyChanged;
         public virtual ICommand BackButton { get; set; }
