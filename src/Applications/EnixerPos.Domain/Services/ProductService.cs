@@ -118,7 +118,6 @@ namespace EnixerPos.Domain.Services
 
                 List<CategoryDto> categories = _categoryRepository.GetCategoriesByStoreId(storeId);
 
-                //TODO: Add AutoMapper
                 viewModel.Categories = Map<CategoryDto,CategoryModel>(categories);
                 return viewModel;
             }
@@ -142,8 +141,7 @@ namespace EnixerPos.Domain.Services
 
                 List<DiscountDto> discounts = _discountRepository.GetDiscountsByStoreId(storeId);
 
-                //TODO: Add AutoMapper
-                //viewModel.Discounts = discounts;
+                viewModel.Discounts = Map<DiscountDto,DiscountModel>(discounts);
                 return viewModel;
             }
             catch (Exception e)
