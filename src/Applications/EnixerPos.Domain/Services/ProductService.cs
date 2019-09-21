@@ -119,7 +119,7 @@ namespace EnixerPos.Domain.Services
                 List<CategoryDto> categories = _categoryRepository.GetCategoriesByStoreId(storeId);
 
                 //TODO: Add AutoMapper
-                //viewModel.Categories = categories;
+                viewModel.Categories = Map<CategoryDto,CategoryModel>(categories);
                 return viewModel;
             }
             catch (Exception e)
