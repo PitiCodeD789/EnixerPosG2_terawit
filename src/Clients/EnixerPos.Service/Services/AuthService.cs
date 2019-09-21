@@ -1,38 +1,70 @@
 ﻿using EnixerPos.Api.ViewModels.Auth;
 using EnixerPos.Service.Helpers;
 using EnixerPos.Service.Interfaces;
+using EnixerPos.Service.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace EnixerPos.Service.Services
 {
     public class AuthService : BaseService, IAuthService
     {
         private string serviceUrl = Helper.BaseUrl + "auth/";
-        public GetTokenByRefreshViewModel GetTokenByRefreshMerchant(string email, string password, string refreshToken)
+
+        public async Task<ResultServiceModel<GetTokenByRefreshViewModel>> GetTokenByRefreshMerchant(string email, string imei, string refreshToken)
         {
-            throw new NotImplementedException();
+            GetTokenByRefreshMerchantCommand model = new GetTokenByRefreshMerchantCommand()
+            {
+                Email = email.ToLower(),
+                Imei = imei,
+                RefreshToken = refreshToken
+            };
+
+            string url = serviceUrl + "tokenmerchant";
+            return await Post<GetTokenByRefreshViewModel>(url, model);
         }
 
-        public GetTokenByRefreshViewModel GetTokenByRefreshUser(string refreshToken, string user)
+        public Task<ResultServiceModel<GetTokenByRefreshViewModel>> GetTokenByRefreshUser(string refreshToken, string user)
         {
-            throw new NotImplementedException();
+            GetTokenByRefreshUserCommand model = new GetTokenByRefreshUserCommand()
+            {
+                RefreshToken = refreshToken,
+                User = user
+            };
         }
 
-        public LoginViewModel Login(string email, string password, string imei)
+        public async Task<ResultServiceModel<LoginViewModel>> Login(string email, string password, string imei)
         {
-            throw new NotImplementedException();
+            LoginCommand model = new LoginCommand()
+            {
+                Email = email.ToLower(),
+                Password = password,
+                Imei = imei
+            };
+
+            string url = serviceUrl + "login";
+            return await Post<LoginViewModel>(url, model);
         }
 
-        public LoginByPinViewModel LoginByPin(string pin)
+        public async Task<ResultServiceModel<LoginByPinViewModel>> LoginByPin(string pin)
         {
-            throw new NotImplementedException();
+            LoginByPinCommand model = new LoginByPinCommand()
+            {
+                Pin = pin
+            };
+
+            string url = serviceUrl + "loginbypin";
+            return await Post<LoginByPinViewModel>(url, model);
         }
 
-        public bool Logout()
+        public async Task<ResultServiceModel<DummyModel>> Logout()
         {
-            throw new NotImplementedException();
+            DummyModel model = new DummyModel();
+
+            string url = serviceUrl + "logout";
+            return await Post<DummyModel>(url, model);
         }
     }
 }
