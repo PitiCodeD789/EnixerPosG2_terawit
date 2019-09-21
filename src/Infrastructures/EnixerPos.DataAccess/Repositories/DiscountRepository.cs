@@ -7,7 +7,7 @@ using System.Text;
 
 namespace EnixerPos.DataAccess.Repositories
 {
-    class DiscountRepository : IDiscountRepository
+    public class DiscountRepository : IDiscountRepository
     {
         private readonly DataContext _context;
         public DiscountRepository(DataContext context)

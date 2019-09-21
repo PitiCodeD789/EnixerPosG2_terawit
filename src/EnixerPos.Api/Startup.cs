@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EnixerPos.DataAccess.Contexts;
+using EnixerPos.DataAccess.Repositories;
+using EnixerPos.Domain.Interfaces;
+using EnixerPos.Domain.Repositories;
+using EnixerPos.Domain.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -34,12 +39,20 @@ namespace EnixerPos.Api
                options.TokenValidationParameters = new TokenValidationParameters
                {
                    ValidateIssuer = true,
+                   ValidateAudience = false,
                    ValidateLifetime = true,
                    ValidateIssuerSigningKey = true,
                    ValidIssuer = Configuration["Jwt:Issuer"],
                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
                };
            });
+
+            services.AddScoped<DataContext>();
+            services.AddScoped<IAuthService, AuthService>();
+            services.AddScoped<IStoreRepository, StoreRepository>();
+            services.AddScoped<IDeviceRepository, DeviceRepository>();
+            services.AddScoped<ITokenRepository, TokenRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
@@ -58,7 +71,7 @@ namespace EnixerPos.Api
 
             app.UseAuthentication();
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseMvc();
         }
     }

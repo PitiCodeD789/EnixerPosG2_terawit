@@ -8,7 +8,7 @@ using System.Text;
 
 namespace EnixerPos.DataAccess.Repositories
 {
-    class ReceiptRepository : IReceiptRepository
+    public class ReceiptRepository : IReceiptRepository
     {
         private readonly DataContext _context;
         public ReceiptRepository(DataContext context)

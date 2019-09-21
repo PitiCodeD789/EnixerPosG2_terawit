@@ -8,7 +8,7 @@ using System.Text;
 
 namespace EnixerPos.DataAccess.Repositories
 {
-    class UserRepository : IUserRepository
+    public class UserRepository : IUserRepository
     {
         private readonly DataContext _context;
         public UserRepository(DataContext context)
@@ -29,11 +29,11 @@ namespace EnixerPos.DataAccess.Repositories
             }
         }
 
-        public UserEntity GetUserByUserName(int userId)
+        public UserEntity GetUserByUserName(string user)
         {
             try
             {
-                return _context.User.Where(x => x.Id == userId).FirstOrDefault();
+                return _context.User.Where(x => x.NameUser == user).FirstOrDefault();
             }
             catch (Exception)
             {

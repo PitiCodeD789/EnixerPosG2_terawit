@@ -7,7 +7,7 @@ using System.Text;
 
 namespace EnixerPos.DataAccess.Repositories
 {
-    class ItemRepository : IItemRepository
+    public class ItemRepository : IItemRepository
     {
         private readonly DataContext _context;
         public ItemRepository(DataContext context)
