@@ -6,9 +6,9 @@
              mc:Ignorable="d"
              x:Class="EnixerPos.Mobile.Components.Pos_ButtonView">
   <ContentView.Content>
-        <Frame Padding="0" HasShadow="True">
+        <Frame Padding="0" HasShadow="True"  CornerRadius="2">
             <Button x:Name="mButton" Text="Click Me" Clicked="MButton_Clicked" 
-                    BackgroundColor="#eaa200"  TextColor="White" CornerRadius="5"
+                    BackgroundColor="#e85f16"  TextColor="White"
                     FontAttributes="Bold" FontSize="21"/>
         </Frame>
     </ContentView.Content>

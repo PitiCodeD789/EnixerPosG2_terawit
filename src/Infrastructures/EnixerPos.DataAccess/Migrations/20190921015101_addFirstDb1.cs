@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace EnixerPos.DataAccess.Migrations
 {
-    public partial class addFistDb : Migration
+    public partial class addFirstDb1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -17,7 +17,8 @@ namespace EnixerPos.DataAccess.Migrations
                     CreateDateTime = table.Column<DateTime>(nullable: false),
                     UpdateDateTime = table.Column<DateTime>(nullable: false),
                     StoreId = table.Column<int>(nullable: false),
-                    PosName = table.Column<string>(nullable: true)
+                    PosName = table.Column<string>(nullable: true),
+                    Imei = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -30,14 +31,15 @@ namespace EnixerPos.DataAccess.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    CreateDateTime = table.Column<DateTime>(nullable: false),
-                    UpdateDateTime = table.Column<DateTime>(nullable: false),
+                    CreateDateTime = table.Column<DateTime>(nullable: false, defaultValueSql: "GetUtcDate()"),
+                    UpdateDateTime = table.Column<DateTime>(nullable: false, defaultValueSql: "GetUtcDate()"),
                     PosUserId = table.Column<int>(nullable: false),
                     PosIMEI = table.Column<string>(nullable: true),
                     Comment = table.Column<string>(nullable: true),
                     ManageCashStatus = table.Column<int>(nullable: false),
                     Amount = table.Column<decimal>(nullable: false),
-                    ShiftId = table.Column<int>(nullable: false)
+                    ShiftId = table.Column<int>(nullable: false),
+                    StoreEmail = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -50,8 +52,8 @@ namespace EnixerPos.DataAccess.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    CreateDateTime = table.Column<DateTime>(nullable: false),
-                    UpdateDateTime = table.Column<DateTime>(nullable: false),
+                    CreateDateTime = table.Column<DateTime>(nullable: false, defaultValueSql: "GetUtcDate()"),
+                    UpdateDateTime = table.Column<DateTime>(nullable: false, defaultValueSql: "GetUtcDate()"),
                     Reference = table.Column<string>(nullable: true),
                     ShiftId = table.Column<int>(nullable: false),
                     StoreEmail = table.Column<string>(nullable: true),
@@ -60,7 +62,8 @@ namespace EnixerPos.DataAccess.Migrations
                     Discount = table.Column<decimal>(nullable: false),
                     IsDiscountPercentage = table.Column<bool>(nullable: false),
                     Total = table.Column<decimal>(nullable: false),
-                    TotalDiscount = table.Column<decimal>(nullable: false)
+                    TotalDiscount = table.Column<decimal>(nullable: false),
+                    PaymentType = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -73,8 +76,8 @@ namespace EnixerPos.DataAccess.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    CreateDateTime = table.Column<DateTime>(nullable: false),
-                    UpdateDateTime = table.Column<DateTime>(nullable: false),
+                    CreateDateTime = table.Column<DateTime>(nullable: false, defaultValueSql: "GetUtcDate()"),
+                    UpdateDateTime = table.Column<DateTime>(nullable: false, defaultValueSql: "GetUtcDate()"),
                     ShiftId = table.Column<int>(nullable: false),
                     StoreEmail = table.Column<string>(nullable: true),
                     PosIMEI = table.Column<string>(nullable: true),
@@ -102,8 +105,9 @@ namespace EnixerPos.DataAccess.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    CreateDateTime = table.Column<DateTime>(nullable: false),
-                    UpdateDateTime = table.Column<DateTime>(nullable: false),
+                    CreateDateTime = table.Column<DateTime>(nullable: false, defaultValueSql: "GetUtcDate()"),
+                    UpdateDateTime = table.Column<DateTime>(nullable: false, defaultValueSql: "GetUtcDate()"),
+                    Email = table.Column<string>(nullable: true),
                     Password = table.Column<string>(nullable: true),
                     Salt = table.Column<string>(nullable: true),
                     StoreName = table.Column<string>(nullable: true)
@@ -119,10 +123,12 @@ namespace EnixerPos.DataAccess.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    CreateDateTime = table.Column<DateTime>(nullable: false),
-                    UpdateDateTime = table.Column<DateTime>(nullable: false),
+                    CreateDateTime = table.Column<DateTime>(nullable: false, defaultValueSql: "GetUtcDate()"),
+                    UpdateDateTime = table.Column<DateTime>(nullable: false, defaultValueSql: "GetUtcDate()"),
                     RefreshToken = table.Column<string>(nullable: true),
-                    UserId = table.Column<int>(nullable: false)
+                    UserId = table.Column<int>(nullable: false),
+                    Email = table.Column<string>(nullable: true),
+                    Imei = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -135,9 +141,12 @@ namespace EnixerPos.DataAccess.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    CreateDateTime = table.Column<DateTime>(nullable: false),
-                    UpdateDateTime = table.Column<DateTime>(nullable: false),
-                    User = table.Column<string>(nullable: true)
+                    CreateDateTime = table.Column<DateTime>(nullable: false, defaultValueSql: "GetUtcDate()"),
+                    UpdateDateTime = table.Column<DateTime>(nullable: false, defaultValueSql: "GetUtcDate()"),
+                    NameUser = table.Column<string>(nullable: true),
+                    Email = table.Column<string>(nullable: true),
+                    Pin = table.Column<string>(nullable: true),
+                    Salt = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

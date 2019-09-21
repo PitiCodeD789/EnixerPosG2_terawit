@@ -8,31 +8,31 @@ using System.Text;
 
 namespace EnixerPos.DataAccess.Repositories
 {
-    class ManageCashRepository : IManageCashRepository
+    public class ManageCashRepository : IManageCashRepository
     {
         private readonly DataContext _context;
-
-        public ManageCashRepository(DataContext context)
+        public ManageCashRepository(DataContext dataContext)
         {
-            _context = context;
+            _context = dataContext;
+
         }
         public bool AddManageCash(ManageCashEntity manageCash)
         {
             try
             {
+                _context.ManageCash.Add(manageCash);
                 _context.SaveChanges();
                 return true;
-            }
-            catch (Exception)
+            }catch
             {
                 return false;
             }
+         
         }
 
         public List<ManageCashEntity> GetManageCashByShiftId(int shiftId, string storeEmail, string posIMEI)
         {
-            List<ManageCashEntity> manageCashes = _context.ManageCash.Where(x => x.ShiftId == shiftId).Where(x => x.StoreEmail == storeEmail.ToLower()).Where(x => x.PosImei == posIMEI).ToList();
-            return manageCashes;
+            return _context.ManageCash.Where(x => x.ShiftId == shiftId && x.PosIMEI == posIMEI).ToList();
         }
     }
 }

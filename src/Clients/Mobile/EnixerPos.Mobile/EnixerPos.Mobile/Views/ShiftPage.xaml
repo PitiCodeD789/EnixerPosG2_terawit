@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:component="clr-namespace:EnixerPos.Mobile.Components"
+             NavigationPage.HasNavigationBar="False"
+             mc:Ignorable="d"
+             x:Class="EnixerPos.Mobile.Views.ShiftPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame HasShadow="True" Margin="0,0,0,0">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Shift" FontSize="30" />
+                </StackLayout>
+
+            </Frame>
+            <Frame HasShadow="True" Margin="50,20,50,20">
+                <StackLayout>                    
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <component:Pos_ButtonView TextButton="CASH MANAGEMENT" 
+                                                  HorizontalOptions="StartAndExpand" 
+                                                  Margin="50,0,0,0"
+                                                  WidthRequest="500" 
+                                                  TextColor="#E96722" 
+                                                  BackgroundButton="White" />
+                        <component:Pos_ButtonView TextButton="CLOSE SHIFT" 
+                                                  HorizontalOptions="EndAndExpand" 
+                                                   Margin="50,0,50,0"
+                                                  WidthRequest="500"  
+                                                  TextColor="#E96722" 
+                                                  BackgroundButton="White" />
+                </StackLayout>
+                <ScrollView>
+                        <StackLayout>
+                            <component:Pos_InlineLable LeftTexLable="Shift opened"
+                                                       RightTexLable="18 Jan 2019 08:40:12"                                                      
+                                                       LableTextMargin="50,50,50,0" />
+                            
+                            <BoxView Color="Gray" 
+                                     HorizontalOptions="Fill" 
+                                     Margin="50,5,50,0" 
+                                     VerticalOptions="Start"  
+                                     HeightRequest="1"/>
+                            
+                            <Label Text="Cash drawer" 
+                                   HorizontalOptions="StartAndExpand" 
+                                   TextColor="#E96722"
+                                   Margin="50,20,50,0"
+                                   FontSize="Medium"/>
+                            <component:Pos_InlineLable LeftTexLable="Starting cash"
+                                                       RightTexLable="3,000.00"                                                      
+                                                       LableTextMargin="50,0,50,0" />
+                            <component:Pos_InlineLable LeftTexLable="Cash payment"
+                                                       RightTexLable="1,189.00"                                                      
+                                                       LableTextMargin="50,0,50,0" />
+                            <component:Pos_InlineLable LeftTexLable="Cash refunds"
+                                                       RightTexLable="0.00"                                                      
+                                                       LableTextMargin="50,0,50,0" />
+                            <component:Pos_InlineLable LeftTexLable="Paid in"
+                                                       RightTexLable="0.00"                                                      
+                                                       LableTextMargin="50,0,50,0" />
+                            <component:Pos_InlineLable LeftTexLable="Paid out"
+                                                       RightTexLable="0.00"                                                      
+                                                       LableTextMargin="50,0,50,0" />
+                            <component:Pos_InlineLable LeftTexLable="Expected cash amount"
+                                                       RightTexLable="4,189.00" 
+                                                       LableFontAttributes="Bold"
+                                                       LableTextMargin="50,20,50,0" />
+
+                            <BoxView Color="Gray" 
+                                     HorizontalOptions="Fill" 
+                                     Margin="50,5,50,0" 
+                                     VerticalOptions="Start"  
+                                     HeightRequest="1"/>
+                            <Label Text="Sales summary" 
+                                   HorizontalOptions="StartAndExpand" 
+                                   TextColor="#E96722"
+                                   Margin="50,20,50,0"
+                                   FontSize="Medium"/>
+                            <component:Pos_InlineLable LeftTexLable="Gross sales"
+                                                       RightTexLable="2,281.00"                                                      
+                                                       LableTextMargin="50,0,50,0" />
+                            <component:Pos_InlineLable LeftTexLable="Refunds"
+                                                       RightTexLable="0.00"                                                      
+                                                       LableTextMargin="50,0,50,0" />
+                            <component:Pos_InlineLable LeftTexLable="Discount"
+                                                       RightTexLable="0.00"                                                      
+                                                       LableTextMargin="50,0,50,0" />
+
+
+                            <BoxView Color="Gray" 
+                                     HorizontalOptions="Fill" 
+                                     Margin="50,5,50,0" 
+                                     VerticalOptions="Start"  
+                                     HeightRequest="1"/>
+                            
+                                <component:Pos_InlineLable LeftTexLable="Net sales"
+                                                       RightTexLable="2,261.00"
+                                                           LableFontAttributes="Bold"
+                                                       LableTextMargin="50,10,50,0" />
+                                <component:Pos_InlineLable LeftTexLable="Cash"
+                                                       RightTexLable="1,189.00"                                                      
+                                                       LableTextMargin="50,0,50,0" />
+                                <component:Pos_InlineLable LeftTexLable="Debit Card"
+                                                       RightTexLable="0.00"                                                      
+                                                       LableTextMargin="50,0,50,0" />
+
+                                <component:Pos_InlineLable LeftTexLable="Credit Card"
+                                                       RightTexLable="507.00"                                                      
+                                                       LableTextMargin="50,0,50,0" />
+                                <component:Pos_InlineLable LeftTexLable="QR CODE"
+                                                       RightTexLable="507.00"                                                      
+                                                       LableTextMargin="50,0,50,0" />                              
+                            <BoxView Color="Gray" 
+                                     HorizontalOptions="Fill" 
+                                     Margin="50,5,50,0" 
+                                     VerticalOptions="Start"  
+                                     HeightRequest="1"/>
+                            <component:Pos_InlineLable LeftTexLable="Taxes"
+                                                       RightTexLable="147.92"                                                      
+                                                       LableTextMargin="50,0,50,0" />
+
+                        </StackLayout>                        
+
+                    </ScrollView>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

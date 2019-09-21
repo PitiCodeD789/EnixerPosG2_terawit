@@ -8,7 +8,7 @@ using System.Text;
 
 namespace EnixerPos.DataAccess.Repositories
 {
-    class StoreRepository : IStoreRepository
+    public class StoreRepository : IStoreRepository
     {
         private readonly DataContext _context;
         public StoreRepository(DataContext context)

@@ -8,7 +8,7 @@ using System.Text;
 
 namespace EnixerPos.DataAccess.Repositories
 {
-    class DeviceRepository : IDeviceRepository
+    public class DeviceRepository : IDeviceRepository
     {
         private readonly DataContext _context;
         public DeviceRepository(DataContext context)

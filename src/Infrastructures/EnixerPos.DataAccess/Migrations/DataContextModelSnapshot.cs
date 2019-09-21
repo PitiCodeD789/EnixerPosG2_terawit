@@ -27,6 +27,8 @@ namespace EnixerPos.DataAccess.Migrations
 
                     b.Property<DateTime>("CreateDateTime");
 
+                    b.Property<string>("Imei");
+
                     b.Property<string>("PosName");
 
                     b.Property<int>("StoreId");
@@ -60,6 +62,8 @@ namespace EnixerPos.DataAccess.Migrations
 
                     b.Property<int>("ShiftId");
 
+                    b.Property<string>("StoreEmail");
+
                     b.Property<DateTime>("UpdateDateTime")
                         .ValueGeneratedOnAddOrUpdate()
                         .HasDefaultValueSql("GetUtcDate()");
@@ -84,6 +88,8 @@ namespace EnixerPos.DataAccess.Migrations
                     b.Property<bool>("IsDiscountPercentage");
 
                     b.Property<string>("ItemList");
+
+                    b.Property<int>("PaymentType");
 
                     b.Property<string>("PosImei");
 
@@ -165,6 +171,8 @@ namespace EnixerPos.DataAccess.Migrations
                         .ValueGeneratedOnAddOrUpdate()
                         .HasDefaultValueSql("GetUtcDate()");
 
+                    b.Property<string>("Email");
+
                     b.Property<string>("Password");
 
                     b.Property<string>("Salt");
@@ -190,6 +198,10 @@ namespace EnixerPos.DataAccess.Migrations
                         .ValueGeneratedOnAddOrUpdate()
                         .HasDefaultValueSql("GetUtcDate()");
 
+                    b.Property<string>("Email");
+
+                    b.Property<string>("Imei");
+
                     b.Property<string>("RefreshToken");
 
                     b.Property<DateTime>("UpdateDateTime")
@@ -213,11 +225,17 @@ namespace EnixerPos.DataAccess.Migrations
                         .ValueGeneratedOnAddOrUpdate()
                         .HasDefaultValueSql("GetUtcDate()");
 
+                    b.Property<string>("Email");
+
+                    b.Property<string>("NameUser");
+
+                    b.Property<string>("Pin");
+
+                    b.Property<string>("Salt");
+
                     b.Property<DateTime>("UpdateDateTime")
                         .ValueGeneratedOnAddOrUpdate()
                         .HasDefaultValueSql("GetUtcDate()");
-
-                    b.Property<string>("User");
 
                     b.HasKey("Id");
 

@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using EnixerPos.Api.ViewModels.Auth;
 using EnixerPos.Domain.DtoModels.Auth;
 using EnixerPos.Domain.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -34,7 +35,7 @@ namespace EnixerPos.Api.Controllers
         {
             try
             {
-                string email = command.Email;
+                string email = command.Email.ToLower();
                 string password = command.Password;
                 string imei = command.Imei;
 
@@ -101,13 +102,14 @@ namespace EnixerPos.Api.Controllers
         }
 
         //LoginByPin
+        [Authorize]
         [HttpPost("loginbypin")]
         public IActionResult LoginByPin([FromBody]LoginByPinCommand command)
         {
             try
             {
-                string email = "";
-                string imei = "";
+                string email = User.Claims.SingleOrDefault(x => x.Type == "aud").Value;
+                string imei = User.Claims.SingleOrDefault(x => x.Type == "imei").Value;
                 string pin = command.Pin;
 
                 LoginByPinDto loginByPinDto = _authService.LoginUser(email, imei, pin);
@@ -142,7 +144,7 @@ namespace EnixerPos.Api.Controllers
         {
             try
             {
-                string email = command.Email;
+                string email = command.Email.ToLower();
                 string imei = command.Imei;
                 string refreshToken = command.RefreshToken;
 
@@ -170,18 +172,18 @@ namespace EnixerPos.Api.Controllers
         }
 
         //GetTokenByRefreshUser
+        [Authorize]
         [HttpPost("tokenuser")]
         public IActionResult GetTokenByRefreshUser([FromBody]GetTokenByRefreshUserCommand command)
         {
             try
             {
-                string email = "";
-                string imei = "";
+                string email = User.Claims.SingleOrDefault(x => x.Type == "aud").Value;
+                string imei = User.Claims.SingleOrDefault(x => x.Type == "imei").Value;
                 string refreshToken = command.RefreshToken;
-                int userId = command.UserId;
                 string user = command.User;
 
-                bool isRefreshToken = _authService.CheckRefresh(email, imei, refreshToken, userId);
+                bool isRefreshToken = _authService.CheckRefresh(email, imei, refreshToken, user);
                 if (!isRefreshToken)
                 {
                     return BadRequest();

@@ -38,18 +38,33 @@ namespace EnixerPos.Mobile.Components
 
         #region TextButton
 
-        private string textButton;
-
         public string TextButton
         {
-            get { return textButton; }
-            set
-            {
-                textButton = value;
-                mButton.Text = textButton;
-            }
+            get { return (string)GetValue(TextButtonProperty); }
+            set { SetValue(TextButtonProperty, value); }
         }
+
+        public static readonly BindableProperty TextButtonProperty =
+            BindableProperty.Create(
+                propertyName: "TextButton",
+                returnType: typeof(string),
+                declaringType: typeof(Pos_ItemView),
+                defaultBindingMode: BindingMode.TwoWay); //คนที่ประกาศ
         #endregion//
+
+        #region BackgroundButton
+        public Color BackgroundButton
+        {
+            get { return (Color)GetValue(BackgroundButtonProperty); }
+            set { SetValue(BackgroundButtonProperty, value); }
+        }
+        #endregion
+
+        public static readonly BindableProperty BackgroundButtonProperty =
+            BindableProperty.Create(
+                propertyName: "BackgroundButton",
+                returnType: typeof(Color),
+                declaringType: typeof(Pos_ButtonView));
 
     }
 }

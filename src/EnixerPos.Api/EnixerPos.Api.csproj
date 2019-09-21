@@ -16,6 +16,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Applications\EnixerPos.Domain\EnixerPos.Domain.csproj" />
     <ProjectReference Include="..\EnixerPos.Api.ViewModels\EnixerPos.Api.ViewModels.csproj" />
+    <ProjectReference Include="..\Infrastructures\EnixerPos.DataAccess\EnixerPos.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>

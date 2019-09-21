@@ -28,11 +28,11 @@ namespace EnixerPos.Domain.Services
             _userRepository = userRepository;
         }
 
-        public bool CheckRefresh(string email, string imei, string refreshToken, int userId)
+        public bool CheckRefresh(string email, string imei, string refreshToken, string user)
         {
             TokenEntity tokenEntity = _tokenRepository.GetTokenByEmailAndImei(email, imei);
-            UserEntity userEntity = _userRepository.GetUserByUserName(userId);
-            if (tokenEntity.RefreshToken != refreshToken || tokenEntity.UserId != userId)
+            UserEntity userEntity = _userRepository.GetUserByUserName(user);
+            if (tokenEntity.RefreshToken != refreshToken || tokenEntity.UserId != userEntity.Id)
             {
                 return false;
             }
@@ -77,7 +77,7 @@ namespace EnixerPos.Domain.Services
         public string GetRefreshToken(string email, string imei)
         {
             string refreshToken = Generator.GenerateRandomString(10);
-            TokenEntity tokenEntity = _tokenRepository.UpdateRefreshToken(email, imei);
+            bool tokenEntity = _tokenRepository.UpdateRefreshToken(email, imei, refreshToken);
             return refreshToken;
         }
 
@@ -114,7 +114,7 @@ namespace EnixerPos.Domain.Services
 
         public LoginByPinDto LoginUser(string email, string imei, string pin)
         {
-            string hashPin = Generator.HashPassword(pin, "");
+            string hashPin = Generator.HashPassword(pin, null);
             UserEntity userEntity = _userRepository.GetUserByEmialAndPin(email, hashPin);
             if(userEntity == null)
             {
@@ -132,7 +132,7 @@ namespace EnixerPos.Domain.Services
             }
 
             int userId = userEntity.Id;
-            bool isUpdate = _tokenRepository.UpdateUserId(userId);
+            bool isUpdate = _tokenRepository.UpdateUserId(email, imei, userId);
             if (!isUpdate)
             {
                 return null;
@@ -142,7 +142,7 @@ namespace EnixerPos.Domain.Services
 
             LoginByPinDto loginByPinDto = new LoginByPinDto()
             {
-                User = userEntity.User,
+                User = userEntity.NameUser,
                 UserId = userId
             };
 

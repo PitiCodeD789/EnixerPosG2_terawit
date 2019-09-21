@@ -3,11 +3,12 @@ using EnixerPos.Domain.Entities;
 using EnixerPos.Domain.Repositories;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace EnixerPos.DataAccess.Repositories
 {
-    class TokenRepository : ITokenRepository
+    public class TokenRepository : ITokenRepository
     {
         private readonly DataContext _context;
         public TokenRepository(DataContext context)
@@ -16,17 +17,49 @@ namespace EnixerPos.DataAccess.Repositories
         }
         public TokenEntity GetTokenByEmailAndImei(string email, string imei)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return _context.Token.Where(x => x.Email == email && x.Imei == imei).Single();
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Error : " + e.Message);
+                return null;
+            }
         }
 
-        public TokenEntity UpdateRefreshToken(string email, string imei)
+        public bool UpdateRefreshToken(string email, string imei, string refreshToken)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var token = _context.Token.Where(x => x.Email == email && x.Imei == imei).Single();
+                token.RefreshToken = refreshToken;
+
+                _context.SaveChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error : " + e.Message);
+                return false;
+            }
         }
 
-        public bool UpdateUserId(int userId)
+        public bool UpdateUserId(string email, string imei, int userId)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var token = _context.Token.Where(x => x.Email == email && x.Imei == imei).Single();
+                token.UserId = userId;
+
+                _context.SaveChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error : " + e.Message);
+                return false;
+            }
         }
     }
 }

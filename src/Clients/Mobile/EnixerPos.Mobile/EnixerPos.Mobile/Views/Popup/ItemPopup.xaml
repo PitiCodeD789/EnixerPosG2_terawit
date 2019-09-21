@@ -41,7 +41,7 @@
                     <Label Text="Save" TextColor="Orange" FontSize="20"
                            VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand">
                         <Label.GestureRecognizers>
-                            <TapGestureRecognizer Command=""/>
+                            <TapGestureRecognizer/>
                         </Label.GestureRecognizers>
                     </Label>
                     </StackLayout>
