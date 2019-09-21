@@ -12,9 +12,10 @@ namespace EnixerPos.Mobile.Views.Popup
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class OpenTicketsPopup : Rg.Plugins.Popup.Pages.PopupPage
     {
-        public OpenTicketsPopup()
+        public OpenTicketsPopup(object vm)
         {
             InitializeComponent();
+            BindingContext = vm;
         }
     }
 }

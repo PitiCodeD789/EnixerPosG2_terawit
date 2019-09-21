@@ -31,9 +31,9 @@
                             <Label.FormattedText>
                                 <FormattedString>
                                     <FormattedString.Spans>
-                                        <Span Text="Amaricano"/>
+                                        <Span Text="{Binding CurrentItem.Name}"/>
                                         <Span Text="  "/>
-                                        <Span Text="70.00"/>
+                                        <Span Text="{Binding CurrentItemPrice,StringFormat='{0:n}'}"/>
                                     </FormattedString.Spans>
                                 </FormattedString>
                             </Label.FormattedText>
@@ -41,7 +41,7 @@
                     <Label Text="Save" TextColor="Orange" FontSize="20"
                            VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand">
                         <Label.GestureRecognizers>
-                            <TapGestureRecognizer/>
+                            <TapGestureRecognizer Command="{Binding SaveItemCommand}"/>
                         </Label.GestureRecognizers>
                     </Label>
                     </StackLayout>
@@ -50,15 +50,15 @@
                 <StackLayout Padding="25" Spacing="10">
                     <Label Text="Drinks" TextColor="Orange" FontSize="20"
                            VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"/>
-                    <input:SelectionView x:Name="selectionView" BackgroundColor="White" Color="Orange" IsClippedToBounds="True"/>
+                    <input:SelectionView x:Name="selectionView" BackgroundColor="White" Color="Orange" IsClippedToBounds="True" ItemsSource="{Binding CurrentOption}" SelectedIndex="{Binding CurrentSelectedOptionIndex}"/>
                     <Label Text="Quantity" TextColor="Orange" FontSize="20"
                            VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"/>
-                    <StackLayout Orientation="Horizontal">
+                    <StackLayout Orientation="Horizontal" Spacing="10">
                         <Button Text="-" FontSize="Title" BorderColor="Black" WidthRequest="50" HeightRequest="50" BackgroundColor="White"
-                                BorderWidth="0.5"/>
-                        <Label Text="1" VerticalOptions="CenterAndExpand" FontSize="25"/>
+                                BorderWidth="0.5" Command="{Binding QuantityChangeCommand}" CommandParameter="-"/>
+                        <Label Text="{Binding Quantity}" VerticalOptions="CenterAndExpand" FontSize="25"/>
                         <Button Text="+" FontSize="Title" BorderColor="Black" WidthRequest="50" HeightRequest="50" BackgroundColor="White"
-                                BorderWidth="0.5"/>
+                                BorderWidth="0.5" Command="{Binding QuantityChangeCommand}" CommandParameter="+"/>
                     </StackLayout>
                     <Label Text="Comment" TextColor="Orange" FontSize="20"
                            VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"/>

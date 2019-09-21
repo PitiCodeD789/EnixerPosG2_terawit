@@ -1,23 +1,33 @@
 ﻿using AiForms.Renderers;
+using AutoMapper;
 using EnixerPos.Api.ViewModels.Product;
+using EnixerPos.Api.ViewModels.Sale;
 using EnixerPos.Mobile.Components;
+using EnixerPos.Mobile.Models;
+using EnixerPos.Mobile.Views.Popup;
 using EnixerPos.Service.Models;
 using EnixerPos.Service.Services;
+using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Xam.Plugin.TabView;
 using Xamarin.Forms;
 
 namespace EnixerPos.Mobile.ViewModels
 {
-    public class SaleViewModel
+    public class SaleViewModel : INotifyPropertyChanged
     {
         MockupService _service = new MockupService();
         public SaleViewModel()
         {
+            ShowOpenButton = true;
+            CurrentTicket = new ObservableCollection<OrderItemModel>();
+            Quantity = 1;
             AllMenu = new List<MenuModel>();
             SetItemMenu();
             foreach (var category in AllMenu)
@@ -60,39 +70,103 @@ namespace EnixerPos.Mobile.ViewModels
                         button.WidthRequest = 150;
                         button.HorizontalOptions = LayoutOptions.Center;
                         button.VerticalOptions = LayoutOptions.Center;
-                        button.Command = new Command<string>((text) => Application.Current.MainPage.DisplayAlert(item.Name,text,"Ok"));
-                        button.CommandParameter = item.Name;
+                        button.Command = new Command<ItemModel>((itemModel) => OpenOption(itemModel));
+                        button.CommandParameter = item;
                         grid.Children.Add(button,col,row);
                         col++;
                     }
                 }
-                TabChildren.Add(new TabItem(category.CategoryName, grid));
+
+                var scrollView = new ScrollView()
+                {
+                    HorizontalOptions = LayoutOptions.FillAndExpand,
+                    VerticalOptions = LayoutOptions.FillAndExpand,
+                    Content = grid
+                };
+
+                TabChildren.Add(new TabItem(category.CategoryName, scrollView));
             };
+            QuantityChangeCommand = new Command<string>((change) => QuantityChange(change));
+            SaveItemCommand = new Command(SaveItemToTicket);
+            SaveTicketCommand = new Command(SaveTicket);
+            OpenTicketCommand = new Command(OpenTicket);
         }
 
+        public Command QuantityChangeCommand { get; set; }
+        public Command SaveItemCommand { get; set; }
+        public Command SaveTicketCommand { get; set; }
+        public Command OpenTicketCommand { get; set; }
 
-        private ObservableCollection<ItemModel> items;
-        public ObservableCollection<ItemModel> Drinks
+        public void QuantityChange(string change)
         {
-            get { return items; }
-            set { items = value; }
+            if (change == "+")
+            {
+                Quantity++;
+            }
+            else if (change == "-")
+            {
+                if (Quantity > 0)
+                {
+                    Quantity--;
+                }
+            }
         }
-
-        private List<MenuModel> _allMenu;
-        public List<MenuModel> AllMenu
+        public void SaveItemToTicket()
         {
-            get { return _allMenu; }
-            set { _allMenu = value; }
-        }
+            ShowOpenButton = false;
+            try
+            {
+                decimal optionPrice = OptionList[CurrentSelectedOptionIndex].Price;
+                CurrentTicket.Add(new OrderItemModel
+                {
+                    ItemName = CurrentItem.Name,
+                    IsDiscounted = false,
+                    ItemPrice = (CurrentItem.Price + optionPrice) * Quantity,
+                    Quantity = Quantity,
+                    OptionName = OptionList[CurrentSelectedOptionIndex].OptionName,
+                    OptionPrice = OptionList[CurrentSelectedOptionIndex].Price,
+                    DiscountedPrice = (CurrentItem.Price + optionPrice) * Quantity,
+                });
+                TotalPrice += (CurrentItem.Price + optionPrice) * Quantity;
+            }
+            catch (Exception e)
+            {
+                Application.Current.MainPage.DisplayAlert("Error","Cannot add item to ticket","Ok");
+            }
 
-        private List<CategoryModel> _categoriesList;
-        public List<CategoryModel> CategoriesList
+            CurrentTicket = CurrentTicket;
+            PopupNavigation.PopAllAsync();
+            CurrentItem = new ItemModel();
+            CurrentOption = new List<string>();
+            CurrentSelectedOptionIndex = 0;
+        }
+        void OpenOption(ItemModel item)
         {
-            get { return _categoriesList; }
-            set { _categoriesList = value; }
+            CurrentItem = item;
+            OptionList = new List<ItemOptionModel>();
+
+            if (!string.IsNullOrEmpty(item.Option1))
+                OptionList.Add(new ItemOptionModel() { OptionName = item.Option1, Price = item.Option1Price });
+
+            if (!string.IsNullOrEmpty(item.Option2))
+                OptionList.Add(new ItemOptionModel() { OptionName = item.Option2, Price = item.Option2Price });
+
+            if (!string.IsNullOrEmpty(item.Option3))
+                OptionList.Add(new ItemOptionModel() { OptionName = item.Option3, Price = item.Option3Price });
+
+            if (!string.IsNullOrEmpty(item.Option4))
+                OptionList.Add(new ItemOptionModel() { OptionName = item.Option4, Price = item.Option4Price });
+
+            CurrentOption = new List<string>();
+            foreach (var option in OptionList)
+            {
+                CurrentOption.Add(option.OptionName + "  ( +" + ((option.Price > 0) ? option.Price.ToString("#.00") : "") + " )");
+            }
+
+            CurrentItemPrice = item.Price;
+
+            PopupNavigation.PushAsync(new ItemPopup(this));
         }
-
-
         void SetItemMenu()
         {
             CategoriesList = _service.GetCategories();
@@ -108,7 +182,7 @@ namespace EnixerPos.Mobile.ViewModels
             ItemsViewModel items = _service.GetItems();
             if (items == null || items.Items.Count == 0)
             {
-                Application.Current.MainPage.DisplayAlert("","ไม่พบรายการอาหารในระบบ","OK");
+                Application.Current.MainPage.DisplayAlert("", "ไม่พบรายการอาหารในระบบ", "OK");
                 return;
             }
 
@@ -126,10 +200,168 @@ namespace EnixerPos.Mobile.ViewModels
             }
 
         }
+        void SaveTicket()
+        {
+            var maxNumber = 0;
+            try
+            {
+                maxNumber = App.TicketList.Max(t => t.TicketNumber);
+            }
+            catch (Exception e)
+            {
+            }
+            ReceiptViewModel receipt = new ReceiptViewModel()
+            {
+                ItemList = CurrentTicket.ToList(),
+                Total = TotalPrice,
+                TicketNumber = maxNumber + 1,
+                CreateDateTime = DateTime.Now
+            };
+            App.TicketList.Add(receipt);
+            CleartTicket();
+        }
+        void OpenTicket()
+        {
+            CleartTicket();
+            PopupNavigation.PushAsync(new OpenTicketsPopup(this));
+            TicketList = App.TicketList;
+        }
+        void CleartTicket()
+        {
+            CurrentTicket = new ObservableCollection<OrderItemModel>();
+            Quantity = 1;
+            QuantityChangeCommand = new Command<string>((change) => QuantityChange(change));
+            SaveItemCommand = new Command(SaveItemToTicket);
+            CurrentTicket = new ObservableCollection<OrderItemModel>();
+            TotalPrice = 0;
+            ShowOpenButton = true;
+        }
 
+        #region Propfull
+        private bool _openButton;
+        public bool ShowOpenButton
+        {
+            get { return _openButton; }
+            set { _openButton = value; OnPropertyChanged(); }
+        }
+
+
+        private List<ReceiptViewModel> _ticketList;
+        public List<ReceiptViewModel> TicketList
+        {
+            get { return _ticketList; }
+            set { _ticketList = value; OnPropertyChanged(); }
+        }
+
+        private decimal _totalPrice;
+        public decimal TotalPrice
+        {
+            get { return _totalPrice; }
+            set
+            {
+                _totalPrice = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private int _quantity;
+        public int Quantity
+        {
+            get { return _quantity; }
+            set
+            {
+                _quantity = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private int _currentSelectedOptionIndex;
+        public int CurrentSelectedOptionIndex
+        {
+            get { return _currentSelectedOptionIndex; }
+            set
+            {
+                _currentSelectedOptionIndex = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private List<string> currentOption;
+        public List<string> CurrentOption
+        {
+            get { return currentOption; }
+            set
+            {
+                currentOption = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private ObservableCollection<OrderItemModel> _currentTicket;
+        public ObservableCollection<OrderItemModel> CurrentTicket
+        {
+            get { return _currentTicket; }
+            set
+            {
+                _currentTicket = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private ItemModel _currentItem;
+        public ItemModel CurrentItem
+        {
+            get { return _currentItem; }
+            set
+            {
+                _currentItem = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private decimal _currentItemPrice;
+        public decimal CurrentItemPrice
+        {
+            get { return _currentItemPrice; }
+            set { _currentItemPrice = value; }
+        }
+
+        private List<MenuModel> _allMenu;
+        public List<MenuModel> AllMenu
+        {
+            get { return _allMenu; }
+            set { _allMenu = value; }
+        }
+
+        private List<CategoryModel> _categoriesList;
+        public List<CategoryModel> CategoriesList
+        {
+            get { return _categoriesList; }
+            set { _categoriesList = value; }
+        }
 
         public List<TabItem> TabChildren = new List<TabItem>();
 
+        #endregion
 
+        #region Options
+        private List<ItemOptionModel> _optionList;
+
+        public List<ItemOptionModel> OptionList
+        {
+            get { return _optionList; }
+            set { _optionList = value; }
+        }
+
+        public object ItemPrice { get; private set; }
+
+        #endregion
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            handler?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }

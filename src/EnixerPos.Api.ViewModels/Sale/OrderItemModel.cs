@@ -11,6 +11,7 @@ namespace EnixerPos.Api.ViewModels.Sale
         public int Quantity { get; set; }
         public string OptionName { get; set; }
         public decimal OptionPrice { get; set; }
-
+        public bool IsDiscounted { get; set; }
+        public decimal DiscountedPrice { get; set; }
     }
 }

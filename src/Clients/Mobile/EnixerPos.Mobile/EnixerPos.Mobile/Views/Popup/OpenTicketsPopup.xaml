@@ -35,15 +35,15 @@
                     </Label>
                 </StackLayout>
             </Frame>
-            <ListView Margin="0,20,0,0" ItemsSource="{Binding abc}">
+            <ListView Margin="0,20,0,0" ItemsSource="{Binding TicketList}" HasUnevenRows="true">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <Grid Padding="15,0,15,0">
-                                <Label Text="{Binding Name}"  FontSize="Medium" TextColor="Black" Grid.Row="0"/>
-                                <Label Text="{Binding Time}"  FontSize="Medium" TextColor="Gray" Grid.Row="1"/>
+                                <Label Text="{Binding TicketNumber}"  FontSize="Medium" TextColor="Black" Grid.Row="0"/>
+                                <Label Text="{Binding CreateDateTime}"  FontSize="Medium" TextColor="Gray" Grid.Row="1"/>
                                 <StackLayout Grid.Column="1" Grid.RowSpan="2" HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
-                                    <Label  Text="{Binding Price}" FontSize="Medium" TextColor="Black" />
+                                    <Label  Text="{Binding Total}" FontSize="Medium" TextColor="Black" />
                                     <ImageButton />
                                 </StackLayout>
                             </Grid>

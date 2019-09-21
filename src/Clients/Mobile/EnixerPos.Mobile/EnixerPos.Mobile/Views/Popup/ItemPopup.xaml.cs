@@ -1,4 +1,6 @@
-﻿using System;
+﻿using EnixerPos.Api.ViewModels.Product;
+using EnixerPos.Mobile.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,13 +14,11 @@ namespace EnixerPos.Mobile.Views.Popup
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ItemPopup : Rg.Plugins.Popup.Pages.PopupPage
     {
-        public ItemPopup()
+        public ItemPopup(object vm)
         {
             InitializeComponent();
-            selectionView.ItemsSource  = new[]
-            {
-                "Hot               0.00","Ice              5.00","Blended               10.00"
-            };
+            
+            BindingContext = vm;
         }
     }
 }

@@ -50,12 +50,12 @@
                 </ListView.ItemTemplate>
             </ai:GridCollectionView>-->
 
-            <tabView:TabViewControl x:Name="TabView" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" HeaderBackgroundColor="White" HeaderTabTextColor="Black" HeaderSelectionUnderlineColor="Orange">
+            <tabView:TabViewControl x:Name="TabView" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" HeaderBackgroundColor="White" HeaderTabTextColor="Black" HeaderSelectionUnderlineColor="Orange" HeaderTabTextFontSize="30">
             </tabView:TabViewControl>
 
             <!--End Menu Item-->
 
-            <Frame Padding="0" HorizontalOptions="FillAndExpand" Margin="0" Grid.Column="0" Grid.Row="2" HasShadow="True">
+            <Frame Padding="0" HorizontalOptions="FillAndExpand" Margin="0" Grid.Column="0" Grid.Row="2" HasShadow="True" IsVisible="False">
                 <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand" Margin="20,0" Spacing="50">
                     <Label Text="Drinks" TextColor="Black" FontSize="30" FontAttributes="Bold" />
                     <Label Text="Foods" TextColor="Black" FontSize="30" FontAttributes="Bold" />
@@ -81,11 +81,11 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="100"/>
                 </Grid.RowDefinitions>
-                <ListView Grid.Row="0">
+                <ListView Grid.Row="0" ItemsSource="{Binding CurrentTicket}" SelectionMode="None" HasUnevenRows="True">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <Grid>
+                                <Grid RowSpacing="0">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="auto"/>
                                         <RowDefinition Height="auto"/>
@@ -99,56 +99,42 @@
                                     <Label HorizontalOptions="Start" FontSize="Large" Grid.Row="0" Grid.Column="0" LineBreakMode="TailTruncation">
                                         <Label.FormattedText>
                                             <FormattedString>
-                                                <Span Text="Menu" TextColor="Black"/>
-                                                <Span Text="Amount"/>
+                                                <Span Text="{Binding ItemName}" TextColor="Black"/>
+                                                <Span Text="  x"/>
+                                                <Span Text="{Binding Quantity}"/> 
                                             </FormattedString>
                                         </Label.FormattedText>
                                     </Label>
-                                    <Label Text="75.00" HorizontalOptions="End" FontSize="Large" Grid.Row="0" Grid.Column="1">
+                                    <Label HorizontalOptions="End" FontSize="Large" Grid.Row="0" Grid.Column="1" IsVisible="{Binding IsDiscounted}">
                                         <Label.FormattedText>
                                             <FormattedString>
-                                                <Span Text="75.00" TextColor="Gray" TextDecorations="Strikethrough"/>
+                                                <Span Text="{Binding ItemPrice, StringFormat='{0:n}'}" TextColor="Gray" TextDecorations="Strikethrough"/>
                                                 <Span Text="  "/>
-                                                <Span Text="60.00" TextColor="Black"/>
+                                                <Span Text="{Binding DiscountedPrice, StringFormat='{0:n}'}" TextColor="Black"/>
                                             </FormattedString>
                                         </Label.FormattedText>
                                     </Label>
-                                    <Label Text="Option" FontSize="Medium" HorizontalOptions="Start" Grid.Row="1"/>
-                                    <Label Text="Discount" FontSize="Medium" HorizontalOptions="Start" Grid.Row="2"/>
-                                    <Label Text="Comment" FontSize="Medium" HorizontalOptions="Start" Grid.Row="3"/>
+                                    <Label HorizontalOptions="End" FontSize="Large" Grid.Row="0" Grid.Column="1">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="{Binding DiscountedPrice, StringFormat='{0:n}'}" TextColor="Black"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label Text="{Binding OptionName}" FontSize="Medium" HorizontalOptions="Start" Grid.Row="1" />
+                                    <Label Text="{Binding Discount}" FontSize="Medium" HorizontalOptions="Start" Grid.Row="2" IsVisible="{Binding IsDiscounted}"/>
+                                    <Label Text="{Binding Comment}" FontSize="Medium" HorizontalOptions="Start" Grid.Row="3" IsVisible="{Binding HasComment}"/>
                                 </Grid>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                <Grid Grid.Row="0" RowSpacing="0">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="auto"/>
-                    </Grid.ColumnDefinitions>
-                    <Label HorizontalOptions="Start" FontSize="Large" Grid.Row="0" Grid.Column="0" LineBreakMode="TailTruncation">
-                        <Label.FormattedText>
-                            <FormattedString>
-                                <Span Text="Menu" TextColor="Black"/>
-                                <Span Text="  "/>
-                                <Span Text="Amount"/>
-                            </FormattedString>
-                        </Label.FormattedText>
-                    </Label>
-                    <Label Text="75.00" HorizontalOptions="End" FontSize="Large" Grid.Row="0" Grid.Column="1"/>
-                    <Label Text="Option" FontSize="Medium" HorizontalOptions="Start" Grid.Row="1"/>
-                    <Label Text="Comment" FontSize="Medium" HorizontalOptions="Start" Grid.Row="2"/>
-                </Grid>
                 <BoxView BackgroundColor="LightGray" HorizontalOptions="FillAndExpand" Margin="20,0" Grid.Row="1" VerticalOptions="Center" HeightRequest="1"/>
                 <Label Text="Total" TextColor="Black" FontSize="Large" HorizontalOptions="Start" Grid.Row="2" Margin="20,0"/>
-                <Label Text="140.0" TextColor="Black" FontSize="Large" HorizontalOptions="End" Grid.Row="2" Margin="20,0"/>
+                <Label Text="{Binding TotalPrice, StringFormat='{0:n}'}" TextColor="Black" FontSize="Large" HorizontalOptions="End" Grid.Row="2" Margin="20,0"/>
                 <Grid Grid.Row="3" Margin="20,0">
-                    <components:Pos_ButtonView TextButton="Save Ticket" HeightRequest="100" Grid.Column="0" />
+                    <components:Pos_ButtonView TextButton="Save Ticket" HeightRequest="100" Grid.Column="0" Command="{Binding SaveTicketCommand}"/>
+                    <components:Pos_ButtonView TextButton="Open Ticket" HeightRequest="100" Grid.Column="0" Command="{Binding OpenTicketCommand}" IsVisible="{Binding ShowOpenButton}"/>
                     <components:Pos_ButtonView TextButton="Charge" HeightRequest="100" Grid.Column="1" />
                 </Grid>
             </Grid>
