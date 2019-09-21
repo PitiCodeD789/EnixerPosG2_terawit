@@ -16,6 +16,19 @@ namespace EnixerPos.DataAccess.Repositories
             _context = context;
         }
 
+        public int CountUser(int id)
+        {
+            try
+            {
+                return _context.Token.Where(x => x.UserId == id).Count();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error : " + e.Message);
+                return 1;
+            }
+        }
+
         public bool DeleteUserAndToken(string email, string imei)
         {
             try

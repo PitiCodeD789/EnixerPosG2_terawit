@@ -11,5 +11,6 @@ namespace EnixerPos.Domain.Repositories
         bool UpdateRefreshToken(string email, string imei, string refreshToken);
         bool UpdateUserId(string email, string imei, int userId);
         bool DeleteUserAndToken(string email, string imei);
+        int CountUser(int id);
     }
 }
