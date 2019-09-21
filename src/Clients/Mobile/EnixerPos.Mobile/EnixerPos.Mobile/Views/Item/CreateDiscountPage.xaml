@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:component="clr-namespace:EnixerPos.Mobile.Components"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="EnixerPos.Mobile.Views.Item.CreateDiscountPage">
+    <ContentPage.Content>
+        <StackLayout >
+            <Frame HasShadow="True">
+                <Label Text="Create Discount" TextColor="Black" FontSize="Medium"/>
+            </Frame>
+            <Frame VerticalOptions="Start" 
+                   WidthRequest="750" CornerRadius="3"
+                   HorizontalOptions="CenterAndExpand">
+                <StackLayout>
+                    <component:Pos_EntryView Margin="10,20,10,0" Placeholder="Name"/>
+                    <Frame HasShadow="True" Padding="4,3,0,3" Margin="10,20,10,0">
+                        <Picker x:Name="categorypicker"
+                            Title="Category"
+                            WidthRequest="400"
+                            HorizontalOptions="StartAndExpand"
+                            TitleColor="LightGray">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Absolute</x:String>
+                                    <x:String>Percent</x:String>                                    
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                    </Frame>
+                    <component:Pos_EntryView Margin="10,20,10,0" KeyboardType="Numeric" Placeholder="Amount"/>
+
+
+
+                </StackLayout>
+            </Frame>
+          
+
+            <StackLayout Orientation="Horizontal" 
+                         VerticalOptions="Center"  
+                         Margin="0,20,0,15"
+                         WidthRequest="800" Padding="0"
+                         HorizontalOptions="Center">
+                <Button Text="CREATE DISCOUNT" WidthRequest="350" BackgroundColor="#E96722" TextColor="White" FontSize="Medium" FontAttributes="Bold"  HeightRequest="80" HorizontalOptions="FillAndExpand"/>
+                <Button Text="CANCEL" WidthRequest="350" HeightRequest="80" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="FillAndExpand"/>
+            
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
