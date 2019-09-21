@@ -77,7 +77,7 @@ namespace EnixerPos.Domain.Services
         public string GetRefreshToken(string email, string imei)
         {
             string refreshToken = Generator.GenerateRandomString(10);
-            TokenEntity tokenEntity = _tokenRepository.UpdateRefreshToken(email, imei);
+            bool tokenEntity = _tokenRepository.UpdateRefreshToken(email, imei, refreshToken);
             return refreshToken;
         }
 
@@ -132,7 +132,7 @@ namespace EnixerPos.Domain.Services
             }
 
             int userId = userEntity.Id;
-            bool isUpdate = _tokenRepository.UpdateUserId(userId);
+            bool isUpdate = _tokenRepository.UpdateUserId(email, imei, userId);
             if (!isUpdate)
             {
                 return null;
