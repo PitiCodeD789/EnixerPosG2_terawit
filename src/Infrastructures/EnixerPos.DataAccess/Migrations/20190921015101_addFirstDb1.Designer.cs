@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EnixerPos.DataAccess.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20190920181724_addFistDb1")]
-    partial class addFistDb1
+    [Migration("20190921015101_addFirstDb1")]
+    partial class addFirstDb1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,6 +28,8 @@ namespace EnixerPos.DataAccess.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<DateTime>("CreateDateTime");
+
+                    b.Property<string>("Imei");
 
                     b.Property<string>("PosName");
 
@@ -62,6 +64,8 @@ namespace EnixerPos.DataAccess.Migrations
 
                     b.Property<int>("ShiftId");
 
+                    b.Property<string>("StoreEmail");
+
                     b.Property<DateTime>("UpdateDateTime")
                         .ValueGeneratedOnAddOrUpdate()
                         .HasDefaultValueSql("GetUtcDate()");
@@ -86,6 +90,8 @@ namespace EnixerPos.DataAccess.Migrations
                     b.Property<bool>("IsDiscountPercentage");
 
                     b.Property<string>("ItemList");
+
+                    b.Property<int>("PaymentType");
 
                     b.Property<string>("PosImei");
 
@@ -167,6 +173,8 @@ namespace EnixerPos.DataAccess.Migrations
                         .ValueGeneratedOnAddOrUpdate()
                         .HasDefaultValueSql("GetUtcDate()");
 
+                    b.Property<string>("Email");
+
                     b.Property<string>("Password");
 
                     b.Property<string>("Salt");
@@ -192,6 +200,10 @@ namespace EnixerPos.DataAccess.Migrations
                         .ValueGeneratedOnAddOrUpdate()
                         .HasDefaultValueSql("GetUtcDate()");
 
+                    b.Property<string>("Email");
+
+                    b.Property<string>("Imei");
+
                     b.Property<string>("RefreshToken");
 
                     b.Property<DateTime>("UpdateDateTime")
@@ -215,11 +227,17 @@ namespace EnixerPos.DataAccess.Migrations
                         .ValueGeneratedOnAddOrUpdate()
                         .HasDefaultValueSql("GetUtcDate()");
 
+                    b.Property<string>("Email");
+
+                    b.Property<string>("NameUser");
+
+                    b.Property<string>("Pin");
+
+                    b.Property<string>("Salt");
+
                     b.Property<DateTime>("UpdateDateTime")
                         .ValueGeneratedOnAddOrUpdate()
                         .HasDefaultValueSql("GetUtcDate()");
-
-                    b.Property<string>("User");
 
                     b.HasKey("Id");
 

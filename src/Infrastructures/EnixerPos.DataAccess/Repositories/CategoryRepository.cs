@@ -7,7 +7,7 @@ using System.Text;
 
 namespace EnixerPos.DataAccess.Repositories
 {
-    class CategoryRepository : ICategoryRepository
+    public class CategoryRepository : ICategoryRepository
     {
         private readonly DataContext _context;
 
