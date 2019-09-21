@@ -52,8 +52,6 @@ namespace EnixerPos.Mobile.Components
         #endregion//
 
         #region BackgroundButton
-        private Color backgroundButton;
-
         public Color BackgroundButton
         {
             get { return (Color)GetValue(BackgroundButtonProperty); }
