@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:bd ="clr-namespace:EnixerPos.Mobile.ViewModels"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+             BackgroundColor="DarkGray"
+                Opacity="0.6"
+             mc:Ignorable="d"
+             x:Class="EnixerPos.Mobile.Views.Popup.OpenShiftButtonPopup">
+    <pages:PopupPage.BindingContext>
+        <bd:OpenshiftViewModel/>
+    </pages:PopupPage.BindingContext>
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation 
+            PositionIn="Left"
+            PositionOut="Left"
+            HasBackgroundAnimation="False"/>
+    </pages:PopupPage.Animation>
+    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+        <Button Text="OPEN SHIFT" 
+                BackgroundColor="Black" 
+                Opacity="0.9"
+                TextColor="White" 
+                CornerRadius="5"
+                Command="{Binding OpenShiftButtonClickCommand}"
+                FontSize="Medium"
+                HeightRequest="100"
+                WidthRequest="300"/>
+    </StackLayout>
+    
+</pages:PopupPage>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:bd ="clr-namespace:EnixerPos.Mobile.ViewModels"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:component="clr-namespace:EnixerPos.Mobile.Components"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+             x:Class="EnixerPos.Mobile.Views.Popup.StartCashPopup">
+    <pages:PopupPage.BindingContext>
+        <bd:OpenshiftViewModel/>
+    </pages:PopupPage.BindingContext>
+    <StackLayout  WidthRequest="750" 
+                 VerticalOptions="CenterAndExpand" 
+                 HorizontalOptions="Center"                       
+                 BackgroundColor="White">
+        <Frame HasShadow="True">
+            <Label Text="Starting Cash" TextColor="Black" FontSize="Medium"/>
+        </Frame>
+        <component:Pos_EntryView Placeholder="0.00" 
+                                 Margin="30" 
+                                 KeyboardType="Numeric" 
+                                 TextEntry="{Binding StartingCash}"
+                                 HorizontalOptions="Center"  
+                                 WidthRequest="300"  />
+        <Button Text="OPEN SHIFT" 
+                BackgroundColor="#E96722"
+                TextColor="White" 
+                HorizontalOptions="CenterAndExpand"
+                WidthRequest="150"
+                Command="{Binding OpenShiftsubmitClickCommand}"
+                HeightRequest="60"
+                Margin="50,0,50,100"
+                CornerRadius="5"/>
+
+    </StackLayout>
+
+</pages:PopupPage>
