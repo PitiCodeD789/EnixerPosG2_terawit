@@ -1,4 +1,6 @@
-﻿using EnixerPos.Mobile.Views;
+﻿
+using EnixerPos.Mobile.ViewModels;
+using EnixerPos.Mobile.Views;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -12,7 +14,8 @@ namespace EnixerPos.Mobile
             InitializeComponent();
 
             // MainPage = new MainPage();
-            MainPage = new MainPage();
+            ShiftPageViewModel getShiftView = new ShiftPageViewModel();
+            MainPage = new NavigationPage(new ShiftPage(getShiftView));
         }
 
         protected override void OnStart()
