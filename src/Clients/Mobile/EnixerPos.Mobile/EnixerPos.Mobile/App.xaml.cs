@@ -15,7 +15,7 @@ namespace EnixerPos.Mobile
 
             // MainPage = new MainPage();
             //  MainPage = new SaleView();
-            MainPage = new NavigationPage(new Views.CashManagePage());
+            MainPage = new NavigationPage(new Views.Item.CreateItem());
         }
 
         protected override void OnStart()
