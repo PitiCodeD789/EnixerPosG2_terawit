@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:components="clr-namespace:EnixerPos.Mobile.Components"
+             mc:Ignorable="d"
+             x:Class="EnixerPos.Mobile.Views.Login">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <components:Pos_EntryView Placeholder="Email"/>
+            <components:Pos_EntryView Placeholder="Password" IsPassword="True"/>
+            <components:Pos_ButtonView TextButton="SIGN IN" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

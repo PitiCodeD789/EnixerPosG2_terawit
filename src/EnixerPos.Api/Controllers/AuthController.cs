@@ -34,7 +34,7 @@ namespace EnixerPos.Api.Controllers
         {
             try
             {
-                string email = command.Email;
+                string email = command.Email.ToLower();
                 string password = command.Password;
                 string imei = command.Imei;
 
@@ -142,7 +142,7 @@ namespace EnixerPos.Api.Controllers
         {
             try
             {
-                string email = command.Email;
+                string email = command.Email.ToLower();
                 string imei = command.Imei;
                 string refreshToken = command.RefreshToken;
 

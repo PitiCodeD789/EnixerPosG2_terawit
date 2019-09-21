@@ -52,5 +52,19 @@ namespace EnixerPos.Mobile.Components
                 defaultBindingMode: BindingMode.TwoWay); //คนที่ประกาศ
         #endregion//
 
+        #region BackgroundButton
+        public Color BackgroundButton
+        {
+            get { return (Color)GetValue(BackgroundButtonProperty); }
+            set { SetValue(BackgroundButtonProperty, value); }
+        }
+        #endregion
+
+        public static readonly BindableProperty BackgroundButtonProperty =
+            BindableProperty.Create(
+                propertyName: "BackgroundButton",
+                returnType: typeof(Color),
+                declaringType: typeof(Pos_ButtonView));
+
     }
 }

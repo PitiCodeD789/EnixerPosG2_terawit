@@ -8,5 +8,6 @@ namespace EnixerPos.Domain.Entities
     {
         public int StoreId { get; set; }
         public string PosName { get; set; }
+        public string Imei { get; set; }
     }
 }

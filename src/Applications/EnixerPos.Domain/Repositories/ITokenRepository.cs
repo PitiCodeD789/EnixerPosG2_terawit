@@ -8,7 +8,7 @@ namespace EnixerPos.Domain.Repositories
     public interface ITokenRepository
     {
         TokenEntity GetTokenByEmailAndImei(string email, string imei);
-        TokenEntity UpdateRefreshToken(string email, string imei);
-        bool UpdateUserId(int userId);
+        bool UpdateRefreshToken(string email, string imei, string refreshToken);
+        bool UpdateUserId(string email, string imei, int userId);
     }
 }

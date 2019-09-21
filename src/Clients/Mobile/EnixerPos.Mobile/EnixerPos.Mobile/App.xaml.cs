@@ -11,7 +11,8 @@ namespace EnixerPos.Mobile
         {
             InitializeComponent();
 
-            MainPage = new SaleView();
+            MainPage = new Login();
+            //MainPage = new MainPage();
         }
 
         protected override void OnStart()
