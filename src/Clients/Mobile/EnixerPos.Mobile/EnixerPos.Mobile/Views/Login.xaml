@@ -7,10 +7,13 @@
              mc:Ignorable="d"
              x:Class="EnixerPos.Mobile.Views.Login">
     <ContentPage.Content>
-        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" WidthRequest="350">
+            <Image Source="logo" WidthRequest="300" Margin="0,0,0,30"/>
             <components:Pos_EntryView Placeholder="Email"/>
             <components:Pos_EntryView Placeholder="Password" IsPassword="True"/>
             <components:Pos_ButtonView TextButton="SIGN IN" />
+            <Label Text="Forgot password?" TextColor="#c3c3c3" FontSize="16" HorizontalTextAlignment="Center"/>
+            <Label Text="Register" TextColor="#e85f16" FontSize="16" HorizontalTextAlignment="Center" Margin="0,50,0,0"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
