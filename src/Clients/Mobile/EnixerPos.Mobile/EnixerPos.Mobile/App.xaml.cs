@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EnixerPos.Mobile.Views;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +11,8 @@ namespace EnixerPos.Mobile
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new Login();
+            //MainPage = new MainPage();
         }
 
         protected override void OnStart()
