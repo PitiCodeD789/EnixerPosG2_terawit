@@ -11,7 +11,7 @@ namespace EnixerPos.Mobile
         {
             InitializeComponent();
 
-            MainPage = new Login();
+            MainPage = new ChargePage();
             //MainPage = new MainPage();
         }
 
