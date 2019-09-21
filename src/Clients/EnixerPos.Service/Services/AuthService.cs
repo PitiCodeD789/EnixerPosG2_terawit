@@ -26,13 +26,15 @@ namespace EnixerPos.Service.Services
             return await Post<GetTokenByRefreshViewModel>(url, model);
         }
 
-        public Task<ResultServiceModel<GetTokenByRefreshViewModel>> GetTokenByRefreshUser(string refreshToken, string user)
+        public async Task<ResultServiceModel<GetTokenByRefreshViewModel>> GetTokenByRefreshUser(string refreshToken, string user)
         {
             GetTokenByRefreshUserCommand model = new GetTokenByRefreshUserCommand()
             {
                 RefreshToken = refreshToken,
                 User = user
             };
+            string url = serviceUrl + "tokenuser";
+            return await Post<GetTokenByRefreshViewModel>(url, model);
         }
 
         public async Task<ResultServiceModel<LoginViewModel>> Login(string email, string password, string imei)
