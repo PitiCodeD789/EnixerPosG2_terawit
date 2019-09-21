@@ -15,9 +15,9 @@ namespace EnixerPos.Mobile.ViewModels
         public SaleViewModel()
         {
             Drinks = new ObservableCollection<ItemModel>() {
-                new ItemModel() { ItemName = "1", CategoryName = "Cat"}, new ItemModel() { ItemName = "2" }, new ItemModel() { ItemName = "3" },
-                new ItemModel() { ItemName = "1"}, new ItemModel() { ItemName = "2" }, new ItemModel() { ItemName = "3" },
-                new ItemModel() { ItemName = "1"}, new ItemModel() { ItemName = "2" }, new ItemModel() { ItemName = "3" }
+                new ItemModel() { Name = "1", CategoryName = "Cat"}, new ItemModel() { Name = "2" }, new ItemModel() { Name = "3" },
+                new ItemModel() { Name = "1"}, new ItemModel() { Name = "2" }, new ItemModel() { Name = "3" },
+                new ItemModel() { Name = "1"}, new ItemModel() { Name = "2" }, new ItemModel() { Name = "3" }
             };
 
             //getCategory
@@ -38,13 +38,13 @@ namespace EnixerPos.Mobile.ViewModels
                         }
                         
                         var button = new Button();
-                        button.Text = item.ItemName;
+                        button.Text = item.Name;
                         button.HeightRequest = 150;
                         button.WidthRequest = 150;
                         button.HorizontalOptions = LayoutOptions.Center;
                         button.VerticalOptions = LayoutOptions.Center;
-                        button.Command = new Command<string>((text) => Application.Current.MainPage.DisplayAlert(item.ItemName,text,"Ok"));
-                        button.CommandParameter = item.ItemName;
+                        button.Command = new Command<string>((text) => Application.Current.MainPage.DisplayAlert(item.Name,text,"Ok"));
+                        button.CommandParameter = item.Name;
                         grid.Children.Add(button,col,row);
                         col++;
                     }

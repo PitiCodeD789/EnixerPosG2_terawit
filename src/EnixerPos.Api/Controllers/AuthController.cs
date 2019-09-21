@@ -57,7 +57,7 @@ namespace EnixerPos.Api.Controllers
 
                 return Ok(model);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine("Error : {0}", e.Message);
                 return StatusCode(StatusCodes.Status500InternalServerError);
@@ -68,7 +68,8 @@ namespace EnixerPos.Api.Controllers
         {
             var claims = new Claim[]
             {
-                new Claim("imei",imei)
+                new Claim("imei", imei),
+                new Claim("user", null)
             };
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
@@ -131,7 +132,7 @@ namespace EnixerPos.Api.Controllers
 
                 return Ok(model);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine("Error : {0}", e.Message);
                 return StatusCode(StatusCodes.Status500InternalServerError);
@@ -164,7 +165,7 @@ namespace EnixerPos.Api.Controllers
 
                 return Ok(model);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine("Error : {0}", e.Message);
                 return StatusCode(StatusCodes.Status500InternalServerError);
@@ -198,6 +199,30 @@ namespace EnixerPos.Api.Controllers
                 };
 
                 return Ok(model);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error : {0}", e.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
+
+        [HttpPost("logout")]
+        [Authorize]
+        [AllowAnonymous]
+        public IActionResult Logout()
+        {
+            try
+            {
+                string email = User.Claims.SingleOrDefault(x => x.Type == "aud").Value;
+                string imei = User.Claims.SingleOrDefault(x => x.Type == "imei").Value;
+
+                bool isLogout = _authService.Logout(email, imei);
+                if (!isLogout)
+                {
+                    return BadRequest();
+                }
+                return NoContent();
             }
             catch(Exception e)
             {
