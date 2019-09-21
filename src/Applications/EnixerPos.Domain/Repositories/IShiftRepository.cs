@@ -8,9 +8,11 @@ namespace EnixerPos.Domain.Repositories
     public interface IShiftRepository
     {
        
+       
         bool Update(ShiftEntity shiftEntity);
-        List<ShiftEntity> GetLast30DayShift();        
-        int CreateShift(ShiftEntity shiftEntity);
+        List<ShiftEntity> GetLast30DayShift(string storeEmail, string posIMEI, int posUserId);        
+        bool CreateShift(ShiftEntity shiftEntity);
         ShiftEntity GetShiftDetailByShiftId(string storeEmail, string posIMEI, int posUserId, int shiftId);
+        int GetShiftId(string storeEmail, string posIMEI, int posUserId);
     }
 }
