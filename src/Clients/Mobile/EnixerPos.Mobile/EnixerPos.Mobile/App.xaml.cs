@@ -12,7 +12,7 @@ namespace EnixerPos.Mobile
             InitializeComponent();
 
             // MainPage = new MainPage();
-            MainPage = new EnterPin();
+            MainPage = new ItemPage();
         }
 
         protected override void OnStart()
