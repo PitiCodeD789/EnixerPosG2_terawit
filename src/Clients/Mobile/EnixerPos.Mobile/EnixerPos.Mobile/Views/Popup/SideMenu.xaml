@@ -39,28 +39,28 @@
         </Grid>
         <StackLayout Grid.Row="1">
             <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                <Image Source="icon_cart" Aspect="AspectFit" HeightRequest="20" VerticalOptions="Center" Margin="10,0"/>
+                <Image Source="icon_cart" Aspect="AspectFit" HeightRequest="25" VerticalOptions="Center" Margin="10,0"/>
                 <Label VerticalOptions="FillAndExpand"  VerticalTextAlignment="Center"  Text="Sale" FontSize="24"/>
             </StackLayout>
             <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                <Image Source="icon_receipt" Aspect="AspectFit" HeightRequest="20" VerticalOptions="Center" Margin="10,0"/>
+                <Image Source="icon_receipt" Aspect="AspectFit" HeightRequest="25" VerticalOptions="Center" Margin="10,0"/>
                 <Label VerticalOptions="FillAndExpand"  VerticalTextAlignment="Center"  Text="Receipts" FontSize="24"/>
             </StackLayout>
             <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                <Image Source="icon_clock" Aspect="AspectFit" HeightRequest="20" VerticalOptions="Center" Margin="10,0"/>
+                <Image Source="icon_clock" Aspect="AspectFit" HeightRequest="25" VerticalOptions="Center" Margin="10,0"/>
                 <Label VerticalOptions="FillAndExpand"  VerticalTextAlignment="Center"  Text="Shift" FontSize="24"/>
             </StackLayout>
             <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                <Image Source="icon_list" Aspect="AspectFit" HeightRequest="20" VerticalOptions="Center" Margin="10,0"/>
+                <Image Source="icon_list" Aspect="AspectFit" HeightRequest="25" VerticalOptions="Center" Margin="10,0"/>
                 <Label VerticalOptions="FillAndExpand"  VerticalTextAlignment="Center"  Text="Item" FontSize="24"/>
             </StackLayout>
             <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                <Image Source="icon_gear" Aspect="AspectFit" HeightRequest="20" VerticalOptions="Center" Margin="10,0"/>
+                <Image Source="icon_gear" Aspect="AspectFit" HeightRequest="25" VerticalOptions="Center" Margin="10,0"/>
                 <Label VerticalOptions="FillAndExpand"  VerticalTextAlignment="Center" Text="Setting" FontSize="24"/>
             </StackLayout>
             <BoxView BackgroundColor="LightGray" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="10,0"/>
             <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
-                <Image Source="icon_gear" Aspect="AspectFit" HeightRequest="20" VerticalOptions="Center" Margin="10,0"/>
+                <Image Source="icon_gear" Aspect="AspectFit" HeightRequest="25" VerticalOptions="Center" Margin="10,0"/>
                 <Label VerticalOptions="FillAndExpand"  VerticalTextAlignment="Center" Text="Back Office" FontSize="24"/>
             </StackLayout>
         </StackLayout>

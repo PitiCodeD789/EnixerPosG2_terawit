@@ -6,10 +6,10 @@
              mc:Ignorable="d"
              x:Class="EnixerPos.Mobile.Components.Pos_ItemView">
   <ContentView.Content>
-        <Frame Padding="0" HasShadow="True">
-            <Button x:Name="mButton" Text="Item" Clicked="MButton_Clicked" 
-                    BackgroundColor="#fafafa"  TextColor="Black" Margin="10" CornerRadius="5"
-                    FontAttributes="Bold" FontSize="21" HeightRequest="100" WidthRequest="100"/>
+        <Frame Padding="0" HasShadow="True" HeightRequest="140" WidthRequest="140" IsClippedToBounds="True" HorizontalOptions="Center" VerticalOptions="Center">
+            <Button x:Name="mButton" Text="{Binding TextButton}" Clicked="MButton_Clicked" 
+                    BackgroundColor="#fafafa"  TextColor="Black" CornerRadius="5"
+                    FontAttributes="Bold" FontSize="21" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
         </Frame>
     </ContentView.Content>
 </ContentView>

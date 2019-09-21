@@ -1,4 +1,6 @@
-﻿using EnixerPos.Mobile.Views.Popup;
+﻿using DLToolkit.Forms.Controls;
+using EnixerPos.Mobile.ViewModels;
+using EnixerPos.Mobile.Views.Popup;
 using Rg.Plugins.Popup.Extensions;
 using System;
 using System.Collections.Generic;
@@ -16,7 +18,13 @@ namespace EnixerPos.Mobile.Views
     {
         public SaleView()
         {
+            SaleViewModel vm = new SaleViewModel();
             InitializeComponent();
+            BindingContext = vm;
+            foreach (var itemSource in vm.TabChildren)
+            {
+                TabView.AddTab(itemSource);
+            }
         }
 
         private void Button_Clicked(object sender, EventArgs e)
