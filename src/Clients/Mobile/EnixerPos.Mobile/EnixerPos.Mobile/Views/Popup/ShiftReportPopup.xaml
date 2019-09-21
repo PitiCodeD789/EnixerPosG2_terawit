@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:component="clr-namespace:EnixerPos.Mobile.Components"
+             xmlns:bd ="clr-namespace:EnixerPos.Mobile.ViewModels"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+             x:Class="EnixerPos.Mobile.Views.Popup.ShiftReportPopup">
+   
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation 
+            PositionIn="Left"
+            PositionOut="Left"
+            HasBackgroundAnimation="False"/>
+    </pages:PopupPage.Animation>
+    <StackLayout  WidthRequest="750" 
+                 VerticalOptions="CenterAndExpand" 
+                 HorizontalOptions="Center"                       
+                 BackgroundColor="White">
+        <Frame HasShadow="True">
+            <Label Text="Shift" TextColor="Black" FontSize="Medium"/>
+        </Frame>
+       
+            <StackLayout>
+               
+                <ScrollView>
+                    <StackLayout>
+                    
+                    <component:Pos_InlineLable x:Name="Shiftopened" LeftTexLable="Shift opened"
+                                                       RightTexLable="18 Jan 2019 08:40:12"                                                      
+                                                       LableTextMargin="50,20,50,0" />
+
+                        <BoxView Color="Gray" 
+                                     HorizontalOptions="Fill" 
+                                     Margin="50,5,50,0" 
+                                     VerticalOptions="Start"  
+                                     HeightRequest="1"/>
+
+                        <Label Text="Cash drawer" 
+                                   HorizontalOptions="StartAndExpand" 
+                                   TextColor="#E96722"
+                                   Margin="50,20,50,0"
+                                   FontSize="Medium"/>
+                    <component:Pos_InlineLable x:Name="Startingcash" LeftTexLable="Starting cash"
+                                                       RightTexLable="3,000.00"                                                      
+                                                       LableTextMargin="50,0,50,0" />
+                    <component:Pos_InlineLable x:Name="Cashpayment" LeftTexLable="Cash payment"
+                                                       RightTexLable="1,189.00"                                                      
+                                                       LableTextMargin="50,0,50,0" />
+                    <component:Pos_InlineLable x:Name="Cashrefunds" LeftTexLable="Cash refunds"
+                                                       RightTexLable="0.00"                                                      
+                                                       LableTextMargin="50,0,50,0" />
+                    <component:Pos_InlineLable x:Name="Paidin" LeftTexLable="Paid in"
+                                                       RightTexLable="0.00"                                                      
+                                                       LableTextMargin="50,0,50,0" />
+                    <component:Pos_InlineLable x:Name="Paidout" LeftTexLable="Paid out"
+                                                       RightTexLable="0.00"                                                      
+                                                       LableTextMargin="50,0,50,0" />
+                    <component:Pos_InlineLable x:Name="Expectedcashamount" LeftTexLable="Expected cash amount"
+                                                       RightTexLable="4,189.00" 
+                                                       LableFontAttributes="Bold"
+                                                       LableTextMargin="50,20,50,0" />
+
+                        <BoxView Color="Gray" 
+                                     HorizontalOptions="Fill" 
+                                     Margin="50,5,50,0" 
+                                     VerticalOptions="Start"  
+                                     HeightRequest="1"/>
+                        <Label Text="Sales summary" 
+                                   HorizontalOptions="StartAndExpand" 
+                                   TextColor="#E96722"
+                                   Margin="50,20,50,0"
+                                   FontSize="Medium"/>
+                    <component:Pos_InlineLable x:Name="Grosssales" LeftTexLable="Gross sales"
+                                                       RightTexLable="2,281.00"                                                      
+                                                       LableTextMargin="50,0,50,0" />
+                    <component:Pos_InlineLable x:Name="Refunds" LeftTexLable="Refunds"
+                                                       RightTexLable="0.00"                                                      
+                                                       LableTextMargin="50,0,50,0" />
+                    <component:Pos_InlineLable x:Name="Discount" LeftTexLable="Discount"
+                                                       RightTexLable="0.00"                                                      
+                                                       LableTextMargin="50,0,50,50" />
+
+
+                        
+
+                    </StackLayout>
+
+                </ScrollView>
+            </StackLayout>
+      
+
+
+    </StackLayout>
+
+</pages:PopupPage>

@@ -34,7 +34,9 @@ namespace EnixerPos.Mobile.Components
         public string RightTexLable
         {
             get { return (string)GetValue(RightTexLableProperty); }
-            set { SetValue(RightTexLableProperty, value); }
+            set
+            { SetValue(RightTexLableProperty, value);                
+            }
         }
 
         public static readonly BindableProperty RightTexLableProperty =
@@ -42,7 +44,13 @@ namespace EnixerPos.Mobile.Components
                 propertyName: "RightTexLable",
                 returnType: typeof(string),
                 declaringType: typeof(Pos_InlineLable),
-                defaultBindingMode: BindingMode.TwoWay);
+                defaultBindingMode: BindingMode.TwoWay, propertyChanged: RightTexLablePropertyChanged);
+
+        private static void RightTexLablePropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var pos_InlineLable = (Pos_InlineLable)bindable;
+            pos_InlineLable.mRightTexLable.Text = (string)newValue;
+        }
 
         private Color labletextColor = Color.Black;
 
@@ -83,9 +91,6 @@ namespace EnixerPos.Mobile.Components
                 mRightTexLable.FontAttributes = lableFontAttributes;
             }
         }
-
-
-
 
 
     }

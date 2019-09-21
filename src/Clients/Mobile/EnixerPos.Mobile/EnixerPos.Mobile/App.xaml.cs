@@ -1,4 +1,6 @@
-﻿using EnixerPos.Mobile.Views;
+﻿
+using EnixerPos.Mobile.ViewModels;
+using EnixerPos.Mobile.Views;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
