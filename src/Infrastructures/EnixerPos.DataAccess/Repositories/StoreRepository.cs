@@ -21,7 +21,7 @@ namespace EnixerPos.DataAccess.Repositories
             {
                 return _context.Store.Where(x => x.Email.ToLower() == email.ToLower()).FirstOrDefault();
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 return null;
             }

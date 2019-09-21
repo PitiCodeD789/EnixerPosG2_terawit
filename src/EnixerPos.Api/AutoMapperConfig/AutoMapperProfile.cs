@@ -26,8 +26,6 @@ namespace EnixerPos.Api.AutoMapperConfig
             CreateMap<DiscountEntity, DiscountDto>().ReverseMap();
             CreateMap<ItemDto, ItemModel>().ReverseMap();
             CreateMap<List<ItemModel>, List<ItemDto>>().ReverseMap();
-
         }
-
     }
 }

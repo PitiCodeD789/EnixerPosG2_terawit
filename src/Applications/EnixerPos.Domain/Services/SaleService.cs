@@ -84,7 +84,7 @@ namespace EnixerPos.Domain.Services
                     ShiftId = payment.ShiftId,
                     Store = storeName,
                     Pos = posName,
-                    ItemList = _mapper.Map<List<DtoModels.Sale.OrderItemModel>>(itemList),
+                    ItemList = JsonConvert.DeserializeObject<List<DtoModels.Sale.OrderItemModel>>(itemList),
                     Discount = payment.Discount,
                     IsDiscountPercentage = payment.IsDiscountPercentage,
                     Total = payment.Total,
@@ -93,7 +93,7 @@ namespace EnixerPos.Domain.Services
                     PaymentType = payment.PaymentType
                 };
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 return null;
             }

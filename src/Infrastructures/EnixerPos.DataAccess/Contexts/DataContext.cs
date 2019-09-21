@@ -12,7 +12,7 @@ namespace EnixerPos.DataAccess.Contexts
         protected override void OnConfiguring(DbContextOptionsBuilder builder)
         {
             builder.UseSqlServer(@"Server=git.dookdik.me;Database=EnixerPosG2;Trusted_Connection=True;user id=sa;password=Gg123456789;Integrated Security=false;");
-
+            builder.EnableSensitiveDataLogging();
         }
 
         public DbSet<DeviceEntity> Device { get; set; }
