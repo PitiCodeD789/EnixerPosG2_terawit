@@ -10,7 +10,7 @@ using Xamarin.Forms;
 
 namespace EnixerPos.Mobile.ViewModels
 {
-    public class ShiftPopUpPageViewModel : INotifyPropertyChanged
+    public class ShiftPopUpPageViewModel : BaseViewModel
     {
         //public List<GetShiftViewModel> testData { get; set; }
 

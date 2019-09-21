@@ -5,7 +5,7 @@ using System.Text;
 
 namespace EnixerPos.Mobile.ViewModels
 {
-    public class ShiftPageViewModel
+    public class ShiftPageViewModel : BaseViewModel
     {
         public GetShiftViewModel getShiftView { get; set; }
         public ShiftPageViewModel()
