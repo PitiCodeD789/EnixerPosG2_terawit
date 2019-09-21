@@ -26,6 +26,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\EnixerPos.Api.ViewModels\EnixerPos.Api.ViewModels.csproj" />
+    <ProjectReference Include="..\..\..\EnixerPos.Service\EnixerPos.Service.csproj" />
   </ItemGroup>
 
   <ItemGroup>

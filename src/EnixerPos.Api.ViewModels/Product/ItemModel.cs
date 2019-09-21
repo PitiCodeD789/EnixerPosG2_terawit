@@ -10,5 +10,7 @@ namespace EnixerPos.Api.ViewModels.Product
         public string CategoryName { get; set; }
         public ItemOptionModel[] ItemOptions { get; set; }
         public string Color { get; set; }
+        public decimal Price { get; set; }
+        public decimal Cost { get; set; }
     }
 }
