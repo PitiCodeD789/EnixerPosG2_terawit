@@ -17,7 +17,7 @@ namespace EnixerPos.Mobile
             TicketList = new List<ReceiptViewModel>();
 
             // MainPage = new MainPage();
-            MainPage = new SaleView();
+            MainPage = new NavigationPage( new SaleView());
         }
 
         protected override void OnStart()

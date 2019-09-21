@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:components="clr-namespace:EnixerPos.Mobile.Components"
              mc:Ignorable="d"
+             NavigationPage.HasNavigationBar="False"
              x:Class="EnixerPos.Mobile.Views.ChargePage">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -26,7 +27,11 @@
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
             <Frame Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0">
-                <Image Source="icon_left" HorizontalOptions="Start" Margin="20,0" HeightRequest="30" VerticalOptions="Center"/>
+                <Image Source="icon_left" HorizontalOptions="Start" Margin="20,0" HeightRequest="30" VerticalOptions="Center">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Back_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
             </Frame>
             <BoxView BackgroundColor="LightGray" WidthRequest="1" HorizontalOptions="Center" Grid.RowSpan="2" Grid.Column="1"/>
             <Grid Grid.Row="1" Grid.Column="0" Padding="20,20,20,50">
@@ -34,13 +39,13 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
-                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
-                <ListView Grid.Row="0">
+                <ListView Grid.Row="0" ItemsSource="{Binding CurrentTicket}" SelectionMode="None" HasUnevenRows="True">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <Grid>
+                                <Grid RowSpacing="0">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="auto"/>
                                         <RowDefinition Height="auto"/>
@@ -54,54 +59,41 @@
                                     <Label HorizontalOptions="Start" FontSize="Large" Grid.Row="0" Grid.Column="0" LineBreakMode="TailTruncation">
                                         <Label.FormattedText>
                                             <FormattedString>
-                                                <Span Text="Menu" TextColor="Black"/>
-                                                <Span Text="Amount"/>
+                                                <Span Text="{Binding ItemName}" TextColor="Black"/>
+                                                <Span Text="  x"/>
+                                                <Span Text="{Binding Quantity}"/>
                                             </FormattedString>
                                         </Label.FormattedText>
                                     </Label>
-                                    <Label Text="75.00" HorizontalOptions="End" FontSize="Large" Grid.Row="0" Grid.Column="1">
+                                    <Label HorizontalOptions="End" FontSize="Large" Grid.Row="0" Grid.Column="1" IsVisible="{Binding IsDiscounted}">
                                         <Label.FormattedText>
                                             <FormattedString>
-                                                <Span Text="75.00" TextColor="Gray" TextDecorations="Strikethrough"/>
+                                                <Span Text="{Binding ItemPrice, StringFormat='{0:n}'}" TextColor="Gray" TextDecorations="Strikethrough"/>
                                                 <Span Text="  "/>
-                                                <Span Text="60.00" TextColor="Black"/>
+                                                <Span Text="{Binding DiscountedPrice, StringFormat='{0:n}'}" TextColor="Black"/>
                                             </FormattedString>
                                         </Label.FormattedText>
                                     </Label>
-                                    <Label Text="Option" FontSize="Medium" HorizontalOptions="Start" Grid.Row="1"/>
-                                    <Label Text="Discount" FontSize="Medium" HorizontalOptions="Start" Grid.Row="2"/>
-                                    <Label Text="Comment" FontSize="Medium" HorizontalOptions="Start" Grid.Row="3"/>
+                                    <Label HorizontalOptions="End" FontSize="Large" Grid.Row="0" Grid.Column="1">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="{Binding DiscountedPrice, StringFormat='{0:n}'}" TextColor="Black"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label Text="{Binding OptionName}" FontSize="Medium" HorizontalOptions="Start" Grid.Row="1" />
+                                    <Label Text="{Binding Discount}" FontSize="Medium" HorizontalOptions="Start" Grid.Row="2" IsVisible="{Binding IsDiscounted}"/>
+                                    <Label Text="{Binding Comment}" FontSize="Medium" HorizontalOptions="Start" Grid.Row="3" IsVisible="{Binding HasComment}"/>
                                 </Grid>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                <Grid Grid.Row="0" RowSpacing="0">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="auto"/>
-                    </Grid.ColumnDefinitions>
-                    <Label HorizontalOptions="Start" FontSize="Large" Grid.Row="0" Grid.Column="0" LineBreakMode="TailTruncation">
-                        <Label.FormattedText>
-                            <FormattedString>
-                                <Span Text="Menu" TextColor="Black"/>
-                                <Span Text="  "/>
-                                <Span Text="Amount"/>
-                            </FormattedString>
-                        </Label.FormattedText>
-                    </Label>
-                    <Label Text="75.00" HorizontalOptions="End" FontSize="Large" Grid.Row="0" Grid.Column="1"/>
-                    <Label Text="Option" FontSize="Medium" HorizontalOptions="Start" Grid.Row="1"/>
-                    <Label Text="Comment" FontSize="Medium" HorizontalOptions="Start" Grid.Row="2"/>
-                </Grid>
                 <BoxView BackgroundColor="LightGray" HorizontalOptions="FillAndExpand" Margin="20,0" Grid.Row="1" VerticalOptions="Center" HeightRequest="1"/>
-                <Label Text="Total" TextColor="Black" FontSize="Large" HorizontalOptions="Start" Grid.Row="2" Margin="20,0"/>
-                <Label Text="140.0" TextColor="Black" FontSize="Large" HorizontalOptions="End" Grid.Row="2" Margin="20,0"/>
+                <Label Text="Discount" TextColor="Black" FontSize="Large" HorizontalOptions="Start" Grid.Row="3" Margin="20,0" IsVisible="{Binding IsDiscount}"/>
+                <Label Text="{Binding TotalDiscount}" TextColor="Black" FontSize="Large" HorizontalOptions="End" Grid.Row="3" Margin="20,0" IsVisible="{Binding IsDiscount}"/>
+                <Label Text="Total" TextColor="Black" FontSize="Large" HorizontalOptions="Start" Grid.Row="3" Margin="20,0"/>
+                <Label Text="{Binding TotalPrice}" TextColor="Black" FontSize="Large" HorizontalOptions="End" Grid.Row="3" Margin="20,0"/>
             </Grid>
             <Grid Grid.Row="1" Grid.Column="2" Padding="20">
                 <Grid.RowDefinitions>
@@ -114,18 +106,18 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="*"/> 
                 </Grid.RowDefinitions>
-                <Label Text="140.00" TextColor="Black" FontSize="35" HorizontalOptions="Center" VerticalOptions="End" Grid.Row="0" Grid.ColumnSpan="4" />
+                <Label Text="{Binding TotalPrice}" TextColor="Black" FontSize="35" HorizontalOptions="Center" VerticalOptions="End" Grid.Row="0" Grid.ColumnSpan="4" />
                 <Label Text="Total Amount" HorizontalOptions="Center" VerticalOptions="Start" Grid.Row="1" Grid.ColumnSpan="4"/>
                 <Label Text="Cash Received" TextColor="#E96722" FontSize="Medium" Grid.Row="2"/>
-                <components:Pos_EntryView TextEntry="{Binding CashPaidAmount}" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="3"/>
-                <components:Pos_ButtonView TextButton="CHARGE" Grid.Column="3" Grid.Row="3"/>
-                <Button Text="B1" Grid.Row="4" Grid.Column="0" Style="{StaticResource Button}"/>
-                <Button Text="B2" Grid.Row="4" Grid.Column="1" Style="{StaticResource Button}"/>
-                <Button Text="B3" Grid.Row="4" Grid.Column="2" Style="{StaticResource Button}"/>
-                <Button Text="B4" Grid.Row="4" Grid.Column="3" Style="{StaticResource Button}"/>
-                <Button Text="DebitCard" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource Button}"/>
-                <Button Text="CreditCard" Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2" Style="{StaticResource Button}"/>
-                <Button Text="ExnixerWallet" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource Button}"/>
+                <components:Pos_EntryView TextEntry="{Binding Cash}" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="3" HorizontalTextAlignment="Center"/>
+                <components:Pos_ButtonView TextButton="CHARGE" Grid.Column="3" Grid.Row="3" Command="{Binding CashPaymentCommand}"/>
+                <Button Text="{Binding ExpectedCash1}" Grid.Row="4" Grid.Column="0" Style="{StaticResource Button}" Command="{Binding ExpectedCashCommand}" CommandParameter="{Binding ExpectedCash1}"/>
+                <Button Text="{Binding ExpectedCash2}" Grid.Row="4" Grid.Column="1" Style="{StaticResource Button}" Command="{Binding ExpectedCashCommand}" CommandParameter="{Binding ExpectedCash2}"/>
+                <Button Text="{Binding ExpectedCash3}" Grid.Row="4" Grid.Column="2" Style="{StaticResource Button}" Command="{Binding ExpectedCashCommand}" CommandParameter="{Binding ExpectedCash3}"/>
+                <Button Text="{Binding ExpectedCash4}" Grid.Row="4" Grid.Column="3" Style="{StaticResource Button}" Command="{Binding ExpectedCashCommand}" CommandParameter="{Binding ExpectedCash4}"/>
+                <Button Text="DebitCard" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource Button}" Command="{Binding PaymentCommand}" CommandParameter="Debit"/>
+                <Button Text="CreditCard" Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2" Style="{StaticResource Button}" Command="{Binding PaymentCommand}" CommandParameter="Credit"/>
+                <Button Text="EnixerWallet" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource Button}" Command="{Binding PaymentCommand}" CommandParameter="Wallet"/>
 
             </Grid>
         </Grid>

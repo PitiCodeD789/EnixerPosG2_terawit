@@ -4,6 +4,7 @@ using EnixerPos.Api.ViewModels.Product;
 using EnixerPos.Api.ViewModels.Sale;
 using EnixerPos.Mobile.Components;
 using EnixerPos.Mobile.Models;
+using EnixerPos.Mobile.Views;
 using EnixerPos.Mobile.Views.Popup;
 using EnixerPos.Service.Models;
 using EnixerPos.Service.Services;
@@ -91,6 +92,7 @@ namespace EnixerPos.Mobile.ViewModels
             SaveTicketCommand = new Command(SaveTicket);
             OpenTicketListCommand = new Command(OpenTicketList);
             OpenTicketCommand = new Command<int>((ticketNumber) => OpenTicket(ticketNumber));
+            ChargeCommand = new Command(Charge);
         }
 
         public Command QuantityChangeCommand { get; set; }
@@ -98,6 +100,7 @@ namespace EnixerPos.Mobile.ViewModels
         public Command SaveTicketCommand { get; set; }
         public Command OpenTicketListCommand { get; set; }
         public Command OpenTicketCommand { get; set; }
+        public Command ChargeCommand { get; set; }
 
         public void QuantityChange(string change)
         {
@@ -141,6 +144,7 @@ namespace EnixerPos.Mobile.ViewModels
             CurrentItem = new ItemModel();
             CurrentOption = new List<string>();
             CurrentSelectedOptionIndex = 0;
+            Quantity = 1;
         }
         void OpenOption(ItemModel item)
         {
@@ -248,7 +252,16 @@ namespace EnixerPos.Mobile.ViewModels
             }
             PopupNavigation.PopAllAsync();
         }
-
+        void Charge()
+        {
+            ReceiptViewModel receipt = new ReceiptViewModel()
+            {
+                ItemList = CurrentTicket.ToList(),
+                Total = TotalPrice,
+                CreateDateTime = DateTime.Now
+            };
+            Application.Current.MainPage.Navigation.PushAsync(new ChargePage(receipt));
+        }
 
         #region Propfull
         private bool _openButton;

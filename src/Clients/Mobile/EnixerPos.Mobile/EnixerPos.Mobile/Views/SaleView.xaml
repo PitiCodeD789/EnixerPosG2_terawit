@@ -7,6 +7,7 @@
              xmlns:components="clr-namespace:EnixerPos.Mobile.Components"
              xmlns:ai="clr-namespace:AiForms.Renderers;assembly=CollectionView"
              xmlns:tabView="clr-namespace:Xam.Plugin.TabView;assembly=Xam.Plugin.TabView"
+             NavigationPage.HasNavigationBar="False"
              x:Class="EnixerPos.Mobile.Views.SaleView">
     <ContentPage.Content>
         <Grid ColumnSpacing="0" BackgroundColor="White">
@@ -135,7 +136,7 @@
                 <Grid Grid.Row="3" Margin="20,0">
                     <components:Pos_ButtonView TextButton="Save Ticket" HeightRequest="100" Grid.Column="0" Command="{Binding SaveTicketCommand}"/>
                     <components:Pos_ButtonView TextButton="Open Ticket" HeightRequest="100" Grid.Column="0" Command="{Binding OpenTicketListCommand}" IsVisible="{Binding ShowOpenButton}"/>
-                    <components:Pos_ButtonView TextButton="Charge" HeightRequest="100" Grid.Column="1" />
+                    <components:Pos_ButtonView TextButton="Charge" HeightRequest="100" Grid.Column="1" Command="{Binding ChargeCommand}"/>
                 </Grid>
             </Grid>
             
