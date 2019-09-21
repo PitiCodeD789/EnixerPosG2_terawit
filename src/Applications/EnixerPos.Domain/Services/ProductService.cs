@@ -1,5 +1,7 @@
-﻿using EnixerPos.Api.ViewModels.Product;
+﻿using AutoMapper;
+using EnixerPos.Api.ViewModels.Product;
 using EnixerPos.Domain.DtoModels;
+using EnixerPos.Domain.Entities;
 using EnixerPos.Domain.Interfaces;
 using EnixerPos.Domain.Repositories;
 using System;
@@ -15,13 +17,15 @@ namespace EnixerPos.Domain.Services
         ICategoryRepository _categoryRepository;
         IDiscountRepository _discountRepository;
         IStoreRepository _storeRepository;
+        IMapper _mapper;
 
-        public ProductService(IItemRepository itemRepository, ICategoryRepository categoryRepository, IDiscountRepository discountRepository, IStoreRepository storeRepository)
+        public ProductService(IItemRepository itemRepository, ICategoryRepository categoryRepository, IDiscountRepository discountRepository, IStoreRepository storeRepository, IMapper mapper)
         {
             _itemRepository = itemRepository;
             _categoryRepository = categoryRepository;
             _discountRepository = discountRepository;
             _storeRepository = storeRepository;
+            _mapper = mapper;
         }
 
         #region Add
@@ -162,8 +166,8 @@ namespace EnixerPos.Domain.Services
 
                 List<ItemDto> items = _itemRepository.GetItemsByStoreId(storeId);
 
-                //TODO: Add AutoMapper
-                //viewModel.Items = items;
+                var tempItem = Map<ItemDto,ItemModel>(items);
+                viewModel.Items = tempItem;
                 return viewModel;
             }
             catch (Exception e)
@@ -320,5 +324,26 @@ namespace EnixerPos.Domain.Services
             }
         }
         #endregion
+
+
+        public H Map<T, H>(T post)
+            where T : class
+            where H : class
+        {
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<T, H>());
+            var mapper = new Mapper(config);
+            H postDTO = mapper.Map<H>(post);
+            return postDTO;
+        }
+
+        public List<H> Map<T, H>(List<T> model) //T - TypeIn, H - TypeOut
+            where T : class
+            where H : class
+        {
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<T, H>());
+            var mapper = new Mapper(config);
+            List<H> DTOs = mapper.Map<List<H>>(model);
+            return DTOs;
+        }
     }
 }

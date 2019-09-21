@@ -22,10 +22,13 @@ namespace EnixerPos.DataAccess.Contexts
         public DbSet<StoreEntity> Store { get; set; }
         public DbSet<TokenEntity> Token { get; set; }
         public DbSet<UserEntity> User { get; set; }
+        public DbSet<CategoryEntity> Categories { get; set; }
+        public DbSet<DiscountEntity> Discounts { get; set; }
+        public DbSet<ItemEntity> Items { get; set; }
 
 
-   
-            protected override void OnModelCreating(ModelBuilder modelBuilder)
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
            modelBuilder.ApplyConfiguration(new DeviceConfiguration());
             modelBuilder.ApplyConfiguration(new ManageCashConfiguration());
@@ -34,6 +37,9 @@ namespace EnixerPos.DataAccess.Contexts
             modelBuilder.ApplyConfiguration(new StoreConfiguration());
             modelBuilder.ApplyConfiguration(new TokenConfiguration());
             modelBuilder.ApplyConfiguration(new UserConfiguration());
+            modelBuilder.ApplyConfiguration(new ItemConfiguration());
+            modelBuilder.ApplyConfiguration(new CategoryConfiguration());
+            modelBuilder.ApplyConfiguration(new DiscountConfiguration());
 
         }
 
