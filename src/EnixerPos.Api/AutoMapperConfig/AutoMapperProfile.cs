@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using EnixerPos.Api.ViewModels.Product;
+using EnixerPos.Api.ViewModels.Sale;
 using EnixerPos.Api.ViewModels.Shifts;
 using EnixerPos.Domain.DtoModels;
+using EnixerPos.Domain.DtoModels.Sale;
 using EnixerPos.Domain.DtoModels.Shifts;
 using EnixerPos.Domain.Entities;
 using System;
@@ -26,6 +28,8 @@ namespace EnixerPos.Api.AutoMapperConfig
             CreateMap<DiscountEntity, DiscountDto>().ReverseMap();
             CreateMap<ItemDto, ItemModel>().ReverseMap();
             CreateMap<List<ItemModel>, List<ItemDto>>().ReverseMap();
+            CreateMap<List<ReceiptDto>, List<ReceiptViewModel>>();
+            CreateMap<ReceiptDto, ReceiptViewModel>();
         }
     }
 }

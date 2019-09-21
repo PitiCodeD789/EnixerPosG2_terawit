@@ -19,6 +19,8 @@ namespace EnixerPos.DataAccess.Repositories
         {
             try
             {
+                if (email == null)
+                    return null;
                 return _context.Store.Where(x => x.Email.ToLower() == email.ToLower()).FirstOrDefault();
             }
             catch (Exception e)

@@ -64,7 +64,8 @@ namespace EnixerPos.Api
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IDiscountRepository, DiscountRepository>();
             services.AddScoped<ISaleService, SaleService>();
-
+            services.AddScoped<IReceiptService, ReceiptService>();
+            
             services.AddAutoMapper(typeof(AutoMapperProfile));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

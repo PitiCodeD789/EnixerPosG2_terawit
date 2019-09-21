@@ -7,6 +7,6 @@ namespace EnixerPos.Domain.Interfaces
 {
     public interface IReceiptService
     {
-        List<ReceiptDto> GetReceiptsByDate(DateTime date);
+        List<ReceiptDto> GetReceiptsByDate(DateTime date, string email, string Imei);
     }
 }
