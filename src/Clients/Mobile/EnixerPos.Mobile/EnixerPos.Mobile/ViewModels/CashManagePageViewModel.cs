@@ -40,8 +40,8 @@ namespace EnixerPos.Mobile.ViewModels
 
         public string Comment
         {
-            get { return amount; }
-            set { amount = value; OnPropertyChanged("Comment"); }
+            get { return comment; }
+            set { comment = value; OnPropertyChanged("Comment"); }
         }
     }
 }
