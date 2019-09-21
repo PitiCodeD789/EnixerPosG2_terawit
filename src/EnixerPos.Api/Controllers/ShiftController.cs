@@ -32,15 +32,15 @@ namespace EnixerPos.Api.Controllers
                 return BadRequest();
             }
             decimal startingCash = openShift.StartingCash;
-            string storeEmail = "sert@gmail.com";
-            string posIMEI = "00200202020000";
-            int posUserId = 12;
-
+            string storeEmail = openShift.StoreEmail;
+            string posIMEI = openShift.PosImei;
+            int posUserId = openShift.PosUserId; 
+           
             int openId = _shiftService.OpenShift(storeEmail, posIMEI, startingCash, posUserId);
 
-            if(openId == null)
+            if(openId == 0)
             {
-                return NoContent();
+                return BadRequest();
             }
 
             OpenShiftViewModel openShiftView = new OpenShiftViewModel { OpenShiftId = openId };

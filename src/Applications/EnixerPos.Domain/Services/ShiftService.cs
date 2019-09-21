@@ -188,7 +188,17 @@ namespace EnixerPos.Domain.Services
                 shiftEntity.PosIMEI = posIMEI;
                 shiftEntity.StartingCash = startingCash;
                 shiftEntity.PosUserId = posUserId;
+                shiftEntity.Available = true;
+                ShiftEntity data = _shiftRepository.GetShift(storeEmail, posIMEI, posUserId);
+                if(data == null)
+                {
+                    return _shiftRepository.CreateShift(shiftEntity);
 
+                }
+               if(data.Available == true)
+                {
+                    return 0;
+                }
                return _shiftRepository.CreateShift(shiftEntity);
                 
             }
