@@ -6,6 +6,6 @@ namespace EnixerPos.Service.Helpers
 {
     public static class Helper
     {
-        public static string BaseUrl { get; set; } = "http://localhost/api/";
+        public static string BaseUrl { get; set; } = "http://localhost:30000/api/";
     }
 }

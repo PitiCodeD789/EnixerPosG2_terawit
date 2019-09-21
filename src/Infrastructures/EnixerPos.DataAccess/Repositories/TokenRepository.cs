@@ -83,6 +83,7 @@ namespace EnixerPos.DataAccess.Repositories
             {
                 var token = _context.Token.Where(x => x.Email == email && x.Imei == imei).Single();
                 token.UserId = userId;
+                token.UpdateDateTime = DateTime.UtcNow;
 
                 _context.SaveChanges();
                 return true;
