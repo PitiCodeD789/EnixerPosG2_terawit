@@ -6,5 +6,6 @@ namespace EnixerPos.Api.ViewModels.Product
 {
     public class CategoryModel : BaseModel
     {
+        public string Name { get; set; }
     }
 }
