@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace EnixerPos.Api.ViewModels.Product
+namespace EnixerPos.Domain.Entities
 {
-    public class DiscountModel : BaseModel
+    public class DiscountEntity : BaseEntity
     {
         public string DiscountName { get; set; }
         public decimal Amount { get; set; }

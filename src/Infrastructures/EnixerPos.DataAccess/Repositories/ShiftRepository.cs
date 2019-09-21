@@ -37,7 +37,10 @@ namespace EnixerPos.DataAccess.Repositories
             return _context.Shift.Where(x => x.StoreEmail == storeEmail && x.PosIMEI == posIMEI && x.PosUserId == posUserId && x.UpdateDateTime > DateTime.UtcNow.AddDays(-30)).ToList();
         }
 
-       
+        public ShiftEntity GetShift(string storeEmail, string posIMEI, int posUserId)
+        {
+            return _context.Shift.LastOrDefault(x => x.StoreEmail == storeEmail && x.PosIMEI == posIMEI && x.PosUserId == posUserId);
+        }
 
         public ShiftEntity GetShiftDetailByShiftId(string storeEmail, string posIMEI, int posUserId, int shiftId)
         {

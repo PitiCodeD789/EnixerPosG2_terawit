@@ -7,5 +7,7 @@ namespace EnixerPos.Api.ViewModels.Product
     public class CategoryModel : BaseModel
     {
         public string Name { get; set; }
+        public string Color { get; set; }
+        public int StoreId { get; set; }
     }
 }

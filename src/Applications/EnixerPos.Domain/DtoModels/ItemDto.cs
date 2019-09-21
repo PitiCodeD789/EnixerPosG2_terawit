@@ -8,7 +8,7 @@ namespace EnixerPos.Domain.DtoModels
 {
     public class ItemDto : BaseDto
     {
-        public string ItemName { get; set; }
+        public string Name { get; set; }
         public string Color { get; set; }
         public int StoreId { get; set; }
         public int CategoryId { get; set; }
