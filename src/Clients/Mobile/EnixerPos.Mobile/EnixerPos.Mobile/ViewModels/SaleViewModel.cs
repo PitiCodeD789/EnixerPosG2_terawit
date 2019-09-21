@@ -1,9 +1,12 @@
 ﻿using AiForms.Renderers;
 using EnixerPos.Api.ViewModels.Product;
 using EnixerPos.Mobile.Components;
+using EnixerPos.Service.Models;
+using EnixerPos.Service.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
 using Xam.Plugin.TabView;
 using Xamarin.Forms;
@@ -12,24 +15,38 @@ namespace EnixerPos.Mobile.ViewModels
 {
     public class SaleViewModel
     {
+        MockupService _service = new MockupService();
         public SaleViewModel()
         {
-            Drinks = new ObservableCollection<ItemModel>() {
-                new ItemModel() { Name = "1", CategoryName = "Cat"}, new ItemModel() { Name = "2" }, new ItemModel() { Name = "3" },
-                new ItemModel() { Name = "1"}, new ItemModel() { Name = "2" }, new ItemModel() { Name = "3" },
-                new ItemModel() { Name = "1"}, new ItemModel() { Name = "2" }, new ItemModel() { Name = "3" }
-            };
-
-            //getCategory
-            var categoriesList = new List<CategoryModel>() { new CategoryModel() { Name = "Drinks"}, new CategoryModel() { Name = "Soup"} };
-            foreach (var category in categoriesList)
+            AllMenu = new List<MenuModel>();
+            SetItemMenu();
+            foreach (var category in AllMenu)
             {
-                var grid = new Grid();
+                var grid = new Grid()
+                {
+                    ColumnSpacing = 10,
+                    RowSpacing = 10,
+                    ColumnDefinitions = new ColumnDefinitionCollection()
+                    {
+                        new ColumnDefinition(){ Width = GridLength.Star},
+                        new ColumnDefinition(){ Width = GridLength.Star},
+                        new ColumnDefinition(){ Width = GridLength.Star},
+                        new ColumnDefinition(){ Width = GridLength.Star},
+                    },
+                    RowDefinitions = new RowDefinitionCollection()
+                    {
+                        new RowDefinition(){ Height = GridLength.Star},
+                        new RowDefinition(){ Height = GridLength.Star},
+                        new RowDefinition(){ Height = GridLength.Star},
+                        new RowDefinition(){ Height = GridLength.Star},
+                    }
+                };
+
                 int row = 0;
                 int col = 0;
-                if (Drinks!=null)
+                if (category != null || category.Items.Count > 0)
                 {
-                    foreach (var item in Drinks)
+                    foreach (var item in category.Items)
                     {
                         if (col%4 == 0 && col != 0)
                         {
@@ -49,17 +66,65 @@ namespace EnixerPos.Mobile.ViewModels
                         col++;
                     }
                 }
-                TabChildren.Add(new TabItem(category.Name, grid));
+                TabChildren.Add(new TabItem(category.CategoryName, grid));
             };
         }
 
 
         private ObservableCollection<ItemModel> items;
-
         public ObservableCollection<ItemModel> Drinks
         {
             get { return items; }
             set { items = value; }
+        }
+
+        private List<MenuModel> _allMenu;
+        public List<MenuModel> AllMenu
+        {
+            get { return _allMenu; }
+            set { _allMenu = value; }
+        }
+
+        private List<CategoryModel> _categoriesList;
+        public List<CategoryModel> CategoriesList
+        {
+            get { return _categoriesList; }
+            set { _categoriesList = value; }
+        }
+
+
+        void SetItemMenu()
+        {
+            CategoriesList = _service.GetCategories();
+            foreach (var category in CategoriesList)
+            {
+                AllMenu.Add(new MenuModel()
+                {
+                    CategoryName = category.Name,
+                    Items = new ObservableCollection<ItemModel>()
+                });
+            }
+
+            ItemsViewModel items = _service.GetItems();
+            if (items == null || items.Items.Count == 0)
+            {
+                Application.Current.MainPage.DisplayAlert("","ไม่พบรายการอาหารในระบบ","OK");
+                return;
+            }
+
+            foreach (var item in items.Items)
+            {
+                var isCatExist = AllMenu.Where(a => a.CategoryName == item.CategoryName).FirstOrDefault();
+                if (isCatExist == null)
+                {
+                    AllMenu.Add(new MenuModel()
+                    {
+                        CategoryName = item.CategoryName
+                    });
+                }
+                AllMenu.Where(a => a.CategoryName == item.CategoryName).FirstOrDefault().Items.Add(item);
+            }
+
         }
 
 
