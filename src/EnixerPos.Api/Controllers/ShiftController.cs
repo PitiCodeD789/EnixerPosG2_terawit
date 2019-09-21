@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
-using EnixerPos.Api.ViewModels.Helpers;
 using EnixerPos.Api.ViewModels.Shifts;
 using EnixerPos.Domain.DtoModels.Shifts;
 using EnixerPos.Domain.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using static EnixerPos.Api.ViewModels.Helpers.Status;
+using static EnixerPos.Api.ViewModels.Enixer_Enumerations;
 
 namespace EnixerPos.Api.Controllers
 {
@@ -52,7 +51,12 @@ namespace EnixerPos.Api.Controllers
         [HttpGet("GetShifts")]
         public IActionResult GetListShift()
         {
-            List<ShiftdetailDto> item = _shiftService.GetLast30DayShift();
+            
+            string storeEmail = "sert@gmail.com";
+            string posIMEI = "00200202020000";
+            int posUserId = 12;
+
+            List<ShiftdetailDto> item = _shiftService.GetLast30DayShift(storeEmail, posIMEI, posUserId);
 
             if(item == null)
             {
@@ -72,7 +76,12 @@ namespace EnixerPos.Api.Controllers
                 return BadRequest();
             }
 
-            ShiftdetailDto shiftdetail = _shiftService.GetShiftDetailByShiftId(shiftId);
+            string storeEmail = "sert@gmail.com";
+            string posIMEI = "00200202020000";
+            int posUserId = 12;
+          
+
+            ShiftdetailDto shiftdetail = _shiftService.GetShiftDetailByShiftId(storeEmail,posIMEI,posUserId,shiftId);
 
             if(shiftdetail == null)
             {

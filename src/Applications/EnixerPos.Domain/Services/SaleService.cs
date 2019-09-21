@@ -64,7 +64,8 @@ namespace EnixerPos.Domain.Services
                     Discount = payment.Discount,
                     IsDiscountPercentage = payment.IsDiscountPercentage,
                     Total = payment.Total,
-                    TotalDiscount = payment.TotalDiscount
+                    TotalDiscount = payment.TotalDiscount,
+                    PaymentType = payment.PaymentType
                 };
 
                 _receiptRepository.Create(receiptEntity);
@@ -88,7 +89,8 @@ namespace EnixerPos.Domain.Services
                     IsDiscountPercentage = payment.IsDiscountPercentage,
                     Total = payment.Total,
                     TotalDiscount = payment.TotalDiscount,
-                    CreateDateTime = receiptEntity.CreateDateTime
+                    CreateDateTime = receiptEntity.CreateDateTime,
+                    PaymentType = payment.PaymentType
                 };
             }
             catch (Exception)
