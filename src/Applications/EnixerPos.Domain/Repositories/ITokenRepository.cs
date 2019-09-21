@@ -10,5 +10,6 @@ namespace EnixerPos.Domain.Repositories
         TokenEntity GetTokenByEmailAndImei(string email, string imei);
         bool UpdateRefreshToken(string email, string imei, string refreshToken);
         bool UpdateUserId(string email, string imei, int userId);
+        bool DeleteUserAndToken(string email, string imei);
     }
 }

@@ -15,5 +15,6 @@ namespace EnixerPos.Domain.Interfaces
         bool RegisterStore(RegisterStoreDtoCommand command);
         bool RegisterUserInStore(RegisterUserInStoreDtoCommand command);
         void ForgotPassword(string email);
+        bool Logout(string email, string imei);
     }
 }

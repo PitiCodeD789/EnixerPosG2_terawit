@@ -158,5 +158,15 @@ namespace EnixerPos.Domain.Services
         {
             throw new NotImplementedException();
         }
+
+        public bool Logout(string email, string imei)
+        {
+            bool isDelete = _tokenRepository.DeleteUserAndToken(email, imei);
+            if (!isDelete)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }
