@@ -9,6 +9,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\EnixerPos.Api.ViewModels\EnixerPos.Api.ViewModels.csproj" />
   </ItemGroup>
 
