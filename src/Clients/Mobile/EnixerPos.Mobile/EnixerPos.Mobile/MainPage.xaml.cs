@@ -22,7 +22,7 @@ namespace EnixerPos.Mobile
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-             PopupNavigation.PushAsync(new ItemPopup());
+             PopupNavigation.PushAsync(new OpenTicketsPopup());
         }
     }
 }
