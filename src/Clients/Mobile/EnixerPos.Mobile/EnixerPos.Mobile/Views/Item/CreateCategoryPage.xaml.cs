@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EnixerPos.Mobile.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,13 @@ namespace EnixerPos.Mobile.Views.Item
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CreateCategoryPage : ContentPage
     {
-        public CreateCategoryPage()
+        CategoryPageViewModel _vM;
+        public CreateCategoryPage(CategoryPageViewModel vM)
         {
             InitializeComponent();
+            BindingContext = _vM = vM;
         }
+
+
     }
 }

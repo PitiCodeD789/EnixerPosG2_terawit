@@ -8,6 +8,9 @@
              NavigationPage.HasNavigationBar="False"
              x:Class="EnixerPos.Mobile.Views.Item.CreateItem">
     <ContentPage.Content>
+        <ScrollView>
+            
+       
         <StackLayout >
             <Frame HasShadow="True">
                 <Label Text="Create item" TextColor="Black" FontSize="Medium"/>
@@ -48,6 +51,62 @@
                                           WidthRequest="360"
                                          Placeholder="Cost"/>
             </StackLayout>
+                </StackLayout>
+            </Frame>
+            <Frame VerticalOptions="Start" 
+                   Margin="0,15,0,15"
+                   WidthRequest="750" CornerRadius="3"
+                   HorizontalOptions="CenterAndExpand">
+                <StackLayout>
+                    <Label Text="Item Options"
+                       FontAttributes="Bold"
+                       TextColor="#E96722" 
+                           Margin="0,5,0,15"
+                       FontSize="Medium" />
+                    <StackLayout Orientation="Horizontal">
+                        <component:Pos_EntryView HorizontalOptions="StartAndExpand" 
+                                         Margin="10,5,10,0"
+                                         WidthRequest="360"                                         
+                                         Placeholder="Option1"/>
+                        <component:Pos_EntryView HorizontalOptions="EndAndExpand" 
+                                         Margin="10,5,10,0"
+                                         KeyboardType="Numeric"                                         
+                                          WidthRequest="360"
+                                         Placeholder="Cost"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <component:Pos_EntryView HorizontalOptions="StartAndExpand" 
+                                         Margin="10,5,10,0"
+                                         WidthRequest="360"                                         
+                                         Placeholder="Option2"/>
+                        <component:Pos_EntryView HorizontalOptions="EndAndExpand" 
+                                         Margin="10,5,10,0"
+                                         KeyboardType="Numeric"                                         
+                                          WidthRequest="360"
+                                         Placeholder="Cost"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <component:Pos_EntryView HorizontalOptions="StartAndExpand" 
+                                         Margin="10,5,10,0"
+                                         WidthRequest="360"                                         
+                                         Placeholder="Option3"/>
+                        <component:Pos_EntryView HorizontalOptions="EndAndExpand" 
+                                         Margin="10,5,10,0"
+                                         KeyboardType="Numeric"                                         
+                                          WidthRequest="360"
+                                         Placeholder="Cost"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <component:Pos_EntryView HorizontalOptions="StartAndExpand" 
+                                         Margin="10,5,10,0"
+                                         WidthRequest="360"                                         
+                                         Placeholder="Option4"/>
+                        <component:Pos_EntryView HorizontalOptions="EndAndExpand" 
+                                         Margin="10,5,10,0"
+                                         KeyboardType="Numeric"                                         
+                                          WidthRequest="360"
+                                         Placeholder="Cost"/>
+                    </StackLayout>
                 </StackLayout>
             </Frame>
             <Frame VerticalOptions="Start" 
@@ -172,5 +231,6 @@
             </StackLayout>
             
         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
