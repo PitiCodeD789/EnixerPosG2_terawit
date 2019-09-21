@@ -131,6 +131,12 @@ namespace EnixerPos.Domain.Services
                 return null;
             }
 
+            int countUser = _tokenRepository.CountUser(userEntity.Id);
+            if(countUser > 0)
+            {
+                return null;
+            }
+
             int userId = userEntity.Id;
             bool isUpdate = _tokenRepository.UpdateUserId(email, imei, userId);
             if (!isUpdate)
@@ -157,6 +163,16 @@ namespace EnixerPos.Domain.Services
         public bool RegisterUserInStore(RegisterUserInStoreDtoCommand command)
         {
             throw new NotImplementedException();
+        }
+
+        public bool Logout(string email, string imei)
+        {
+            bool isDelete = _tokenRepository.DeleteUserAndToken(email, imei);
+            if (!isDelete)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

@@ -6,6 +6,7 @@ using AutoMapper;
 using EnixerPos.Api.ViewModels.Sale;
 using EnixerPos.Domain.DtoModels.Sale;
 using EnixerPos.Domain.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -24,22 +25,40 @@ namespace EnixerPos.Api.Controllers
             _receiptService = receiptService;
         }
 
-        [HttpGet("GetReceiptsByDate")]
-        public IActionResult GetReceiptsByDate()
+        [Authorize]
+        [HttpGet("GetReceiptsByDate/{imei}")]
+        public IActionResult GetReceiptsByDate(string imei)
         {
+            var audience = "";
+            var user = "";
             try
             {
-                List<ReceiptDto> receiptDtos = _receiptService.GetReceiptsByDate(DateTime.UtcNow.Date);
+                audience = User.Claims.FirstOrDefault(c => c.Type == "aud").Value;
+                user = User.Claims.FirstOrDefault(c => c.Type == "user").Value;
+            }
+            catch (Exception e)
+            {
+                return StatusCode(StatusCodes.Status401Unauthorized);
+            }
+
+            try
+            {
+                List<ReceiptDto> receiptDtos = _receiptService.GetReceiptsByDate(DateTime.UtcNow.Date, audience, imei);
 
                 if (receiptDtos != null)
                 {
-                    List<ReceiptViewModel> model = _mapper.Map<List<ReceiptViewModel>>(receiptDtos);
-                    return Ok(model);
+                    //List<ReceiptViewModel> model = new List<ReceiptViewModel>();
+                    //foreach (var item in receiptDtos)
+                    //{
+                    //    model.Add(_mapper.Map<ReceiptViewModel>(item));
+                    //}
+                    //return Ok(model);
+                    return Ok(receiptDtos);
                 }
 
                 return BadRequest();
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 return BadRequest();
 

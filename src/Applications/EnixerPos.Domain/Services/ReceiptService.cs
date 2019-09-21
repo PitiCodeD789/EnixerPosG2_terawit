@@ -23,7 +23,7 @@ namespace EnixerPos.Domain.Services
             _storeRepository = storeRepository;
             _deviceRepository = deviceRepository;
         }
-        public List<ReceiptDto> GetReceiptsByDate(DateTime date)
+        public List<ReceiptDto> GetReceiptsByDate(DateTime date, string email, string imei)
         {
             try
             {
@@ -33,8 +33,8 @@ namespace EnixerPos.Domain.Services
                 {
                     Reference = s.Reference,
                     ShiftId = s.ShiftId,
-                    Store = _storeRepository.GetStoreByEmail(s.StoreEmail).StoreName,
-                    Pos = _deviceRepository.GetDeviceByImei(s.PosImei).PosName,
+                    Store = _storeRepository.GetStoreByEmail(email).StoreName,
+                    Pos = _deviceRepository.GetDeviceByImei(imei).PosName,
                     ItemList = JsonConvert.DeserializeObject<List<OrderItemModel>>(s.ItemList),
                     Discount = s.Discount,
                     IsDiscountPercentage = s.IsDiscountPercentage,
@@ -45,7 +45,7 @@ namespace EnixerPos.Domain.Services
 
                 return receiptDto;
             }
-            catch (Exception)
+            catch (Exception e)
             {
 
                 return null;

@@ -6,7 +6,7 @@ namespace EnixerPos.Domain.DtoModels.Sale
 {
     public class OrderItemModel
     {
-        public int ItemName { get; set; }
+        public string ItemName { get; set; }
         public decimal ItemPrice { get; set; }
         public decimal ItemDiscount { get; set; }
         public bool IsDiscountPercentage { get; set; }

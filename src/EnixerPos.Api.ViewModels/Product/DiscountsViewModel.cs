@@ -8,5 +8,6 @@ namespace EnixerPos.Api.ViewModels.Product
     {
         public bool IsError { get; set; }
         public string Message { get; set; }
+        public List<DiscountModel> Discounts { get; set; }
     }
 }

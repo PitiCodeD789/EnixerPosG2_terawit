@@ -19,6 +19,29 @@ namespace EnixerPos.DataAccess.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("EnixerPos.Domain.Entities.CategoryEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Color");
+
+                    b.Property<DateTime>("CreateDateTime")
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasDefaultValueSql("GetUtcDate()");
+
+                    b.Property<string>("Name");
+
+                    b.Property<DateTime>("UpdateDateTime")
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasDefaultValueSql("GetUtcDate()");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Categories");
+                });
+
             modelBuilder.Entity("EnixerPos.Domain.Entities.DeviceEntity", b =>
                 {
                     b.Property<int>("Id")
@@ -38,6 +61,84 @@ namespace EnixerPos.DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Device");
+                });
+
+            modelBuilder.Entity("EnixerPos.Domain.Entities.DiscountEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<decimal>("Amount");
+
+                    b.Property<DateTime>("CreateDateTime")
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasDefaultValueSql("GetUtcDate()");
+
+                    b.Property<string>("DiscountName");
+
+                    b.Property<bool>("IsPercentage");
+
+                    b.Property<DateTime>("UpdateDateTime")
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasDefaultValueSql("GetUtcDate()");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Discounts");
+                });
+
+            modelBuilder.Entity("EnixerPos.Domain.Entities.ItemEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CategoryId");
+
+                    b.Property<string>("Color");
+
+                    b.Property<decimal>("Cost");
+
+                    b.Property<DateTime>("CreateDateTime")
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasDefaultValueSql("GetUtcDate()");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("Option1");
+
+                    b.Property<decimal>("Option1Price");
+
+                    b.Property<string>("Option2");
+
+                    b.Property<decimal>("Option2Price");
+
+                    b.Property<string>("Option3");
+
+                    b.Property<decimal>("Option3Price");
+
+                    b.Property<string>("Option4");
+
+                    b.Property<decimal>("Option4Price");
+
+                    b.Property<string>("Option5");
+
+                    b.Property<decimal>("Option5Price");
+
+                    b.Property<string>("Option6");
+
+                    b.Property<decimal>("Option6Price");
+
+                    b.Property<decimal>("Price");
+
+                    b.Property<DateTime>("UpdateDateTime")
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasDefaultValueSql("GetUtcDate()");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Items");
                 });
 
             modelBuilder.Entity("EnixerPos.Domain.Entities.ManageCashEntity", b =>

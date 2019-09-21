@@ -6,7 +6,7 @@ namespace EnixerPos.Api.ViewModels.Shifts
 {
     public class GetShiftViewModel
     {
-        public DateTime ShiftOpen { get; set; }
+      
         public decimal  StartingCash { get; set; }
         public decimal CashPayment { get; set; }
         public decimal CashRefunds { get; set; }
@@ -22,6 +22,8 @@ namespace EnixerPos.Api.ViewModels.Shifts
         public decimal CreditCard { get; set; }
         public decimal QRCode { get; set; }
         public decimal Taxes { get; set; }
+        public DateTime CreateDateTime { get; set; }
+        public DateTime UpdateDateTime { get; set; }
 
 
 
