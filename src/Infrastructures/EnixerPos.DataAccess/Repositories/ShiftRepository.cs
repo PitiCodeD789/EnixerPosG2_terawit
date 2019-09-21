@@ -16,17 +16,18 @@ namespace EnixerPos.DataAccess.Repositories
         {
             _context = dataContext;
         }
-        public bool CreateShift(ShiftEntity shiftEntity)
+        public int CreateShift(ShiftEntity shiftEntity)
         {
             try
             {
                 _context.Shift.Add(shiftEntity);
                 _context.SaveChanges();
-                return true;
+                return shiftEntity.Id;
+               
             }
             catch
             {
-                return false;
+                return 0;
             }           
            
         }
