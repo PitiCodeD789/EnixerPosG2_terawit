@@ -89,12 +89,14 @@ namespace EnixerPos.Mobile.ViewModels
             QuantityChangeCommand = new Command<string>((change) => QuantityChange(change));
             SaveItemCommand = new Command(SaveItemToTicket);
             SaveTicketCommand = new Command(SaveTicket);
-            OpenTicketCommand = new Command(OpenTicket);
+            OpenTicketListCommand = new Command(OpenTicketList);
+            OpenTicketCommand = new Command<int>((ticketNumber) => OpenTicket(ticketNumber));
         }
 
         public Command QuantityChangeCommand { get; set; }
         public Command SaveItemCommand { get; set; }
         public Command SaveTicketCommand { get; set; }
+        public Command OpenTicketListCommand { get; set; }
         public Command OpenTicketCommand { get; set; }
 
         public void QuantityChange(string change)
@@ -220,7 +222,7 @@ namespace EnixerPos.Mobile.ViewModels
             App.TicketList.Add(receipt);
             CleartTicket();
         }
-        void OpenTicket()
+        void OpenTicketList()
         {
             CleartTicket();
             PopupNavigation.PushAsync(new OpenTicketsPopup(this));
@@ -236,6 +238,17 @@ namespace EnixerPos.Mobile.ViewModels
             TotalPrice = 0;
             ShowOpenButton = true;
         }
+        void OpenTicket(int ticketNumber)
+        {
+            var ticket = App.TicketList.Where(t => t.TicketNumber == ticketNumber).FirstOrDefault();
+            foreach (var item in ticket.ItemList)
+            {
+                CurrentTicket.Add(item);
+                TotalPrice += item.DiscountedPrice;
+            }
+            PopupNavigation.PopAllAsync();
+        }
+
 
         #region Propfull
         private bool _openButton;
@@ -244,7 +257,6 @@ namespace EnixerPos.Mobile.ViewModels
             get { return _openButton; }
             set { _openButton = value; OnPropertyChanged(); }
         }
-
 
         private List<ReceiptViewModel> _ticketList;
         public List<ReceiptViewModel> TicketList

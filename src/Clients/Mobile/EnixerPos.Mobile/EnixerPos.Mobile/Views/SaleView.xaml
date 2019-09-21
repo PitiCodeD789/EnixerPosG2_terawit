@@ -134,7 +134,7 @@
                 <Label Text="{Binding TotalPrice, StringFormat='{0:n}'}" TextColor="Black" FontSize="Large" HorizontalOptions="End" Grid.Row="2" Margin="20,0"/>
                 <Grid Grid.Row="3" Margin="20,0">
                     <components:Pos_ButtonView TextButton="Save Ticket" HeightRequest="100" Grid.Column="0" Command="{Binding SaveTicketCommand}"/>
-                    <components:Pos_ButtonView TextButton="Open Ticket" HeightRequest="100" Grid.Column="0" Command="{Binding OpenTicketCommand}" IsVisible="{Binding ShowOpenButton}"/>
+                    <components:Pos_ButtonView TextButton="Open Ticket" HeightRequest="100" Grid.Column="0" Command="{Binding OpenTicketListCommand}" IsVisible="{Binding ShowOpenButton}"/>
                     <components:Pos_ButtonView TextButton="Charge" HeightRequest="100" Grid.Column="1" />
                 </Grid>
             </Grid>
