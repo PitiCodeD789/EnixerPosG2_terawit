@@ -35,13 +35,13 @@
                     </Label>
                 </StackLayout>
             </Frame>
-            <ListView Margin="0,20,0,0" ItemsSource="{Binding abc}">
+            <ListView Margin="0,20,0,0" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <Grid Padding="15,0,15,0">
-                                <Label Text="{Binding Name}"  FontSize="Medium" TextColor="Black" Grid.Row="0"/>
-                                <Label Text="{Binding Time}"  FontSize="Medium" TextColor="Gray" Grid.Row="1"/>
+                                <Label Text="abc"  FontSize="Medium" TextColor="Black" Grid.Row="0"/>
+                                <Label Text="abc"  FontSize="Medium" TextColor="Gray" Grid.Row="1"/>
                                 <StackLayout Grid.Column="1" Grid.RowSpan="2" HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
                                     <Label  Text="{Binding Price}" FontSize="Medium" TextColor="Black" />
                                     <ImageButton />

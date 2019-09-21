@@ -4,12 +4,127 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="EnixerPos.Mobile.Views.ReceiptsPage">
+             xmlns:components="clr-namespace:EnixerPos.Mobile.Components"
+             xmlns:ai="clr-namespace:AiForms.Renderers;assembly=CollectionView"
+             xmlns:tabView="clr-namespace:Xam.Plugin.TabView;assembly=Xam.Plugin.TabView"
+             x:Class="EnixerPos.Mobile.Views.ReceiptsPage"
+             >
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid ColumnSpacing="0" BackgroundColor="#E3E3E3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            <Frame Padding="0" HorizontalOptions="FillAndExpand" Margin="0" Grid.Column="0" Grid.Row="0" HasShadow="True">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                    <ImageButton Source="icon_hamburger" Aspect="AspectFit" VerticalOptions="Center" Margin="20,0" HeightRequest="30" BackgroundColor="Transparent">
+                        <ImageButton.GestureRecognizers>
+                            <TapGestureRecognizer />
+                        </ImageButton.GestureRecognizers>
+                    </ImageButton>
+                    <Label Text="Receipt" TextColor="Black" FontSize="30" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start"  />
+                </StackLayout>
+            </Frame>
+            <Frame Padding="0" HorizontalOptions="FillAndExpand" Margin="0" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="0" HasShadow="True" >
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Label Text="{Binding Referance}" TextColor="Black" FontSize="30" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start"  />
+                    <StackLayout HorizontalOptions="EndAndExpand" VerticalOptions="Center">
+                        <ImageButton Source="icon_dot_menu" Aspect="AspectFit"  Margin="20,0" HeightRequest="30"  BackgroundColor="Transparent" Clicked="ImageButton_Clicked">
+                        </ImageButton>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+            <Frame Padding="0" HorizontalOptions="FillAndExpand" Margin="0" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" HasShadow="True" >
+                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                    <SearchBar></SearchBar>
+                    <Label Text="Tuesday, 17 September 2562" TextColor="Orange" FontSize="20" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"  />
+                    <ListView Margin="0,20,0,0" ItemsSource="{Binding}" SelectedItem="{Binding YourSelectedItem,Mode=TwoWay}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Frame HasShadow="True">
+                                        <Grid Padding="5,0,5,0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="50"/>
+                                                <ColumnDefinition Width="auto"/>
+                                                <ColumnDefinition Width="auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Image Source="{Binding TypeImg}" WidthRequest="35" HeightRequest="35" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" VerticalOptions="CenterAndExpand"/>
+                                            <Label Text="{Binding Price}"  FontSize="Medium" 
+                                                   TextColor="Black" Grid.Row="0" Grid.Column="1"/>
+                                            <Label Text="{Binding Time}"  FontSize="Medium" TextColor="Gray" Grid.Row="1" Grid.Column="1"/>
+                                            <StackLayout Grid.Column="2" Grid.RowSpan="2" Grid.ColumnSpan="4" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" Orientation="Horizontal">
+                                                <Label  Text="{Binding Ref}" FontSize="Medium" TextColor="Black" HorizontalOptions="EndAndExpand" />
+                                            </StackLayout>
+                                        </Grid>
+                                    </Frame>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </Frame>
+            <ScrollView  Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="1" Grid.RowSpan="2">
+                <Frame WidthRequest="450"
+                   Grid.RowSpan="2" HorizontalOptions="CenterAndExpand">
+                    <StackLayout>
+                        <Label Text="{Binding SelectTotalPrice}" HorizontalOptions="CenterAndExpand" FontSize="30" TextColor="Black"/>
+                        <Label Text="Total" HorizontalOptions="CenterAndExpand"/>
+                        <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="Gray"/>
+                        <Label Text="{Binding SelectRef,StringFormat='Order: {0}}'}"/>
+                        <Label Text="{Binding SelectStore,StringFormat='Cashier: {0}}'}"/>
+                        <Label Text="{Binding SelectPOS,StringFormat='POS: {0}}'}"/>
+                        <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="Gray"/>
+                        
+                        <ListView Margin="0,20,0,0" ItemsSource="{Binding SelectItem}" IsEnabled="False">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Grid Padding="5,0,5,0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label Text="{Binding ItemName}"  FontSize="Medium" TextColor="Black" Grid.Row="0" Grid.Column="0" HorizontalOptions="StartAndExpand"/>
+                                            <Label Text="{Binding Quantity}"  FontSize="Medium" TextColor="Gray" Grid.Row="1" Grid.Column="0" HorizontalOptions="StartAndExpand"/>
+                                            <Label Text="{Binding ItemDiscount,StringFormat='Discount: {0}'}"  FontSize="Medium" TextColor="Gray" Grid.Row="2" Grid.Column="0" HorizontalOptions="StartAndExpand"/>
+                                            <StackLayout Grid.Column="2" Grid.RowSpan="2" Grid.ColumnSpan="4" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" Orientation="Horizontal">
+                                                <Image Source="icon_tag" WidthRequest="25" HeightRequest="25" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"/>
+                                                <StackLayout>
+                                                    <Label  Text="{Binding ItemPrice,StringFormat='{0:N2}'}" FontSize="Medium" TextColor="Black" HorizontalOptions="EndAndExpand" TextDecorations="{Binding Strike}" />
+                                                    <Label  Text="{Binding DiscountPrice,StringFormat='{0:N2}'}" FontSize="Medium" TextColor="Black" HorizontalOptions="EndAndExpand" />
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </Grid>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                        
+                        <StackLayout VerticalOptions="EndAndExpand">
+                            <Grid Padding="5,0,5,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <BoxView Grid.Row="0" VerticalOptions="Center" HorizontalOptions="FillAndExpand" HeightRequest="1" Color="Gray" Grid.ColumnSpan="2"/>
+                                <Label Text="{Binding DiscountAll,StringFormat='Discount: {0}}'}"  FontSize="Medium" TextColor="Black" Grid.Row="1" Grid.Column="0" HorizontalOptions="StartAndExpand"/>
+                                <Label Grid.Row="1" Text="{Binding DiscountValue,StringFormat='{0:N2}'}" FontSize="Medium" TextColor="Black" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" Grid.Column="1"/>
+                                <BoxView Grid.Row="2" VerticalOptions="Center" HorizontalOptions="FillAndExpand" HeightRequest="1" Color="Gray"  Grid.ColumnSpan="2"/>
+                                <Label Text="Total"  FontSize="Medium" TextColor="Black" Grid.Row="2" Grid.Column="0" HorizontalOptions="StartAndExpand"/>
+                                <Label Grid.Row="3" Text="{Binding PriceWithDiscount,StringFormat='{0:N2}'}" FontSize="Medium" TextColor="Black" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" Grid.Column="1"/>
+                            </Grid>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </ScrollView>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
