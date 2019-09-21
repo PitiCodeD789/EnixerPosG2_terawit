@@ -99,7 +99,7 @@ namespace EnixerPos.Domain.Services
             }
         }
 
-        private string GenerateRef(string shiftId, int id)
+        private string GenerateRef(int shiftId, int id)
         {
             return "#" + shiftId + "-" + id.ToString("D4");
         }
