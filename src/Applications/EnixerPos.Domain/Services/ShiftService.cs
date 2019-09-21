@@ -188,21 +188,24 @@ namespace EnixerPos.Domain.Services
                 shiftEntity.PosIMEI = posIMEI;
                 shiftEntity.StartingCash = startingCash;
                 shiftEntity.PosUserId = posUserId;
-
-                bool isCreateShift = _shiftRepository.CreateShift(shiftEntity);
-                if (isCreateShift)
+                shiftEntity.Available = true;
+                ShiftEntity data = _shiftRepository.GetShift(storeEmail, posIMEI, posUserId);
+                if(data == null)
                 {
-                    return _shiftRepository.GetShiftId(shiftEntity.StoreEmail, shiftEntity.PosIMEI, shiftEntity.PosUserId);
+                    return _shiftRepository.CreateShift(shiftEntity);
+
                 }
-                else
+               if(data.Available == true)
                 {
                     return 0;
                 }
+               return _shiftRepository.CreateShift(shiftEntity);
+                
             }
             catch (Exception e)
             {
 
-                throw;
+                return 0;
             }
 
         }

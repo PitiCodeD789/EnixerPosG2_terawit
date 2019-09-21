@@ -12,7 +12,7 @@ namespace EnixerPos.Mobile
             InitializeComponent();
 
             // MainPage = new MainPage();
-            MainPage = new NavigationPage(new Views.ShiftPage());
+            MainPage = new MainPage();
         }
 
         protected override void OnStart()

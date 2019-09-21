@@ -16,17 +16,18 @@ namespace EnixerPos.DataAccess.Repositories
         {
             _context = dataContext;
         }
-        public bool CreateShift(ShiftEntity shiftEntity)
+        public int CreateShift(ShiftEntity shiftEntity)
         {
             try
             {
                 _context.Shift.Add(shiftEntity);
                 _context.SaveChanges();
-                return true;
+                return shiftEntity.Id;
+               
             }
             catch
             {
-                return false;
+                return 0;
             }           
            
         }
@@ -36,7 +37,10 @@ namespace EnixerPos.DataAccess.Repositories
             return _context.Shift.Where(x => x.StoreEmail == storeEmail && x.PosIMEI == posIMEI && x.PosUserId == posUserId && x.UpdateDateTime > DateTime.UtcNow.AddDays(-30)).ToList();
         }
 
-       
+        public ShiftEntity GetShift(string storeEmail, string posIMEI, int posUserId)
+        {
+            return _context.Shift.LastOrDefault(x => x.StoreEmail == storeEmail && x.PosIMEI == posIMEI && x.PosUserId == posUserId);
+        }
 
         public ShiftEntity GetShiftDetailByShiftId(string storeEmail, string posIMEI, int posUserId, int shiftId)
         {

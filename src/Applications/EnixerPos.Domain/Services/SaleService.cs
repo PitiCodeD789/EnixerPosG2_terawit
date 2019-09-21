@@ -70,7 +70,7 @@ namespace EnixerPos.Domain.Services
 
                 _receiptRepository.Create(receiptEntity);
 
-                receiptEntity.Reference = GenerateRef(receiptEntity.Id);
+                receiptEntity.Reference = GenerateRef(payment.ShiftId,receiptEntity.Id);
 
                 _receiptRepository.Update(receiptEntity);
 
@@ -99,9 +99,9 @@ namespace EnixerPos.Domain.Services
             }
         }
 
-        private string GenerateRef(int id)
+        private string GenerateRef(int shiftId, int id)
         {
-            throw new NotImplementedException();
+            return "#" + shiftId + "-" + id.ToString("D4");
         }
     }
 }
