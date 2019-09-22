@@ -115,7 +115,7 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\icon_cart.png" />
   </ItemGroup>
-    <ItemGroup>
+  <ItemGroup>
     <AndroidResource Include="Resources\drawable\icon_hamburger.png">
       <CustomToolNamespace>en</CustomToolNamespace>
     </AndroidResource>
@@ -157,7 +157,7 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xxxhdpi\back.png" />
   </ItemGroup>
-    <ItemGroup>
+  <ItemGroup>
     <AndroidResource Include="Resources\drawable\icon_cart.png" />
   </ItemGroup>
   <ItemGroup>
@@ -211,6 +211,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\iconcheckmark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\iconsprint.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

@@ -12,8 +12,13 @@
     <ContentPage.Content>
         <StackLayout>
             <Frame HasShadow="True" Margin="0,0,0,0">
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="Shift" FontSize="30" />
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
+                    <Label Text="Shift" FontSize="30" HorizontalOptions="StartAndExpand" />
+                    <Image Source="iconsprint" HorizontalOptions="End">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ShowShiftListCommand}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
                 </StackLayout>
 
             </Frame>

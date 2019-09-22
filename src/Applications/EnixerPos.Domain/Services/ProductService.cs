@@ -67,7 +67,14 @@ namespace EnixerPos.Domain.Services
                     throw new FileNotFoundException();
 
                 //TODO Map discount to DiscountDto
-                DiscountDto discountDto = new DiscountDto();
+                DiscountDto discountDto = new DiscountDto
+                {
+                    Amount = discount.Amount,
+                    DiscountName = discount.DiscountName,
+                    StoreId = storeId,
+                    IsPercentage = discount.IsPercentage
+                };
+
                 bool addResult = _discountRepository.AddDiscount(storeId, discountDto);
                 viewModel.IsError = !addResult;
 
@@ -87,12 +94,28 @@ namespace EnixerPos.Domain.Services
             try
             {
                 int storeId = _storeRepository.GetStoreIdByEmail(audience);
+                var category = _categoryRepository.GetCategoryByName(item.CategoryName);
 
                 if (storeId == 0)
                     throw new FileNotFoundException();
 
                 //TODO Map item to itemDto
-                ItemDto itemDto = new ItemDto(); 
+                ItemDto itemDto = new ItemDto();
+                itemDto.Name = item.Name;
+                itemDto.StoreId = storeId;
+                itemDto.CategoryId = category.Id;
+                itemDto.Price = item.Price;
+                itemDto.Cost = item.Cost;
+                itemDto.Color = item.Color;                
+                itemDto.Option1 = item.Option1;
+                itemDto.Option2 = item.Option2;
+                itemDto.Option3 = item.Option3;
+                itemDto.Option4 = item.Option4;
+                itemDto.Option1Price = item.Option1Price;            
+                itemDto.Option2Price = item.Option2Price;            
+                itemDto.Option3Price = item.Option3Price;            
+                itemDto.Option4Price = item.Option4Price;            
+
                 bool addResult = _itemRepository.AddItem(storeId, itemDto);
                 viewModel.IsError = !addResult;
 

@@ -168,16 +168,7 @@ namespace EnixerPos.Domain.Services
 
        
 
-        public List<ShiftdetailDto> GetLast30DayShift(string storeEmail, string posIMEI, int posUserId)
-        {
-            List<ShiftEntity> shiftEntity = _shiftRepository.GetLast30DayShift(storeEmail, posIMEI, posUserId);
-            if (shiftEntity == null)
-            {
-                return null;
-            }
-
-            return _mapper.Map<List<ShiftdetailDto>>(shiftEntity);
-        }
+       
 
         public int OpenShift(string storeEmail, string posIMEI, decimal startingCash, int posUserId)
         {
@@ -208,6 +199,17 @@ namespace EnixerPos.Domain.Services
                 return 0;
             }
 
+        }
+
+        public List<ShiftdetailDto> GetLast30DayShift(string storeEmail, string posUser)
+        {
+             List<ShiftEntity> shiftEntity = _shiftRepository.GetLast30DayShift(storeEmail, posUser);
+            if (shiftEntity == null)
+            {
+                return null;
+            }
+
+            return _mapper.Map<List<ShiftdetailDto>>(shiftEntity);
         }
     }
 }

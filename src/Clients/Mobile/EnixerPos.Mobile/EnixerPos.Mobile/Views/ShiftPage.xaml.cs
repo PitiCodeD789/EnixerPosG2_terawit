@@ -42,7 +42,7 @@ namespace EnixerPos.Mobile.Views
         {
             base.OnAppearing();
             
-              await PopupNavigation.PushAsync(new Popup.ShiftPopUpPage());
+             
            // await PopupNavigation.PushAsync(new Popup.OpenTicketsPopup());
 
         }

@@ -56,6 +56,19 @@ namespace EnixerPos.DataAccess.Repositories
             throw new NotImplementedException();
         }
 
+        public CategoryDto GetCategoryByName(string nane)
+        {
+            var result = _context.Categories.LastOrDefault(x => x.Name == nane);
+            //return _mapper.Map<CategoryDto>(result);
+            CategoryDto category = new CategoryDto();
+            category.StoreId = result.StoreId;
+            category.Name = result.Name;
+            category.Color = result.Color;           
+
+            category.Id = result.Id;
+            return category;
+        }
+
         public bool Update(int storeId, CategoryDto categoryDto)
         {
             throw new NotImplementedException();

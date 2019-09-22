@@ -30,12 +30,12 @@ namespace EnixerPos.Service.Services
                 {
                     throw e;
                 }
-
+                token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWVpIjoiMTIzNDU2Nzg5IiwibmJmIjoxNTY5MDQxMDA2LCJleHAiOjE1NjkxNTEzMDYsImlzcyI6IkVuaXhlclBvc0cyIiwiYXVkIjoiZUBlIiwidXNlciI6Ik5hdCJ9.2NVziPg0aE3eXlSLL9MyGp453CaW2UYMLMV5GMqPDJs";
                 client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
 
                 HttpContent content = GetHttpContent(model);
 
-                var result = await client.PostAsync(url, content);
+                var result =  client.PostAsync(url, content).Result;
 
                 if (result.IsSuccessStatusCode)
                 {
@@ -43,11 +43,18 @@ namespace EnixerPos.Service.Services
 
                     T obj = GetModelFormResult<T>(json_result);
 
-                    resultService.IsError = result.StatusCode;
+                    try
+                    {
+                        resultService.IsError = result.StatusCode;
 
-                    resultService.Model = obj;
+                        resultService.Model = obj;
 
-                    return resultService;
+                        return resultService;
+                    }catch(Exception e)
+                    {
+                        return new ResultServiceModel<T>();
+                    }
+                   
                 }
                 else if (result.StatusCode == System.Net.HttpStatusCode.Unauthorized)
                 {
@@ -94,7 +101,7 @@ namespace EnixerPos.Service.Services
             {
                 HttpClient client = new HttpClient();
 
-                string token = "";
+                string token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWVpIjoiMTIzNDU2Nzg5IiwibmJmIjoxNTY5MDQxMDA2LCJleHAiOjE1NjkxNTEzMDYsImlzcyI6IkVuaXhlclBvc0cyIiwiYXVkIjoiZUBlIiwidXNlciI6Ik5hdCJ9.2NVziPg0aE3eXlSLL9MyGp453CaW2UYMLMV5GMqPDJs";
 
                 try
                 {

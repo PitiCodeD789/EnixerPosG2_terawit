@@ -18,6 +18,7 @@ namespace EnixerPos.Mobile
         public static List<ReceiptViewModel> TicketList { get; set; }
         public static string DeviceId { get; set; }
 
+        public static int StoreId = 1;
         public App()
         {
             InitializeComponent();
@@ -28,8 +29,8 @@ namespace EnixerPos.Mobile
             CategoryPageViewModel viewModel = new CategoryPageViewModel();
             CreateItemPageViewModel createItem = new CreateItemPageViewModel();
             CreateDiscountPageViewModel createDiscount = new CreateDiscountPageViewModel();
-            MainPage = new NavigationPage(new Views.Item.CreateDiscountPage(createDiscount));
-            PermissionReq();
+            ShiftPageViewModel shiftPage = new ShiftPageViewModel();
+            MainPage = new NavigationPage(new Views.ShiftPage(shiftPage));
         }
 
         protected override void OnStart()
