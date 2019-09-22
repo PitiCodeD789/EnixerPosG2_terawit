@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin.Essentials;
 
 namespace EnixerPos.Mobile
 {
@@ -41,6 +42,7 @@ namespace EnixerPos.Mobile
         protected override void OnStart()
         {
             DeviceId = CrossDevice.Device.DeviceId;
+           
         }
 
         protected override void OnSleep()
