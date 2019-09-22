@@ -1,6 +1,11 @@
-﻿using System;
+﻿using EnixerPos.Api.ViewModels.Product;
+using EnixerPos.Service.Interfaces;
+using EnixerPos.Service.Services;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -8,11 +13,100 @@ namespace EnixerPos.Mobile.ViewModels
 {
     public class CreateItemPageViewModel : BaseViewModel
     {
+        private readonly IProductService _productService;
         public CreateItemPageViewModel()
         {
+            _productService = new ProductService();
             ColorSelectCommand = new Command(ColorSelect);
-
+            CreateItemCommand = new Command(CreateItem);
+            Categories = GetAllCateAsync().Result;
+            CategoriesName = Categories.Select(x => x.Name).ToList();
         }
+
+        private async Task<List<CategoryModel>> GetAllCateAsync()
+        {
+            var result = await _productService.GetAllCategories();
+            if (result.IsError == System.Net.HttpStatusCode.OK || result.Model != null)
+            {
+                return result.Model.Categories;
+            }
+            return null;
+        }
+
+        public ICommand CreateItemCommand { get; set; }
+
+        private List<string> categoriesName;
+
+        public List<string> CategoriesName
+        {
+            get { return categoriesName; }
+            set { categoriesName = value; }
+        }
+
+
+        private CategoryModel selectCate;
+
+        public CategoryModel SelectCate
+        {
+            get { return selectCate; }
+            set
+            {
+                selectCate = value;
+                OnPropertyChanged();
+            }
+        }
+        private List<CategoryModel> categories;
+
+        public List<CategoryModel> Categories
+        {
+            get { return categories; }
+            set
+            {
+                categories = value;
+                OnPropertyChanged();
+            }
+        }
+
+
+        private void CreateItem()
+        {
+            ItemOptionModel[] itemOptions = new ItemOptionModel[]
+            {
+                new ItemOptionModel()
+                {
+                    OptionName = Option1,
+                    Price = Decimal.Parse(Price1)
+                },
+                new ItemOptionModel()
+                {
+                    OptionName = Option2,
+                    Price = Decimal.Parse(Price2)
+                },
+                new ItemOptionModel()
+                {
+                    OptionName = Option3,
+                    Price = Decimal.Parse(Price3)
+                },
+                new ItemOptionModel()
+                {
+                    OptionName = Option4,
+                    Price = Decimal.Parse(Price4)
+                }
+            };
+            
+
+            ItemModel item = new ItemModel()
+            {
+                Name = ItemName,
+                CategoryName = SelectCate.Name,
+                Price = Decimal.Parse(ItemPrice),
+                Cost = Decimal.Parse(ItemCost),
+                Color = "#FFFFFF",
+                ItemOptions = itemOptions
+            };
+            var result = _productService.CreateItem(item);
+        }
+
 
         private string itemName;
 

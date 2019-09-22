@@ -28,8 +28,9 @@
                             Title="Category"
                             WidthRequest="400"
                             HorizontalOptions="StartAndExpand"
-                            TitleColor="LightGray">
-                        <Picker.ItemsSource>
+                            TitleColor="LightGray"
+                            ItemsSource="{Binding CategoriesName}">
+                        <!--<Picker.ItemsSource>
                             <x:Array Type="{x:Type x:String}">
                                 <x:String>Baboon</x:String>
                                 <x:String>Capuchin Monkey</x:String>
@@ -39,7 +40,7 @@
                                 <x:String>Howler Monkey</x:String>
                                 <x:String>Japanese Macaque</x:String>
                             </x:Array>
-                        </Picker.ItemsSource>
+                        </Picker.ItemsSource>-->
                     </Picker>
                     </Frame>
             <StackLayout Orientation="Horizontal">

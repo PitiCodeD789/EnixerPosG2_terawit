@@ -23,7 +23,9 @@ namespace EnixerPos.Mobile
             CategoryPageViewModel viewModel = new CategoryPageViewModel();
             CreateItemPageViewModel createItem = new CreateItemPageViewModel();
             CreateDiscountPageViewModel createDiscount = new CreateDiscountPageViewModel();
-            MainPage = new NavigationPage(new Views.Item.CreateDiscountPage(createDiscount));
+            //MainPage = new NavigationPage(new Views.Item.CreateDiscountPage(createDiscount));
+            CreateItemPageViewModel itemPageViewModel = new CreateItemPageViewModel();
+            MainPage = new Views.Item.CreateItem(itemPageViewModel);
             PermissionReq();
         }
 
