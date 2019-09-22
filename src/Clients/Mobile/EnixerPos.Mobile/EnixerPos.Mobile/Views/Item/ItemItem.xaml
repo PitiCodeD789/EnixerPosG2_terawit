@@ -6,18 +6,27 @@
              mc:Ignorable="d"
              x:Class="EnixerPos.Mobile.Views.Item.ItemItem">
   <ContentView.Content>
-      <StackLayout>
-            <ListView >
+      <Grid>
+            <ListView ItemsSource="{Binding TheData}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout Orientation="Horizontal">
-                            <Image Source="icon_list" WidthRequest="20" HeightRequest="20" Margin="10"/>
-                            <Label Text="aaaaa" />
-                            <Label Text="20.36" HorizontalOptions="EndAndExpand"/>
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding EditData}" CommandParameter="{Binding DataName}"/>
+                            </StackLayout.GestureRecognizers>
+                            <Frame CornerRadius="180" WidthRequest="40" HeightRequest="40" BackgroundColor="{Binding Color}" Padding="0" Margin="15"/>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding DataName}" />
+                                <Label Text="{Binding CountItem}" TextColor="#888888" IsVisible="{Binding CountItemVisible}"/>
+                            </StackLayout>
+                            <Label Text="{Binding Number}" HorizontalOptions="EndAndExpand" IsVisible="{Binding NumberVisible}"/>
                         </StackLayout>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-      </StackLayout>
+            <AbsoluteLayout VerticalOptions="EndAndExpand" HorizontalOptions="EndAndExpand" Margin="60">
+                <ImageButton Source="plus" WidthRequest="80" BackgroundColor="Transparent" Command="{Binding CreateData}"/>
+            </AbsoluteLayout>
+        </Grid>
   </ContentView.Content>
 </ContentView>
