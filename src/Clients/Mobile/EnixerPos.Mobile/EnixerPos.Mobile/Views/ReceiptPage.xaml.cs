@@ -43,6 +43,7 @@ namespace EnixerPos.Mobile.Views
             _vm = vm;
             InitializeComponent();
             Receipt = vm.Receipt;
+            CreateReceipt();
             BindingContext = vm;
         }
 
@@ -217,6 +218,11 @@ namespace EnixerPos.Mobile.Views
             var image = SKImage.FromBitmap(toBitmap);
             var data = image.Encode(SKEncodedImageFormat.Png, 90);
             return data.ToArray();
+        }
+
+        private void Back_Tapped(object sender, EventArgs e)
+        {
+            App.Current.MainPage = new NavigationPage(new SaleView());
         }
     }
 }
