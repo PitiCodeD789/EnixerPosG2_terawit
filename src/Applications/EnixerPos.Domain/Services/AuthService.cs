@@ -126,16 +126,16 @@ namespace EnixerPos.Domain.Services
             {
                 return null;
             }
-            if(tokenEntity.UserId != 0)
-            {
-                return null;
-            }
+            //if(tokenEntity.UserId != 0)
+            //{
+            //    return null;
+            //}
 
-            int countUser = _tokenRepository.CountUser(userEntity.Id);
-            if(countUser > 0)
-            {
-                return null;
-            }
+            //int countUser = _tokenRepository.CountUser(userEntity.Id);
+            //if(countUser > 0)
+            //{
+            //    return null;
+            //}
 
             int userId = userEntity.Id;
             bool isUpdate = _tokenRepository.UpdateUserId(email, imei, userId);
