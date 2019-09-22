@@ -93,6 +93,7 @@ namespace EnixerPos.Mobile.ViewModels
             OpenTicketListCommand = new Command(OpenTicketList);
             OpenTicketCommand = new Command<int>((ticketNumber) => OpenTicket(ticketNumber));
             ChargeCommand = new Command(Charge);
+            GetDiscount();
         }
 
         public Command QuantityChangeCommand { get; set; }
@@ -122,6 +123,17 @@ namespace EnixerPos.Mobile.ViewModels
             try
             {
                 decimal optionPrice = OptionList[CurrentSelectedOptionIndex].Price;
+                DiscountModel currentDiscount = new DiscountModel();
+                if (Discount1)
+                    currentDiscount = new DiscountModel { DiscountName = Discounts[0].DiscountName, Amount = Discounts[0].Amount, IsPercentage = Discounts[0].IsPercentage };
+                else if (Discount2)
+                    currentDiscount = new DiscountModel { DiscountName = Discounts[1].DiscountName, Amount = Discounts[1].Amount, IsPercentage = Discounts[1].IsPercentage };
+                else if (Discount3)
+                    currentDiscount = new DiscountModel { DiscountName = Discounts[2].DiscountName, Amount = Discounts[2].Amount, IsPercentage = Discounts[2].IsPercentage };
+                else if (Discount4)
+                    currentDiscount = new DiscountModel { DiscountName = Discounts[3].DiscountName, Amount = Discounts[3].Amount, IsPercentage = Discounts[3].IsPercentage };
+
+                decimal dicountedAmount = (currentDiscount.IsPercentage) ? currentDiscount.Amount / 100 * (CurrentItem.Price + optionPrice) * Quantity : currentDiscount.Amount;
                 CurrentTicket.Add(new OrderItemModel
                 {
                     ItemName = CurrentItem.Name,
@@ -130,9 +142,11 @@ namespace EnixerPos.Mobile.ViewModels
                     Quantity = Quantity,
                     OptionName = OptionList[CurrentSelectedOptionIndex].OptionName,
                     OptionPrice = OptionList[CurrentSelectedOptionIndex].Price,
-                    DiscountedPrice = (CurrentItem.Price + optionPrice) * Quantity,
+                    DiscountedPrice = (CurrentItem.Price + optionPrice) * Quantity - dicountedAmount,
+                    IsDiscountPercentage = currentDiscount.IsPercentage,
+                    ItemDiscount = dicountedAmount
                 });
-                TotalPrice += (CurrentItem.Price + optionPrice) * Quantity;
+                TotalPrice += (CurrentItem.Price + optionPrice) * Quantity - dicountedAmount;
             }
             catch (Exception e)
             {
@@ -262,8 +276,53 @@ namespace EnixerPos.Mobile.ViewModels
             };
             Application.Current.MainPage.Navigation.PushAsync(new ChargePage(receipt));
         }
+        void GetDiscount()
+        {
+            Discounts = new List<DiscountModel>()
+            {
+                new DiscountModel{ DiscountName = "Discount 10%", IsPercentage = true, Amount = 10},
+                new DiscountModel{ DiscountName = "Birthday 15%", IsPercentage = true, Amount = 15},
+                new DiscountModel{ DiscountName = "Discount 100THB for new cutomer", IsPercentage = false, Amount = 100}
+            };
+            if (Discounts.Count > 0)
+            {
+                DiscountName1 = Discounts[0].DiscountName;
+                HasDiscount1 = true;
+                Discount1 = false;
+            }
+
+            if (Discounts.Count > 1)
+            {
+                DiscountName2 = Discounts[1].DiscountName;
+                HasDiscount2 = true;
+                Discount2 = false;
+            }
+
+            if (Discounts.Count > 2)
+            {
+                DiscountName3 = Discounts[2].DiscountName;
+                HasDiscount3 = true;
+                Discount3 = false;
+            }
+
+            if (Discounts.Count > 3)
+            {
+                DiscountName4 = Discounts[3].DiscountName;
+                HasDiscount4 = true;
+                Discount4 = false;
+            }
+
+        }
 
         #region Propfull
+        private List<DiscountModel> _discounts;
+        public List<DiscountModel> Discounts
+        {
+            get { return _discounts; }
+            set { _discounts = value; }
+        }
+
+
         private bool _openButton;
         public bool ShowOpenButton
         {
@@ -380,6 +439,92 @@ namespace EnixerPos.Mobile.ViewModels
 
         public object ItemPrice { get; private set; }
 
+        #endregion
+
+        #region Discount
+        private bool discount1;
+        public bool Discount1
+        {
+            get { return discount1; }
+            set { discount1 = value; OnPropertyChanged(); }
+        }
+
+        private string discountName1;
+        public string DiscountName1
+        {
+            get { return discountName1; }
+            set { discountName1 = value; OnPropertyChanged(); }
+        }
+
+        private bool hasDiscount1;
+        public bool HasDiscount1
+        {
+            get { return hasDiscount1; }
+            set { hasDiscount1 = value; OnPropertyChanged(); }
+        }
+
+        private bool discount2;
+        public bool Discount2
+        {
+            get { return discount2; }
+            set { discount2 = value; OnPropertyChanged(); }
+        }
+
+        private string discountName2;
+        public string DiscountName2
+        {
+            get { return discountName2; }
+            set { discountName2 = value; OnPropertyChanged(); }
+        }
+
+        private bool hasDiscount2;
+        public bool HasDiscount2
+        {
+            get { return hasDiscount2; }
+            set { hasDiscount2 = value; OnPropertyChanged(); }
+        }
+
+        private bool discount3;
+        public bool Discount3
+        {
+            get { return discount3; }
+            set { discount3 = value; OnPropertyChanged(); }
+        }
+
+        private string discountName3;
+        public string DiscountName3
+        {
+            get { return discountName3; }
+            set { discountName3 = value; OnPropertyChanged(); }
+        }
+
+        private bool hasDiscount3;
+        public bool HasDiscount3
+        {
+            get { return hasDiscount3; }
+            set { hasDiscount3 = value; OnPropertyChanged(); }
+        }
+
+        private bool discount4;
+        public bool Discount4
+        {
+            get { return discount4; }
+            set { discount4 = value; OnPropertyChanged(); }
+        }
+
+        private string discountName4;
+        public string DiscountName4
+        {
+            get { return discountName4; }
+            set { discountName4 = value; OnPropertyChanged(); }
+        }
+
+        private bool hasDiscount4;
+        public bool HasDiscount4
+        {
+            get { return hasDiscount4; }
+            set { hasDiscount4 = value; OnPropertyChanged(); }
+        }
         #endregion
 
         public event PropertyChangedEventHandler PropertyChanged;

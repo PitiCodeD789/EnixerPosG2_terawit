@@ -74,49 +74,22 @@
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*"/>
                                 <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
-                            <StackLayout Orientation="Horizontal" Grid.Column="0" Grid.Row="0">
-                                <Switch VerticalOptions="CenterAndExpand" />
-                                <Label VerticalOptions="CenterAndExpand"  Text="Discount 10%" />
+                            <StackLayout Orientation="Horizontal" Grid.Column="0" Grid.Row="0" IsVisible="{Binding HasDiscount1}">
+                                <Switch VerticalOptions="CenterAndExpand" IsToggled="{Binding Discount1}"/>
+                                <Label VerticalOptions="CenterAndExpand"  Text="{Binding DiscountName1}" />
                             </StackLayout>
-                            <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="0">
-                                <Switch VerticalOptions="CenterAndExpand" />
-                                <Label VerticalOptions="CenterAndExpand"  Text="Discount 10%" />
+                            <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="0" IsVisible="{Binding HasDiscount2}">
+                                <Switch VerticalOptions="CenterAndExpand" IsToggled="{Binding Discount2}"/>
+                                <Label VerticalOptions="CenterAndExpand"  Text="{Binding DiscountName2}"  />
                             </StackLayout>
-                            <StackLayout Orientation="Horizontal" Grid.Column="0" Grid.Row="1">
-                                <Switch VerticalOptions="CenterAndExpand" />
-                                <Label VerticalOptions="CenterAndExpand"  Text="Discount 10%" />
+                            <StackLayout Orientation="Horizontal" Grid.Column="0" Grid.Row="1" IsVisible="{Binding HasDiscount3}">
+                                <Switch VerticalOptions="CenterAndExpand" IsToggled="{Binding Discount3}"/>
+                                <Label VerticalOptions="CenterAndExpand"  Text="{Binding DiscountName3}"  />
                             </StackLayout>
-                            <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="1">
-                                <Switch VerticalOptions="CenterAndExpand" />
-                                <Label VerticalOptions="CenterAndExpand"  Text="Discount 10%" />
-                            </StackLayout>
-                            <StackLayout Orientation="Horizontal" Grid.Column="0" Grid.Row="2">
-                                <Switch VerticalOptions="CenterAndExpand" />
-                                <Label VerticalOptions="CenterAndExpand"  Text="Discount 10%" />
-                            </StackLayout>
-                            <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="2">
-                                <Switch VerticalOptions="CenterAndExpand" />
-                                <Label VerticalOptions="CenterAndExpand"  Text="Discount 10%" />
-                            </StackLayout>
-                            <StackLayout Orientation="Horizontal" Grid.Column="0" Grid.Row="3">
-                                <Switch VerticalOptions="CenterAndExpand" />
-                                <Label VerticalOptions="CenterAndExpand"  Text="Discount 10%" />
-                            </StackLayout>
-                            <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="3">
-                                <Switch VerticalOptions="CenterAndExpand" />
-                                <Label VerticalOptions="CenterAndExpand"  Text="Discount 10%" />
-                            </StackLayout>
-                            <StackLayout Orientation="Horizontal" Grid.Column="0" Grid.Row="4">
-                                <Switch VerticalOptions="CenterAndExpand" />
-                                <Label VerticalOptions="CenterAndExpand"  Text="Discount 10%" />
-                            </StackLayout>
-                            <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="4">
-                                <Switch VerticalOptions="CenterAndExpand" />
-                                <Label VerticalOptions="CenterAndExpand"  Text="Discount 10%" />
+                            <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="1" IsVisible="{Binding HasDiscount4}">
+                                <Switch VerticalOptions="CenterAndExpand" IsToggled="{Binding Discount4}"/>
+                                <Label VerticalOptions="CenterAndExpand"  Text="{Binding DiscountName4}"  />
                             </StackLayout>
                         </Grid>
                     </StackLayout>
