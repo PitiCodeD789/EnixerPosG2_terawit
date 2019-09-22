@@ -38,13 +38,19 @@
                                    WidthRequest="100"
                                    HorizontalOptions="Start"
                                    VerticalOptions="Start">
-                            <Grid>
+                            <Grid >
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding ColorSelectCommand}" CommandParameter ="1"/>
+                                </Grid.GestureRecognizers>
                                 <BoxView BackgroundColor="White" 
                                          HorizontalOptions="Start"
                                          VerticalOptions="Start" />
-                                <Image Source="iconcheckmark" 
+                                <Image Source="iconcheckmark"                                        
                                        WidthRequest="50"
-                                       HeightRequest="50"/>
+                                       IsVisible="{Binding Color1,Mode=TwoWay}"
+                                       HeightRequest="50">
+                                    
+                                </Image>
                             </Grid>
 
                         </Frame>
@@ -57,10 +63,15 @@
                                    HorizontalOptions="Start"
                                    VerticalOptions="Start">
                             <Grid>
-                                <Image Source="iconcheckmark" 
-                                       IsVisible="False"
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding ColorSelectCommand}"
+                                                          CommandParameter ="2"/>
+                                </Grid.GestureRecognizers>
+                                <Image Source="iconcheckmark"                                        
+                                       IsVisible="{Binding Color2,Mode=TwoWay}"
                                        WidthRequest="50"
-                                       HeightRequest="50"/>
+                                       HeightRequest="50">                                  
+                                </Image>
                             </Grid>
                         </Frame>
                         <Frame HasShadow="True" 
@@ -72,10 +83,16 @@
                                    HorizontalOptions="Start"
                                    VerticalOptions="Start">
                             <Grid>
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding ColorSelectCommand}"
+                                                          CommandParameter ="3"/>
+                                </Grid.GestureRecognizers>
                                 <Image Source="iconcheckmark" 
-                                       IsVisible="False"
+                                       IsVisible="{Binding Color3,Mode=TwoWay}"
                                        WidthRequest="50"
-                                       HeightRequest="50"/>
+                                       HeightRequest="50">
+                                   
+                                </Image>
                             </Grid>
                         </Frame>
                         <Frame HasShadow="True" 
@@ -87,10 +104,16 @@
                                    HorizontalOptions="Start"
                                    VerticalOptions="Start">
                             <Grid>
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding ColorSelectCommand}"
+                                                          CommandParameter ="4"/>
+                                </Grid.GestureRecognizers>
                                 <Image Source="iconcheckmark" 
-                                       IsVisible="False"
+                                       IsVisible="{Binding Color4,Mode=TwoWay}"
                                        WidthRequest="50"
-                                       HeightRequest="50"/>
+                                       HeightRequest="50">
+                                    
+                                </Image>
                             </Grid>
                         </Frame>
                         <Frame HasShadow="True" 
@@ -102,10 +125,16 @@
                                    HorizontalOptions="Start"
                                    VerticalOptions="Start">
                             <Grid>
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding ColorSelectCommand}"
+                                                          CommandParameter ="5"/>
+                                </Grid.GestureRecognizers>
                                 <Image Source="iconcheckmark" 
-                                       IsVisible="False"
+                                       IsVisible="{Binding Color5,Mode=TwoWay}"
                                        WidthRequest="50"
-                                       HeightRequest="50"/>
+                                       HeightRequest="50">
+                                   
+                                </Image>
                             </Grid>
                         </Frame>
                         <Frame HasShadow="True" 
@@ -117,10 +146,16 @@
                                    HorizontalOptions="Start"
                                    VerticalOptions="Start">
                             <Grid>
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding ColorSelectCommand}"
+                                                          CommandParameter ="6"/>
+                                </Grid.GestureRecognizers>
                                 <Image Source="iconcheckmark" 
-                                       IsVisible="False"
+                                       IsVisible="{Binding Color6,Mode=TwoWay}"
                                        WidthRequest="50"
-                                       HeightRequest="50"/>
+                                       HeightRequest="50">
+                                   
+                                </Image>
                             </Grid>
                         </Frame>
 
@@ -143,12 +178,14 @@
                         WidthRequest="350" 
                         BackgroundColor="#E96722"
                         TextColor="White"
+                        Command="{Binding CreateCategoryCommand}"
                         FontSize="Medium" Margin="5"
                         VerticalOptions="Start" HeightRequest="80"
                         FontAttributes="Bold" 
                         HorizontalOptions="FillAndExpand"/>
                 <Button Text="CANCEL"
                         WidthRequest="350" 
+                        Command="{Binding CancelCategoryCommand}"
                         BackgroundColor="LightGray"
                         FontSize="Medium" Margin="5"
                         VerticalOptions="Start" HeightRequest="80"

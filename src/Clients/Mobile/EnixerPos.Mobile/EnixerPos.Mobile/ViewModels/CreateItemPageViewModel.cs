@@ -6,42 +6,128 @@ using Xamarin.Forms;
 
 namespace EnixerPos.Mobile.ViewModels
 {
-    public class CategoryPageViewModel : BaseViewModel
+    public class CreateItemPageViewModel : BaseViewModel
     {
-        public CategoryPageViewModel()
+        public CreateItemPageViewModel()
         {
             ColorSelectCommand = new Command(ColorSelect);
-            CreateCategoryCommand = new Command(CreateCategory);
-            CancelCategoryCommand = new Command(CancelCategory);
+
         }
 
-        private void CancelCategory(object obj)
+        private string itemName;
+
+        public string ItemName
         {
+            get { return itemName; }
+            set { itemName = value; }
+        }
+
+        private string itemPrice;
+
+        public string ItemPrice
+        {
+            get { return itemPrice; }
+            set { itemPrice = value; }
+        }
+
+        private string itemCost;
+
+        public string ItemCost
+        {
+            get { return itemCost; }
+            set { itemCost = value; }
+        }
+
+        private string option1;
             
+        public string Option1
+        {
+            get { return option1; }
+            set { option1 = value; }
         }
 
-        private void CreateCategory(object obj)
+        private string price1;
+
+        public string Price1
         {
-           
+            get { return price1; }
+            set { price1 = value; }
         }
+
+
+        private string option2;
+
+        public string Option2
+        {
+            get { return option2; }
+            set { option2 = value; }
+        }
+
+        private string price2;
+
+        public string Price2
+        {
+            get { return price2; }
+            set { price2 = value; }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="obj"></param>
+        /// 
+        private string option3;
+        public string Option3
+        {
+            get { return option3; }
+            set { option3 = value; }
+        }
+
+        private string price3;
+
+        public string Price3
+        {
+            get { return price3; }
+            set { price3 = value; }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="obj"></param>
+        /// 
+        private string option4;
+        public string Option4
+        {
+            get { return option4; }
+            set { option4 = value; }
+        }
+
+        private string price4;
+
+        public string Price4
+        {
+            get { return price4; }
+            set { price4 = value; }
+        }
+
 
         private void ColorSelect(object obj)
         {
-            int id = int.Parse( obj.ToString());                        
-            
+            int id = int.Parse(obj.ToString());
+
             setColor(id);
         }
 
         public ICommand ColorSelectCommand { get; set; }
-        public ICommand CreateCategoryCommand { get; set; }
-        public ICommand CancelCategoryCommand { get; set; }
 
         private void setColor(int colorIndex)
         {
             if (colorIndex == 1)
             {
                 Color1 = true;
-            }else
+            }
+            else
             {
                 Color1 = false;
             }
@@ -92,17 +178,6 @@ namespace EnixerPos.Mobile.ViewModels
 
         }
 
-
-
-
-        private string categoryName;
-
-        public string CategoryName
-        {
-            get { return categoryName; }
-            set { categoryName = value; }
-        }
-
         private bool color1 = true;
 
         public bool Color1
@@ -148,7 +223,5 @@ namespace EnixerPos.Mobile.ViewModels
             get { return color6; }
             set { color6 = value; OnPropertyChanged(); }
         }
-
-
     }
 }

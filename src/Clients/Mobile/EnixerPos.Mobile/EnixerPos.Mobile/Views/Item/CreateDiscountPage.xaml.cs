@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EnixerPos.Mobile.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,11 @@ namespace EnixerPos.Mobile.Views.Item
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CreateDiscountPage : ContentPage
     {
-        public CreateDiscountPage()
+        CreateDiscountPageViewModel _vM;
+        public CreateDiscountPage(CreateDiscountPageViewModel vM)
         {
             InitializeComponent();
+            BindingContext = _vM = vM;
         }
     }
 }
