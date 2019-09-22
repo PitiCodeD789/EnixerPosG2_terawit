@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:binding="clr-namespace:EnixerPos.Mobile.ViewModels"
+             mc:Ignorable="d"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="EnixerPos.Mobile.Views.EnterPin">
+    <ContentPage.BindingContext>
+        <binding:EnterPinViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="NumPad" TargetType="Button">
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="FontAttributes" Value="None"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontSize" Value="24"/>
+                <Setter Property="Margin" Value="-3"/>
+                <Setter Property="BorderColor" Value="#e3e3e3"/>
+                <Setter Property="BorderWidth" Value="1"/>
+                <Setter Property="Padding" Value="0"/>
+            </Style>
+            <Style x:Key="PasswordLength" TargetType="Frame">
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="CornerRadius" Value="10"/>
+                <Setter Property="HeightRequest" Value="20"/>
+                <Setter Property="WidthRequest" Value="20"/>
+                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="HasShadow" Value="False"/>
+                <Setter Property="BorderColor" Value="Black"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" WidthRequest="450">
+            <Label Text="Enter Pin" TextColor="#8f8f8f" FontSize="36" HorizontalTextAlignment="Center"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,20,0,20">
+                <Frame Style="{StaticResource Key=PasswordLength}" BackgroundColor="{Binding PwHint0}"/>
+                <Frame Style="{StaticResource Key=PasswordLength}" BackgroundColor="{Binding PwHint1}"/>
+                <Frame Style="{StaticResource Key=PasswordLength}" BackgroundColor="{Binding PwHint2}"/>
+                <Frame Style="{StaticResource Key=PasswordLength}" BackgroundColor="{Binding PwHint3}"/>
+            </StackLayout>
+            <Grid Padding="0" Margin="0" HorizontalOptions="CenterAndExpand" BackgroundColor="White">
+                <Button Style="{StaticResource Key=NumPad}" Text="1" Grid.Row="0" Grid.Column="0" Command="{Binding InputPin}" CommandParameter="1"/>
+                <Button Style="{StaticResource Key=NumPad}" Text="2" Grid.Row="0" Grid.Column="1" Command="{Binding InputPin}" CommandParameter="2"/>
+                <Button Style="{StaticResource Key=NumPad}" Text="3" Grid.Row="0" Grid.Column="2" Command="{Binding InputPin}" CommandParameter="3"/>
+                <Button Style="{StaticResource Key=NumPad}" Text="4" Grid.Row="1" Grid.Column="0" Command="{Binding InputPin}" CommandParameter="4"/>
+                <Button Style="{StaticResource Key=NumPad}" Text="5" Grid.Row="1" Grid.Column="1" Command="{Binding InputPin}" CommandParameter="5"/>
+                <Button Style="{StaticResource Key=NumPad}" Text="6" Grid.Row="1" Grid.Column="2" Command="{Binding InputPin}" CommandParameter="6"/>
+                <Button Style="{StaticResource Key=NumPad}" Text="7" Grid.Row="2" Grid.Column="0" Command="{Binding InputPin}" CommandParameter="7"/>
+                <Button Style="{StaticResource Key=NumPad}" Text="8" Grid.Row="2" Grid.Column="1" Command="{Binding InputPin}" CommandParameter="8"/>
+                <Button Style="{StaticResource Key=NumPad}" Text="9" Grid.Row="2" Grid.Column="2" Command="{Binding InputPin}" CommandParameter="9"/>
+                <Button Style="{StaticResource Key=NumPad}" Text="0" Grid.Row="3" Grid.Column="1" Command="{Binding InputPin}" CommandParameter="0"/>
+                <Button Style="{StaticResource Key=NumPad}" Text="1" Grid.Row="3" Grid.Column="0" Command="{Binding InputPin}" CommandParameter="1"/>
+                <ImageButton Margin="-3" BorderColor="#e3e3e3" BorderWidth="1" BackgroundColor="White" Grid.Row="3" Grid.Column="2" Source="back" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HeightRequest="30" Command="{Binding InputPin}" CommandParameter="Delete"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

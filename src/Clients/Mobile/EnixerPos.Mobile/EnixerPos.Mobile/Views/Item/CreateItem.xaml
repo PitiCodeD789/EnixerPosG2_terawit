@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:component="clr-namespace:EnixerPos.Mobile.Components"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="EnixerPos.Mobile.Views.Item.CreateItem">
+    <ContentPage.Content>
+        <ScrollView>
+            
+       
+        <StackLayout >
+            <Frame HasShadow="True">
+                <Label Text="Create item" TextColor="Black" FontSize="Medium"/>
+            </Frame>
+            <Frame VerticalOptions="Start" 
+                   WidthRequest="750" CornerRadius="3"
+                   HorizontalOptions="CenterAndExpand">
+                <StackLayout>                    
+            <component:Pos_EntryView Margin="10,10,10,0" 
+                                     TextEntry="{Binding ItemName}" 
+                                     Placeholder="Name"/>
+                    <Frame HasShadow="True" Padding="4,3,0,3" 
+                           Margin="10,5,10,0">                        
+                    <Picker x:Name="categorypicker"
+                            Title="Category"
+                            WidthRequest="400"
+                            HorizontalOptions="StartAndExpand"
+                            TitleColor="LightGray"
+                            ItemsSource="{Binding CategoriesName}"
+                            SelectedItem="{Binding SelectedCategory}">
+                        <!--<Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Baboon</x:String>
+                                <x:String>Capuchin Monkey</x:String>
+                                <x:String>Blue Monkey</x:String>
+                                <x:String>Squirrel Monkey</x:String>
+                                <x:String>Golden Lion Tamarin</x:String>
+                                <x:String>Howler Monkey</x:String>
+                                <x:String>Japanese Macaque</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>-->
+                    </Picker>
+                    </Frame>
+            <StackLayout Orientation="Horizontal">
+                <component:Pos_EntryView HorizontalOptions="StartAndExpand" 
+                                         Margin="10,5,10,0"
+                                         WidthRequest="360"
+                                         TextEntry="{Binding ItemPrice}"
+                                         KeyboardType="Numeric"
+                                         Placeholder="Price"/>
+                <component:Pos_EntryView HorizontalOptions="EndAndExpand" 
+                                         Margin="10,5,10,0"
+                                         TextEntry="{Binding ItemCost}"
+                                         KeyboardType="Numeric"                                         
+                                          WidthRequest="360"
+                                         Placeholder="Cost"/>
+            </StackLayout>
+                </StackLayout>
+            </Frame>
+            <Frame VerticalOptions="Start" 
+                   Margin="0,15,0,15"
+                   WidthRequest="750" CornerRadius="3"
+                   HorizontalOptions="CenterAndExpand">
+                <StackLayout>
+                    <Label Text="Item Options"
+                       FontAttributes="Bold"
+                       TextColor="#E96722" 
+                           Margin="0,5,0,15"
+                       FontSize="Medium" />
+                    <StackLayout Orientation="Horizontal">
+                        <component:Pos_EntryView HorizontalOptions="StartAndExpand" 
+                                         Margin="10,5,10,0"
+                                         WidthRequest="360"  
+                                         TextEntry="{Binding Option1}"
+                                         Placeholder="Option1(Required)"/>
+                        <component:Pos_EntryView HorizontalOptions="EndAndExpand" 
+                                         Margin="10,5,10,0"
+                                         KeyboardType="Numeric" 
+                                         TextEntry="{Binding Price1}"
+                                          WidthRequest="360"
+                                         Placeholder="Price"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <component:Pos_EntryView HorizontalOptions="StartAndExpand" 
+                                         Margin="10,5,10,0"
+                                         WidthRequest="360"   
+                                         TextEntry="{Binding Option2}"
+                                         Placeholder="Option2"/>
+                        <component:Pos_EntryView HorizontalOptions="EndAndExpand" 
+                                         Margin="10,5,10,0"
+                                         KeyboardType="Numeric" 
+                                         TextEntry="{Binding Price2}"
+                                          WidthRequest="360"
+                                         Placeholder="Price"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <component:Pos_EntryView HorizontalOptions="StartAndExpand" 
+                                         Margin="10,5,10,0"
+                                         WidthRequest="360" 
+                                         TextEntry="{Binding Option3}"
+                                         Placeholder="Option3"/>
+                        <component:Pos_EntryView HorizontalOptions="EndAndExpand" 
+                                         Margin="10,5,10,0"
+                                         KeyboardType="Numeric"                                         
+                                          WidthRequest="360"
+                                          TextEntry="{Binding Price3}"
+                                         Placeholder="Price"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <component:Pos_EntryView HorizontalOptions="StartAndExpand" 
+                                         Margin="10,5,10,0"
+                                         WidthRequest="360" 
+                                         TextEntry="{Binding Option4}"
+                                         Placeholder="Option4"/>
+                        <component:Pos_EntryView HorizontalOptions="EndAndExpand" 
+                                         Margin="10,5,10,0"
+                                         KeyboardType="Numeric" 
+                                         TextEntry="{Binding Price4}"
+                                          WidthRequest="360"
+                                         Placeholder="Price"/>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+            
+                <Frame VerticalOptions="Start" 
+                       Margin="0,15,0,0"
+                   WidthRequest="750" CornerRadius="3"
+                   HorizontalOptions="CenterAndExpand">
+                    <StackLayout>
+                        <Label Text="Representation on POS "
+                       FontAttributes="Bold"
+                       TextColor="#E96722" 
+                       FontSize="Medium" />
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+
+                            <Frame HasShadow="True" 
+                                   Margin="5"
+                                   Padding="0"                                
+                                   HeightRequest="100" 
+                                   BackgroundColor="#ffffff"
+                                   WidthRequest="100"
+                                   HorizontalOptions="Start"
+                                   VerticalOptions="Start">
+                                <Grid >
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding ColorSelectCommand}" CommandParameter ="1"/>
+                                    </Grid.GestureRecognizers>
+                                    
+                                    <Image Source="iconcheckmark"                                        
+                                       WidthRequest="50"
+                                       IsVisible="{Binding Color1,Mode=TwoWay}"
+                                       HeightRequest="50">
+
+                                    </Image>
+                                </Grid>
+
+                            </Frame>
+                            <Frame HasShadow="True" 
+                                   Margin="5"
+                                   Padding="0" 
+                                   BackgroundColor="#ffd5d5" 
+                                   HeightRequest="100" 
+                                   WidthRequest="100"
+                                   HorizontalOptions="Start"
+                                   VerticalOptions="Start">
+                                <Grid>
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding ColorSelectCommand}"
+                                                          CommandParameter ="2"/>
+                                    </Grid.GestureRecognizers>
+                                    <Image Source="iconcheckmark"                                        
+                                       IsVisible="{Binding Color2,Mode=TwoWay}"
+                                       WidthRequest="50"
+                                       HeightRequest="50">
+                                    </Image>
+                                </Grid>
+                            </Frame>
+                            <Frame HasShadow="True" 
+                                   Margin="5"
+                                   Padding="0" 
+                                   BackgroundColor="#f8ffd3" 
+                                   HeightRequest="100" 
+                                   WidthRequest="100"
+                                   HorizontalOptions="Start"
+                                   VerticalOptions="Start">
+                                <Grid>
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding ColorSelectCommand}"
+                                                          CommandParameter ="3"/>
+                                    </Grid.GestureRecognizers>
+                                    <Image Source="iconcheckmark" 
+                                       IsVisible="{Binding Color3,Mode=TwoWay}"
+                                       WidthRequest="50"
+                                       HeightRequest="50">
+
+                                    </Image>
+                                </Grid>
+                            </Frame>
+                            <Frame HasShadow="True" 
+                                   Margin="5"
+                                   Padding="0" 
+                                   BackgroundColor="#c6dbfc" 
+                                   HeightRequest="100" 
+                                   WidthRequest="100"
+                                   HorizontalOptions="Start"
+                                   VerticalOptions="Start">
+                                <Grid>
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding ColorSelectCommand}"
+                                                          CommandParameter ="4"/>
+                                    </Grid.GestureRecognizers>
+                                    <Image Source="iconcheckmark" 
+                                       IsVisible="{Binding Color4,Mode=TwoWay}"
+                                       WidthRequest="50"
+                                       HeightRequest="50">
+
+                                    </Image>
+                                </Grid>
+                            </Frame>
+                            <Frame HasShadow="True" 
+                                   Margin="5"
+                                   Padding="0" 
+                                   BackgroundColor="#ffccf9" 
+                                   HeightRequest="100" 
+                                   WidthRequest="100"
+                                   HorizontalOptions="Start"
+                                   VerticalOptions="Start">
+                                <Grid>
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding ColorSelectCommand}"
+                                                          CommandParameter ="5"/>
+                                    </Grid.GestureRecognizers>
+                                    <Image Source="iconcheckmark" 
+                                       IsVisible="{Binding Color5,Mode=TwoWay}"
+                                       WidthRequest="50"
+                                       HeightRequest="50">
+
+                                    </Image>
+                                </Grid>
+                            </Frame>
+                            <Frame HasShadow="True" 
+                                   Margin="5"
+                                   Padding="0" 
+                                   BackgroundColor="#e0e0e0" 
+                                   HeightRequest="100" 
+                                   WidthRequest="100"
+                                   HorizontalOptions="Start"
+                                   VerticalOptions="Start">
+                                <Grid>
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding ColorSelectCommand}"
+                                                          CommandParameter ="6"/>
+                                    </Grid.GestureRecognizers>
+                                    <Image Source="iconcheckmark" 
+                                       IsVisible="{Binding Color6,Mode=TwoWay}"
+                                       WidthRequest="50"
+                                       HeightRequest="50">
+
+                                    </Image>
+                                </Grid>
+                            </Frame>
+
+                        </StackLayout>
+
+                    </StackLayout>
+
+
+                </Frame >
+
+                <StackLayout Orientation="Horizontal" 
+                         VerticalOptions="Center"  
+                         Margin="0,15,0,15"
+                         WidthRequest="800" Padding="0"
+                         HorizontalOptions="Center">
+                <Button Text="CREATE ITEM" WidthRequest="350" BackgroundColor="#E96722" TextColor="White" FontSize="Medium" FontAttributes="Bold"  HeightRequest="80" HorizontalOptions="FillAndExpand"
+                        Command="{Binding CreateItemCommand}"/>
+                    <Button Text="CANCEL" WidthRequest="350" HeightRequest="80" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="FillAndExpand" Command="{Binding BackPageMethod}"/>
+            </StackLayout>
+            
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -19,6 +19,7 @@ namespace EnixerPos.Api
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+            .UseUrls("http://*:30000")
                 .UseStartup<Startup>();
     }
 }

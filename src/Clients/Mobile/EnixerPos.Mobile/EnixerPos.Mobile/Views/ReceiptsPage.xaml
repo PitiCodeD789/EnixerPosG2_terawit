@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:components="clr-namespace:EnixerPos.Mobile.Components"
+             xmlns:ai="clr-namespace:AiForms.Renderers;assembly=CollectionView"
+             xmlns:tabView="clr-namespace:Xam.Plugin.TabView;assembly=Xam.Plugin.TabView"
+             x:Class="EnixerPos.Mobile.Views.ReceiptsPage"
+             >
+    <ContentPage.Content>
+        <Grid ColumnSpacing="0" BackgroundColor="#E3E3E3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            <Frame Padding="0" HorizontalOptions="FillAndExpand" Margin="0" Grid.Column="0" Grid.Row="0" HasShadow="True">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                    <ImageButton Source="icon_hamburger" Aspect="AspectFit" VerticalOptions="Center" Margin="20,0" HeightRequest="30" BackgroundColor="Transparent">
+                        <ImageButton.GestureRecognizers>
+                            <TapGestureRecognizer  Tapped="Button_Clicked"/>
+                        </ImageButton.GestureRecognizers>
+                    </ImageButton>
+                    <Label Text="Receipt" TextColor="Black" FontSize="30" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start"  />
+                </StackLayout>
+            </Frame>
+            <Frame Padding="0" HorizontalOptions="FillAndExpand" Margin="0" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="0" HasShadow="True" >
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Label Text="{Binding SelectedReceipt.Reference}" TextColor="Black" FontSize="30" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start"  />
+                    <StackLayout HorizontalOptions="EndAndExpand" VerticalOptions="Center">
+                        <ImageButton Source="icon_dot_menu" Aspect="AspectFit"  Margin="20,0" HeightRequest="30"  BackgroundColor="Transparent" Clicked="ImageButton_Clicked">
+                        </ImageButton>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+            <Frame Padding="0" HorizontalOptions="FillAndExpand" Margin="0" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" HasShadow="True" >
+                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                    <SearchBar></SearchBar>
+                    <Label Text="{Binding Date}" TextColor="Orange" FontSize="20" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"  />
+                    <ListView Margin="0,20,0,0" ItemsSource="{Binding AllReciept}" SelectedItem="{Binding SelectedReceipt}" HasUnevenRows="True">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                        <Grid Padding="5,0,5,0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="50"/>
+                                                <ColumnDefinition Width="auto"/>
+                                                <ColumnDefinition Width="auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                        <Image Source="{Binding GetPaymentTypeString}" WidthRequest="35" HeightRequest="35" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" VerticalOptions="CenterAndExpand"/>
+                                            <Label Text="{Binding Total}"  FontSize="Medium" 
+                                                   TextColor="Black" Grid.Row="0" Grid.Column="1"/>
+                                        <Label Text="{Binding GetCreateTimeString}"  FontSize="Medium" TextColor="Gray" Grid.Row="1" Grid.Column="1"/>
+                                            <StackLayout Grid.Column="2" Grid.RowSpan="2" Grid.ColumnSpan="4" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" Orientation="Horizontal">
+                                                <Label  Text="{Binding Reference}" FontSize="Medium" TextColor="Black" HorizontalOptions="EndAndExpand" />
+                                            </StackLayout>
+                                        </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </Frame>
+            <ScrollView  Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="1" Grid.RowSpan="2">
+                <Frame WidthRequest="450"
+                   Grid.RowSpan="2" HorizontalOptions="Center">
+                    <StackLayout>
+                        <Label Text="{Binding TotalPrice,StringFormat='{0:N2}'}" HorizontalOptions="CenterAndExpand" FontSize="30" TextColor="Black"/>
+                        <Label Text="Total" HorizontalOptions="CenterAndExpand"/>
+                        <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="Gray"/>
+                        <Label Text="{Binding SelectedReceipt.Reference,StringFormat='{}Order: {0}'}"/>
+                        <Label Text="{Binding SelectedReceipt.Store,StringFormat='{}Cashier: {0}'}"/>
+                        <Label Text="{Binding SelectedReceipt.Pos,StringFormat='{}POS: {0}'}"/>
+                        <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="Gray"/>
+                        
+                        <StackLayout Margin="0,20,0,0" 
+                                     BindableLayout.ItemsSource="{Binding SelectItem}">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                        <Grid Padding="5,0,5,0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label Text="{Binding ItemName}"  FontSize="Medium" TextColor="Black" Grid.Row="0" Grid.Column="0" HorizontalOptions="StartAndExpand"/>
+                                            <Label Text="{Binding QuantityAndPrice}"  FontSize="Medium" TextColor="Gray" Grid.Row="1" Grid.Column="0" HorizontalOptions="StartAndExpand"/>
+                                            <Label Text="{Binding ItemDiscount}"  FontSize="Medium" TextColor="Gray" Grid.Row="2" Grid.Column="0" HorizontalOptions="StartAndExpand" IsVisible="{Binding IsDiscount}"/>
+                                            <Label Text="{Binding ItemOption}"  FontSize="Medium" TextColor="Gray" Grid.Row="3" Grid.Column="0" HorizontalOptions="StartAndExpand" IsVisible="{Binding IsOption}"/>
+                                            <StackLayout Grid.Column="2" Grid.RowSpan="4" Grid.ColumnSpan="4" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" Orientation="Horizontal">
+                                                <Image Source="icon_tag" WidthRequest="25" HeightRequest="25" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"/>
+                                                <StackLayout>
+                                                    <Label  Text="{Binding ItemTotalPrice,StringFormat='{0:N2}'}" FontSize="Medium" TextColor="Black" HorizontalOptions="EndAndExpand" TextDecorations="{Binding Strike}" />
+                                                    <Label  Text="{Binding DiscountPrice,StringFormat='{0:N2}'}" FontSize="Medium" TextColor="Black" HorizontalOptions="EndAndExpand" IsVisible="{Binding IsDiscount}"/>
+                                                </StackLayout>
+                                            </StackLayout>
+                                            
+                                        </Grid>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </StackLayout>
+
+                        <StackLayout VerticalOptions="Start">
+                            <Grid Padding="5,0,5,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <BoxView Grid.Row="0" VerticalOptions="Center" HorizontalOptions="FillAndExpand" HeightRequest="1" Color="Gray" Grid.ColumnSpan="2"/>
+                                <Label Text="{Binding DiscountAll,StringFormat='{}Discount: {0}'}"  FontSize="Medium" TextColor="Black" Grid.Row="1" Grid.Column="0" HorizontalOptions="StartAndExpand"/>
+                                <Label Grid.Row="1" Text="{Binding DiscountValue}" FontSize="Medium" TextColor="Black" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" Grid.Column="1"/>
+                                <BoxView Grid.Row="2" VerticalOptions="Center" HorizontalOptions="FillAndExpand" HeightRequest="1" Color="Gray"  Grid.ColumnSpan="2"/>
+                                <Label Text="Total"  FontSize="Medium" TextColor="Black" Grid.Row="3" Grid.Column="0" HorizontalOptions="StartAndExpand"/>
+                                <Label Grid.Row="3" Text="{Binding TotalPrice,StringFormat='{0:N2}'}" FontSize="Medium" TextColor="Black" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" Grid.Column="1"/>
+                            </Grid>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:component="clr-namespace:EnixerPos.Mobile.Components"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="EnixerPos.Mobile.Views.Item.CreateCategoryPage">
+    <ContentPage.Content>
+        <StackLayout >
+            <Frame HasShadow="True">
+                <Label Text="Create category" TextColor="Black" FontSize="Medium"/>
+            </Frame>
+            <Frame VerticalOptions="Start" 
+                   WidthRequest="750" CornerRadius="3"
+                   HorizontalOptions="CenterAndExpand">
+                <StackLayout>
+                    <component:Pos_EntryView Margin="10,30,10,30" TextEntry="{Binding CategoryName}" Placeholder="Name"/>                    
+                   
+                </StackLayout>
+            </Frame>
+            <Frame VerticalOptions="Start" 
+                   WidthRequest="750" CornerRadius="3"
+                   HorizontalOptions="CenterAndExpand">
+                <StackLayout>
+                    <Label Text="Representation on POS "
+                       FontAttributes="Bold"
+                       TextColor="#E96722" 
+                       FontSize="Medium" />
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+
+                        <Frame HasShadow="True" 
+                                   Margin="5"
+                                   Padding="0"                                
+                                   HeightRequest="100" 
+                                   BackgroundColor="#ffffff"
+                                   WidthRequest="100"
+                                   HorizontalOptions="Start"
+                                   VerticalOptions="Start">
+                            <Grid >
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding ColorSelectCommand}" CommandParameter ="1"/>
+                                </Grid.GestureRecognizers>
+                                <BoxView BackgroundColor="White" 
+                                         HorizontalOptions="Start"
+                                         VerticalOptions="Start" />
+                                <Image Source="iconcheckmark"                                        
+                                       WidthRequest="50"
+                                       IsVisible="{Binding Color1,Mode=TwoWay}"
+                                       HeightRequest="50">
+                                    
+                                </Image>
+                            </Grid>
+
+                        </Frame>
+                        <Frame HasShadow="True" 
+                                   Margin="5"
+                                   Padding="0" 
+                                   BackgroundColor="#ffd5d5" 
+                                   HeightRequest="100" 
+                                   WidthRequest="100"
+                                   HorizontalOptions="Start"
+                                   VerticalOptions="Start">
+                            <Grid>
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding ColorSelectCommand}"
+                                                          CommandParameter ="2"/>
+                                </Grid.GestureRecognizers>
+                                <Image Source="iconcheckmark"                                        
+                                       IsVisible="{Binding Color2,Mode=TwoWay}"
+                                       WidthRequest="50"
+                                       HeightRequest="50">                                  
+                                </Image>
+                            </Grid>
+                        </Frame>
+                        <Frame HasShadow="True" 
+                                   Margin="5"
+                                   Padding="0" 
+                                   BackgroundColor="#f8ffd3" 
+                                   HeightRequest="100" 
+                                   WidthRequest="100"
+                                   HorizontalOptions="Start"
+                                   VerticalOptions="Start">
+                            <Grid>
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding ColorSelectCommand}"
+                                                          CommandParameter ="3"/>
+                                </Grid.GestureRecognizers>
+                                <Image Source="iconcheckmark" 
+                                       IsVisible="{Binding Color3,Mode=TwoWay}"
+                                       WidthRequest="50"
+                                       HeightRequest="50">
+                                   
+                                </Image>
+                            </Grid>
+                        </Frame>
+                        <Frame HasShadow="True" 
+                                   Margin="5"
+                                   Padding="0" 
+                                   BackgroundColor="#c6dbfc" 
+                                   HeightRequest="100" 
+                                   WidthRequest="100"
+                                   HorizontalOptions="Start"
+                                   VerticalOptions="Start">
+                            <Grid>
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding ColorSelectCommand}"
+                                                          CommandParameter ="4"/>
+                                </Grid.GestureRecognizers>
+                                <Image Source="iconcheckmark" 
+                                       IsVisible="{Binding Color4,Mode=TwoWay}"
+                                       WidthRequest="50"
+                                       HeightRequest="50">
+                                    
+                                </Image>
+                            </Grid>
+                        </Frame>
+                        <Frame HasShadow="True" 
+                                   Margin="5"
+                                   Padding="0" 
+                                   BackgroundColor="#ffccf9" 
+                                   HeightRequest="100" 
+                                   WidthRequest="100"
+                                   HorizontalOptions="Start"
+                                   VerticalOptions="Start">
+                            <Grid>
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding ColorSelectCommand}"
+                                                          CommandParameter ="5"/>
+                                </Grid.GestureRecognizers>
+                                <Image Source="iconcheckmark" 
+                                       IsVisible="{Binding Color5,Mode=TwoWay}"
+                                       WidthRequest="50"
+                                       HeightRequest="50">
+                                   
+                                </Image>
+                            </Grid>
+                        </Frame>
+                        <Frame HasShadow="True" 
+                                   Margin="5"
+                                   Padding="0" 
+                                   BackgroundColor="#e0e0e0" 
+                                   HeightRequest="100" 
+                                   WidthRequest="100"
+                                   HorizontalOptions="Start"
+                                   VerticalOptions="Start">
+                            <Grid>
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding ColorSelectCommand}"
+                                                          CommandParameter ="6"/>
+                                </Grid.GestureRecognizers>
+                                <Image Source="iconcheckmark" 
+                                       IsVisible="{Binding Color6,Mode=TwoWay}"
+                                       WidthRequest="50"
+                                       HeightRequest="50">
+                                   
+                                </Image>
+                            </Grid>
+                        </Frame>
+
+                    </StackLayout>
+
+                </StackLayout>
+
+
+            </Frame >
+
+
+            <StackLayout Orientation="Horizontal" 
+                         VerticalOptions="Center"  
+                         Margin="0,15,0,15"
+                         WidthRequest="800" 
+                         HeightRequest="80"
+                         HorizontalOptions="Center">
+              
+                <Button Text="CREATE CATEGORY"
+                        WidthRequest="350" 
+                        BackgroundColor="#E96722"
+                        TextColor="White"
+                        Command="{Binding CreateCategoryCommand}"
+                        FontSize="Medium" Margin="5"
+                        VerticalOptions="Start" HeightRequest="80"
+                        FontAttributes="Bold" 
+                        HorizontalOptions="FillAndExpand"/>
+                <Button Text="CANCEL"
+                        WidthRequest="350" 
+                        Command="{Binding CancelCategoryCommand}"
+                        BackgroundColor="LightGray"
+                        FontSize="Medium" Margin="5"
+                        VerticalOptions="Start" HeightRequest="80"
+                        FontAttributes="Bold" 
+                        HorizontalOptions="FillAndExpand"/>
+
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -5,12 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="DtoModels\" />
-    <Folder Include="Entities\" />
     <Folder Include="Helpers\" />
-    <Folder Include="Interfaces\" />
-    <Folder Include="Services\" />
-    <Folder Include="Repositories\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\EnixerPos.Api.ViewModels\EnixerPos.Api.ViewModels.csproj" />
   </ItemGroup>
 
 </Project>

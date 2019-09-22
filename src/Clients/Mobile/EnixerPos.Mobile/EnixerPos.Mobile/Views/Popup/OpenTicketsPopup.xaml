@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:components="clr-namespace:EnixerPos.Mobile.Components"
+             x:Name="OpenTicket"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="EnixerPos.Mobile.Views.Popup.OpenTicketsPopup">
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation 
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="0.8"
+            ScaleOut="0.8"
+            DurationIn="200"
+            DurationOut="200"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"/>
+    </pages:PopupPage.Animation>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+                         WidthRequest="750" 
+                         BackgroundColor="White">
+            <Frame HasShadow="True" HeightRequest="75" WidthRequest="350" Padding="25,0,25,0">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Open Tickets" FontSize="20" TextColor="Black" VerticalOptions="CenterAndExpand"/>
+                    <Label Text="Save" TextColor="Orange" FontSize="20"
+                           VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+            </Frame>
+            <ListView Margin="0,20,0,0" ItemsSource="{Binding TicketList}" HasUnevenRows="true" SelectionMode="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="15,0,15,0">
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding BindingContext.OpenTicketCommand, Source={x:Reference OpenTicket}}" CommandParameter="{Binding TicketNumber}"/>
+                                </Grid.GestureRecognizers>
+                                <Label Text="{Binding TicketNumber, StringFormat='Ticket {0}'}"  FontSize="Medium" TextColor="Black" Grid.Row="0"/>
+                                <Label Text="{Binding CreateDateTime}"  FontSize="Medium" TextColor="Gray" Grid.Row="1"/>
+                                <StackLayout Grid.Column="1" Grid.RowSpan="2" HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                                    <Label  Text="{Binding Total}" FontSize="Medium" TextColor="Black" />
+                                    <ImageButton />
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</pages:PopupPage>

@@ -1,7 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
+using EnixerPos.Api.AutoMapperConfig;
+using EnixerPos.DataAccess.Contexts;
+using EnixerPos.DataAccess.Repositories;
+using EnixerPos.Domain.Interfaces;
+using EnixerPos.Domain.Repositories;
+using EnixerPos.Domain.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -10,6 +19,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 
 namespace EnixerPos.Api
 {
@@ -25,6 +35,38 @@ namespace EnixerPos.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+           .AddJwtBearer(options =>
+           {
+               options.TokenValidationParameters = new TokenValidationParameters
+               {
+                   ValidateIssuer = true,
+                   ValidateAudience = false,
+                   ValidateLifetime = true,
+                   ValidateIssuerSigningKey = true,
+                   ValidIssuer = Configuration["Jwt:Issuer"],
+                   IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
+               };
+           });
+
+            services.AddScoped<DataContext>();
+            services.AddScoped<IAuthService, AuthService>();
+            services.AddScoped<IShiftService, ShiftService>();
+            services.AddScoped<IShiftRepository, ShiftRepository>();
+            services.AddScoped<IStoreRepository, StoreRepository>();
+            services.AddScoped<IDeviceRepository, DeviceRepository>();
+            services.AddScoped<ITokenRepository, TokenRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IManageCashRepository, ManageCashRepository>();
+            services.AddScoped<IReceiptRepository, ReceiptRepository>();
+            services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<IItemRepository, ItemRepository>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<IDiscountRepository, DiscountRepository>();
+            services.AddScoped<ISaleService, SaleService>();
+            services.AddScoped<IReceiptService, ReceiptService>();
+            
+            services.AddAutoMapper(typeof(AutoMapperProfile));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
@@ -41,7 +83,9 @@ namespace EnixerPos.Api
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+            app.UseAuthentication();
+
+            //app.UseHttpsRedirection();
             app.UseMvc();
         }
     }

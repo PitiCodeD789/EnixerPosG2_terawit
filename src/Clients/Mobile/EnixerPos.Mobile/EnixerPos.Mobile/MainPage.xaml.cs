@@ -1,4 +1,6 @@
-﻿using System;
+﻿using EnixerPos.Mobile.Views.Popup;
+using Rg.Plugins.Popup.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -16,6 +18,10 @@ namespace EnixerPos.Mobile
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
         }
     }
 }

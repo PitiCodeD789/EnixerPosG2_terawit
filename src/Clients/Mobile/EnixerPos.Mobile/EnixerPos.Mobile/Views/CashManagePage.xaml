@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:component="clr-namespace:EnixerPos.Mobile.Components"
+             xmlns:bd="clr-namespace:EnixerPos.Mobile.ViewModels"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="EnixerPos.Mobile.Views.CashManagePage">
+    <ContentPage.BindingContext>
+        <bd:CashManagePageViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame HasShadow="True">
+                <Label Text="Shift" TextColor="Black" FontSize="Medium"/>
+            </Frame>
+            <Frame HasShadow="True" VerticalOptions="Start"
+                   WidthRequest="750"
+                   HorizontalOptions="Center">
+                <StackLayout>
+                    <Entry  />
+                    <component:Pos_EntryView Margin="40,20,40,0" KeyboardType="Numeric" TextEntry="{Binding Amount}" Placeholder="Amount"/>
+                <component:Pos_EntryView Margin="40,30,40,0" TextEntry="{Binding Comment}" Placeholder="Comment"/>
+                    <StackLayout Orientation="Horizontal"  HorizontalOptions="CenterAndExpand">
+                        <component:Pos_ButtonView  TextButton="CASH MANAGEMENT" 
+                                                  HorizontalOptions="Start" 
+                                                  WidthRequest="350"
+                                                  Margin="40,30,10,0"
+                                                  HeightRequest="80"
+                                                   Command="{Binding  PayinClickCommand}"
+                                                   
+                                                  TextColor="#E96722" 
+                                                  BackgroundButton="White" />
+                        <component:Pos_ButtonView TextButton="CLOSE SHIFT" 
+                                                  HorizontalOptions="End" 
+                                                    WidthRequest="350"
+                                                  Margin="40,30,10,0"
+                                                  HeightRequest="80"
+                                                  Command="{Binding PayoutClickCommand}"
+                                                  TextColor="#E96722" 
+                                                  BackgroundButton="White" />
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

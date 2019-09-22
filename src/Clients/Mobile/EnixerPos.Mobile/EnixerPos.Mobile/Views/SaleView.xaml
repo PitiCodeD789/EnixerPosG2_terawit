@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:components="clr-namespace:EnixerPos.Mobile.Components"
+             xmlns:ai="clr-namespace:AiForms.Renderers;assembly=CollectionView"
+             xmlns:tabView="clr-namespace:Xam.Plugin.TabView;assembly=Xam.Plugin.TabView"
+             NavigationPage.HasNavigationBar="False"
+             x:Name="SalePage"
+             x:Class="EnixerPos.Mobile.Views.SaleView">
+    <ContentPage.Content>
+        <Grid ColumnSpacing="0" BackgroundColor="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Frame Padding="0" HorizontalOptions="FillAndExpand" Margin="0" Grid.Column="0" Grid.Row="0" HasShadow="True">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                    <ImageButton Source="icon_hamburger" Aspect="AspectFit" VerticalOptions="Center" Margin="20,0" HeightRequest="30" Clicked="Button_Clicked" BackgroundColor="Transparent">
+                        <ImageButton.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Button_Clicked"/>
+                        </ImageButton.GestureRecognizers>
+                    </ImageButton>
+
+                    <Label Text="Drinks" TextColor="Black" FontSize="30" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start" />
+                </StackLayout>
+            </Frame>
+            
+           <!--Menu Item-->
+
+            <!--<ai:GridCollectionView 
+                ItemsSource="{Binding Items}" RowSpacing="10" ColumnSpacing="10"
+                ColumnWidth="150" ColumnHeight="1.0" Grid.Column="0" Grid.Row="1" Margin="20">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ai:ContentCell>
+                            <Frame Padding="0" HasShadow="True" HeightRequest="140" WidthRequest="140" IsClippedToBounds="True" HorizontalOptions="Center" VerticalOptions="Center">
+                                <Button Text="{Binding ItemName}" 
+                                    BackgroundColor="#fafafa"  TextColor="Black" CornerRadius="5"
+                                    FontAttributes="Bold" FontSize="21" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                            </Frame>
+                        </ai:ContentCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ai:GridCollectionView>-->
+
+            <tabView:TabViewControl x:Name="TabView" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" HeaderBackgroundColor="White" HeaderTabTextColor="Black" HeaderSelectionUnderlineColor="Orange" HeaderTabTextFontSize="30">
+            </tabView:TabViewControl>
+
+            <!--End Menu Item-->
+
+            <Frame Padding="0" HorizontalOptions="FillAndExpand" Margin="0" Grid.Column="0" Grid.Row="2" HasShadow="True" IsVisible="False">
+                <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand" Margin="20,0" Spacing="50">
+                    <Label Text="Drinks" TextColor="Black" FontSize="30" FontAttributes="Bold" />
+                    <Label Text="Foods" TextColor="Black" FontSize="30" FontAttributes="Bold" />
+                    <Label Text="Soup" TextColor="Black" FontSize="30" FontAttributes="Bold" />
+                </StackLayout>
+
+            </Frame>
+            
+
+            <BoxView BackgroundColor="LightGray" VerticalOptions="FillAndExpand" HorizontalOptions="End" WidthRequest="1" Grid.Column="1" Grid.RowSpan="3"/>
+
+            <Frame Padding="0" HorizontalOptions="FillAndExpand" Margin="0" Grid.Column="2" Grid.Row="0">
+                <Grid HorizontalOptions="FillAndExpand">
+                    <Label Text="Ticket" TextColor="Black" FontSize="30" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center" Margin="20,0"/>
+                    <Image Source="icon_dot_menu" Aspect="AspectFit" HorizontalOptions="End" VerticalOptions="Center" HeightRequest="30" Margin="20,0"/>
+                </Grid>
+            </Frame>
+
+            <Grid Grid.Row="1" Grid.RowSpan="2" Grid.Column="2" Padding="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="100"/>
+                </Grid.RowDefinitions>
+                <ListView Grid.Row="0" ItemsSource="{Binding CurrentTicket}" SelectionMode="None" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid RowSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label HorizontalOptions="Start" FontSize="Large" Grid.Row="0" Grid.Column="0" LineBreakMode="TailTruncation">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="{Binding ItemName}" TextColor="Black"/>
+                                                <Span Text="  x"/>
+                                                <Span Text="{Binding Quantity}"/> 
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label HorizontalOptions="End" FontSize="Large" Grid.Row="0" Grid.Column="1" IsVisible="{Binding IsDiscounted}">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="{Binding ItemPrice, StringFormat='{0:n}'}" TextColor="Gray" TextDecorations="Strikethrough"/>
+                                                <Span Text="  "/>
+                                                <Span Text="{Binding DiscountedPrice, StringFormat='{0:n}'}" TextColor="Black"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label HorizontalOptions="End" FontSize="Large" Grid.Row="0" Grid.Column="1">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="{Binding DiscountedPrice, StringFormat='{0:n}'}" TextColor="Black"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label Text="{Binding OptionName}" FontSize="Medium" HorizontalOptions="Start" Grid.Row="1" />
+                                    <Label Text="{Binding Discount}" FontSize="Medium" HorizontalOptions="Start" Grid.Row="2" IsVisible="{Binding IsDiscounted}"/>
+                                    <Label Text="{Binding Comment}" FontSize="Medium" HorizontalOptions="Start" Grid.Row="3" IsVisible="{Binding HasComment}"/>
+                                    <Button Text="Delete" FontSize="10" Command="{Binding BindingContext.DeleteItemCommand, Source={x:Reference SalePage}}"   CommandParameter="{Binding .}" Grid.Row="3" Grid.Column="1" HorizontalOptions="End"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <BoxView BackgroundColor="LightGray" HorizontalOptions="FillAndExpand" Margin="20,0" Grid.Row="1" VerticalOptions="Center" HeightRequest="1"/>
+                <Label Text="Total" TextColor="Black" FontSize="Large" HorizontalOptions="Start" Grid.Row="2" Margin="20,0"/>
+                <Label Text="{Binding TotalPrice, StringFormat='{0:n}'}" TextColor="Black" FontSize="Large" HorizontalOptions="End" Grid.Row="2" Margin="20,0"/>
+                <Grid Grid.Row="3" Margin="20,0">
+                    <components:Pos_ButtonView TextButton="Save Ticket" HeightRequest="100" Grid.Column="0" Command="{Binding SaveTicketCommand}"/>
+                    <components:Pos_ButtonView TextButton="Open Ticket" HeightRequest="100" Grid.Column="0" Command="{Binding OpenTicketListCommand}" IsVisible="{Binding ShowOpenButton}"/>
+                    <components:Pos_ButtonView TextButton="Charge" HeightRequest="100" Grid.Column="1" Command="{Binding ChargeCommand}"/>
+                </Grid>
+            </Grid>
+            
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
