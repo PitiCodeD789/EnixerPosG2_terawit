@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:forms="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             mc:Ignorable="d"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="EnixerPos.Mobile.Views.ReceiptPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Frame Grid.Row="0">
+                <Image Source="icon_left" HorizontalOptions="Start" Margin="20,0" HeightRequest="30" VerticalOptions="Center">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Back_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </Frame>
+            <ScrollView Grid.Row="1">
+                <forms:SKCanvasView x:Name="sKCanvasView" HorizontalOptions="Start" VerticalOptions="Start" Grid.Row="0" BackgroundColor="Green"/>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

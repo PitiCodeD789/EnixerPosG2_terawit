@@ -83,6 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomRender\CustomEntry.cs" />
+    <Compile Include="Dependency\CreateReceipt.cs" />
     <Compile Include="CustomRender\CustomPicker.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
@@ -112,6 +113,9 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidResource Include="Resources\drawable\icon_cart.png" />
+  </ItemGroup>
+    <ItemGroup>
     <AndroidResource Include="Resources\drawable\icon_hamburger.png">
       <CustomToolNamespace>en</CustomToolNamespace>
     </AndroidResource>
@@ -153,6 +157,9 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xxxhdpi\back.png" />
   </ItemGroup>
+    <ItemGroup>
+    <AndroidResource Include="Resources\drawable\icon_cart.png" />
+  </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\icon_cart.png" />
   </ItemGroup>
@@ -164,6 +171,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\icon_gear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\icon_hamburger.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\icon_list.png" />

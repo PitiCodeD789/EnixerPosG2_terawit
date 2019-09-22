@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:components="clr-namespace:EnixerPos.Mobile.Components"
+             x:Class="EnixerPos.Mobile.Views.Popup.ShowChange">
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation 
+            PositionIn="Center"
+            PositionOut="Center"
+            HasBackgroundAnimation="True"/>
+    </pages:PopupPage.Animation>
+    <StackLayout VerticalOptions="CenterAndExpand">
+        <Frame BackgroundColor="White"
+                   CornerRadius="10"
+                   VerticalOptions="Center"                   
+                   HorizontalOptions="Center"
+                   Margin="20,0"
+                   WidthRequest="400"
+                   HeightRequest="250">
+            <StackLayout>
+                <Label Text="Change" HorizontalOptions="Center" FontSize="Large" TextColor="Black"/>
+                <Label HorizontalOptions="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{Binding Change, StringFormat='{0:n}'}" FontSize="40" TextColor="#E96722"/>
+                            <Span Text="  "/>
+                            <Span Text="THB" FontSize="Medium" TextColor="Black"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <components:Pos_ButtonView BackgroundButton="#FFFFFF" Command="{Binding ClosePopupCommand}" TextColor="#E96722" 
+                                             VerticalOptions="EndAndExpand" TextButton="Ok" />
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</pages:PopupPage>

@@ -18,7 +18,8 @@ namespace EnixerPos.Service.Services
                     {
                         Name = "Espresso",
                         CategoryName = "Drinks",
-                        ItemOptions = null,
+                        Option1 = "Hot",
+                        Option1Price = 0,
                         Color = null,
                         Price = 50,
                         Id = 1,
@@ -29,7 +30,12 @@ namespace EnixerPos.Service.Services
                     {
                         Name = "Americano",
                         CategoryName = "Drinks",
-                        ItemOptions = null,
+                        Option1 = "Hot",
+                        Option1Price = 0,
+                        Option2 = "Iced",
+                        Option2Price = 5,
+                        Option3 = "Shake",
+                        Option3Price = 15,
                         Color = null,
                         Price = 50,
                         Id = 2,
@@ -40,7 +46,6 @@ namespace EnixerPos.Service.Services
                     {
                         Name = "Spaghetti Carbonara",
                         CategoryName = "Foods",
-                        ItemOptions = null,
                         Color = null,
                         Price = 150,
                         Id = 3,
@@ -49,6 +54,20 @@ namespace EnixerPos.Service.Services
                     },
                 }
             };
+            //List<string> drinks = new List<string>() { "Macchiato", "Cappuchino"};
+            //for (int i = 0; i < 20; i++)
+            //{
+            //    items.Items.Add(new ItemModel()
+            //    {
+            //        Name = "Espresso "+i,
+            //        CategoryName = "Drinks",
+            //        Color = null,
+            //        Price = 50+i,
+            //        Id = 3+i,
+            //        CreateDateTime = Convert.ToDateTime("2019-09-21T05:41:33.0033333"),
+            //        UpdateDateTime = Convert.ToDateTime("2019-09-21T05:41:33.0033333")
+            //    });
+            //}
             return items;
         }
 

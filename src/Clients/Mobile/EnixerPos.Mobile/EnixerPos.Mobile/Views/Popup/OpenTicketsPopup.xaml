@@ -5,6 +5,7 @@
              xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
              xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
              xmlns:components="clr-namespace:EnixerPos.Mobile.Components"
+             x:Name="OpenTicket"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="EnixerPos.Mobile.Views.Popup.OpenTicketsPopup">
@@ -35,15 +36,18 @@
                     </Label>
                 </StackLayout>
             </Frame>
-            <ListView Margin="0,20,0,0" >
+            <ListView Margin="0,20,0,0" ItemsSource="{Binding TicketList}" HasUnevenRows="true" SelectionMode="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <Grid Padding="15,0,15,0">
-                                <Label Text="abc"  FontSize="Medium" TextColor="Black" Grid.Row="0"/>
-                                <Label Text="abc"  FontSize="Medium" TextColor="Gray" Grid.Row="1"/>
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding BindingContext.OpenTicketCommand, Source={x:Reference OpenTicket}}" CommandParameter="{Binding TicketNumber}"/>
+                                </Grid.GestureRecognizers>
+                                <Label Text="{Binding TicketNumber, StringFormat='Ticket {0}'}"  FontSize="Medium" TextColor="Black" Grid.Row="0"/>
+                                <Label Text="{Binding CreateDateTime}"  FontSize="Medium" TextColor="Gray" Grid.Row="1"/>
                                 <StackLayout Grid.Column="1" Grid.RowSpan="2" HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
-                                    <Label  Text="{Binding Price}" FontSize="Medium" TextColor="Black" />
+                                    <Label  Text="{Binding Total}" FontSize="Medium" TextColor="Black" />
                                     <ImageButton />
                                 </StackLayout>
                             </Grid>
