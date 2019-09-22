@@ -161,9 +161,9 @@ namespace EnixerPos.Mobile.Views
             canvas.DrawText(Receipt.Total.ToString("#,##.00"), canvasWidth/2, 100, totalPricePaint);
             canvas.DrawText("Total", canvasWidth / 2, 200, totalPaint);
 
-            canvas.DrawText("Order: "+"App.StoreName", 50, 300, defaultText);
-            canvas.DrawText("Cashier: "+ "App.User", 50, 350, defaultText);
-            canvas.DrawText("POS: "+"App.Pos", 50, 400, defaultText);
+            canvas.DrawText("Order: "+"Enixer Cafe", 50, 300, defaultText);
+            canvas.DrawText("Cashier: "+ "User", 50, 350, defaultText);
+            canvas.DrawText("POS: "+"POS 1", 50, 400, defaultText);
 
             canvas.DrawLine(new SKPoint() { X = 50, Y = 450 }, new SKPoint() { X = canvasWidth - 50, Y = 450 }, linePaint);
 
@@ -209,7 +209,7 @@ namespace EnixerPos.Mobile.Views
             canvas.DrawLine(new SKPoint() { X = 50, Y = currentCursor }, new SKPoint() { X = canvasWidth - 50, Y = currentCursor }, linePaint);
             currentCursor += 50;
             canvas.DrawText("Total", 50, currentCursor, defaultText);
-            canvas.DrawText("Price", canvasWidth - 50, currentCursor, discountedItemPrice);
+            canvas.DrawText(Receipt.Total.ToString("#,##.00"), canvasWidth - 50, currentCursor, discountedItemPrice);
 
 
             canvas.Flush();

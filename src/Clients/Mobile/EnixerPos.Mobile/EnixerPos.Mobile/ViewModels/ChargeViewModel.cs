@@ -1,6 +1,8 @@
 ﻿using EnixerPos.Api.ViewModels.Sale;
+using EnixerPos.Mobile.Models;
 using EnixerPos.Mobile.Views;
 using EnixerPos.Mobile.Views.Popup;
+using Newtonsoft.Json;
 using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
@@ -70,21 +72,38 @@ namespace EnixerPos.Mobile.ViewModels
                 case "Debit":
                     //TODO: Add Payment
                     if (true)
+                    {
+                        PopupNavigation.PushAsync(new Error(new ErrorViewModel("Payment Completed", 3)));
                         Application.Current.MainPage.Navigation.PushAsync(new ReceiptPage(this));
+                    }
                     else
                         Application.Current.MainPage.DisplayAlert("Payment Error", "Payment not completed please try again.", "Ok");
                     break;
                 case "Credit":
                     //TODO: Add Payment
                     if (true)
+                    {
+                        PopupNavigation.PushAsync(new Error(new ErrorViewModel("Payment Completed", 3)));
                         Application.Current.MainPage.Navigation.PushAsync(new ReceiptPage(this));
+                    }
                     else
                         Application.Current.MainPage.DisplayAlert("Payment Error", "Payment not completed please try again.", "Ok");
                     break;
                 case "Wallet":
                     //TODO: Add Payment
                     if (true)
-                        Application.Current.MainPage.Navigation.PushAsync(new QrPage(this));
+                    {
+                        GeneratePaymentModel model = new GeneratePaymentModel()
+                        {
+                            Amount = TotalPrice,
+                            AccountNumber = "0000000049",
+                            FirstName = "Enixer Cafe"
+                        };
+                        QrValue = JsonConvert.SerializeObject(model);
+                        PopupNavigation.PushAsync(new QrPage(this));
+                        PopupNavigation.PushAsync(new Error(new ErrorViewModel("Payment Completed", 3)));
+                        Application.Current.MainPage.Navigation.PushAsync(new ReceiptPage(this));
+                    }
                     else
                         Application.Current.MainPage.DisplayAlert("Payment Error", "Payment not completed please try again.", "Ok");
                     break;
@@ -94,19 +113,30 @@ namespace EnixerPos.Mobile.ViewModels
         }
         void Payment()
         {
+            if (Cash < TotalPrice)
+            {
+                Application.Current.MainPage.DisplayAlert("Invalid Cash Amount", "Invalid cash amount, Please try again", "Ok");
+                return;
+            }
             Change = Cash - TotalPrice;
             PopupNavigation.PushAsync(new ShowChange(this));
             Application.Current.MainPage.Navigation.PushAsync(new ReceiptPage(this));
         }
 
         #region propfull
+        private string _qrValue;
+        public string QrValue
+        {
+            get { return _qrValue; }
+            set { _qrValue = value; }
+        }
+
         private decimal _change;
         public decimal Change
         {
             get { return _change; }
             set { _change = value; OnPropertyChanged(); }
         }
-
 
         private ObservableCollection<OrderItemModel> _currentTicket;
         public ObservableCollection<OrderItemModel> CurrentTicket

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:components="clr-namespace:EnixerPos.Mobile.Components"
+             xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+             xmlns:zxcm="clr-namespace:ZXing.Common;assembly=zxing.portable"
+             x:Class="EnixerPos.Mobile.Views.QrPage">
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation 
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="0.8"
+            ScaleOut="0.8"
+            DurationIn="200"
+            DurationOut="200"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"/>
+    </pages:PopupPage.Animation>
+    <StackLayout VerticalOptions="CenterAndExpand">
+        <Frame BackgroundColor="White"
+                   CornerRadius="10"
+                   VerticalOptions="Center"                   
+                   HorizontalOptions="FillAndExpand"
+                   Margin="20,0"
+                   HeightRequest="250">
+            <StackLayout>
+                <zxing:ZXingBarcodeImageView WidthRequest="300" HeightRequest="300" x:Name="QrCode" BarcodeValue="{Binding QrValue}" BarcodeFormat="QR_CODE">
+                    <zxing:ZXingBarcodeImageView.BarcodeOptions>
+                        <zxcm:EncodingOptions Width="300" Height="300" />
+                    </zxing:ZXingBarcodeImageView.BarcodeOptions>
+                </zxing:ZXingBarcodeImageView>
+                <components:Pos_ButtonView BackgroundButton="#FFFFFF" Command="{Binding ClosePopup}" TextColor="Black" 
+                                             VerticalOptions="EndAndExpand" TextButton="ตกลง"/>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</pages:PopupPage>

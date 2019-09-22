@@ -163,8 +163,12 @@ namespace EnixerPos.Domain.Services
                     throw new FileNotFoundException();
 
                 List<ItemDto> items = _itemRepository.GetItemsByStoreId(storeId);
-
+                foreach (var item in items)
+                {
+                    item.CategoryName = _categoryRepository.GetCategory(storeId, item.CategoryId).Name;
+                }
                 var tempItem = Map<ItemDto,ItemModel>(items);
+
                 viewModel.Items = tempItem;
                 return viewModel;
             }

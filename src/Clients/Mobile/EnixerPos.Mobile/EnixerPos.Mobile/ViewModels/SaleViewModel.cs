@@ -23,7 +23,7 @@ namespace EnixerPos.Mobile.ViewModels
 {
     public class SaleViewModel : INotifyPropertyChanged
     {
-        MockupService _service = new MockupService();
+        ProductService _service = new ProductService();
         public SaleViewModel()
         {
             ShowOpenButton = true;
@@ -93,6 +93,7 @@ namespace EnixerPos.Mobile.ViewModels
             OpenTicketListCommand = new Command(OpenTicketList);
             OpenTicketCommand = new Command<int>((ticketNumber) => OpenTicket(ticketNumber));
             ChargeCommand = new Command(Charge);
+            DeleteItemCommand = new Command<OrderItemModel>(DeleteItem);
             GetDiscount();
         }
 
@@ -102,6 +103,7 @@ namespace EnixerPos.Mobile.ViewModels
         public Command OpenTicketListCommand { get; set; }
         public Command OpenTicketCommand { get; set; }
         public Command ChargeCommand { get; set; }
+        public Command DeleteItemCommand { get; set; }
 
         public void QuantityChange(string change)
         {
@@ -123,6 +125,7 @@ namespace EnixerPos.Mobile.ViewModels
             try
             {
                 decimal optionPrice = OptionList[CurrentSelectedOptionIndex].Price;
+                bool isDiscount = true;
                 DiscountModel currentDiscount = new DiscountModel();
                 if (Discount1)
                     currentDiscount = new DiscountModel { DiscountName = Discounts[0].DiscountName, Amount = Discounts[0].Amount, IsPercentage = Discounts[0].IsPercentage };
@@ -132,12 +135,14 @@ namespace EnixerPos.Mobile.ViewModels
                     currentDiscount = new DiscountModel { DiscountName = Discounts[2].DiscountName, Amount = Discounts[2].Amount, IsPercentage = Discounts[2].IsPercentage };
                 else if (Discount4)
                     currentDiscount = new DiscountModel { DiscountName = Discounts[3].DiscountName, Amount = Discounts[3].Amount, IsPercentage = Discounts[3].IsPercentage };
+                else
+                    isDiscount = false;
 
                 decimal dicountedAmount = (currentDiscount.IsPercentage) ? currentDiscount.Amount / 100 * (CurrentItem.Price + optionPrice) * Quantity : currentDiscount.Amount;
                 CurrentTicket.Add(new OrderItemModel
                 {
                     ItemName = CurrentItem.Name,
-                    IsDiscounted = false,
+                    IsDiscounted = isDiscount,
                     ItemPrice = (CurrentItem.Price + optionPrice) * Quantity,
                     Quantity = Quantity,
                     OptionName = OptionList[CurrentSelectedOptionIndex].OptionName,
@@ -160,6 +165,7 @@ namespace EnixerPos.Mobile.ViewModels
             CurrentSelectedOptionIndex = 0;
             Quantity = 1;
         }
+
         void OpenOption(ItemModel item)
         {
             CurrentItem = item;
@@ -313,6 +319,10 @@ namespace EnixerPos.Mobile.ViewModels
             }
 
         }
+        void DeleteItem(OrderItemModel model)
+        {
+            CurrentTicket.Remove(model);
+        }
 
         #region Propfull
         private List<DiscountModel> _discounts;
@@ -446,7 +456,17 @@ namespace EnixerPos.Mobile.ViewModels
         public bool Discount1
         {
             get { return discount1; }
-            set { discount1 = value; OnPropertyChanged(); }
+            set
+            {
+                if (value)
+                {
+                    Discount2 = false;
+                    Discount3 = false;
+                    Discount4 = false;
+                }
+                discount1 = value;
+                OnPropertyChanged();
+            }
         }
 
         private string discountName1;
@@ -467,7 +487,15 @@ namespace EnixerPos.Mobile.ViewModels
         public bool Discount2
         {
             get { return discount2; }
-            set { discount2 = value; OnPropertyChanged(); }
+            set
+            {
+                if (value)
+                {
+                    Discount1 = false;
+                    Discount3 = false;
+                    Discount4 = false;
+                }
+                discount2 = value; OnPropertyChanged(); }
         }
 
         private string discountName2;
@@ -488,7 +516,15 @@ namespace EnixerPos.Mobile.ViewModels
         public bool Discount3
         {
             get { return discount3; }
-            set { discount3 = value; OnPropertyChanged(); }
+            set
+            {
+                if (value)
+                {
+                    Discount1 = false;
+                    Discount2 = false;
+                    Discount4 = false;
+                }
+                discount3 = value; OnPropertyChanged(); }
         }
 
         private string discountName3;
@@ -509,7 +545,15 @@ namespace EnixerPos.Mobile.ViewModels
         public bool Discount4
         {
             get { return discount4; }
-            set { discount4 = value; OnPropertyChanged(); }
+            set
+            {
+                if (value)
+                {
+                    Discount1 = false;
+                    Discount2 = false;
+                    Discount3 = false;
+                }
+                discount4 = value; OnPropertyChanged(); }
         }
 
         private string discountName4;

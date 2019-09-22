@@ -38,7 +38,15 @@ namespace EnixerPos.DataAccess.Repositories
 
         public CategoryDto GetCategory(int storeId, int categoryId)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var category = _context.Categories.Where(i => i.StoreId == storeId && i.Id == categoryId).FirstOrDefault();
+                return _mapper.Map<CategoryDto>(category);
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
         }
 
         public bool Update(int storeId, CategoryDto categoryDto)

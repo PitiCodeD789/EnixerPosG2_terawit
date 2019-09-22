@@ -94,5 +94,7 @@ namespace EnixerPos.Service.Services
 
             return categories;
         }
+
+
     }
 }
