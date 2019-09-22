@@ -41,6 +41,8 @@ namespace EnixerPos.Domain.Services
 
                 //TODO Map category to categoryDto
                 CategoryDto categoryDto = new CategoryDto();
+                categoryDto.Name = category.Name;
+                categoryDto.Color = category.Color;
                 bool addResult = _categoryRepository.AddCategory(storeId, categoryDto);
                 viewModel.IsError = !addResult;
 

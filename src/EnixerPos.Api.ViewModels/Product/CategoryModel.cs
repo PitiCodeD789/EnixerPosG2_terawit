@@ -9,5 +9,6 @@ namespace EnixerPos.Api.ViewModels.Product
         public string Name { get; set; }
         public string Color { get; set; }
         public int StoreId { get; set; }
+        public int CountItem { get; set; }
     }
 }
