@@ -4,7 +4,10 @@ using EnixerPos.Mobile.Views;
 using Plugin.DeviceInfo;
 using Plugin.Permissions;
 using Plugin.Permissions.Abstractions;
+﻿using EnixerPos.Api.ViewModels.Sale;
+using EnixerPos.Mobile.Models;
 using System;
+using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,11 +15,13 @@ namespace EnixerPos.Mobile
 {
     public partial class App : Application
     {
+        public static List<ReceiptViewModel> TicketList { get; set; }
         public static string DeviceId { get; set; }
 
         public App()
         {
             InitializeComponent();
+            TicketList = new List<ReceiptViewModel>();
 
             // MainPage = new MainPage();
             //  MainPage = new SaleView();

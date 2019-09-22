@@ -6,6 +6,7 @@ namespace EnixerPos.Api.ViewModels.Sale
 {
     public class ReceiptViewModel
     {
+        public int TicketNumber { get; set; }
         public string Reference { get; set; }
         public int ShiftId { get; set; }
         public string Store { get; set; }
