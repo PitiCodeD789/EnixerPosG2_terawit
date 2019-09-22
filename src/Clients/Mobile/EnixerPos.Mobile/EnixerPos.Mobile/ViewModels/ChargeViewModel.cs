@@ -14,10 +14,16 @@ namespace EnixerPos.Mobile.ViewModels
 {
     public class ChargeViewModel : INotifyPropertyChanged
     {
-        ReceiptViewModel _receipt;
+        private ReceiptViewModel _receipt;
+        public ReceiptViewModel Receipt
+        {
+            get { return _receipt; }
+            set { _receipt = value; }
+        }
+
         public ChargeViewModel(ReceiptViewModel receipt)
         {
-            _receipt = receipt;
+            Receipt = receipt;
             TotalPrice = receipt.Total;
             TotalDiscount = receipt.TotalDiscount;
             CurrentTicket = new ObservableCollection<OrderItemModel>();
