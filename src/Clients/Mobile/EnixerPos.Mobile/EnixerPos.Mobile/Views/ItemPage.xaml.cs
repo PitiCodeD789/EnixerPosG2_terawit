@@ -1,4 +1,6 @@
-﻿using EnixerPos.Mobile.Views.Item;
+﻿using EnixerPos.Mobile.ViewModels;
+using EnixerPos.Mobile.ViewModels.ItemPage;
+using EnixerPos.Mobile.Views.Item;
 using EnixerPos.Mobile.Views.Popup;
 using Rg.Plugins.Popup.Extensions;
 using System;
@@ -15,6 +17,10 @@ namespace EnixerPos.Mobile.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ItemPage : ContentPage
     {
+        private ItemMainViewModel vm;
+        private ContentView subItem;
+        private ContentView subCategory;
+        private ContentView subDiscount;
         Label label = new Label()
         {
             FontSize = 28
@@ -22,13 +28,24 @@ namespace EnixerPos.Mobile.Views
         Picker picker = new Picker()
         {
             Title = "All Items",
+            TitleColor = Color.Black,
             FontSize = 28,
             TextColor = Color.Black
         };
         public ItemPage()
         {
             InitializeComponent();
-            FirstItem();
+            vm = new ItemMainViewModel();
+            subItem = new ItemItem(new SubItemViewModel());
+            subCategory = new ItemItem(new SubCategoriesViewModel());
+            subDiscount = new ItemItem(new SubDiscountViewModel());
+            BindingContext = vm;
+            theItem.BackgroundColor = Color.FromHex("#ededed");
+            theCategories.BackgroundColor = Color.White;
+            theDiscount.BackgroundColor = Color.White;
+            //ListItem.Children.Add(subItem);
+            picker.ItemsSource = vm.CategoryName;
+            theTitle.Children.Add(picker);
         }
 
         private void Button_Clicked(object sender, EventArgs e)
@@ -38,18 +55,16 @@ namespace EnixerPos.Mobile.Views
 
         private void Item_Tapped(object sender, EventArgs e)
         {
-            FirstItem();
-        }
-
-        private void FirstItem()
-        {
             theItem.BackgroundColor = Color.FromHex("#ededed");
             theCategories.BackgroundColor = Color.White;
             theDiscount.BackgroundColor = Color.White;
-            ListItem.Children.Remove(new ItemItem());
-            ListItem.Children.Add(new ItemItem());
+            ListItem.Children.Remove(subItem);
+            ListItem.Children.Remove(subCategory);
+            ListItem.Children.Remove(subDiscount);
+            ListItem.Children.Add(subItem);
             theTitle.Children.Remove(picker);
             theTitle.Children.Remove(label);
+            picker.ItemsSource = vm.CategoryName;
             theTitle.Children.Add(picker);
         }
 
@@ -58,8 +73,10 @@ namespace EnixerPos.Mobile.Views
             theItem.BackgroundColor = Color.White;
             theCategories.BackgroundColor = Color.FromHex("#ededed");
             theDiscount.BackgroundColor = Color.White;
-            ListItem.Children.Remove(new ItemItem());
-            ListItem.Children.Add(new ItemItem());
+            ListItem.Children.Remove(subItem);
+            ListItem.Children.Remove(subCategory);
+            ListItem.Children.Remove(subDiscount);
+            ListItem.Children.Add(subCategory);
             theTitle.Children.Remove(picker);
             theTitle.Children.Remove(label);
             label.Text = "Categories";
@@ -71,8 +88,10 @@ namespace EnixerPos.Mobile.Views
             theItem.BackgroundColor = Color.White;
             theCategories.BackgroundColor = Color.White;
             theDiscount.BackgroundColor = Color.FromHex("#ededed");
-            ListItem.Children.Remove(new ItemItem());
-            ListItem.Children.Add(new ItemItem());
+            ListItem.Children.Remove(subItem);
+            ListItem.Children.Remove(subCategory);
+            ListItem.Children.Remove(subDiscount);
+            ListItem.Children.Add(subDiscount);
             theTitle.Children.Remove(picker);
             theTitle.Children.Remove(label);
             label.Text = "Discount";

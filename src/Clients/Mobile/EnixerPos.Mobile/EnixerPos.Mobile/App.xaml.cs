@@ -15,8 +15,9 @@ namespace EnixerPos.Mobile
 
             // MainPage = new MainPage();
             //  MainPage = new SaleView();
-            CategoryPageViewModel viewModel = new CategoryPageViewModel();
-            MainPage = new NavigationPage(new Views.Item.CreateCategoryPage(viewModel));
+            //CategoryPageViewModel viewModel = new CategoryPageViewModel();
+            //MainPage = new NavigationPage(new Views.Item.CreateCategoryPage(viewModel));
+            MainPage = new ItemPage();
         }
 
         protected override void OnStart()

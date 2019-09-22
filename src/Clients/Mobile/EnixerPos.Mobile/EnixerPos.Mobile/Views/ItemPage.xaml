@@ -6,53 +6,48 @@
              mc:Ignorable="d"
              x:Class="EnixerPos.Mobile.Views.ItemPage">
     <ContentPage.Content>
-        <Grid>
-            <StackLayout >
-                <Frame Padding="0" HorizontalOptions="FillAndExpand" Margin="-1,-1,-1,0" HasShadow="True">
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
-                        <ImageButton Source="icon_hamburger" Aspect="AspectFit" VerticalOptions="Center" Margin="40" HeightRequest="30" Clicked="Button_Clicked" BackgroundColor="Transparent"/>
-                        <Label Text="Items" TextColor="Black" FontSize="40" VerticalOptions="Center" HorizontalOptions="Start" />
-                        <StackLayout x:Name="theTitle" VerticalOptions="CenterAndExpand" Margin="200,0,0,0">
-                        </StackLayout>
-                        <ImageButton Source="icon_search_2" Aspect="AspectFit" VerticalOptions="Center" Margin="20,0" HeightRequest="30" BackgroundColor="Transparent" HorizontalOptions="EndAndExpand"/>
+        <StackLayout >
+            <Frame Padding="0" HorizontalOptions="FillAndExpand" Margin="-1,-1,-1,0" HasShadow="True">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
+                    <ImageButton Source="icon_hamburger" Aspect="AspectFit" VerticalOptions="Center" Margin="40" HeightRequest="30" Clicked="Button_Clicked" BackgroundColor="Transparent"/>
+                    <Label Text="Items" TextColor="Black" FontSize="40" VerticalOptions="Center" HorizontalOptions="Start" />
+                    <StackLayout x:Name="theTitle" VerticalOptions="CenterAndExpand" Margin="200,0,0,0">
                     </StackLayout>
+                    <ImageButton Source="icon_search_2" Aspect="AspectFit" VerticalOptions="Center" Margin="20,0" HeightRequest="30" BackgroundColor="Transparent" HorizontalOptions="EndAndExpand"/>
+                </StackLayout>
 
-                </Frame>
-                <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand" >
-                    <StackLayout Margin="-3,-3,-3,0" HorizontalOptions="StartAndExpand" VerticalOptions="Fill" WidthRequest="400">
-                        <Frame Margin="-3,-3,-3,0" Padding="10,0,0,0" HasShadow="True" VerticalOptions="FillAndExpand">
-                            <StackLayout Margin="10,0,0,0">
-                                <StackLayout x:Name="theItem" Orientation="Horizontal" HorizontalOptions="FillAndExpand" BackgroundColor="#ededed">
-                                    <StackLayout.GestureRecognizers>
-                                        <TapGestureRecognizer Tapped="Item_Tapped"/>
-                                    </StackLayout.GestureRecognizers>
-                                    <Image Source="icon_list" WidthRequest="30" Margin="20"/>
-                                    <Label Text="Item" FontSize="28" VerticalTextAlignment="Center"/>
-                                </StackLayout>
-                                <StackLayout x:Name="theCategories" Orientation="Horizontal" HorizontalOptions="FillAndExpand" BackgroundColor="White">
-                                    <StackLayout.GestureRecognizers>
-                                        <TapGestureRecognizer Tapped="Categories_Tapped"/>
-                                    </StackLayout.GestureRecognizers>
-                                    <Image Source="agentcategories" WidthRequest="30" Margin="20"/>
-                                    <Label Text="Categories" FontSize="28" VerticalTextAlignment="Center"/>
-                                </StackLayout>
-                                <StackLayout x:Name="theDiscount" Orientation="Horizontal" HorizontalOptions="FillAndExpand" BackgroundColor="White">
-                                    <StackLayout.GestureRecognizers>
-                                        <TapGestureRecognizer Tapped="Discount_Tapped"/>
-                                    </StackLayout.GestureRecognizers>
-                                    <Image Source="discount" WidthRequest="30" Margin="20"/>
-                                    <Label Text="Discount" FontSize="28" VerticalTextAlignment="Center"/>
-                                </StackLayout>
+            </Frame>
+            <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand" >
+                <StackLayout Margin="-3,-3,-3,0" HorizontalOptions="StartAndExpand" VerticalOptions="Fill" WidthRequest="400">
+                    <Frame Margin="-3,-3,-3,0" Padding="10,0,0,0" HasShadow="True" VerticalOptions="FillAndExpand">
+                        <StackLayout Margin="10,0,0,0">
+                            <StackLayout x:Name="theItem" Orientation="Horizontal" HorizontalOptions="FillAndExpand" BackgroundColor="#ededed">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="Item_Tapped"/>
+                                </StackLayout.GestureRecognizers>
+                                <Image Source="icon_list" WidthRequest="30" Margin="20"/>
+                                <Label Text="Item" FontSize="28" VerticalTextAlignment="Center"/>
                             </StackLayout>
-                        </Frame>
-                    </StackLayout>
-                    <StackLayout x:Name="ListItem" HorizontalOptions="StartAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
-                    </StackLayout>
+                            <StackLayout x:Name="theCategories" Orientation="Horizontal" HorizontalOptions="FillAndExpand" BackgroundColor="White">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="Categories_Tapped"/>
+                                </StackLayout.GestureRecognizers>
+                                <Image Source="agentcategories" WidthRequest="30" Margin="20"/>
+                                <Label Text="Categories" FontSize="28" VerticalTextAlignment="Center"/>
+                            </StackLayout>
+                            <StackLayout x:Name="theDiscount" Orientation="Horizontal" HorizontalOptions="FillAndExpand" BackgroundColor="White">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="Discount_Tapped"/>
+                                </StackLayout.GestureRecognizers>
+                                <Image Source="discount" WidthRequest="30" Margin="20"/>
+                                <Label Text="Discount" FontSize="28" VerticalTextAlignment="Center"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+                <StackLayout x:Name="ListItem" HorizontalOptions="StartAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
                 </StackLayout>
             </StackLayout>
-            <AbsoluteLayout VerticalOptions="EndAndExpand" HorizontalOptions="EndAndExpand" Margin="60">
-                <ImageButton Source="plus" WidthRequest="80" BackgroundColor="Transparent"/>
-            </AbsoluteLayout>
-        </Grid>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
