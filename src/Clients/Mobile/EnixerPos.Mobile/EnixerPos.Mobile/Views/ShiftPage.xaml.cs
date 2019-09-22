@@ -1,5 +1,7 @@
 ﻿using EnixerPos.Api.ViewModels.Shifts;
 using EnixerPos.Mobile.ViewModels;
+using EnixerPos.Mobile.Views.Popup;
+using Rg.Plugins.Popup.Extensions;
 using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
@@ -38,15 +40,10 @@ namespace EnixerPos.Mobile.Views
             Taxes.RightTexLable = vM.getShiftView.Taxes.ToString("#,#.00");
         }
 
-        protected override async void OnAppearing()
+
+        private void Button_Clicked(object sender, EventArgs e)
         {
-            base.OnAppearing();
-            
-             
-           // await PopupNavigation.PushAsync(new Popup.OpenTicketsPopup());
-
+            Navigation.PushPopupAsync(new SideMenu());
         }
-
-
     }
 }
