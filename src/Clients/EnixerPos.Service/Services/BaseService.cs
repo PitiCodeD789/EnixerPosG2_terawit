@@ -44,7 +44,7 @@ namespace EnixerPos.Service.Services
 
                     T obj = GetModelFormResult<T>(json_result);
 
-                    resultService.IsError = result.StatusCode;
+                    resultService.IsError = System.Net.HttpStatusCode.OK;
 
                     resultService.Model = obj;
 
@@ -100,7 +100,8 @@ namespace EnixerPos.Service.Services
 
                 try
                 {
-                    token = await SecureStorage.GetAsync("Token");
+                    //token = await SecureStorage.GetAsync("Token");
+                    token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWVpIjoiMTIzNDU2Nzg5IiwibmJmIjoxNTY5MDQxMDA2LCJleHAiOjE1NjkxNTEzMDYsImlzcyI6IkVuaXhlclBvc0cyIiwiYXVkIjoiZUBlIiwidXNlciI6Ik5hdCJ9.2NVziPg0aE3eXlSLL9MyGp453CaW2UYMLMV5GMqPDJs";
                 }
                 catch (Exception e)
                 {

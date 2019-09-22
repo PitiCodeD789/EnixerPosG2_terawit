@@ -12,10 +12,10 @@ namespace EnixerPos.Mobile.Views.Item
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ItemItem : ContentView
     {
-        public ItemItem()
+        public ItemItem(object vm)
         {
             InitializeComponent();
-            
+            BindingContext = vm;
         }
     }
 }

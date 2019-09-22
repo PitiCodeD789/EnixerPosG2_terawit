@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin.Essentials;
 
 namespace EnixerPos.Mobile
 {
@@ -17,6 +18,11 @@ namespace EnixerPos.Mobile
     {
         public static List<ReceiptViewModel> TicketList { get; set; }
         public static string DeviceId { get; set; }
+        public static string User { get; set; }
+        public static string Email { get; set; }
+        public static string StoreName { get; set; }
+        public static string PosName { get; set; }
+        public static int UserId { get; set; }
 
         public App()
         {
@@ -24,17 +30,19 @@ namespace EnixerPos.Mobile
             TicketList = new List<ReceiptViewModel>();
 
             // MainPage = new MainPage();
-            MainPage = new NavigationPage( new SaleView());
-            //CategoryPageViewModel viewModel = new CategoryPageViewModel();
-            //CreateItemPageViewModel createItem = new CreateItemPageViewModel();
-            //CreateDiscountPageViewModel createDiscount = new CreateDiscountPageViewModel();
+            //  MainPage = new SaleView();
+            CategoryPageViewModel viewModel = new CategoryPageViewModel();
+            CreateItemPageViewModel createItem = new CreateItemPageViewModel();
+            CreateDiscountPageViewModel createDiscount = new CreateDiscountPageViewModel();
             //MainPage = new NavigationPage(new Views.Item.CreateDiscountPage(createDiscount));
+            MainPage = new NavigationPage(new Login());
             PermissionReq();
         }
 
         protected override void OnStart()
         {
             DeviceId = CrossDevice.Device.DeviceId;
+           
         }
 
         protected override void OnSleep()

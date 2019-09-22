@@ -3,8 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:binding="clr-namespace:EnixerPos.Mobile.ViewModels"
              mc:Ignorable="d"
+             NavigationPage.HasNavigationBar="False"
              x:Class="EnixerPos.Mobile.Views.EnterPin">
+    <ContentPage.BindingContext>
+        <binding:EnterPinViewModel/>
+    </ContentPage.BindingContext>
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="NumPad" TargetType="Button">

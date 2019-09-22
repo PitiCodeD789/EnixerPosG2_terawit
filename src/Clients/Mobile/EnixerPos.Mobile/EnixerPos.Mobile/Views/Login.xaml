@@ -3,17 +3,30 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:binding="clr-namespace:EnixerPos.Mobile.ViewModels"
              xmlns:components="clr-namespace:EnixerPos.Mobile.Components"
              mc:Ignorable="d"
+             NavigationPage.HasNavigationBar="False"
              x:Class="EnixerPos.Mobile.Views.Login">
+    <ContentPage.BindingContext>
+        <binding:LoginStoreViewModel/>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" WidthRequest="350">
             <Image Source="logo" WidthRequest="300" Margin="0,0,0,30"/>
-            <components:Pos_EntryView Placeholder="Email"/>
-            <components:Pos_EntryView Placeholder="Password" IsPassword="True"/>
-            <components:Pos_ButtonView TextButton="SIGN IN" />
-            <Label Text="Forgot password?" TextColor="#c3c3c3" FontSize="16" HorizontalTextAlignment="Center"/>
-            <Label Text="Register" TextColor="#e85f16" FontSize="16" HorizontalTextAlignment="Center" Margin="0,50,0,0"/>
+            <components:Pos_EntryView Placeholder="Email" TextEntry="{Binding Email}"/>
+            <components:Pos_EntryView Placeholder="Password" IsPassword="True" TextEntry="{Binding Password}"/>
+            <components:Pos_ButtonView TextButton="SIGN IN" Command="{Binding GotoLogin}"/>
+            <Label Text="Forgot password?" TextColor="#c3c3c3" FontSize="16" HorizontalTextAlignment="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding GotoForgotPass}"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Text="Register" TextColor="#e85f16" FontSize="16" HorizontalTextAlignment="Center" Margin="0,50,0,0">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding GotoRegis}"/>
+                </Label.GestureRecognizers>
+            </Label>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

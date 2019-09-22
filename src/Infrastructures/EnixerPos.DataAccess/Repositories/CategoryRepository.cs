@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using EnixerPos.DataAccess.Contexts;
 using EnixerPos.Domain.DtoModels;
+using EnixerPos.Domain.Entities;
 using EnixerPos.Domain.Repositories;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,21 @@ namespace EnixerPos.DataAccess.Repositories
         }
         public bool AddCategory(int storeId, CategoryDto categoryDto)
         {
-            throw new NotImplementedException();
+            try
+            {
+               
+                   CategoryEntity categoryEntity = new CategoryEntity();
+                categoryEntity.StoreId = storeId;
+                categoryEntity.Name = categoryDto.Name;
+                categoryEntity.Color = categoryDto.Color;
+                categoryEntity.CreateDateTime = DateTime.UtcNow;
+                _context.Categories.Add(categoryEntity);
+                _context.SaveChanges();
+                return true;
+            }catch
+            {
+                return false;
+            }
         }
 
         public List<CategoryDto> GetCategoriesByStoreId(int storeId)
