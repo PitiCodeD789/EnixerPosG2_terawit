@@ -9,7 +9,7 @@ namespace EnixerPos.Service.Interfaces
 {
     public interface IProductService
     {
-        Task<ResultServiceModel<ResultViewModel>> CreateItem(ItemModel item);
-        Task<ResultServiceModel<CategoriesViewModel>> GetAllCategories();
+        Task<ResultViewModel> CreateItem(ItemModel item);
+        Task<CategoriesViewModel> GetAllCategories();
     }
 }

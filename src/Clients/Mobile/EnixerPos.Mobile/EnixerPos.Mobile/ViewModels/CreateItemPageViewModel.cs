@@ -1,6 +1,8 @@
 ﻿using EnixerPos.Api.ViewModels.Product;
+using EnixerPos.Mobile.Views.Popup;
 using EnixerPos.Service.Interfaces;
 using EnixerPos.Service.Services;
+using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,18 +21,28 @@ namespace EnixerPos.Mobile.ViewModels
             _productService = new ProductService();
             ColorSelectCommand = new Command(ColorSelect);
             CreateItemCommand = new Command(CreateItem);
-            Categories = GetAllCateAsync().Result;
+            GetAllCateAsync();
             CategoriesName = Categories.Select(x => x.Name).ToList();
         }
 
         private async Task<List<CategoryModel>> GetAllCateAsync()
         {
-            var result = await _productService.GetAllCategories();
-            if (result.IsError == System.Net.HttpStatusCode.OK || result.Model != null)
+            try
             {
-                return result.Model.Categories;
+                var result = await _productService.GetAllCategories();
+                if (result!=null || !result.IsError || result.Categories != null)
+                {
+                    Categories = result.Categories;
+                    return result.Categories;
+                }
+                return null;
             }
-            return null;
+            catch (Exception)
+            {
+
+                throw;
+            }
+           
         }
 
         public ICommand CreateItemCommand { get; set; }
@@ -42,6 +54,17 @@ namespace EnixerPos.Mobile.ViewModels
             get { return categoriesName; }
             set { categoriesName = value; }
         }
+        private string selectedCategory;
+
+        public string SelectedCategory
+        {
+            get { return selectedCategory; }
+            set { selectedCategory = value;
+                OnPropertyChanged();
+                SelectCate = Categories.Where(x => x.Name == SelectedCategory).FirstOrDefault();
+            }
+        }
+
 
 
         private CategoryModel selectCate;
@@ -70,43 +93,81 @@ namespace EnixerPos.Mobile.ViewModels
 
         private void CreateItem()
         {
-            ItemOptionModel[] itemOptions = new ItemOptionModel[]
+            try
             {
-                new ItemOptionModel()
+                ItemModel item = new ItemModel()
                 {
-                    OptionName = Option1,
-                    Price = Decimal.Parse(Price1)
-                },
-                new ItemOptionModel()
-                {
-                    OptionName = Option2,
-                    Price = Decimal.Parse(Price2)
-                },
-                new ItemOptionModel()
-                {
-                    OptionName = Option3,
-                    Price = Decimal.Parse(Price3)
-                },
-                new ItemOptionModel()
-                {
-                    OptionName = Option4,
-                    Price = Decimal.Parse(Price4)
-                }
-            };
-            
+                    Name = ItemName,
+                    CategoryName = SelectedCategory,
+                    Price = ConvertPrice(ItemPrice),
+                    Cost = ConvertPrice(ItemCost),
+                    Color = GetColor(),
+                    Option1 = Option1,
+                    Option1Price = ConvertPrice(Price1),
+                    Option2 = Option2,
+                    Option2Price = ConvertPrice(Price2),
+                    Option3 = Option3,
+                    Option3Price = ConvertPrice(Price3),
+                    Option4 = Option4,
+                    Option4Price = ConvertPrice(Price4)
 
-            ItemModel item = new ItemModel()
+                };
+                var result = _productService.CreateItem(item);
+
+                if (result != null || !result.Result.IsError)
+                {
+                    ErrorViewModel errorViewModel = new ErrorViewModel("บันทึกรายการสำเร็จ", 3);
+                    PopupNavigation.Instance.PushAsync(new Error(errorViewModel));
+                    //BackPageMethod();
+                }
+                else
+                {
+                    ErrorViewModel error = new ErrorViewModel("ผิดพลาด", 1);
+                    PopupNavigation.Instance.PushAsync(new Error(error));
+                    //BackPageMethod();
+                }
+
+            }
+            catch (Exception)
             {
-                Name = ItemName,
-                CategoryName = SelectCate.Name,
-                Price = Decimal.Parse(ItemPrice),
-                Cost = Decimal.Parse(ItemCost),
-                Color = "#FFFFFF",
-                ItemOptions = itemOptions
-            };
-            var result = _productService.CreateItem(item);
+
+                throw;
+            }
+            
         }
 
+        private string GetColor()
+        {
+            switch (SelectColor)
+            {
+                case 1: return "#ffffff";
+                case 2: return "#ffd5d5";
+                case 3: return "#f8ffd3";
+                case 4: return "#c6dbfc";
+                case 5: return "#ffccf9";
+                case 6: return "#e0e0e0";
+                default: return null;
+            }
+        }
+
+        private decimal ConvertPrice(string price)
+        {
+            try
+            {
+                if (price != null)
+                {
+                    return Decimal.Parse(price);
+                }
+                return 0;
+            }
+            catch (Exception)
+            {
+
+                return 0;
+
+            }
+
+        }
 
         private string itemName;
 
@@ -205,6 +266,19 @@ namespace EnixerPos.Mobile.ViewModels
             set { price4 = value; }
         }
 
+        private int selectColor;
+
+        public int SelectColor
+        {
+            get { return selectColor; }
+            set
+            {
+                selectColor = value;
+                OnPropertyChanged();
+            }
+        }
+
+
 
         private void ColorSelect(object obj)
         {
@@ -217,6 +291,7 @@ namespace EnixerPos.Mobile.ViewModels
 
         private void setColor(int colorIndex)
         {
+            SelectColor = colorIndex;
             if (colorIndex == 1)
             {
                 Color1 = true;

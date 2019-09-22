@@ -29,7 +29,8 @@
                             WidthRequest="400"
                             HorizontalOptions="StartAndExpand"
                             TitleColor="LightGray"
-                            ItemsSource="{Binding CategoriesName}">
+                            ItemsSource="{Binding CategoriesName}"
+                            SelectedItem="{Binding SelectedCategory}">
                         <!--<Picker.ItemsSource>
                             <x:Array Type="{x:Type x:String}">
                                 <x:String>Baboon</x:String>
@@ -274,8 +275,9 @@
                          Margin="0,15,0,15"
                          WidthRequest="800" Padding="0"
                          HorizontalOptions="Center">
-                <Button Text="CREATE ITEM" WidthRequest="350" BackgroundColor="#E96722" TextColor="White" FontSize="Medium" FontAttributes="Bold"  HeightRequest="80" HorizontalOptions="FillAndExpand"/>
-                <Button Text="CANCEL" WidthRequest="350" HeightRequest="80" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="FillAndExpand"/>
+                <Button Text="CREATE ITEM" WidthRequest="350" BackgroundColor="#E96722" TextColor="White" FontSize="Medium" FontAttributes="Bold"  HeightRequest="80" HorizontalOptions="FillAndExpand"
+                        Command="{Binding CreateItemCommand}"/>
+                    <Button Text="CANCEL" WidthRequest="350" HeightRequest="80" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="FillAndExpand" Command="{Binding BackPageMethod}"/>
             </StackLayout>
             
         </StackLayout>

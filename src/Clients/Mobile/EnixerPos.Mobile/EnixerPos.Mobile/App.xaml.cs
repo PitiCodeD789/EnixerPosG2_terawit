@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin.Essentials;
 
 namespace EnixerPos.Mobile
 {
@@ -30,13 +31,15 @@ namespace EnixerPos.Mobile
             CreateDiscountPageViewModel createDiscount = new CreateDiscountPageViewModel();
             //MainPage = new NavigationPage(new Views.Item.CreateDiscountPage(createDiscount));
             CreateItemPageViewModel itemPageViewModel = new CreateItemPageViewModel();
-            MainPage = new Views.Item.CreateItem(itemPageViewModel);
+            SecureStorage.SetAsync("Token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWVpIjoiMTIzNDU2Nzg5IiwibmJmIjoxNTY5MDQxMDA2LCJleHAiOjE1NjkxNTEzMDYsImlzcyI6IkVuaXhlclBvc0cyIiwiYXVkIjoiZUBlIiwidXNlciI6Ik5hdCJ9.2NVziPg0aE3eXlSLL9MyGp453CaW2UYMLMV5GMqPDJs");
+            MainPage = new Views.ReceiptsPage();
             PermissionReq();
         }
 
         protected override void OnStart()
         {
             DeviceId = CrossDevice.Device.DeviceId;
+           
         }
 
         protected override void OnSleep()
