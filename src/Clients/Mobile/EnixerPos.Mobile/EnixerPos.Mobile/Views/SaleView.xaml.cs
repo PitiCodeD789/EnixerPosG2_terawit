@@ -31,5 +31,14 @@ namespace EnixerPos.Mobile.Views
         {
             Navigation.PushPopupAsync(new SideMenu());
         }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            if (!App.CheckShift)
+            {
+                Navigation.PushPopupAsync(new OpenShiftButtonPopup());
+            }
+        }
     }
 }

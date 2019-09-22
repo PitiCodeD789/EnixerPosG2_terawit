@@ -31,24 +31,32 @@ namespace EnixerPos.Service.Services
                 {
                     throw e;
                 }
-
+                token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWVpIjoiMTIzNDU2Nzg5IiwibmJmIjoxNTY5MDQxMDA2LCJleHAiOjE1NjkxNTEzMDYsImlzcyI6IkVuaXhlclBvc0cyIiwiYXVkIjoiZUBlIiwidXNlciI6Ik5hdCJ9.2NVziPg0aE3eXlSLL9MyGp453CaW2UYMLMV5GMqPDJs";
                 client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
 
                 HttpContent content = GetHttpContent(model);
 
-                var result = client.PostAsync(url, content).Result;
+                var result =  client.PostAsync(url, content).Result;
 
                 if (result.IsSuccessStatusCode)
                 {
-                    var json_result = result.Content.ReadAsStringAsync().Result;
+                    try
+                    {
+                        var json_result = result.Content.ReadAsStringAsync().Result;
 
-                    T obj = GetModelFormResult<T>(json_result);
+                        T obj = GetModelFormResult<T>(json_result);
 
-                    resultService.IsError = System.Net.HttpStatusCode.OK;
+                        resultService.IsError = System.Net.HttpStatusCode.OK;
 
-                    resultService.Model = obj;
+                        resultService.Model = obj;
 
-                    return resultService;
+                        return resultService;
+                    }
+                    catch (Exception e)
+                    {
+                        return new ResultServiceModel<T>();
+                    }
+                   
                 }
                 else if (result.StatusCode == System.Net.HttpStatusCode.Unauthorized)
                 {

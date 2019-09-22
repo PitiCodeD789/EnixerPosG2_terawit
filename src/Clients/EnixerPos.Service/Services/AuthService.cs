@@ -18,7 +18,7 @@ namespace EnixerPos.Service.Services
             GetTokenByRefreshMerchantCommand model = new GetTokenByRefreshMerchantCommand()
             {
                 Email = email.ToLower(),
-                Imei = imei,
+                Imei = "100930323339892",
                 RefreshToken = refreshToken
             };
 
@@ -43,7 +43,7 @@ namespace EnixerPos.Service.Services
             {
                 Email = email.ToLower(),
                 Password = password,
-                Imei = imei
+                Imei = "100930323339892"
             };
 
             string url = serviceUrl + "login";

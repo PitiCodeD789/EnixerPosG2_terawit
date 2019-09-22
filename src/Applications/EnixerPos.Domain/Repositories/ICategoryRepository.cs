@@ -10,6 +10,7 @@ namespace EnixerPos.Domain.Repositories
         List<CategoryDto> GetCategoriesByStoreId(int storeId);
         bool AddCategory(int storeId, CategoryDto categoryDto);
         CategoryDto GetCategory(int storeId, int categoryId);
+        CategoryDto GetCategoryByName(string nane);
         bool Update(int storeId, CategoryDto categoryDto);
     }
 }

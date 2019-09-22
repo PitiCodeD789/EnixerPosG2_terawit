@@ -51,12 +51,12 @@ namespace EnixerPos.Api.Controllers
         [HttpGet("GetShifts")]
         public IActionResult GetListShift()
         {
-            
-            string storeEmail = "sert@gmail.com";
-            string posIMEI = "00200202020000";
-            int posUserId = 12;
+            var audience = User.Claims.FirstOrDefault(c => c.Type == "aud").Value;
+            var user = User.Claims.FirstOrDefault(c => c.Type == "user").Value;
+            string storeEmail = audience;            
+            string posUser = user;
 
-            List<ShiftdetailDto> item = _shiftService.GetLast30DayShift(storeEmail, posIMEI, posUserId);
+            List<ShiftdetailDto> item = _shiftService.GetLast30DayShift(storeEmail, posUser);
 
             if(item == null)
             {
