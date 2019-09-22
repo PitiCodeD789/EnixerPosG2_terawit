@@ -7,6 +7,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using DLToolkit.Forms.Controls;
+using Plugin.Permissions;
 
 namespace EnixerPos.Mobile.Droid
 {
@@ -23,6 +24,7 @@ namespace EnixerPos.Mobile.Droid
             Plugin.InputKit.Platforms.Droid.Config.Init(this, savedInstanceState);
             FlowListView.Init();
             Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
+            Plugin.CurrentActivity.CrossCurrentActivity.Current.Init(this, savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
@@ -31,6 +33,7 @@ namespace EnixerPos.Mobile.Droid
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
+            PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
 
