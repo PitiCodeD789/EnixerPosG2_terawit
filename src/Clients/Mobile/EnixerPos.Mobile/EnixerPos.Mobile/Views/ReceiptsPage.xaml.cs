@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EnixerPos.Mobile.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,7 @@ namespace EnixerPos.Mobile.Views
         public ReceiptsPage()
         {
             InitializeComponent();
+            BindingContext = new ReceiptPageViewModel();
         }
 
         private void ImageButton_Clicked(object sender, EventArgs e)

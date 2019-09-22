@@ -17,5 +17,15 @@ namespace EnixerPos.Api.ViewModels.Sale
         public decimal TotalDiscount { get; set; }
         public Enixer_Enumerations.EP_PaymentTypeEnum PaymentType { get; set; }
         public DateTime CreateDateTime { get; set; }
+
+        public string GetPaymentTypeString
+        {
+            get{ return PaymentType.ToString(); }
+        }
+
+        public string GetCreateTimeString
+        {
+            get{ return CreateDateTime.ToString("HH:mm");}
+        }
     }
 }
