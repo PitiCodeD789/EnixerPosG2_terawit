@@ -26,17 +26,19 @@
         <Frame BackgroundColor="White"
                    CornerRadius="10"
                    VerticalOptions="Center"                   
-                   HorizontalOptions="FillAndExpand"
+                   HorizontalOptions="Center"
                    Margin="20,0"
-                   HeightRequest="250">
+                   HeightRequest="400">
             <StackLayout>
                 <zxing:ZXingBarcodeImageView WidthRequest="300" HeightRequest="300" x:Name="QrCode" BarcodeValue="{Binding QrValue}" BarcodeFormat="QR_CODE">
                     <zxing:ZXingBarcodeImageView.BarcodeOptions>
                         <zxcm:EncodingOptions Width="300" Height="300" />
                     </zxing:ZXingBarcodeImageView.BarcodeOptions>
                 </zxing:ZXingBarcodeImageView>
-                <components:Pos_ButtonView BackgroundButton="#FFFFFF" Command="{Binding ClosePopup}" TextColor="Black" 
-                                             VerticalOptions="EndAndExpand" TextButton="ตกลง"/>
+                <components:Pos_ButtonView BackgroundButton="#E85F16" TextColor="White" Command="{Binding QrPaymentCompleteCommand}"
+                                             VerticalOptions="EndAndExpand" TextButton="Complete"/>
+                <components:Pos_ButtonView BackgroundButton="#FFFFFF" TextColor="Red" Command="{Binding ClosePopupCommand}"
+                                             VerticalOptions="EndAndExpand" TextButton="Cancel"/>
             </StackLayout>
         </Frame>
     </StackLayout>

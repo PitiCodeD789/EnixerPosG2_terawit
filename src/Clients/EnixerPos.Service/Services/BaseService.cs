@@ -36,11 +36,11 @@ namespace EnixerPos.Service.Services
 
                 HttpContent content = GetHttpContent(model);
 
-                var result = await client.PostAsync(url, content);
+                var result = client.PostAsync(url, content).Result;
 
                 if (result.IsSuccessStatusCode)
                 {
-                    var json_result = await result.Content.ReadAsStringAsync();
+                    var json_result = result.Content.ReadAsStringAsync().Result;
 
                     T obj = GetModelFormResult<T>(json_result);
 
@@ -109,11 +109,11 @@ namespace EnixerPos.Service.Services
 
                 client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
 
-                var result = await client.GetAsync(url);
+                var result = client.GetAsync(url).Result;
 
                 if (result.IsSuccessStatusCode)
                 {
-                    var json_result = await result.Content.ReadAsStringAsync();
+                    var json_result = result.Content.ReadAsStringAsync().Result;
 
                     T obj = GetModelFormResult<T>(json_result);
 

@@ -165,7 +165,13 @@ namespace EnixerPos.Domain.Services
                 List<ItemDto> items = _itemRepository.GetItemsByStoreId(storeId);
                 foreach (var item in items)
                 {
-                    item.CategoryName = _categoryRepository.GetCategory(storeId, item.CategoryId).Name;
+                    if (item.CategoryId == null || item.CategoryId == 0)
+                        item.CategoryName = "Undefined";
+                    else
+                    {
+                        string categoryName = _categoryRepository.GetCategory(storeId, item.CategoryId).Name;
+                        item.CategoryName = categoryName;
+                    }
                 }
                 var tempItem = Map<ItemDto,ItemModel>(items);
 

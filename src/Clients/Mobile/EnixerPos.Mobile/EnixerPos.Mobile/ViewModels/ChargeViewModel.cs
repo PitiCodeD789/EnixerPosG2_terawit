@@ -2,12 +2,14 @@
 using EnixerPos.Mobile.Models;
 using EnixerPos.Mobile.Views;
 using EnixerPos.Mobile.Views.Popup;
+using EnixerPos.Service.Services;
 using Newtonsoft.Json;
 using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using Xamarin.Forms;
@@ -22,7 +24,7 @@ namespace EnixerPos.Mobile.ViewModels
             get { return _receipt; }
             set { _receipt = value; }
         }
-
+        ProductService _service = new ProductService();
         public ChargeViewModel(ReceiptViewModel receipt)
         {
             Receipt = receipt;
@@ -47,12 +49,14 @@ namespace EnixerPos.Mobile.ViewModels
             PaymentCommand = new Command<string>(Payment);
             CashPaymentCommand = new Command(Payment);
             ClosePopupCommand = new Command(() => PopupNavigation.PopAllAsync());
+            QrPaymentCompleteCommand = new Command(QrPaymentComplete);
         }
 
         public Command ExpectedCashCommand { get; set; }
         public Command PaymentCommand { get; set; }
         public Command CashPaymentCommand { get; set; }
         public Command ClosePopupCommand { get; set; }
+        public Command QrPaymentCompleteCommand { get; set; }
 
         decimal GetExpectedCash(int roundTo)
         {
@@ -67,45 +71,56 @@ namespace EnixerPos.Mobile.ViewModels
         }
         void Payment(string paymentType)
         {
+            PaymentCommand payment = new PaymentCommand()
+            {
+                TotalDiscount = TotalDiscount,
+                ItemList = CurrentTicket.ToList(),
+                PosImei = "IMEI",
+                ShiftId = 1,
+                StoreEmail = "e@e",
+                Total = TotalPrice
+            };
             switch (paymentType)
             {
                 case "Debit":
-                    //TODO: Add Payment
-                    if (true)
+                    payment.PaymentType = Api.ViewModels.Enixer_Enumerations.EP_PaymentTypeEnum.Debit;
+                    ReceiptViewModel result = _service.AddPayment(payment);
+                    if (result == null)
                     {
                         PopupNavigation.PushAsync(new Error(new ErrorViewModel("Payment Completed", 3)));
                         Application.Current.MainPage.Navigation.PushAsync(new ReceiptPage(this));
                     }
                     else
+                    {
                         Application.Current.MainPage.DisplayAlert("Payment Error", "Payment not completed please try again.", "Ok");
-                    break;
+                    }
+                    return;
+
                 case "Credit":
-                    //TODO: Add Payment
-                    if (true)
+                    payment.PaymentType = Api.ViewModels.Enixer_Enumerations.EP_PaymentTypeEnum.Debit;
+                    ReceiptViewModel resultC = _service.AddPayment(payment);
+
+                    if (resultC != null)
                     {
                         PopupNavigation.PushAsync(new Error(new ErrorViewModel("Payment Completed", 3)));
                         Application.Current.MainPage.Navigation.PushAsync(new ReceiptPage(this));
                     }
                     else
+                    {
                         Application.Current.MainPage.DisplayAlert("Payment Error", "Payment not completed please try again.", "Ok");
+                    }
                     break;
+
                 case "Wallet":
-                    //TODO: Add Payment
-                    if (true)
+                    GeneratePaymentModel model = new GeneratePaymentModel()
                     {
-                        GeneratePaymentModel model = new GeneratePaymentModel()
-                        {
-                            Amount = TotalPrice,
-                            AccountNumber = "0000000049",
-                            FirstName = "Enixer Cafe"
-                        };
-                        QrValue = JsonConvert.SerializeObject(model);
-                        PopupNavigation.PushAsync(new QrPage(this));
-                        PopupNavigation.PushAsync(new Error(new ErrorViewModel("Payment Completed", 3)));
-                        Application.Current.MainPage.Navigation.PushAsync(new ReceiptPage(this));
-                    }
-                    else
-                        Application.Current.MainPage.DisplayAlert("Payment Error", "Payment not completed please try again.", "Ok");
+                        Amount = TotalPrice,
+                        AccountNumber = "0000000049",
+                        FirstName = "Enixer Cafe"
+                    };
+                    QrValue = JsonConvert.SerializeObject(model);
+                    PopupNavigation.PushAsync(new QrPage(this));
+
                     break;
                 default:
                     break;
@@ -119,8 +134,43 @@ namespace EnixerPos.Mobile.ViewModels
                 return;
             }
             Change = Cash - TotalPrice;
+            PaymentCommand payment = new PaymentCommand()
+            {
+                TotalDiscount = TotalDiscount,
+                ItemList = CurrentTicket.ToList(),
+                PaymentType = Api.ViewModels.Enixer_Enumerations.EP_PaymentTypeEnum.Cash,
+                PosImei = "IMEI",
+                ShiftId = 1,
+                StoreEmail = "e@e",
+                Total = TotalPrice
+            };
             PopupNavigation.PushAsync(new ShowChange(this));
             Application.Current.MainPage.Navigation.PushAsync(new ReceiptPage(this));
+        }
+
+        public void QrPaymentComplete()
+        {
+            PaymentCommand payment = new PaymentCommand()
+            {
+                TotalDiscount = TotalDiscount,
+                ItemList = CurrentTicket.ToList(),
+                PosImei = "IMEI",
+                ShiftId = 1,
+                StoreEmail = "e@e",
+                Total = TotalPrice
+            };
+            payment.PaymentType = Api.ViewModels.Enixer_Enumerations.EP_PaymentTypeEnum.Qr;
+            ReceiptViewModel resultW = _service.AddPayment(payment);
+            if (resultW != null)
+            {
+                PopupNavigation.PushAsync(new Error(new ErrorViewModel("Payment Completed", 3)));
+                Application.Current.MainPage.Navigation.PushAsync(new ReceiptPage(this));
+            }
+            else
+            {
+                Application.Current.MainPage.DisplayAlert("Payment Error", "Payment not completed please try again.", "Ok");
+            }
+            PopupNavigation.PopAllAsync();
         }
 
         #region propfull

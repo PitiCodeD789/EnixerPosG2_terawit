@@ -221,7 +221,7 @@ namespace EnixerPos.Mobile.Views
 
         private void Back_Tapped(object sender, EventArgs e)
         {
-            App.Current.MainPage = new NavigationPage(new SaleView());
+            Application.Current.MainPage = new NavigationPage(new SaleView());
         }
     }
 }

@@ -73,6 +73,7 @@ namespace EnixerPos.Mobile.ViewModels
                         button.VerticalOptions = LayoutOptions.Center;
                         button.Command = new Command<ItemModel>((itemModel) => OpenOption(itemModel));
                         button.CommandParameter = item;
+                        button.BackgroundColor = Color.FromHex(item.Color);
                         grid.Children.Add(button,col,row);
                         col++;
                     }
@@ -219,8 +220,13 @@ namespace EnixerPos.Mobile.ViewModels
                 {
                     AllMenu.Add(new MenuModel()
                     {
-                        CategoryName = item.CategoryName
-                    });
+                        CategoryName = item.CategoryName,
+                        Items = new ObservableCollection<ItemModel>()
+                    }); ;
+                }
+                if (item.Color == null)
+                {
+                    item.Color = "DDDDDD";
                 }
                 AllMenu.Where(a => a.CategoryName == item.CategoryName).FirstOrDefault().Items.Add(item);
             }
@@ -284,12 +290,8 @@ namespace EnixerPos.Mobile.ViewModels
         }
         void GetDiscount()
         {
-            Discounts = new List<DiscountModel>()
-            {
-                new DiscountModel{ DiscountName = "Discount 10%", IsPercentage = true, Amount = 10},
-                new DiscountModel{ DiscountName = "Birthday 15%", IsPercentage = true, Amount = 15},
-                new DiscountModel{ DiscountName = "Discount 100THB for new cutomer", IsPercentage = false, Amount = 100}
-            };
+            var discountVM = _service.GetDiscounts();
+            Discounts = discountVM.Discounts;
             if (Discounts.Count > 0)
             {
                 DiscountName1 = Discounts[0].DiscountName;

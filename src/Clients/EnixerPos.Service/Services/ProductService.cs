@@ -1,4 +1,5 @@
 ﻿using EnixerPos.Api.ViewModels.Product;
+using EnixerPos.Api.ViewModels.Sale;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -53,6 +54,26 @@ namespace EnixerPos.Service.Services
             }
         }
 
+        public ReceiptViewModel AddPayment(PaymentCommand payment)
+        {
+            try
+            {
+                //var result = Get<CategoriesViewModel>("http://192.168.1.33:30000/api/product/getcategories").Result;
+                var client = new HttpClient();
+                string accessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWVpIjoiMTIzNDU2Nzg5IiwibmJmIjoxNTY5MDQxMDA2LCJleHAiOjE1NjkxNTEzMDYsImlzcyI6IkVuaXhlclBvc0cyIiwiYXVkIjoiZUBlIiwidXNlciI6Ik5hdCJ9.2NVziPg0aE3eXlSLL9MyGp453CaW2UYMLMV5GMqPDJs";
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+                HttpContent content = GetHttpContent(payment);
+                HttpResponseMessage response = client.PostAsync("http://192.168.1.33:30000/api/sale/payment", content).Result;
+                response.EnsureSuccessStatusCode();
+                string responseBody = response.Content.ReadAsStringAsync().Result;
+                var result = JsonConvert.DeserializeObject<ReceiptViewModel>(responseBody);
+                return result;
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
 
         public bool CheckPayment()
         {
@@ -71,6 +92,26 @@ namespace EnixerPos.Service.Services
             catch (Exception e)
             {
                 return false;
+            }
+        }
+
+        public DiscountsViewModel GetDiscounts()
+        {
+            try
+            {
+                //var result = Get<CategoriesViewModel>("http://192.168.1.33:30000/api/product/getcategories").Result;
+                var client = new HttpClient();
+                string accessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWVpIjoiMTIzNDU2Nzg5IiwibmJmIjoxNTY5MDQxMDA2LCJleHAiOjE1NjkxNTEzMDYsImlzcyI6IkVuaXhlclBvc0cyIiwiYXVkIjoiZUBlIiwidXNlciI6Ik5hdCJ9.2NVziPg0aE3eXlSLL9MyGp453CaW2UYMLMV5GMqPDJs";
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+                HttpResponseMessage response = client.GetAsync("http://192.168.1.33:30000/api/product/getdiscounts").Result;
+                response.EnsureSuccessStatusCode();
+                string responseBody = response.Content.ReadAsStringAsync().Result;
+                var result = JsonConvert.DeserializeObject<DiscountsViewModel>(responseBody);
+                return result;
+            }
+            catch (Exception e)
+            {
+                return null;
             }
         }
     }

@@ -8,6 +8,7 @@
              xmlns:ai="clr-namespace:AiForms.Renderers;assembly=CollectionView"
              xmlns:tabView="clr-namespace:Xam.Plugin.TabView;assembly=Xam.Plugin.TabView"
              NavigationPage.HasNavigationBar="False"
+             x:Name="SalePage"
              x:Class="EnixerPos.Mobile.Views.SaleView">
     <ContentPage.Content>
         <Grid ColumnSpacing="0" BackgroundColor="White">
@@ -125,6 +126,7 @@
                                     <Label Text="{Binding OptionName}" FontSize="Medium" HorizontalOptions="Start" Grid.Row="1" />
                                     <Label Text="{Binding Discount}" FontSize="Medium" HorizontalOptions="Start" Grid.Row="2" IsVisible="{Binding IsDiscounted}"/>
                                     <Label Text="{Binding Comment}" FontSize="Medium" HorizontalOptions="Start" Grid.Row="3" IsVisible="{Binding HasComment}"/>
+                                    <Button Text="Delete" FontSize="10" Command="{Binding BindingContext.DeleteItemCommand, Source={x:Reference SalePage}}"   CommandParameter="{Binding .}" Grid.Row="3" Grid.Column="1" HorizontalOptions="End"/>
                                 </Grid>
                             </ViewCell>
                         </DataTemplate>
