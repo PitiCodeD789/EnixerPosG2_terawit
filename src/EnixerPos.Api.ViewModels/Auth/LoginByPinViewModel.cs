@@ -9,6 +9,6 @@ namespace EnixerPos.Api.ViewModels.Auth
         public string RefreshToken { get; set; }
         public string Token { get; set; }
         public string User { get; set; }
-        public object UserId { get; set; }
+        public int UserId { get; set; }
     }
 }

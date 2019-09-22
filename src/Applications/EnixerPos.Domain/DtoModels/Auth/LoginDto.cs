@@ -6,7 +6,7 @@ namespace EnixerPos.Domain.DtoModels.Auth
 {
     public class LoginDto
     {
-        public object StoreName { get; set; }
-        public object PosName { get; set; }
+        public string StoreName { get; set; }
+        public string PosName { get; set; }
     }
 }

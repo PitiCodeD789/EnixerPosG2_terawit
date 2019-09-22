@@ -43,7 +43,7 @@ namespace EnixerPos.Service.Services
 
                     T obj = GetModelFormResult<T>(json_result);
 
-                    resultService.IsError = result.StatusCode;
+                    resultService.IsError = System.Net.HttpStatusCode.OK;
 
                     resultService.Model = obj;
 

@@ -69,7 +69,7 @@ namespace EnixerPos.Api.Controllers
             var claims = new Claim[]
             {
                 new Claim("imei", imei),
-                new Claim("user", null)
+                new Claim("user", "")
             };
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);

@@ -7,6 +7,6 @@ namespace EnixerPos.Domain.DtoModels.Auth
     public class LoginByPinDto
     {
         public string User { get; set; }
-        public object UserId { get; set; }
+        public int UserId { get; set; }
     }
 }
