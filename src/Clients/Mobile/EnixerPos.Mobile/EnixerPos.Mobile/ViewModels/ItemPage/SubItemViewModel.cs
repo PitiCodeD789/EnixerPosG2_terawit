@@ -307,7 +307,7 @@ namespace EnixerPos.Mobile.ViewModels.ItemPage
         {
             if (typePage == Status.InItemPage.Item)
             {
-                await Application.Current.MainPage.Navigation.PushAsync(new CreateItem());
+                await Application.Current.MainPage.Navigation.PushAsync(new CreateItem(new CreateItemPageViewModel()));
             }
             else if (typePage == Status.InItemPage.Categories)
             {
@@ -316,7 +316,7 @@ namespace EnixerPos.Mobile.ViewModels.ItemPage
             }
             else
             {
-                await Application.Current.MainPage.Navigation.PushAsync(new CreateDiscountPage());
+                await Application.Current.MainPage.Navigation.PushAsync(new CreateDiscountPage(new CreateDiscountPageViewModel()));
             }
         }
 
