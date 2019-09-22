@@ -31,9 +31,9 @@ namespace EnixerPos.Mobile
 
             // MainPage = new MainPage();
             //  MainPage = new SaleView();
-            CategoryPageViewModel viewModel = new CategoryPageViewModel();
-            CreateItemPageViewModel createItem = new CreateItemPageViewModel();
-            CreateDiscountPageViewModel createDiscount = new CreateDiscountPageViewModel();
+            //CategoryPageViewModel viewModel = new CategoryPageViewModel();
+            //CreateItemPageViewModel createItem = new CreateItemPageViewModel();
+            //CreateDiscountPageViewModel createDiscount = new CreateDiscountPageViewModel();
             //MainPage = new NavigationPage(new Views.Item.CreateDiscountPage(createDiscount));
             MainPage = new NavigationPage(new Login());
             PermissionReq();
