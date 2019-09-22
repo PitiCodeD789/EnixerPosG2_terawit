@@ -25,7 +25,7 @@
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
                     <ImageButton Source="icon_hamburger" Aspect="AspectFit" VerticalOptions="Center" Margin="20,0" HeightRequest="30" BackgroundColor="Transparent">
                         <ImageButton.GestureRecognizers>
-                            <TapGestureRecognizer />
+                            <TapGestureRecognizer  Tapped="Button_Clicked"/>
                         </ImageButton.GestureRecognizers>
                     </ImageButton>
                     <Label Text="Receipt" TextColor="Black" FontSize="30" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start"  />

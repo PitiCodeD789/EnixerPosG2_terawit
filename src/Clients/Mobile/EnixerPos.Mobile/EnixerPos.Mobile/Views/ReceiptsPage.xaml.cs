@@ -1,4 +1,6 @@
 ﻿using EnixerPos.Mobile.ViewModels;
+using EnixerPos.Mobile.Views.Popup;
+using Rg.Plugins.Popup.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +33,10 @@ namespace EnixerPos.Mobile.Views
         void PopupMenu_OnItemSelected(string item)
         {
             DisplayAlert("แจ้ง", "Save แล้ว", "ตกลง");
+        }
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushPopupAsync(new SideMenu());
         }
     }
 }

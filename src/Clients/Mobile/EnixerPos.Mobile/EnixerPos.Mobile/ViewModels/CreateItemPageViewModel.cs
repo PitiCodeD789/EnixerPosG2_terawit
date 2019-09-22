@@ -66,6 +66,10 @@ namespace EnixerPos.Mobile.ViewModels
         }
 
 
+        public async override void BackPageMethod()
+        {
+            await Application.Current.MainPage.Navigation.PopAsync();
+        }
 
         private CategoryModel selectCate;
 
@@ -118,13 +122,13 @@ namespace EnixerPos.Mobile.ViewModels
                 {
                     ErrorViewModel errorViewModel = new ErrorViewModel("บันทึกรายการสำเร็จ", 3);
                     PopupNavigation.Instance.PushAsync(new Error(errorViewModel));
-                    //BackPageMethod();
+                    BackPageMethod();
                 }
                 else
                 {
                     ErrorViewModel error = new ErrorViewModel("ผิดพลาด", 1);
                     PopupNavigation.Instance.PushAsync(new Error(error));
-                    //BackPageMethod();
+                    BackPageMethod();
                 }
 
             }

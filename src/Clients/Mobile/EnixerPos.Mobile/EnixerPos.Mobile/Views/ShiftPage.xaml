@@ -12,8 +12,14 @@
     <ContentPage.Content>
         <StackLayout>
             <Frame HasShadow="True" Margin="0,0,0,0">
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="Shift" FontSize="30" />
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                    <ImageButton Source="icon_hamburger" Aspect="AspectFit" VerticalOptions="Center" Margin="20,0" HeightRequest="30" Clicked="Button_Clicked" BackgroundColor="Transparent">
+                        <ImageButton.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Button_Clicked"/>
+                        </ImageButton.GestureRecognizers>
+                    </ImageButton>
+
+                    <Label Text="Shift" TextColor="Black" FontSize="30" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start" />
                 </StackLayout>
 
             </Frame>

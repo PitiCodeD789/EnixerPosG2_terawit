@@ -8,7 +8,7 @@ namespace EnixerPos.Service.Helpers
 {
     public static class Helper
     {
-        public static string BaseUrl { get; set; } = "http://192.168.1.20:30000/api/";
+        public static string BaseUrl { get; set; } = "http://192.168.1.33:30000/api/";
 
         public static bool CheckEmailFormat(string email)
         {

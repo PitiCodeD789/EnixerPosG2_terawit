@@ -2,6 +2,7 @@
 using EnixerPos.Mobile.Models;
 using EnixerPos.Mobile.Views.Item;
 using EnixerPos.Service.Helpers;
+using EnixerPos.Service.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,8 @@ namespace EnixerPos.Mobile.ViewModels.ItemPage
 {
     public class SubItemViewModel : BaseViewModel, INotifyPropertyChanged
     {
+        ProductService service = new ProductService();
+
         public SubItemViewModel()
         {
             typePage = Status.InItemPage.Item;
@@ -167,30 +170,8 @@ namespace EnixerPos.Mobile.ViewModels.ItemPage
 
         private async Task<List<ItemModel>> GetItemData()
         {
-            List<ItemModel> mock = new List<ItemModel>()
-            {
-                new ItemModel()
-                {
-                    Color = "#7DDC36",
-                    Name = "Ice Tea",
-                    CategoryName = "Drink",
-                    Price = 60.25m
-                },
-                new ItemModel()
-                {
-                    Color = "#392318 ",
-                    Name = "Pizza",
-                    CategoryName = "Food",
-                    Price = 60.25m
-                },
-                 new ItemModel()
-                {
-                    Color = "#380A82",
-                    Name = "Black Tea",
-                    CategoryName = "Drink",
-                    Price = 55.50m
-                }
-            };
+
+            List<ItemModel> mock = service.GetItems().Items;
 
             var result = mock;
             return result;
@@ -198,21 +179,7 @@ namespace EnixerPos.Mobile.ViewModels.ItemPage
 
         private async Task<List<CategoryModel>> GetCategoryData()
         {
-            List<CategoryModel> mock = new List<CategoryModel>()
-            {
-                new CategoryModel()
-                {
-                    Color = "#380A82",
-                    Name = "Food",
-                    CountItem = 1
-                },
-                 new CategoryModel()
-                {
-                    Color = "#7DDC36",
-                    Name = "Drink",
-                    CountItem = 2
-                }
-            };
+            List<CategoryModel> mock = service.GetCategories();
 
             var result = mock;
             return result;
@@ -220,21 +187,7 @@ namespace EnixerPos.Mobile.ViewModels.ItemPage
 
         private async Task<List<DiscountModel>> GetDiscountData()
         {
-            List<DiscountModel> mock = new List<DiscountModel>()
-            {
-                new DiscountModel()
-                {
-                    DiscountName = "Discount1",
-                    Amount = 20.25m,
-                    IsPercentage = false,
-                },
-                 new DiscountModel()
-                {
-                    DiscountName = "Discount2",
-                    Amount = 10.00m,
-                    IsPercentage = true,
-                }
-            };
+            List<DiscountModel> mock = service.GetDiscounts().Discounts;
 
             var result = mock;
             return result;

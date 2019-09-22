@@ -46,7 +46,7 @@ namespace EnixerPos.Service.Services
         {
             var client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-            HttpResponseMessage response = client.GetAsync("http://192.168.1.33:30000/api/product/getcategories").Result;
+            HttpResponseMessage response = client.GetAsync(serviceUrl+"getcategories").Result;
             response.EnsureSuccessStatusCode();
             string responseBody = response.Content.ReadAsStringAsync().Result;
             var result = JsonConvert.DeserializeObject<CategoriesViewModel>(responseBody);
@@ -61,7 +61,7 @@ namespace EnixerPos.Service.Services
                 var client = new HttpClient();
                 string accessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWVpIjoiMTIzNDU2Nzg5IiwibmJmIjoxNTY5MDQxMDA2LCJleHAiOjE1NjkxNTEzMDYsImlzcyI6IkVuaXhlclBvc0cyIiwiYXVkIjoiZUBlIiwidXNlciI6Ik5hdCJ9.2NVziPg0aE3eXlSLL9MyGp453CaW2UYMLMV5GMqPDJs";
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-                HttpResponseMessage response = client.GetAsync("http://192.168.1.33:30000/api/product/getcategories").Result;
+                HttpResponseMessage response = client.GetAsync(serviceUrl + "getcategories").Result;
                 response.EnsureSuccessStatusCode();
                 string responseBody = response.Content.ReadAsStringAsync().Result;
                 var result = JsonConvert.DeserializeObject<CategoriesViewModel>(responseBody);
@@ -83,7 +83,7 @@ namespace EnixerPos.Service.Services
                 var client = new HttpClient();
                 string accessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWVpIjoiMTIzNDU2Nzg5IiwibmJmIjoxNTY5MDQxMDA2LCJleHAiOjE1NjkxNTEzMDYsImlzcyI6IkVuaXhlclBvc0cyIiwiYXVkIjoiZUBlIiwidXNlciI6Ik5hdCJ9.2NVziPg0aE3eXlSLL9MyGp453CaW2UYMLMV5GMqPDJs";
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-                HttpResponseMessage response = client.GetAsync("http://192.168.1.33:30000/api/product/getitems").Result;
+                HttpResponseMessage response = client.GetAsync(serviceUrl + "getitems").Result;
                 response.EnsureSuccessStatusCode();
                 string responseBody = response.Content.ReadAsStringAsync().Result;
                 var result = JsonConvert.DeserializeObject<ItemsViewModel>(responseBody);
@@ -104,7 +104,7 @@ namespace EnixerPos.Service.Services
                 string accessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWVpIjoiMTIzNDU2Nzg5IiwibmJmIjoxNTY5MDQxMDA2LCJleHAiOjE1NjkxNTEzMDYsImlzcyI6IkVuaXhlclBvc0cyIiwiYXVkIjoiZUBlIiwidXNlciI6Ik5hdCJ9.2NVziPg0aE3eXlSLL9MyGp453CaW2UYMLMV5GMqPDJs";
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
                 HttpContent content = GetHttpContent(payment);
-                HttpResponseMessage response = client.PostAsync("http://192.168.1.33:30000/api/sale/payment", content).Result;
+                HttpResponseMessage response = client.PostAsync(serviceUrl + "payment", content).Result;
                 response.EnsureSuccessStatusCode();
                 string responseBody = response.Content.ReadAsStringAsync().Result;
                 var result = JsonConvert.DeserializeObject<ReceiptViewModel>(responseBody);
@@ -120,15 +120,16 @@ namespace EnixerPos.Service.Services
         {
             try
             {
-                //var result = Get<CategoriesViewModel>("http://192.168.1.33:30000/api/product/getcategories").Result;
-                var client = new HttpClient();
-                string accessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWVpIjoiMTIzNDU2Nzg5IiwibmJmIjoxNTY5MDQxMDA2LCJleHAiOjE1NjkxNTEzMDYsImlzcyI6IkVuaXhlclBvc0cyIiwiYXVkIjoiZUBlIiwidXNlciI6Ik5hdCJ9.2NVziPg0aE3eXlSLL9MyGp453CaW2UYMLMV5GMqPDJs";
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-                HttpResponseMessage response = client.GetAsync("http://192.168.1.33:30000/api/product/getitems").Result;
-                response.EnsureSuccessStatusCode();
-                string responseBody = response.Content.ReadAsStringAsync().Result;
-                var result = JsonConvert.DeserializeObject<bool>(responseBody);
-                return result;
+                ////var result = Get<CategoriesViewModel>("http://192.168.1.33:30000/api/product/getcategories").Result;
+                //var client = new HttpClient();
+                //string accessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWVpIjoiMTIzNDU2Nzg5IiwibmJmIjoxNTY5MDQxMDA2LCJleHAiOjE1NjkxNTEzMDYsImlzcyI6IkVuaXhlclBvc0cyIiwiYXVkIjoiZUBlIiwidXNlciI6Ik5hdCJ9.2NVziPg0aE3eXlSLL9MyGp453CaW2UYMLMV5GMqPDJs";
+                //client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+                //HttpResponseMessage response = client.GetAsync(serviceUrl + "getitems").Result;
+                //response.EnsureSuccessStatusCode();
+                //string responseBody = response.Content.ReadAsStringAsync().Result;
+                //var result = JsonConvert.DeserializeObject<bool>(responseBody);
+                //return result;
+                return false;
             }
             catch (Exception e)
             {
@@ -144,7 +145,7 @@ namespace EnixerPos.Service.Services
                 var client = new HttpClient();
                 string accessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWVpIjoiMTIzNDU2Nzg5IiwibmJmIjoxNTY5MDQxMDA2LCJleHAiOjE1NjkxNTEzMDYsImlzcyI6IkVuaXhlclBvc0cyIiwiYXVkIjoiZUBlIiwidXNlciI6Ik5hdCJ9.2NVziPg0aE3eXlSLL9MyGp453CaW2UYMLMV5GMqPDJs";
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-                HttpResponseMessage response = client.GetAsync("http://192.168.1.33:30000/api/product/getdiscounts").Result;
+                HttpResponseMessage response = client.GetAsync(serviceUrl + "getdiscounts").Result;
                 response.EnsureSuccessStatusCode();
                 string responseBody = response.Content.ReadAsStringAsync().Result;
                 var result = JsonConvert.DeserializeObject<DiscountsViewModel>(responseBody);
