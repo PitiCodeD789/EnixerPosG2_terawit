@@ -19,8 +19,11 @@
                    WidthRequest="750" CornerRadius="3"
                    HorizontalOptions="CenterAndExpand">
                 <StackLayout>                    
-            <component:Pos_EntryView Margin="10,10,10,0" Placeholder="Name"/>
-                    <Frame HasShadow="True" Padding="4,3,0,3" Margin="10,5,10,0">                        
+            <component:Pos_EntryView Margin="10,10,10,0" 
+                                     TextEntry="{Binding ItemName}" 
+                                     Placeholder="Name"/>
+                    <Frame HasShadow="True" Padding="4,3,0,3" 
+                           Margin="10,5,10,0">                        
                     <Picker x:Name="categorypicker"
                             Title="Category"
                             WidthRequest="400"
@@ -43,10 +46,12 @@
                 <component:Pos_EntryView HorizontalOptions="StartAndExpand" 
                                          Margin="10,5,10,0"
                                          WidthRequest="360"
+                                         TextEntry="{Binding ItemPrice}"
                                          KeyboardType="Numeric"
                                          Placeholder="Price"/>
                 <component:Pos_EntryView HorizontalOptions="EndAndExpand" 
                                          Margin="10,5,10,0"
+                                         TextEntry="{Binding ItemCost}"
                                          KeyboardType="Numeric"                                         
                                           WidthRequest="360"
                                          Placeholder="Cost"/>
@@ -66,59 +71,69 @@
                     <StackLayout Orientation="Horizontal">
                         <component:Pos_EntryView HorizontalOptions="StartAndExpand" 
                                          Margin="10,5,10,0"
-                                         WidthRequest="360"                                         
-                                         Placeholder="Option1"/>
+                                         WidthRequest="360"  
+                                         TextEntry="{Binding Option1}"
+                                         Placeholder="Option1(Required)"/>
                         <component:Pos_EntryView HorizontalOptions="EndAndExpand" 
                                          Margin="10,5,10,0"
-                                         KeyboardType="Numeric"                                         
+                                         KeyboardType="Numeric" 
+                                         TextEntry="{Binding Price1}"
                                           WidthRequest="360"
-                                         Placeholder="Cost"/>
+                                         Placeholder="Price"/>
                     </StackLayout>
                     <StackLayout Orientation="Horizontal">
                         <component:Pos_EntryView HorizontalOptions="StartAndExpand" 
                                          Margin="10,5,10,0"
-                                         WidthRequest="360"                                         
+                                         WidthRequest="360"   
+                                         TextEntry="{Binding Option2}"
                                          Placeholder="Option2"/>
                         <component:Pos_EntryView HorizontalOptions="EndAndExpand" 
                                          Margin="10,5,10,0"
-                                         KeyboardType="Numeric"                                         
+                                         KeyboardType="Numeric" 
+                                         TextEntry="{Binding Price2}"
                                           WidthRequest="360"
-                                         Placeholder="Cost"/>
+                                         Placeholder="Price"/>
                     </StackLayout>
                     <StackLayout Orientation="Horizontal">
                         <component:Pos_EntryView HorizontalOptions="StartAndExpand" 
                                          Margin="10,5,10,0"
-                                         WidthRequest="360"                                         
+                                         WidthRequest="360" 
+                                         TextEntry="{Binding Option3}"
                                          Placeholder="Option3"/>
                         <component:Pos_EntryView HorizontalOptions="EndAndExpand" 
                                          Margin="10,5,10,0"
                                          KeyboardType="Numeric"                                         
                                           WidthRequest="360"
-                                         Placeholder="Cost"/>
+                                          TextEntry="{Binding Price3}"
+                                         Placeholder="Price"/>
                     </StackLayout>
                     <StackLayout Orientation="Horizontal">
                         <component:Pos_EntryView HorizontalOptions="StartAndExpand" 
                                          Margin="10,5,10,0"
-                                         WidthRequest="360"                                         
+                                         WidthRequest="360" 
+                                         TextEntry="{Binding Option4}"
                                          Placeholder="Option4"/>
                         <component:Pos_EntryView HorizontalOptions="EndAndExpand" 
                                          Margin="10,5,10,0"
-                                         KeyboardType="Numeric"                                         
+                                         KeyboardType="Numeric" 
+                                         TextEntry="{Binding Price4}"
                                           WidthRequest="360"
-                                         Placeholder="Cost"/>
+                                         Placeholder="Price"/>
                     </StackLayout>
                 </StackLayout>
             </Frame>
-            <Frame VerticalOptions="Start" 
+            
+                <Frame VerticalOptions="Start" 
+                       Margin="0,15,0,0"
                    WidthRequest="750" CornerRadius="3"
                    HorizontalOptions="CenterAndExpand">
-                <StackLayout>                    
-                <Label Text="Representation on POS "
+                    <StackLayout>
+                        <Label Text="Representation on POS "
                        FontAttributes="Bold"
                        TextColor="#E96722" 
                        FontSize="Medium" />
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                        
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+
                             <Frame HasShadow="True" 
                                    Margin="5"
                                    Padding="0"                                
@@ -127,17 +142,21 @@
                                    WidthRequest="100"
                                    HorizontalOptions="Start"
                                    VerticalOptions="Start">
-                            <Grid>
-                                <BoxView BackgroundColor="White" 
-                                         HorizontalOptions="Start"
-                                         VerticalOptions="Start" />
-                                <Image Source="iconcheckmark" 
+                                <Grid >
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding ColorSelectCommand}" CommandParameter ="1"/>
+                                    </Grid.GestureRecognizers>
+                                    
+                                    <Image Source="iconcheckmark"                                        
                                        WidthRequest="50"
-                                       HeightRequest="50"/>
-                            </Grid>
-                            
+                                       IsVisible="{Binding Color1,Mode=TwoWay}"
+                                       HeightRequest="50">
+
+                                    </Image>
+                                </Grid>
+
                             </Frame>
-                        <Frame HasShadow="True" 
+                            <Frame HasShadow="True" 
                                    Margin="5"
                                    Padding="0" 
                                    BackgroundColor="#ffd5d5" 
@@ -145,14 +164,19 @@
                                    WidthRequest="100"
                                    HorizontalOptions="Start"
                                    VerticalOptions="Start">
-                            <Grid>                               
-                                <Image Source="iconcheckmark" 
-                                       IsVisible="False"
+                                <Grid>
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding ColorSelectCommand}"
+                                                          CommandParameter ="2"/>
+                                    </Grid.GestureRecognizers>
+                                    <Image Source="iconcheckmark"                                        
+                                       IsVisible="{Binding Color2,Mode=TwoWay}"
                                        WidthRequest="50"
-                                       HeightRequest="50"/>
-                            </Grid>
-                        </Frame>
-                        <Frame HasShadow="True" 
+                                       HeightRequest="50">
+                                    </Image>
+                                </Grid>
+                            </Frame>
+                            <Frame HasShadow="True" 
                                    Margin="5"
                                    Padding="0" 
                                    BackgroundColor="#f8ffd3" 
@@ -160,14 +184,20 @@
                                    WidthRequest="100"
                                    HorizontalOptions="Start"
                                    VerticalOptions="Start">
-                            <Grid>
-                                <Image Source="iconcheckmark" 
-                                       IsVisible="False"
+                                <Grid>
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding ColorSelectCommand}"
+                                                          CommandParameter ="3"/>
+                                    </Grid.GestureRecognizers>
+                                    <Image Source="iconcheckmark" 
+                                       IsVisible="{Binding Color3,Mode=TwoWay}"
                                        WidthRequest="50"
-                                       HeightRequest="50"/>
-                            </Grid>
-                        </Frame>
-                        <Frame HasShadow="True" 
+                                       HeightRequest="50">
+
+                                    </Image>
+                                </Grid>
+                            </Frame>
+                            <Frame HasShadow="True" 
                                    Margin="5"
                                    Padding="0" 
                                    BackgroundColor="#c6dbfc" 
@@ -175,14 +205,20 @@
                                    WidthRequest="100"
                                    HorizontalOptions="Start"
                                    VerticalOptions="Start">
-                            <Grid>
-                                <Image Source="iconcheckmark" 
-                                       IsVisible="False"
+                                <Grid>
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding ColorSelectCommand}"
+                                                          CommandParameter ="4"/>
+                                    </Grid.GestureRecognizers>
+                                    <Image Source="iconcheckmark" 
+                                       IsVisible="{Binding Color4,Mode=TwoWay}"
                                        WidthRequest="50"
-                                       HeightRequest="50"/>
-                            </Grid>
-                        </Frame>
-                        <Frame HasShadow="True" 
+                                       HeightRequest="50">
+
+                                    </Image>
+                                </Grid>
+                            </Frame>
+                            <Frame HasShadow="True" 
                                    Margin="5"
                                    Padding="0" 
                                    BackgroundColor="#ffccf9" 
@@ -190,14 +226,20 @@
                                    WidthRequest="100"
                                    HorizontalOptions="Start"
                                    VerticalOptions="Start">
-                            <Grid>
-                                <Image Source="iconcheckmark" 
-                                       IsVisible="False"
+                                <Grid>
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding ColorSelectCommand}"
+                                                          CommandParameter ="5"/>
+                                    </Grid.GestureRecognizers>
+                                    <Image Source="iconcheckmark" 
+                                       IsVisible="{Binding Color5,Mode=TwoWay}"
                                        WidthRequest="50"
-                                       HeightRequest="50"/>
-                            </Grid>
-                        </Frame>
-                        <Frame HasShadow="True" 
+                                       HeightRequest="50">
+
+                                    </Image>
+                                </Grid>
+                            </Frame>
+                            <Frame HasShadow="True" 
                                    Margin="5"
                                    Padding="0" 
                                    BackgroundColor="#e0e0e0" 
@@ -205,23 +247,28 @@
                                    WidthRequest="100"
                                    HorizontalOptions="Start"
                                    VerticalOptions="Start">
-                            <Grid>
-                                <Image Source="iconcheckmark" 
-                                       IsVisible="False"
+                                <Grid>
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding ColorSelectCommand}"
+                                                          CommandParameter ="6"/>
+                                    </Grid.GestureRecognizers>
+                                    <Image Source="iconcheckmark" 
+                                       IsVisible="{Binding Color6,Mode=TwoWay}"
                                        WidthRequest="50"
-                                       HeightRequest="50"/>
-                            </Grid>
-                        </Frame>
+                                       HeightRequest="50">
+
+                                    </Image>
+                                </Grid>
+                            </Frame>
+
+                        </StackLayout>
 
                     </StackLayout>
-                    
-                </StackLayout>
 
 
-            </Frame >
-           
-                
-            <StackLayout Orientation="Horizontal" 
+                </Frame >
+
+                <StackLayout Orientation="Horizontal" 
                          VerticalOptions="Center"  
                          Margin="0,15,0,15"
                          WidthRequest="800" Padding="0"
