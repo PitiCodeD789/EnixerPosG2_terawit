@@ -23,6 +23,8 @@ namespace EnixerPos.Mobile
         public static string StoreName { get; set; }
         public static string PosName { get; set; }
         public static int UserId { get; set; }
+        public static bool CheckShift { get; set; } = false;
+        public static int OpenShiftId { get; set; }
 
         public App()
         {
@@ -39,10 +41,20 @@ namespace EnixerPos.Mobile
             PermissionReq();
         }
 
-        protected override void OnStart()
+        protected async override void OnStart()
         {
             DeviceId = CrossDevice.Device.DeviceId;
-           
+            //var refreshToken = await SecureStorage.GetAsync("RefreshToken");
+            //if (refreshToken != null)
+            //{
+            //    MainPage = new NavigationPage(new EnterPin());
+            //    PermissionReq();
+            //}
+            //else
+            //{
+            //    MainPage = new NavigationPage(new Login());
+            //    PermissionReq();
+            //}
         }
 
         protected override void OnSleep()
