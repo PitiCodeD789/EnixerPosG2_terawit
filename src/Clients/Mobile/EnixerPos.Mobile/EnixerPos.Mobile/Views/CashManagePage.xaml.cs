@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rg.Plugins.Popup.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,14 @@ namespace EnixerPos.Mobile.Views
         public CashManagePage()
         {
             InitializeComponent();
+        }
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            await PopupNavigation.PushAsync(new Popup.OpenShiftButtonPopup());
+            // await PopupNavigation.PushAsync(new Popup.OpenTicketsPopup());
+
         }
     }
 }
