@@ -1,6 +1,10 @@
-﻿using System;
+﻿using EnixerPos.Service.Interfaces;
+using EnixerPos.Service.Services;
+using Rg.Plugins.Popup.Services;
+using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -8,6 +12,7 @@ namespace EnixerPos.Mobile.ViewModels
 {
     public class CategoryPageViewModel : BaseViewModel
     {
+        private IProductService _productService = new ProductService();
         public CategoryPageViewModel()
         {
             ColorSelectCommand = new Command(ColorSelect);
@@ -20,9 +25,21 @@ namespace EnixerPos.Mobile.ViewModels
             
         }
 
-        private void CreateCategory(object obj)
+        private async void CreateCategory()
         {
-           
+            bool result =  _productService.AddCategory(CategoryName, "tescolor").Result;
+            if(result)
+            {
+                //  ErrorViewModel viewModel = new ErrorViewModel("ok",2);
+                //  PopupNavigation.PushAsync(new Views.Popup.Error(viewModel));
+                Application.Current.MainPage.DisplayAlert("ok", "ok", "ok");
+            }else
+            {
+                // ErrorViewModel viewModel = new ErrorViewModel("Error", 0);
+                // PopupNavigation.PushAsync(new Views.Popup.Error(viewModel));
+
+                Application.Current.MainPage.DisplayAlert("ok", "ok", "error");
+            }
         }
 
         private void ColorSelect(object obj)

@@ -26,6 +26,7 @@ namespace EnixerPos.Mobile
         public static bool CheckShift { get; set; } = false;
         public static int OpenShiftId { get; set; }
 
+        public static int StoreId = 1;
         public App()
         {
             InitializeComponent();

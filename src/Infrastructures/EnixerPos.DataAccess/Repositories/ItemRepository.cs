@@ -26,7 +26,25 @@ namespace EnixerPos.DataAccess.Repositories
         {
             try
             {
-                return true;
+                ItemEntity itemEntity = new ItemEntity();
+                itemEntity.Name = itemDto.Name;
+                itemEntity.StoreId = storeId;
+                itemEntity.CategoryId = itemDto.CategoryId;
+                itemEntity.Price = itemDto.Price;
+                itemEntity.Cost = itemDto.Cost;
+                itemEntity.Color = itemDto.Color;
+                itemEntity.Option1 = itemDto.Option1;
+                itemEntity.Option2 = itemDto.Option2;
+                itemEntity.Option3 = itemDto.Option3;
+                itemEntity.Option4 = itemDto.Option4;
+                itemEntity.Option1Price = itemDto.Option1Price;
+                itemEntity.Option2Price = itemDto.Option2Price;
+                itemEntity.Option3Price = itemDto.Option3Price;
+                itemEntity.Option4Price = itemDto.Option4Price;
+                itemEntity.CreateDateTime = DateTime.UtcNow;
+                _context.Items.Add(itemEntity);
+                _context.SaveChanges();
+                return true;             
             }
             catch (Exception e)
             {

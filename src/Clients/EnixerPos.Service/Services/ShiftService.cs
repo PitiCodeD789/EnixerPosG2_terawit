@@ -1,4 +1,5 @@
-﻿using EnixerPos.Api.ViewModels.Shifts;
+﻿using EnixerPos.Api.ViewModels.Product;
+using EnixerPos.Api.ViewModels.Shifts;
 using EnixerPos.Service.Helpers;
 using EnixerPos.Service.Interfaces;
 using EnixerPos.Service.Models;
@@ -11,7 +12,16 @@ namespace EnixerPos.Service.Services
 {
     public class ShiftService : BaseService, IShiftService
     {
-        private string serviceUrl = Helper.BaseUrl + "shift/";
+        private string serviceUrl = Helper.BaseUrl + "Shift/GetShifts";
+        public List<GetShiftViewModel> GetListShift()
+        {
+
+           var result = Get<ResultViewModel>(serviceUrl);
+
+            return new List<GetShiftViewModel>();
+               
+        }
+
         public async Task<ResultServiceModel<OpenShiftViewModel>> OpenShift(OpenShiftCommand model)
         {
             string url = serviceUrl + "OpenShift";

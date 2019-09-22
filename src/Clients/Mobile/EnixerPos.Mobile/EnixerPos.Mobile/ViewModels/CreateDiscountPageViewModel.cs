@@ -1,4 +1,6 @@
-﻿using System;
+﻿using EnixerPos.Service.Interfaces;
+using EnixerPos.Service.Services;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
@@ -8,20 +10,35 @@ namespace EnixerPos.Mobile.ViewModels
 {
     public class CreateDiscountPageViewModel : BaseViewModel
     {
+        private IProductService _productService = new ProductService();
         public CreateDiscountPageViewModel()
         {
             CreateDiscountCommand = new Command(CreateDiscount);
-            CancelCategoryCommand = new Command(CancelCategory);
+            CancelCategoryCommand = new Command(Cancel);
         }
 
-        private void CancelCategory(object obj)
+        private void Cancel(object obj)
         {
             throw new NotImplementedException();
         }
 
         private void CreateDiscount(object obj)
         {
-            throw new NotImplementedException();
+
+            bool result = _productService.AddDiscount(DiscountName, true, Amount).Result;
+            if (result)
+            {
+                //  ErrorViewModel viewModel = new ErrorViewModel("ok",2);
+                //  PopupNavigation.PushAsync(new Views.Popup.Error(viewModel));
+                Application.Current.MainPage.DisplayAlert("ok", "ok", "ok");
+            }
+            else
+            {
+                // ErrorViewModel viewModel = new ErrorViewModel("Error", 0);
+                // PopupNavigation.PushAsync(new Views.Popup.Error(viewModel));
+
+                Application.Current.MainPage.DisplayAlert("ok", "ok", "error");
+            }
         }
 
       
