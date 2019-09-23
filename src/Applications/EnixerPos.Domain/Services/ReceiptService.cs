@@ -20,11 +20,11 @@ namespace EnixerPos.Domain.Services
             _receiptRepository = receiptRepository;
             _storeRepository = storeRepository;
         }
-        public List<ReceiptDto> GetReceiptsByDate(DateTime date, string email)
+        public List<ReceiptDto> GetReceiptsByDate(DateTime date, string email,int shiftId)
         {
             try
             {
-                List<ReceiptEntity> receipts = _receiptRepository.GetReceiptsByDate(date);
+                List<ReceiptEntity> receipts = _receiptRepository.GetReceiptsByDateAndShift(date, shiftId);
 
                 List<ReceiptDto> receiptDto = receipts.Select(s => new ReceiptDto()
                 {
