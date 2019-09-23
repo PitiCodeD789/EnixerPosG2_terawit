@@ -9,7 +9,7 @@
              NavigationPage.HasNavigationBar="False"
              x:Class="EnixerPos.Mobile.Views.ItemPage">
     <ContentPage.BindingContext>
-        <binding:SubItemViewModel/>
+        <binding:SubItemViewModel x:Name="TheBinding"/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <Grid>

@@ -26,5 +26,10 @@ namespace EnixerPos.Mobile.Views
         {
             Navigation.PushPopupAsync(new SideMenu());
         }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            TheBinding.InputDataToBinding();
+        }
     }
 }

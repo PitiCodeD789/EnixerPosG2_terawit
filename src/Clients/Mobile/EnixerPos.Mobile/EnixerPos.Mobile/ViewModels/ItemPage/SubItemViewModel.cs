@@ -192,7 +192,7 @@ namespace EnixerPos.Mobile.ViewModels.ItemPage
             return result;
         }
 
-        private void InputDataToBinding()
+        public void InputDataToBinding()
         {
             if(typePage == Status.InItemPage.Item)
             {
