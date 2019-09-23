@@ -13,12 +13,11 @@ namespace EnixerPos.Service.Services
     {
         private string serviceUrl = Helper.BaseUrl + "auth/";
 
-        public async Task<ResultServiceModel<GetTokenByRefreshViewModel>> GetTokenByRefreshMerchant(string email, string imei, string refreshToken)
+        public async Task<ResultServiceModel<GetTokenByRefreshViewModel>> GetTokenByRefreshMerchant(string email, string refreshToken)
         {
             GetTokenByRefreshMerchantCommand model = new GetTokenByRefreshMerchantCommand()
             {
                 Email = email.ToLower(),
-                Imei = "100930323339892",
                 RefreshToken = refreshToken
             };
 
@@ -37,13 +36,12 @@ namespace EnixerPos.Service.Services
             return await Post<GetTokenByRefreshViewModel>(url, model);
         }
 
-        public async Task<ResultServiceModel<LoginViewModel>> Login(string email, string password, string imei)
+        public async Task<ResultServiceModel<LoginViewModel>> Login(string email, string password)
         {
             LoginCommand model = new LoginCommand()
             {
                 Email = email.ToLower(),
-                Password = password,
-                Imei = "100930323339892"
+                Password = password
             };
 
             string url = serviceUrl + "login";

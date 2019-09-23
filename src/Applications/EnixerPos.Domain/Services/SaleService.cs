@@ -17,15 +17,13 @@ namespace EnixerPos.Domain.Services
         private readonly IReceiptRepository _receiptRepository;
         private readonly IMapper _mapper;
         private readonly IStoreRepository _storeRepository;
-        private readonly IDeviceRepository _deviceRepository;
 
         public SaleService(IReceiptRepository receiptRepository, IMapper mapper
-            ,IStoreRepository storeRepository,IDeviceRepository deviceRepository)
+            ,IStoreRepository storeRepository)
         {
             _receiptRepository = receiptRepository;
             _mapper = mapper;
             _storeRepository = storeRepository;
-            _deviceRepository = deviceRepository;
         }
         public bool CheckPayment(string paymentRef)
         {
@@ -59,7 +57,6 @@ namespace EnixerPos.Domain.Services
                 {
                     ShiftId = payment.ShiftId,
                     StoreEmail = payment.StoreEmail,
-                    PosImei = payment.PosImei,
                     ItemList = itemList,
                     Discount = payment.Discount,
                     IsDiscountPercentage = payment.IsDiscountPercentage,
@@ -75,7 +72,6 @@ namespace EnixerPos.Domain.Services
                 _receiptRepository.Update(receiptEntity);
 
                 var storeName = _storeRepository.GetStoreByEmail(payment.StoreEmail).StoreName;
-                var posName = _deviceRepository.GetDeviceByImei(payment.PosImei).PosName;
 
 
                 return new ReceiptDto()
@@ -83,7 +79,6 @@ namespace EnixerPos.Domain.Services
                     Reference = receiptEntity.Reference,
                     ShiftId = payment.ShiftId,
                     Store = storeName,
-                    Pos = posName,
                     ItemList = JsonConvert.DeserializeObject<List<DtoModels.Sale.OrderItemModel>>(itemList),
                     Discount = payment.Discount,
                     IsDiscountPercentage = payment.IsDiscountPercentage,

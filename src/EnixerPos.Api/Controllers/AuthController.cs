@@ -37,16 +37,15 @@ namespace EnixerPos.Api.Controllers
             {
                 string email = command.Email.ToLower();
                 string password = command.Password;
-                string imei = command.Imei;
 
-                LoginDto loginDto = _authService.LoginMerchant(email, password, imei);
+                LoginDto loginDto = _authService.LoginMerchant(email, password);
                 if (loginDto == null)
                 {
                     return BadRequest();
                 }
 
-                string refreshToken = _authService.GetRefreshToken(email, imei);
-                string token = GetToken(email, imei);
+                string refreshToken = _authService.GetRefreshToken(email);
+                string token = GetToken(email);
                 LoginViewModel model = new LoginViewModel()
                 {
                     RefreshToken = refreshToken,
@@ -64,11 +63,10 @@ namespace EnixerPos.Api.Controllers
             }
         }
 
-        private string GetToken(string email, string imei)
+        private string GetToken(string email)
         {
             var claims = new Claim[]
             {
-                new Claim("imei", imei),
                 new Claim("user", "")
             };
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
@@ -83,11 +81,10 @@ namespace EnixerPos.Api.Controllers
             return token;
         }
 
-        private string GetToken(string email, string imei, string user)
+        private string GetToken(string email, string user)
         {
             var claims = new Claim[]
             {
-                new Claim("imei",imei),
                 new Claim("user",user)
             };
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
@@ -104,24 +101,24 @@ namespace EnixerPos.Api.Controllers
 
         //LoginByPin
         [Authorize]
+        [AllowAnonymous]
         [HttpPost("loginbypin")]
         public IActionResult LoginByPin([FromBody]LoginByPinCommand command)
         {
             try
             {
                 string email = User.Claims.SingleOrDefault(x => x.Type == "aud").Value;
-                string imei = User.Claims.SingleOrDefault(x => x.Type == "imei").Value;
                 string pin = command.Pin;
 
-                LoginByPinDto loginByPinDto = _authService.LoginUser(email, imei, pin);
+                LoginByPinDto loginByPinDto = _authService.LoginUser(email, pin);
                 if (loginByPinDto == null)
                 {
                     return BadRequest();
                 }
 
                 string user = loginByPinDto.User;
-                string refreshToken = _authService.GetRefreshToken(email, imei);
-                string token = GetToken(email, imei, user);
+                string refreshToken = _authService.GetRefreshToken(email);
+                string token = GetToken(email, user);
                 LoginByPinViewModel model = new LoginByPinViewModel()
                 {
                     RefreshToken = refreshToken,
@@ -146,17 +143,16 @@ namespace EnixerPos.Api.Controllers
             try
             {
                 string email = command.Email.ToLower();
-                string imei = command.Imei;
                 string refreshToken = command.RefreshToken;
 
-                bool isRefreshToken = _authService.CheckRefresh(email, imei, refreshToken);
+                bool isRefreshToken = _authService.CheckRefresh(email, refreshToken);
                 if (!isRefreshToken)
                 {
                     return BadRequest();
                 }
 
-                refreshToken = _authService.GetRefreshToken(email, imei);
-                string token = GetToken(email, imei);
+                refreshToken = _authService.GetRefreshToken(email);
+                string token = GetToken(email);
                 GetTokenByRefreshViewModel model = new GetTokenByRefreshViewModel()
                 {
                     RefreshToken = refreshToken,
@@ -174,24 +170,24 @@ namespace EnixerPos.Api.Controllers
 
         //GetTokenByRefreshUser
         [Authorize]
+        [AllowAnonymous]
         [HttpPost("tokenuser")]
         public IActionResult GetTokenByRefreshUser([FromBody]GetTokenByRefreshUserCommand command)
         {
             try
             {
                 string email = User.Claims.SingleOrDefault(x => x.Type == "aud").Value;
-                string imei = User.Claims.SingleOrDefault(x => x.Type == "imei").Value;
                 string refreshToken = command.RefreshToken;
                 string user = command.User;
 
-                bool isRefreshToken = _authService.CheckRefresh(email, imei, refreshToken, user);
+                bool isRefreshToken = _authService.CheckRefresh(email, refreshToken, user);
                 if (!isRefreshToken)
                 {
                     return BadRequest();
                 }
 
-                refreshToken = _authService.GetRefreshToken(email, imei);
-                string token = GetToken(email, imei, user);
+                refreshToken = _authService.GetRefreshToken(email);
+                string token = GetToken(email, user);
                 GetTokenByRefreshViewModel model = new GetTokenByRefreshViewModel()
                 {
                     RefreshToken = refreshToken,
@@ -215,9 +211,8 @@ namespace EnixerPos.Api.Controllers
             try
             {
                 string email = User.Claims.SingleOrDefault(x => x.Type == "aud").Value;
-                string imei = User.Claims.SingleOrDefault(x => x.Type == "imei").Value;
 
-                bool isLogout = _authService.Logout(email, imei);
+                bool isLogout = _authService.Logout(email);
                 if (!isLogout)
                 {
                     return BadRequest();

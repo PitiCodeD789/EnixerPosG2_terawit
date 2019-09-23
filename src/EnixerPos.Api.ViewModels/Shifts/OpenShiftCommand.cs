@@ -15,8 +15,6 @@ namespace EnixerPos.Api.ViewModels.Shifts
         [EmailAddress]
         public string StoreEmail { get; set; }
         [Required]
-        public string PosImei { get; set; }
-        [Required]
         
         public int PosUserId { get; set; }
     }

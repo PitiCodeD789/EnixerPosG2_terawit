@@ -22,7 +22,6 @@ namespace EnixerPos.Mobile.ViewModels
         {
             email = "";
             password = "";
-            imei = App.DeviceId;
             GotoLogin = new Command(LoginByStore);
             GotoForgotPass = new Command(ForgotPasswordMethod);
             GotoRegis = new Command(RegisterMethod);
@@ -57,24 +56,9 @@ namespace EnixerPos.Mobile.ViewModels
             }
         }
 
-        private string imei;
-        public string Imei
-        {
-            get
-            {
-                return imei;
-            }
-            set
-            {
-                imei = value;
-                OnPropertyChanged();
-            }
-        }
-
         public ICommand GotoLogin { get; set; }
         public async void LoginByStore()
         {
-            imei = App.DeviceId;
             bool isEmail = Helper.CheckEmailFormat(email);
             if (!isEmail)
             {
@@ -83,7 +67,7 @@ namespace EnixerPos.Mobile.ViewModels
             }
             else
             {
-                var loginData = await _authService.Login(email, password, imei);
+                var loginData = await _authService.Login(email, password);
                 if (loginData == null)
                 {
                     ErrorViewModel errorViewModel = new ErrorViewModel("ไม่สามารถเข้าสู่ระบบได้", 1);

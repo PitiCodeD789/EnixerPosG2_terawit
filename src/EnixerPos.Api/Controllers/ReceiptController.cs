@@ -26,8 +26,8 @@ namespace EnixerPos.Api.Controllers
         }
 
         [Authorize]
-        [HttpGet("GetReceiptsByDate/{imei}")]
-        public IActionResult GetReceiptsByDate(string imei)
+        [HttpGet("GetReceiptsByDate/{}")]
+        public IActionResult GetReceiptsByDate()
         {
             var audience = "";
             var user = "";
@@ -43,7 +43,7 @@ namespace EnixerPos.Api.Controllers
 
             try
             {
-                List<ReceiptDto> receiptDtos = _receiptService.GetReceiptsByDate(DateTime.UtcNow.Date, audience, imei);
+                List<ReceiptDto> receiptDtos = _receiptService.GetReceiptsByDate(DateTime.UtcNow.Date, audience);
 
                 if (receiptDtos != null)
                 {

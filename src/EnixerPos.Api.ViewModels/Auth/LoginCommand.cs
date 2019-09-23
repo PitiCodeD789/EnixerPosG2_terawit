@@ -8,6 +8,5 @@ namespace EnixerPos.Api.ViewModels.Auth
     {
         public string Email { get; set; }
         public string Password { get; set; }
-        public string Imei { get; set; }
     }
 }

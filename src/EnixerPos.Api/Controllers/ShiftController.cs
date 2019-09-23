@@ -33,10 +33,9 @@ namespace EnixerPos.Api.Controllers
             }
             decimal startingCash = openShift.StartingCash;
             string storeEmail = openShift.StoreEmail;
-            string posIMEI = openShift.PosImei;
             int posUserId = openShift.PosUserId; 
            
-            int openId = _shiftService.OpenShift(storeEmail, posIMEI, startingCash, posUserId);
+            int openId = _shiftService.OpenShift(storeEmail, startingCash, posUserId);
 
             if(openId == 0)
             {
@@ -77,11 +76,10 @@ namespace EnixerPos.Api.Controllers
             }
 
             string storeEmail = "sert@gmail.com";
-            string posIMEI = "00200202020000";
             int posUserId = 12;
           
 
-            ShiftdetailDto shiftdetail = _shiftService.GetShiftDetailByShiftId(storeEmail,posIMEI,posUserId,shiftId);
+            ShiftdetailDto shiftdetail = _shiftService.GetShiftDetailByShiftId(storeEmail,posUserId,shiftId);
 
             if(shiftdetail == null)
             {
@@ -103,16 +101,15 @@ namespace EnixerPos.Api.Controllers
             var user = User.Claims.FirstOrDefault(c => c.Type == "user").Value;
             string storeEmail = audience;
             string posUser = user;           
-            string posIMEI = "00200202020000";
             int posUserId = 12;
             int shiftId = closeShift.ShiftId;
-            bool isShift = _shiftService.IsShiftAvailable(storeEmail, posIMEI, posUserId, shiftId);
+            bool isShift = _shiftService.IsShiftAvailable(storeEmail, posUserId, shiftId);
             if(!isShift)
             {
                 return BadRequest();
             }
 
-            bool closeShiftStatus = _shiftService.CloseShift(storeEmail, posIMEI, posUserId, shiftId);
+            bool closeShiftStatus = _shiftService.CloseShift(storeEmail, posUserId, shiftId);
             if(!closeShiftStatus)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError);
@@ -130,11 +127,10 @@ namespace EnixerPos.Api.Controllers
             string comment = manageCash.Comment;
             int shiftId = manageCash.ShiftId;
             string storeEmail = "sert@gmail.com";
-            string posIMEI = "00200202020000";
             int posUserId = 12;
             ManageCashStatus manageType = manageCash.ManageCashStatus;
 
-            bool isShift = _shiftService.IsShiftAvailable(storeEmail, posIMEI, posUserId, shiftId);
+            bool isShift = _shiftService.IsShiftAvailable(storeEmail, posUserId, shiftId);
             if (!isShift)
             {
                 return BadRequest();

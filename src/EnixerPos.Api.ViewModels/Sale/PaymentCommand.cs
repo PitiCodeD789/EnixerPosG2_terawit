@@ -8,7 +8,6 @@ namespace EnixerPos.Api.ViewModels.Sale
     {
         public int ShiftId { get; set; }
         public string StoreEmail { get; set; }
-        public string PosImei { get; set; }
         public List<OrderItemModel> ItemList { get; set; }
         public decimal Discount { get; set; }
         public bool IsDiscountPercentage { get; set; }

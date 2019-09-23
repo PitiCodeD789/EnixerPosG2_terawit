@@ -28,10 +28,10 @@ namespace EnixerPos.Domain.Services
         }
 
 
-        public bool CloseShift(string storeEmail, string posIMEI, int posUserId, int shiftId)
+        public bool CloseShift(string storeEmail, int posUserId, int shiftId)
         {
 
-            ShiftEntity shiftEntity = _shiftRepository.GetShiftDetailByShiftId(storeEmail, posIMEI, posUserId, shiftId);
+            ShiftEntity shiftEntity = _shiftRepository.GetShiftDetailByShiftId(storeEmail, posUserId, shiftId);
             if(shiftEntity == null)
             {
                 return false;
@@ -51,10 +51,10 @@ namespace EnixerPos.Domain.Services
 
      
 
-        public ShiftdetailDto GetShiftDetailByShiftId(string storeEmail, string posIMEI, int posUserId, int shiftId)
+        public ShiftdetailDto GetShiftDetailByShiftId(string storeEmail, int posUserId, int shiftId)
         {
            
-            ShiftEntity shiftEntity = _shiftRepository.GetShiftDetailByShiftId(storeEmail, posIMEI,posUserId, shiftId);
+            ShiftEntity shiftEntity = _shiftRepository.GetShiftDetailByShiftId(storeEmail,posUserId, shiftId);
             if (shiftEntity == null)
             {
                 return null;
@@ -72,7 +72,7 @@ namespace EnixerPos.Domain.Services
         {
 
 
-            List<ReceiptEntity> receiptEntity  = _receiptRepository.GetReceiptByShiftId(shiftEntity.ShiftId, shiftEntity.StoreEmail,shiftEntity.PosIMEI);
+            List<ReceiptEntity> receiptEntity  = _receiptRepository.GetReceiptByShiftId(shiftEntity.ShiftId, shiftEntity.StoreEmail);
             
 
             decimal cashPayment = 0m;
@@ -118,7 +118,7 @@ namespace EnixerPos.Domain.Services
 
             decimal payIn = 0;
             decimal payOut = 0;
-            List<ManageCashEntity> manageCash = _manageCashRepository.GetManageCashByShiftId(shiftEntity.ShiftId, shiftEntity.StoreEmail, shiftEntity.PosIMEI);
+            List<ManageCashEntity> manageCash = _manageCashRepository.GetManageCashByShiftId(shiftEntity.ShiftId, shiftEntity.StoreEmail);
             foreach(ManageCashEntity manage in manageCash)
             {
                 if(manage.ManageCashStatus == ManageCashStatus.PayIn)
@@ -139,14 +139,14 @@ namespace EnixerPos.Domain.Services
             return shiftEntity;
         }
 
-        public bool IsShiftAvailable(string storeEmail, string posIMEI, int posUserId, int shiftId)
+        public bool IsShiftAvailable(string storeEmail, int posUserId, int shiftId)
         {
-            ShiftEntity shiftEntity = _shiftRepository.GetShiftDetailByShiftId(storeEmail, posIMEI, posUserId, shiftId);
+            ShiftEntity shiftEntity = _shiftRepository.GetShiftDetailByShiftId(storeEmail, posUserId, shiftId);
             if(shiftEntity == null)
             {
                 return false;
             }
-            if(shiftEntity.StoreEmail == storeEmail && shiftEntity.PosIMEI == posIMEI && shiftEntity.Available == true)
+            if(shiftEntity.StoreEmail == storeEmail && shiftEntity.Available == true)
             {
                 return true;
             }else
@@ -170,17 +170,16 @@ namespace EnixerPos.Domain.Services
 
        
 
-        public int OpenShift(string storeEmail, string posIMEI, decimal startingCash, int posUserId)
+        public int OpenShift(string storeEmail, decimal startingCash, int posUserId)
         {
             try
             {
                 ShiftEntity shiftEntity = new ShiftEntity();
                 shiftEntity.StoreEmail = storeEmail;
-                shiftEntity.PosIMEI = posIMEI;
                 shiftEntity.StartingCash = startingCash;
                 shiftEntity.PosUserId = posUserId;
                 shiftEntity.Available = true;
-                ShiftEntity data = _shiftRepository.GetShift(storeEmail, posIMEI, posUserId);
+                ShiftEntity data = _shiftRepository.GetShift(storeEmail, posUserId);
                 if(data == null)
                 {
                     return _shiftRepository.CreateShift(shiftEntity);

@@ -54,7 +54,6 @@ namespace EnixerPos.Api
             services.AddScoped<IShiftService, ShiftService>();
             services.AddScoped<IShiftRepository, ShiftRepository>();
             services.AddScoped<IStoreRepository, StoreRepository>();
-            services.AddScoped<IDeviceRepository, DeviceRepository>();
             services.AddScoped<ITokenRepository, TokenRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IManageCashRepository, ManageCashRepository>();

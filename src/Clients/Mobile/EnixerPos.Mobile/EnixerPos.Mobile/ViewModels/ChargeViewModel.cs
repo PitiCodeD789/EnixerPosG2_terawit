@@ -75,7 +75,6 @@ namespace EnixerPos.Mobile.ViewModels
             {
                 TotalDiscount = TotalDiscount,
                 ItemList = CurrentTicket.ToList(),
-                PosImei = "100930323339892",
                 ShiftId = App.OpenShiftId,
                 StoreEmail = App.Email,
                 Total = TotalPrice
@@ -139,7 +138,6 @@ namespace EnixerPos.Mobile.ViewModels
                 TotalDiscount = TotalDiscount,
                 ItemList = CurrentTicket.ToList(),
                 PaymentType = Api.ViewModels.Enixer_Enumerations.EP_PaymentTypeEnum.Cash,
-                PosImei = "100930323339892",
                 ShiftId = App.OpenShiftId,
                 StoreEmail = App.Email,
                 Total = TotalPrice
@@ -164,7 +162,6 @@ namespace EnixerPos.Mobile.ViewModels
             {
                 TotalDiscount = TotalDiscount,
                 ItemList = CurrentTicket.ToList(),
-                PosImei = "100930323339892",
                 ShiftId = App.OpenShiftId,
                 StoreEmail = App.Email,
                 Total = TotalPrice

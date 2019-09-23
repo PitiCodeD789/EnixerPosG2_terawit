@@ -30,9 +30,9 @@ namespace EnixerPos.DataAccess.Repositories
          
         }
 
-        public List<ManageCashEntity> GetManageCashByShiftId(int shiftId, string storeEmail, string posIMEI)
+        public List<ManageCashEntity> GetManageCashByShiftId(int shiftId, string storeEmail)
         {
-            return _context.ManageCash.Where(x => x.ShiftId == shiftId && x.PosIMEI == posIMEI).ToList();
+            return _context.ManageCash.Where(x => x.ShiftId == shiftId).ToList();
         }
     }
 }

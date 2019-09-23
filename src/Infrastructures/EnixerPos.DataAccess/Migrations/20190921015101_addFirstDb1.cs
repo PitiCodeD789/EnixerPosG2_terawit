@@ -17,8 +17,7 @@ namespace EnixerPos.DataAccess.Migrations
                     CreateDateTime = table.Column<DateTime>(nullable: false),
                     UpdateDateTime = table.Column<DateTime>(nullable: false),
                     StoreId = table.Column<int>(nullable: false),
-                    PosName = table.Column<string>(nullable: true),
-                    Imei = table.Column<string>(nullable: true)
+                    PosName = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -34,7 +33,6 @@ namespace EnixerPos.DataAccess.Migrations
                     CreateDateTime = table.Column<DateTime>(nullable: false, defaultValueSql: "GetUtcDate()"),
                     UpdateDateTime = table.Column<DateTime>(nullable: false, defaultValueSql: "GetUtcDate()"),
                     PosUserId = table.Column<int>(nullable: false),
-                    PosIMEI = table.Column<string>(nullable: true),
                     Comment = table.Column<string>(nullable: true),
                     ManageCashStatus = table.Column<int>(nullable: false),
                     Amount = table.Column<decimal>(nullable: false),
@@ -57,7 +55,6 @@ namespace EnixerPos.DataAccess.Migrations
                     Reference = table.Column<string>(nullable: true),
                     ShiftId = table.Column<int>(nullable: false),
                     StoreEmail = table.Column<string>(nullable: true),
-                    PosImei = table.Column<string>(nullable: true),
                     ItemList = table.Column<string>(nullable: true),
                     Discount = table.Column<decimal>(nullable: false),
                     IsDiscountPercentage = table.Column<bool>(nullable: false),
@@ -80,7 +77,6 @@ namespace EnixerPos.DataAccess.Migrations
                     UpdateDateTime = table.Column<DateTime>(nullable: false, defaultValueSql: "GetUtcDate()"),
                     ShiftId = table.Column<int>(nullable: false),
                     StoreEmail = table.Column<string>(nullable: true),
-                    PosIMEI = table.Column<string>(nullable: true),
                     PosUserId = table.Column<int>(nullable: false),
                     StartingCash = table.Column<decimal>(nullable: false),
                     CashPayment = table.Column<decimal>(nullable: false),
@@ -127,8 +123,7 @@ namespace EnixerPos.DataAccess.Migrations
                     UpdateDateTime = table.Column<DateTime>(nullable: false, defaultValueSql: "GetUtcDate()"),
                     RefreshToken = table.Column<string>(nullable: true),
                     UserId = table.Column<int>(nullable: false),
-                    Email = table.Column<string>(nullable: true),
-                    Imei = table.Column<string>(nullable: true)
+                    Email = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

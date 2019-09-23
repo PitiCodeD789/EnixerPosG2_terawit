@@ -26,13 +26,10 @@ namespace EnixerPos.Service.Services
 
                 string email = "";
 
-                string imei = "";
-
                 try
                 {
                     refreshToken = SecureStorage.GetAsync("RefreshToken").Result;
                     email = SecureStorage.GetAsync("Email").Result;
-                    imei = SecureStorage.GetAsync("Imei").Result;
                 }
                 catch (Exception e)
                 {
@@ -44,8 +41,6 @@ namespace EnixerPos.Service.Services
                     Email = email,
 
                     RefreshToken = refreshToken,
-
-                    Imei = imei
                 };
 
                 HttpContent content = GetHttpContent(model);

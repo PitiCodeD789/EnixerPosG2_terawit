@@ -50,8 +50,6 @@ namespace EnixerPos.DataAccess.Migrations
 
                     b.Property<DateTime>("CreateDateTime");
 
-                    b.Property<string>("Imei");
-
                     b.Property<string>("PosName");
 
                     b.Property<int>("StoreId");
@@ -157,8 +155,6 @@ namespace EnixerPos.DataAccess.Migrations
 
                     b.Property<int>("ManageCashStatus");
 
-                    b.Property<string>("PosIMEI");
-
                     b.Property<int>("PosUserId");
 
                     b.Property<int>("ShiftId");
@@ -191,8 +187,6 @@ namespace EnixerPos.DataAccess.Migrations
                     b.Property<string>("ItemList");
 
                     b.Property<int>("PaymentType");
-
-                    b.Property<string>("PosImei");
 
                     b.Property<string>("Reference");
 
@@ -238,8 +232,6 @@ namespace EnixerPos.DataAccess.Migrations
                     b.Property<decimal>("Paidin");
 
                     b.Property<decimal>("Paidout");
-
-                    b.Property<string>("PosIMEI");
 
                     b.Property<int>("PosUserId");
 
@@ -300,8 +292,6 @@ namespace EnixerPos.DataAccess.Migrations
                         .HasDefaultValueSql("GetUtcDate()");
 
                     b.Property<string>("Email");
-
-                    b.Property<string>("Imei");
 
                     b.Property<string>("RefreshToken");
 

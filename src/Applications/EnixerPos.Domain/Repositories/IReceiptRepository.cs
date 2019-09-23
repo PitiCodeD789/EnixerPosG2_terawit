@@ -9,7 +9,7 @@ namespace EnixerPos.Domain.Repositories
     {
         void Create(ReceiptEntity receiptEntity);
         void Update(ReceiptEntity receiptEntity);
-        List<ReceiptEntity> GetReceiptByShiftId(int shiftId, string storeEmail, string posIMEI);
+        List<ReceiptEntity> GetReceiptByShiftId(int shiftId, string storeEmail);
         List<ReceiptEntity> GetReceiptsByDate(DateTime date);
     }
 }

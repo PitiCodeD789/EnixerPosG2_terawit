@@ -15,7 +15,6 @@ namespace EnixerPos.DataAccess.Contexts
             builder.EnableSensitiveDataLogging();
         }
 
-        public DbSet<DeviceEntity> Device { get; set; }
         public DbSet<ManageCashEntity> ManageCash { get; set; }
          public DbSet<ReceiptEntity> Receipt { get; set; }
         public DbSet<ShiftEntity> Shift { get; set; }

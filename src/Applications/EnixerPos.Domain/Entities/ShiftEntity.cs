@@ -8,7 +8,6 @@ namespace EnixerPos.Domain.Entities
     {
         public int ShiftId { get; internal set; }
         public string StoreEmail { get; internal set; }
-        public string PosIMEI { get; internal set; }
         public int PosUserId { get; internal set; }       
         public decimal StartingCash { get; internal set; }
         public decimal CashPayment { get; set; }

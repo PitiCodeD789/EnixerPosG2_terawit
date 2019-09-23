@@ -14,16 +14,13 @@ namespace EnixerPos.Domain.Services
     {
         private readonly IReceiptRepository _receiptRepository;
         private readonly IStoreRepository _storeRepository;
-        private readonly IDeviceRepository _deviceRepository;
 
-        public ReceiptService(IReceiptRepository receiptRepository, IStoreRepository storeRepository,
-            IDeviceRepository deviceRepository)
+        public ReceiptService(IReceiptRepository receiptRepository, IStoreRepository storeRepository)
         {
             _receiptRepository = receiptRepository;
             _storeRepository = storeRepository;
-            _deviceRepository = deviceRepository;
         }
-        public List<ReceiptDto> GetReceiptsByDate(DateTime date, string email, string imei)
+        public List<ReceiptDto> GetReceiptsByDate(DateTime date, string email)
         {
             try
             {
@@ -34,7 +31,6 @@ namespace EnixerPos.Domain.Services
                     Reference = s.Reference,
                     ShiftId = s.ShiftId,
                     Store = _storeRepository.GetStoreByEmail(email).StoreName,
-                    Pos = _deviceRepository.GetDeviceByImei(imei).PosName,
                     ItemList = JsonConvert.DeserializeObject<List<OrderItemModel>>(s.ItemList),
                     Discount = s.Discount,
                     IsDiscountPercentage = s.IsDiscountPercentage,

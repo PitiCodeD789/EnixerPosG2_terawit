@@ -11,7 +11,6 @@ namespace EnixerPos.Domain.Entities
         public string Reference { get; set; }
         public int ShiftId { get; set; }
         public string StoreEmail { get; set; }
-        public string PosImei { get; set; }
         public string ItemList { get; set; }
         public decimal Discount { get; set; }
         public bool IsDiscountPercentage { get; set; }

@@ -29,11 +29,11 @@ namespace EnixerPos.DataAccess.Repositories
             }
         }
 
-        public bool DeleteUserAndToken(string email, string imei)
+        public bool DeleteUserAndToken(string email)
         {
             try
             {
-                var token = _context.Token.Where(x => x.Email == email && x.Imei == imei).Single();
+                var token = _context.Token.Where(x => x.Email == email).Single();
                 token.UserId = 0;
                 token.RefreshToken = null;
 
@@ -47,11 +47,11 @@ namespace EnixerPos.DataAccess.Repositories
             }
         }
 
-        public TokenEntity GetTokenByEmailAndImei(string email, string imei)
+        public TokenEntity GetTokenByEmail(string email)
         {
             try
             {
-                return _context.Token.Where(x => x.Email == email && x.Imei == imei).Single();
+                return _context.Token.Where(x => x.Email == email).Single();
             }
             catch(Exception e)
             {
@@ -60,11 +60,11 @@ namespace EnixerPos.DataAccess.Repositories
             }
         }
 
-        public bool UpdateRefreshToken(string email, string imei, string refreshToken)
+        public bool UpdateRefreshToken(string email, string refreshToken)
         {
             try
             {
-                var token = _context.Token.Where(x => x.Email == email && x.Imei == imei).Single();
+                var token = _context.Token.Where(x => x.Email == email).Single();
                 token.RefreshToken = refreshToken;
 
                 _context.SaveChanges();
@@ -77,11 +77,11 @@ namespace EnixerPos.DataAccess.Repositories
             }
         }
 
-        public bool UpdateUserId(string email, string imei, int userId)
+        public bool UpdateUserId(string email, int userId)
         {
             try
             {
-                var token = _context.Token.Where(x => x.Email == email && x.Imei == imei).Single();
+                var token = _context.Token.Where(x => x.Email == email).Single();
                 token.UserId = userId;
                 token.UpdateDateTime = DateTime.UtcNow;
 

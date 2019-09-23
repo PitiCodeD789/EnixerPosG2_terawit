@@ -22,9 +22,9 @@ namespace EnixerPos.DataAccess.Repositories
             _context.SaveChanges();
         }
 
-        public List<ReceiptEntity> GetReceiptByShiftId(int shiftId, string storeEmail, string posIMEI)
+        public List<ReceiptEntity> GetReceiptByShiftId(int shiftId, string storeEmail)
         {
-            List<ReceiptEntity> receipts = _context.Receipt.Where(x => x.ShiftId == shiftId).Where(x=>x.StoreEmail == storeEmail.ToLower()).Where(x=>x.PosImei == posIMEI).ToList();
+            List<ReceiptEntity> receipts = _context.Receipt.Where(x => x.ShiftId == shiftId).Where(x=>x.StoreEmail == storeEmail.ToLower()).ToList();
             return receipts;
         }
 

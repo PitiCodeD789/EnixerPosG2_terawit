@@ -13,24 +13,21 @@ namespace EnixerPos.Domain.Services
     public class AuthService : IAuthService
     {
         private readonly IStoreRepository _storeRepository;
-        private readonly IDeviceRepository _deviceRepository;
         private readonly ITokenRepository _tokenRepository;
         private readonly IUserRepository _userRepository;
 
         public AuthService(IStoreRepository storeRepository, 
-                           IDeviceRepository deviceRepository, 
                            ITokenRepository tokenRepository, 
                            IUserRepository userRepository)
         {
             _storeRepository = storeRepository;
-            _deviceRepository = deviceRepository;
             _tokenRepository = tokenRepository;
             _userRepository = userRepository;
         }
 
-        public bool CheckRefresh(string email, string imei, string refreshToken, string user)
+        public bool CheckRefresh(string email, string refreshToken, string user)
         {
-            TokenEntity tokenEntity = _tokenRepository.GetTokenByEmailAndImei(email, imei);
+            TokenEntity tokenEntity = _tokenRepository.GetTokenByEmail(email);
             UserEntity userEntity = _userRepository.GetUserByUserName(user);
             if (tokenEntity.RefreshToken != refreshToken || tokenEntity.UserId != userEntity.Id)
             {
@@ -39,9 +36,9 @@ namespace EnixerPos.Domain.Services
             return true;
         }
 
-        public bool CheckRefresh(string email, string imei, string refreshToken)
+        public bool CheckRefresh(string email, string refreshToken)
         {
-            TokenEntity tokenEntity = _tokenRepository.GetTokenByEmailAndImei(email, imei);
+            TokenEntity tokenEntity = _tokenRepository.GetTokenByEmail(email);
             if (tokenEntity.RefreshToken != refreshToken)
             {
                 return false;
@@ -74,14 +71,14 @@ namespace EnixerPos.Domain.Services
             SmtpServer.Dispose();
         }
 
-        public string GetRefreshToken(string email, string imei)
+        public string GetRefreshToken(string email)
         {
             string refreshToken = Generator.GenerateRandomString(10);
-            bool tokenEntity = _tokenRepository.UpdateRefreshToken(email, imei, refreshToken);
+            bool tokenEntity = _tokenRepository.UpdateRefreshToken(email, refreshToken);
             return refreshToken;
         }
 
-        public LoginDto LoginMerchant(string email, string password, string imei)
+        public LoginDto LoginMerchant(string email, string password)
         {
             StoreEntity storeEntity = _storeRepository.GetStoreByEmail(email);
             if (storeEntity == null)
@@ -94,25 +91,14 @@ namespace EnixerPos.Domain.Services
                 return null;
             }
 
-            DeviceEntity deviceEntity = _deviceRepository.GetDeviceByImei(imei);
-            if(deviceEntity == null)
-            {
-                return null;
-            }
-            if (storeEntity.Id != deviceEntity.StoreId)
-            {
-                return null;
-            }
-
             LoginDto loginDto = new LoginDto()
             {
                 StoreName = storeEntity.StoreName,
-                PosName = deviceEntity.PosName,
             };
             return loginDto;
         }
 
-        public LoginByPinDto LoginUser(string email, string imei, string pin)
+        public LoginByPinDto LoginUser(string email, string pin)
         {
             string hashPin = Generator.HashPassword(pin, null);
             UserEntity userEntity = _userRepository.GetUserByEmialAndPin(email, hashPin);
@@ -121,7 +107,7 @@ namespace EnixerPos.Domain.Services
                 return null;
             }
 
-            TokenEntity tokenEntity = _tokenRepository.GetTokenByEmailAndImei(email, imei);
+            TokenEntity tokenEntity = _tokenRepository.GetTokenByEmail(email);
             if(tokenEntity == null)
             {
                 return null;
@@ -138,7 +124,7 @@ namespace EnixerPos.Domain.Services
             //}
 
             int userId = userEntity.Id;
-            bool isUpdate = _tokenRepository.UpdateUserId(email, imei, userId);
+            bool isUpdate = _tokenRepository.UpdateUserId(email, userId);
             if (!isUpdate)
             {
                 return null;
@@ -165,9 +151,9 @@ namespace EnixerPos.Domain.Services
             throw new NotImplementedException();
         }
 
-        public bool Logout(string email, string imei)
+        public bool Logout(string email)
         {
-            bool isDelete = _tokenRepository.DeleteUserAndToken(email, imei);
+            bool isDelete = _tokenRepository.DeleteUserAndToken(email);
             if (!isDelete)
             {
                 return false;

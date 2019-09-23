@@ -40,19 +40,19 @@ namespace EnixerPos.DataAccess.Repositories
 
         }
 
-        public ShiftEntity GetShift(string storeEmail, string posIMEI, int posUserId)
+        public ShiftEntity GetShift(string storeEmail, int posUserId)
         {
-            return _context.Shift.LastOrDefault(x => x.StoreEmail == storeEmail && x.PosIMEI == posIMEI && x.PosUserId == posUserId);
+            return _context.Shift.LastOrDefault(x => x.StoreEmail == storeEmail && x.PosUserId == posUserId);
         }
 
-        public ShiftEntity GetShiftDetailByShiftId(string storeEmail, string posIMEI, int posUserId, int shiftId)
+        public ShiftEntity GetShiftDetailByShiftId(string storeEmail, int posUserId, int shiftId)
         {
             return _context.Shift.LastOrDefault(x => x.ShiftId == shiftId);
         }
 
-        public int GetShiftId(string storeEmail, string posIMEI, int posUserId)
+        public int GetShiftId(string storeEmail, int posUserId)
         {
-            return _context.Shift.LastOrDefault(x => x.StoreEmail == storeEmail && x.PosIMEI == posIMEI && x.PosUserId == posUserId && x.Available == true).ShiftId;
+            return _context.Shift.LastOrDefault(x => x.StoreEmail == storeEmail && x.PosUserId == posUserId && x.Available == true).ShiftId;
         }
 
         public bool Update(ShiftEntity shiftEntity)

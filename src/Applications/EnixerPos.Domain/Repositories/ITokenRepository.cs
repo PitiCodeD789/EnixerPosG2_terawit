@@ -7,10 +7,10 @@ namespace EnixerPos.Domain.Repositories
 {
     public interface ITokenRepository
     {
-        TokenEntity GetTokenByEmailAndImei(string email, string imei);
-        bool UpdateRefreshToken(string email, string imei, string refreshToken);
-        bool UpdateUserId(string email, string imei, int userId);
-        bool DeleteUserAndToken(string email, string imei);
+        TokenEntity GetTokenByEmail(string email);
+        bool UpdateRefreshToken(string email, string refreshToken);
+        bool UpdateUserId(string email, int userId);
+        bool DeleteUserAndToken(string email);
         int CountUser(int id);
     }
 }

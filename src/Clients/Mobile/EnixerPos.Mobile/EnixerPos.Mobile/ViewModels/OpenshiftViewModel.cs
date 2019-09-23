@@ -30,7 +30,6 @@ namespace EnixerPos.Mobile.ViewModels
                 StartingCash = Decimal.Parse(startingCash),
                 UserId = App.UserId,
                 StoreEmail = App.Email,
-                PosImei = App.DeviceId,
                 PosUserId = App.UserId
             };
             var openShiftId = await _shiftService.OpenShift(command);
