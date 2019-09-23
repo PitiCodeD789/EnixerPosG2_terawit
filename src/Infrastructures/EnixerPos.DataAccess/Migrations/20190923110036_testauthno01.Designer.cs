@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EnixerPos.DataAccess.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20190921015101_addFirstDb1")]
-    partial class addFirstDb1
+    [Migration("20190923110036_testauthno01")]
+    partial class testauthno01
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -21,23 +21,111 @@ namespace EnixerPos.DataAccess.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("EnixerPos.Domain.Entities.DeviceEntity", b =>
+            modelBuilder.Entity("EnixerPos.Domain.Entities.CategoryEntity", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("CreateDateTime");
+                    b.Property<string>("Color");
 
-                    b.Property<string>("PosName");
+                    b.Property<DateTime>("CreateDateTime")
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasDefaultValueSql("GetUtcDate()");
+
+                    b.Property<string>("Name");
 
                     b.Property<int>("StoreId");
 
-                    b.Property<DateTime>("UpdateDateTime");
+                    b.Property<DateTime>("UpdateDateTime")
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasDefaultValueSql("GetUtcDate()");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Device");
+                    b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("EnixerPos.Domain.Entities.DiscountEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<decimal>("Amount");
+
+                    b.Property<DateTime>("CreateDateTime")
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasDefaultValueSql("GetUtcDate()");
+
+                    b.Property<string>("DiscountName");
+
+                    b.Property<bool>("IsPercentage");
+
+                    b.Property<int>("StoreId");
+
+                    b.Property<DateTime>("UpdateDateTime")
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasDefaultValueSql("GetUtcDate()");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Discounts");
+                });
+
+            modelBuilder.Entity("EnixerPos.Domain.Entities.ItemEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CategoryId");
+
+                    b.Property<string>("Color");
+
+                    b.Property<decimal>("Cost");
+
+                    b.Property<DateTime>("CreateDateTime")
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasDefaultValueSql("GetUtcDate()");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("Option1");
+
+                    b.Property<decimal>("Option1Price");
+
+                    b.Property<string>("Option2");
+
+                    b.Property<decimal>("Option2Price");
+
+                    b.Property<string>("Option3");
+
+                    b.Property<decimal>("Option3Price");
+
+                    b.Property<string>("Option4");
+
+                    b.Property<decimal>("Option4Price");
+
+                    b.Property<string>("Option5");
+
+                    b.Property<decimal>("Option5Price");
+
+                    b.Property<string>("Option6");
+
+                    b.Property<decimal>("Option6Price");
+
+                    b.Property<decimal>("Price");
+
+                    b.Property<int>("StoreId");
+
+                    b.Property<DateTime>("UpdateDateTime")
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasDefaultValueSql("GetUtcDate()");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Items");
                 });
 
             modelBuilder.Entity("EnixerPos.Domain.Entities.ManageCashEntity", b =>
@@ -192,9 +280,9 @@ namespace EnixerPos.DataAccess.Migrations
                         .ValueGeneratedOnAddOrUpdate()
                         .HasDefaultValueSql("GetUtcDate()");
 
-                    b.Property<string>("Email");
-
                     b.Property<string>("RefreshToken");
+
+                    b.Property<int>("StoreId");
 
                     b.Property<DateTime>("UpdateDateTime")
                         .ValueGeneratedOnAddOrUpdate()
@@ -217,13 +305,11 @@ namespace EnixerPos.DataAccess.Migrations
                         .ValueGeneratedOnAddOrUpdate()
                         .HasDefaultValueSql("GetUtcDate()");
 
-                    b.Property<string>("Email");
-
                     b.Property<string>("NameUser");
 
                     b.Property<string>("Pin");
 
-                    b.Property<string>("Salt");
+                    b.Property<int>("StoreId");
 
                     b.Property<DateTime>("UpdateDateTime")
                         .ValueGeneratedOnAddOrUpdate()

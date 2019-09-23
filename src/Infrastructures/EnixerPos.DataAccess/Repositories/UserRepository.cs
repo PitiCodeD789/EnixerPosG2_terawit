@@ -16,11 +16,11 @@ namespace EnixerPos.DataAccess.Repositories
             _context = context;
         }
 
-        public UserEntity GetUserByEmialAndPin(string email, string hashPin)
+        public UserEntity GetUserByEmialAndPin(int storeId, string hashPin)
         {
             try
             {
-                return _context.User.Where(x => x.Email.ToLower() == email.ToLower()).Where(x => x.Pin == hashPin).FirstOrDefault();
+                return _context.User.Where(x => x.StoreId == storeId).Where(x => x.Pin == hashPin).FirstOrDefault();
             }
             catch (Exception)
             {

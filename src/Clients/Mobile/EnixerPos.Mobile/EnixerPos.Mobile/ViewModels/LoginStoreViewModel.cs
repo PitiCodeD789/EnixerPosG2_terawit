@@ -83,10 +83,8 @@ namespace EnixerPos.Mobile.ViewModels
                     else
                     {
                         await SecureStorage.SetAsync("RefreshToken", loginData.Model.RefreshToken);
-                        await SecureStorage.SetAsync("Token", loginData.Model.Token);
                         await SecureStorage.SetAsync("Email", email);
                         await SecureStorage.SetAsync("StoreName", loginData.Model.StoreName);
-                        await SecureStorage.SetAsync("PosName", loginData.Model.PosName);
                         await Application.Current.MainPage.Navigation.PushAsync(new EnterPin());
                     }
                 }

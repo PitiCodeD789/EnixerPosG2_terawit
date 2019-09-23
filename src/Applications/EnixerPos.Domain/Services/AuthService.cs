@@ -27,7 +27,8 @@ namespace EnixerPos.Domain.Services
 
         public bool CheckRefresh(string email, string refreshToken, string user)
         {
-            TokenEntity tokenEntity = _tokenRepository.GetTokenByEmail(email);
+            StoreEntity storeEntity = _storeRepository.GetStoreByEmail(email);
+            TokenEntity tokenEntity = _tokenRepository.GetTokenByEmail(storeEntity.Id);
             UserEntity userEntity = _userRepository.GetUserByUserName(user);
             if (tokenEntity.RefreshToken != refreshToken || tokenEntity.UserId != userEntity.Id)
             {
@@ -38,7 +39,8 @@ namespace EnixerPos.Domain.Services
 
         public bool CheckRefresh(string email, string refreshToken)
         {
-            TokenEntity tokenEntity = _tokenRepository.GetTokenByEmail(email);
+            StoreEntity storeEntity = _storeRepository.GetStoreByEmail(email);
+            TokenEntity tokenEntity = _tokenRepository.GetTokenByEmail(storeEntity.Id);
             if (tokenEntity.RefreshToken != refreshToken)
             {
                 return false;
@@ -74,7 +76,8 @@ namespace EnixerPos.Domain.Services
         public string GetRefreshToken(string email)
         {
             string refreshToken = Generator.GenerateRandomString(10);
-            bool tokenEntity = _tokenRepository.UpdateRefreshToken(email, refreshToken);
+            StoreEntity storeEntity = _storeRepository.GetStoreByEmail(email);
+            bool tokenEntity = _tokenRepository.UpdateRefreshToken(storeEntity.Id, refreshToken);
             return refreshToken;
         }
 
@@ -100,31 +103,21 @@ namespace EnixerPos.Domain.Services
 
         public LoginByPinDto LoginUser(string email, string pin)
         {
-            string hashPin = Generator.HashPassword(pin, null);
-            UserEntity userEntity = _userRepository.GetUserByEmialAndPin(email, hashPin);
+            StoreEntity storeEntity = _storeRepository.GetStoreByEmail(email);
+            UserEntity userEntity = _userRepository.GetUserByEmialAndPin(storeEntity.Id, pin);
             if(userEntity == null)
             {
                 return null;
             }
 
-            TokenEntity tokenEntity = _tokenRepository.GetTokenByEmail(email);
+            TokenEntity tokenEntity = _tokenRepository.GetTokenByEmail(storeEntity.Id);
             if(tokenEntity == null)
             {
                 return null;
             }
-            //if(tokenEntity.UserId != 0)
-            //{
-            //    return null;
-            //}
-
-            //int countUser = _tokenRepository.CountUser(userEntity.Id);
-            //if(countUser > 0)
-            //{
-            //    return null;
-            //}
 
             int userId = userEntity.Id;
-            bool isUpdate = _tokenRepository.UpdateUserId(email, userId);
+            bool isUpdate = _tokenRepository.UpdateUserId(storeEntity.Id, userId);
             if (!isUpdate)
             {
                 return null;
@@ -153,7 +146,8 @@ namespace EnixerPos.Domain.Services
 
         public bool Logout(string email)
         {
-            bool isDelete = _tokenRepository.DeleteUserAndToken(email);
+            StoreEntity storeEntity = _storeRepository.GetStoreByEmail(email);
+            bool isDelete = _tokenRepository.DeleteUserAndToken(storeEntity.Id);
             if (!isDelete)
             {
                 return false;

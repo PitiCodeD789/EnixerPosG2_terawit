@@ -26,7 +26,7 @@ namespace EnixerPos.Api.Controllers
         }
 
         [Authorize]
-        [HttpGet("GetReceiptsByDate/{}")]
+        [HttpGet("GetReceiptsByDate")]
         public IActionResult GetReceiptsByDate()
         {
             var audience = "";

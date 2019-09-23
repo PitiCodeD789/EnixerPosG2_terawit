@@ -7,9 +7,7 @@ namespace EnixerPos.Domain.Entities
     public class UserEntity : BaseEntity
     {
         public string NameUser { get; set; }
-        public string Email { get; set; }
+        public int StoreId { get; set; }
         public string Pin { get; set; }
-        public string Salt { get; set; }
-
     }
 }

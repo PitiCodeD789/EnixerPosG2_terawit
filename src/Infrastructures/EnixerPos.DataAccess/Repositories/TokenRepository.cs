@@ -29,11 +29,11 @@ namespace EnixerPos.DataAccess.Repositories
             }
         }
 
-        public bool DeleteUserAndToken(string email)
+        public bool DeleteUserAndToken(int storeId)
         {
             try
             {
-                var token = _context.Token.Where(x => x.Email == email).Single();
+                var token = _context.Token.Where(x => x.StoreId == storeId).Single();
                 token.UserId = 0;
                 token.RefreshToken = null;
 
@@ -47,11 +47,11 @@ namespace EnixerPos.DataAccess.Repositories
             }
         }
 
-        public TokenEntity GetTokenByEmail(string email)
+        public TokenEntity GetTokenByEmail(int storeId)
         {
             try
             {
-                return _context.Token.Where(x => x.Email == email).Single();
+                return _context.Token.Where(x => x.StoreId == storeId).Single();
             }
             catch(Exception e)
             {
@@ -60,11 +60,11 @@ namespace EnixerPos.DataAccess.Repositories
             }
         }
 
-        public bool UpdateRefreshToken(string email, string refreshToken)
+        public bool UpdateRefreshToken(int storeId, string refreshToken)
         {
             try
             {
-                var token = _context.Token.Where(x => x.Email == email).Single();
+                var token = _context.Token.Where(x => x.StoreId == storeId).Single();
                 token.RefreshToken = refreshToken;
 
                 _context.SaveChanges();
@@ -77,11 +77,11 @@ namespace EnixerPos.DataAccess.Repositories
             }
         }
 
-        public bool UpdateUserId(string email, int userId)
+        public bool UpdateUserId(int storeId, int userId)
         {
             try
             {
-                var token = _context.Token.Where(x => x.Email == email).Single();
+                var token = _context.Token.Where(x => x.StoreId == storeId).Single();
                 token.UserId = userId;
                 token.UpdateDateTime = DateTime.UtcNow;
 

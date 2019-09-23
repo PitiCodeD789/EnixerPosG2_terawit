@@ -8,6 +8,6 @@ namespace EnixerPos.Domain.Repositories
     public interface IUserRepository
     {
         UserEntity GetUserByUserName(string user);
-        UserEntity GetUserByEmialAndPin(string email, string hashPin);
+        UserEntity GetUserByEmialAndPin(int storeId, string hashPin);
     }
 }
