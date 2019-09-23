@@ -35,7 +35,8 @@
                         <component:Pos_ButtonView TextButton="CLOSE SHIFT" 
                                                   HorizontalOptions="EndAndExpand" 
                                                    Margin="50,0,50,0"
-                                                  WidthRequest="500"  
+                                                  WidthRequest="500"
+                                                  Command="{Binding CloseShiftListCommand}"
                                                   TextColor="#E96722" 
                                                   BackgroundButton="White" />
                 </StackLayout>

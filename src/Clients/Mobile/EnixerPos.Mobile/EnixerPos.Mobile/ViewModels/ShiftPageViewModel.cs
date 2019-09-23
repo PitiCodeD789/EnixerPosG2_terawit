@@ -32,8 +32,25 @@ namespace EnixerPos.Mobile.ViewModels
                 Taxes = 145.60m
             };
 
-            ShowShiftListCommand = new Command(ShowShiftList);             
-          
+            ShowShiftListCommand = new Command(ShowShiftList);
+            CloseShiftListCommand = new Command(CloseShiftList);
+
+
+        }
+
+        private void CloseShiftList(object obj)
+        {
+            var isClose = _shiftService.CloseListShift(App.OpenShiftId);
+            if(isClose)
+            {
+                //App.Current.MainPage.DisplayAlert("ok", "Close Ok", "ok");
+                App.CheckShift = false;
+                App.Current.MainPage = new NavigationPage(new Views.EnterPin());
+
+            }else
+            {
+                App.Current.MainPage.DisplayAlert("ok", "Can not close", "ok");
+            }
         }
 
         private async void ShowShiftList(object obj)
@@ -43,7 +60,7 @@ namespace EnixerPos.Mobile.ViewModels
         }
 
         public ICommand ShowShiftListCommand { get; set; }
-
+        public ICommand CloseShiftListCommand { get; set; }
 
     }
 }

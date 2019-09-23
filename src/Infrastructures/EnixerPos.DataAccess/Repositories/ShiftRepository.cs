@@ -47,7 +47,7 @@ namespace EnixerPos.DataAccess.Repositories
 
         public ShiftEntity GetShiftDetailByShiftId(string storeEmail, string posIMEI, int posUserId, int shiftId)
         {
-            return _context.Shift.LastOrDefault(x => x.StoreEmail == storeEmail && x.PosIMEI == posIMEI && x.PosUserId == posUserId && x.ShiftId == shiftId);
+            return _context.Shift.LastOrDefault(x => x.ShiftId == shiftId);
         }
 
         public int GetShiftId(string storeEmail, string posIMEI, int posUserId)

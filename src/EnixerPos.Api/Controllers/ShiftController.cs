@@ -99,8 +99,10 @@ namespace EnixerPos.Api.Controllers
             {
                 return BadRequest();
             }
-         
-            string storeEmail = "sert@gmail.com";
+            var audience = User.Claims.FirstOrDefault(c => c.Type == "aud").Value;
+            var user = User.Claims.FirstOrDefault(c => c.Type == "user").Value;
+            string storeEmail = audience;
+            string posUser = user;           
             string posIMEI = "00200202020000";
             int posUserId = 12;
             int shiftId = closeShift.ShiftId;

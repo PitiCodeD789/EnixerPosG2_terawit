@@ -42,6 +42,7 @@ namespace EnixerPos.Mobile.Views.Popup
         }
         private void Logout_Tapped(object sender, EventArgs e)
         {
+
             BaseViewModel baseViewModel = new BaseViewModel();
             baseViewModel.ForceLogout();
         }

@@ -11,5 +11,6 @@ namespace EnixerPos.Service.Interfaces
     {
         List<GetShiftViewModel> GetListShift();
         Task<ResultServiceModel<OpenShiftViewModel>> OpenShift(OpenShiftCommand model);
+        bool CloseListShift(int openShiftId);
     }
 }

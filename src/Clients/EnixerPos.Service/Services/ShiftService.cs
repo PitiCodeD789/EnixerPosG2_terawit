@@ -13,6 +13,23 @@ namespace EnixerPos.Service.Services
     public class ShiftService : BaseService, IShiftService
     {
         private string serviceUrl = Helper.BaseUrl + "Shift/";
+
+      
+        public bool CloseListShift(int openShiftId)
+        {
+            string url = serviceUrl + "CloseShift";
+            CloseShiftCommand closeShift = new CloseShiftCommand { ShiftId = openShiftId };
+            var status =   Post<OpenShiftViewModel>(url, closeShift).Result;
+            if(status.IsError == System.Net.HttpStatusCode.OK)
+            {
+                return true;
+            }else
+            {
+                return false;
+            }
+
+        }
+
         public List<GetShiftViewModel> GetListShift()
         {
             string url = serviceUrl + "GetShifts";
