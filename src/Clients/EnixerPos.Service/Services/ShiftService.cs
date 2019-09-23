@@ -12,11 +12,12 @@ namespace EnixerPos.Service.Services
 {
     public class ShiftService : BaseService, IShiftService
     {
-        private string serviceUrl = Helper.BaseUrl + "Shift/GetShifts";
+        private string serviceUrl = Helper.BaseUrl + "Shift/";
         public List<GetShiftViewModel> GetListShift()
         {
+            string url = serviceUrl + "GetShifts";
 
-           var result = Get<ResultViewModel>(serviceUrl);
+            var result = Get<ResultViewModel>(url);
 
             return new List<GetShiftViewModel>();
                

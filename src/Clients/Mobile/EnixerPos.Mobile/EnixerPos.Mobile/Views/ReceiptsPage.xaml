@@ -8,6 +8,7 @@
              xmlns:ai="clr-namespace:AiForms.Renderers;assembly=CollectionView"
              xmlns:tabView="clr-namespace:Xam.Plugin.TabView;assembly=Xam.Plugin.TabView"
              x:Class="EnixerPos.Mobile.Views.ReceiptsPage"
+             NavigationPage.HasNavigationBar="False"
              >
     <ContentPage.Content>
         <Grid ColumnSpacing="0" BackgroundColor="#E3E3E3">
@@ -23,7 +24,7 @@
             </Grid.ColumnDefinitions>
             <Frame Padding="0" HorizontalOptions="FillAndExpand" Margin="0" Grid.Column="0" Grid.Row="0" HasShadow="True">
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
-                    <ImageButton Source="icon_hamburger" Aspect="AspectFit" VerticalOptions="Center" Margin="20,0" HeightRequest="30" BackgroundColor="Transparent">
+                    <ImageButton Source="icon_hamburger" Aspect="AspectFit" VerticalOptions="Center" Margin="20,0" HeightRequest="30" BackgroundColor="Transparent" Clicked="Button_Clicked">
                         <ImageButton.GestureRecognizers>
                             <TapGestureRecognizer  Tapped="Button_Clicked"/>
                         </ImageButton.GestureRecognizers>

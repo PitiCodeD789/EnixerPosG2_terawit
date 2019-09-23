@@ -7,13 +7,14 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
+using Xamarin.Essentials;
 
 namespace EnixerPos.Service.Services
 {
     public class ReceiptService : BaseService,IReceiptService
     {
-        private string serviceUrl = Helper.BaseUrl + "Receipt/GetReceiptsByDate/123456789";
-        private string accessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWVpIjoiMTIzNDU2Nzg5IiwibmJmIjoxNTY5MDQxMDA2LCJleHAiOjE1NjkxNTEzMDYsImlzcyI6IkVuaXhlclBvc0cyIiwiYXVkIjoiZUBlIiwidXNlciI6Ik5hdCJ9.2NVziPg0aE3eXlSLL9MyGp453CaW2UYMLMV5GMqPDJs";
+        private string serviceUrl = Helper.BaseUrl + "Receipt/GetReceiptsByDate/100930323339892";
+        private string accessToken = SecureStorage.GetAsync("Token").Result;
         public List<ReceiptViewModel> GetReceipt()
         {
             #region Mockup

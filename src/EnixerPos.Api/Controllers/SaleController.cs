@@ -29,7 +29,7 @@ namespace EnixerPos.Api.Controllers
         //CheckPayment
 
         [HttpPost("Payment")]
-        public IActionResult Payment(PaymentCommand payment)
+        public IActionResult Payment([FromBody]PaymentCommand payment)
         {
             //PaymentDtoCommand paymentDto = _mapper.Map<PaymentDtoCommand>(payment);
 

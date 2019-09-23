@@ -17,7 +17,7 @@ namespace EnixerPos.Service.Services
     public class ProductService : BaseService, IProductService
     {
         private string serviceUrl = Helper.BaseUrl + "Product/";
-        private string accessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWVpIjoiMTIzNDU2Nzg5IiwibmJmIjoxNTY5MDQxMDA2LCJleHAiOjE1NjkxNTEzMDYsImlzcyI6IkVuaXhlclBvc0cyIiwiYXVkIjoiZUBlIiwidXNlciI6Ik5hdCJ9.2NVziPg0aE3eXlSLL9MyGp453CaW2UYMLMV5GMqPDJs";
+        private string accessToken = SecureStorage.GetAsync("Token").Result;
         public async Task<ResultViewModel> CreateItem(ItemModel item)
         {
             try
@@ -60,7 +60,7 @@ namespace EnixerPos.Service.Services
             {
                 //var result = Get<CategoriesViewModel>("http://192.168.1.33:30000/api/product/getcategories").Result;
                 var client = new HttpClient();
-                string accessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWVpIjoiMTIzNDU2Nzg5IiwibmJmIjoxNTY5MDQxMDA2LCJleHAiOjE1NjkxNTEzMDYsImlzcyI6IkVuaXhlclBvc0cyIiwiYXVkIjoiZUBlIiwidXNlciI6Ik5hdCJ9.2NVziPg0aE3eXlSLL9MyGp453CaW2UYMLMV5GMqPDJs";
+                string accessToken = SecureStorage.GetAsync("Token").Result;
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
                 HttpResponseMessage response = client.GetAsync(serviceUrl + "getcategories").Result;
                 response.EnsureSuccessStatusCode();
@@ -82,7 +82,7 @@ namespace EnixerPos.Service.Services
             {
                 //var result = Get<CategoriesViewModel>("http://192.168.1.33:30000/api/product/getcategories").Result;
                 var client = new HttpClient();
-                string accessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWVpIjoiMTIzNDU2Nzg5IiwibmJmIjoxNTY5MDQxMDA2LCJleHAiOjE1NjkxNTEzMDYsImlzcyI6IkVuaXhlclBvc0cyIiwiYXVkIjoiZUBlIiwidXNlciI6Ik5hdCJ9.2NVziPg0aE3eXlSLL9MyGp453CaW2UYMLMV5GMqPDJs";
+                string accessToken = SecureStorage.GetAsync("Token").Result;
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
                 HttpResponseMessage response = client.GetAsync(serviceUrl + "getitems").Result;
                 response.EnsureSuccessStatusCode();
@@ -102,10 +102,10 @@ namespace EnixerPos.Service.Services
             {
                 //var result = Get<CategoriesViewModel>("http://192.168.1.33:30000/api/product/getcategories").Result;
                 var client = new HttpClient();
-                string accessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWVpIjoiMTIzNDU2Nzg5IiwibmJmIjoxNTY5MDQxMDA2LCJleHAiOjE1NjkxNTEzMDYsImlzcyI6IkVuaXhlclBvc0cyIiwiYXVkIjoiZUBlIiwidXNlciI6Ik5hdCJ9.2NVziPg0aE3eXlSLL9MyGp453CaW2UYMLMV5GMqPDJs";
+                string accessToken = SecureStorage.GetAsync("Token").Result;
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
                 HttpContent content = GetHttpContent(payment);
-                HttpResponseMessage response = client.PostAsync(serviceUrl + "payment", content).Result;
+                HttpResponseMessage response = client.PostAsync(Helper.BaseUrl + "sale/" + "payment", content).Result;
                 response.EnsureSuccessStatusCode();
                 string responseBody = response.Content.ReadAsStringAsync().Result;
                 var result = JsonConvert.DeserializeObject<ReceiptViewModel>(responseBody);
@@ -144,7 +144,7 @@ namespace EnixerPos.Service.Services
             {
                 //var result = Get<CategoriesViewModel>("http://192.168.1.33:30000/api/product/getcategories").Result;
                 var client = new HttpClient();
-                string accessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWVpIjoiMTIzNDU2Nzg5IiwibmJmIjoxNTY5MDQxMDA2LCJleHAiOjE1NjkxNTEzMDYsImlzcyI6IkVuaXhlclBvc0cyIiwiYXVkIjoiZUBlIiwidXNlciI6Ik5hdCJ9.2NVziPg0aE3eXlSLL9MyGp453CaW2UYMLMV5GMqPDJs";
+                string accessToken = SecureStorage.GetAsync("Token").Result;
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
                 HttpResponseMessage response = client.GetAsync(serviceUrl + "getdiscounts").Result;
                 response.EnsureSuccessStatusCode();

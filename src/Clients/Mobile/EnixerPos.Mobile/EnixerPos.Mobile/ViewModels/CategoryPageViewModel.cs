@@ -27,7 +27,7 @@ namespace EnixerPos.Mobile.ViewModels
 
         private async void CreateCategory()
         {
-            bool result =  _productService.AddCategory(CategoryName, "tescolor").Result;
+            bool result =  _productService.AddCategory(CategoryName, "#c6dbfc").Result;
             if(result)
             {
                 //  ErrorViewModel viewModel = new ErrorViewModel("ok",2);

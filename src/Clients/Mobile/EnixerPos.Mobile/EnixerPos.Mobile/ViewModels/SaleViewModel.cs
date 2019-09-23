@@ -197,6 +197,10 @@ namespace EnixerPos.Mobile.ViewModels
         void SetItemMenu()
         {
             CategoriesList = _service.GetCategories();
+            if(CategoriesList == null)
+            {
+                CategoriesList = new List<CategoryModel>();
+            }
             foreach (var category in CategoriesList)
             {
                 AllMenu.Add(new MenuModel()

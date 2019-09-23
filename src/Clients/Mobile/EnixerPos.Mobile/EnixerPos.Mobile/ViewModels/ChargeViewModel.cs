@@ -75,9 +75,9 @@ namespace EnixerPos.Mobile.ViewModels
             {
                 TotalDiscount = TotalDiscount,
                 ItemList = CurrentTicket.ToList(),
-                PosImei = "IMEI",
-                ShiftId = 1,
-                StoreEmail = "e@e",
+                PosImei = "100930323339892",
+                ShiftId = App.OpenShiftId,
+                StoreEmail = App.Email,
                 Total = TotalPrice
             };
             switch (paymentType)
@@ -126,7 +126,7 @@ namespace EnixerPos.Mobile.ViewModels
                     break;
             }
         }
-        void Payment()
+        async void Payment()
         {
             if (Cash < TotalPrice)
             {
@@ -139,13 +139,23 @@ namespace EnixerPos.Mobile.ViewModels
                 TotalDiscount = TotalDiscount,
                 ItemList = CurrentTicket.ToList(),
                 PaymentType = Api.ViewModels.Enixer_Enumerations.EP_PaymentTypeEnum.Cash,
-                PosImei = "IMEI",
-                ShiftId = 1,
-                StoreEmail = "e@e",
+                PosImei = "100930323339892",
+                ShiftId = App.OpenShiftId,
+                StoreEmail = App.Email,
                 Total = TotalPrice
             };
-            PopupNavigation.PushAsync(new ShowChange(this));
-            Application.Current.MainPage.Navigation.PushAsync(new ReceiptPage(this));
+            payment.PaymentType = Api.ViewModels.Enixer_Enumerations.EP_PaymentTypeEnum.Cash;
+            ReceiptViewModel resultW = _service.AddPayment(payment);
+            if (resultW != null)
+            {
+                await PopupNavigation.Instance.PushAsync(new ShowChange(this));
+                await PopupNavigation.Instance.PushAsync(new Error(new ErrorViewModel("Payment Completed", 3)));
+                await Application.Current.MainPage.Navigation.PushAsync(new ReceiptPage(this));
+            }
+            else
+            {
+                Application.Current.MainPage.DisplayAlert("Payment Error", "Payment not completed please try again.", "Ok");
+            }
         }
 
         public void QrPaymentComplete()
@@ -154,9 +164,9 @@ namespace EnixerPos.Mobile.ViewModels
             {
                 TotalDiscount = TotalDiscount,
                 ItemList = CurrentTicket.ToList(),
-                PosImei = "IMEI",
-                ShiftId = 1,
-                StoreEmail = "e@e",
+                PosImei = "100930323339892",
+                ShiftId = App.OpenShiftId,
+                StoreEmail = App.Email,
                 Total = TotalPrice
             };
             payment.PaymentType = Api.ViewModels.Enixer_Enumerations.EP_PaymentTypeEnum.Qr;

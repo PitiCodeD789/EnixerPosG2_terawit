@@ -27,7 +27,7 @@ namespace EnixerPos.Mobile.Views.Popup
         }
         private void Receipt_Tapped(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new ReceiptPage());
+            Navigation.PushAsync(new ReceiptsPage());
             PopupNavigation.PopAllAsync();
         }
         private void Shift_Tapped(object sender, EventArgs e)

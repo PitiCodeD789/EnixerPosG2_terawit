@@ -17,7 +17,7 @@ namespace EnixerPos.Mobile
     public partial class App : Application
     {
         public static List<ReceiptViewModel> TicketList { get; set; }
-        public static string DeviceId { get; set; }
+        public static string DeviceId { get; set; } = "100930323339892";
         public static string User { get; set; }
         public static string Email { get; set; }
         public static string StoreName { get; set; }
@@ -38,13 +38,14 @@ namespace EnixerPos.Mobile
             //CreateItemPageViewModel createItem = new CreateItemPageViewModel();
             //CreateDiscountPageViewModel createDiscount = new CreateDiscountPageViewModel();
             //MainPage = new NavigationPage(new Views.Item.CreateDiscountPage(createDiscount));
-            MainPage = new NavigationPage(new SaleView());
+            //MainPage = new NavigationPage(new SaleView());
+            MainPage = new NavigationPage(new Login());
             PermissionReq();
         }
 
         protected async override void OnStart()
         {
-            DeviceId = CrossDevice.Device.DeviceId;
+            //DeviceId = CrossDevice.Device.DeviceId;
             //var refreshToken = await SecureStorage.GetAsync("RefreshToken");
             //if (refreshToken != null)
             //{
