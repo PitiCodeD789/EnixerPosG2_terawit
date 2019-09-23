@@ -116,7 +116,7 @@ namespace EnixerPos.Mobile.ViewModels
                     {
                         Amount = TotalPrice,
                         AccountNumber = "0000000049",
-                        FirstName = "Enixer Cafe"
+                        FirstName = App.StoreName
                     };
                     QrValue = JsonConvert.SerializeObject(model);
                     PopupNavigation.PushAsync(new QrPage(this));
