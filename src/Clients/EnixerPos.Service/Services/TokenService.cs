@@ -22,6 +22,8 @@ namespace EnixerPos.Service.Services
 
                 HttpClient client = new HttpClient();
 
+                client.Timeout = TimeSpan.FromSeconds(20);
+
                 string refreshToken = "";
 
                 string user = "";
@@ -38,6 +40,7 @@ namespace EnixerPos.Service.Services
                 }
                 catch (Exception e)
                 {
+                    CloseApp();
                     return null;
                 }
 
@@ -52,7 +55,7 @@ namespace EnixerPos.Service.Services
 
                 HttpContent content = GetHttpContent(model);
 
-                var result = await client.PostAsync(url, content);
+                var result = client.PostAsync(url, content).Result;
 
                 if (result.IsSuccessStatusCode)
                 {
@@ -69,12 +72,14 @@ namespace EnixerPos.Service.Services
                 else
                 {
                     client.Dispose();
+                    CloseApp();
                     return null;
                 }
             }
             catch (Exception e)
             {
-                return null;
+                //return null;
+                CloseApp();
             }
         }
 

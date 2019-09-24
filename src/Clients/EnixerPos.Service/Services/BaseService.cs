@@ -20,6 +20,8 @@ namespace EnixerPos.Service.Services
             {
                 HttpClient client = new HttpClient();
 
+                client.Timeout = TimeSpan.FromSeconds(20);
+
                 string token = "";
 
                 try
@@ -102,6 +104,8 @@ namespace EnixerPos.Service.Services
             {
                 HttpClient client = new HttpClient();
 
+                client.Timeout = TimeSpan.FromSeconds(20);
+
                 string token = "";
 
                 try
@@ -141,6 +145,7 @@ namespace EnixerPos.Service.Services
                                 resultService.IsError = result.StatusCode;
                             }
                             await SecureStorage.SetAsync("Token", tokenData.Model.Token);
+                            await SecureStorage.SetAsync("RefreshToken", tokenData.Model.RefreshToken);
                             goto StartMethod;
                         }
                         else
