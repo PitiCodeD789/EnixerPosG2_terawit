@@ -101,7 +101,7 @@ namespace EnixerPos.Domain.Services
             return loginDto;
         }
 
-        public LoginByPinDto LoginUser(string email, string pin)
+        public LoginByPinDto LoginUser(string email, string pin, string refreshToken)
         {
             StoreEntity storeEntity = _storeRepository.GetStoreByEmail(email);
             UserEntity userEntity = _userRepository.GetUserByEmialAndPin(storeEntity.Id, pin);
@@ -112,6 +112,10 @@ namespace EnixerPos.Domain.Services
 
             TokenEntity tokenEntity = _tokenRepository.GetTokenByEmail(storeEntity.Id);
             if(tokenEntity == null)
+            {
+                return null;
+            }
+            if(tokenEntity.RefreshToken != refreshToken)
             {
                 return null;
             }

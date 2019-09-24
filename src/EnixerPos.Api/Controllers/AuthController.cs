@@ -84,17 +84,18 @@ namespace EnixerPos.Api.Controllers
         {
             try
             {
-                string email = command.Email;
+                string email = command.Email.ToLower();
                 string pin = command.Pin;
+                string refreshToken = command.RefreshToken;
 
-                LoginByPinDto loginByPinDto = _authService.LoginUser(email, pin);
+                LoginByPinDto loginByPinDto = _authService.LoginUser(email, pin, refreshToken);
                 if (loginByPinDto == null)
                 {
                     return BadRequest();
                 }
 
                 string user = loginByPinDto.User;
-                string refreshToken = _authService.GetRefreshToken(email);
+                refreshToken = _authService.GetRefreshToken(email);
                 string token = GetToken(email, user);
                 LoginByPinViewModel model = new LoginByPinViewModel()
                 {

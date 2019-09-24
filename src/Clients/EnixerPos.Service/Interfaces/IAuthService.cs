@@ -10,7 +10,7 @@ namespace EnixerPos.Service.Interfaces
     public interface IAuthService
     {
         Task<ResultServiceModel<LoginViewModel>> Login(string email, string password);
-        Task<ResultServiceModel<LoginByPinViewModel>> LoginByPin(string pin);
+        Task<ResultServiceModel<LoginByPinViewModel>> LoginByPin(string pin, string refreshToken, string email);
         Task<ResultServiceModel<GetTokenByRefreshViewModel>> GetTokenByRefreshMerchant(string email, string refreshToken);
         Task<ResultServiceModel<GetTokenByRefreshViewModel>> GetTokenByRefreshUser(string refreshToken, string user);
         Task<ResultServiceModel<DummyModel>> Logout();

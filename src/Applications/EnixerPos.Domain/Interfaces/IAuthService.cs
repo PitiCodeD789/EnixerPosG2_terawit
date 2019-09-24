@@ -9,7 +9,7 @@ namespace EnixerPos.Domain.Interfaces
     {
         LoginDto LoginMerchant(string email, string password);
         string GetRefreshToken(string email);
-        LoginByPinDto LoginUser(string email, string pin);
+        LoginByPinDto LoginUser(string email, string pin, string refreshToken);
         bool CheckRefresh(string email, string refreshToken, string user);
         bool CheckRefresh(string email, string refreshToken);
         bool RegisterStore(RegisterStoreDtoCommand command);

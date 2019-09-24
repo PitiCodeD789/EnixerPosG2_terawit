@@ -17,16 +17,12 @@ namespace EnixerPos.Mobile
     public partial class App : Application
     {
         public static List<ReceiptViewModel> TicketList { get; set; }
-        public static string DeviceId { get; set; } = "100930323339892";
         public static string User { get; set; }
         public static string Email { get; set; }
         public static string StoreName { get; set; }
-        public static string PosName { get; set; }
         public static int UserId { get; set; }
         public static bool CheckShift { get; set; } = false;
         public static int OpenShiftId { get; set; }
-
-        public static int StoreId = 1;
         public App()
         {
             InitializeComponent();
@@ -39,24 +35,25 @@ namespace EnixerPos.Mobile
             //CreateDiscountPageViewModel createDiscount = new CreateDiscountPageViewModel();
             //MainPage = new NavigationPage(new Views.Item.CreateDiscountPage(createDiscount));
             //MainPage = new NavigationPage(new SaleView());
-            MainPage = new NavigationPage(new Login());
-            PermissionReq();
+            //MainPage = new NavigationPage(new Login());
+            //PermissionReq();
         }
 
         protected async override void OnStart()
         {
-            //DeviceId = CrossDevice.Device.DeviceId;
-            //var refreshToken = await SecureStorage.GetAsync("RefreshToken");
-            //if (refreshToken != null)
-            //{
-            //    MainPage = new NavigationPage(new EnterPin());
-            //    PermissionReq();
-            //}
-            //else
-            //{
-            //    MainPage = new NavigationPage(new Login());
-            //    PermissionReq();
-            //}
+            var refreshToken = await SecureStorage.GetAsync("RefreshToken");
+            Email = await SecureStorage.GetAsync("Email");
+            StoreName = await SecureStorage.GetAsync("StoreName");
+            if (String.IsNullOrEmpty(refreshToken) || String.IsNullOrEmpty(Email) || String.IsNullOrEmpty(StoreName))
+            {
+                MainPage = new NavigationPage(new Login());
+                PermissionReq();
+            }
+            else
+            {
+                MainPage = new NavigationPage(new EnterPin());
+                PermissionReq();
+            }
         }
 
         protected override void OnSleep()
@@ -64,9 +61,21 @@ namespace EnixerPos.Mobile
             // Handle when your app sleeps
         }
 
-        protected override void OnResume()
+        protected async override void OnResume()
         {
-            // Handle when your app resumes
+            var refreshToken = await SecureStorage.GetAsync("RefreshToken");
+            Email = await SecureStorage.GetAsync("Email");
+            StoreName = await SecureStorage.GetAsync("StoreName");
+            if (String.IsNullOrEmpty(refreshToken) || String.IsNullOrEmpty(Email) || String.IsNullOrEmpty(StoreName))
+            {
+                MainPage = new NavigationPage(new Login());
+                PermissionReq();
+            }
+            else
+            {
+                MainPage = new NavigationPage(new EnterPin());
+                PermissionReq();
+            }
         }
 
         private async void PermissionReq()
