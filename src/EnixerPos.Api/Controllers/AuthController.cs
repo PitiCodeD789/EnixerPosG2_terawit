@@ -72,7 +72,7 @@ namespace EnixerPos.Api.Controllers
                                                  email,
                                                  claims,
                                                  DateTime.Now,
-                                                 expires: DateTime.Now.AddMinutes(5),
+                                                 expires: DateTime.Now.AddMinutes(50000),
                                                  signingCredentials: credentials);
             var token = new JwtSecurityTokenHandler().WriteToken(tokendata);
             return token;

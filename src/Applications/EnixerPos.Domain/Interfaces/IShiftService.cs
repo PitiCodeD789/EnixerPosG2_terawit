@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using EnixerPos.Api.ViewModels.Shifts;
 using EnixerPos.Domain.DtoModels.Shifts;
 
 namespace EnixerPos.Domain.Interfaces
@@ -9,7 +10,7 @@ namespace EnixerPos.Domain.Interfaces
     {
         List<ShiftdetailDto> GetLast30DayShift(string storeEmail, string posUser);
         ShiftdetailDto GetShiftDetailByShiftId(string storeEmail, int posUserId, int shiftId);
-        int OpenShift(string storeEmail, decimal startingCash, int posUserId);
+        ShiftdetailDto OpenShift(string storeEmail, decimal startingCash, int posUserId, string posUser);
         bool IsShiftAvailable(string storeEmail, int posUserId, int shiftId);
         bool CloseShift(string storeEmail, int posUserId, int shiftId);
         bool ManageCash(ManageCashDto manageCash);

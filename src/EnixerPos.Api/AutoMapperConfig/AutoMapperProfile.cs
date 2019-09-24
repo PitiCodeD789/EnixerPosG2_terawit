@@ -20,6 +20,10 @@ namespace EnixerPos.Api.AutoMapperConfig
         {
             CreateMap<ShiftdetailDto, GetShiftViewModel>();
             CreateMap<ShiftEntity, ShiftdetailDto>();
+            CreateMap<OpenShiftViewModel,ShiftdetailDto>();
+            CreateMap<OpenShiftViewModel,ShiftdetailDto>().ReverseMap();
+            CreateMap<ManageCashCommand, ManageCashDto>();
+            CreateMap<ManageCashCommand, ManageCashDto>().ReverseMap();
             CreateMap<ItemDto, ItemEntity>();
             CreateMap<CategoryDto, CategoryEntity>();
             CreateMap<DiscountDto, DiscountEntity>();

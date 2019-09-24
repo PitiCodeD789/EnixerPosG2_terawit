@@ -8,6 +8,9 @@
              NavigationPage.HasNavigationBar="False"
              mc:Ignorable="d"
              x:Class="EnixerPos.Mobile.Views.ShiftPage">
+    <ContentPage.BindingContext>
+        <bd:ShiftPageViewModel/>
+    </ContentPage.BindingContext>
   
     <ContentPage.Content>
         <StackLayout>
@@ -58,10 +61,10 @@
                                    Margin="50,20,50,0"
                                    FontSize="Medium"/>
                             <component:Pos_InlineLable x:Name="Startingcash" LeftTexLable="Starting cash"
-                                                       RightTexLable="3,000.00"                                                      
+                                                       RightTexLable="0.00"                                                      
                                                        LableTextMargin="50,0,50,0" />
                             <component:Pos_InlineLable  x:Name="Cashpayment"  LeftTexLable="Cash payment"
-                                                       RightTexLable="1,189.00"                                                      
+                                                       RightTexLable="0.00"                                                      
                                                        LableTextMargin="50,0,50,0" />
                             <component:Pos_InlineLable x:Name="Cashrefunds" LeftTexLable="Cash refunds"
                                                        RightTexLable="0.00"                                                      
@@ -73,7 +76,7 @@
                                                        RightTexLable="0.00"                                                      
                                                        LableTextMargin="50,0,50,0" />
                             <component:Pos_InlineLable x:Name="Expectedcashamount" LeftTexLable="Expected cash amount"
-                                                       RightTexLable="4,189.00" 
+                                                       RightTexLable="0.00" 
                                                        LableFontAttributes="Bold"
                                                        LableTextMargin="50,20,50,0" />
 
@@ -88,7 +91,7 @@
                                    Margin="50,20,50,0"
                                    FontSize="Medium"/>
                             <component:Pos_InlineLable x:Name="Grosssales" LeftTexLable="Gross sales"
-                                                       RightTexLable="2,281.00"                                                      
+                                                       RightTexLable="0.00"                                                      
                                                        LableTextMargin="50,0,50,0" />
                             <component:Pos_InlineLable x:Name="Refunds" LeftTexLable="Refunds"
                                                        RightTexLable="0.00"                                                      
@@ -105,21 +108,21 @@
                                      HeightRequest="1"/>
 
                             <component:Pos_InlineLable x:Name="Netsales" LeftTexLable="Net sales"
-                                                       RightTexLable="2,261.00"
+                                                       RightTexLable="0.00"
                                                            LableFontAttributes="Bold"
                                                        LableTextMargin="50,10,50,0" />
                             <component:Pos_InlineLable x:Name="Cash" LeftTexLable="Cash"
-                                                       RightTexLable="1,189.00"                                                      
+                                                       RightTexLable="0.00"                                                      
                                                        LableTextMargin="50,0,50,0" />
                             <component:Pos_InlineLable x:Name="DebitCard" LeftTexLable="Debit Card"
                                                        RightTexLable="0.00"                                                      
                                                        LableTextMargin="50,0,50,0" />
 
                             <component:Pos_InlineLable x:Name="CreditCard" LeftTexLable="Credit Card"
-                                                       RightTexLable="507.00"                                                      
+                                                       RightTexLable="0.00"                                                      
                                                        LableTextMargin="50,0,50,0" />
                             <component:Pos_InlineLable x:Name="QRCODE" LeftTexLable="QR CODE"
-                                                       RightTexLable="507.00"                                                      
+                                                       RightTexLable="0.00"                                                      
                                                        LableTextMargin="50,0,50,0" />                              
                             <BoxView Color="Gray" 
                                      HorizontalOptions="Fill" 
@@ -127,7 +130,7 @@
                                      VerticalOptions="Start"  
                                      HeightRequest="1"/>
                             <component:Pos_InlineLable x:Name="Taxes" LeftTexLable="Taxes"
-                                                       RightTexLable="147.92"                                                      
+                                                       RightTexLable="0.00"                                                      
                                                        LableTextMargin="50,0,50,0" />
 
                         </StackLayout>                        

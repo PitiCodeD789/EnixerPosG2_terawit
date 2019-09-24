@@ -13,10 +13,10 @@ namespace EnixerPos.Mobile.ViewModels
     public class ShiftPageViewModel : BaseViewModel
     {
         private IShiftService _shiftService = new ShiftService();
-        public GetShiftViewModel getShiftView { get; set; }
+        public GetShiftViewModel GetShiftView { get; set; }
         public ShiftPageViewModel()
         {
-            getShiftView = new GetShiftViewModel
+            GetShiftView = new GetShiftViewModel
             {
                 CreateDateTime = DateTime.Now,
                 UpdateDateTime = DateTime.Now.AddHours(12),
@@ -40,7 +40,7 @@ namespace EnixerPos.Mobile.ViewModels
 
         private void CloseShiftList(object obj)
         {
-            var isClose = _shiftService.CloseListShift(App.OpenShiftId);
+            var isClose = _shiftService.CloseListShift(App.OpenShiftId, App.UserId);
             if(isClose)
             {
                 //App.Current.MainPage.DisplayAlert("ok", "Close Ok", "ok");
