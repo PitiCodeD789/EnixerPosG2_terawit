@@ -10,6 +10,8 @@ using System.Text;
 using Newtonsoft.Json;
 using EnixerPos.Api.ViewModels.Sale;
 using static EnixerPos.Api.ViewModels.Enixer_Enumerations;
+using EnixerPos.Api.ViewModels.Shifts;
+using System.Linq;
 
 namespace EnixerPos.Domain.Services
 {
@@ -17,13 +19,17 @@ namespace EnixerPos.Domain.Services
     {
         private readonly IShiftRepository _shiftRepository;
         private readonly IManageCashRepository _manageCashRepository;
+        private readonly IUserRepository _userRepository;
         private readonly IReceiptRepository _receiptRepository;
         private readonly IMapper _mapper;
-        public ShiftService(IShiftRepository shiftRepository, IMapper mapper, IManageCashRepository manageCashRepository, IReceiptRepository receiptRepository)
+        public ShiftService(IShiftRepository shiftRepository, IMapper mapper, 
+            IManageCashRepository manageCashRepository, IUserRepository userRepository,
+            IReceiptRepository receiptRepository)
         {
             _shiftRepository = shiftRepository;
             _manageCashRepository = manageCashRepository;
             _receiptRepository = receiptRepository;
+            _userRepository = userRepository;
             _mapper = mapper;
         }
 
@@ -38,6 +44,7 @@ namespace EnixerPos.Domain.Services
             }
             if(shiftEntity.Available == true)
             {
+                shiftEntity.Available = false;
                 shiftEntity = GetShiftFormReceipts(shiftEntity);
                 shiftEntity.UpdateDateTime = DateTime.UtcNow;
                 return _shiftRepository.Update(shiftEntity);
@@ -72,7 +79,7 @@ namespace EnixerPos.Domain.Services
         {
 
 
-            List<ReceiptEntity> receiptEntity  = _receiptRepository.GetReceiptByShiftId(shiftEntity.ShiftId, shiftEntity.StoreEmail);
+            List<ReceiptEntity> receiptEntity  = _receiptRepository.GetReceiptByShiftId(shiftEntity.Id, shiftEntity.StoreEmail);
             
 
             decimal cashPayment = 0m;
@@ -115,10 +122,11 @@ namespace EnixerPos.Domain.Services
             shiftEntity.CreditCard = creditCard;
             shiftEntity.DebitCard = debitCard;
             shiftEntity.QRCode = qrCode;
+            shiftEntity.Discount = discount;
 
             decimal payIn = 0;
             decimal payOut = 0;
-            List<ManageCashEntity> manageCash = _manageCashRepository.GetManageCashByShiftId(shiftEntity.ShiftId, shiftEntity.StoreEmail);
+            List<ManageCashEntity> manageCash = _manageCashRepository.GetManageCashByShiftId(shiftEntity.Id, shiftEntity.StoreEmail);
             foreach(ManageCashEntity manage in manageCash)
             {
                 if(manage.ManageCashStatus == ManageCashStatus.PayIn)
@@ -141,6 +149,7 @@ namespace EnixerPos.Domain.Services
 
         public bool IsShiftAvailable(string storeEmail, int posUserId, int shiftId)
         {
+            
             ShiftEntity shiftEntity = _shiftRepository.GetShiftDetailByShiftId(storeEmail, posUserId, shiftId);
             if(shiftEntity == null)
             {
@@ -159,46 +168,25 @@ namespace EnixerPos.Domain.Services
 
         public bool ManageCash(ManageCashDto manageCash)
         {
-           
-            ManageCashEntity manageCashEntity = _mapper.Map<ManageCashEntity>(manageCash);
+
+            //ManageCashEntity manageCashEntity = _mapper.Map<ManageCashEntity>(manageCash);
+            ManageCashEntity manageCashEntity = new ManageCashEntity
+            {
+                Amount = manageCash.Amount,
+                Comment = manageCash.Comment,
+                PosUserId = manageCash.PosUserId,
+                ShiftId = manageCash.ShiftId,
+                ManageCashStatus = manageCash.ManageCashStatus, 
+                StoreEmail = manageCash.StoreEmail
+            };
+
+
             bool isManageCash =  _manageCashRepository.AddManageCash(manageCashEntity);
             return isManageCash;
 
         }
 
-       
-
-       
-
-        public int OpenShift(string storeEmail, decimal startingCash, int posUserId)
-        {
-            try
-            {
-                ShiftEntity shiftEntity = new ShiftEntity();
-                shiftEntity.StoreEmail = storeEmail;
-                shiftEntity.StartingCash = startingCash;
-                shiftEntity.PosUserId = posUserId;
-                shiftEntity.Available = true;
-                ShiftEntity data = _shiftRepository.GetShift(storeEmail, posUserId);
-                if(data == null)
-                {
-                    return _shiftRepository.CreateShift(shiftEntity);
-
-                }
-               if(data.Available == true)
-                {
-                    return 0;
-                }
-               return _shiftRepository.CreateShift(shiftEntity);
-                
-            }
-            catch (Exception e)
-            {
-
-                return 0;
-            }
-
-        }
+   
 
         public List<ShiftdetailDto> GetLast30DayShift(string storeEmail, string posUser)
         {
@@ -208,7 +196,75 @@ namespace EnixerPos.Domain.Services
                 return null;
             }
 
-            return _mapper.Map<List<ShiftdetailDto>>(shiftEntity);
+            //var ResCarColor = ModelColor.Select(c => new CarColorResultModel()
+            //{
+            //    ColorId = c.ColorId,
+            //    ColorName = c.ColorName
+            //}).ToList();
+
+            var ShiftDetail = shiftEntity.Select(c => new ShiftdetailDto()
+            {
+                StartingCash = c.StartingCash,
+                 CashPayment = c.CashPayment,
+                 CashRefunds = c.CashRefunds,
+                 Paidin = c.Paidin,
+                 Paidout = c.Paidout,
+                 ExpectedCashAmount = c.StartingCash + c.CashPayment + c.Paidin -c.Refunds -c.Paidout,
+                 Cash = c.CashPayment,
+                 DebitCard = c.DebitCard,
+                 CreditCard = c.CreditCard,
+                 QRCode = c.QRCode,
+                 NetSales = c.CashPayment + c.DebitCard +c.CreditCard + c.QRCode,
+                 Grosssales = (c.CashPayment + c.DebitCard + c.CreditCard + c.QRCode) +c.Refunds + c.Discount
+                  
+            }).ToList();
+
+            return ShiftDetail;
+
+            //return _mapper.Map<List<ShiftdetailDto>>(shiftEntity);
         }
+
+    
+        ShiftdetailDto IShiftService.OpenShift(string storeEmail, decimal startingCash, int posUserId,string posUser)
+        {
+            try
+            {
+                UserEntity user = _userRepository.GetUserByUserName(posUser);
+                if(user == null)
+                {
+                    return null;
+                }
+                ShiftEntity shiftEntity = new ShiftEntity();
+                shiftEntity.StoreEmail = storeEmail;
+                shiftEntity.StartingCash = startingCash;
+                shiftEntity.PosUserId = posUserId;
+                shiftEntity.Available = true;
+                
+                ShiftEntity data = _shiftRepository.GetShift(storeEmail, user.Id);
+                ShiftEntity newShift;
+                if (data == null)
+                {
+                    newShift = _shiftRepository.CreateShift(shiftEntity);
+                    return _mapper.Map<ShiftdetailDto>(newShift);
+
+                }
+                if (data.Available == true)
+                {
+                    return null;
+                }
+                newShift = _shiftRepository.CreateShift(shiftEntity);
+                ShiftdetailDto shiftdetailDto = _mapper.Map<ShiftdetailDto>(newShift);
+
+                return shiftdetailDto;
+
+            }
+            catch (Exception e)
+            {
+
+                return null;
+            }
+        }
+
+     
     }
 }

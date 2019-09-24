@@ -16,18 +16,18 @@ namespace EnixerPos.DataAccess.Repositories
         {
             _context = dataContext;
         }
-        public int CreateShift(ShiftEntity shiftEntity)
+        public ShiftEntity CreateShift(ShiftEntity shiftEntity)
         {
             try
             {
                 _context.Shift.Add(shiftEntity);
                 _context.SaveChanges();
-                return shiftEntity.Id;
+                return shiftEntity;
                
             }
             catch
             {
-                return 0;
+                return null;
             }           
            
         }
@@ -47,12 +47,12 @@ namespace EnixerPos.DataAccess.Repositories
 
         public ShiftEntity GetShiftDetailByShiftId(string storeEmail, int posUserId, int shiftId)
         {
-            return _context.Shift.LastOrDefault(x => x.ShiftId == shiftId);
+            return _context.Shift.LastOrDefault(x => x.Id == shiftId);
         }
 
         public int GetShiftId(string storeEmail, int posUserId)
         {
-            return _context.Shift.LastOrDefault(x => x.StoreEmail == storeEmail && x.PosUserId == posUserId && x.Available == true).ShiftId;
+            return _context.Shift.LastOrDefault(x => x.StoreEmail == storeEmail && x.PosUserId == posUserId && x.Available == true).Id;
         }
 
         public bool Update(ShiftEntity shiftEntity)

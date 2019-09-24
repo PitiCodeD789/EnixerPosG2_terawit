@@ -9,8 +9,8 @@ namespace EnixerPos.Domain.Repositories
     {
        
         bool Update(ShiftEntity shiftEntity);
-        List<ShiftEntity> GetLast30DayShift(string storeEmail, string posUserId);        
-        int CreateShift(ShiftEntity shiftEntity);
+        List<ShiftEntity> GetLast30DayShift(string storeEmail, string posUserId);
+        ShiftEntity CreateShift(ShiftEntity shiftEntity);
         ShiftEntity GetShiftDetailByShiftId(string storeEmail, int posUserId, int shiftId);
         int GetShiftId(string storeEmail, int posUserId);
         ShiftEntity GetShift(string storeEmail, int posUserId);

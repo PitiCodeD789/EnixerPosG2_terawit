@@ -20,11 +20,11 @@ namespace EnixerPos.Mobile
         public static string DeviceId { get; set; } = "100930323339892";
         public static string User { get; set; }
         public static string Email { get; set; }
-        public static string StoreName { get; set; }
+        public static string StoreName { get; set; } 
         public static string PosName { get; set; }
-        public static int UserId { get; set; }
+        public static int UserId { get; set; } = 1;
         public static bool CheckShift { get; set; } = false;
-        public static int OpenShiftId { get; set; }
+        public static int OpenShiftId { get; set; } = 28;
 
         public static int StoreId = 1;
         public App()
@@ -39,7 +39,9 @@ namespace EnixerPos.Mobile
             //CreateDiscountPageViewModel createDiscount = new CreateDiscountPageViewModel();
             //MainPage = new NavigationPage(new Views.Item.CreateDiscountPage(createDiscount));
             //MainPage = new NavigationPage(new SaleView());
-            MainPage = new NavigationPage(new Login());
+            ShiftPageViewModel shiftPageView = new ShiftPageViewModel();
+             MainPage = new NavigationPage(new Views.ShiftPage(shiftPageView));
+            //MainPage = new NavigationPage(new Views.Login());
             PermissionReq();
         }
 

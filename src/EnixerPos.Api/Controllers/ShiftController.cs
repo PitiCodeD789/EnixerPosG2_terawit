@@ -6,6 +6,7 @@ using AutoMapper;
 using EnixerPos.Api.ViewModels.Shifts;
 using EnixerPos.Domain.DtoModels.Shifts;
 using EnixerPos.Domain.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using static EnixerPos.Api.ViewModels.Enixer_Enumerations;
@@ -16,14 +17,14 @@ namespace EnixerPos.Api.Controllers
     [ApiController]
     public class ShiftController : ControllerBase
     {
-        private readonly IShiftService _shiftService;
+        private readonly IShiftService _shiftService;        
         private readonly IMapper _mapper;
         public ShiftController(IShiftService shiftService, IMapper mapper)
         {
             _shiftService = shiftService;
             _mapper = mapper;
         }
-
+        [Authorize]
         [HttpPost("OpenShift")]
         public IActionResult OpenShift([FromBody]OpenShiftCommand openShift)
         {
@@ -31,22 +32,26 @@ namespace EnixerPos.Api.Controllers
             {
                 return BadRequest();
             }
+            var audience = User.Claims.FirstOrDefault(c => c.Type == "aud").Value;
+            var user = User.Claims.FirstOrDefault(c => c.Type == "user").Value;
+            string storeEmail = audience;
+            string posUser = user;
             decimal startingCash = openShift.StartingCash;
-            string storeEmail = openShift.StoreEmail;
-            int posUserId = openShift.PosUserId; 
-           
-            int openId = _shiftService.OpenShift(storeEmail, startingCash, posUserId);
+            int posUserId = openShift.PosUserId;
 
-            if(openId == 0)
+            ShiftdetailDto newShift = _shiftService.OpenShift(storeEmail, startingCash, posUserId, posUser);
+
+            if(newShift == null || newShift.Id == 0)
             {
                 return BadRequest();
             }
 
-            OpenShiftViewModel openShiftView = new OpenShiftViewModel { OpenShiftId = openId };
 
-            return Ok(openShiftView);
+            OpenShiftViewModel newOpenShiftViewModel = _mapper.Map<OpenShiftViewModel>(newShift);
+            newOpenShiftViewModel.OpenShiftId = newShift.Id;
+            return Ok(newOpenShiftViewModel);
         }
-
+        [Authorize]
         [HttpGet("GetShifts")]
         public IActionResult GetListShift()
         {
@@ -66,20 +71,20 @@ namespace EnixerPos.Api.Controllers
 
             return Ok(shiftlistViewModel);
         }
-
-        [HttpGet("GetShiftDetail/{shiftId}")]
-        public IActionResult GetShiftDetail(int shiftId)
+        [Authorize]
+        [HttpGet("GetShiftDetail/{shiftId}/UserId/{userId}")]
+        public IActionResult GetShiftDetail(int shiftId,int userId)
         {
             if(shiftId == null )
             {
                 return BadRequest();
             }
-
-            string storeEmail = "sert@gmail.com";
-            int posUserId = 12;
-          
-
-            ShiftdetailDto shiftdetail = _shiftService.GetShiftDetailByShiftId(storeEmail,posUserId,shiftId);
+            var audience = User.Claims.FirstOrDefault(c => c.Type == "aud").Value;
+            var user = User.Claims.FirstOrDefault(c => c.Type == "user").Value;
+            string storeEmail = audience;
+         
+     
+            ShiftdetailDto shiftdetail = _shiftService.GetShiftDetailByShiftId(storeEmail, userId, shiftId);
 
             if(shiftdetail == null)
             {
@@ -89,7 +94,7 @@ namespace EnixerPos.Api.Controllers
 
             return Ok(shiftViewModel);
         }
-
+        [Authorize]
         [HttpPost("CloseShift")]
         public IActionResult CloseShift([FromBody] CloseShiftCommand closeShift)
         {
@@ -100,8 +105,8 @@ namespace EnixerPos.Api.Controllers
             var audience = User.Claims.FirstOrDefault(c => c.Type == "aud").Value;
             var user = User.Claims.FirstOrDefault(c => c.Type == "user").Value;
             string storeEmail = audience;
-            string posUser = user;           
-            int posUserId = 12;
+            string posUser = user;
+            int posUserId = closeShift.UserId;
             int shiftId = closeShift.ShiftId;
             bool isShift = _shiftService.IsShiftAvailable(storeEmail, posUserId, shiftId);
             if(!isShift)
@@ -118,16 +123,20 @@ namespace EnixerPos.Api.Controllers
             return Ok();
 
         }
-
+        [Authorize]
         [HttpPost("ManageCash")]
         public IActionResult ManageCash([FromBody] ManageCashCommand manageCash)
         {
+            var audience = User.Claims.FirstOrDefault(c => c.Type == "aud").Value;
+            var user = User.Claims.FirstOrDefault(c => c.Type == "user").Value;
+            string storeEmail = audience;
+            string posUser = user;
+            int posUserId = manageCash.PosUserId;
             ManageCashStatus cashStatus = manageCash.ManageCashStatus;
             decimal amount = manageCash.Amount;
             string comment = manageCash.Comment;
             int shiftId = manageCash.ShiftId;
-            string storeEmail = "sert@gmail.com";
-            int posUserId = 12;
+        
             ManageCashStatus manageType = manageCash.ManageCashStatus;
 
             bool isShift = _shiftService.IsShiftAvailable(storeEmail, posUserId, shiftId);
@@ -136,9 +145,17 @@ namespace EnixerPos.Api.Controllers
                 return BadRequest();
             }
 
-           
 
-            ManageCashDto manageCashDto = _mapper.Map<ManageCashDto>(manageCash);
+
+            //  ManageCashDto manageCashDto = _mapper.Map<ManageCashCommand,ManageCashDto>(manageCash);
+            ManageCashDto manageCashDto = new ManageCashDto
+            {
+                Amount = manageCash.Amount,
+                Comment = manageCash.Comment,
+                ShiftId = manageCash.ShiftId,
+                PosUserId = posUserId,
+                StoreEmail = storeEmail
+            };
 
             bool isManageCash = _shiftService.ManageCash(manageCashDto);
             
