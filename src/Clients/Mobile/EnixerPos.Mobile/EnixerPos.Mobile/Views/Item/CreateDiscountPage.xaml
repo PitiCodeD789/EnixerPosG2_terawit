@@ -24,7 +24,7 @@
                             Title="Category"
                             WidthRequest="400"
                             HorizontalOptions="StartAndExpand"
-                            TitleColor="LightGray">
+                            TitleColor="LightGray" SelectedIndex ="{Binding Type,Mode=TwoWay}">
                             <Picker.ItemsSource>
                                 <x:Array Type="{x:Type x:String}">
                                     <x:String>Absolute</x:String>

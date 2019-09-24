@@ -1,4 +1,5 @@
-﻿using EnixerPos.Service.Interfaces;
+﻿using EnixerPos.Api.ViewModels.Product;
+using EnixerPos.Service.Interfaces;
 using EnixerPos.Service.Services;
 using Rg.Plugins.Popup.Services;
 using System;
@@ -13,12 +14,68 @@ namespace EnixerPos.Mobile.ViewModels
     public class CategoryPageViewModel : BaseViewModel
     {
         private IProductService _productService = new ProductService();
+        private CategoryModel UpdateCategory { get; set; }
         public CategoryPageViewModel()
         {
             ColorSelectCommand = new Command(ColorSelect);
             CreateCategoryCommand = new Command(CreateCategory);
             CancelCategoryCommand = new Command(CancelCategory);
+            IsUpdate = false;
         }
+        public CategoryPageViewModel(CategoryModel category)
+        {
+            SetShowCategory(category);
+            UpdateCategory = category;
+            IsUpdate = true;
+        }
+
+        private void SetShowCategory(CategoryModel category)
+        {
+            CategoryName = category.Name;
+            setColor(GetColorNum(category.Color));
+        }
+
+        private string GetColor()
+        {
+            switch (SelectColor)
+            {
+                case 1: return "#ffffff";
+                case 2: return "#ffd5d5";
+                case 3: return "#f8ffd3";
+                case 4: return "#c6dbfc";
+                case 5: return "#ffccf9";
+                case 6: return "#e0e0e0";
+                default: return null;
+            }
+        }
+
+        private int selectColor;
+        public int SelectColor
+        {
+            get { return selectColor; }
+            set
+            {
+                selectColor = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private int GetColorNum(string ColorHex)
+        {
+            string hex = ColorHex.ToLower();
+            switch (hex)
+            {
+                case "#ffffff": return 1;
+                case "#ffd5d5": return 2;
+                case "#f8ffd3": return 3;
+                case "#c6dbfc": return 4;
+                case "#ffccf9": return 5;
+                case "#e0e0e0": return 6;
+                default: return 0;
+            }
+        }
+
+        public bool IsUpdate { get; set; }
 
         private void CancelCategory(object obj)
         {
@@ -27,18 +84,45 @@ namespace EnixerPos.Mobile.ViewModels
 
         private async void CreateCategory()
         {
-            bool result =  _productService.AddCategory(CategoryName, "#c6dbfc").Result;
-            if(result)
+            if (IsUpdate)
             {
-                //  ErrorViewModel viewModel = new ErrorViewModel("ok",2);
-                //  PopupNavigation.PushAsync(new Views.Popup.Error(viewModel));
-                Application.Current.MainPage.DisplayAlert("ok", "ok", "ok");
-            }else
-            {
-                // ErrorViewModel viewModel = new ErrorViewModel("Error", 0);
-                // PopupNavigation.PushAsync(new Views.Popup.Error(viewModel));
+                var category = new CategoryModel()
+                {
+                    Id = UpdateCategory.Id,
+                    Name = CategoryName,
+                    Color = GetColor(),
+                    CountItem = UpdateCategory.CountItem,
+                    CreateDateTime = UpdateCategory.CreateDateTime,
+                    UpdateDateTime = UpdateCategory.UpdateDateTime
+                };
 
-                Application.Current.MainPage.DisplayAlert("ok", "ok", "error");
+                var result = _productService.UpdateCategory(category).Result;
+
+                if (result != null || result.IsError)
+                {
+                    //TODO
+                }
+                else
+                {
+                    //TODO
+                }
+            }
+            else
+            {
+                bool result = _productService.AddCategory(CategoryName, GetColor()).Result;
+                if (result)
+                {
+                    //  ErrorViewModel viewModel = new ErrorViewModel("ok",2);
+                    //  PopupNavigation.PushAsync(new Views.Popup.Error(viewModel));
+                    Application.Current.MainPage.DisplayAlert("ok", "ok", "ok");
+                }
+                else
+                {
+                    // ErrorViewModel viewModel = new ErrorViewModel("Error", 0);
+                    // PopupNavigation.PushAsync(new Views.Popup.Error(viewModel));
+
+                    Application.Current.MainPage.DisplayAlert("ok", "ok", "error");
+                }
             }
         }
 
@@ -55,6 +139,7 @@ namespace EnixerPos.Mobile.ViewModels
 
         private void setColor(int colorIndex)
         {
+            SelectColor = colorIndex;
             if (colorIndex == 1)
             {
                 Color1 = true;
