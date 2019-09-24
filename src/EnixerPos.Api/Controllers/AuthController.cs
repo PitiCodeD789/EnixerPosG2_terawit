@@ -45,13 +45,10 @@ namespace EnixerPos.Api.Controllers
                 }
 
                 string refreshToken = _authService.GetRefreshToken(email);
-                string token = GetToken(email);
                 LoginViewModel model = new LoginViewModel()
                 {
                     RefreshToken = refreshToken,
-                    Token = token,
                     StoreName = loginDto.StoreName,
-                    PosName = loginDto.PosName
                 };
 
                 return Ok(model);
@@ -61,24 +58,6 @@ namespace EnixerPos.Api.Controllers
                 Console.WriteLine("Error : {0}", e.Message);
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
-        }
-
-        private string GetToken(string email)
-        {
-            var claims = new Claim[]
-            {
-                new Claim("user", "")
-            };
-            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
-            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
-            var tokendata = new JwtSecurityToken(_configuration["Jwt:Issuer"],
-                                                 email,
-                                                 claims,
-                                                 DateTime.Now,
-                                                 expires: DateTime.Now.AddMinutes(5),
-                                                 signingCredentials: credentials);
-            var token = new JwtSecurityTokenHandler().WriteToken(tokendata);
-            return token;
         }
 
         private string GetToken(string email, string user)
@@ -100,14 +79,12 @@ namespace EnixerPos.Api.Controllers
         }
 
         //LoginByPin
-        [Authorize]
-        [AllowAnonymous]
         [HttpPost("loginbypin")]
         public IActionResult LoginByPin([FromBody]LoginByPinCommand command)
         {
             try
             {
-                string email = User.Claims.SingleOrDefault(x => x.Type == "aud").Value;
+                string email = command.Email;
                 string pin = command.Pin;
 
                 LoginByPinDto loginByPinDto = _authService.LoginUser(email, pin);
@@ -152,11 +129,9 @@ namespace EnixerPos.Api.Controllers
                 }
 
                 refreshToken = _authService.GetRefreshToken(email);
-                string token = GetToken(email);
                 GetTokenByRefreshViewModel model = new GetTokenByRefreshViewModel()
                 {
-                    RefreshToken = refreshToken,
-                    Token = token
+                    RefreshToken = refreshToken
                 };
 
                 return Ok(model);
