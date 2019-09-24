@@ -52,6 +52,11 @@ namespace EnixerPos.DataAccess.Repositories
             }
         }
 
+        public int GetCoutByStoreIdAndCategoryId(int storeId, int id)
+        {
+            return _context.Items.Where(x => x.CategoryId == id).Where(x => x.StoreId == storeId).Count();
+        }
+
         public ItemDto GetItem(int storeId, int itemId)
         {
             try

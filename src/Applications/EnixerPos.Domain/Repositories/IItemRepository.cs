@@ -11,5 +11,6 @@ namespace EnixerPos.Domain.Repositories
         bool AddItem(int storeId, ItemDto itemDto);
         ItemDto GetItem(int storeId, int itemId);
         bool Update(int storeId, ItemDto itemDto);
+        int GetCoutByStoreIdAndCategoryId(int storeId, int id);
     }
 }
