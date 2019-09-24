@@ -7,7 +7,7 @@ namespace EnixerPos.Service.Interfaces
 {
     public interface IReceiptService
     {
-        List<ReceiptViewModel> GetReceipt();
+        List<ReceiptViewModel> GetReceiptByShiftId(int shiftId);
 
     }
 }

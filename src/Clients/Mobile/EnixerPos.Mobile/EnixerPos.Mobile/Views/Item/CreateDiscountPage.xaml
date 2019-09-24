@@ -37,9 +37,6 @@
                                              KeyboardType="Numeric"
                                              TextEntry="{Binding Amount}"
                                              Placeholder="Amount"/>
-
-
-
                 </StackLayout>
             </Frame>
           
