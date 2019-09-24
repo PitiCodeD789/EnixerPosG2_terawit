@@ -144,6 +144,12 @@ namespace EnixerPos.Domain.Services
                 List<CategoryDto> categories = _categoryRepository.GetCategoriesByStoreId(storeId);
 
                 viewModel.Categories = Map<CategoryDto,CategoryModel>(categories);
+
+                foreach (var item in viewModel.Categories)
+                {
+                    item.CountItem = _itemRepository.GetCoutByStoreIdAndCategoryId(item.StoreId, item.Id);
+                }
+
                 return viewModel;
             }
             catch (Exception e)
@@ -224,8 +230,16 @@ namespace EnixerPos.Domain.Services
 
                 CategoryDto categoryDto = _categoryRepository.GetCategory(storeId, categoryId);
 
-                //TODO Map CategoryDto to CategoryModel
-                CategoryModel category = new CategoryModel();
+                CategoryModel category = new CategoryModel()
+                {
+                    Id = categoryDto.Id,
+                    Name = categoryDto.Name,
+                    Color = categoryDto.Color,
+                    StoreId = categoryDto.StoreId,
+                    CountItem = _itemRepository.GetCoutByStoreIdAndCategoryId(categoryDto.StoreId, categoryDto.Id),
+                    CreateDateTime = categoryDto.CreateDateTime,
+                    UpdateDateTime = categoryDto.UpdateDateTime
+                };
 
                 return category;
             }
