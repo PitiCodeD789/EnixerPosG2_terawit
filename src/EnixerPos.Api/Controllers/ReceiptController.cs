@@ -26,8 +26,8 @@ namespace EnixerPos.Api.Controllers
         }
 
         [Authorize]
-        [HttpGet("GetReceiptsByDate")]
-        public IActionResult GetReceiptsByDate()
+        [HttpGet("GetReceipts1DayByShiftId/{shiftId}")]
+        public IActionResult GetReceipts1DayByShiftId(int shiftId)
         {
             var audience = "";
             var user = "";
@@ -43,7 +43,7 @@ namespace EnixerPos.Api.Controllers
 
             try
             {
-                List<ReceiptDto> receiptDtos = _receiptService.GetReceiptsByDate(DateTime.UtcNow.Date, audience);
+                List<ReceiptDto> receiptDtos = _receiptService.GetReceiptsByDate(DateTime.UtcNow.Date, audience, shiftId);
 
                 if (receiptDtos != null)
                 {

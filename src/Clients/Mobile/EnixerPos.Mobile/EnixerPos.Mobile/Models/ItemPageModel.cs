@@ -6,6 +6,7 @@ namespace EnixerPos.Mobile.Models
 {
     public class ItemPageModel
     {
+        public int Id { get; set; }
         public string Color { get; set; }
         public string DataName { get; set; }
         public string CountItem { get; set; }

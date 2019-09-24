@@ -47,7 +47,6 @@ namespace EnixerPos.Api.Controllers
                 IsDiscountPercentage = receiptDto.IsDiscountPercentage,
                 PaymentType = receiptDto.PaymentType,
                 TotalDiscount = receiptDto.TotalDiscount,
-                Pos = receiptDto.Pos,
                 ItemList = new List<ViewModels.Sale.OrderItemModel>(),
                 Reference = receiptDto.Reference,
                 ShiftId = receiptDto.ShiftId,

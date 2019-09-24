@@ -28,9 +28,10 @@ namespace EnixerPos.DataAccess.Repositories
             return receipts;
         }
 
-        public List<ReceiptEntity> GetReceiptsByDate(DateTime date)
+        public List<ReceiptEntity> GetReceiptsByDateAndShift(DateTime date ,int shiftId)
         {
-            List<ReceiptEntity> receipts = _context.Receipt.Where(x => x.CreateDateTime.Date == date).ToList();
+            List<ReceiptEntity> receipts = _context.Receipt.Where(x => x.CreateDateTime.Date == date)
+                .Where(x=>x.ShiftId == shiftId).ToList();
             return receipts;
         }
 

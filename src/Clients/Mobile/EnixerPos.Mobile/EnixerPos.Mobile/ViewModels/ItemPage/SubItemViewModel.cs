@@ -22,7 +22,6 @@ namespace EnixerPos.Mobile.ViewModels.ItemPage
         {
             typePage = Status.InItemPage.Item;
             InputDataToBinding();
-            EditData = new Command<string>(EditDataMethod);
             CreateData = new Command(CreateDataMethod);
             GotoItem = new Command(ItemMethod);
             GotoCategory = new Command(CategoryMethod);
@@ -157,6 +156,22 @@ namespace EnixerPos.Mobile.ViewModels.ItemPage
             }
         }
 
+        private ItemPageModel selectedData;
+        public ItemPageModel SelectedData
+        {
+            get
+            {
+                return selectedData;
+            }
+            set
+            {
+                selectedData = value;
+                OnPropertyChanged();
+                EditDataMethod();
+            }
+        }
+
+
         private List<ItemModel> itemDate;
 
         private List<CategoryModel> categoryData;
@@ -198,6 +213,7 @@ namespace EnixerPos.Mobile.ViewModels.ItemPage
                 itemDate = await GetItemData();
                 TheData = itemDate.Select(x => new ItemPageModel()
                 {
+                    Id = x.Id,
                     Color = x.Color,
                     DataName = x.Name,
                     CountItemVisible = false,
@@ -217,6 +233,7 @@ namespace EnixerPos.Mobile.ViewModels.ItemPage
                 categoryData = await GetCategoryData();
                 TheData = categoryData.Select(x => new ItemPageModel()
                 {
+                    Id = x.Id,
                     Color = x.Color,
                     DataName = x.Name,
                     CountItem = x.CountItem.ToString() + " Items",
@@ -235,6 +252,7 @@ namespace EnixerPos.Mobile.ViewModels.ItemPage
                 discountData = GetDiscountData().Result;
                 TheData = discountData.Select(x => new ItemPageModel()
                 {
+                    Id = x.Id,
                     Color = "#d6d6d6",
                     DataName = x.DiscountName,
                     CountItemVisible = false,
@@ -250,10 +268,26 @@ namespace EnixerPos.Mobile.ViewModels.ItemPage
             }
         }
 
-        public ICommand EditData { get; set; }
-        public async void EditDataMethod(string dataName)
+        private async void EditDataMethod()
         {
-            
+            if (typePage == Status.InItemPage.Item)
+            {
+                var item = itemDate.Where(x => x.Id == SelectedData.Id).FirstOrDefault();
+                await Application.Current.MainPage.Navigation.PushAsync
+                    (new CreateItem(new CreateItemPageViewModel(item)));
+            }
+            else if (typePage == Status.InItemPage.Categories)
+            {
+                var category = categoryData.Where(x => x.Id == SelectedData.Id).FirstOrDefault();
+                await Application.Current.MainPage.Navigation.PushAsync
+                    (new CreateCategoryPage(new CategoryPageViewModel(category)));
+            }
+            else
+            {
+                var discount = discountData.Where(x => x.Id == SelectedData.Id).FirstOrDefault();
+                await Application.Current.MainPage.Navigation.PushAsync
+                    (new CreateDiscountPage(new CreateDiscountPageViewModel(discount)));
+            }
         }
 
         public ICommand CreateData { get; set; }
