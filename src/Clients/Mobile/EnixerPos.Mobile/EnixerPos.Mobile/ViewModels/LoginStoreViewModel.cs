@@ -59,10 +59,24 @@ namespace EnixerPos.Mobile.ViewModels
         public ICommand GotoLogin { get; set; }
         public async void LoginByStore()
         {
+            bool isCheck = false;
             bool isEmail = Helper.CheckEmailFormat(email);
+            string messageEmail = "";
             if (!isEmail)
             {
-                ErrorViewModel errorViewModel = new ErrorViewModel("E-Mail ไม่ถูกต้อง", 1);
+                isCheck = true;
+                messageEmail = "Email ";
+            }
+            bool isPassword = Helper.CheckNonSpecialChar(password);
+            string messagePassword = "";
+            if (!isPassword)
+            {
+                isCheck = true;
+                messagePassword = "Password ";
+            }
+            if (isCheck)
+            {
+                ErrorViewModel errorViewModel = new ErrorViewModel(messageEmail + messagePassword + "ใส่ไม่ถูกต้อง", 1);
                 await PopupNavigation.Instance.PushAsync(new Error(errorViewModel));
             }
             else
@@ -84,7 +98,9 @@ namespace EnixerPos.Mobile.ViewModels
                     {
                         await SecureStorage.SetAsync("RefreshToken", loginData.Model.RefreshToken);
                         await SecureStorage.SetAsync("Email", email);
+                        App.Email = email;
                         await SecureStorage.SetAsync("StoreName", loginData.Model.StoreName);
+                        App.StoreName = loginData.Model.StoreName;
                         await Application.Current.MainPage.Navigation.PushAsync(new EnterPin());
                     }
                 }

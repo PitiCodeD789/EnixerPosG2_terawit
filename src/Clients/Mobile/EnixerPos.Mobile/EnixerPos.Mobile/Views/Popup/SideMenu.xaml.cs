@@ -46,5 +46,11 @@ namespace EnixerPos.Mobile.Views.Popup
             BaseViewModel baseViewModel = new BaseViewModel();
             baseViewModel.ForceLogout();
         }
+
+        private void LockButton_Clicked(object sender, EventArgs e)
+        {
+            BaseViewModel baseViewModel = new BaseViewModel();
+            baseViewModel.ForceLogout();
+        }
     }
 }

@@ -15,10 +15,10 @@ namespace EnixerPos.Service.Services
         private string serviceUrl = Helper.BaseUrl + "Shift/";
 
       
-        public bool CloseListShift(int openShiftId)
+        public bool CloseListShift(int openShiftId, int userId)
         {
             string url = serviceUrl + "CloseShift";
-            CloseShiftCommand closeShift = new CloseShiftCommand { ShiftId = openShiftId };
+            CloseShiftCommand closeShift = new CloseShiftCommand { ShiftId = openShiftId, UserId =  userId };
             var status =   Post<OpenShiftViewModel>(url, closeShift).Result;
             if(status.IsError == System.Net.HttpStatusCode.OK)
             {
@@ -38,6 +38,21 @@ namespace EnixerPos.Service.Services
 
             return new List<GetShiftViewModel>();
                
+        }
+
+        public GetShiftViewModel GetShiftDetail(int shiftId, int userId)
+        {
+            string url = serviceUrl + $"GetShiftDetail/{shiftId}/UserId/{userId}";
+
+            var result = Get<GetShiftViewModel>(url).Result;
+            if(result.IsError ==   System.Net.HttpStatusCode.OK)
+            {
+                return result.Model;
+            }else
+            {
+                return null;
+            }
+        
         }
 
         public async Task<ResultServiceModel<OpenShiftViewModel>> OpenShift(OpenShiftCommand model)

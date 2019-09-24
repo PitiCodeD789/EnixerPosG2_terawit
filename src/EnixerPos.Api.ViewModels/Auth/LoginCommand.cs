@@ -11,6 +11,7 @@ namespace EnixerPos.Api.ViewModels.Auth
         [EmailAddress]
         public string Email { get; set; }
         [Required]
+        [RegularExpression(@"^(\w)+$")]
         public string Password { get; set; }
     }
 }

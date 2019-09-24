@@ -48,20 +48,25 @@ namespace EnixerPos.Service.Services
             return await Post<LoginViewModel>(url, model);
         }
 
-        public async Task<ResultServiceModel<LoginByPinViewModel>> LoginByPin(string pin)
+        public async Task<ResultServiceModel<LoginByPinViewModel>> LoginByPin(string pin, string refreshToken, string email)
         {
             LoginByPinCommand model = new LoginByPinCommand()
             {
-                Pin = pin
+                Pin = pin,
+                RefreshToken = refreshToken,
+                Email = email
             };
 
             string url = serviceUrl + "loginbypin";
             return await Post<LoginByPinViewModel>(url, model);
         }
 
-        public async Task<ResultServiceModel<DummyModel>> Logout()
+        public async Task<ResultServiceModel<DummyModel>> Logout(string email)
         {
-            DummyModel model = new DummyModel();
+            LogoutCommand model = new LogoutCommand()
+            {
+                Email = email
+            };
 
             string url = serviceUrl + "logout";
             return await Post<DummyModel>(url, model);

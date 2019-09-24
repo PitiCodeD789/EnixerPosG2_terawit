@@ -10,7 +10,8 @@ namespace EnixerPos.Domain.DtoModels.Shifts
         public  int PosUserId { get;  set; }
         public string Comment { get;  set; }
         public ManageCashStatus ManageCashStatus { get;  set; }
-        public decimal Amount { get; internal set; }
-        public int ShiftId { get; internal set; }
+        public decimal Amount { get;  set; }
+        public int ShiftId { get;  set; }
+        public string StoreEmail { get; set; }
     }
 }

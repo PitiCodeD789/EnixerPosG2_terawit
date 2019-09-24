@@ -11,5 +11,6 @@ namespace EnixerPos.Api.ViewModels.Shifts
         public decimal Amount { get; set; }
         public string Comment { get; set; }
         public int ShiftId { get; set; }
+        public int PosUserId { get; set; }
     }
 }

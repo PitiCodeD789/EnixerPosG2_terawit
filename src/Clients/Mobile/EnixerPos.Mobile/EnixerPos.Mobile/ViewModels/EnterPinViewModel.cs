@@ -54,37 +54,59 @@ namespace EnixerPos.Mobile.ViewModels
                 HintColorChange(countPin);
                 if (countPin == 4)
                 {
-                    var loginData = await _authService.LoginByPin(pin);
+                    var refreshToken = await SecureStorage.GetAsync("RefreshToken");
+                    var loginData = await _authService.LoginByPin(pin, refreshToken, App.Email);
                     if (loginData == null)
                     {
                         countLogout++;
+                        ResetPin();
                         ErrorViewModel errorViewModel = new ErrorViewModel("ไม่สามารถเข้าสู่ระบบได้", 1);
                         await PopupNavigation.Instance.PushAsync(new Error(errorViewModel));
                     }
-                    if (loginData.IsError != System.Net.HttpStatusCode.OK || loginData.Model == null)
+                    else if (loginData.IsError != System.Net.HttpStatusCode.OK || loginData.Model == null)
                     {
                         countLogout++;
+                        ResetPin();
                         ErrorViewModel errorViewModel = new ErrorViewModel("ไม่สามารถเข้าสู่ระบบได้", 1);
                         await PopupNavigation.Instance.PushAsync(new Error(errorViewModel));
                     }
-                    if(countLogout >= 3)
+                    //else if(countLogout >= 3)
+                    //{
+                    //    ForceLogout();
+                    //}
+                    else
                     {
-                        ForceLogout();
+                        await SecureStorage.SetAsync("RefreshToken", loginData.Model.RefreshToken);
+                        await SecureStorage.SetAsync("Token", loginData.Model.Token);
+                        string testToken = await SecureStorage.GetAsync("Token");
+                        App.Email = await SecureStorage.GetAsync("Email");
+                        App.StoreName = await SecureStorage.GetAsync("StoreName");
+                        App.User = loginData.Model.User;
+                        App.UserId = loginData.Model.UserId;
+                        int shiftId = loginData.Model.ShiftId;
+                        if(shiftId > 0)
+                        {
+                            App.CheckShift = true;
+                            App.OpenShiftId = shiftId;
+                        }
+                        Application.Current.MainPage = new NavigationPage(new SaleView())
+                        {
+                            BackgroundColor = Color.White
+                        };
                     }
-                    await SecureStorage.SetAsync("RefreshToken", loginData.Model.RefreshToken);
-                    await SecureStorage.SetAsync("Token", loginData.Model.Token);
-                    App.Email = await SecureStorage.GetAsync("Email");
-                    App.StoreName = await SecureStorage.GetAsync("StoreName");
-                    App.PosName = await SecureStorage.GetAsync("PosName");
-                    App.User = loginData.Model.User;
-                    App.UserId = loginData.Model.UserId;
-                    Application.Current.MainPage = new NavigationPage(new SaleView());
                 }
                 if (countPin > 4)
                 {
                     pin = pin.Substring(0, 3);
                 }
             }
+        }
+
+        private void ResetPin()
+        {
+            pin = "";
+            int countPin = pin.Length;
+            HintColorChange(countPin);
         }
 
         private void HintColorChange(int length)

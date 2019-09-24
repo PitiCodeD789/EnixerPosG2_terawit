@@ -1,6 +1,8 @@
 ﻿using EnixerPos.Mobile.Views;
+using EnixerPos.Mobile.Views.Popup;
 using EnixerPos.Service.Interfaces;
 using EnixerPos.Service.Services;
+using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +16,7 @@ namespace EnixerPos.Mobile.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
+        private readonly IShiftService _shiftService = new ShiftService();
         private readonly IAuthService _authService = new AuthService();
         public BaseViewModel()
         {
@@ -27,22 +30,38 @@ namespace EnixerPos.Mobile.ViewModels
         }
         public async virtual void ForceLogout()
         {
-            SecureStorage.RemoveAll();
-            var logoutData = await _authService.Logout();
-            if (logoutData == null)
+            
+            var isClose = _shiftService.CloseListShift(App.OpenShiftId, App.UserId);
+            if (isClose)
+            {
+                App.CheckShift = false;
+                var logoutData = await _authService.Logout(App.Email);
+                if (logoutData == null)
+                {
+                    CloseApp();
+                }
+                else if (logoutData.IsError != System.Net.HttpStatusCode.OK)
+                {
+                    CloseApp();
+                }
+                else
+                {
+                    SecureStorage.RemoveAll();
+                    await PopupNavigation.Instance.PopAllAsync();
+                    Application.Current.MainPage = new NavigationPage(new Login());
+                }
+            }
+            else
             {
                 CloseApp();
             }
-            if (logoutData.IsError != System.Net.HttpStatusCode.OK || logoutData.Model == null)
-            {
-                CloseApp();
-            }
-            Application.Current.MainPage = new NavigationPage(new Login());
         }
+            
         public async virtual void CloseApp()
         {
+            var isClose = _shiftService.CloseListShift(App.OpenShiftId, App.UserId);
+            var logoutData = await _authService.Logout(App.Email);
             SecureStorage.RemoveAll();
-            var logoutData = await _authService.Logout();
             Environment.Exit(0);
         }
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)

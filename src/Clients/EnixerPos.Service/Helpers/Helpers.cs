@@ -8,7 +8,7 @@ namespace EnixerPos.Service.Helpers
 {
     public static class Helper
     {
-        public static string BaseUrl { get; set; } = "http://192.168.1.36:30000/api/";
+        public static string BaseUrl { get; set; } = "http://192.168.1.20:30000/api/";
 
         public static bool CheckEmailFormat(string email)
         {
@@ -33,6 +33,12 @@ namespace EnixerPos.Service.Helpers
         {
             string pattern = @"^\d{" + length + @"}$";
             return Regex.IsMatch(digit, pattern);
+        }
+
+        public static bool CheckNonSpecialChar(string word)
+        {
+            string pattern = @"^(\w)+$";
+            return Regex.IsMatch(word, pattern);
         }
     }
 }

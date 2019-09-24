@@ -15,14 +15,17 @@ namespace EnixerPos.Domain.Services
         private readonly IStoreRepository _storeRepository;
         private readonly ITokenRepository _tokenRepository;
         private readonly IUserRepository _userRepository;
+        private readonly IShiftRepository _shiftRepository;
 
         public AuthService(IStoreRepository storeRepository, 
                            ITokenRepository tokenRepository, 
-                           IUserRepository userRepository)
+                           IUserRepository userRepository,
+                           IShiftRepository shiftRepository)
         {
             _storeRepository = storeRepository;
             _tokenRepository = tokenRepository;
             _userRepository = userRepository;
+            _shiftRepository = shiftRepository;
         }
 
         public bool CheckRefresh(string email, string refreshToken, string user)
@@ -101,7 +104,7 @@ namespace EnixerPos.Domain.Services
             return loginDto;
         }
 
-        public LoginByPinDto LoginUser(string email, string pin)
+        public LoginByPinDto LoginUser(string email, string pin, string refreshToken)
         {
             StoreEntity storeEntity = _storeRepository.GetStoreByEmail(email);
             UserEntity userEntity = _userRepository.GetUserByEmialAndPin(storeEntity.Id, pin);
@@ -115,6 +118,10 @@ namespace EnixerPos.Domain.Services
             {
                 return null;
             }
+            if(tokenEntity.RefreshToken != refreshToken)
+            {
+                return null;
+            }
 
             int userId = userEntity.Id;
             bool isUpdate = _tokenRepository.UpdateUserId(storeEntity.Id, userId);
@@ -123,12 +130,21 @@ namespace EnixerPos.Domain.Services
                 return null;
             }
 
-
-
+            ShiftEntity shiftEntity = _shiftRepository.GetShift(email, userId);
+            int shiftId = 0;
+            if(shiftEntity != null)
+            {
+                if (shiftEntity.Available == true)
+                {
+                    shiftId = shiftEntity.Id;
+                }
+            }
+                
             LoginByPinDto loginByPinDto = new LoginByPinDto()
             {
                 User = userEntity.NameUser,
-                UserId = userId
+                UserId = userId,
+                ShiftId = shiftId
             };
 
             return loginByPinDto;
