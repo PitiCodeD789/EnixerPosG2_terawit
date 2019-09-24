@@ -16,26 +16,18 @@ namespace EnixerPos.Mobile.ViewModels
         public GetShiftViewModel GetShiftView { get; set; }
         public ShiftPageViewModel()
         {
-            GetShiftView = new GetShiftViewModel
-            {
-                CreateDateTime = DateTime.Now,
-                UpdateDateTime = DateTime.Now.AddHours(12),
-                StartingCash = 5005,
-                CashPayment = 500,
-                Cash = 1500,
-                CashRefunds = 0,
-                CreditCard = 500,
-                DebitCard = 1500,
-                Discount = 250,
-                Grosssales = 550,
-                Paidin = 200,
-                Taxes = 145.60m
-            };
-
+            
             ShowShiftListCommand = new Command(ShowShiftList);
             CloseShiftListCommand = new Command(CloseShiftList);
+            CashManagePageClickCommand = new Command(CashManagePageClick);
 
 
+        }
+
+        private async void CashManagePageClick(object obj)
+        {
+
+            await Application.Current.MainPage.Navigation.PushAsync(new Views.CashManagePage());
         }
 
         private void CloseShiftList(object obj)
@@ -61,6 +53,8 @@ namespace EnixerPos.Mobile.ViewModels
 
         public ICommand ShowShiftListCommand { get; set; }
         public ICommand CloseShiftListCommand { get; set; }
+        
+        public ICommand CashManagePageClickCommand { get; set; }
 
     }
 }

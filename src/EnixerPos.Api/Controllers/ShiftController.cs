@@ -154,7 +154,8 @@ namespace EnixerPos.Api.Controllers
                 Comment = manageCash.Comment,
                 ShiftId = manageCash.ShiftId,
                 PosUserId = posUserId,
-                StoreEmail = storeEmail
+                StoreEmail = storeEmail,
+                 ManageCashStatus = manageCash.ManageCashStatus
             };
 
             bool isManageCash = _shiftService.ManageCash(manageCashDto);

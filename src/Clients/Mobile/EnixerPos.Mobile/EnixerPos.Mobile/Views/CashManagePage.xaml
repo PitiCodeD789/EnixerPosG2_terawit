@@ -24,7 +24,7 @@
                     <component:Pos_EntryView Margin="40,20,40,0" KeyboardType="Numeric" TextEntry="{Binding Amount}" Placeholder="Amount"/>
                 <component:Pos_EntryView Margin="40,30,40,0" TextEntry="{Binding Comment}" Placeholder="Comment"/>
                     <StackLayout Orientation="Horizontal"  HorizontalOptions="CenterAndExpand">
-                        <component:Pos_ButtonView  TextButton="CASH MANAGEMENT" 
+                        <component:Pos_ButtonView  TextButton="Pay in" 
                                                   HorizontalOptions="Start" 
                                                   WidthRequest="350"
                                                   Margin="40,30,10,0"
@@ -33,7 +33,7 @@
                                                    
                                                   TextColor="#E96722" 
                                                   BackgroundButton="White" />
-                        <component:Pos_ButtonView TextButton="CLOSE SHIFT" 
+                        <component:Pos_ButtonView TextButton="Pay Out" 
                                                   HorizontalOptions="End" 
                                                     WidthRequest="350"
                                                   Margin="40,30,10,0"

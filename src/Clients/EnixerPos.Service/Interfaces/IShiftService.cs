@@ -13,5 +13,6 @@ namespace EnixerPos.Service.Interfaces
         Task<ResultServiceModel<OpenShiftViewModel>> OpenShift(OpenShiftCommand model);
         bool CloseListShift(int openShiftId, int userId);
         GetShiftViewModel GetShiftDetail( int shiftId, int userId);
+        Task<bool> ManageCashPay(ManageCashCommand manage);
     }
 }

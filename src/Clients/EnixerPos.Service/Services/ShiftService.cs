@@ -55,10 +55,25 @@ namespace EnixerPos.Service.Services
         
         }
 
+        public async Task<bool> ManageCashPay(ManageCashCommand manage)
+        {
+            string url = serviceUrl + "ManageCash";
+            var isokStatus =  await Post<DummyModel>(url, manage);
+            if(isokStatus.IsError == System.Net.HttpStatusCode.OK)
+            {
+                return true;
+            }else
+            {
+                return false;
+            }
+        }
+
         public async Task<ResultServiceModel<OpenShiftViewModel>> OpenShift(OpenShiftCommand model)
         {
             string url = serviceUrl + "OpenShift";
             return await Post<OpenShiftViewModel>(url, model);
         }
+
+     
     }
 }
