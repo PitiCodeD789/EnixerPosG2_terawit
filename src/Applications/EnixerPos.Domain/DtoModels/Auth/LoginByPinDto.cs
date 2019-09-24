@@ -8,5 +8,6 @@ namespace EnixerPos.Domain.DtoModels.Auth
     {
         public string User { get; set; }
         public int UserId { get; set; }
+        public int ShiftId { get; set; }
     }
 }

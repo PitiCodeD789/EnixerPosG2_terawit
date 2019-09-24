@@ -82,6 +82,12 @@ namespace EnixerPos.Mobile.ViewModels
                         App.StoreName = await SecureStorage.GetAsync("StoreName");
                         App.User = loginData.Model.User;
                         App.UserId = loginData.Model.UserId;
+                        int shiftId = loginData.Model.ShiftId;
+                        if(shiftId > 0)
+                        {
+                            App.CheckShift = true;
+                            App.OpenShiftId = shiftId;
+                        }
                         Application.Current.MainPage = new NavigationPage(new SaleView());
                     }
                 }

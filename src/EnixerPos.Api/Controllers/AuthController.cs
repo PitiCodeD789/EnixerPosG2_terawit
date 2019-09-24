@@ -102,7 +102,8 @@ namespace EnixerPos.Api.Controllers
                     RefreshToken = refreshToken,
                     Token = token,
                     User = user,
-                    UserId = loginByPinDto.UserId
+                    UserId = loginByPinDto.UserId,
+                    ShiftId = loginByPinDto.ShiftId
                 };
 
                 return Ok(model);
