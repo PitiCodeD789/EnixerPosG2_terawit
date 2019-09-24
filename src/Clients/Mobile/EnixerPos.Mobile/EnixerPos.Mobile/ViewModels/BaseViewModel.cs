@@ -1,6 +1,7 @@
 ﻿using EnixerPos.Mobile.Views;
 using EnixerPos.Mobile.Views.Popup;
 using EnixerPos.Service.Interfaces;
+using EnixerPos.Service.Models;
 using EnixerPos.Service.Services;
 using Rg.Plugins.Popup.Services;
 using System;
@@ -14,7 +15,7 @@ using Xamarin.Forms;
 
 namespace EnixerPos.Mobile.ViewModels
 {
-    public class BaseViewModel : INotifyPropertyChanged
+    public class BaseViewModel : INotifyPropertyChanged 
     {
         private readonly IShiftService _shiftService = new ShiftService();
         private readonly IAuthService _authService = new AuthService();
@@ -56,7 +57,23 @@ namespace EnixerPos.Mobile.ViewModels
                 CloseApp();
             }
         }
-            
+
+        public async void CheckUnauthorized(ResultServiceModel<object> model)
+        {
+            if(model != null)
+            {
+                if(model.IsError == System.Net.HttpStatusCode.Unauthorized)
+                {
+                    ForceLogout();
+                }
+            }
+            else
+            {
+                ErrorViewModel errorViewModel = new ErrorViewModel("ข้อมูลไม่ถูกต้อง", 1);
+                await PopupNavigation.Instance.PushAsync(new Error(errorViewModel));
+            }
+        }
+
         public async virtual void CloseApp()
         {
             var isClose = _shiftService.CloseListShift(App.OpenShiftId, App.UserId);

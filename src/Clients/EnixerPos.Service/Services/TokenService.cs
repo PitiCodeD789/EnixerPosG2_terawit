@@ -13,65 +13,6 @@ namespace EnixerPos.Service.Services
 {
     public class TokenService
     {
-        public async Task<ResultServiceModel<GetTokenByRefreshViewModel>> GetAccessStoreToken()
-        {
-            ResultServiceModel<GetTokenByRefreshViewModel> resultService = new ResultServiceModel<GetTokenByRefreshViewModel>();
-            try
-            {
-                string url = Helper.BaseUrl + "auth/tokenmerchant";
-
-                HttpClient client = new HttpClient();
-
-                string refreshToken = "";
-
-                string email = "";
-
-                try
-                {
-                    refreshToken = SecureStorage.GetAsync("RefreshToken").Result;
-                    email = SecureStorage.GetAsync("Email").Result;
-                }
-                catch (Exception e)
-                {
-                    return null;
-                }
-
-                GetTokenByRefreshMerchantCommand model = new GetTokenByRefreshMerchantCommand
-                {
-                    Email = email,
-
-                    RefreshToken = refreshToken,
-                };
-
-                HttpContent content = GetHttpContent(model);
-
-                var result = await client.PostAsync(url, content);
-
-                if (result.IsSuccessStatusCode)
-                {
-                    var json_result = await result.Content.ReadAsStringAsync();
-
-                    GetTokenByRefreshViewModel obj = GetModelFormResult<GetTokenByRefreshViewModel>(json_result);
-
-                    resultService.IsError = result.StatusCode;
-
-                    resultService.Model = obj;
-
-                    return resultService;
-                }
-                else
-                {
-                    client.Dispose();
-                    CloseApp();
-                }
-            }
-            catch (Exception e)
-            {
-                return null;
-            }
-            return resultService;
-        }
-
         public async Task<ResultServiceModel<GetTokenByRefreshViewModel>> GetAccessToken()
         {
             ResultServiceModel<GetTokenByRefreshViewModel> resultService = new ResultServiceModel<GetTokenByRefreshViewModel>();
@@ -85,20 +26,15 @@ namespace EnixerPos.Service.Services
 
                 string user = "";
 
-                string token = "";
+                string email = "";
 
                 try
                 {
-                    var stoerToken = await GetAccessStoreToken();
-                    if(stoerToken == null)
-                    {
-                        return null;
-                    }
-                    refreshToken = stoerToken.Model.RefreshToken;
+                    refreshToken = await SecureStorage.GetAsync("RefreshToken");
 
-                    token = stoerToken.Model.Token;
+                    email = await SecureStorage.GetAsync("Email");
 
-                    user = SecureStorage.GetAsync("User").Result;
+                    user = await SecureStorage.GetAsync("User");
                 }
                 catch (Exception e)
                 {
@@ -109,10 +45,10 @@ namespace EnixerPos.Service.Services
                 {
                     RefreshToken = refreshToken,
 
+                    Email = email,
+
                     User = user
                 };
-
-                client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
 
                 HttpContent content = GetHttpContent(model);
 
