@@ -78,8 +78,8 @@ namespace EnixerPos.Service.Services
             }
             catch (Exception e)
             {
-                //return null;
                 CloseApp();
+                return null;
             }
         }
 
