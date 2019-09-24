@@ -55,7 +55,7 @@
                         </Frame>
                     </StackLayout>
                     <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
-                        <ListView ItemsSource="{Binding TheData}" HasUnevenRows="True">
+                        <ListView ItemsSource="{Binding TheData}" SelectedItem="{Binding SelectedData}" HasUnevenRows="True">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>
