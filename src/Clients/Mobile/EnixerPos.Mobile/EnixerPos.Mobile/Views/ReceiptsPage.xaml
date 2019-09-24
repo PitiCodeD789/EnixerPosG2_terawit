@@ -43,9 +43,9 @@
             </Frame>
             <Frame Padding="0" HorizontalOptions="FillAndExpand" Margin="0" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" HasShadow="True" >
                 <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
-                    <SearchBar></SearchBar>
+                    <SearchBar Text="{Binding SearchingText}"></SearchBar>
                     <Label Text="{Binding Date}" TextColor="Orange" FontSize="20" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"  />
-                    <ListView Margin="0,20,0,0" ItemsSource="{Binding AllReciept}" SelectedItem="{Binding SelectedReceipt}" HasUnevenRows="True">
+                    <ListView Margin="0,20,0,0" ItemsSource="{Binding ShowReciept}" SelectedItem="{Binding SelectedReceipt}" HasUnevenRows="True">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
@@ -79,7 +79,6 @@
                         <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="Gray"/>
                         <Label Text="{Binding SelectedReceipt.Reference,StringFormat='{}Order: {0}'}"/>
                         <Label Text="{Binding SelectedReceipt.Store,StringFormat='{}Cashier: {0}'}"/>
-                        <Label Text="{Binding SelectedReceipt.Pos,StringFormat='{}POS: {0}'}"/>
                         <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="Gray"/>
                         
                         <StackLayout Margin="0,20,0,0" 

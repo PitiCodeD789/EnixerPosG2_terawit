@@ -13,9 +13,9 @@ namespace EnixerPos.Service.Services
 {
     public class ReceiptService : BaseService,IReceiptService
     {
-        private string serviceUrl = Helper.BaseUrl + "Receipt/GetReceiptsByDate/100930323339892";
+        private string serviceUrl = Helper.BaseUrl + "Receipt/";
         private string accessToken = SecureStorage.GetAsync("Token").Result;
-        public List<ReceiptViewModel> GetReceipt()
+        public List<ReceiptViewModel> GetReceiptByShiftId(int shiftId)
         {
             #region Mockup
             //return new List<ReceiptViewModel>(){ new ReceiptViewModel()
@@ -23,7 +23,6 @@ namespace EnixerPos.Service.Services
             //    Reference = "1-1234",
             //    ShiftId = 1,
             //    Store = "Enixer",
-            //    Pos = "POS1",
             //    ItemList = new List<OrderItemModel>() {
             //        new OrderItemModel()
             //        {
@@ -39,7 +38,7 @@ namespace EnixerPos.Service.Services
             //        {
             //            ItemName = "Milk",
             //            ItemPrice = 50,
-            //            Quantity = 2,
+            //            Quantity = 4,
             //            OptionName = "Ice",
             //            OptionPrice = 5,
             //            IsDiscountPercentage = true,
@@ -49,7 +48,7 @@ namespace EnixerPos.Service.Services
             //        {
             //            ItemName = "Milk",
             //            ItemPrice = 50,
-            //            Quantity = 2,
+            //            Quantity = 5,
             //            OptionName = "Ice",
             //            OptionPrice = 0,
             //            IsDiscountPercentage = false,
@@ -58,7 +57,7 @@ namespace EnixerPos.Service.Services
             //    },
             //    Discount = 10,
             //    IsDiscountPercentage = true,
-            //    Total = 100,
+            //    Total = 500,
             //    TotalDiscount = 10,
             //    CreateDateTime = DateTime.Now,
             //    PaymentType = Api.ViewModels.Enixer_Enumerations.EP_PaymentTypeEnum.Cash
@@ -68,7 +67,6 @@ namespace EnixerPos.Service.Services
             //    Reference = "1-1235",
             //    ShiftId = 1,
             //    Store = "Enixer",
-            //    Pos = "POS1",
             //    ItemList = new List<OrderItemModel>() {
             //        new OrderItemModel()
             //        {
@@ -116,11 +114,10 @@ namespace EnixerPos.Service.Services
             {
                 var client = new HttpClient();
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-                HttpResponseMessage response = client.GetAsync(serviceUrl).Result;
+                HttpResponseMessage response = client.GetAsync(serviceUrl+ "GetReceipts1DayByShiftId/"+ shiftId).Result;
                 response.EnsureSuccessStatusCode();
                 string responseBody = response.Content.ReadAsStringAsync().Result;
                 var result = JsonConvert.DeserializeObject<List<ReceiptViewModel>>(responseBody);
-                //var cartegories = result;
                 return result;
             }
             catch (Exception)
@@ -128,7 +125,7 @@ namespace EnixerPos.Service.Services
 
                 throw;
             }
-            
+
 
         }
     }

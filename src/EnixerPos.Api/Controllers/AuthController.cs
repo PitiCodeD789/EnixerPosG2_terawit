@@ -72,7 +72,7 @@ namespace EnixerPos.Api.Controllers
                                                  email,
                                                  claims,
                                                  DateTime.Now,
-                                                 expires: DateTime.Now.AddMinutes(50000),
+                                                 expires: DateTime.Now.AddMinutes(5),
                                                  signingCredentials: credentials);
             var token = new JwtSecurityTokenHandler().WriteToken(tokendata);
             return token;
@@ -115,45 +115,43 @@ namespace EnixerPos.Api.Controllers
             }
         }
 
-        //GetTokenByRefreshMerchant
-        [HttpPost("tokenmerchant")]
-        public IActionResult GetTokenByRefreshMerchant([FromBody]GetTokenByRefreshMerchantCommand command)
-        {
-            try
-            {
-                string email = command.Email.ToLower();
-                string refreshToken = command.RefreshToken;
+        ////GetTokenByRefreshMerchant
+        //[HttpPost("tokenmerchant")]
+        //public IActionResult GetTokenByRefreshMerchant([FromBody]GetTokenByRefreshMerchantCommand command)
+        //{
+        //    try
+        //    {
+        //        string email = command.Email.ToLower();
+        //        string refreshToken = command.RefreshToken;
 
-                bool isRefreshToken = _authService.CheckRefresh(email, refreshToken);
-                if (!isRefreshToken)
-                {
-                    return BadRequest();
-                }
+        //        bool isRefreshToken = _authService.CheckRefresh(email, refreshToken);
+        //        if (!isRefreshToken)
+        //        {
+        //            return BadRequest();
+        //        }
 
-                refreshToken = _authService.GetRefreshToken(email);
-                GetTokenByRefreshViewModel model = new GetTokenByRefreshViewModel()
-                {
-                    RefreshToken = refreshToken
-                };
+        //        refreshToken = _authService.GetRefreshToken(email);
+        //        GetTokenByRefreshViewModel model = new GetTokenByRefreshViewModel()
+        //        {
+        //            RefreshToken = refreshToken
+        //        };
 
-                return Ok(model);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Error : {0}", e.Message);
-                return StatusCode(StatusCodes.Status500InternalServerError);
-            }
-        }
+        //        return Ok(model);
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        Console.WriteLine("Error : {0}", e.Message);
+        //        return StatusCode(StatusCodes.Status500InternalServerError);
+        //    }
+        //}
 
         //GetTokenByRefreshUser
-        [Authorize]
-        [AllowAnonymous]
         [HttpPost("tokenuser")]
         public IActionResult GetTokenByRefreshUser([FromBody]GetTokenByRefreshUserCommand command)
         {
             try
             {
-                string email = User.Claims.SingleOrDefault(x => x.Type == "aud").Value;
+                string email = command.Email;
                 string refreshToken = command.RefreshToken;
                 string user = command.User;
 
@@ -181,13 +179,11 @@ namespace EnixerPos.Api.Controllers
         }
 
         [HttpPost("logout")]
-        [Authorize]
-        [AllowAnonymous]
-        public IActionResult Logout()
+        public IActionResult Logout([FromBody]LogoutCommand command)
         {
             try
             {
-                string email = User.Claims.SingleOrDefault(x => x.Type == "aud").Value;
+                string email = command.Email;
 
                 bool isLogout = _authService.Logout(email);
                 if (!isLogout)

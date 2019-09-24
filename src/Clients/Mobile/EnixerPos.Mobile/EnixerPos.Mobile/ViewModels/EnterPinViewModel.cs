@@ -60,6 +60,7 @@ namespace EnixerPos.Mobile.ViewModels
                     {
                         countLogout++;
                         ResetPin();
+                        CheckCountLogin();
                         ErrorViewModel errorViewModel = new ErrorViewModel("ไม่สามารถเข้าสู่ระบบได้", 1);
                         await PopupNavigation.Instance.PushAsync(new Error(errorViewModel));
                     }
@@ -67,17 +68,15 @@ namespace EnixerPos.Mobile.ViewModels
                     {
                         countLogout++;
                         ResetPin();
+                        CheckCountLogin();
                         ErrorViewModel errorViewModel = new ErrorViewModel("ไม่สามารถเข้าสู่ระบบได้", 1);
                         await PopupNavigation.Instance.PushAsync(new Error(errorViewModel));
                     }
-                    //else if(countLogout >= 3)
-                    //{
-                    //    ForceLogout();
-                    //}
                     else
                     {
                         await SecureStorage.SetAsync("RefreshToken", loginData.Model.RefreshToken);
                         await SecureStorage.SetAsync("Token", loginData.Model.Token);
+                        await SecureStorage.SetAsync("User", loginData.Model.User);
                         App.Email = await SecureStorage.GetAsync("Email");
                         App.StoreName = await SecureStorage.GetAsync("StoreName");
                         App.User = loginData.Model.User;
@@ -88,13 +87,24 @@ namespace EnixerPos.Mobile.ViewModels
                             App.CheckShift = true;
                             App.OpenShiftId = shiftId;
                         }
-                        Application.Current.MainPage = new NavigationPage(new SaleView());
+                        Application.Current.MainPage = new NavigationPage(new SaleView())
+                        {
+                            BackgroundColor = Color.White
+                        };
                     }
                 }
                 if (countPin > 4)
                 {
                     pin = pin.Substring(0, 3);
                 }
+            }
+        }
+
+        private void CheckCountLogin()
+        {
+            if (countLogout >= 3)
+            {
+                ForceLogout();
             }
         }
 

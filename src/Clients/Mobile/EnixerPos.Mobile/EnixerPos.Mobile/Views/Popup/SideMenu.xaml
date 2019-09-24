@@ -35,7 +35,7 @@
             <Label Text="User1" TextColor="White" FontSize="Medium" FontAttributes="Bold" Grid.Column="1" Grid.Row="1"/>
             <Label Text="POS1" TextColor="White" FontSize="Medium" Grid.Column="1" Grid.Row="2"/>
             <Label Text="Enixer" TextColor="White" FontSize="Medium" Grid.Column="1" Grid.Row="3"/>
-            <Image Source="icon_lock_circle" Aspect="AspectFit" Grid.Column="2" Grid.Row="1" Grid.RowSpan="3"/>
+            <ImageButton Source="icon_lock_circle" Aspect="AspectFit" Grid.Column="2" Grid.Row="1" Grid.RowSpan="3" Clicked="LockButton_Clicked" BackgroundColor="Transparent"/>
         </Grid>
         <StackLayout Grid.Row="1">
             <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand" Orientation="Horizontal">

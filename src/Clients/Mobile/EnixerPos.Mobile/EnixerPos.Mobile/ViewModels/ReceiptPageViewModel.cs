@@ -4,6 +4,7 @@ using EnixerPos.Service.Interfaces;
 using EnixerPos.Service.Services;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Xamarin.Forms;
 
@@ -16,8 +17,40 @@ namespace EnixerPos.Mobile.ViewModels
         public ReceiptPageViewModel()
         {
             _receiptService = new ReceiptService();
-            AllReciept = _receiptService.GetReceipt();
         }
+
+        private string searchingText;
+
+        public string SearchingText
+        {
+            get { return searchingText; }
+            set
+            {
+                searchingText = value;
+                OnPropertyChanged();
+                if (SearchingText!= value && string.IsNullOrEmpty(value))
+                {
+                    GetAllReceipt();
+                }
+                else
+                {
+                    ShowReciept = allReciept.Where(x=>x.Reference.Contains(SearchingText)).ToList();
+                }
+            }
+        }
+
+        private List<ReceiptViewModel> showReciept;
+
+        public List<ReceiptViewModel> ShowReciept
+        {
+            get { return showReciept; }
+            set
+            {
+                showReciept = value;
+                OnPropertyChanged();
+            }
+        }
+
 
         private decimal totalPrice;
 
@@ -230,7 +263,11 @@ namespace EnixerPos.Mobile.ViewModels
             }
         }
 
-
+        public void GetAllReceipt()
+        {
+            AllReciept = _receiptService.GetReceiptByShiftId(App.OpenShiftId);
+            ShowReciept = AllReciept;
+        }
 
 
     }

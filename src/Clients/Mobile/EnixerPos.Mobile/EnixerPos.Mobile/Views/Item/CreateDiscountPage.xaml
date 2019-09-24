@@ -10,7 +10,7 @@
     <ContentPage.Content>
         <StackLayout >
             <Frame HasShadow="True">
-                <Label Text="Create Discount" TextColor="Black" FontSize="Medium"/>
+                <Label Text="{Binding TitleAndButtonText}" TextColor="Black" FontSize="Medium"/>
             </Frame>
             <Frame VerticalOptions="Start" 
                    WidthRequest="750" CornerRadius="3"
@@ -24,7 +24,7 @@
                             Title="Category"
                             WidthRequest="400"
                             HorizontalOptions="StartAndExpand"
-                            TitleColor="LightGray">
+                            TitleColor="LightGray" SelectedIndex ="{Binding Type,Mode=TwoWay}">
                             <Picker.ItemsSource>
                                 <x:Array Type="{x:Type x:String}">
                                     <x:String>Absolute</x:String>
@@ -37,9 +37,6 @@
                                              KeyboardType="Numeric"
                                              TextEntry="{Binding Amount}"
                                              Placeholder="Amount"/>
-
-
-
                 </StackLayout>
             </Frame>
           
@@ -49,7 +46,7 @@
                          Margin="0,20,0,15"
                          WidthRequest="800" Padding="0"
                          HorizontalOptions="Center">
-                <Button Text="CREATE DISCOUNT" 
+                <Button Text="{Binding TitleAndButtonText}" 
                         WidthRequest="350"
                         BackgroundColor="#E96722"
                         TextColor="White" FontSize="Medium"
@@ -60,7 +57,7 @@
                 <Button Text="CANCEL" WidthRequest="350"
                         HeightRequest="80" 
                         FontSize="Medium" 
-                        Command="{Binding CancelCategoryCommand}"
+                        Command="{Binding BackButton}"
                         FontAttributes="Bold" 
                         HorizontalOptions="FillAndExpand"/>
             

@@ -12,7 +12,7 @@
         <binding:SubItemViewModel x:Name="TheBinding"/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <Grid>
+        <Grid BackgroundColor="White">
             <StackLayout >
                 <Frame Padding="0" HorizontalOptions="FillAndExpand" Margin="-1,-1,-1,0" HasShadow="True">
                     <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
@@ -20,7 +20,7 @@
                         <Label Text="Items" TextColor="Black" FontSize="40" VerticalOptions="Center" HorizontalOptions="Start" />
                         <StackLayout x:Name="theTitle" VerticalOptions="CenterAndExpand" Margin="200,0,0,0">
                             <Picker IsVisible="{Binding Picker}" Title="All Item" TitleColor="Black" FontSize="28" TextColor="Black" ItemsSource="{Binding CategoryName}" SelectedItem="{Binding ChangeCategory}"/>
-                            <Label IsVisible="{Binding Laber}" Text="" FontSize="28" TextColor="Black"/>
+                            <Label IsVisible="{Binding Laber}" Text="{Binding NamePage}" FontSize="28" TextColor="Black"/>
                         </StackLayout>
                         <ImageButton Source="icon_search_2" Aspect="AspectFit" VerticalOptions="Center" Margin="20,0" HeightRequest="30" BackgroundColor="Transparent" HorizontalOptions="EndAndExpand"/>
                     </StackLayout>
@@ -35,21 +35,21 @@
                                         <TapGestureRecognizer Command="{Binding GotoItem}"/>
                                     </StackLayout.GestureRecognizers>
                                     <Image Source="icon_list" WidthRequest="30" Margin="20"/>
-                                    <Label Text="Item" FontSize="28" VerticalTextAlignment="Center"/>
+                                    <Label Text="Item" FontSize="28" VerticalTextAlignment="Center" TextColor="Black"/>
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" BackgroundColor="{Binding CategoryColor}">
                                     <StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer Command="{Binding GotoCategory}"/>
                                     </StackLayout.GestureRecognizers>
                                     <Image Source="agentcategories" WidthRequest="30" Margin="20"/>
-                                    <Label Text="Categories" FontSize="28" VerticalTextAlignment="Center"/>
+                                    <Label Text="Categories" FontSize="28" VerticalTextAlignment="Center" TextColor="Black"/>
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" BackgroundColor="{Binding DiscountColor}">
                                     <StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer Command="{Binding GotoDiscount}"/>
                                     </StackLayout.GestureRecognizers>
                                     <Image Source="discount" WidthRequest="30" Margin="20"/>
-                                    <Label Text="Discount" FontSize="28" VerticalTextAlignment="Center"/>
+                                    <Label Text="Discount" FontSize="28" VerticalTextAlignment="Center" TextColor="Black"/>
                                 </StackLayout>
                             </StackLayout>
                         </Frame>

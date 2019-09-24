@@ -13,39 +13,49 @@ namespace EnixerPos.Service.Services
 {
     public class TokenService
     {
-        public async Task<ResultServiceModel<GetTokenByRefreshViewModel>> GetAccessStoreToken()
+        public async Task<ResultServiceModel<GetTokenByRefreshViewModel>> GetAccessToken()
         {
             ResultServiceModel<GetTokenByRefreshViewModel> resultService = new ResultServiceModel<GetTokenByRefreshViewModel>();
             try
             {
-                string url = Helper.BaseUrl + "auth/tokenmerchant";
+                string url = Helper.BaseUrl + "auth/tokenuser";
 
                 HttpClient client = new HttpClient();
 
+                client.Timeout = TimeSpan.FromSeconds(20);
+
                 string refreshToken = "";
+
+                string user = "";
 
                 string email = "";
 
                 try
                 {
-                    refreshToken = SecureStorage.GetAsync("RefreshToken").Result;
-                    email = SecureStorage.GetAsync("Email").Result;
+                    refreshToken = await SecureStorage.GetAsync("RefreshToken");
+
+                    email = await SecureStorage.GetAsync("Email");
+
+                    user = await SecureStorage.GetAsync("User");
                 }
                 catch (Exception e)
                 {
+                    CloseApp();
                     return null;
                 }
 
-                GetTokenByRefreshMerchantCommand model = new GetTokenByRefreshMerchantCommand
+                GetTokenByRefreshUserCommand model = new GetTokenByRefreshUserCommand
                 {
+                    RefreshToken = refreshToken,
+
                     Email = email,
 
-                    RefreshToken = refreshToken,
+                    User = user
                 };
 
                 HttpContent content = GetHttpContent(model);
 
-                var result = await client.PostAsync(url, content);
+                var result = client.PostAsync(url, content).Result;
 
                 if (result.IsSuccessStatusCode)
                 {
@@ -63,81 +73,12 @@ namespace EnixerPos.Service.Services
                 {
                     client.Dispose();
                     CloseApp();
-                }
-            }
-            catch (Exception e)
-            {
-                return null;
-            }
-            return resultService;
-        }
-
-        public async Task<ResultServiceModel<GetTokenByRefreshViewModel>> GetAccessToken()
-        {
-            ResultServiceModel<GetTokenByRefreshViewModel> resultService = new ResultServiceModel<GetTokenByRefreshViewModel>();
-            try
-            {
-                string url = Helper.BaseUrl + "auth/tokenuser";
-
-                HttpClient client = new HttpClient();
-
-                string refreshToken = "";
-
-                string user = "";
-
-                string token = "";
-
-                try
-                {
-                    var stoerToken = await GetAccessStoreToken();
-                    if(stoerToken == null)
-                    {
-                        return null;
-                    }
-                    refreshToken = stoerToken.Model.RefreshToken;
-
-                    token = stoerToken.Model.Token;
-
-                    user = SecureStorage.GetAsync("User").Result;
-                }
-                catch (Exception e)
-                {
-                    return null;
-                }
-
-                GetTokenByRefreshUserCommand model = new GetTokenByRefreshUserCommand
-                {
-                    RefreshToken = refreshToken,
-
-                    User = user
-                };
-
-                client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
-
-                HttpContent content = GetHttpContent(model);
-
-                var result = await client.PostAsync(url, content);
-
-                if (result.IsSuccessStatusCode)
-                {
-                    var json_result = await result.Content.ReadAsStringAsync();
-
-                    GetTokenByRefreshViewModel obj = GetModelFormResult<GetTokenByRefreshViewModel>(json_result);
-
-                    resultService.IsError = result.StatusCode;
-
-                    resultService.Model = obj;
-
-                    return resultService;
-                }
-                else
-                {
-                    client.Dispose();
                     return null;
                 }
             }
             catch (Exception e)
             {
+                CloseApp();
                 return null;
             }
         }

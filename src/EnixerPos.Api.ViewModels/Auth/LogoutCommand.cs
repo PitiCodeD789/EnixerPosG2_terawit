@@ -6,5 +6,6 @@ namespace EnixerPos.Api.ViewModels.Auth
 {
     public class LogoutCommand
     {
+        public string Email { get; set; }
     }
 }

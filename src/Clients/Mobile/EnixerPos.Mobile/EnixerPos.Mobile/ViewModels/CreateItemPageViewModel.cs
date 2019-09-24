@@ -16,6 +16,7 @@ namespace EnixerPos.Mobile.ViewModels
     public class CreateItemPageViewModel : BaseViewModel
     {
         private readonly IProductService _productService;
+        private ItemModel UpdateItem { get; set;}
         public CreateItemPageViewModel()
         {
             _productService = new ProductService();
@@ -23,6 +24,31 @@ namespace EnixerPos.Mobile.ViewModels
             CreateItemCommand = new Command(CreateItem);
             GetAllCateAsync();
             CategoriesName = Categories.Select(x => x.Name).ToList();
+            IsUpdate = false;
+            TitleAndButtonText = "Create Item";
+        }
+        public CreateItemPageViewModel(ItemModel item)
+        {
+            SetShowItem(item);
+            UpdateItem = item;
+            IsUpdate = true;
+            TitleAndButtonText = "Update item";
+        }
+
+        private void SetShowItem(ItemModel item)
+        {
+            ItemName = item.Name;
+            ItemPrice = item.Price.ToString("N2");
+            ItemCost = item.Cost.ToString("N2");
+            setColor(GetColorNum(item.Color));
+            Option1 = item.Option1;
+            Price1 = item.Option1Price.ToString("N2");
+            Option2 = item.Option2;
+            Price2 = item.Option2Price.ToString("N2");
+            Option3 = item.Option3;
+            Price3 = item.Option3Price.ToString("N2");
+            Option4 = item.Option4;
+            Price4 = item.Option4Price.ToString("N2");
         }
 
         private async Task<List<CategoryModel>> GetAllCateAsync()
@@ -44,6 +70,8 @@ namespace EnixerPos.Mobile.ViewModels
             }
            
         }
+
+        public bool IsUpdate { get; set; }
 
         public ICommand CreateItemCommand { get; set; }
 
@@ -95,30 +123,62 @@ namespace EnixerPos.Mobile.ViewModels
         }
 
 
-        private void CreateItem()
+        private async void CreateItem()
         {
             try
             {
-                ItemModel item = new ItemModel()
+                ResultViewModel result = new ResultViewModel { IsError = true };
+                if (IsUpdate)
                 {
-                    Name = ItemName,
-                    CategoryName = SelectedCategory,
-                    Price = ConvertPrice(ItemPrice),
-                    Cost = ConvertPrice(ItemCost),
-                    Color = GetColor(),
-                    Option1 = Option1,
-                    Option1Price = ConvertPrice(Price1),
-                    Option2 = Option2,
-                    Option2Price = ConvertPrice(Price2),
-                    Option3 = Option3,
-                    Option3Price = ConvertPrice(Price3),
-                    Option4 = Option4,
-                    Option4Price = ConvertPrice(Price4)
+                    ItemModel item = new ItemModel()
+                    {
+                        Id = UpdateItem.Id,
+                        Name = ItemName,
+                        CategoryName = SelectedCategory,
+                        Price = ConvertPrice(ItemPrice),
+                        Cost = ConvertPrice(ItemCost),
+                        Color = GetColor(),
+                        Option1 = Option1,
+                        Option1Price = ConvertPrice(Price1),
+                        Option2 = Option2,
+                        Option2Price = ConvertPrice(Price2),
+                        Option3 = Option3,
+                        Option3Price = ConvertPrice(Price3),
+                        Option4 = Option4,
+                        Option4Price = ConvertPrice(Price4),
+                        CreateDateTime = UpdateItem.CreateDateTime,
+                        UpdateDateTime = UpdateItem.UpdateDateTime,
+                    };
 
-                };
-                var result = _productService.CreateItem(item);
+                    result = await _productService.UpdateItem(item);
 
-                if (result != null || !result.Result.IsError)
+                }
+                else
+                {
+                    ItemModel item = new ItemModel()
+                    {
+                        Name = ItemName,
+                        CategoryName = SelectedCategory,
+                        Price = ConvertPrice(ItemPrice),
+                        Cost = ConvertPrice(ItemCost),
+                        Color = GetColor(),
+                        Option1 = Option1,
+                        Option1Price = ConvertPrice(Price1),
+                        Option2 = Option2,
+                        Option2Price = ConvertPrice(Price2),
+                        Option3 = Option3,
+                        Option3Price = ConvertPrice(Price3),
+                        Option4 = Option4,
+                        Option4Price = ConvertPrice(Price4)
+
+                    };
+
+                    result = await _productService.CreateItem(item);
+
+                }
+
+
+                if ((result != null || !result.IsError))
                 {
                     ErrorViewModel errorViewModel = new ErrorViewModel("บันทึกรายการสำเร็จ", 3);
                     PopupNavigation.Instance.PushAsync(new Error(errorViewModel));
@@ -128,7 +188,6 @@ namespace EnixerPos.Mobile.ViewModels
                 {
                     ErrorViewModel error = new ErrorViewModel("ผิดพลาด", 1);
                     PopupNavigation.Instance.PushAsync(new Error(error));
-                    BackPageMethod();
                 }
 
             }
@@ -151,6 +210,21 @@ namespace EnixerPos.Mobile.ViewModels
                 case 5: return "#ffccf9";
                 case 6: return "#e0e0e0";
                 default: return null;
+            }
+        }
+
+        private int GetColorNum(string ColorHex)
+        {
+            string hex = ColorHex.ToLower();
+            switch (hex)
+            {
+                case "#ffffff": return 1;
+                case "#ffd5d5": return 2;
+                case "#f8ffd3": return 3;
+                case "#c6dbfc": return 4;
+                case "#ffccf9": return 5;
+                case "#e0e0e0": return 6;
+                default: return 0;
             }
         }
 
@@ -178,7 +252,10 @@ namespace EnixerPos.Mobile.ViewModels
         public string ItemName
         {
             get { return itemName; }
-            set { itemName = value; }
+            set {
+                itemName = value;
+                OnPropertyChanged();
+            }
         }
 
         private string itemPrice;
@@ -186,7 +263,10 @@ namespace EnixerPos.Mobile.ViewModels
         public string ItemPrice
         {
             get { return itemPrice; }
-            set { itemPrice = value; }
+            set {
+                itemPrice = value;
+                OnPropertyChanged();
+            }
         }
 
         private string itemCost;
@@ -194,7 +274,10 @@ namespace EnixerPos.Mobile.ViewModels
         public string ItemCost
         {
             get { return itemCost; }
-            set { itemCost = value; }
+            set {
+                itemCost = value;
+                OnPropertyChanged();
+            }
         }
 
         private string option1;
@@ -202,7 +285,10 @@ namespace EnixerPos.Mobile.ViewModels
         public string Option1
         {
             get { return option1; }
-            set { option1 = value; }
+            set {
+                option1 = value;
+                OnPropertyChanged();
+            }
         }
 
         private string price1;
@@ -210,7 +296,10 @@ namespace EnixerPos.Mobile.ViewModels
         public string Price1
         {
             get { return price1; }
-            set { price1 = value; }
+            set {
+                price1 = value;
+                OnPropertyChanged();
+            }
         }
 
 
@@ -219,7 +308,10 @@ namespace EnixerPos.Mobile.ViewModels
         public string Option2
         {
             get { return option2; }
-            set { option2 = value; }
+            set {
+                option2 = value;
+                OnPropertyChanged();
+            }
         }
 
         private string price2;
@@ -227,7 +319,10 @@ namespace EnixerPos.Mobile.ViewModels
         public string Price2
         {
             get { return price2; }
-            set { price2 = value; }
+            set {
+                price2 = value;
+                OnPropertyChanged();
+            }
         }
 
         /// <summary>
@@ -239,7 +334,10 @@ namespace EnixerPos.Mobile.ViewModels
         public string Option3
         {
             get { return option3; }
-            set { option3 = value; }
+            set {
+                option3 = value;
+                OnPropertyChanged();
+            }
         }
 
         private string price3;
@@ -247,7 +345,10 @@ namespace EnixerPos.Mobile.ViewModels
         public string Price3
         {
             get { return price3; }
-            set { price3 = value; }
+            set {
+                price3 = value;
+                OnPropertyChanged();
+            }
         }
 
         /// <summary>
@@ -259,7 +360,10 @@ namespace EnixerPos.Mobile.ViewModels
         public string Option4
         {
             get { return option4; }
-            set { option4 = value; }
+            set {
+                option4 = value;
+                OnPropertyChanged();
+            }
         }
 
         private string price4;
@@ -267,7 +371,10 @@ namespace EnixerPos.Mobile.ViewModels
         public string Price4
         {
             get { return price4; }
-            set { price4 = value; }
+            set {
+                price4 = value;
+                OnPropertyChanged();
+            }
         }
 
         private int selectColor;
@@ -396,5 +503,19 @@ namespace EnixerPos.Mobile.ViewModels
             get { return color6; }
             set { color6 = value; OnPropertyChanged(); }
         }
+
+        private string titleAndButtonText;
+
+        public string TitleAndButtonText
+        {
+            get { return titleAndButtonText; }
+            set { titleAndButtonText = value;
+                OnPropertyChanged();
+            }
+        }
+
+       
+
+
     }
 }

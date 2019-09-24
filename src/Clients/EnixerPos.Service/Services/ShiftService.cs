@@ -40,19 +40,11 @@ namespace EnixerPos.Service.Services
                
         }
 
-        public GetShiftViewModel GetShiftDetail(int shiftId, int userId)
+        public ResultServiceModel<GetShiftViewModel> GetShiftDetail(int shiftId, int userId)
         {
             string url = serviceUrl + $"GetShiftDetail/{shiftId}/UserId/{userId}";
 
-            var result = Get<GetShiftViewModel>(url).Result;
-            if(result.IsError ==   System.Net.HttpStatusCode.OK)
-            {
-                return result.Model;
-            }else
-            {
-                return null;
-            }
-        
+            return Get<GetShiftViewModel>(url).Result;
         }
 
         public async Task<bool> ManageCashPay(ManageCashCommand manage)

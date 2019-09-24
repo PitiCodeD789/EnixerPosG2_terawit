@@ -7,13 +7,10 @@
              x:Class="EnixerPos.Mobile.Views.Item.ItemItem">
   <ContentView.Content>
       <Grid>
-            <ListView ItemsSource="{Binding TheData}">
+            <ListView ItemsSource="{Binding TheData}" SelectedItem="{Binding SelectedData}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout Orientation="Horizontal">
-                            <StackLayout.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding EditData}" CommandParameter="{Binding DataName}"/>
-                            </StackLayout.GestureRecognizers>
                             <Frame CornerRadius="180" WidthRequest="40" HeightRequest="40" BackgroundColor="{Binding Color}" Padding="0" Margin="15"/>
                             <StackLayout Orientation="Horizontal">
                                 <Label Text="{Binding DataName}" />

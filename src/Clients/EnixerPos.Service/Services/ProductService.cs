@@ -24,16 +24,24 @@ namespace EnixerPos.Service.Services
             {
                 string url = serviceUrl + "AddItem";
 
-                string json = JsonConvert.SerializeObject(item);
-                var stringContent = new StringContent(json, Encoding.UTF8, "application/json");
-                var client = new HttpClient();
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-                HttpResponseMessage response = client.PostAsync(url, stringContent).Result;
-                var a = response.EnsureSuccessStatusCode();
-                string responseBody = response.Content.ReadAsStringAsync().Result;
-                var result = new ResultViewModel();
-                result = JsonConvert.DeserializeObject<ResultViewModel>(responseBody);
-                return result;
+                //string json = JsonConvert.SerializeObject(item);
+                //var stringContent = new StringContent(json, Encoding.UTF8, "application/json");
+                //var client = new HttpClient();
+                //client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+                //HttpResponseMessage response = client.PostAsync(url, stringContent).Result;
+                //var a = response.EnsureSuccessStatusCode();
+                //string responseBody = response.Content.ReadAsStringAsync().Result;
+                //var result = new ResultViewModel();
+                //result = JsonConvert.DeserializeObject<ResultViewModel>(responseBody);
+                //return result;
+
+                var result = await Post<ResultViewModel>(url, item);
+                if (result.IsError == System.Net.HttpStatusCode.OK)
+                {
+                    return result.Model;
+                }
+
+                return new ResultViewModel() { IsError = true };
             }
             catch (Exception)
             {
@@ -58,16 +66,24 @@ namespace EnixerPos.Service.Services
         {
             try
             {
-                //var result = Get<CategoriesViewModel>("http://192.168.1.33:30000/api/product/getcategories").Result;
-                var client = new HttpClient();
-                string accessToken = SecureStorage.GetAsync("Token").Result;
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-                HttpResponseMessage response = client.GetAsync(serviceUrl + "getcategories").Result;
-                response.EnsureSuccessStatusCode();
-                string responseBody = response.Content.ReadAsStringAsync().Result;
-                var result = JsonConvert.DeserializeObject<CategoriesViewModel>(responseBody);
-                var cartegories = result.Categories;
-                return cartegories;
+                ////var result = Get<CategoriesViewModel>("http://192.168.1.33:30000/api/product/getcategories").Result;
+                //var client = new HttpClient();
+                //string accessToken = SecureStorage.GetAsync("Token").Result;
+                //client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+                //HttpResponseMessage response = client.GetAsync(serviceUrl + "getcategories").Result;
+                //response.EnsureSuccessStatusCode();
+                //string responseBody = response.Content.ReadAsStringAsync().Result;
+                //var result = JsonConvert.DeserializeObject<CategoriesViewModel>(responseBody);
+                //var cartegories = result.Categories;
+                //return cartegories;
+
+                var result = Get<CategoriesViewModel>(serviceUrl + "getcategories").Result;
+                if (result.IsError == System.Net.HttpStatusCode.OK)
+                {
+                    return result.Model.Categories;
+                }
+
+                return null;
             }
             catch (Exception e)
             {
@@ -80,15 +96,23 @@ namespace EnixerPos.Service.Services
         {
             try
             {
-                //var result = Get<CategoriesViewModel>("http://192.168.1.33:30000/api/product/getcategories").Result;
-                var client = new HttpClient();
-                string accessToken = SecureStorage.GetAsync("Token").Result;
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-                HttpResponseMessage response = client.GetAsync(serviceUrl + "getitems").Result;
-                response.EnsureSuccessStatusCode();
-                string responseBody = response.Content.ReadAsStringAsync().Result;
-                var result = JsonConvert.DeserializeObject<ItemsViewModel>(responseBody);
-                return result;
+                ////var result = Get<CategoriesViewModel>("http://192.168.1.33:30000/api/product/getcategories").Result;
+                //var client = new HttpClient();
+                //string accessToken = SecureStorage.GetAsync("Token").Result;
+                //client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+                //HttpResponseMessage response = client.GetAsync(serviceUrl + "getitems").Result;
+                //response.EnsureSuccessStatusCode();
+                //string responseBody = response.Content.ReadAsStringAsync().Result;
+                //var result = JsonConvert.DeserializeObject<ItemsViewModel>(responseBody);
+                //return result;
+
+                var result = Get<ItemsViewModel>(serviceUrl + "getitems").Result;
+                if (result.IsError == System.Net.HttpStatusCode.OK)
+                {
+                    return result.Model;
+                }
+
+                return new ItemsViewModel {IsError = true};
             }
             catch (Exception e)
             {
@@ -100,16 +124,24 @@ namespace EnixerPos.Service.Services
         {
             try
             {
-                //var result = Get<CategoriesViewModel>("http://192.168.1.33:30000/api/product/getcategories").Result;
-                var client = new HttpClient();
-                string accessToken = SecureStorage.GetAsync("Token").Result;
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-                HttpContent content = GetHttpContent(payment);
-                HttpResponseMessage response = client.PostAsync(Helper.BaseUrl + "sale/" + "payment", content).Result;
-                response.EnsureSuccessStatusCode();
-                string responseBody = response.Content.ReadAsStringAsync().Result;
-                var result = JsonConvert.DeserializeObject<ReceiptViewModel>(responseBody);
-                return result;
+                ////var result = Get<CategoriesViewModel>("http://192.168.1.33:30000/api/product/getcategories").Result;
+                //var client = new HttpClient();
+                //string accessToken = SecureStorage.GetAsync("Token").Result;
+                //client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+                //HttpContent content = GetHttpContent(payment);
+                //HttpResponseMessage response = client.PostAsync(Helper.BaseUrl + "sale/" + "payment", content).Result;
+                //response.EnsureSuccessStatusCode();
+                //string responseBody = response.Content.ReadAsStringAsync().Result;
+                //var result = JsonConvert.DeserializeObject<ReceiptViewModel>(responseBody);
+                //return result;
+
+                var result =  Post<ReceiptViewModel>(Helper.BaseUrl + "sale/payment", payment).Result;
+                if (result.IsError == System.Net.HttpStatusCode.OK)
+                {
+                    return result.Model;
+                }
+
+                return null;
             }
             catch (Exception e)
             {
@@ -142,15 +174,23 @@ namespace EnixerPos.Service.Services
         {
             try
             {
-                //var result = Get<CategoriesViewModel>("http://192.168.1.33:30000/api/product/getcategories").Result;
-                var client = new HttpClient();
-                string accessToken = SecureStorage.GetAsync("Token").Result;
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-                HttpResponseMessage response = client.GetAsync(serviceUrl + "getdiscounts").Result;
-                response.EnsureSuccessStatusCode();
-                string responseBody = response.Content.ReadAsStringAsync().Result;
-                var result = JsonConvert.DeserializeObject<DiscountsViewModel>(responseBody);
-                return result;
+                ////var result = Get<CategoriesViewModel>("http://192.168.1.33:30000/api/product/getcategories").Result;
+                //var client = new HttpClient();
+                //string accessToken = SecureStorage.GetAsync("Token").Result;
+                //client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+                //HttpResponseMessage response = client.GetAsync(serviceUrl + "getdiscounts").Result;
+                //response.EnsureSuccessStatusCode();
+                //string responseBody = response.Content.ReadAsStringAsync().Result;
+                //var result = JsonConvert.DeserializeObject<DiscountsViewModel>(responseBody);
+                //return result;
+
+                var result = Get<DiscountsViewModel>(serviceUrl+"getdiscounts").Result;
+                if (result.IsError == System.Net.HttpStatusCode.OK)
+                {
+                    return result.Model;
+                }
+
+                return new DiscountsViewModel() { IsError = true };
             }
             catch (Exception e)
             {
@@ -171,9 +211,6 @@ namespace EnixerPos.Service.Services
                     return true;
 
                 }
-
-
-
             }
 
             public async Task<bool> AddDiscount(string discountName, bool discountType, string amount)
@@ -193,5 +230,62 @@ namespace EnixerPos.Service.Services
                 }
 
             }
+
+        public async Task<ResultViewModel> UpdateItem(ItemModel item)
+        {
+            try
+            {
+                var result = await Post<ResultViewModel>(serviceUrl + "UpdateItem",item);
+                if (result.IsError == System.Net.HttpStatusCode.OK)
+                {
+                    return result.Model;
+                }
+                return null;
+            }
+            catch (Exception)
+            {
+
+                return null;
+            }
+           
         }
-    } 
+
+        public async Task<ResultViewModel> UpdateCategory(CategoryModel item)
+        {
+            try
+            {
+                var result = await Post<ResultViewModel>(serviceUrl + "UpdateCategory", item);
+                if (result.IsError == System.Net.HttpStatusCode.OK)
+                {
+                    return result.Model;
+                }
+                return null;
+            }
+            catch (Exception)
+            {
+
+                return null;
+            }
+
+        }
+
+        public async Task<ResultViewModel> UpdateDiscount(DiscountModel item)
+        {
+            try
+            {
+                var result = await Post<ResultViewModel>(serviceUrl + "UpdateDiscount", item);
+                if (result.IsError == System.Net.HttpStatusCode.OK)
+                {
+                    return result.Model;
+                }
+                return null;
+            }
+            catch (Exception)
+            {
+
+                return null;
+            }
+
+        }
+    }
+ } 

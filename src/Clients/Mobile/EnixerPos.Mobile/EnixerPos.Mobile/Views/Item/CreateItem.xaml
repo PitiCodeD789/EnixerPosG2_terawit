@@ -13,7 +13,7 @@
        
         <StackLayout >
             <Frame HasShadow="True">
-                <Label Text="Create item" TextColor="Black" FontSize="Medium"/>
+                    <Label Text="{Binding TitleAndButtonText}" TextColor="Black" FontSize="Medium"/>
             </Frame>
             <Frame VerticalOptions="Start" 
                    WidthRequest="750" CornerRadius="3"
@@ -275,9 +275,9 @@
                          Margin="0,15,0,15"
                          WidthRequest="800" Padding="0"
                          HorizontalOptions="Center">
-                <Button Text="CREATE ITEM" WidthRequest="350" BackgroundColor="#E96722" TextColor="White" FontSize="Medium" FontAttributes="Bold"  HeightRequest="80" HorizontalOptions="FillAndExpand"
+                    <Button Text="{Binding TitleAndButtonText}" WidthRequest="350" BackgroundColor="#E96722" TextColor="White" FontSize="Medium" FontAttributes="Bold"  HeightRequest="80" HorizontalOptions="FillAndExpand"
                         Command="{Binding CreateItemCommand}"/>
-                    <Button Text="CANCEL" WidthRequest="350" HeightRequest="80" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="FillAndExpand" Command="{Binding BackPageMethod}"/>
+                    <Button Text="CANCEL" WidthRequest="350" HeightRequest="80" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="FillAndExpand" Command="{Binding BackButton}"/>
             </StackLayout>
             
         </StackLayout>

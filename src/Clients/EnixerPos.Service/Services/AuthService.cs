@@ -61,9 +61,12 @@ namespace EnixerPos.Service.Services
             return await Post<LoginByPinViewModel>(url, model);
         }
 
-        public async Task<ResultServiceModel<DummyModel>> Logout()
+        public async Task<ResultServiceModel<DummyModel>> Logout(string email)
         {
-            DummyModel model = new DummyModel();
+            LogoutCommand model = new LogoutCommand()
+            {
+                Email = email
+            };
 
             string url = serviceUrl + "logout";
             return await Post<DummyModel>(url, model);

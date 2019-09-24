@@ -20,18 +20,19 @@ namespace EnixerPos.Service.Services
             {
                 HttpClient client = new HttpClient();
 
+                client.Timeout = TimeSpan.FromSeconds(20);
+
                 string token = "";
 
                 try
                 {
                     token = await SecureStorage.GetAsync("Token");
-                    //token = await SecureStorage.GetAsync("Token");
                 }
                 catch (Exception e)
                 {
                     throw e;
                 }
-                //token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWVpIjoiMTIzNDU2Nzg5IiwibmJmIjoxNTY5MDQxMDA2LCJleHAiOjE1NjkxNTEzMDYsImlzcyI6IkVuaXhlclBvc0cyIiwiYXVkIjoiZUBlIiwidXNlciI6Ik5hdCJ9.2NVziPg0aE3eXlSLL9MyGp453CaW2UYMLMV5GMqPDJs";
+                
                 client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
 
                 HttpContent content = GetHttpContent(model);
@@ -103,13 +104,13 @@ namespace EnixerPos.Service.Services
             {
                 HttpClient client = new HttpClient();
 
+                client.Timeout = TimeSpan.FromSeconds(20);
+
                 string token = "";
-                token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWVpIjoiMTIzNDU2Nzg5IiwibmJmIjoxNTY5MDQxMDA2LCJleHAiOjE1NjkxNTEzMDYsImlzcyI6IkVuaXhlclBvc0cyIiwiYXVkIjoiZUBlIiwidXNlciI6Ik5hdCJ9.2NVziPg0aE3eXlSLL9MyGp453CaW2UYMLMV5GMqPDJs";
 
                 try
                 {
-                    //token = await SecureStorage.GetAsync("Token");
-                    token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiVGVzdGVyTm9PbmUiLCJuYmYiOjE1NjkyNzYzOTAsImV4cCI6MTU3MjI3NjM5MCwiaXNzIjoiRW5peGVyUG9zRzIiLCJhdWQiOiJzdG9yZV8wMUBzdHJvcmUuY29tIn0.pDt2y-Dk5bURCYZQEPnH4Z7h8DCUuXhhZMwhFtCj7HA";
+                    token = await SecureStorage.GetAsync("Token");
                 }
                 catch (Exception e)
                 {
@@ -144,6 +145,7 @@ namespace EnixerPos.Service.Services
                                 resultService.IsError = result.StatusCode;
                             }
                             await SecureStorage.SetAsync("Token", tokenData.Model.Token);
+                            await SecureStorage.SetAsync("RefreshToken", tokenData.Model.RefreshToken);
                             goto StartMethod;
                         }
                         else

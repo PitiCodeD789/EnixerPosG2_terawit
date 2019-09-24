@@ -13,5 +13,9 @@ namespace EnixerPos.Service.Interfaces
         Task<CategoriesViewModel> GetAllCategories();
         Task<bool> AddCategory(string categoryName, string color);
         Task<bool> AddDiscount(string discountName, bool discountType, string amount);
+        Task<ResultViewModel> UpdateItem(ItemModel item);
+        Task<ResultViewModel> UpdateCategory (CategoryModel category);
+        Task<ResultViewModel> UpdateDiscount (DiscountModel discount);
+
     }
 }
