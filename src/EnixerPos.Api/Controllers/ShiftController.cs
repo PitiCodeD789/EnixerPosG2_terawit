@@ -67,7 +67,28 @@ namespace EnixerPos.Api.Controllers
                 return NoContent();
             }
 
-            List<GetShiftViewModel> shiftlistViewModel = _mapper.Map<List<GetShiftViewModel>>(item);
+            // List<GetShiftViewModel> shiftlistViewModel = _mapper.Map<List<GetShiftViewModel>>(item);
+            var shiftlistViewModel = item.Select(c => new GetShiftViewModel()
+            {
+                StartingCash = c.StartingCash,
+                CashPayment = c.CashPayment,
+                CashRefunds = c.CashRefunds,
+                Paidin = c.Paidin,
+                Paidout = c.Paidout,
+                ExpectedCashAmount = 0,
+                Cash = c.CashPayment,
+                DebitCard = c.DebitCard,
+                CreditCard = c.CreditCard,
+                QRCode = c.QRCode,
+                NetSales = 0,
+                Grosssales = 0,
+                Discount = c.Discount,
+                Refunds = c.Refunds,
+                CreateDateTime = c.CreateDateTime,
+                Taxes = c.Taxes,
+                UpdateDateTime = c.UpdateDateTime
+
+            }).ToList();
 
             return Ok(shiftlistViewModel);
         }

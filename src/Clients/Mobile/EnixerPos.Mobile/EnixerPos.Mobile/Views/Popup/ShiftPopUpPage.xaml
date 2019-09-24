@@ -25,8 +25,8 @@
         <Frame HasShadow="True">
             <Label Text="Shift" TextColor="Black" FontSize="Medium"/>
         </Frame>
-        <ListView ItemsSource="{Binding testData}" Margin="30,0,30,0"  
-                  SelectedItem="{Binding ShiftSelect}"
+        <ListView ItemsSource="{Binding GetShiftListViewModel }" Margin="30,0,30,0"  
+                  SelectedItem="{Binding  ShiftSelect}"
                   HeightRequest="500" HasUnevenRows="True">
             <ListView.ItemTemplate>
                 <DataTemplate>                    

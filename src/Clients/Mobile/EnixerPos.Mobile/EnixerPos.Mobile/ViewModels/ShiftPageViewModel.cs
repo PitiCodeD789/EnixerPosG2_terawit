@@ -4,6 +4,7 @@ using EnixerPos.Service.Services;
 using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -20,14 +21,29 @@ namespace EnixerPos.Mobile.ViewModels
             ShowShiftListCommand = new Command(ShowShiftList);
             CloseShiftListCommand = new Command(CloseShiftList);
             CashManagePageClickCommand = new Command(CashManagePageClick);
+            ShiftReportListClickCommand = new Command(ShiftReportListClick);
+
 
 
         }
 
+        private async void ShiftReportListClick(object obj)
+        {
+          
+            var shiftListVM = await _shiftService.GetListShift();
+            ObservableCollection<GetShiftViewModel> shiftListVMCollection = new ObservableCollection<GetShiftViewModel>(shiftListVM);
+            ShiftPopUpPageViewModel shiftPopUp = new ShiftPopUpPageViewModel();
+            shiftPopUp.GetShiftListViewModel = shiftListVMCollection;
+            await PopupNavigation.PushAsync(new Views.Popup.ShiftPopUpPage(shiftPopUp));
+        }
+
+      
         private async void CashManagePageClick(object obj)
         {
-
+            await PopupNavigation.PushAsync(new Views.Popup.LoadingPopup());
             await Application.Current.MainPage.Navigation.PushAsync(new Views.CashManagePage());
+             
+
         }
 
         private void CloseShiftList(object obj)
@@ -47,13 +63,16 @@ namespace EnixerPos.Mobile.ViewModels
 
         private async void ShowShiftList(object obj)
         {
-            List<GetShiftViewModel> data = _shiftService.GetListShift();
-            await PopupNavigation.PushAsync(new Views.Popup.ShiftPopUpPage());
+            var shiftListVM = await _shiftService.GetListShift();
+            ObservableCollection<GetShiftViewModel> shiftListVMCollection = new ObservableCollection<GetShiftViewModel>(shiftListVM);
+            ShiftPopUpPageViewModel shiftPopUp = new ShiftPopUpPageViewModel();
+            shiftPopUp.GetShiftListViewModel = shiftListVMCollection;
+            await PopupNavigation.PushAsync(new Views.Popup.ShiftPopUpPage(shiftPopUp));
         }
 
         public ICommand ShowShiftListCommand { get; set; }
         public ICommand CloseShiftListCommand { get; set; }
-        
+        public ICommand ShiftReportListClickCommand { get; set; }
         public ICommand CashManagePageClickCommand { get; set; }
 
     }

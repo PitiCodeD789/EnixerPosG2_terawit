@@ -109,7 +109,7 @@ namespace EnixerPos.Service.Services
                 try
                 {
                     //token = await SecureStorage.GetAsync("Token");
-                    token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWVpIjoiMTIzNDU2Nzg5IiwibmJmIjoxNTY5MDQxMDA2LCJleHAiOjE1NjkxNTEzMDYsImlzcyI6IkVuaXhlclBvc0cyIiwiYXVkIjoiZUBlIiwidXNlciI6Ik5hdCJ9.2NVziPg0aE3eXlSLL9MyGp453CaW2UYMLMV5GMqPDJs";
+                    token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiVGVzdGVyTm9PbmUiLCJuYmYiOjE1NjkyNzYzOTAsImV4cCI6MTU3MjI3NjM5MCwiaXNzIjoiRW5peGVyUG9zRzIiLCJhdWQiOiJzdG9yZV8wMUBzdHJvcmUuY29tIn0.pDt2y-Dk5bURCYZQEPnH4Z7h8DCUuXhhZMwhFtCj7HA";
                 }
                 catch (Exception e)
                 {

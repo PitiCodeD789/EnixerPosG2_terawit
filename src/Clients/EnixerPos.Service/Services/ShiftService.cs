@@ -30,13 +30,13 @@ namespace EnixerPos.Service.Services
 
         }
 
-        public List<GetShiftViewModel> GetListShift()
+        public async Task<List<GetShiftViewModel>> GetListShift()
         {
             string url = serviceUrl + "GetShifts";
 
-            var result = Get<ResultViewModel>(url);
+            var result = await Get<List<GetShiftViewModel>>(url);
 
-            return new List<GetShiftViewModel>();
+            return result.Model;
                
         }
 

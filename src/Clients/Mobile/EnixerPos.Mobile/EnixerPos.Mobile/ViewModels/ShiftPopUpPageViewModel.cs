@@ -14,10 +14,10 @@ namespace EnixerPos.Mobile.ViewModels
     {
         //public List<GetShiftViewModel> testData { get; set; }
 
-        public ObservableCollection<GetShiftViewModel> testData { get; set; }
+        public ObservableCollection<GetShiftViewModel> GetShiftListViewModel { get; set; }
         public ShiftPopUpPageViewModel()
         {
-            testData = new ObservableCollection<GetShiftViewModel>
+            GetShiftListViewModel = new ObservableCollection<GetShiftViewModel>
             { new GetShiftViewModel
             { CreateDateTime = DateTime.Now, UpdateDateTime = DateTime.Now.AddHours(12),
                 StartingCash = 5005, CashPayment = 500, Cash = 1500, CashRefunds = 0, CreditCard = 500, DebitCard = 1500, Discount = 250, Grosssales = 550, Paidin = 200 },

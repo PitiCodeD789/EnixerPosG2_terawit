@@ -1,5 +1,4 @@
-﻿using EnixerPos.Mobile.ViewModels;
-using Rg.Plugins.Popup.Pages;
+﻿using Rg.Plugins.Popup.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,13 +11,11 @@ using Xamarin.Forms.Xaml;
 namespace EnixerPos.Mobile.Views.Popup
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ShiftPopUpPage : PopupPage
+    public partial class LoadingPopup : PopupPage
     {
-        ShiftPopUpPageViewModel _vM;
-        public ShiftPopUpPage(ShiftPopUpPageViewModel vM)
+        public LoadingPopup()
         {
             InitializeComponent();
-            BindingContext = _vM = vM;
         }
     }
 }
