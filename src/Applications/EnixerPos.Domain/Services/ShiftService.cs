@@ -205,18 +205,23 @@ namespace EnixerPos.Domain.Services
             var ShiftDetail = shiftEntity.Select(c => new ShiftdetailDto()
             {
                 StartingCash = c.StartingCash,
-                 CashPayment = c.CashPayment,
-                 CashRefunds = c.CashRefunds,
-                 Paidin = c.Paidin,
-                 Paidout = c.Paidout,
-                 ExpectedCashAmount = c.StartingCash + c.CashPayment + c.Paidin -c.Refunds -c.Paidout,
-                 Cash = c.CashPayment,
-                 DebitCard = c.DebitCard,
-                 CreditCard = c.CreditCard,
-                 QRCode = c.QRCode,
-                 NetSales = c.CashPayment + c.DebitCard +c.CreditCard + c.QRCode,
-                 Grosssales = (c.CashPayment + c.DebitCard + c.CreditCard + c.QRCode) +c.Refunds + c.Discount
-                  
+                CashPayment = c.CashPayment,
+                CashRefunds = c.CashRefunds,
+                Paidin = c.Paidin,
+                Paidout = c.Paidout,
+                ExpectedCashAmount = 0,
+                Cash = c.CashPayment,
+                DebitCard = c.DebitCard,
+                CreditCard = c.CreditCard,
+                QRCode = c.QRCode,
+                NetSales = 0,
+                Grosssales = 0,
+                UpdateDateTime = c.UpdateDateTime,
+                Refunds = c.Refunds,
+                Id = c.Id,
+                Discount = c.Discount,
+                CreateDateTime = c.CreateDateTime
+
             }).ToList();
 
             return ShiftDetail;

@@ -30,13 +30,13 @@ namespace EnixerPos.Service.Services
 
         }
 
-        public List<GetShiftViewModel> GetListShift()
+        public async Task<List<GetShiftViewModel>> GetListShift()
         {
             string url = serviceUrl + "GetShifts";
 
-            var result = Get<ResultViewModel>(url);
+            var result = await Get<List<GetShiftViewModel>>(url);
 
-            return new List<GetShiftViewModel>();
+            return result.Model;
                
         }
 
@@ -47,10 +47,25 @@ namespace EnixerPos.Service.Services
             return Get<GetShiftViewModel>(url).Result;
         }
 
+        public async Task<bool> ManageCashPay(ManageCashCommand manage)
+        {
+            string url = serviceUrl + "ManageCash";
+            var isokStatus =  await Post<DummyModel>(url, manage);
+            if(isokStatus.IsError == System.Net.HttpStatusCode.OK)
+            {
+                return true;
+            }else
+            {
+                return false;
+            }
+        }
+
         public async Task<ResultServiceModel<OpenShiftViewModel>> OpenShift(OpenShiftCommand model)
         {
             string url = serviceUrl + "OpenShift";
             return await Post<OpenShiftViewModel>(url, model);
         }
+
+     
     }
 }

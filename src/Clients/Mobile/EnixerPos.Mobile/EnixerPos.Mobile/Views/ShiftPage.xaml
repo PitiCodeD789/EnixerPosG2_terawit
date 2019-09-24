@@ -15,14 +15,27 @@
     <ContentPage.Content>
         <StackLayout>
             <Frame HasShadow="True" Margin="0,0,0,0">
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                     <ImageButton Source="icon_hamburger" Aspect="AspectFit" VerticalOptions="Center" Margin="20,0" HeightRequest="30" Clicked="Button_Clicked" BackgroundColor="Transparent">
                         <ImageButton.GestureRecognizers>
                             <TapGestureRecognizer Tapped="Button_Clicked"/>
                         </ImageButton.GestureRecognizers>
                     </ImageButton>
 
-                    <Label Text="Shift" TextColor="Black" FontSize="30" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start" />
+                    <Label Text="Shift" TextColor="Black" FontSize="30"
+                           FontAttributes="Bold"
+                           VerticalOptions="Center" 
+                           HorizontalOptions="FillAndExpand" />
+                    <Image Source="iconstimemachine"
+                                 Aspect="AspectFit" 
+                                 VerticalOptions="Center" 
+                                 Margin="20,0" HeightRequest="30" 
+                                 HorizontalOptions="EndAndExpand"
+                                 BackgroundColor="Transparent">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ShiftReportListClickCommand}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
                 </StackLayout>
 
             </Frame>
@@ -33,6 +46,7 @@
                                                   HorizontalOptions="StartAndExpand" 
                                                   Margin="50,0,0,0"
                                                   WidthRequest="500" 
+                                                  Command="{Binding CashManagePageClickCommand}"
                                                   TextColor="#E96722" 
                                                   BackgroundButton="White" />
                         <component:Pos_ButtonView TextButton="CLOSE SHIFT" 

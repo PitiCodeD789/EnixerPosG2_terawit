@@ -42,7 +42,7 @@ namespace EnixerPos.Api
                {
                    ValidateIssuer = true,
                    ValidateAudience = false,
-                   ValidateLifetime = true,
+                   ValidateLifetime = false,
                    ValidateIssuerSigningKey = true,
                    ValidIssuer = Configuration["Jwt:Issuer"],
                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))

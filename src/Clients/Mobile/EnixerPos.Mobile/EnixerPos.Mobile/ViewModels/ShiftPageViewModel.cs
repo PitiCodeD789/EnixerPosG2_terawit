@@ -4,6 +4,7 @@ using EnixerPos.Service.Services;
 using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -16,25 +17,32 @@ namespace EnixerPos.Mobile.ViewModels
         public GetShiftViewModel GetShiftView { get; set; }
         public ShiftPageViewModel()
         {
-            GetShiftView = new GetShiftViewModel
-            {
-                CreateDateTime = DateTime.Now,
-                UpdateDateTime = DateTime.Now.AddHours(12),
-                StartingCash = 5005,
-                CashPayment = 500,
-                Cash = 1500,
-                CashRefunds = 0,
-                CreditCard = 500,
-                DebitCard = 1500,
-                Discount = 250,
-                Grosssales = 550,
-                Paidin = 200,
-                Taxes = 145.60m
-            };
-
+            
             ShowShiftListCommand = new Command(ShowShiftList);
             CloseShiftListCommand = new Command(CloseShiftList);
+            CashManagePageClickCommand = new Command(CashManagePageClick);
+            ShiftReportListClickCommand = new Command(ShiftReportListClick);
 
+
+
+        }
+
+        private async void ShiftReportListClick(object obj)
+        {
+          
+            var shiftListVM = await _shiftService.GetListShift();
+            ObservableCollection<GetShiftViewModel> shiftListVMCollection = new ObservableCollection<GetShiftViewModel>(shiftListVM);
+            ShiftPopUpPageViewModel shiftPopUp = new ShiftPopUpPageViewModel();
+            shiftPopUp.GetShiftListViewModel = shiftListVMCollection;
+            await PopupNavigation.PushAsync(new Views.Popup.ShiftPopUpPage(shiftPopUp));
+        }
+
+      
+        private async void CashManagePageClick(object obj)
+        {
+            await PopupNavigation.PushAsync(new Views.Popup.LoadingPopup());
+            await Application.Current.MainPage.Navigation.PushAsync(new Views.CashManagePage());
+             
 
         }
 
@@ -55,12 +63,17 @@ namespace EnixerPos.Mobile.ViewModels
 
         private async void ShowShiftList(object obj)
         {
-            List<GetShiftViewModel> data = _shiftService.GetListShift();
-            await PopupNavigation.PushAsync(new Views.Popup.ShiftPopUpPage());
+            var shiftListVM = await _shiftService.GetListShift();
+            ObservableCollection<GetShiftViewModel> shiftListVMCollection = new ObservableCollection<GetShiftViewModel>(shiftListVM);
+            ShiftPopUpPageViewModel shiftPopUp = new ShiftPopUpPageViewModel();
+            shiftPopUp.GetShiftListViewModel = shiftListVMCollection;
+            await PopupNavigation.PushAsync(new Views.Popup.ShiftPopUpPage(shiftPopUp));
         }
 
         public ICommand ShowShiftListCommand { get; set; }
         public ICommand CloseShiftListCommand { get; set; }
+        public ICommand ShiftReportListClickCommand { get; set; }
+        public ICommand CashManagePageClickCommand { get; set; }
 
     }
 }

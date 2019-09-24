@@ -9,9 +9,10 @@ namespace EnixerPos.Service.Interfaces
 {
     public interface IShiftService
     {
-        List<GetShiftViewModel> GetListShift();
+        Task<List<GetShiftViewModel>> GetListShift();
         Task<ResultServiceModel<OpenShiftViewModel>> OpenShift(OpenShiftCommand model);
         bool CloseListShift(int openShiftId, int userId);
         ResultServiceModel<GetShiftViewModel> GetShiftDetail( int shiftId, int userId);
+        Task<bool> ManageCashPay(ManageCashCommand manage);
     }
 }
