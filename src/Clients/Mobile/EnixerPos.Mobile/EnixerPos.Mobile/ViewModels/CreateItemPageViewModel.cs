@@ -25,12 +25,14 @@ namespace EnixerPos.Mobile.ViewModels
             GetAllCateAsync();
             CategoriesName = Categories.Select(x => x.Name).ToList();
             IsUpdate = false;
+            TitleAndButtonText = "Create Item";
         }
         public CreateItemPageViewModel(ItemModel item)
         {
             SetShowItem(item);
             UpdateItem = item;
             IsUpdate = true;
+            TitleAndButtonText = "Update item";
         }
 
         private void SetShowItem(ItemModel item)
@@ -186,7 +188,6 @@ namespace EnixerPos.Mobile.ViewModels
                 {
                     ErrorViewModel error = new ErrorViewModel("ผิดพลาด", 1);
                     PopupNavigation.Instance.PushAsync(new Error(error));
-                    BackPageMethod();
                 }
 
             }
@@ -502,5 +503,19 @@ namespace EnixerPos.Mobile.ViewModels
             get { return color6; }
             set { color6 = value; OnPropertyChanged(); }
         }
+
+        private string titleAndButtonText;
+
+        public string TitleAndButtonText
+        {
+            get { return titleAndButtonText; }
+            set { titleAndButtonText = value;
+                OnPropertyChanged();
+            }
+        }
+
+       
+
+
     }
 }

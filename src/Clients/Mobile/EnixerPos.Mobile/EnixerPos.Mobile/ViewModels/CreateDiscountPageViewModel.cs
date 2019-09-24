@@ -1,6 +1,8 @@
 ﻿using EnixerPos.Api.ViewModels.Product;
+using EnixerPos.Mobile.Views.Popup;
 using EnixerPos.Service.Interfaces;
 using EnixerPos.Service.Services;
+using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -18,6 +20,7 @@ namespace EnixerPos.Mobile.ViewModels
             CreateDiscountCommand = new Command(CreateDiscount);
             CancelCategoryCommand = new Command(Cancel);
             IsUpdate = false;
+            TitleAndButtonText = "Create Discount";
         }
 
         public CreateDiscountPageViewModel(DiscountModel discount)
@@ -25,6 +28,7 @@ namespace EnixerPos.Mobile.ViewModels
             SetShowDiscount(discount);
             updateDiscount = discount;
             IsUpdate = true;
+            TitleAndButtonText = "Update Discount";
         }
         public bool IsUpdate { get; set; }
 
@@ -77,11 +81,14 @@ namespace EnixerPos.Mobile.ViewModels
 
                 if (result != null || result.IsError)
                 {
-                    //TODO
+                    ErrorViewModel errorViewModel = new ErrorViewModel("บันทึกรายการสำเร็จ", 3);
+                    PopupNavigation.Instance.PushAsync(new Error(errorViewModel));
+                    BackPageMethod();
                 }
                 else
                 {
-                    //TODO
+                    ErrorViewModel error = new ErrorViewModel("ผิดพลาด", 1);
+                    PopupNavigation.Instance.PushAsync(new Error(error));
                 }
             }
             else
@@ -89,16 +96,14 @@ namespace EnixerPos.Mobile.ViewModels
                 bool result = _productService.AddDiscount(DiscountName, IsPercentage(Type), Amount).Result;
                 if (result)
                 {
-                    //  ErrorViewModel viewModel = new ErrorViewModel("ok",2);
-                    //  PopupNavigation.PushAsync(new Views.Popup.Error(viewModel));
-                    Application.Current.MainPage.DisplayAlert("ok", "ok", "ok"); //TODO
+                    ErrorViewModel errorViewModel = new ErrorViewModel("บันทึกรายการสำเร็จ", 3);
+                    PopupNavigation.Instance.PushAsync(new Error(errorViewModel));
+                    BackPageMethod();
                 }
                 else
                 {
-                    // ErrorViewModel viewModel = new ErrorViewModel("Error", 0);
-                    // PopupNavigation.PushAsync(new Views.Popup.Error(viewModel));
-
-                    Application.Current.MainPage.DisplayAlert("ok", "ok", "error"); //TODO
+                    ErrorViewModel error = new ErrorViewModel("ผิดพลาด", 1);
+                    PopupNavigation.Instance.PushAsync(new Error(error));
                 }
             }
         }
@@ -157,7 +162,17 @@ namespace EnixerPos.Mobile.ViewModels
             }
         }
 
+        private string titleAndButtonText;
 
+        public string TitleAndButtonText
+        {
+            get { return titleAndButtonText; }
+            set
+            {
+                titleAndButtonText = value;
+                OnPropertyChanged();
+            }
+        }
 
     }
 }

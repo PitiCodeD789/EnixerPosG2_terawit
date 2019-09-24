@@ -10,7 +10,7 @@
     <ContentPage.Content>
         <StackLayout >
             <Frame HasShadow="True">
-                <Label Text="Create category" TextColor="Black" FontSize="Medium"/>
+                <Label Text="{Binding TitleAndButtonText}" TextColor="Black" FontSize="Medium"/>
             </Frame>
             <Frame VerticalOptions="Start" 
                    WidthRequest="750" CornerRadius="3"
@@ -173,8 +173,8 @@
                          WidthRequest="800" 
                          HeightRequest="80"
                          HorizontalOptions="Center">
-              
-                <Button Text="CREATE CATEGORY"
+
+                <Button Text="{Binding TitleAndButtonText}"
                         WidthRequest="350" 
                         BackgroundColor="#E96722"
                         TextColor="White"
@@ -185,7 +185,7 @@
                         HorizontalOptions="FillAndExpand"/>
                 <Button Text="CANCEL"
                         WidthRequest="350" 
-                        Command="{Binding CancelCategoryCommand}"
+                        Command="{Binding BackButton}"
                         BackgroundColor="LightGray"
                         FontSize="Medium" Margin="5"
                         VerticalOptions="Start" HeightRequest="80"

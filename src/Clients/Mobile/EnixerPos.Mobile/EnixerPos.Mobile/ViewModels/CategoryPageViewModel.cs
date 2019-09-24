@@ -1,4 +1,5 @@
 ﻿using EnixerPos.Api.ViewModels.Product;
+using EnixerPos.Mobile.Views.Popup;
 using EnixerPos.Service.Interfaces;
 using EnixerPos.Service.Services;
 using Rg.Plugins.Popup.Services;
@@ -21,12 +22,14 @@ namespace EnixerPos.Mobile.ViewModels
             CreateCategoryCommand = new Command(CreateCategory);
             CancelCategoryCommand = new Command(CancelCategory);
             IsUpdate = false;
+            TitleAndButtonText = "Create Category";
         }
         public CategoryPageViewModel(CategoryModel category)
         {
             SetShowCategory(category);
             UpdateCategory = category;
             IsUpdate = true;
+            TitleAndButtonText = "Update Category";
         }
 
         private void SetShowCategory(CategoryModel category)
@@ -100,11 +103,14 @@ namespace EnixerPos.Mobile.ViewModels
 
                 if (result != null || result.IsError)
                 {
-                    //TODO
+                    ErrorViewModel errorViewModel = new ErrorViewModel("บันทึกรายการสำเร็จ", 3);
+                    PopupNavigation.Instance.PushAsync(new Error(errorViewModel));
+                    BackPageMethod();
                 }
                 else
                 {
-                    //TODO
+                    ErrorViewModel error = new ErrorViewModel("ผิดพลาด", 1);
+                    PopupNavigation.Instance.PushAsync(new Error(error));
                 }
             }
             else
@@ -112,16 +118,14 @@ namespace EnixerPos.Mobile.ViewModels
                 bool result = _productService.AddCategory(CategoryName, GetColor()).Result;
                 if (result)
                 {
-                    //  ErrorViewModel viewModel = new ErrorViewModel("ok",2);
-                    //  PopupNavigation.PushAsync(new Views.Popup.Error(viewModel));
-                    Application.Current.MainPage.DisplayAlert("ok", "ok", "ok");
+                    ErrorViewModel errorViewModel = new ErrorViewModel("บันทึกรายการสำเร็จ", 3);
+                    PopupNavigation.Instance.PushAsync(new Error(errorViewModel));
+                    BackPageMethod();
                 }
                 else
                 {
-                    // ErrorViewModel viewModel = new ErrorViewModel("Error", 0);
-                    // PopupNavigation.PushAsync(new Views.Popup.Error(viewModel));
-
-                    Application.Current.MainPage.DisplayAlert("ok", "ok", "error");
+                    ErrorViewModel error = new ErrorViewModel("ผิดพลาด", 1);
+                    PopupNavigation.Instance.PushAsync(new Error(error));
                 }
             }
         }
@@ -251,6 +255,16 @@ namespace EnixerPos.Mobile.ViewModels
             set { color6 = value; OnPropertyChanged(); }
         }
 
+        private string titleAndButtonText;
 
+        public string TitleAndButtonText
+        {
+            get { return titleAndButtonText; }
+            set
+            {
+                titleAndButtonText = value;
+                OnPropertyChanged();
+            }
+        }
     }
 }

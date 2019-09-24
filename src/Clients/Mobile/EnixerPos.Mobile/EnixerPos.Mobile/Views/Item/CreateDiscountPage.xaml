@@ -10,7 +10,7 @@
     <ContentPage.Content>
         <StackLayout >
             <Frame HasShadow="True">
-                <Label Text="Create Discount" TextColor="Black" FontSize="Medium"/>
+                <Label Text="{Binding TitleAndButtonText}" TextColor="Black" FontSize="Medium"/>
             </Frame>
             <Frame VerticalOptions="Start" 
                    WidthRequest="750" CornerRadius="3"
@@ -49,7 +49,7 @@
                          Margin="0,20,0,15"
                          WidthRequest="800" Padding="0"
                          HorizontalOptions="Center">
-                <Button Text="CREATE DISCOUNT" 
+                <Button Text="{Binding TitleAndButtonText}" 
                         WidthRequest="350"
                         BackgroundColor="#E96722"
                         TextColor="White" FontSize="Medium"
@@ -60,7 +60,7 @@
                 <Button Text="CANCEL" WidthRequest="350"
                         HeightRequest="80" 
                         FontSize="Medium" 
-                        Command="{Binding CancelCategoryCommand}"
+                        Command="{Binding BackButton}"
                         FontAttributes="Bold" 
                         HorizontalOptions="FillAndExpand"/>
             
