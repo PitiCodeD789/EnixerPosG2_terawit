@@ -50,34 +50,52 @@ namespace EnixerPos.Mobile.Views
             Navigation.PushPopupAsync(new SideMenu());
         }
 
-        protected override void OnAppearing()
+        protected async override void OnAppearing()
         {
            
             base.OnAppearing();
 
            // GetShiftViewModel data = _shiftService.GetShiftDetail(App.OpenShiftId, App.UserId);
-            _vM.GetShiftView = _shiftService.GetShiftDetail(App.OpenShiftId, App.UserId);
+            var shiftData = _shiftService.GetShiftDetail(App.OpenShiftId, App.UserId);
+            if(shiftData == null)
+            {
+                ErrorViewModel errorViewModel = new ErrorViewModel("ไม่สามารถดูข้อมูลได้", 1);
+                await PopupNavigation.Instance.PushAsync(new Error(errorViewModel));
+            }
+            else if(shiftData.IsError == System.Net.HttpStatusCode.Unauthorized)
+            {
+                BaseViewModel baseViewModel = new BaseViewModel();
+                baseViewModel.ForceLogout();
+            }
+            else if(shiftData.IsError != System.Net.HttpStatusCode.OK)
+            {
+                ErrorViewModel errorViewModel = new ErrorViewModel("ไม่สามารถดูข้อมูลได้", 1);
+                await PopupNavigation.Instance.PushAsync(new Error(errorViewModel));
+            }
+            else
+            {
+                _vM.GetShiftView = shiftData.Model;
+                decimal expectedcashamount = _vM.GetShiftView.StartingCash + _vM.GetShiftView.CashPayment + _vM.GetShiftView.Paidin - _vM.GetShiftView.Refunds - _vM.GetShiftView.Refunds;
+                decimal netsell = _vM.GetShiftView.CashPayment + _vM.GetShiftView.QRCode - _vM.GetShiftView.DebitCard - _vM.GetShiftView.CreditCard;
+                decimal grosssales = netsell + _vM.GetShiftView.Refunds + _vM.GetShiftView.Discount;
+                Shiftopened.RightTexLable = _vM.GetShiftView.CreateDateTime.ToString("dd MMM yyyy HH:mm:ss");
+                Startingcash.RightTexLable = _vM.GetShiftView.StartingCash.ToString("#,0.00");
+                Cashpayment.RightTexLable = _vM.GetShiftView.CashPayment.ToString("#,0.00");
+                Cashrefunds.RightTexLable = _vM.GetShiftView.CashRefunds.ToString("#,0.00");
+                Paidin.RightTexLable = _vM.GetShiftView.Paidin.ToString("#,0.00");
+                Paidout.RightTexLable = _vM.GetShiftView.Paidout.ToString("#,0.00");
+                Expectedcashamount.RightTexLable = expectedcashamount.ToString("#,0.00");
+                Grosssales.RightTexLable = grosssales.ToString("#,0.00");
+                Refunds.RightTexLable = _vM.GetShiftView.Refunds.ToString("#,0.00");
+                Discount.RightTexLable = _vM.GetShiftView.Discount.ToString("#,0.00");
+                Netsales.RightTexLable = netsell.ToString("#,0.00");
+                Cash.RightTexLable = _vM.GetShiftView.Cash.ToString("#,0.00");
+                DebitCard.RightTexLable = _vM.GetShiftView.DebitCard.ToString("#,0.00");
+                CreditCard.RightTexLable = _vM.GetShiftView.CreditCard.ToString("#,0.00");
+                QRCODE.RightTexLable = _vM.GetShiftView.QRCode.ToString("#,0.00");
+                Taxes.RightTexLable = _vM.GetShiftView.Taxes.ToString("#,0.00");
 
-            decimal expectedcashamount = _vM.GetShiftView.StartingCash + _vM.GetShiftView.CashPayment + _vM.GetShiftView.Paidin - _vM.GetShiftView.Refunds - _vM.GetShiftView.Refunds;
-            decimal netsell =  _vM.GetShiftView.CashPayment + _vM.GetShiftView.QRCode - _vM.GetShiftView.DebitCard - _vM.GetShiftView.CreditCard;
-            decimal grosssales = netsell + _vM.GetShiftView.Refunds + _vM.GetShiftView.Discount;
-            Shiftopened.RightTexLable = _vM.GetShiftView.CreateDateTime.ToString("dd MMM yyyy HH:mm:ss");
-            Startingcash.RightTexLable = _vM.GetShiftView.StartingCash.ToString("#,0.00");
-            Cashpayment.RightTexLable = _vM.GetShiftView.CashPayment.ToString("#,0.00");
-            Cashrefunds.RightTexLable = _vM.GetShiftView.CashRefunds.ToString("#,0.00");
-            Paidin.RightTexLable = _vM.GetShiftView.Paidin.ToString("#,0.00");
-            Paidout.RightTexLable = _vM.GetShiftView.Paidout.ToString("#,0.00");
-            Expectedcashamount.RightTexLable = expectedcashamount.ToString("#,0.00");
-            Grosssales.RightTexLable = grosssales.ToString("#,0.00");
-            Refunds.RightTexLable = _vM.GetShiftView.Refunds.ToString("#,0.00");
-            Discount.RightTexLable = _vM.GetShiftView.Discount.ToString("#,0.00");
-            Netsales.RightTexLable = netsell.ToString("#,0.00");
-            Cash.RightTexLable = _vM.GetShiftView.Cash.ToString("#,0.00");
-            DebitCard.RightTexLable = _vM.GetShiftView.DebitCard.ToString("#,0.00");
-            CreditCard.RightTexLable = _vM.GetShiftView.CreditCard.ToString("#,0.00");
-            QRCODE.RightTexLable = _vM.GetShiftView.QRCode.ToString("#,0.00");
-            Taxes.RightTexLable = _vM.GetShiftView.Taxes.ToString("#,0.00");
-
+            }
         }
     }
 }
