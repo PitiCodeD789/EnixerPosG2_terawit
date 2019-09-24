@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
-using EnixerPos
-    
-    .Api.ViewModels.Product;
 using EnixerPos.Api.ViewModels.Product;
 using EnixerPos.Domain.Interfaces;
 using EnixerPos.Domain.Services;
