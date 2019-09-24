@@ -15,11 +15,12 @@ namespace EnixerPos.Mobile.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ReceiptsPage : ContentPage
     {
+        ReceiptPageViewModel receiptPage = new ReceiptPageViewModel();
         PopupMenu PopupMenu { get; set; }
         public ReceiptsPage()
         {
             InitializeComponent();
-            BindingContext = new ReceiptPageViewModel();
+            BindingContext = receiptPage;
         }
 
         private void ImageButton_Clicked(object sender, EventArgs e)
@@ -37,6 +38,12 @@ namespace EnixerPos.Mobile.Views
         private void Button_Clicked(object sender, EventArgs e)
         {
             Navigation.PushPopupAsync(new SideMenu());
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            receiptPage.GetAllReceipt();
         }
     }
 }
