@@ -78,6 +78,7 @@ namespace EnixerPos.Mobile.ViewModels
                     {
                         await SecureStorage.SetAsync("RefreshToken", loginData.Model.RefreshToken);
                         await SecureStorage.SetAsync("Token", loginData.Model.Token);
+                        string testToken = await SecureStorage.GetAsync("Token");
                         App.Email = await SecureStorage.GetAsync("Email");
                         App.StoreName = await SecureStorage.GetAsync("StoreName");
                         App.User = loginData.Model.User;
@@ -88,7 +89,10 @@ namespace EnixerPos.Mobile.ViewModels
                             App.CheckShift = true;
                             App.OpenShiftId = shiftId;
                         }
-                        Application.Current.MainPage = new NavigationPage(new SaleView());
+                        Application.Current.MainPage = new NavigationPage(new SaleView())
+                        {
+                            BackgroundColor = Color.White
+                        };
                     }
                 }
                 if (countPin > 4)

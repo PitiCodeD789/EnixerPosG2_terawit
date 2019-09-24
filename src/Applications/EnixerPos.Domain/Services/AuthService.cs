@@ -132,11 +132,14 @@ namespace EnixerPos.Domain.Services
 
             ShiftEntity shiftEntity = _shiftRepository.GetShift(email, userId);
             int shiftId = 0;
-            if(shiftEntity.Available == true)
+            if(shiftEntity != null)
             {
-                shiftId = shiftEntity.Id;
+                if (shiftEntity.Available == true)
+                {
+                    shiftId = shiftEntity.Id;
+                }
             }
-
+                
             LoginByPinDto loginByPinDto = new LoginByPinDto()
             {
                 User = userEntity.NameUser,

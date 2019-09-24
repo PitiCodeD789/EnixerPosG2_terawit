@@ -21,8 +21,6 @@ namespace EnixerPos.Mobile.ViewModels.ItemPage
         public SubItemViewModel()
         {
             typePage = Status.InItemPage.Item;
-            categoryData = GetCategoryData().Result;
-            itemDate = GetItemData().Result;
             InputDataToBinding();
             EditData = new Command<string>(EditDataMethod);
             CreateData = new Command(CreateDataMethod);
@@ -192,10 +190,12 @@ namespace EnixerPos.Mobile.ViewModels.ItemPage
             return result;
         }
 
-        public void InputDataToBinding()
+        public async void InputDataToBinding()
         {
             if(typePage == Status.InItemPage.Item)
             {
+                categoryData = await GetCategoryData();
+                itemDate = await GetItemData();
                 TheData = itemDate.Select(x => new ItemPageModel()
                 {
                     Color = x.Color,
@@ -214,6 +214,7 @@ namespace EnixerPos.Mobile.ViewModels.ItemPage
             }
             else if(typePage == Status.InItemPage.Categories)
             {
+                categoryData = await GetCategoryData();
                 TheData = categoryData.Select(x => new ItemPageModel()
                 {
                     Color = x.Color,
@@ -231,6 +232,7 @@ namespace EnixerPos.Mobile.ViewModels.ItemPage
             }
             else
             {
+                discountData = GetDiscountData().Result;
                 TheData = discountData.Select(x => new ItemPageModel()
                 {
                     Color = "#d6d6d6",
@@ -275,8 +277,6 @@ namespace EnixerPos.Mobile.ViewModels.ItemPage
         public ICommand GotoItem { get; set; }
         public void ItemMethod()
         {
-            itemDate = GetItemData().Result;
-            categoryData = GetCategoryData().Result;
             typePage = Status.InItemPage.Item;
             InputDataToBinding();
         }
@@ -284,7 +284,6 @@ namespace EnixerPos.Mobile.ViewModels.ItemPage
         public ICommand GotoCategory { get; set; }
         public void CategoryMethod()
         {
-            categoryData = GetCategoryData().Result;
             typePage = Status.InItemPage.Categories;
             InputDataToBinding();
         }
@@ -292,7 +291,6 @@ namespace EnixerPos.Mobile.ViewModels.ItemPage
         public ICommand GotoDiscount { get; set; }
         public void DiscountMethod()
         {
-            discountData = GetDiscountData().Result;
             typePage = Status.InItemPage.Discount;
             InputDataToBinding();
         }

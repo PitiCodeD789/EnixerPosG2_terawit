@@ -13,6 +13,6 @@ namespace EnixerPos.Service.Interfaces
         Task<ResultServiceModel<LoginByPinViewModel>> LoginByPin(string pin, string refreshToken, string email);
         Task<ResultServiceModel<GetTokenByRefreshViewModel>> GetTokenByRefreshMerchant(string email, string refreshToken);
         Task<ResultServiceModel<GetTokenByRefreshViewModel>> GetTokenByRefreshUser(string refreshToken, string user);
-        Task<ResultServiceModel<DummyModel>> Logout();
+        Task<ResultServiceModel<DummyModel>> Logout(string email);
     }
 }

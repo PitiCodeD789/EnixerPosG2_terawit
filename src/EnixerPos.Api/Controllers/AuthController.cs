@@ -181,13 +181,11 @@ namespace EnixerPos.Api.Controllers
         }
 
         [HttpPost("logout")]
-        [Authorize]
-        [AllowAnonymous]
-        public IActionResult Logout()
+        public IActionResult Logout([FromBody]LogoutCommand command)
         {
             try
             {
-                string email = User.Claims.SingleOrDefault(x => x.Type == "aud").Value;
+                string email = command.Email;
 
                 bool isLogout = _authService.Logout(email);
                 if (!isLogout)
