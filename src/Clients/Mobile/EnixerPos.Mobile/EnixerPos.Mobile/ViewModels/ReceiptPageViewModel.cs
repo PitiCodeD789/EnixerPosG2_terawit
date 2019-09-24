@@ -265,7 +265,7 @@ namespace EnixerPos.Mobile.ViewModels
 
         public void GetAllReceipt()
         {
-            AllReciept = _receiptService.GetReceipt();
+            AllReciept = _receiptService.GetReceiptByShiftId(App.OpenShiftId);
             ShowReciept = AllReciept;
         }
 
