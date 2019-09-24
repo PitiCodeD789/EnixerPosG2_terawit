@@ -112,18 +112,26 @@ namespace EnixerPos.Service.Services
 
             try
             {
-                var client = new HttpClient();
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-                HttpResponseMessage response = client.GetAsync(serviceUrl+ "GetReceipts1DayByShiftId/"+ shiftId).Result;
-                response.EnsureSuccessStatusCode();
-                string responseBody = response.Content.ReadAsStringAsync().Result;
-                var result = JsonConvert.DeserializeObject<List<ReceiptViewModel>>(responseBody);
-                return result;
+                //var client = new HttpClient();
+                //client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+                //HttpResponseMessage response = client.GetAsync(serviceUrl+ "GetReceipts1DayByShiftId/"+ shiftId).Result;
+                //response.EnsureSuccessStatusCode();
+                //string responseBody = response.Content.ReadAsStringAsync().Result;
+                //var result = JsonConvert.DeserializeObject<List<ReceiptViewModel>>(responseBody);
+                //return result;
+
+                string url = serviceUrl + "GetReceipts1DayByShiftId" + shiftId.ToString();
+                var result = Get<List<ReceiptViewModel>>(url).Result;
+                if (result != null || result.IsError == System.Net.HttpStatusCode.OK)
+                {
+                    return result.Model;
+                }
+                return new List<ReceiptViewModel>();
             }
             catch (Exception)
             {
 
-                throw;
+                return null;
             }
 
 
