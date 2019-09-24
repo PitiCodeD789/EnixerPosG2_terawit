@@ -1,6 +1,7 @@
 ﻿using EnixerPos.Mobile.Views;
 using EnixerPos.Mobile.Views.Popup;
 using EnixerPos.Service.Interfaces;
+using EnixerPos.Service.Models;
 using EnixerPos.Service.Services;
 using Rg.Plugins.Popup.Services;
 using System;
@@ -28,9 +29,9 @@ namespace EnixerPos.Mobile.ViewModels
         {
             await Application.Current.MainPage.Navigation.PopAsync();
         }
-        public async virtual void ForceLogout()
+
+        public async virtual void NomalLogout()
         {
-            
             var isClose = _shiftService.CloseListShift(App.OpenShiftId, App.UserId);
             if (isClose)
             {
@@ -38,11 +39,13 @@ namespace EnixerPos.Mobile.ViewModels
                 var logoutData = await _authService.Logout(App.Email);
                 if (logoutData == null)
                 {
-                    CloseApp();
+                    ErrorViewModel errorViewModel = new ErrorViewModel("ไม่สามารถออกจากระบบได้", 1);
+                    await PopupNavigation.Instance.PushAsync(new Error(errorViewModel));
                 }
                 else if (logoutData.IsError != System.Net.HttpStatusCode.OK)
                 {
-                    CloseApp();
+                    ErrorViewModel errorViewModel = new ErrorViewModel("ไม่สามารถออกจากระบบได้", 1);
+                    await PopupNavigation.Instance.PushAsync(new Error(errorViewModel));
                 }
                 else
                 {
@@ -53,16 +56,76 @@ namespace EnixerPos.Mobile.ViewModels
             }
             else
             {
-                CloseApp();
+                ErrorViewModel errorViewModel = new ErrorViewModel("ไม่สามารถปิดกะได้", 1);
+                await PopupNavigation.Instance.PushAsync(new Error(errorViewModel));
             }
         }
-            
+
+        public async virtual void ForceLogout()
+        {
+            try
+            {
+                var isClose = _shiftService.CloseListShift(App.OpenShiftId, App.UserId);
+                if (isClose)
+                {
+                    App.CheckShift = false;
+                    var logoutData = await _authService.Logout(App.Email);
+                    if (logoutData == null)
+                    {
+                        SecureStorage.RemoveAll();
+                        Application.Current.MainPage = new NavigationPage(new Login());
+                    }
+                    else if (logoutData.IsError != System.Net.HttpStatusCode.OK)
+                    {
+                        SecureStorage.RemoveAll();
+                        Application.Current.MainPage = new NavigationPage(new Login());
+                    }
+                    else
+                    {
+                        SecureStorage.RemoveAll();
+                        await PopupNavigation.Instance.PopAllAsync();
+                        ErrorViewModel errorViewModel = new ErrorViewModel("กรุณาเข้าสู่ระบบใหม่อีกครั้ง", 1);
+                        await PopupNavigation.Instance.PushAsync(new Error(errorViewModel));
+                        Application.Current.MainPage = new NavigationPage(new Login());
+                        return;
+                    }
+                }
+                else
+                {
+                    SecureStorage.RemoveAll();
+                    Application.Current.MainPage = new NavigationPage(new Login());
+                }
+            }
+            catch(Exception e)
+            {
+                SecureStorage.RemoveAll();
+                Application.Current.MainPage = new NavigationPage(new Login());
+            }
+        }
+
+        public void CheckUnauthorized(System.Net.HttpStatusCode httpStatus)
+        {
+            if (httpStatus == System.Net.HttpStatusCode.Unauthorized)
+            {
+                ForceLogout();
+            }
+        }
+
         public async virtual void CloseApp()
         {
-            var isClose = _shiftService.CloseListShift(App.OpenShiftId, App.UserId);
-            var logoutData = await _authService.Logout(App.Email);
-            SecureStorage.RemoveAll();
-            Environment.Exit(0);
+            try
+            {
+                var isClose = _shiftService.CloseListShift(App.OpenShiftId, App.UserId);
+                var logoutData = await _authService.Logout(App.Email);
+                SecureStorage.RemoveAll();
+                Environment.Exit(0);
+            }
+            catch(Exception e)
+            {
+                SecureStorage.RemoveAll();
+                Environment.Exit(0);
+            }
+            
         }
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
