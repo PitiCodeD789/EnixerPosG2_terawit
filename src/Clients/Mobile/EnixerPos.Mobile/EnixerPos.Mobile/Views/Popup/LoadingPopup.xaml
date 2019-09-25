@@ -9,8 +9,8 @@
              x:Class="EnixerPos.Mobile.Views.Popup.LoadingPopup">
     <pages:PopupPage.Animation>
         <animations:ScaleAnimation 
-            PositionIn="Left"
-            PositionOut="Left"
+            PositionIn="Center"
+            PositionOut="Center" DurationIn="1"
             HasBackgroundAnimation="False"/>
     </pages:PopupPage.Animation>
   

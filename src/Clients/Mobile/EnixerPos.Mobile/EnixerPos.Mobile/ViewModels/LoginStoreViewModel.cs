@@ -57,6 +57,8 @@ namespace EnixerPos.Mobile.ViewModels
         }
 
         public ICommand GotoLogin { get; set; }
+
+       
         public async void LoginByStore()
         {
             bool isCheck = false;
@@ -81,7 +83,9 @@ namespace EnixerPos.Mobile.ViewModels
             }
             else
             {
+                await PopupNavigation.Instance.PushAsync(new Views.Popup.LoadingPopup());
                 var loginData = await _authService.Login(email, password);
+                await PopupNavigation.Instance.PopAsync();
                 if (loginData == null)
                 {
                     ErrorViewModel errorViewModel = new ErrorViewModel("ไม่สามารถเข้าสู่ระบบได้", 1);

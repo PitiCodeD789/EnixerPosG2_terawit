@@ -21,16 +21,30 @@
                  HorizontalOptions="Center"                       
                  BackgroundColor="White">
         <Frame HasShadow="True">
-            <Label Text="Shift" TextColor="Black" FontSize="Medium"/>
+           
+        <StackLayout Orientation="Horizontal">
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer  Tapped="TapGestureRecognizer_Tapped"/>
+            </StackLayout.GestureRecognizers>
+
+            <Image Source="Icon_x" 
+                       Aspect="AspectFill" 
+                       HorizontalOptions="Start"
+                       VerticalOptions="Start"
+                       Margin="0,5,0,0"
+                       HeightRequest="15"
+                       WidthRequest="15" />
+            <Label Text="Shift Report" TextColor="Black" Margin="5,0,0,0" FontSize="Medium"/>
+        </StackLayout>
         </Frame>
-       
-            <StackLayout>
+
+        <StackLayout>
                
                 <ScrollView>
                     <StackLayout>
                     
                     <component:Pos_InlineLable x:Name="Shiftopened" LeftTexLable="Shift opened"
-                                                       RightTexLable="18 Jan 2019 08:40:12"                                                      
+                                                       RightTexLable="00 000 000 00:00:00"                                                      
                                                        LableTextMargin="50,20,50,0" />
 
                         <BoxView Color="Gray" 
@@ -45,10 +59,10 @@
                                    Margin="50,20,50,0"
                                    FontSize="Medium"/>
                     <component:Pos_InlineLable x:Name="Startingcash" LeftTexLable="Starting cash"
-                                                       RightTexLable="3,000.00"                                                      
+                                                       RightTexLable="0.00"                                                      
                                                        LableTextMargin="50,0,50,0" />
                     <component:Pos_InlineLable x:Name="Cashpayment" LeftTexLable="Cash payment"
-                                                       RightTexLable="1,189.00"                                                      
+                                                       RightTexLable="0.00"                                                      
                                                        LableTextMargin="50,0,50,0" />
                     <component:Pos_InlineLable x:Name="Cashrefunds" LeftTexLable="Cash refunds"
                                                        RightTexLable="0.00"                                                      
@@ -60,7 +74,7 @@
                                                        RightTexLable="0.00"                                                      
                                                        LableTextMargin="50,0,50,0" />
                     <component:Pos_InlineLable x:Name="Expectedcashamount" LeftTexLable="Expected cash amount"
-                                                       RightTexLable="4,189.00" 
+                                                       RightTexLable="0.00" 
                                                        LableFontAttributes="Bold"
                                                        LableTextMargin="50,20,50,0" />
 
@@ -75,7 +89,7 @@
                                    Margin="50,20,50,0"
                                    FontSize="Medium"/>
                     <component:Pos_InlineLable x:Name="Grosssales" LeftTexLable="Gross sales"
-                                                       RightTexLable="2,281.00"                                                      
+                                                       RightTexLable="0.00"                                                      
                                                        LableTextMargin="50,0,50,0" />
                     <component:Pos_InlineLable x:Name="Refunds" LeftTexLable="Refunds"
                                                        RightTexLable="0.00"                                                      
@@ -83,9 +97,6 @@
                     <component:Pos_InlineLable x:Name="Discount" LeftTexLable="Discount"
                                                        RightTexLable="0.00"                                                      
                                                        LableTextMargin="50,0,50,50" />
-
-
-                        
 
                     </StackLayout>
 

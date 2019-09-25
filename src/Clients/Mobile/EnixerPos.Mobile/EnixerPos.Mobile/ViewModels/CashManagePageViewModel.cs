@@ -1,4 +1,5 @@
 ﻿using EnixerPos.Api.ViewModels.Shifts;
+using EnixerPos.Mobile.Views.Popup;
 using EnixerPos.Service.Interfaces;
 using EnixerPos.Service.Services;
 using Rg.Plugins.Popup.Services;
@@ -18,57 +19,103 @@ namespace EnixerPos.Mobile.ViewModels
             _shiftService = new ShiftService();
             PayinClickCommand = new Command(PayinClick);
             PayoutClickCommand = new Command(PayoutClick);
-            PopupNavigation.PopAsync();
+            PopupNavigation.Instance.PopAsync();
         }
 
         private async void PayoutClick(object obj)
         {
-           
-                 await PopupNavigation.PushAsync(new Views.Popup.LoadingPopup());
-            ManageCashCommand manage = new ManageCashCommand
+            if (Amount != null)
             {
-                Amount = decimal.Parse(Amount),
-                Comment = Comment,
-                ManageCashStatus = Api.ViewModels.Enixer_Enumerations.ManageCashStatus.PayOut,
-                PosUserId = App.UserId,
-                ShiftId = App.OpenShiftId
-            };
-           
+                decimal amount_check = decimal.Parse(Amount);
+                if (amount_check > 0)
+                {
 
-            bool isPayOut = await _shiftService.ManageCashPay(manage);
-            PopupNavigation.PopAsync();
-            if (isPayOut)
-            {
-                App.Current.MainPage.DisplayAlert("ok", "ok", "ok");
+                    await PopupNavigation.Instance.PushAsync(new Views.Popup.LoadingPopup());
+                    ManageCashCommand manage = new ManageCashCommand
+                    {
+                        Amount = decimal.Parse(Amount),
+                        Comment = Comment,
+                        ManageCashStatus = Api.ViewModels.Enixer_Enumerations.ManageCashStatus.PayOut,
+                        PosUserId = App.UserId,
+                        ShiftId = App.OpenShiftId
+                    };
+
+
+                    bool isPayOut = await _shiftService.ManageCashPay(manage);
+                    await PopupNavigation.Instance.PopAsync(false);
+                    if (isPayOut)
+                    {
+                        ErrorViewModel errorViewModel = new ErrorViewModel("PayOut Complete", 2);
+                        await PopupNavigation.Instance.PushAsync(new Error(errorViewModel));
+                        Amount = "";
+                        Comment = "";
+                    }
+                    else
+                    {
+                        ErrorViewModel errorViewModel = new ErrorViewModel("PayOut Error", 1);
+                        await PopupNavigation.Instance.PushAsync(new Error(errorViewModel));
+                    }
+                }else
+                {
+                    ErrorViewModel errorViewModel = new ErrorViewModel("Input Amount Morethan 0 ", 1);
+                    await PopupNavigation.Instance.PushAsync(new Error(errorViewModel));
+                }
+
+
+                
             }else
             {
-                App.Current.MainPage.DisplayAlert("ok", "ok", "Error");
+                ErrorViewModel errorViewModel = new ErrorViewModel("Input Amount", 1);
+                await PopupNavigation.Instance.PushAsync(new Error(errorViewModel));
             }
+
 
 
         }
 
         private async void PayinClick(object obj)
         {
-            await PopupNavigation.PushAsync(new Views.Popup.LoadingPopup());
-            ManageCashCommand manage = new ManageCashCommand
+            if (Amount != null)
             {
-                Amount = decimal.Parse(Amount),
-                Comment = Comment,
-                ManageCashStatus = Api.ViewModels.Enixer_Enumerations.ManageCashStatus.PayIn,
-                PosUserId = App.UserId,
-                ShiftId = App.OpenShiftId
-            };
+                decimal amount_check = decimal.Parse(Amount);
+                if (amount_check > 0)
+                {
 
-            bool isPayOut = await _shiftService.ManageCashPay(manage);
-            PopupNavigation.PopAsync();
-            if (isPayOut)
+                    await PopupNavigation.Instance.PushAsync(new Views.Popup.LoadingPopup());
+                    ManageCashCommand manage = new ManageCashCommand
+                    {
+                        Amount = decimal.Parse(Amount),
+                        Comment = Comment,
+                        ManageCashStatus = Api.ViewModels.Enixer_Enumerations.ManageCashStatus.PayIn,
+                        PosUserId = App.UserId,
+                        ShiftId = App.OpenShiftId
+                    };
+
+                    bool isPayOut = await _shiftService.ManageCashPay(manage);
+                    await PopupNavigation.Instance.PopAsync(false);
+
+                    if (isPayOut)
+                    {
+                        ErrorViewModel errorViewModel = new ErrorViewModel("PayIn Complete", 2);
+                        await PopupNavigation.Instance.PushAsync(new Error(errorViewModel));
+                        Amount = "";
+                        Comment = "";
+                    }
+                    else
+                    {
+                        ErrorViewModel errorViewModel = new ErrorViewModel("PayIn Error", 1);
+                        await PopupNavigation.Instance.PushAsync(new Error(errorViewModel));
+                    }
+                }else
+                {
+                    ErrorViewModel errorViewModel = new ErrorViewModel("Input Amount Morethan 0 ", 1);
+                    await PopupNavigation.Instance.PushAsync(new Error(errorViewModel));
+                }
+
+            }else
             {
-                App.Current.MainPage.DisplayAlert("ok", "ok", "ok");
-            }
-            else
-            {
-                App.Current.MainPage.DisplayAlert("ok", "ok", "Error");
+                ErrorViewModel errorViewModel = new ErrorViewModel("Input Amount", 1);
+                await PopupNavigation.Instance.PushAsync(new Error(errorViewModel));
             }
 
         }

@@ -54,8 +54,10 @@ namespace EnixerPos.Mobile.ViewModels
                 HintColorChange(countPin);
                 if (countPin == 4)
                 {
+                    await PopupNavigation.Instance.PushAsync(new Views.Popup.LoadingPopup());
                     var refreshToken = await SecureStorage.GetAsync("RefreshToken");
                     var loginData = await _authService.LoginByPin(pin, refreshToken, App.Email);
+                    await PopupNavigation.Instance.PopAsync();
                     if (loginData == null)
                     {
                         countLogout++;
