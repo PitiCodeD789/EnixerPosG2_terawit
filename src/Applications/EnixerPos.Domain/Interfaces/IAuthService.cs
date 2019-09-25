@@ -20,5 +20,9 @@ namespace EnixerPos.Domain.Interfaces
         bool CheckStore(string storeName);
         bool SetPassword(SetPasswordDtoCommand command);
         bool CheckPin(CheckPinDtoCommand checkPinDto);
+        bool ChechNameUser(CheckNameUserDtoCommand checkNameUser);
+        List<StaffDto> GetUserInStore(string email);
+        bool DeleteNameUser(CheckNameUserDtoCommand checkNameUser);
+        bool EditUserInStore(EditUserInStoreDtoCommand command);
     }
 }

@@ -10,5 +10,9 @@ namespace EnixerPos.Domain.Repositories
         UserEntity GetUserByUserName(string user);
         UserEntity GetUserByEmialAndPin(int storeId, string hashPin);
         bool CreateUserInStore(int storeId, string pin, string nameUser);
+        UserEntity GetUserByEmialAndUser(int storeId, string user);
+        List<UserEntity> GetAllUserInStore(int storeId);
+        bool DeleteUserByEmialAndUser(int storeId, string user);
+        bool EditUserInStore(int storeId, string pin, string nameUser, string oldUser);
     }
 }
