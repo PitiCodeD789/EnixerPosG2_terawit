@@ -9,9 +9,13 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
+using System.Reactive;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace EnixerPos.Mobile.ViewModels
@@ -80,7 +84,7 @@ namespace EnixerPos.Mobile.ViewModels
         {
             Cash = amount;
         }
-        void Payment(string paymentType)
+        async void Payment(string paymentType)
         {
             PaymentCommand payment = new PaymentCommand()
             {
@@ -122,15 +126,17 @@ namespace EnixerPos.Mobile.ViewModels
                     break;
 
                 case "Wallet":
+                    Int32 unixTimestamp = (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
                     GeneratePaymentModel model = new GeneratePaymentModel()
                     {
                         Amount = TotalPrice,
-                        AccountNumber = "0000000049",
-                        FirstName = App.StoreName
+                        AccountNumber = App.AccountNumber,
+                        FirstName = App.StoreName,
+                        TransactionReference = unixTimestamp.ToString() + App.User,
                     };
                     QrValue = JsonConvert.SerializeObject(model);
-                    PopupNavigation.PushAsync(new QrPage(this));
-
+                    await PopupNavigation.PushAsync(new QrPage(this));
+                    PollCode(unixTimestamp.ToString() + App.User);
                     break;
                 default:
                     break;
@@ -163,6 +169,29 @@ namespace EnixerPos.Mobile.ViewModels
             else
             {
                 Application.Current.MainPage.DisplayAlert("Payment Error", "Payment not completed please try again.", "Ok");
+            }
+        }
+        async Task<bool> PollCode(string referenceNumber)
+        {
+            try
+            {
+                Stopwatch stopwatch = new Stopwatch();
+                int delay = 3000;
+                bool result = false;
+                stopwatch.Start();
+                while (!result)
+                {
+                    result = _service.CheckQrPayment(referenceNumber);
+                    Task.Delay(delay);
+                    if (stopwatch.Elapsed.TotalSeconds >= delay*20)
+                        break;
+                }
+                PopupNavigation.PopAllAsync();
+                return result;
+            }
+            catch (global::System.Exception e)
+            {
+                return false;
             }
         }
 
