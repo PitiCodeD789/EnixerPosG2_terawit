@@ -36,14 +36,7 @@ namespace EnixerPos.Mobile.ViewModels
                 CurrentTicket.Add(item);
             }
             Cash = TotalPrice;
-            ExpectedCash1 = GetExpectedCash(10);
-            ExpectedCash2 = GetExpectedCash(20);
-            if (ExpectedCash2 == ExpectedCash1)
-                ExpectedCash2 = GetExpectedCash(50);
-            ExpectedCash3 = GetExpectedCash(100);
-            ExpectedCash4 = GetExpectedCash(500);
-            if (ExpectedCash3 == ExpectedCash4)
-                ExpectedCash4 = GetExpectedCash(1000);
+            CalculateExpectedCash();
 
             ExpectedCashCommand = new Command<decimal>(ChangeCash);
             PaymentCommand = new Command<string>(Payment);
@@ -58,9 +51,27 @@ namespace EnixerPos.Mobile.ViewModels
         public Command ClosePopupCommand { get; set; }
         public Command QrPaymentCompleteCommand { get; set; }
 
+        void CalculateExpectedCash()
+        {
+            ExpectedCash1 = GetExpectedCash(10);
+            ExpectedCash2 = GetExpectedCash(20);
+            if (ExpectedCash2 == ExpectedCash1)
+                ExpectedCash2 = GetExpectedCash(50);
+            ExpectedCash3 = GetExpectedCash(100);
+            ExpectedCash4 = GetExpectedCash(500);
+            if (ExpectedCash3 == ExpectedCash4)
+                ExpectedCash4 = GetExpectedCash(1000);
+            if (ExpectedCash1 == ExpectedCash2 && ExpectedCash2 == ExpectedCash3)
+            {
+                ExpectedCash1 = ExpectedCash2;
+                ExpectedCash2 = ExpectedCash3;
+                ExpectedCash3 = ExpectedCash4;
+                ExpectedCash4 = GetExpectedCash(1000);
+            }
+        }
         decimal GetExpectedCash(int roundTo)
         {
-            int multiplier = Convert.ToInt32(TotalPrice / roundTo);
+            int multiplier = Convert.ToInt32(Math.Floor(TotalPrice / roundTo));
             if (!(multiplier * roundTo == TotalPrice))
                 multiplier++;
             return (multiplier) * roundTo;
@@ -147,7 +158,6 @@ namespace EnixerPos.Mobile.ViewModels
             if (resultW != null)
             {
                 await PopupNavigation.Instance.PushAsync(new ShowChange(this));
-                await PopupNavigation.Instance.PushAsync(new Error(new ErrorViewModel("Payment Completed", 3)));
                 await Application.Current.MainPage.Navigation.PushAsync(new ReceiptPage(this));
             }
             else
