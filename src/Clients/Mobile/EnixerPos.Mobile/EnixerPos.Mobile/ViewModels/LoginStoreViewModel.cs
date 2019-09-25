@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -114,14 +115,18 @@ namespace EnixerPos.Mobile.ViewModels
         public ICommand GotoForgotPass { get; set; }
         public async void ForgotPasswordMethod()
         {
-
+            Uri uri = new Uri("https://www.google.com/");
+            await Browser.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
         }
 
         public ICommand GotoRegis { get; set; }
         public async void RegisterMethod()
         {
-
+            Uri uri = new Uri("http://10.0.2.2:20000/");
+            await Browser.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
         }
+    
+      
 
     }
 }

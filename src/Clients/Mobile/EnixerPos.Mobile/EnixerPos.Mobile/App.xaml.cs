@@ -35,32 +35,32 @@ namespace EnixerPos.Mobile
             //CreateDiscountPageViewModel createDiscount = new CreateDiscountPageViewModel();
             //MainPage = new NavigationPage(new Views.Item.CreateDiscountPage(createDiscount));
             //MainPage = new NavigationPage(new SaleView());
-            MainPage = new NavigationPage(new Views.SettingPage());
+           // MainPage = new NavigationPage(new Views.SettingPage());
            // PermissionReq();
         }
 
-        //protected async override void OnStart()
-        //{
-        //    var refreshToken = await SecureStorage.GetAsync("RefreshToken");
-        //    Email = await SecureStorage.GetAsync("Email");
-        //    StoreName = await SecureStorage.GetAsync("StoreName");
-        //    if (String.IsNullOrEmpty(refreshToken) || String.IsNullOrEmpty(Email) || String.IsNullOrEmpty(StoreName))
-        //    {
-        //        MainPage = new NavigationPage(new Login())
-        //        {
-        //            BackgroundColor = Color.White
-        //        };
-        //        PermissionReq();
-        //    }
-        //    else
-        //    {
-        //        MainPage = new NavigationPage(new EnterPin())
-        //        {
-        //            BackgroundColor = Color.White
-        //        };
-        //        PermissionReq();
-        //    }
-        //}
+        protected async override void OnStart()
+        {
+            var refreshToken = await SecureStorage.GetAsync("RefreshToken");
+            Email = await SecureStorage.GetAsync("Email");
+            StoreName = await SecureStorage.GetAsync("StoreName");
+            if (String.IsNullOrEmpty(refreshToken) || String.IsNullOrEmpty(Email) || String.IsNullOrEmpty(StoreName))
+            {
+                MainPage = new NavigationPage(new Login())
+                {
+                    BackgroundColor = Color.White
+                };
+                PermissionReq();
+            }
+            else
+            {
+                MainPage = new NavigationPage(new EnterPin())
+                {
+                    BackgroundColor = Color.White
+                };
+                PermissionReq();
+            }
+        }
 
         protected override void OnSleep()
         {
