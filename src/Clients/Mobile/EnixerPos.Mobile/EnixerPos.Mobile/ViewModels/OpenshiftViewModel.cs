@@ -1,5 +1,6 @@
 ﻿using EnixerPos.Api.ViewModels.Shifts;
 using EnixerPos.Mobile.Views.Popup;
+using EnixerPos.Service.Helpers;
 using EnixerPos.Service.Interfaces;
 using EnixerPos.Service.Services;
 using Rg.Plugins.Popup.Services;
@@ -25,34 +26,47 @@ namespace EnixerPos.Mobile.ViewModels
 
         private async void OpenShiftsubmitClick(object obj)
         {
-            OpenShiftCommand command = new OpenShiftCommand()
+            if(startingCash == null)
             {
-                StartingCash = Decimal.Parse(startingCash),
-                UserId = App.UserId,
-                StoreEmail = App.Email,
-                PosUserId = App.UserId
-            };
-            var openShiftId = await _shiftService.OpenShift(command);
-            if(openShiftId == null)
-            {
-                countLogout++;
-                ErrorViewModel errorViewModel = new ErrorViewModel("ไม่สามารถเข้าสู่กะนี้ได้", 1);
-                await PopupNavigation.Instance.PushAsync(new Error(errorViewModel));
-                CheckLogout();
+                startingCash = "0";
             }
-            else if (openShiftId.IsError != System.Net.HttpStatusCode.OK || openShiftId.Model == null)
+            if (Helper.CheckDigita(startingCash))
             {
-                countLogout++;
-                ErrorViewModel errorViewModel = new ErrorViewModel("ไม่สามารถเข้าสู่กะนี้ได้", 1);
-                await PopupNavigation.Instance.PushAsync(new Error(errorViewModel));
-                CheckLogout();
+                OpenShiftCommand command = new OpenShiftCommand()
+                {
+                    StartingCash = Decimal.Parse(startingCash),
+                    UserId = App.UserId,
+                    StoreEmail = App.Email,
+                    PosUserId = App.UserId
+                };
+                var openShiftId = await _shiftService.OpenShift(command);
+                if (openShiftId == null)
+                {
+                    countLogout++;
+                    ErrorViewModel errorViewModel = new ErrorViewModel("ไม่สามารถเข้าสู่กะนี้ได้", 1);
+                    await PopupNavigation.Instance.PushAsync(new Error(errorViewModel));
+                    CheckLogout();
+                }
+                else if (openShiftId.IsError != System.Net.HttpStatusCode.OK || openShiftId.Model == null)
+                {
+                    countLogout++;
+                    ErrorViewModel errorViewModel = new ErrorViewModel("ไม่สามารถเข้าสู่กะนี้ได้", 1);
+                    await PopupNavigation.Instance.PushAsync(new Error(errorViewModel));
+                    CheckLogout();
+                }
+                else
+                {
+                    App.OpenShiftId = openShiftId.Model.OpenShiftId;
+                    App.CheckShift = true;
+                    await PopupNavigation.Instance.PopAsync(false);
+                }
             }
             else
             {
-                App.OpenShiftId = openShiftId.Model.OpenShiftId;
-                App.CheckShift = true;
-                await PopupNavigation.Instance.PopAsync(false);
+                ErrorViewModel errorViewModel = new ErrorViewModel("กรุณาใส่จำนวนเงินให้ถูกต้อง", 1);
+                await PopupNavigation.Instance.PushAsync(new Error(errorViewModel));
             }
+            
         }
 
         private void CheckLogout()

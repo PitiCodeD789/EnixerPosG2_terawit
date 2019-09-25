@@ -1,4 +1,5 @@
-﻿using EnixerPos.Mobile.ViewModels;
+﻿using EnixerPos.Api.ViewModels.Helpers;
+using EnixerPos.Mobile.ViewModels;
 using Rg.Plugins.Popup.Pages;
 using Rg.Plugins.Popup.Services;
 using System;
@@ -6,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -58,6 +59,13 @@ namespace EnixerPos.Mobile.Views.Popup
         {
             BaseViewModel baseViewModel = new BaseViewModel();
             baseViewModel.NomalLogout();
+        }
+
+        private async void BackOffice_Tapped(object sender, EventArgs e)
+        {
+            string url = StaticValue.BaseUrl + ":20000";
+            Uri uri = new Uri(url);
+            await Browser.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
         }
     }
 }
