@@ -60,8 +60,8 @@ namespace EnixerPos.Mobile.Views
             else
             {
                 _vM.GetShiftView = shiftData.Model;
-                
-                decimal expectedcashamount = _vM.GetShiftView.StartingCash + _vM.GetShiftView.CashPayment + _vM.GetShiftView.Paidin - _vM.GetShiftView.Refunds - _vM.GetShiftView.Paidout;
+
+                decimal expectedcashamount = _vM.GetShiftView.StartingCash + _vM.GetShiftView.CashPayment + _vM.GetShiftView.Paidin - _vM.GetShiftView.Refunds - _vM.GetShiftView.Paidout - _vM.GetShiftView.Discount;
                 decimal netsell = _vM.GetShiftView.CashPayment + _vM.GetShiftView.QRCode + _vM.GetShiftView.DebitCard + _vM.GetShiftView.CreditCard;
                 decimal grosssales = netsell + _vM.GetShiftView.Refunds + _vM.GetShiftView.Discount;
                 decimal taxes = netsell - (netsell * 100m / 107m);

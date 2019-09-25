@@ -36,6 +36,12 @@ namespace EnixerPos.Service.Helpers
             return Regex.IsMatch(digit, pattern);
         }
 
+        public static bool CheckDigita(string digit)
+        {
+            string pattern = @"^(\d)+$";
+            return Regex.IsMatch(digit, pattern);
+        }
+
         public static bool CheckNonSpecialChar(string word)
         {
             string pattern = @"^(\w)+$";

@@ -124,7 +124,7 @@ namespace EnixerPos.Mobile.ViewModels
         public ICommand GotoRegis { get; set; }
         public async void RegisterMethod()
         {
-            string url = StaticValue.BaseUrl + ":20000";
+            string url = StaticValue.BaseUrl + ":20000/Register/RegisStore";
             Uri uri = new Uri(url);
             await Browser.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
         }
