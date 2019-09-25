@@ -7,16 +7,27 @@
              xmlns:component="clr-namespace:EnixerPos.Mobile.Components"
              NavigationPage.HasNavigationBar="False"
              x:Class="EnixerPos.Mobile.Views.Item.CreateCategoryPage">
-    <ContentPage.Content>
+ 
+        <ContentPage.Content>
         <StackLayout >
             <Frame HasShadow="True">
-                <Label Text="{Binding TitleAndButtonText}" TextColor="Black" FontSize="Medium"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding BackButton}"/>
+                    </StackLayout.GestureRecognizers>
+                    <Image Source="icon_left" VerticalOptions="StartAndExpand"
+                           HorizontalOptions="StartAndExpand" 
+                           HeightRequest="30" WidthRequest="30"
+                           Aspect="AspectFit"/>
+                    <Label Text="{Binding TitleAndButtonText}" Margin="5,0,0,0" TextColor="Black" VerticalOptions="StartAndExpand" FontSize="Medium"/>
+                </StackLayout>
+                
             </Frame>
             <Frame VerticalOptions="Start" 
                    WidthRequest="750" CornerRadius="3"
                    HorizontalOptions="CenterAndExpand">
                 <StackLayout>
-                    <component:Pos_EntryView Margin="10,30,10,30" TextEntry="{Binding CategoryName}" Placeholder="Name"/>                    
+                    <component:Pos_EntryView Margin="10,30,10,30" TextEntry="{Binding CategoryName}" Placeholder="Name"/>                   
                    
                 </StackLayout>
             </Frame>
