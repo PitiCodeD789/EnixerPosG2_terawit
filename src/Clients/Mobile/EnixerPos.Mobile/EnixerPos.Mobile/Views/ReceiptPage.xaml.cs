@@ -74,12 +74,12 @@ namespace EnixerPos.Mobile.Views
                 string filename = DateTime.Now.ToString("yyyyMMdd-hhmmss");
                 string extension = ".png";
                 var data = CreateImage();
-                //bool result = photoLibrary.SavePhotoAsync(data, "Xamarin", filename + extension).Result;
+                bool result = photoLibrary.SavePhotoAsync(data, "Xamarin", filename + extension).Result;
                 sKCanvasView.PaintSurface += SKCanvasView_PaintSurface;  // += SKCanvasView_PaintSurface;
-                //if (!result)
-                //{
-                //    DisplayAlert("Error", "Cannot save new receipt please enable local storage", "Ok");
-                //}
+                if (!result)
+                {
+                    DisplayAlert("Error", "Cannot save new receipt please enable local storage", "Ok");
+                }
                 return true;
             }
             catch (Exception e)

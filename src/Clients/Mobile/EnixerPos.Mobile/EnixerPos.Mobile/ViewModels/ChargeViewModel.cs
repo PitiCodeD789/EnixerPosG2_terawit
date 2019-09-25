@@ -61,8 +61,8 @@ namespace EnixerPos.Mobile.ViewModels
         decimal GetExpectedCash(int roundTo)
         {
             int multiplier = Convert.ToInt32(TotalPrice / roundTo);
-            //if (!(multiplier * roundTo == TotalPrice))
-            //    multiplier ++;
+            if (!(multiplier * roundTo == TotalPrice))
+                multiplier++;
             return (multiplier) * roundTo;
         }
         void ChangeCash(decimal amount)
@@ -84,7 +84,7 @@ namespace EnixerPos.Mobile.ViewModels
                 case "Debit":
                     payment.PaymentType = Api.ViewModels.Enixer_Enumerations.EP_PaymentTypeEnum.Debit;
                     ReceiptViewModel result = _service.AddPayment(payment);
-                    if (result == null)
+                    if (result != null)
                     {
                         PopupNavigation.PushAsync(new Error(new ErrorViewModel("Payment Completed", 3)));
                         Application.Current.MainPage.Navigation.PushAsync(new ReceiptPage(this));
