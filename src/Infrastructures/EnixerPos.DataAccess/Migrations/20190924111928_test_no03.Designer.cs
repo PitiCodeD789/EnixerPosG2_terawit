@@ -4,14 +4,16 @@ using EnixerPos.DataAccess.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EnixerPos.DataAccess.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20190924111928_test_no03")]
+    partial class test_no03
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -254,8 +256,6 @@ namespace EnixerPos.DataAccess.Migrations
                     b.Property<string>("EWalletAccountNo");
 
                     b.Property<string>("Email");
-
-                    b.Property<string>("OTP");
 
                     b.Property<string>("Password");
 

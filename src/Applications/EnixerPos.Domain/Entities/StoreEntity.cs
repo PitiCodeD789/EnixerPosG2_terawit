@@ -10,5 +10,7 @@ namespace EnixerPos.Domain.Entities
         public string Password { get; set; }
         public string Salt { get; set; }
         public string StoreName { get; set; }
+        public string EWalletAccountNo { get; set; }
+        public string OTP { get; set; }
     }
 }
