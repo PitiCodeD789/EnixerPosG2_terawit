@@ -158,11 +158,12 @@ namespace EnixerPos.Api.Controllers
         
             ManageCashStatus manageType = manageCash.ManageCashStatus;
 
-            bool isShift = _shiftService.IsShiftAvailable(storeEmail, posUserId, shiftId);
+            bool isShift = _shiftService.IsShiftAvailable(storeEmail, posUserId, shiftId, cashStatus, amount);
             if (!isShift)
             {
                 return BadRequest();
             }
+
 
 
 

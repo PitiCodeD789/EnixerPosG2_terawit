@@ -72,8 +72,8 @@ namespace EnixerPos.Mobile.ViewModels
                 {
                     Id = updateDiscount.Id,
                     DiscountName = DiscountName,
-                    Amount = StringToDecimal(Amount),
                     IsPercentage = IsPercentage(Type),
+                    Amount = StringToDecimal(Amount, IsPercentage(Type)),
                     StoreId = updateDiscount.StoreId,
                     CreateDateTime = updateDiscount.CreateDateTime,
                     UpdateDateTime = updateDiscount.UpdateDateTime
@@ -110,7 +110,7 @@ namespace EnixerPos.Mobile.ViewModels
             }
         }
 
-        public decimal StringToDecimal(string value)
+        public decimal StringToDecimal(string value,bool IsPercentage)
         {
             try
             {
@@ -118,8 +118,22 @@ namespace EnixerPos.Mobile.ViewModels
                 {
                     return 0;
                 }
-
-                return decimal.Parse(value);
+                else
+                {
+                    var discount = decimal.Parse(value);
+                    if (discount > 100 && IsPercentage == true)
+                    {
+                        return 100;
+                    }
+                    else if (discount > 0)
+                    {
+                        return discount;
+                    }
+                    else
+                    {
+                        return 0;
+                    }
+                }
             }
             catch (Exception)
             {

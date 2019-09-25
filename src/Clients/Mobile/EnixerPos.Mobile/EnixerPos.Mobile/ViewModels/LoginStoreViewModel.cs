@@ -116,7 +116,7 @@ namespace EnixerPos.Mobile.ViewModels
         public ICommand GotoForgotPass { get; set; }
         public async void ForgotPasswordMethod()
         {
-            string url = StaticValue.BaseUrl;
+            string url = StaticValue.BaseUrl + ":20000/ForgotPass";
             Uri uri = new Uri(url);
             await Browser.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
         }
@@ -124,7 +124,7 @@ namespace EnixerPos.Mobile.ViewModels
         public ICommand GotoRegis { get; set; }
         public async void RegisterMethod()
         {
-            string url = StaticValue.BaseUrl;
+            string url = StaticValue.BaseUrl + ":20000/Register/RegisStore";
             Uri uri = new Uri(url);
             await Browser.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
         }

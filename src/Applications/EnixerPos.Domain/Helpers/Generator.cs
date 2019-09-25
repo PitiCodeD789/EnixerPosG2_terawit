@@ -2,8 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace EnixerPos.Domain.Helpers
 {
@@ -29,6 +31,25 @@ namespace EnixerPos.Domain.Helpers
                 }
                 return builder.ToString();
 
+            }
+        }
+
+        public static bool CheckEmailFormat(string email)
+        {
+            if (string.IsNullOrEmpty(email))
+                return false;
+            try
+            {
+                MailAddress m = new MailAddress(email);
+                if (Regex.IsMatch(email, "^[\\w\\.@]{0,64}$"))
+                {
+                    return true;
+                }
+                return false;
+            }
+            catch (FormatException)
+            {
+                return false;
             }
         }
     }

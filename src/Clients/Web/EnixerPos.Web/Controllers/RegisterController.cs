@@ -134,6 +134,17 @@ namespace EnixerPos.Web.Controllers
                 return RedirectToAction("Error", "Management", new { message = "Pin นี้ถูกใช้งานในร้านค้านี้เรียบร้อย" });
             }
 
+            CheckNameUserDtoCommand checkNameUser = new CheckNameUserDtoCommand()
+            {
+                Email = email,
+                NameUser = nameUser
+            };
+            bool isName = _authService.ChechNameUser(checkNameUser);
+            if (isName)
+            {
+                return RedirectToAction("Error", "Management", new { message = "ชื่อพนักงานคนนี้ถูกใช้งานในร้านค้านี้เรียบร้อย" });
+            }
+
             RegisterUserInStoreDtoCommand command = new RegisterUserInStoreDtoCommand()
             {
                 Email = email,

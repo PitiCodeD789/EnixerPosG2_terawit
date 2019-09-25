@@ -147,13 +147,21 @@ namespace EnixerPos.Domain.Services
             return shiftEntity;
         }
 
-        public bool IsShiftAvailable(string storeEmail, int posUserId, int shiftId)
+        public bool IsShiftAvailable(string storeEmail, int posUserId, int shiftId, Api.ViewModels.Enixer_Enumerations.ManageCashStatus cashStatus, decimal amount)
         {
             
             ShiftEntity shiftEntity = _shiftRepository.GetShiftDetailByShiftId(storeEmail, posUserId, shiftId);
             if(shiftEntity == null)
             {
                 return false;
+            }
+            if(cashStatus == ManageCashStatus.PayOut)
+            {
+                decimal expectedcashamount = shiftEntity.StartingCash + shiftEntity.CashPayment + shiftEntity.Paidin - shiftEntity.Discount - shiftEntity.Paidout - shiftEntity.Refunds;
+                if(expectedcashamount < amount)
+                {
+                    return false;
+                }
             }
             if(shiftEntity.StoreEmail == storeEmail && shiftEntity.Available == true)
             {
@@ -265,6 +273,21 @@ namespace EnixerPos.Domain.Services
             }
         }
 
-     
+        public bool IsShiftAvailable(string storeEmail, int posUserId, int shiftId)
+        {
+            ShiftEntity shiftEntity = _shiftRepository.GetShiftDetailByShiftId(storeEmail, posUserId, shiftId);
+            if (shiftEntity == null)
+            {
+                return false;
+            }
+            if (shiftEntity.StoreEmail == storeEmail && shiftEntity.Available == true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

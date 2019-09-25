@@ -20,7 +20,10 @@
                         <ImageButton Source="icon_hamburger" Aspect="AspectFit" VerticalOptions="Center" Margin="40" HeightRequest="30" Clicked="Button_Clicked" BackgroundColor="Transparent"/>
                         <Label Text="Items" TextColor="Black" FontSize="40" VerticalOptions="Center" HorizontalOptions="Start" />
                         <StackLayout x:Name="theTitle" VerticalOptions="CenterAndExpand" Margin="200,0,0,0">
-                            <Picker IsVisible="{Binding Picker}" Title="All Item" TitleColor="Black" FontSize="28" TextColor="Black" ItemsSource="{Binding CategoryName}" SelectedItem="{Binding ChangeCategory}"/>
+                            <StackLayout IsVisible="{Binding Picker}" Orientation="Horizontal">
+                                <Picker  Title="All Item" TitleColor="Black" FontSize="28" TextColor="Black" ItemsSource="{Binding CategoryName}" SelectedItem="{Binding ChangeCategory}"/>
+                                <Image Source="icon_expand_arrow" WidthRequest="20" HeightRequest="20"/>
+                            </StackLayout>
                             <Label IsVisible="{Binding Laber}" Text="{Binding NamePage}" FontSize="28" TextColor="Black"/>
                         </StackLayout>
 
