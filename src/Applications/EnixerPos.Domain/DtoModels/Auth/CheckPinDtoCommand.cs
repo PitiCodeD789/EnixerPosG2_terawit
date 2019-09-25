@@ -5,14 +5,11 @@ using System.Text;
 
 namespace EnixerPos.Domain.DtoModels.Auth
 {
-    public class RegisterUserInStoreDtoCommand
+    public class CheckPinDtoCommand
     {
         [Required]
         [EmailAddress]
         public string Email { get; set; }
-        [Required]
-        [RegularExpression(@"^([A-Za-z])+$")]
-        public string NameUser { get; set; }
         [Required]
         [RegularExpression(@"^(\d{4})$")]
         public string Pin { get; set; }

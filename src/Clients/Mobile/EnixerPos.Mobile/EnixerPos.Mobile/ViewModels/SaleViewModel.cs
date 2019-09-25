@@ -299,6 +299,7 @@ namespace EnixerPos.Mobile.ViewModels
                 CurrentTicket.Add(item);
                 TotalPrice += item.DiscountedPrice;
             }
+            App.TicketList.Remove(ticket);
             PopupNavigation.PopAllAsync();
         }
         void Charge()

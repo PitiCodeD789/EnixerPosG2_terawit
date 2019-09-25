@@ -123,12 +123,16 @@ namespace EnixerPos.Web.Controllers
                 return RedirectToAction("Error", "Management", new { message = "E-Mail ไม่มีอยู่ในระบบโปรดลงทะเบียนใหม่" });
             }
 
-
-            //bool isPin = _authService.CheckPin(email, pin);
-            //if (isPin)
-            //{
-            //    return RedirectToAction("Error", "Management", new { message = "Pin นี้ถูกใช้งานในร้านค้านี้เรียบร้อย" });
-            //}
+            CheckPinDtoCommand checkPinDto = new CheckPinDtoCommand()
+            {
+                Email = email,
+                Pin = pin
+            };
+            bool isPin = _authService.CheckPin(checkPinDto);
+            if (isPin)
+            {
+                return RedirectToAction("Error", "Management", new { message = "Pin นี้ถูกใช้งานในร้านค้านี้เรียบร้อย" });
+            }
 
             RegisterUserInStoreDtoCommand command = new RegisterUserInStoreDtoCommand()
             {
@@ -141,7 +145,7 @@ namespace EnixerPos.Web.Controllers
             {
                 return RedirectToAction("Error", "Management", new { message = "ไม่สามารถเพิ่มพนักงานได้" });
             }
-            return RedirectToAction("SuccessPage", "Management", new { message = "ไม่สามารถเพิ่มพนักงานได้" });
+            return RedirectToAction("SuccessPage", "Management", new { message = "เพิ่มพนักงานสำเร็จ" });
         }
     }
 }

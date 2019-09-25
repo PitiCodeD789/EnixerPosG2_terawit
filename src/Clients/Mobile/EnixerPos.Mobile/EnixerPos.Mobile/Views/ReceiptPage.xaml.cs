@@ -46,8 +46,9 @@ namespace EnixerPos.Mobile.Views
             BindingContext = vm;
         }
 
-        public ReceiptPage()
+        public ReceiptPage(ReceiptViewModel Receipt)
         {
+            this.Receipt = Receipt;
             InitializeComponent();
             CreateReceipt();
         }

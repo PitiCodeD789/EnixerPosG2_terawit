@@ -23,35 +23,39 @@ namespace EnixerPos.Mobile.Views
         {
             InitializeComponent();
             BindingContext = vm;
-            foreach (var itemSource in vm.TabChildren)
+            if (!(vm.TabChildren == null || vm.TabChildren.Count == 0))
             {
-                //TabView.AddTab(itemSource);
-                StackLayout stack = new StackLayout()
+                foreach (var itemSource in vm.TabChildren)
                 {
-                    VerticalOptions = LayoutOptions.Center,
-                };
-                BoxView line = new BoxView()
-                {
-                    VerticalOptions = LayoutOptions.Start,
-                    HorizontalOptions = LayoutOptions.FillAndExpand,
-                    HeightRequest = 3,
-                };
-                Button button = new Button()
-                {
-                    Text = itemSource.HeaderText,
-                    FontSize = 20,
-                    BackgroundColor = Color.Transparent,
-                };
-                stack.Children.Add(line);
-                stack.Children.Add(button);
-                TabChangeButton.Children.Add(stack);
-                button.Clicked += OpenTab;
-                btnList.Add(button);
-                lineList.Add(line);
+                    //TabView.AddTab(itemSource);
+                    StackLayout stack = new StackLayout()
+                    {
+                        VerticalOptions = LayoutOptions.Center,
+                    };
+                    BoxView line = new BoxView()
+                    {
+                        VerticalOptions = LayoutOptions.Start,
+                        HorizontalOptions = LayoutOptions.FillAndExpand,
+                        HeightRequest = 3,
+                    };
+                    Button button = new Button()
+                    {
+                        Text = itemSource.HeaderText,
+                        FontSize = 20,
+                        BackgroundColor = Color.Transparent,
+                    };
+                    stack.Children.Add(line);
+                    stack.Children.Add(button);
+                    TabChangeButton.Children.Add(stack);
+                    button.Clicked += OpenTab;
+                    btnList.Add(button);
+                    lineList.Add(line);
+                }
+                TabView.Children.Add(vm.ViewChildren[0]);
+                HeaderLabel.Text = vm.TabChildren[0].HeaderText;
+                lineList[0].BackgroundColor = Color.Orange;
             }
-            TabView.Children.Add(vm.ViewChildren[0]);
-            HeaderLabel.Text = vm.TabChildren[0].HeaderText;
-            lineList[0].BackgroundColor = Color.Orange;
+
         }
 
         private void OpenTab(object sender, EventArgs e)

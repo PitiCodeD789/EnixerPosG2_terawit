@@ -35,7 +35,8 @@ namespace EnixerPos.DataAccess.Repositories
             {
                 TokenEntity tokenEntity = new TokenEntity()
                 {
-                    StoreId = storeId
+                    StoreId = storeId,
+                    UserId = 0,
                 };
 
                 _context.Token.Add(tokenEntity);

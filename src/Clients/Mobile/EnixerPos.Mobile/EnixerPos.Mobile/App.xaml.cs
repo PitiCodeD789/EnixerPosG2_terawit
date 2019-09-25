@@ -23,6 +23,7 @@ namespace EnixerPos.Mobile
         public static int UserId { get; set; }
         public static bool CheckShift { get; set; } = false;
         public static int OpenShiftId { get; set; }
+        public static string AccountNumber { get; set; }
         public App()
         {
             //SecureStorage.SetAsync("Token","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWVpIjoiMTIzNDU2Nzg5IiwibmJmIjoxNTY5MDQxMDA2LCJleHAiOjE1NzkxNTEzMDYsImlzcyI6IkVuaXhlclBvc0cyIiwiYXVkIjoiZUBlIiwidXNlciI6Ik5hdCJ9.KenpoWXIjdFh1OulXkLftQZ1to4aBM33Lv-FmwYRTyY");
@@ -62,7 +63,6 @@ namespace EnixerPos.Mobile
                 };
                 PermissionReq();
             }
-            //MainPage = new NavigationPage(new SaleView());
         }
 
         protected override void OnSleep()
