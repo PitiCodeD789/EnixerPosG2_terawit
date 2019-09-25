@@ -109,9 +109,12 @@ namespace EnixerPos.Mobile.ViewModels.ItemPage
             }
             set
             {
-                changeCategory = value;
-                ChangeItem();
-                OnPropertyChanged();
+                if (changeCategory != value)
+                {
+                    changeCategory = value;
+                    ChangeItem();
+                    OnPropertyChanged();
+                }
             }
         }
 
@@ -264,7 +267,7 @@ namespace EnixerPos.Mobile.ViewModels.ItemPage
                 CategoryColor = "#ededed";
                 DiscountColor = "#ffffff";
             }
-            else
+            else if (typePage == Status.InItemPage.Discount)
             {
                 discountData = GetDiscountData().Result;
                 TheData = discountData.Select(x => new ItemPageModel()
@@ -348,7 +351,7 @@ namespace EnixerPos.Mobile.ViewModels.ItemPage
 
         private void ChangeItem()
         {
-            if(changeCategory == "All Item")
+            if( changeCategory == null || changeCategory == "All Items" )
             {
                 InputDataToBinding();
             }
@@ -356,6 +359,7 @@ namespace EnixerPos.Mobile.ViewModels.ItemPage
             {
                 TheData = itemDate.Where(y => y.CategoryName == changeCategory).Select(x => new ItemPageModel()
                 {
+                    Id = x.Id,
                     Color = x.Color,
                     DataName = x.Name,
                     CountItemVisible = false,

@@ -58,8 +58,8 @@ namespace EnixerPos.Domain.Services
         {
             string otp = Generator.GenerateRandomString(20);
             _storeRepository.UpdateOtp(email, otp);
-            string value = "";
-            SendEmail(email, otp);
+            string value = SentEmailValue + $"SetPassword?otp={otp}&&email={email}";
+            SendEmail(email, value);
         }
 
         private void SendEmail(string email, string value)
@@ -70,7 +70,7 @@ namespace EnixerPos.Domain.Services
             mail.From = new MailAddress("student@enixer.net");
             mail.To.Add(email);
             mail.Subject = @"Set Password";
-            mail.Body = $"{value}";
+            mail.Body = value;
             SmtpServer.Port = 587;
             SmtpServer.Credentials = new System.Net.NetworkCredential("student@enixer.net", "Gg123456789");
             SmtpServer.EnableSsl = true;
