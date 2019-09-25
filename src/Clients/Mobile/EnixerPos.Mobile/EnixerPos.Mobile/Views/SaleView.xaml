@@ -131,7 +131,7 @@
                                         </Label.FormattedText>
                                     </Label>
                                     <Label Text="{Binding OptionName}" FontSize="Medium" HorizontalOptions="Start" Grid.Row="1" />
-                                    <Label Text="{Binding Discount}" FontSize="Medium" HorizontalOptions="Start" Grid.Row="2" IsVisible="{Binding IsDiscounted}"/>
+                                    <Label Text="{Binding DiscountName}" FontSize="Medium" HorizontalOptions="Start" Grid.Row="2" IsVisible="{Binding IsDiscounted}"/>
                                     <Label Text="{Binding Comment}" FontSize="Medium" HorizontalOptions="Start" Grid.Row="3" IsVisible="{Binding HasComment}"/>
                                     <Button Text="Delete" FontSize="10" Command="{Binding BindingContext.DeleteItemCommand, Source={x:Reference SalePage}}"   CommandParameter="{Binding .}" Grid.Row="3" Grid.Column="1" HorizontalOptions="End"/>
                                 </Grid>
@@ -140,11 +140,44 @@
                     </ListView.ItemTemplate>
                 </ListView>
                 <BoxView BackgroundColor="LightGray" HorizontalOptions="FillAndExpand" Margin="20,0" Grid.Row="1" VerticalOptions="Center" HeightRequest="1"/>
-                <Label Text="Total" TextColor="Black" FontSize="Large" HorizontalOptions="Start" Grid.Row="2" Margin="20,0"/>
-                <Label Text="{Binding TotalPrice, StringFormat='{0:n}'}" TextColor="Black" FontSize="Large" HorizontalOptions="End" Grid.Row="2" Margin="20,0"/>
+                <StackLayout Grid.Row="2">
+                    <Grid HorizontalOptions="FillAndExpand">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <StackLayout Orientation="Horizontal" Grid.Column="0" Grid.Row="0" IsVisible="{Binding HasDiscount1}">
+                            <Switch VerticalOptions="CenterAndExpand" IsToggled="{Binding TotalDiscount1}"/>
+                            <Label VerticalOptions="CenterAndExpand"  Text="{Binding DiscountName1}" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="0" IsVisible="{Binding HasDiscount2}">
+                            <Switch VerticalOptions="CenterAndExpand" IsToggled="{Binding TotalDiscount2}"/>
+                            <Label VerticalOptions="CenterAndExpand"  Text="{Binding DiscountName2}"  />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Grid.Column="0" Grid.Row="1" IsVisible="{Binding HasDiscount3}">
+                            <Switch VerticalOptions="CenterAndExpand" IsToggled="{Binding TotalDiscount3}"/>
+                            <Label VerticalOptions="CenterAndExpand"  Text="{Binding DiscountName3}"  />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="1" IsVisible="{Binding HasDiscount4}">
+                            <Switch VerticalOptions="CenterAndExpand" IsToggled="{Binding TotalDiscount4}"/>
+                            <Label VerticalOptions="CenterAndExpand"  Text="{Binding DiscountName4}"  />
+                        </StackLayout>
+                    </Grid>
+                    <Grid HorizontalOptions="FillAndExpand">
+                        <Label Text="Total Discount" TextColor="Black" FontSize="Large" HorizontalOptions="Start" Grid.Row="0" Margin="20,0"/>
+                        <Label Text="{Binding CurrentDiscountAmount, StringFormat='{0:n}'}" TextColor="Black" FontSize="Large" HorizontalOptions="End" Grid.Row="0" Margin="20,0"/>
+                        <Label Text="Total" TextColor="Black" FontSize="Large" HorizontalOptions="Start" Grid.Row="1" Margin="20,0"/>
+                        <Label Text="{Binding TotalPrice, StringFormat='{0:n}'}" TextColor="Black" FontSize="Large" HorizontalOptions="End" Grid.Row="1" Margin="20,0"/>
+                    </Grid>
+                </StackLayout>
+
                 <Grid Grid.Row="3" Margin="20,0">
                     <components:Pos_ButtonView TextButton="Save Ticket" HeightRequest="100" Grid.Column="0" Command="{Binding SaveTicketCommand}"/>
-                    <components:Pos_ButtonView TextButton="Open Ticket" HeightRequest="100" Grid.Column="0" Command="{Binding OpenTicketListCommand}" IsVisible="{Binding ShowOpenButton}"/>
+                    <components:Pos_ButtonView TextButton="Open Ticket" HeightRequest="100" Grid.Column="0"  Command="{Binding OpenTicketListCommand}" IsVisible="{Binding ShowOpenButton}"/>
                     <components:Pos_ButtonView TextButton="Charge" HeightRequest="100" Grid.Column="1" Command="{Binding ChargeCommand}"/>
                 </Grid>
             </Grid>

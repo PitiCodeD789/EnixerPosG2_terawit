@@ -117,7 +117,7 @@ namespace EnixerPos.Mobile.ViewModels
                     return;
 
                 case "Credit":
-                    payment.PaymentType = Api.ViewModels.Enixer_Enumerations.EP_PaymentTypeEnum.Debit;
+                    payment.PaymentType = Api.ViewModels.Enixer_Enumerations.EP_PaymentTypeEnum.Credit;
                     ReceiptViewModel resultC = _service.AddPayment(payment);
 
                     if (resultC != null)
@@ -194,7 +194,8 @@ namespace EnixerPos.Mobile.ViewModels
                     if (stopwatch.Elapsed.TotalMilliseconds >= delay*20)
                         break;
                 }
-                PopupNavigation.PopAllAsync();
+                if(PopupNavigation.Instance.PopupStack.Any())
+                    PopupNavigation.PopAllAsync();
                 if (result)
                 {
                     IsPolling = false;
@@ -210,7 +211,6 @@ namespace EnixerPos.Mobile.ViewModels
             }
             IsPolling = false;
         }
-
         public void QrPaymentComplete()
         {
             PaymentCommand payment = new PaymentCommand()

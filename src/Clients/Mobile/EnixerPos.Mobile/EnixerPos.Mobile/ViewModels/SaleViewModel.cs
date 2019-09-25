@@ -29,6 +29,7 @@ namespace EnixerPos.Mobile.ViewModels
         {
             ShowOpenButton = true;
             CurrentTicket = new ObservableCollection<OrderItemModel>();
+            CurrentTotalDiscount = new DiscountModel();
             Quantity = 1;
             AllMenu = new List<MenuModel>();
             SetItemMenu();
@@ -106,6 +107,7 @@ namespace EnixerPos.Mobile.ViewModels
         public Command OpenTicketCommand { get; set; }
         public Command ChargeCommand { get; set; }
         public Command DeleteItemCommand { get; set; }
+        public Command AddDiscountCommand { get; set; }
 
         public void QuantityChange(string change)
         {
@@ -139,8 +141,8 @@ namespace EnixerPos.Mobile.ViewModels
                     currentDiscount = new DiscountModel { DiscountName = Discounts[3].DiscountName, Amount = Discounts[3].Amount, IsPercentage = Discounts[3].IsPercentage };
                 else
                     isDiscount = false;
+                decimal discountedAmount = (currentDiscount.IsPercentage) ? currentDiscount.Amount / 100 * (CurrentItem.Price + optionPrice) * Quantity : currentDiscount.Amount;
 
-                decimal dicountedAmount = (currentDiscount.IsPercentage) ? currentDiscount.Amount / 100 * (CurrentItem.Price + optionPrice) * Quantity : currentDiscount.Amount;
                 CurrentTicket.Add(new OrderItemModel
                 {
                     ItemName = CurrentItem.Name,
@@ -149,11 +151,18 @@ namespace EnixerPos.Mobile.ViewModels
                     Quantity = Quantity,
                     OptionName = OptionList[CurrentSelectedOptionIndex].OptionName,
                     OptionPrice = OptionList[CurrentSelectedOptionIndex].Price,
-                    DiscountedPrice = (CurrentItem.Price + optionPrice) * Quantity - dicountedAmount,
+                    DiscountName = CurrentTotalDiscount.DiscountName,
+                    DiscountedPrice = (CurrentItem.Price + optionPrice - discountedAmount) * Quantity,
                     IsDiscountPercentage = currentDiscount.IsPercentage,
-                    ItemDiscount = dicountedAmount
+                    ItemDiscount = currentDiscount.Amount
                 });
-                TotalPrice += (CurrentItem.Price + optionPrice) * Quantity - dicountedAmount;
+
+                CalculateTotalAmount();
+
+                Discount1 = false;
+                Discount2 = false;
+                Discount3 = false;
+                Discount4 = false;
             }
             catch (Exception e)
             {
@@ -168,7 +177,44 @@ namespace EnixerPos.Mobile.ViewModels
             CurrentSelectedOptionIndex = 0;
             Quantity = 1;
         }
-
+        void CalculateTotalAmount()
+        {
+            SetTotalDiscount();
+            decimal currentAmountWithoutDiscount = 0;
+            foreach (var item in CurrentTicket)
+            {
+                if (item.ItemDiscount == 0)
+                    currentAmountWithoutDiscount += item.ItemPrice;
+            }
+            if (CurrentTotalDiscount.IsPercentage)
+            {
+                CurrentDiscountAmount = CurrentTotalDiscount.Amount / 100 * currentAmountWithoutDiscount;
+            }
+            else
+            {
+                CurrentDiscountAmount = CurrentTotalDiscount.Amount;
+            }
+            decimal _totalPrice = 0;
+            foreach (var item in CurrentTicket)
+            {
+                decimal discount = item.IsDiscountPercentage ? item.ItemDiscount * item.ItemPrice / 100 : item.ItemDiscount;
+                _totalPrice += ((item.ItemPrice + item.OptionPrice) - discount) * Quantity;
+            }
+            TotalPrice = _totalPrice - CurrentDiscountAmount;
+        }
+        void SetTotalDiscount()
+        {
+            DiscountModel currentDiscount = new DiscountModel();
+            if (TotalDiscount1)
+                currentDiscount = new DiscountModel { DiscountName = Discounts[0].DiscountName, Amount = Discounts[0].Amount, IsPercentage = Discounts[0].IsPercentage };
+            else if (TotalDiscount1)
+                currentDiscount = new DiscountModel { DiscountName = Discounts[1].DiscountName, Amount = Discounts[1].Amount, IsPercentage = Discounts[1].IsPercentage };
+            else if (TotalDiscount1)
+                currentDiscount = new DiscountModel { DiscountName = Discounts[2].DiscountName, Amount = Discounts[2].Amount, IsPercentage = Discounts[2].IsPercentage };
+            else if (TotalDiscount1)
+                currentDiscount = new DiscountModel { DiscountName = Discounts[3].DiscountName, Amount = Discounts[3].Amount, IsPercentage = Discounts[3].IsPercentage };
+            CurrentTotalDiscount = currentDiscount;
+        }
         void OpenOption(ItemModel item)
         {
             CurrentItem = item;
@@ -189,7 +235,7 @@ namespace EnixerPos.Mobile.ViewModels
 
             foreach (var option in OptionList)
             {
-                CurrentOption.Add(option.OptionName + "  ( +" + option.Price.ToString("#.00") + " )");
+                CurrentOption.Add(option.OptionName + "  ( +" + option.Price.ToString("#,0.00") + " )");
             }
 
             CurrentItemPrice = item.Price;
@@ -270,24 +316,26 @@ namespace EnixerPos.Mobile.ViewModels
                 ItemList = CurrentTicket.ToList(),
                 Total = TotalPrice,
                 TicketNumber = maxNumber + 1,
-                CreateDateTime = DateTime.Now
+                CreateDateTime = DateTime.Now,
             };
             App.TicketList.Add(receipt);
-            CleartTicket();
+            ClearTicket();
         }
         void OpenTicketList()
         {
-            CleartTicket();
+            ClearTicket();
             PopupNavigation.PushAsync(new OpenTicketsPopup(this));
             TicketList = App.TicketList;
         }
-        void CleartTicket()
+        void ClearTicket()
         {
             CurrentTicket = new ObservableCollection<OrderItemModel>();
             Quantity = 1;
             QuantityChangeCommand = new Command<string>((change) => QuantityChange(change));
             SaveItemCommand = new Command(SaveItemToTicket);
             CurrentTicket = new ObservableCollection<OrderItemModel>();
+            CurrentTotalDiscount = new DiscountModel();
+            CurrentDiscountAmount = 0;
             TotalPrice = 0;
             ShowOpenButton = true;
         }
@@ -309,11 +357,18 @@ namespace EnixerPos.Mobile.ViewModels
                 PopupNavigation.PushAsync(new Error(new ErrorViewModel("Please add item to ticket before proceeding")));
                 return;
             }
+            decimal totalDiscount = 0;
+            foreach (var item in CurrentTicket)
+            {
+                totalDiscount += item.ItemDiscount;
+            }
             ReceiptViewModel receipt = new ReceiptViewModel()
             {
                 ItemList = CurrentTicket.ToList(),
                 Total = TotalPrice,
-                CreateDateTime = DateTime.Now
+                CreateDateTime = DateTime.Now,
+                TotalDiscount = totalDiscount,
+                Discount = CurrentDiscountAmount,
             };
             Application.Current.MainPage.Navigation.PushAsync(new ChargePage(receipt));
         }
@@ -353,9 +408,24 @@ namespace EnixerPos.Mobile.ViewModels
         void DeleteItem(OrderItemModel model)
         {
             CurrentTicket.Remove(model);
+            CalculateTotalAmount();
         }
 
         #region Propfull
+        private decimal _currentDiscountAmount;
+        public decimal CurrentDiscountAmount
+        {
+            get { return _currentDiscountAmount; }
+            set { _currentDiscountAmount = value; OnPropertyChanged(); }
+        }
+
+        private DiscountModel _currentTotalDiscount;
+        public DiscountModel CurrentTotalDiscount
+        {
+            get { return _currentTotalDiscount; }
+            set { _currentTotalDiscount = value; OnPropertyChanged(); }
+        }
+
         private List<DiscountModel> _discounts;
         public List<DiscountModel> Discounts
         {
@@ -484,6 +554,87 @@ namespace EnixerPos.Mobile.ViewModels
         #endregion
 
         #region Discount
+        private bool _totalDiscount1;
+        public bool TotalDiscount1
+        {
+            get { return _totalDiscount1; }
+            set
+            {
+                if (_totalDiscount1 != value)
+                {
+                    _totalDiscount1 = value;
+                    if (value)
+                    {
+                        TotalDiscount2 = false;
+                        TotalDiscount3 = false;
+                        TotalDiscount4 = false;
+                    }
+                    OnPropertyChanged();
+                    CalculateTotalAmount();
+                }
+            }
+        }
+
+        private bool _totalDiscount2;
+        public bool TotalDiscount2
+        {
+            get { return _totalDiscount2; }
+            set
+            {
+                if (_totalDiscount2 != value)
+                {
+                    if (value)
+                    {
+                        TotalDiscount1 = false;
+                        TotalDiscount3 = false;
+                        TotalDiscount4 = false;
+                    }
+                    OnPropertyChanged();
+                    CalculateTotalAmount();
+                }
+            }
+        }
+
+        private bool _totalDiscount3;
+        public bool TotalDiscount3
+        {
+            get { return _totalDiscount3; }
+            set
+            {
+                if (_totalDiscount3 != value)
+                {
+                    if (value)
+                    {
+                        TotalDiscount2 = false;
+                        TotalDiscount1 = false;
+                        TotalDiscount4 = false;
+                    }
+                    OnPropertyChanged();
+                    CalculateTotalAmount();
+                }
+            }
+        }
+
+        private bool _totalDiscount4;
+        public bool TotalDiscount4
+        {
+            get { return _totalDiscount4; }
+            set
+            {
+                if (_totalDiscount4 != value)
+                {
+                    if (value)
+                    {
+                        TotalDiscount2 = false;
+                        TotalDiscount3 = false;
+                        TotalDiscount1 = false;
+                    }
+                    OnPropertyChanged();
+                    CalculateTotalAmount();
+                }
+            }
+        }
+
         private bool discount1;
         public bool Discount1
         {

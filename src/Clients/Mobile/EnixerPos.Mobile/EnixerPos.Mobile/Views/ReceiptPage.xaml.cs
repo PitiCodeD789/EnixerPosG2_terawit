@@ -162,9 +162,8 @@ namespace EnixerPos.Mobile.Views
             canvas.DrawText(Receipt.Total.ToString("#,##.00"), canvasWidth/2, 100, totalPricePaint);
             canvas.DrawText("Total", canvasWidth / 2, 200, totalPaint);
 
-            canvas.DrawText("Order: "+"Enixer Cafe", 50, 300, defaultText);
-            canvas.DrawText("Cashier: "+ "User", 50, 350, defaultText);
-            canvas.DrawText("POS: "+"POS 1", 50, 400, defaultText);
+            canvas.DrawText("Order: "+ App.StoreName, 50, 300, defaultText);
+            canvas.DrawText("Cashier: "+ App.User, 50, 350, defaultText);
 
             canvas.DrawLine(new SKPoint() { X = 50, Y = 450 }, new SKPoint() { X = canvasWidth - 50, Y = 450 }, linePaint);
 
@@ -176,25 +175,25 @@ namespace EnixerPos.Mobile.Views
 
                 if (item.IsDiscounted)
                 {
-                    canvas.DrawText(item.DiscountedPrice.ToString("#,##.00"), canvasWidth - 50, currentCursor, discountedItemPrice);
-                    canvas.DrawText(item.ItemPrice.ToString("#,##.00"), canvasWidth - 300, currentCursor, originalPricePaint);
+                    canvas.DrawText(item.DiscountedPrice.ToString("#,0.00"), canvasWidth - 50, currentCursor, discountedItemPrice);
+                    canvas.DrawText(item.ItemPrice.ToString("#,0.00"), canvasWidth - 300, currentCursor, originalPricePaint);
                 }
                 else
                 {
-                    canvas.DrawText(item.ItemPrice.ToString("#,##.00"), canvasWidth - 50, currentCursor, discountedItemPrice);
+                    canvas.DrawText(item.ItemPrice.ToString("#,0.00"), canvasWidth - 50, currentCursor, discountedItemPrice);
                 }
 
                 currentCursor += 40;
                 canvas.DrawText(" x " + item.Quantity, 50, currentCursor, smallText);
                 currentCursor += 40;
-                canvas.DrawText($"+ {item.OptionName} ({item.OptionPrice.ToString("#,##.00")})", 50, currentCursor, smallText);
+                canvas.DrawText($"+ {item.OptionName} ({item.OptionPrice.ToString("#,0.00")})", 50, currentCursor, smallText);
                 currentCursor += 40;
                 if (item.IsDiscounted)
                 {
                     if (item.IsDiscountPercentage)
                         canvas.DrawText($"Discount {item.ItemDiscount.ToString()}%", 50, currentCursor, smallText);
                     else
-                        canvas.DrawText($"Discount {item.ItemDiscount.ToString("#,##.00")}", 50, currentCursor, smallText);
+                        canvas.DrawText($"Discount {item.ItemDiscount.ToString("#,0.00")}", 50, currentCursor, smallText);
                     currentCursor += 40;
                 }
             }

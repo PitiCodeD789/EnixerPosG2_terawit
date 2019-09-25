@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EnixerPos.Api.ViewModels.Product;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -17,7 +18,7 @@ namespace EnixerPos.Api.ViewModels.Sale
         public decimal TotalDiscount { get; set; }
         public Enixer_Enumerations.EP_PaymentTypeEnum PaymentType { get; set; }
         public DateTime CreateDateTime { get; set; }
-
+        public DiscountModel DiscountModel { get; set; }
         public string GetPaymentTypeString
         {
             get{ return PaymentType.ToString(); }
