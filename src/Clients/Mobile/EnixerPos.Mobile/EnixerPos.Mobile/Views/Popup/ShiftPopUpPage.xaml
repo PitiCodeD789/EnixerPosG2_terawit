@@ -46,12 +46,12 @@
                     <ViewCell>
 
                         <StackLayout VerticalOptions="Start">
-                            <Label Text="{Binding CreateDateTime,StringFormat='{}{0:dd ddd}'}" 
+                            <Label x:Name="ShowCreateDay" Text="{Binding CreateDateTime,StringFormat='{}{0:dd ddd}'}" 
                                    TextColor="Black"
                                    FontSize="Large"/>
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="{Binding CreateDateTime,StringFormat='{}{0:hh tt} -'}"  />
-                                <Label Text="{Binding UpdateDateTime,StringFormat='{}{0:hh tt} '}"  />
+                                <Label x:Name="CreateDateTime" Text="{Binding CreateDateTime,StringFormat='{}{0:hh tt} -'}"  />
+                                <Label x:Name="UpdateDateTime" Text="{Binding UpdateDateTime,StringFormat='{}{0:hh tt} '}"  />
                             </StackLayout>
                             
                         </StackLayout>                      

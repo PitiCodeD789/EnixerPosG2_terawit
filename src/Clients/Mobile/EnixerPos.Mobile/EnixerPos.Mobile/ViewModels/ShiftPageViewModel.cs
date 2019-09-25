@@ -31,9 +31,17 @@ namespace EnixerPos.Mobile.ViewModels
         private async void ShiftReportListClick(object obj)
         {
           
-            var shiftListVM = await _shiftService.GetListShift();
-            ObservableCollection<GetShiftViewModel> shiftListVMCollection = new ObservableCollection<GetShiftViewModel>(shiftListVM);
+            List<GetShiftViewModel> shiftListVM = await _shiftService.GetListShift();
+            ObservableCollection<GetShiftViewModel> shiftListVMCollection = new ObservableCollection<GetShiftViewModel>();
+            foreach (GetShiftViewModel getShiftViewModel in shiftListVM)
+            {
+                getShiftViewModel.CreateDateTime = getShiftViewModel.CreateDateTime.ToLocalTime();
+                getShiftViewModel.UpdateDateTime = getShiftViewModel.UpdateDateTime.ToLocalTime();
+                shiftListVMCollection.Add(getShiftViewModel);
+            }
+
             ShiftPopUpPageViewModel shiftPopUp = new ShiftPopUpPageViewModel();
+            shiftPopUp.GetShiftListViewModel = shiftListVMCollection;
             shiftPopUp.GetShiftListViewModel = shiftListVMCollection;
             await PopupNavigation.Instance.PushAsync(new Views.Popup.ShiftPopUpPage(shiftPopUp));
         }
@@ -42,8 +50,7 @@ namespace EnixerPos.Mobile.ViewModels
         private async void CashManagePageClick(object obj)
         {
             await PopupNavigation.Instance.PushAsync(new Views.Popup.LoadingPopup());
-            await Application.Current.MainPage.Navigation.PushAsync(new Views.CashManagePage());
-             
+            await Application.Current.MainPage.Navigation.PushAsync(new Views.CashManagePage());            
 
         }
 
