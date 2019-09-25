@@ -95,7 +95,6 @@ namespace EnixerPos.Mobile.ViewModels
                         ErrorViewModel errorViewModel = new ErrorViewModel("กรุณาเข้าสู่ระบบใหม่อีกครั้ง", 1);
                         await PopupNavigation.Instance.PushAsync(new Error(errorViewModel));
                         Application.Current.MainPage = new NavigationPage(new Login());
-                        return;
                     }
                 }
                 else
