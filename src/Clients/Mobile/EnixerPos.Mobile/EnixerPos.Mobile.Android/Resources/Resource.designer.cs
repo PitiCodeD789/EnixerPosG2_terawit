@@ -14970,6 +14970,16 @@ namespace EnixerPos.Mobile.Droid
 			public const int Down = 2131165289;
 			
 			// aapt resource value: 0x7F07012E
+			public const int iconscustermerandroid = 2131165486;
+			
+			// aapt resource value: 0x7F07012F
+			public const int iconsprint = 2131165487;
+			
+			// aapt resource value: 0x7F070130
+			public const int iconstimemachine = 2131165488;
+			
+			// aapt resource value: 0x7F070131
+			public const int iconsxbox = 2131165489;
 			public const int iconcheckmark = 2131165486;
 			
 			// aapt resource value: 0x7F07012F
@@ -15696,6 +15706,7 @@ namespace EnixerPos.Mobile.Droid
 			public const int tooltip_frame_light = 2131165531;
 			
 			// aapt resource value: 0x7F07015C
+			public const int Up = 2131165532;
 			public const int top_shadow = 2131165532;
 			
 			// aapt resource value: 0x7F07015D
