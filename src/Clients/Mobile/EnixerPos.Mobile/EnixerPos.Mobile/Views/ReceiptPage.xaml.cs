@@ -211,7 +211,6 @@ namespace EnixerPos.Mobile.Views
             canvas.DrawText("Total", 50, currentCursor, defaultText);
             canvas.DrawText(Receipt.Total.ToString("#,##.00"), canvasWidth - 50, currentCursor, discountedItemPrice);
 
-
             canvas.Flush();
 
             var image = SKImage.FromBitmap(toBitmap);

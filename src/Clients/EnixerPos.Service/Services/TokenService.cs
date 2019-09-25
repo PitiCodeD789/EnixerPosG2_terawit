@@ -46,11 +46,18 @@ namespace EnixerPos.Service.Services
 
                 GetTokenByRefreshUserCommand model = new GetTokenByRefreshUserCommand
                 {
-                    RefreshToken = refreshToken,
+                    //RefreshToken = refreshToken,
 
-                    Email = email,
+                    //Email = email,
 
-                    User = user
+                    //User = user
+
+                    RefreshToken = "ir6zOuoTRo",
+
+                    Email = "student@enixer.net",
+
+                    User = "TesterNoOne"
+
                 };
 
                 HttpContent content = GetHttpContent(model);
@@ -91,7 +98,6 @@ namespace EnixerPos.Service.Services
 
         protected T GetModelFormResult<T>(string json_result) where T : class
         {
-
             return JsonConvert.DeserializeObject<T>(json_result);
         }
 

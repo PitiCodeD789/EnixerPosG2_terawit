@@ -211,7 +211,7 @@ namespace EnixerPos.Mobile.ViewModels
             }
 
             ItemsViewModel items = _service.GetItems();
-            if (items == null || items.Items.Count == 0)
+            if (items.Items == null || items.Items.Count == 0)
             {
                 Application.Current.MainPage.DisplayAlert("", "ไม่พบรายการอาหารในระบบ", "OK");
                 return;

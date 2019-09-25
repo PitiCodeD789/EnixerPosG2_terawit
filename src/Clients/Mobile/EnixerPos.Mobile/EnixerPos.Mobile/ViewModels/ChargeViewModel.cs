@@ -61,8 +61,8 @@ namespace EnixerPos.Mobile.ViewModels
         decimal GetExpectedCash(int roundTo)
         {
             int multiplier = Convert.ToInt32(TotalPrice / roundTo);
-            if (!(multiplier * roundTo == TotalPrice))
-                multiplier ++;
+            //if (!(multiplier * roundTo == TotalPrice))
+            //    multiplier ++;
             return (multiplier) * roundTo;
         }
         void ChangeCash(decimal amount)

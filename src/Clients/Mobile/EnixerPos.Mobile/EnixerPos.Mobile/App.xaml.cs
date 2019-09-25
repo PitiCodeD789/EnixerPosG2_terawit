@@ -25,9 +25,12 @@ namespace EnixerPos.Mobile
         public static int OpenShiftId { get; set; }
         public App()
         {
+            SecureStorage.SetAsync("Token","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWVpIjoiMTIzNDU2Nzg5IiwibmJmIjoxNTY5MDQxMDA2LCJleHAiOjE1NzkxNTEzMDYsImlzcyI6IkVuaXhlclBvc0cyIiwiYXVkIjoiZUBlIiwidXNlciI6Ik5hdCJ9.KenpoWXIjdFh1OulXkLftQZ1to4aBM33Lv-FmwYRTyY");
+
             InitializeComponent();
             TicketList = new List<ReceiptViewModel>();
 
+            MainPage = new NavigationPage(new SaleView());
             // MainPage = new MainPage();
             //  MainPage = new SaleView();
             //CategoryPageViewModel viewModel = new CategoryPageViewModel();
