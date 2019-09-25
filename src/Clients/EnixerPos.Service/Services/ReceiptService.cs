@@ -120,7 +120,7 @@ namespace EnixerPos.Service.Services
                 //var result = JsonConvert.DeserializeObject<List<ReceiptViewModel>>(responseBody);
                 //return result;
 
-                string url = serviceUrl + "GetReceipts1DayByShiftId" + shiftId.ToString();
+                string url = serviceUrl + "GetReceipts1DayByShiftId/" + shiftId.ToString();
                 var result = Get<List<ReceiptViewModel>>(url).Result;
                 if (result != null || result.IsError == System.Net.HttpStatusCode.OK)
                 {

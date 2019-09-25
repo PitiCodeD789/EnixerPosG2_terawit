@@ -208,20 +208,15 @@ namespace EnixerPos.Domain.Services
                 CashPayment = c.CashPayment,
                 CashRefunds = c.CashRefunds,
                 Paidin = c.Paidin,
-                Paidout = c.Paidout,
-                ExpectedCashAmount = 0,
-                Cash = c.CashPayment,
+                Paidout = c.Paidout,               
                 DebitCard = c.DebitCard,
                 CreditCard = c.CreditCard,
-                QRCode = c.QRCode,
-                NetSales = 0,
-                Grosssales = 0,
+                QRCode = c.QRCode,               
                 UpdateDateTime = c.UpdateDateTime,
                 Refunds = c.Refunds,
                 Id = c.Id,
                 Discount = c.Discount,
                 CreateDateTime = c.CreateDateTime
-
             }).ToList();
 
             return ShiftDetail;

@@ -18,13 +18,13 @@ namespace EnixerPos.Mobile.ViewModels
             _shiftService = new ShiftService();
             PayinClickCommand = new Command(PayinClick);
             PayoutClickCommand = new Command(PayoutClick);
-            PopupNavigation.PopAsync();
+            PopupNavigation.Instance.PopAsync();
         }
 
         private async void PayoutClick(object obj)
         {
            
-                 await PopupNavigation.PushAsync(new Views.Popup.LoadingPopup());
+                 await PopupNavigation.Instance.PushAsync(new Views.Popup.LoadingPopup());
             ManageCashCommand manage = new ManageCashCommand
             {
                 Amount = decimal.Parse(Amount),
@@ -36,7 +36,7 @@ namespace EnixerPos.Mobile.ViewModels
            
 
             bool isPayOut = await _shiftService.ManageCashPay(manage);
-            PopupNavigation.PopAsync();
+           await PopupNavigation.Instance.PopAsync();
             if (isPayOut)
             {
                 App.Current.MainPage.DisplayAlert("ok", "ok", "ok");
@@ -50,7 +50,7 @@ namespace EnixerPos.Mobile.ViewModels
 
         private async void PayinClick(object obj)
         {
-            await PopupNavigation.PushAsync(new Views.Popup.LoadingPopup());
+            await PopupNavigation.Instance.PushAsync(new Views.Popup.LoadingPopup());
             ManageCashCommand manage = new ManageCashCommand
             {
                 Amount = decimal.Parse(Amount),
@@ -61,7 +61,7 @@ namespace EnixerPos.Mobile.ViewModels
             };
 
             bool isPayOut = await _shiftService.ManageCashPay(manage);
-            PopupNavigation.PopAsync();
+            PopupNavigation.Instance.PopAsync();
             if (isPayOut)
             {
                 App.Current.MainPage.DisplayAlert("ok", "ok", "ok");

@@ -1,4 +1,5 @@
 ﻿using EnixerPos.Api.ViewModels.Shifts;
+using EnixerPos.Mobile.Views.Popup;
 using EnixerPos.Service.Interfaces;
 using EnixerPos.Service.Services;
 using Rg.Plugins.Popup.Services;
@@ -34,40 +35,50 @@ namespace EnixerPos.Mobile.ViewModels
             ObservableCollection<GetShiftViewModel> shiftListVMCollection = new ObservableCollection<GetShiftViewModel>(shiftListVM);
             ShiftPopUpPageViewModel shiftPopUp = new ShiftPopUpPageViewModel();
             shiftPopUp.GetShiftListViewModel = shiftListVMCollection;
-            await PopupNavigation.PushAsync(new Views.Popup.ShiftPopUpPage(shiftPopUp));
+            await PopupNavigation.Instance.PushAsync(new Views.Popup.ShiftPopUpPage(shiftPopUp));
         }
 
       
         private async void CashManagePageClick(object obj)
         {
-            await PopupNavigation.PushAsync(new Views.Popup.LoadingPopup());
+            await PopupNavigation.Instance.PushAsync(new Views.Popup.LoadingPopup());
             await Application.Current.MainPage.Navigation.PushAsync(new Views.CashManagePage());
              
 
         }
 
-        private void CloseShiftList(object obj)
+        private async void CloseShiftList(object obj)
         {
             var isClose = _shiftService.CloseListShift(App.OpenShiftId, App.UserId);
             if(isClose)
             {
-                //App.Current.MainPage.DisplayAlert("ok", "Close Ok", "ok");
+               
                 App.CheckShift = false;
                 App.Current.MainPage = new NavigationPage(new Views.EnterPin());
 
             }else
             {
-                App.Current.MainPage.DisplayAlert("ok", "Can not close", "ok");
+                ErrorViewModel errorViewModel = new ErrorViewModel("Error to Close", 1);
+                await PopupNavigation.Instance.PushAsync(new Error(errorViewModel));
+               
             }
         }
 
         private async void ShowShiftList(object obj)
         {
-            var shiftListVM = await _shiftService.GetListShift();
-            ObservableCollection<GetShiftViewModel> shiftListVMCollection = new ObservableCollection<GetShiftViewModel>(shiftListVM);
+            List<GetShiftViewModel> shiftListVM = await _shiftService.GetListShift();
+            ObservableCollection<GetShiftViewModel> shiftListVMCollection = new ObservableCollection<GetShiftViewModel>();
+            foreach (GetShiftViewModel getShiftViewModel in shiftListVM)
+            {
+                getShiftViewModel.CreateDateTime = getShiftViewModel.CreateDateTime.ToLocalTime();
+                getShiftViewModel.UpdateDateTime = getShiftViewModel.UpdateDateTime.ToLocalTime();
+                shiftListVMCollection.Add(getShiftViewModel);
+            }
+           
+          
             ShiftPopUpPageViewModel shiftPopUp = new ShiftPopUpPageViewModel();
             shiftPopUp.GetShiftListViewModel = shiftListVMCollection;
-            await PopupNavigation.PushAsync(new Views.Popup.ShiftPopUpPage(shiftPopUp));
+            await PopupNavigation.Instance.PushAsync(new Views.Popup.ShiftPopUpPage(shiftPopUp));
         }
 
         public ICommand ShowShiftListCommand { get; set; }

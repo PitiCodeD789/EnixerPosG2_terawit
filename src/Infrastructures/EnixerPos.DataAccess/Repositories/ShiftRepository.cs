@@ -20,6 +20,8 @@ namespace EnixerPos.DataAccess.Repositories
         {
             try
             {
+                shiftEntity.CreateDateTime = DateTime.UtcNow;
+                shiftEntity.UpdateDateTime = DateTime.UtcNow;
                 _context.Shift.Add(shiftEntity);
                 _context.SaveChanges();
                 return shiftEntity;
