@@ -30,7 +30,9 @@
                                                      IsVisible="{Binding IsEntityVisible,Mode=TwoWay}"
                                                      HorizontalOptions="End"   
                                                      HeightRequest="40"
-                                                     WidthRequest="500"/>                           
+                                                     WidthRequest="500"
+                                                     TextSize="18"
+                                                     TextEntry="{Binding SearchingText}"/>                           
                             
                         </StackLayout>
                         <ImageButton Source="{Binding ImageName, Mode=TwoWay}" 

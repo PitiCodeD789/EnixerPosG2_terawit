@@ -37,15 +37,22 @@ namespace EnixerPos.Mobile.ViewModels.ItemPage
             if(IsEntityVisible)
             {
                 ImageName = "iconsxbox";
-            }else
+                IsSearching = false;
+                SearchingText = "";
+                IsSearching = true;
+            }
+            else
             {
                 ImageName = "icon_search_2";
+                IsSearching = false;
+                SearchingText = "";
+                IsSearching = true;
             }
         }
 
         public ICommand ShowSerachEntityCommand { get; set; }
 
-        private bool isEntityVisible = true;
+        private bool isEntityVisible = false;
 
         public bool IsEntityVisible
         {
