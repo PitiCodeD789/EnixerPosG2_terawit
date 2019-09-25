@@ -34,7 +34,6 @@ namespace EnixerPos.Mobile.Views
         void PopupMenu_OnItemSelected(string item)
         {
             receiptPage.SaveReceipt();
-            DisplayAlert("แจ้ง", "Save แล้ว", "ตกลง");
         }
         private void Button_Clicked(object sender, EventArgs e)
         {
