@@ -25,6 +25,8 @@ namespace EnixerPos.Mobile
         public static int OpenShiftId { get; set; }
         public App()
         {
+            SecureStorage.SetAsync("Token","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWVpIjoiMTIzNDU2Nzg5IiwibmJmIjoxNTY5MDQxMDA2LCJleHAiOjE1NzkxNTEzMDYsImlzcyI6IkVuaXhlclBvc0cyIiwiYXVkIjoiZUBlIiwidXNlciI6Ik5hdCJ9.KenpoWXIjdFh1OulXkLftQZ1to4aBM33Lv-FmwYRTyY");
+
             InitializeComponent();
             TicketList = new List<ReceiptViewModel>();
 
@@ -44,22 +46,23 @@ namespace EnixerPos.Mobile
             var refreshToken = await SecureStorage.GetAsync("RefreshToken");
             Email = await SecureStorage.GetAsync("Email");
             StoreName = await SecureStorage.GetAsync("StoreName");
-            if (String.IsNullOrEmpty(refreshToken) || String.IsNullOrEmpty(Email) || String.IsNullOrEmpty(StoreName))
-            {
-                MainPage = new NavigationPage(new Login())
-                {
-                    BackgroundColor = Color.White
-                };
-                PermissionReq();
-            }
-            else
-            {
-                MainPage = new NavigationPage(new EnterPin())
-                {
-                    BackgroundColor = Color.White
-                };
-                PermissionReq();
-            }
+            //if (String.IsNullOrEmpty(refreshToken) || String.IsNullOrEmpty(Email) || String.IsNullOrEmpty(StoreName))
+            //{
+            //    MainPage = new NavigationPage(new Login())
+            //    {
+            //        BackgroundColor = Color.White
+            //    };
+            //    PermissionReq();
+            //}
+            //else
+            //{
+            //    MainPage = new NavigationPage(new EnterPin())
+            //    {
+            //        BackgroundColor = Color.White
+            //    };
+            //    PermissionReq();
+            //}
+            MainPage = new NavigationPage(new SaleView());
         }
 
         protected override void OnSleep()

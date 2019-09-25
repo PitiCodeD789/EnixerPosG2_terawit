@@ -9,6 +9,8 @@
              xmlns:tabView="clr-namespace:Xam.Plugin.TabView;assembly=Xam.Plugin.TabView"
              NavigationPage.HasNavigationBar="False"
              x:Name="SalePage"
+             xmlns:controls="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             xmlns:shells="clr-namespace:EnixerPos.Mobile.Views.Shells"
              x:Class="EnixerPos.Mobile.Views.SaleView">
     <ContentPage.Content>
         <Grid ColumnSpacing="0" BackgroundColor="White">
@@ -30,7 +32,7 @@
                         </ImageButton.GestureRecognizers>
                     </ImageButton>
 
-                    <Label Text="Drinks" TextColor="Black" FontSize="30" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start" />
+                    <Label x:Name="HeaderLabel" TextColor="Black" FontSize="30" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start" />
                 </StackLayout>
             </Frame>
             
@@ -52,8 +54,15 @@
                 </ListView.ItemTemplate>
             </ai:GridCollectionView>-->
 
-            <tabView:TabViewControl x:Name="TabView" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" HeaderBackgroundColor="White" HeaderTabTextColor="Black" HeaderSelectionUnderlineColor="Orange" HeaderTabTextFontSize="30">
-            </tabView:TabViewControl>
+            <!--<tabView:TabViewControl x:Name="TabView" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" HeaderBackgroundColor="White" HeaderTabTextColor="Black" HeaderSelectionUnderlineColor="Orange" HeaderTabTextFontSize="30">
+            </tabView:TabViewControl>-->
+
+            <Grid x:Name="TabView" Grid.Column="0" Grid.Row="1" />
+            <ScrollView  Grid.Column="0" Grid.Row="2" >
+                <StackLayout x:Name="TabChangeButton" Orientation="Horizontal" Padding="20,0">
+                    
+                </StackLayout>
+            </ScrollView>
 
             <!--End Menu Item-->
 
@@ -63,10 +72,8 @@
                     <Label Text="Foods" TextColor="Black" FontSize="30" FontAttributes="Bold" />
                     <Label Text="Soup" TextColor="Black" FontSize="30" FontAttributes="Bold" />
                 </StackLayout>
-
             </Frame>
             
-
             <BoxView BackgroundColor="LightGray" VerticalOptions="FillAndExpand" HorizontalOptions="End" WidthRequest="1" Grid.Column="1" Grid.RowSpan="3"/>
 
             <Frame Padding="0" HorizontalOptions="FillAndExpand" Margin="0" Grid.Column="2" Grid.Row="0">

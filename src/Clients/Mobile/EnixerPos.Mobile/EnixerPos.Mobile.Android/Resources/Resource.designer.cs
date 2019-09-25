@@ -6861,6 +6861,2245 @@ namespace EnixerPos.Mobile.Droid
 			global::Plugin.InputKit.Resource.Styleable.ViewStubCompat_android_id = global::EnixerPos.Mobile.Droid.Resource.Styleable.ViewStubCompat_android_id;
 			global::Plugin.InputKit.Resource.Styleable.ViewStubCompat_android_inflatedId = global::EnixerPos.Mobile.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId;
 			global::Plugin.InputKit.Resource.Styleable.ViewStubCompat_android_layout = global::EnixerPos.Mobile.Droid.Resource.Styleable.ViewStubCompat_android_layout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Animation.abc_fade_in = global::EnixerPos.Mobile.Droid.Resource.Animation.abc_fade_in;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Animation.abc_fade_out = global::EnixerPos.Mobile.Droid.Resource.Animation.abc_fade_out;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Animation.abc_grow_fade_in_from_bottom = global::EnixerPos.Mobile.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Animation.abc_popup_enter = global::EnixerPos.Mobile.Droid.Resource.Animation.abc_popup_enter;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Animation.abc_popup_exit = global::EnixerPos.Mobile.Droid.Resource.Animation.abc_popup_exit;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Animation.abc_shrink_fade_out_from_bottom = global::EnixerPos.Mobile.Droid.Resource.Animation.abc_shrink_fade_out_from_bottom;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Animation.abc_slide_in_bottom = global::EnixerPos.Mobile.Droid.Resource.Animation.abc_slide_in_bottom;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Animation.abc_slide_in_top = global::EnixerPos.Mobile.Droid.Resource.Animation.abc_slide_in_top;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Animation.abc_slide_out_bottom = global::EnixerPos.Mobile.Droid.Resource.Animation.abc_slide_out_bottom;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Animation.abc_slide_out_top = global::EnixerPos.Mobile.Droid.Resource.Animation.abc_slide_out_top;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Animation.design_bottom_sheet_slide_in = global::EnixerPos.Mobile.Droid.Resource.Animation.design_bottom_sheet_slide_in;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Animation.design_bottom_sheet_slide_out = global::EnixerPos.Mobile.Droid.Resource.Animation.design_bottom_sheet_slide_out;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Animation.design_snackbar_in = global::EnixerPos.Mobile.Droid.Resource.Animation.design_snackbar_in;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Animation.design_snackbar_out = global::EnixerPos.Mobile.Droid.Resource.Animation.design_snackbar_out;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Animator.design_appbar_state_list_animator = global::EnixerPos.Mobile.Droid.Resource.Animator.design_appbar_state_list_animator;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.actionBarDivider = global::EnixerPos.Mobile.Droid.Resource.Attribute.actionBarDivider;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.actionBarItemBackground = global::EnixerPos.Mobile.Droid.Resource.Attribute.actionBarItemBackground;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.actionBarPopupTheme = global::EnixerPos.Mobile.Droid.Resource.Attribute.actionBarPopupTheme;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.actionBarSize = global::EnixerPos.Mobile.Droid.Resource.Attribute.actionBarSize;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.actionBarSplitStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.actionBarSplitStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.actionBarStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.actionBarStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.actionBarTabBarStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.actionBarTabBarStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.actionBarTabStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.actionBarTabStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.actionBarTabTextStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.actionBarTabTextStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.actionBarTheme = global::EnixerPos.Mobile.Droid.Resource.Attribute.actionBarTheme;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.actionBarWidgetTheme = global::EnixerPos.Mobile.Droid.Resource.Attribute.actionBarWidgetTheme;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.actionButtonStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.actionButtonStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.actionDropDownStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.actionDropDownStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.actionLayout = global::EnixerPos.Mobile.Droid.Resource.Attribute.actionLayout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.actionMenuTextAppearance = global::EnixerPos.Mobile.Droid.Resource.Attribute.actionMenuTextAppearance;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.actionMenuTextColor = global::EnixerPos.Mobile.Droid.Resource.Attribute.actionMenuTextColor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.actionModeBackground = global::EnixerPos.Mobile.Droid.Resource.Attribute.actionModeBackground;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.actionModeCloseButtonStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.actionModeCloseButtonStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.actionModeCloseDrawable = global::EnixerPos.Mobile.Droid.Resource.Attribute.actionModeCloseDrawable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.actionModeCopyDrawable = global::EnixerPos.Mobile.Droid.Resource.Attribute.actionModeCopyDrawable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.actionModeCutDrawable = global::EnixerPos.Mobile.Droid.Resource.Attribute.actionModeCutDrawable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.actionModeFindDrawable = global::EnixerPos.Mobile.Droid.Resource.Attribute.actionModeFindDrawable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.actionModePasteDrawable = global::EnixerPos.Mobile.Droid.Resource.Attribute.actionModePasteDrawable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.actionModePopupWindowStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.actionModePopupWindowStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.actionModeSelectAllDrawable = global::EnixerPos.Mobile.Droid.Resource.Attribute.actionModeSelectAllDrawable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.actionModeShareDrawable = global::EnixerPos.Mobile.Droid.Resource.Attribute.actionModeShareDrawable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.actionModeSplitBackground = global::EnixerPos.Mobile.Droid.Resource.Attribute.actionModeSplitBackground;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.actionModeStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.actionModeStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.actionModeWebSearchDrawable = global::EnixerPos.Mobile.Droid.Resource.Attribute.actionModeWebSearchDrawable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.actionOverflowButtonStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.actionOverflowButtonStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.actionOverflowMenuStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.actionOverflowMenuStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.actionProviderClass = global::EnixerPos.Mobile.Droid.Resource.Attribute.actionProviderClass;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.actionViewClass = global::EnixerPos.Mobile.Droid.Resource.Attribute.actionViewClass;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.activityChooserViewStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.activityChooserViewStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.alertDialogButtonGroupStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.alertDialogButtonGroupStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.alertDialogCenterButtons = global::EnixerPos.Mobile.Droid.Resource.Attribute.alertDialogCenterButtons;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.alertDialogStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.alertDialogStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.alertDialogTheme = global::EnixerPos.Mobile.Droid.Resource.Attribute.alertDialogTheme;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.allowStacking = global::EnixerPos.Mobile.Droid.Resource.Attribute.allowStacking;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.alpha = global::EnixerPos.Mobile.Droid.Resource.Attribute.alpha;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.alphabeticModifiers = global::EnixerPos.Mobile.Droid.Resource.Attribute.alphabeticModifiers;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.arrowHeadLength = global::EnixerPos.Mobile.Droid.Resource.Attribute.arrowHeadLength;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.arrowShaftLength = global::EnixerPos.Mobile.Droid.Resource.Attribute.arrowShaftLength;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.autoCompleteTextViewStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.autoCompleteTextViewStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.autoSizeMaxTextSize = global::EnixerPos.Mobile.Droid.Resource.Attribute.autoSizeMaxTextSize;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.autoSizeMinTextSize = global::EnixerPos.Mobile.Droid.Resource.Attribute.autoSizeMinTextSize;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.autoSizePresetSizes = global::EnixerPos.Mobile.Droid.Resource.Attribute.autoSizePresetSizes;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.autoSizeStepGranularity = global::EnixerPos.Mobile.Droid.Resource.Attribute.autoSizeStepGranularity;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.autoSizeTextType = global::EnixerPos.Mobile.Droid.Resource.Attribute.autoSizeTextType;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.background = global::EnixerPos.Mobile.Droid.Resource.Attribute.background;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.backgroundSplit = global::EnixerPos.Mobile.Droid.Resource.Attribute.backgroundSplit;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.backgroundStacked = global::EnixerPos.Mobile.Droid.Resource.Attribute.backgroundStacked;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.backgroundTint = global::EnixerPos.Mobile.Droid.Resource.Attribute.backgroundTint;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.backgroundTintMode = global::EnixerPos.Mobile.Droid.Resource.Attribute.backgroundTintMode;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.barLength = global::EnixerPos.Mobile.Droid.Resource.Attribute.barLength;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.behavior_autoHide = global::EnixerPos.Mobile.Droid.Resource.Attribute.behavior_autoHide;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.behavior_hideable = global::EnixerPos.Mobile.Droid.Resource.Attribute.behavior_hideable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.behavior_overlapTop = global::EnixerPos.Mobile.Droid.Resource.Attribute.behavior_overlapTop;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.behavior_peekHeight = global::EnixerPos.Mobile.Droid.Resource.Attribute.behavior_peekHeight;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.behavior_skipCollapsed = global::EnixerPos.Mobile.Droid.Resource.Attribute.behavior_skipCollapsed;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.borderlessButtonStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.borderlessButtonStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.borderWidth = global::EnixerPos.Mobile.Droid.Resource.Attribute.borderWidth;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.bottomSheetDialogTheme = global::EnixerPos.Mobile.Droid.Resource.Attribute.bottomSheetDialogTheme;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.bottomSheetStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.bottomSheetStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.buttonBarButtonStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.buttonBarButtonStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.buttonBarNegativeButtonStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.buttonBarNegativeButtonStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.buttonBarNeutralButtonStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.buttonBarNeutralButtonStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.buttonBarPositiveButtonStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.buttonBarPositiveButtonStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.buttonBarStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.buttonBarStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.buttonGravity = global::EnixerPos.Mobile.Droid.Resource.Attribute.buttonGravity;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.buttonPanelSideLayout = global::EnixerPos.Mobile.Droid.Resource.Attribute.buttonPanelSideLayout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.buttonStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.buttonStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.buttonStyleSmall = global::EnixerPos.Mobile.Droid.Resource.Attribute.buttonStyleSmall;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.buttonTint = global::EnixerPos.Mobile.Droid.Resource.Attribute.buttonTint;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.buttonTintMode = global::EnixerPos.Mobile.Droid.Resource.Attribute.buttonTintMode;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.cardBackgroundColor = global::EnixerPos.Mobile.Droid.Resource.Attribute.cardBackgroundColor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.cardCornerRadius = global::EnixerPos.Mobile.Droid.Resource.Attribute.cardCornerRadius;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.cardElevation = global::EnixerPos.Mobile.Droid.Resource.Attribute.cardElevation;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.cardMaxElevation = global::EnixerPos.Mobile.Droid.Resource.Attribute.cardMaxElevation;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.cardPreventCornerOverlap = global::EnixerPos.Mobile.Droid.Resource.Attribute.cardPreventCornerOverlap;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.cardUseCompatPadding = global::EnixerPos.Mobile.Droid.Resource.Attribute.cardUseCompatPadding;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.checkboxStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.checkboxStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.checkedTextViewStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.checkedTextViewStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.closeIcon = global::EnixerPos.Mobile.Droid.Resource.Attribute.closeIcon;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.closeItemLayout = global::EnixerPos.Mobile.Droid.Resource.Attribute.closeItemLayout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.collapseContentDescription = global::EnixerPos.Mobile.Droid.Resource.Attribute.collapseContentDescription;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.collapsedTitleGravity = global::EnixerPos.Mobile.Droid.Resource.Attribute.collapsedTitleGravity;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.collapsedTitleTextAppearance = global::EnixerPos.Mobile.Droid.Resource.Attribute.collapsedTitleTextAppearance;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.collapseIcon = global::EnixerPos.Mobile.Droid.Resource.Attribute.collapseIcon;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.color = global::EnixerPos.Mobile.Droid.Resource.Attribute.color;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.colorAccent = global::EnixerPos.Mobile.Droid.Resource.Attribute.colorAccent;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.colorBackgroundFloating = global::EnixerPos.Mobile.Droid.Resource.Attribute.colorBackgroundFloating;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.colorButtonNormal = global::EnixerPos.Mobile.Droid.Resource.Attribute.colorButtonNormal;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.colorControlActivated = global::EnixerPos.Mobile.Droid.Resource.Attribute.colorControlActivated;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.colorControlHighlight = global::EnixerPos.Mobile.Droid.Resource.Attribute.colorControlHighlight;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.colorControlNormal = global::EnixerPos.Mobile.Droid.Resource.Attribute.colorControlNormal;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.colorError = global::EnixerPos.Mobile.Droid.Resource.Attribute.colorError;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.colorPrimary = global::EnixerPos.Mobile.Droid.Resource.Attribute.colorPrimary;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.colorPrimaryDark = global::EnixerPos.Mobile.Droid.Resource.Attribute.colorPrimaryDark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.colorSwitchThumbNormal = global::EnixerPos.Mobile.Droid.Resource.Attribute.colorSwitchThumbNormal;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.commitIcon = global::EnixerPos.Mobile.Droid.Resource.Attribute.commitIcon;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.contentDescription = global::EnixerPos.Mobile.Droid.Resource.Attribute.contentDescription;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.contentInsetEnd = global::EnixerPos.Mobile.Droid.Resource.Attribute.contentInsetEnd;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.contentInsetEndWithActions = global::EnixerPos.Mobile.Droid.Resource.Attribute.contentInsetEndWithActions;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.contentInsetLeft = global::EnixerPos.Mobile.Droid.Resource.Attribute.contentInsetLeft;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.contentInsetRight = global::EnixerPos.Mobile.Droid.Resource.Attribute.contentInsetRight;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.contentInsetStart = global::EnixerPos.Mobile.Droid.Resource.Attribute.contentInsetStart;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.contentInsetStartWithNavigation = global::EnixerPos.Mobile.Droid.Resource.Attribute.contentInsetStartWithNavigation;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.contentPadding = global::EnixerPos.Mobile.Droid.Resource.Attribute.contentPadding;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.contentPaddingBottom = global::EnixerPos.Mobile.Droid.Resource.Attribute.contentPaddingBottom;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.contentPaddingLeft = global::EnixerPos.Mobile.Droid.Resource.Attribute.contentPaddingLeft;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.contentPaddingRight = global::EnixerPos.Mobile.Droid.Resource.Attribute.contentPaddingRight;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.contentPaddingTop = global::EnixerPos.Mobile.Droid.Resource.Attribute.contentPaddingTop;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.contentScrim = global::EnixerPos.Mobile.Droid.Resource.Attribute.contentScrim;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.controlBackground = global::EnixerPos.Mobile.Droid.Resource.Attribute.controlBackground;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.counterEnabled = global::EnixerPos.Mobile.Droid.Resource.Attribute.counterEnabled;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.counterMaxLength = global::EnixerPos.Mobile.Droid.Resource.Attribute.counterMaxLength;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.counterOverflowTextAppearance = global::EnixerPos.Mobile.Droid.Resource.Attribute.counterOverflowTextAppearance;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.counterTextAppearance = global::EnixerPos.Mobile.Droid.Resource.Attribute.counterTextAppearance;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.customNavigationLayout = global::EnixerPos.Mobile.Droid.Resource.Attribute.customNavigationLayout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.defaultQueryHint = global::EnixerPos.Mobile.Droid.Resource.Attribute.defaultQueryHint;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.dialogPreferredPadding = global::EnixerPos.Mobile.Droid.Resource.Attribute.dialogPreferredPadding;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.dialogTheme = global::EnixerPos.Mobile.Droid.Resource.Attribute.dialogTheme;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.displayOptions = global::EnixerPos.Mobile.Droid.Resource.Attribute.displayOptions;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.divider = global::EnixerPos.Mobile.Droid.Resource.Attribute.divider;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.dividerHorizontal = global::EnixerPos.Mobile.Droid.Resource.Attribute.dividerHorizontal;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.dividerPadding = global::EnixerPos.Mobile.Droid.Resource.Attribute.dividerPadding;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.dividerVertical = global::EnixerPos.Mobile.Droid.Resource.Attribute.dividerVertical;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.drawableSize = global::EnixerPos.Mobile.Droid.Resource.Attribute.drawableSize;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.drawerArrowStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.drawerArrowStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.dropdownListPreferredItemHeight = global::EnixerPos.Mobile.Droid.Resource.Attribute.dropdownListPreferredItemHeight;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.dropDownListViewStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.dropDownListViewStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.editTextBackground = global::EnixerPos.Mobile.Droid.Resource.Attribute.editTextBackground;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.editTextColor = global::EnixerPos.Mobile.Droid.Resource.Attribute.editTextColor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.editTextStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.editTextStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.elevation = global::EnixerPos.Mobile.Droid.Resource.Attribute.elevation;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.errorEnabled = global::EnixerPos.Mobile.Droid.Resource.Attribute.errorEnabled;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.errorTextAppearance = global::EnixerPos.Mobile.Droid.Resource.Attribute.errorTextAppearance;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.expandActivityOverflowButtonDrawable = global::EnixerPos.Mobile.Droid.Resource.Attribute.expandActivityOverflowButtonDrawable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.expanded = global::EnixerPos.Mobile.Droid.Resource.Attribute.expanded;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.expandedTitleGravity = global::EnixerPos.Mobile.Droid.Resource.Attribute.expandedTitleGravity;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.expandedTitleMargin = global::EnixerPos.Mobile.Droid.Resource.Attribute.expandedTitleMargin;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.expandedTitleMarginBottom = global::EnixerPos.Mobile.Droid.Resource.Attribute.expandedTitleMarginBottom;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.expandedTitleMarginEnd = global::EnixerPos.Mobile.Droid.Resource.Attribute.expandedTitleMarginEnd;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.expandedTitleMarginStart = global::EnixerPos.Mobile.Droid.Resource.Attribute.expandedTitleMarginStart;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.expandedTitleMarginTop = global::EnixerPos.Mobile.Droid.Resource.Attribute.expandedTitleMarginTop;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.expandedTitleTextAppearance = global::EnixerPos.Mobile.Droid.Resource.Attribute.expandedTitleTextAppearance;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.externalRouteEnabledDrawable = global::EnixerPos.Mobile.Droid.Resource.Attribute.externalRouteEnabledDrawable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.fabSize = global::EnixerPos.Mobile.Droid.Resource.Attribute.fabSize;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.fastScrollEnabled = global::EnixerPos.Mobile.Droid.Resource.Attribute.fastScrollEnabled;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.fastScrollHorizontalThumbDrawable = global::EnixerPos.Mobile.Droid.Resource.Attribute.fastScrollHorizontalThumbDrawable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.fastScrollHorizontalTrackDrawable = global::EnixerPos.Mobile.Droid.Resource.Attribute.fastScrollHorizontalTrackDrawable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.fastScrollVerticalThumbDrawable = global::EnixerPos.Mobile.Droid.Resource.Attribute.fastScrollVerticalThumbDrawable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.fastScrollVerticalTrackDrawable = global::EnixerPos.Mobile.Droid.Resource.Attribute.fastScrollVerticalTrackDrawable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.font = global::EnixerPos.Mobile.Droid.Resource.Attribute.font;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.fontFamily = global::EnixerPos.Mobile.Droid.Resource.Attribute.fontFamily;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.fontProviderAuthority = global::EnixerPos.Mobile.Droid.Resource.Attribute.fontProviderAuthority;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.fontProviderCerts = global::EnixerPos.Mobile.Droid.Resource.Attribute.fontProviderCerts;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.fontProviderFetchStrategy = global::EnixerPos.Mobile.Droid.Resource.Attribute.fontProviderFetchStrategy;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.fontProviderFetchTimeout = global::EnixerPos.Mobile.Droid.Resource.Attribute.fontProviderFetchTimeout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.fontProviderPackage = global::EnixerPos.Mobile.Droid.Resource.Attribute.fontProviderPackage;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.fontProviderQuery = global::EnixerPos.Mobile.Droid.Resource.Attribute.fontProviderQuery;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.fontStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.fontStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.fontWeight = global::EnixerPos.Mobile.Droid.Resource.Attribute.fontWeight;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.foregroundInsidePadding = global::EnixerPos.Mobile.Droid.Resource.Attribute.foregroundInsidePadding;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.gapBetweenBars = global::EnixerPos.Mobile.Droid.Resource.Attribute.gapBetweenBars;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.goIcon = global::EnixerPos.Mobile.Droid.Resource.Attribute.goIcon;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.headerLayout = global::EnixerPos.Mobile.Droid.Resource.Attribute.headerLayout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.height = global::EnixerPos.Mobile.Droid.Resource.Attribute.height;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.hideOnContentScroll = global::EnixerPos.Mobile.Droid.Resource.Attribute.hideOnContentScroll;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.hintAnimationEnabled = global::EnixerPos.Mobile.Droid.Resource.Attribute.hintAnimationEnabled;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.hintEnabled = global::EnixerPos.Mobile.Droid.Resource.Attribute.hintEnabled;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.hintTextAppearance = global::EnixerPos.Mobile.Droid.Resource.Attribute.hintTextAppearance;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.homeAsUpIndicator = global::EnixerPos.Mobile.Droid.Resource.Attribute.homeAsUpIndicator;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.homeLayout = global::EnixerPos.Mobile.Droid.Resource.Attribute.homeLayout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.icon = global::EnixerPos.Mobile.Droid.Resource.Attribute.icon;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.iconifiedByDefault = global::EnixerPos.Mobile.Droid.Resource.Attribute.iconifiedByDefault;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.iconTint = global::EnixerPos.Mobile.Droid.Resource.Attribute.iconTint;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.iconTintMode = global::EnixerPos.Mobile.Droid.Resource.Attribute.iconTintMode;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.imageButtonStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.imageButtonStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.indeterminateProgressStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.indeterminateProgressStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.initialActivityCount = global::EnixerPos.Mobile.Droid.Resource.Attribute.initialActivityCount;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.insetForeground = global::EnixerPos.Mobile.Droid.Resource.Attribute.insetForeground;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.isLightTheme = global::EnixerPos.Mobile.Droid.Resource.Attribute.isLightTheme;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.itemBackground = global::EnixerPos.Mobile.Droid.Resource.Attribute.itemBackground;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.itemIconTint = global::EnixerPos.Mobile.Droid.Resource.Attribute.itemIconTint;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.itemPadding = global::EnixerPos.Mobile.Droid.Resource.Attribute.itemPadding;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.itemTextAppearance = global::EnixerPos.Mobile.Droid.Resource.Attribute.itemTextAppearance;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.itemTextColor = global::EnixerPos.Mobile.Droid.Resource.Attribute.itemTextColor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.keylines = global::EnixerPos.Mobile.Droid.Resource.Attribute.keylines;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.layout = global::EnixerPos.Mobile.Droid.Resource.Attribute.layout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.layoutManager = global::EnixerPos.Mobile.Droid.Resource.Attribute.layoutManager;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.layout_anchor = global::EnixerPos.Mobile.Droid.Resource.Attribute.layout_anchor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.layout_anchorGravity = global::EnixerPos.Mobile.Droid.Resource.Attribute.layout_anchorGravity;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.layout_behavior = global::EnixerPos.Mobile.Droid.Resource.Attribute.layout_behavior;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.layout_collapseMode = global::EnixerPos.Mobile.Droid.Resource.Attribute.layout_collapseMode;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.layout_collapseParallaxMultiplier = global::EnixerPos.Mobile.Droid.Resource.Attribute.layout_collapseParallaxMultiplier;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.layout_dodgeInsetEdges = global::EnixerPos.Mobile.Droid.Resource.Attribute.layout_dodgeInsetEdges;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.layout_insetEdge = global::EnixerPos.Mobile.Droid.Resource.Attribute.layout_insetEdge;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.layout_keyline = global::EnixerPos.Mobile.Droid.Resource.Attribute.layout_keyline;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.layout_scrollFlags = global::EnixerPos.Mobile.Droid.Resource.Attribute.layout_scrollFlags;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.layout_scrollInterpolator = global::EnixerPos.Mobile.Droid.Resource.Attribute.layout_scrollInterpolator;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.listChoiceBackgroundIndicator = global::EnixerPos.Mobile.Droid.Resource.Attribute.listChoiceBackgroundIndicator;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.listDividerAlertDialog = global::EnixerPos.Mobile.Droid.Resource.Attribute.listDividerAlertDialog;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.listItemLayout = global::EnixerPos.Mobile.Droid.Resource.Attribute.listItemLayout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.listLayout = global::EnixerPos.Mobile.Droid.Resource.Attribute.listLayout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.listMenuViewStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.listMenuViewStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.listPopupWindowStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.listPopupWindowStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.listPreferredItemHeight = global::EnixerPos.Mobile.Droid.Resource.Attribute.listPreferredItemHeight;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.listPreferredItemHeightLarge = global::EnixerPos.Mobile.Droid.Resource.Attribute.listPreferredItemHeightLarge;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.listPreferredItemHeightSmall = global::EnixerPos.Mobile.Droid.Resource.Attribute.listPreferredItemHeightSmall;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.listPreferredItemPaddingLeft = global::EnixerPos.Mobile.Droid.Resource.Attribute.listPreferredItemPaddingLeft;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.listPreferredItemPaddingRight = global::EnixerPos.Mobile.Droid.Resource.Attribute.listPreferredItemPaddingRight;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.logo = global::EnixerPos.Mobile.Droid.Resource.Attribute.logo;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.logoDescription = global::EnixerPos.Mobile.Droid.Resource.Attribute.logoDescription;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.maxActionInlineWidth = global::EnixerPos.Mobile.Droid.Resource.Attribute.maxActionInlineWidth;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.maxButtonHeight = global::EnixerPos.Mobile.Droid.Resource.Attribute.maxButtonHeight;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.measureWithLargestChild = global::EnixerPos.Mobile.Droid.Resource.Attribute.measureWithLargestChild;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.mediaRouteAudioTrackDrawable = global::EnixerPos.Mobile.Droid.Resource.Attribute.mediaRouteAudioTrackDrawable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.mediaRouteButtonStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.mediaRouteButtonStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.mediaRouteButtonTint = global::EnixerPos.Mobile.Droid.Resource.Attribute.mediaRouteButtonTint;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.mediaRouteCloseDrawable = global::EnixerPos.Mobile.Droid.Resource.Attribute.mediaRouteCloseDrawable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.mediaRouteControlPanelThemeOverlay = global::EnixerPos.Mobile.Droid.Resource.Attribute.mediaRouteControlPanelThemeOverlay;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.mediaRouteDefaultIconDrawable = global::EnixerPos.Mobile.Droid.Resource.Attribute.mediaRouteDefaultIconDrawable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.mediaRoutePauseDrawable = global::EnixerPos.Mobile.Droid.Resource.Attribute.mediaRoutePauseDrawable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.mediaRoutePlayDrawable = global::EnixerPos.Mobile.Droid.Resource.Attribute.mediaRoutePlayDrawable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.mediaRouteSpeakerGroupIconDrawable = global::EnixerPos.Mobile.Droid.Resource.Attribute.mediaRouteSpeakerGroupIconDrawable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.mediaRouteSpeakerIconDrawable = global::EnixerPos.Mobile.Droid.Resource.Attribute.mediaRouteSpeakerIconDrawable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.mediaRouteStopDrawable = global::EnixerPos.Mobile.Droid.Resource.Attribute.mediaRouteStopDrawable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.mediaRouteTheme = global::EnixerPos.Mobile.Droid.Resource.Attribute.mediaRouteTheme;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.mediaRouteTvIconDrawable = global::EnixerPos.Mobile.Droid.Resource.Attribute.mediaRouteTvIconDrawable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.menu = global::EnixerPos.Mobile.Droid.Resource.Attribute.menu;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.multiChoiceItemLayout = global::EnixerPos.Mobile.Droid.Resource.Attribute.multiChoiceItemLayout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.navigationContentDescription = global::EnixerPos.Mobile.Droid.Resource.Attribute.navigationContentDescription;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.navigationIcon = global::EnixerPos.Mobile.Droid.Resource.Attribute.navigationIcon;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.navigationMode = global::EnixerPos.Mobile.Droid.Resource.Attribute.navigationMode;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.numericModifiers = global::EnixerPos.Mobile.Droid.Resource.Attribute.numericModifiers;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.overlapAnchor = global::EnixerPos.Mobile.Droid.Resource.Attribute.overlapAnchor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.paddingBottomNoButtons = global::EnixerPos.Mobile.Droid.Resource.Attribute.paddingBottomNoButtons;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.paddingEnd = global::EnixerPos.Mobile.Droid.Resource.Attribute.paddingEnd;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.paddingStart = global::EnixerPos.Mobile.Droid.Resource.Attribute.paddingStart;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.paddingTopNoTitle = global::EnixerPos.Mobile.Droid.Resource.Attribute.paddingTopNoTitle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.panelBackground = global::EnixerPos.Mobile.Droid.Resource.Attribute.panelBackground;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.panelMenuListTheme = global::EnixerPos.Mobile.Droid.Resource.Attribute.panelMenuListTheme;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.panelMenuListWidth = global::EnixerPos.Mobile.Droid.Resource.Attribute.panelMenuListWidth;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.passwordToggleContentDescription = global::EnixerPos.Mobile.Droid.Resource.Attribute.passwordToggleContentDescription;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.passwordToggleDrawable = global::EnixerPos.Mobile.Droid.Resource.Attribute.passwordToggleDrawable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.passwordToggleEnabled = global::EnixerPos.Mobile.Droid.Resource.Attribute.passwordToggleEnabled;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.passwordToggleTint = global::EnixerPos.Mobile.Droid.Resource.Attribute.passwordToggleTint;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.passwordToggleTintMode = global::EnixerPos.Mobile.Droid.Resource.Attribute.passwordToggleTintMode;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.popupMenuStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.popupMenuStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.popupTheme = global::EnixerPos.Mobile.Droid.Resource.Attribute.popupTheme;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.popupWindowStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.popupWindowStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.preserveIconSpacing = global::EnixerPos.Mobile.Droid.Resource.Attribute.preserveIconSpacing;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.pressedTranslationZ = global::EnixerPos.Mobile.Droid.Resource.Attribute.pressedTranslationZ;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.progressBarPadding = global::EnixerPos.Mobile.Droid.Resource.Attribute.progressBarPadding;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.progressBarStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.progressBarStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.queryBackground = global::EnixerPos.Mobile.Droid.Resource.Attribute.queryBackground;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.queryHint = global::EnixerPos.Mobile.Droid.Resource.Attribute.queryHint;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.radioButtonStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.radioButtonStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.ratingBarStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.ratingBarStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.ratingBarStyleIndicator = global::EnixerPos.Mobile.Droid.Resource.Attribute.ratingBarStyleIndicator;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.ratingBarStyleSmall = global::EnixerPos.Mobile.Droid.Resource.Attribute.ratingBarStyleSmall;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.reverseLayout = global::EnixerPos.Mobile.Droid.Resource.Attribute.reverseLayout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.rippleColor = global::EnixerPos.Mobile.Droid.Resource.Attribute.rippleColor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.scrimAnimationDuration = global::EnixerPos.Mobile.Droid.Resource.Attribute.scrimAnimationDuration;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.scrimVisibleHeightTrigger = global::EnixerPos.Mobile.Droid.Resource.Attribute.scrimVisibleHeightTrigger;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.searchHintIcon = global::EnixerPos.Mobile.Droid.Resource.Attribute.searchHintIcon;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.searchIcon = global::EnixerPos.Mobile.Droid.Resource.Attribute.searchIcon;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.searchViewStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.searchViewStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.seekBarStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.seekBarStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.selectableItemBackground = global::EnixerPos.Mobile.Droid.Resource.Attribute.selectableItemBackground;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.selectableItemBackgroundBorderless = global::EnixerPos.Mobile.Droid.Resource.Attribute.selectableItemBackgroundBorderless;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.showAsAction = global::EnixerPos.Mobile.Droid.Resource.Attribute.showAsAction;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.showDividers = global::EnixerPos.Mobile.Droid.Resource.Attribute.showDividers;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.showText = global::EnixerPos.Mobile.Droid.Resource.Attribute.showText;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.showTitle = global::EnixerPos.Mobile.Droid.Resource.Attribute.showTitle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.singleChoiceItemLayout = global::EnixerPos.Mobile.Droid.Resource.Attribute.singleChoiceItemLayout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.spanCount = global::EnixerPos.Mobile.Droid.Resource.Attribute.spanCount;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.spinBars = global::EnixerPos.Mobile.Droid.Resource.Attribute.spinBars;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.spinnerDropDownItemStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.spinnerDropDownItemStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.spinnerStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.spinnerStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.splitTrack = global::EnixerPos.Mobile.Droid.Resource.Attribute.splitTrack;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.srcCompat = global::EnixerPos.Mobile.Droid.Resource.Attribute.srcCompat;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.stackFromEnd = global::EnixerPos.Mobile.Droid.Resource.Attribute.stackFromEnd;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.state_above_anchor = global::EnixerPos.Mobile.Droid.Resource.Attribute.state_above_anchor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.state_collapsed = global::EnixerPos.Mobile.Droid.Resource.Attribute.state_collapsed;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.state_collapsible = global::EnixerPos.Mobile.Droid.Resource.Attribute.state_collapsible;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.statusBarBackground = global::EnixerPos.Mobile.Droid.Resource.Attribute.statusBarBackground;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.statusBarScrim = global::EnixerPos.Mobile.Droid.Resource.Attribute.statusBarScrim;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.subMenuArrow = global::EnixerPos.Mobile.Droid.Resource.Attribute.subMenuArrow;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.submitBackground = global::EnixerPos.Mobile.Droid.Resource.Attribute.submitBackground;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.subtitle = global::EnixerPos.Mobile.Droid.Resource.Attribute.subtitle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.subtitleTextAppearance = global::EnixerPos.Mobile.Droid.Resource.Attribute.subtitleTextAppearance;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.subtitleTextColor = global::EnixerPos.Mobile.Droid.Resource.Attribute.subtitleTextColor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.subtitleTextStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.subtitleTextStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.suggestionRowLayout = global::EnixerPos.Mobile.Droid.Resource.Attribute.suggestionRowLayout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.switchMinWidth = global::EnixerPos.Mobile.Droid.Resource.Attribute.switchMinWidth;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.switchPadding = global::EnixerPos.Mobile.Droid.Resource.Attribute.switchPadding;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.switchStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.switchStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.switchTextAppearance = global::EnixerPos.Mobile.Droid.Resource.Attribute.switchTextAppearance;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.tabBackground = global::EnixerPos.Mobile.Droid.Resource.Attribute.tabBackground;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.tabContentStart = global::EnixerPos.Mobile.Droid.Resource.Attribute.tabContentStart;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.tabGravity = global::EnixerPos.Mobile.Droid.Resource.Attribute.tabGravity;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.tabIndicatorColor = global::EnixerPos.Mobile.Droid.Resource.Attribute.tabIndicatorColor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.tabIndicatorHeight = global::EnixerPos.Mobile.Droid.Resource.Attribute.tabIndicatorHeight;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.tabMaxWidth = global::EnixerPos.Mobile.Droid.Resource.Attribute.tabMaxWidth;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.tabMinWidth = global::EnixerPos.Mobile.Droid.Resource.Attribute.tabMinWidth;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.tabMode = global::EnixerPos.Mobile.Droid.Resource.Attribute.tabMode;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.tabPadding = global::EnixerPos.Mobile.Droid.Resource.Attribute.tabPadding;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.tabPaddingBottom = global::EnixerPos.Mobile.Droid.Resource.Attribute.tabPaddingBottom;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.tabPaddingEnd = global::EnixerPos.Mobile.Droid.Resource.Attribute.tabPaddingEnd;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.tabPaddingStart = global::EnixerPos.Mobile.Droid.Resource.Attribute.tabPaddingStart;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.tabPaddingTop = global::EnixerPos.Mobile.Droid.Resource.Attribute.tabPaddingTop;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.tabSelectedTextColor = global::EnixerPos.Mobile.Droid.Resource.Attribute.tabSelectedTextColor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.tabTextAppearance = global::EnixerPos.Mobile.Droid.Resource.Attribute.tabTextAppearance;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.tabTextColor = global::EnixerPos.Mobile.Droid.Resource.Attribute.tabTextColor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.textAllCaps = global::EnixerPos.Mobile.Droid.Resource.Attribute.textAllCaps;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.textAppearanceLargePopupMenu = global::EnixerPos.Mobile.Droid.Resource.Attribute.textAppearanceLargePopupMenu;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.textAppearanceListItem = global::EnixerPos.Mobile.Droid.Resource.Attribute.textAppearanceListItem;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.textAppearanceListItemSecondary = global::EnixerPos.Mobile.Droid.Resource.Attribute.textAppearanceListItemSecondary;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.textAppearanceListItemSmall = global::EnixerPos.Mobile.Droid.Resource.Attribute.textAppearanceListItemSmall;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.textAppearancePopupMenuHeader = global::EnixerPos.Mobile.Droid.Resource.Attribute.textAppearancePopupMenuHeader;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.textAppearanceSearchResultSubtitle = global::EnixerPos.Mobile.Droid.Resource.Attribute.textAppearanceSearchResultSubtitle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.textAppearanceSearchResultTitle = global::EnixerPos.Mobile.Droid.Resource.Attribute.textAppearanceSearchResultTitle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.textAppearanceSmallPopupMenu = global::EnixerPos.Mobile.Droid.Resource.Attribute.textAppearanceSmallPopupMenu;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.textColorAlertDialogListItem = global::EnixerPos.Mobile.Droid.Resource.Attribute.textColorAlertDialogListItem;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.textColorSearchUrl = global::EnixerPos.Mobile.Droid.Resource.Attribute.textColorSearchUrl;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.theme = global::EnixerPos.Mobile.Droid.Resource.Attribute.theme;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.thickness = global::EnixerPos.Mobile.Droid.Resource.Attribute.thickness;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.thumbTextPadding = global::EnixerPos.Mobile.Droid.Resource.Attribute.thumbTextPadding;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.thumbTint = global::EnixerPos.Mobile.Droid.Resource.Attribute.thumbTint;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.thumbTintMode = global::EnixerPos.Mobile.Droid.Resource.Attribute.thumbTintMode;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.tickMark = global::EnixerPos.Mobile.Droid.Resource.Attribute.tickMark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.tickMarkTint = global::EnixerPos.Mobile.Droid.Resource.Attribute.tickMarkTint;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.tickMarkTintMode = global::EnixerPos.Mobile.Droid.Resource.Attribute.tickMarkTintMode;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.tint = global::EnixerPos.Mobile.Droid.Resource.Attribute.tint;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.tintMode = global::EnixerPos.Mobile.Droid.Resource.Attribute.tintMode;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.title = global::EnixerPos.Mobile.Droid.Resource.Attribute.title;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.titleEnabled = global::EnixerPos.Mobile.Droid.Resource.Attribute.titleEnabled;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.titleMargin = global::EnixerPos.Mobile.Droid.Resource.Attribute.titleMargin;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.titleMarginBottom = global::EnixerPos.Mobile.Droid.Resource.Attribute.titleMarginBottom;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.titleMarginEnd = global::EnixerPos.Mobile.Droid.Resource.Attribute.titleMarginEnd;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.titleMargins = global::EnixerPos.Mobile.Droid.Resource.Attribute.titleMargins;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.titleMarginStart = global::EnixerPos.Mobile.Droid.Resource.Attribute.titleMarginStart;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.titleMarginTop = global::EnixerPos.Mobile.Droid.Resource.Attribute.titleMarginTop;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.titleTextAppearance = global::EnixerPos.Mobile.Droid.Resource.Attribute.titleTextAppearance;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.titleTextColor = global::EnixerPos.Mobile.Droid.Resource.Attribute.titleTextColor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.titleTextStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.titleTextStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.toolbarId = global::EnixerPos.Mobile.Droid.Resource.Attribute.toolbarId;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.toolbarNavigationButtonStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.toolbarNavigationButtonStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.toolbarStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.toolbarStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.tooltipForegroundColor = global::EnixerPos.Mobile.Droid.Resource.Attribute.tooltipForegroundColor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.tooltipFrameBackground = global::EnixerPos.Mobile.Droid.Resource.Attribute.tooltipFrameBackground;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.tooltipText = global::EnixerPos.Mobile.Droid.Resource.Attribute.tooltipText;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.track = global::EnixerPos.Mobile.Droid.Resource.Attribute.track;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.trackTint = global::EnixerPos.Mobile.Droid.Resource.Attribute.trackTint;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.trackTintMode = global::EnixerPos.Mobile.Droid.Resource.Attribute.trackTintMode;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.useCompatPadding = global::EnixerPos.Mobile.Droid.Resource.Attribute.useCompatPadding;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.voiceIcon = global::EnixerPos.Mobile.Droid.Resource.Attribute.voiceIcon;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.windowActionBar = global::EnixerPos.Mobile.Droid.Resource.Attribute.windowActionBar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.windowActionBarOverlay = global::EnixerPos.Mobile.Droid.Resource.Attribute.windowActionBarOverlay;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.windowActionModeOverlay = global::EnixerPos.Mobile.Droid.Resource.Attribute.windowActionModeOverlay;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.windowFixedHeightMajor = global::EnixerPos.Mobile.Droid.Resource.Attribute.windowFixedHeightMajor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.windowFixedHeightMinor = global::EnixerPos.Mobile.Droid.Resource.Attribute.windowFixedHeightMinor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.windowFixedWidthMajor = global::EnixerPos.Mobile.Droid.Resource.Attribute.windowFixedWidthMajor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.windowFixedWidthMinor = global::EnixerPos.Mobile.Droid.Resource.Attribute.windowFixedWidthMinor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.windowMinWidthMajor = global::EnixerPos.Mobile.Droid.Resource.Attribute.windowMinWidthMajor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.windowMinWidthMinor = global::EnixerPos.Mobile.Droid.Resource.Attribute.windowMinWidthMinor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Attribute.windowNoTitle = global::EnixerPos.Mobile.Droid.Resource.Attribute.windowNoTitle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Boolean.abc_action_bar_embed_tabs = global::EnixerPos.Mobile.Droid.Resource.Boolean.abc_action_bar_embed_tabs;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Boolean.abc_allow_stacked_button_bar = global::EnixerPos.Mobile.Droid.Resource.Boolean.abc_allow_stacked_button_bar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Boolean.abc_config_actionMenuItemAllCaps = global::EnixerPos.Mobile.Droid.Resource.Boolean.abc_config_actionMenuItemAllCaps;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.abc_background_cache_hint_selector_material_dark = global::EnixerPos.Mobile.Droid.Resource.Color.abc_background_cache_hint_selector_material_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.abc_background_cache_hint_selector_material_light = global::EnixerPos.Mobile.Droid.Resource.Color.abc_background_cache_hint_selector_material_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.abc_btn_colored_borderless_text_material = global::EnixerPos.Mobile.Droid.Resource.Color.abc_btn_colored_borderless_text_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.abc_btn_colored_text_material = global::EnixerPos.Mobile.Droid.Resource.Color.abc_btn_colored_text_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.abc_color_highlight_material = global::EnixerPos.Mobile.Droid.Resource.Color.abc_color_highlight_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.abc_hint_foreground_material_dark = global::EnixerPos.Mobile.Droid.Resource.Color.abc_hint_foreground_material_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.abc_hint_foreground_material_light = global::EnixerPos.Mobile.Droid.Resource.Color.abc_hint_foreground_material_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.abc_input_method_navigation_guard = global::EnixerPos.Mobile.Droid.Resource.Color.abc_input_method_navigation_guard;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.abc_primary_text_disable_only_material_dark = global::EnixerPos.Mobile.Droid.Resource.Color.abc_primary_text_disable_only_material_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.abc_primary_text_disable_only_material_light = global::EnixerPos.Mobile.Droid.Resource.Color.abc_primary_text_disable_only_material_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.abc_primary_text_material_dark = global::EnixerPos.Mobile.Droid.Resource.Color.abc_primary_text_material_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.abc_primary_text_material_light = global::EnixerPos.Mobile.Droid.Resource.Color.abc_primary_text_material_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.abc_search_url_text = global::EnixerPos.Mobile.Droid.Resource.Color.abc_search_url_text;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.abc_search_url_text_normal = global::EnixerPos.Mobile.Droid.Resource.Color.abc_search_url_text_normal;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.abc_search_url_text_pressed = global::EnixerPos.Mobile.Droid.Resource.Color.abc_search_url_text_pressed;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.abc_search_url_text_selected = global::EnixerPos.Mobile.Droid.Resource.Color.abc_search_url_text_selected;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.abc_secondary_text_material_dark = global::EnixerPos.Mobile.Droid.Resource.Color.abc_secondary_text_material_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.abc_secondary_text_material_light = global::EnixerPos.Mobile.Droid.Resource.Color.abc_secondary_text_material_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.abc_tint_btn_checkable = global::EnixerPos.Mobile.Droid.Resource.Color.abc_tint_btn_checkable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.abc_tint_default = global::EnixerPos.Mobile.Droid.Resource.Color.abc_tint_default;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.abc_tint_edittext = global::EnixerPos.Mobile.Droid.Resource.Color.abc_tint_edittext;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.abc_tint_seek_thumb = global::EnixerPos.Mobile.Droid.Resource.Color.abc_tint_seek_thumb;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.abc_tint_spinner = global::EnixerPos.Mobile.Droid.Resource.Color.abc_tint_spinner;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.abc_tint_switch_track = global::EnixerPos.Mobile.Droid.Resource.Color.abc_tint_switch_track;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.accent_material_dark = global::EnixerPos.Mobile.Droid.Resource.Color.accent_material_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.accent_material_light = global::EnixerPos.Mobile.Droid.Resource.Color.accent_material_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.background_floating_material_dark = global::EnixerPos.Mobile.Droid.Resource.Color.background_floating_material_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.background_floating_material_light = global::EnixerPos.Mobile.Droid.Resource.Color.background_floating_material_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.background_material_dark = global::EnixerPos.Mobile.Droid.Resource.Color.background_material_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.background_material_light = global::EnixerPos.Mobile.Droid.Resource.Color.background_material_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.bright_foreground_disabled_material_dark = global::EnixerPos.Mobile.Droid.Resource.Color.bright_foreground_disabled_material_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.bright_foreground_disabled_material_light = global::EnixerPos.Mobile.Droid.Resource.Color.bright_foreground_disabled_material_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.bright_foreground_inverse_material_dark = global::EnixerPos.Mobile.Droid.Resource.Color.bright_foreground_inverse_material_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.bright_foreground_inverse_material_light = global::EnixerPos.Mobile.Droid.Resource.Color.bright_foreground_inverse_material_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.bright_foreground_material_dark = global::EnixerPos.Mobile.Droid.Resource.Color.bright_foreground_material_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.bright_foreground_material_light = global::EnixerPos.Mobile.Droid.Resource.Color.bright_foreground_material_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.button_material_dark = global::EnixerPos.Mobile.Droid.Resource.Color.button_material_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.button_material_light = global::EnixerPos.Mobile.Droid.Resource.Color.button_material_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.cardview_dark_background = global::EnixerPos.Mobile.Droid.Resource.Color.cardview_dark_background;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.cardview_light_background = global::EnixerPos.Mobile.Droid.Resource.Color.cardview_light_background;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.cardview_shadow_end_color = global::EnixerPos.Mobile.Droid.Resource.Color.cardview_shadow_end_color;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.cardview_shadow_start_color = global::EnixerPos.Mobile.Droid.Resource.Color.cardview_shadow_start_color;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.design_bottom_navigation_shadow_color = global::EnixerPos.Mobile.Droid.Resource.Color.design_bottom_navigation_shadow_color;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.design_error = global::EnixerPos.Mobile.Droid.Resource.Color.design_error;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.design_fab_shadow_end_color = global::EnixerPos.Mobile.Droid.Resource.Color.design_fab_shadow_end_color;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.design_fab_shadow_mid_color = global::EnixerPos.Mobile.Droid.Resource.Color.design_fab_shadow_mid_color;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.design_fab_shadow_start_color = global::EnixerPos.Mobile.Droid.Resource.Color.design_fab_shadow_start_color;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.design_fab_stroke_end_inner_color = global::EnixerPos.Mobile.Droid.Resource.Color.design_fab_stroke_end_inner_color;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.design_fab_stroke_end_outer_color = global::EnixerPos.Mobile.Droid.Resource.Color.design_fab_stroke_end_outer_color;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.design_fab_stroke_top_inner_color = global::EnixerPos.Mobile.Droid.Resource.Color.design_fab_stroke_top_inner_color;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.design_fab_stroke_top_outer_color = global::EnixerPos.Mobile.Droid.Resource.Color.design_fab_stroke_top_outer_color;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.design_snackbar_background_color = global::EnixerPos.Mobile.Droid.Resource.Color.design_snackbar_background_color;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.design_tint_password_toggle = global::EnixerPos.Mobile.Droid.Resource.Color.design_tint_password_toggle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.dim_foreground_disabled_material_dark = global::EnixerPos.Mobile.Droid.Resource.Color.dim_foreground_disabled_material_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.dim_foreground_disabled_material_light = global::EnixerPos.Mobile.Droid.Resource.Color.dim_foreground_disabled_material_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.dim_foreground_material_dark = global::EnixerPos.Mobile.Droid.Resource.Color.dim_foreground_material_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.dim_foreground_material_light = global::EnixerPos.Mobile.Droid.Resource.Color.dim_foreground_material_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.foreground_material_dark = global::EnixerPos.Mobile.Droid.Resource.Color.foreground_material_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.foreground_material_light = global::EnixerPos.Mobile.Droid.Resource.Color.foreground_material_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.highlighted_text_material_dark = global::EnixerPos.Mobile.Droid.Resource.Color.highlighted_text_material_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.highlighted_text_material_light = global::EnixerPos.Mobile.Droid.Resource.Color.highlighted_text_material_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.material_blue_grey_800 = global::EnixerPos.Mobile.Droid.Resource.Color.material_blue_grey_800;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.material_blue_grey_900 = global::EnixerPos.Mobile.Droid.Resource.Color.material_blue_grey_900;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.material_blue_grey_950 = global::EnixerPos.Mobile.Droid.Resource.Color.material_blue_grey_950;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.material_deep_teal_200 = global::EnixerPos.Mobile.Droid.Resource.Color.material_deep_teal_200;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.material_deep_teal_500 = global::EnixerPos.Mobile.Droid.Resource.Color.material_deep_teal_500;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.material_grey_100 = global::EnixerPos.Mobile.Droid.Resource.Color.material_grey_100;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.material_grey_300 = global::EnixerPos.Mobile.Droid.Resource.Color.material_grey_300;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.material_grey_50 = global::EnixerPos.Mobile.Droid.Resource.Color.material_grey_50;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.material_grey_600 = global::EnixerPos.Mobile.Droid.Resource.Color.material_grey_600;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.material_grey_800 = global::EnixerPos.Mobile.Droid.Resource.Color.material_grey_800;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.material_grey_850 = global::EnixerPos.Mobile.Droid.Resource.Color.material_grey_850;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.material_grey_900 = global::EnixerPos.Mobile.Droid.Resource.Color.material_grey_900;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.notification_action_color_filter = global::EnixerPos.Mobile.Droid.Resource.Color.notification_action_color_filter;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.notification_icon_bg_color = global::EnixerPos.Mobile.Droid.Resource.Color.notification_icon_bg_color;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.notification_material_background_media_default_color = global::EnixerPos.Mobile.Droid.Resource.Color.notification_material_background_media_default_color;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.primary_dark_material_dark = global::EnixerPos.Mobile.Droid.Resource.Color.primary_dark_material_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.primary_dark_material_light = global::EnixerPos.Mobile.Droid.Resource.Color.primary_dark_material_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.primary_material_dark = global::EnixerPos.Mobile.Droid.Resource.Color.primary_material_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.primary_material_light = global::EnixerPos.Mobile.Droid.Resource.Color.primary_material_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.primary_text_default_material_dark = global::EnixerPos.Mobile.Droid.Resource.Color.primary_text_default_material_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.primary_text_default_material_light = global::EnixerPos.Mobile.Droid.Resource.Color.primary_text_default_material_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.primary_text_disabled_material_dark = global::EnixerPos.Mobile.Droid.Resource.Color.primary_text_disabled_material_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.primary_text_disabled_material_light = global::EnixerPos.Mobile.Droid.Resource.Color.primary_text_disabled_material_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.ripple_material_dark = global::EnixerPos.Mobile.Droid.Resource.Color.ripple_material_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.ripple_material_light = global::EnixerPos.Mobile.Droid.Resource.Color.ripple_material_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.secondary_text_default_material_dark = global::EnixerPos.Mobile.Droid.Resource.Color.secondary_text_default_material_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.secondary_text_default_material_light = global::EnixerPos.Mobile.Droid.Resource.Color.secondary_text_default_material_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.secondary_text_disabled_material_dark = global::EnixerPos.Mobile.Droid.Resource.Color.secondary_text_disabled_material_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.secondary_text_disabled_material_light = global::EnixerPos.Mobile.Droid.Resource.Color.secondary_text_disabled_material_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.switch_thumb_disabled_material_dark = global::EnixerPos.Mobile.Droid.Resource.Color.switch_thumb_disabled_material_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.switch_thumb_disabled_material_light = global::EnixerPos.Mobile.Droid.Resource.Color.switch_thumb_disabled_material_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.switch_thumb_material_dark = global::EnixerPos.Mobile.Droid.Resource.Color.switch_thumb_material_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.switch_thumb_material_light = global::EnixerPos.Mobile.Droid.Resource.Color.switch_thumb_material_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.switch_thumb_normal_material_dark = global::EnixerPos.Mobile.Droid.Resource.Color.switch_thumb_normal_material_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.switch_thumb_normal_material_light = global::EnixerPos.Mobile.Droid.Resource.Color.switch_thumb_normal_material_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.tooltip_background_dark = global::EnixerPos.Mobile.Droid.Resource.Color.tooltip_background_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Color.tooltip_background_light = global::EnixerPos.Mobile.Droid.Resource.Color.tooltip_background_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_action_bar_content_inset_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_action_bar_content_inset_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_action_bar_content_inset_with_nav = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_action_bar_content_inset_with_nav;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_action_bar_default_height_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_action_bar_default_height_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_action_bar_default_padding_end_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_action_bar_default_padding_end_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_action_bar_default_padding_start_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_action_bar_default_padding_start_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_action_bar_elevation_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_action_bar_elevation_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_action_bar_icon_vertical_padding_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_action_bar_icon_vertical_padding_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_action_bar_overflow_padding_end_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_action_bar_overflow_padding_end_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_action_bar_overflow_padding_start_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_action_bar_overflow_padding_start_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_action_bar_stacked_max_height = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_action_bar_stacked_max_height;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_action_bar_stacked_tab_max_width = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_action_bar_stacked_tab_max_width;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_action_bar_subtitle_top_margin_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_action_bar_subtitle_top_margin_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_action_button_min_height_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_action_button_min_height_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_action_button_min_width_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_action_button_min_width_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_action_button_min_width_overflow_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_action_button_min_width_overflow_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_alert_dialog_button_bar_height = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_alert_dialog_button_bar_height;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_button_inset_horizontal_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_button_inset_horizontal_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_button_inset_vertical_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_button_inset_vertical_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_button_padding_horizontal_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_button_padding_horizontal_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_button_padding_vertical_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_button_padding_vertical_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_cascading_menus_min_smallest_width = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_cascading_menus_min_smallest_width;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_config_prefDialogWidth = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_config_prefDialogWidth;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_control_corner_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_control_corner_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_control_inset_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_control_inset_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_control_padding_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_control_padding_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_dialog_fixed_height_major = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_dialog_fixed_height_major;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_dialog_fixed_height_minor = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_dialog_fixed_height_minor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_dialog_fixed_width_major = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_dialog_fixed_width_major;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_dialog_fixed_width_minor = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_dialog_fixed_width_minor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_dialog_list_padding_bottom_no_buttons = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_dialog_list_padding_bottom_no_buttons;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_dialog_list_padding_top_no_title = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_dialog_list_padding_top_no_title;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_dialog_min_width_major = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_dialog_min_width_major;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_dialog_min_width_minor = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_dialog_min_width_minor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_dialog_padding_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_dialog_padding_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_dialog_padding_top_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_dialog_padding_top_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_dialog_title_divider_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_dialog_title_divider_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_disabled_alpha_material_dark = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_disabled_alpha_material_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_disabled_alpha_material_light = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_disabled_alpha_material_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_dropdownitem_icon_width = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_dropdownitem_icon_width;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_dropdownitem_text_padding_left = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_dropdownitem_text_padding_left;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_dropdownitem_text_padding_right = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_dropdownitem_text_padding_right;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_edit_text_inset_bottom_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_edit_text_inset_bottom_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_edit_text_inset_horizontal_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_edit_text_inset_horizontal_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_edit_text_inset_top_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_edit_text_inset_top_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_floating_window_z = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_floating_window_z;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_list_item_padding_horizontal_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_list_item_padding_horizontal_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_panel_menu_list_width = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_panel_menu_list_width;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_progress_bar_height_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_progress_bar_height_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_search_view_preferred_height = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_search_view_preferred_height;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_search_view_preferred_width = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_search_view_preferred_width;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_seekbar_track_background_height_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_seekbar_track_background_height_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_seekbar_track_progress_height_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_seekbar_track_progress_height_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_select_dialog_padding_start_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_select_dialog_padding_start_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_switch_padding = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_switch_padding;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_text_size_body_1_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_text_size_body_1_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_text_size_body_2_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_text_size_body_2_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_text_size_button_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_text_size_button_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_text_size_caption_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_text_size_caption_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_text_size_display_1_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_text_size_display_1_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_text_size_display_2_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_text_size_display_2_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_text_size_display_3_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_text_size_display_3_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_text_size_display_4_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_text_size_display_4_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_text_size_headline_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_text_size_headline_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_text_size_large_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_text_size_large_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_text_size_medium_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_text_size_medium_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_text_size_menu_header_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_text_size_menu_header_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_text_size_menu_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_text_size_menu_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_text_size_small_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_text_size_small_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_text_size_subhead_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_text_size_subhead_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_text_size_subtitle_material_toolbar = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_text_size_subtitle_material_toolbar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_text_size_title_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_text_size_title_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.abc_text_size_title_material_toolbar = global::EnixerPos.Mobile.Droid.Resource.Dimension.abc_text_size_title_material_toolbar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.cardview_compat_inset_shadow = global::EnixerPos.Mobile.Droid.Resource.Dimension.cardview_compat_inset_shadow;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.cardview_default_elevation = global::EnixerPos.Mobile.Droid.Resource.Dimension.cardview_default_elevation;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.cardview_default_radius = global::EnixerPos.Mobile.Droid.Resource.Dimension.cardview_default_radius;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.compat_button_inset_horizontal_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.compat_button_inset_horizontal_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.compat_button_inset_vertical_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.compat_button_inset_vertical_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.compat_button_padding_horizontal_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.compat_button_padding_horizontal_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.compat_button_padding_vertical_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.compat_button_padding_vertical_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.compat_control_corner_material = global::EnixerPos.Mobile.Droid.Resource.Dimension.compat_control_corner_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.design_appbar_elevation = global::EnixerPos.Mobile.Droid.Resource.Dimension.design_appbar_elevation;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.design_bottom_navigation_active_item_max_width = global::EnixerPos.Mobile.Droid.Resource.Dimension.design_bottom_navigation_active_item_max_width;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.design_bottom_navigation_active_text_size = global::EnixerPos.Mobile.Droid.Resource.Dimension.design_bottom_navigation_active_text_size;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.design_bottom_navigation_elevation = global::EnixerPos.Mobile.Droid.Resource.Dimension.design_bottom_navigation_elevation;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.design_bottom_navigation_height = global::EnixerPos.Mobile.Droid.Resource.Dimension.design_bottom_navigation_height;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.design_bottom_navigation_item_max_width = global::EnixerPos.Mobile.Droid.Resource.Dimension.design_bottom_navigation_item_max_width;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.design_bottom_navigation_item_min_width = global::EnixerPos.Mobile.Droid.Resource.Dimension.design_bottom_navigation_item_min_width;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.design_bottom_navigation_margin = global::EnixerPos.Mobile.Droid.Resource.Dimension.design_bottom_navigation_margin;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.design_bottom_navigation_shadow_height = global::EnixerPos.Mobile.Droid.Resource.Dimension.design_bottom_navigation_shadow_height;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.design_bottom_navigation_text_size = global::EnixerPos.Mobile.Droid.Resource.Dimension.design_bottom_navigation_text_size;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.design_bottom_sheet_modal_elevation = global::EnixerPos.Mobile.Droid.Resource.Dimension.design_bottom_sheet_modal_elevation;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.design_bottom_sheet_peek_height_min = global::EnixerPos.Mobile.Droid.Resource.Dimension.design_bottom_sheet_peek_height_min;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.design_fab_border_width = global::EnixerPos.Mobile.Droid.Resource.Dimension.design_fab_border_width;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.design_fab_elevation = global::EnixerPos.Mobile.Droid.Resource.Dimension.design_fab_elevation;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.design_fab_image_size = global::EnixerPos.Mobile.Droid.Resource.Dimension.design_fab_image_size;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.design_fab_size_mini = global::EnixerPos.Mobile.Droid.Resource.Dimension.design_fab_size_mini;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.design_fab_size_normal = global::EnixerPos.Mobile.Droid.Resource.Dimension.design_fab_size_normal;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.design_fab_translation_z_pressed = global::EnixerPos.Mobile.Droid.Resource.Dimension.design_fab_translation_z_pressed;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.design_navigation_elevation = global::EnixerPos.Mobile.Droid.Resource.Dimension.design_navigation_elevation;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.design_navigation_icon_padding = global::EnixerPos.Mobile.Droid.Resource.Dimension.design_navigation_icon_padding;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.design_navigation_icon_size = global::EnixerPos.Mobile.Droid.Resource.Dimension.design_navigation_icon_size;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.design_navigation_max_width = global::EnixerPos.Mobile.Droid.Resource.Dimension.design_navigation_max_width;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.design_navigation_padding_bottom = global::EnixerPos.Mobile.Droid.Resource.Dimension.design_navigation_padding_bottom;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.design_navigation_separator_vertical_padding = global::EnixerPos.Mobile.Droid.Resource.Dimension.design_navigation_separator_vertical_padding;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.design_snackbar_action_inline_max_width = global::EnixerPos.Mobile.Droid.Resource.Dimension.design_snackbar_action_inline_max_width;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.design_snackbar_background_corner_radius = global::EnixerPos.Mobile.Droid.Resource.Dimension.design_snackbar_background_corner_radius;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.design_snackbar_elevation = global::EnixerPos.Mobile.Droid.Resource.Dimension.design_snackbar_elevation;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.design_snackbar_extra_spacing_horizontal = global::EnixerPos.Mobile.Droid.Resource.Dimension.design_snackbar_extra_spacing_horizontal;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.design_snackbar_max_width = global::EnixerPos.Mobile.Droid.Resource.Dimension.design_snackbar_max_width;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.design_snackbar_min_width = global::EnixerPos.Mobile.Droid.Resource.Dimension.design_snackbar_min_width;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.design_snackbar_padding_horizontal = global::EnixerPos.Mobile.Droid.Resource.Dimension.design_snackbar_padding_horizontal;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.design_snackbar_padding_vertical = global::EnixerPos.Mobile.Droid.Resource.Dimension.design_snackbar_padding_vertical;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.design_snackbar_padding_vertical_2lines = global::EnixerPos.Mobile.Droid.Resource.Dimension.design_snackbar_padding_vertical_2lines;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.design_snackbar_text_size = global::EnixerPos.Mobile.Droid.Resource.Dimension.design_snackbar_text_size;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.design_tab_max_width = global::EnixerPos.Mobile.Droid.Resource.Dimension.design_tab_max_width;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.design_tab_scrollable_min_width = global::EnixerPos.Mobile.Droid.Resource.Dimension.design_tab_scrollable_min_width;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.design_tab_text_size = global::EnixerPos.Mobile.Droid.Resource.Dimension.design_tab_text_size;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.design_tab_text_size_2line = global::EnixerPos.Mobile.Droid.Resource.Dimension.design_tab_text_size_2line;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.disabled_alpha_material_dark = global::EnixerPos.Mobile.Droid.Resource.Dimension.disabled_alpha_material_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.disabled_alpha_material_light = global::EnixerPos.Mobile.Droid.Resource.Dimension.disabled_alpha_material_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.fastscroll_default_thickness = global::EnixerPos.Mobile.Droid.Resource.Dimension.fastscroll_default_thickness;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.fastscroll_margin = global::EnixerPos.Mobile.Droid.Resource.Dimension.fastscroll_margin;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.fastscroll_minimum_range = global::EnixerPos.Mobile.Droid.Resource.Dimension.fastscroll_minimum_range;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.highlight_alpha_material_colored = global::EnixerPos.Mobile.Droid.Resource.Dimension.highlight_alpha_material_colored;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.highlight_alpha_material_dark = global::EnixerPos.Mobile.Droid.Resource.Dimension.highlight_alpha_material_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.highlight_alpha_material_light = global::EnixerPos.Mobile.Droid.Resource.Dimension.highlight_alpha_material_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.hint_alpha_material_dark = global::EnixerPos.Mobile.Droid.Resource.Dimension.hint_alpha_material_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.hint_alpha_material_light = global::EnixerPos.Mobile.Droid.Resource.Dimension.hint_alpha_material_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.hint_pressed_alpha_material_dark = global::EnixerPos.Mobile.Droid.Resource.Dimension.hint_pressed_alpha_material_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.hint_pressed_alpha_material_light = global::EnixerPos.Mobile.Droid.Resource.Dimension.hint_pressed_alpha_material_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame = global::EnixerPos.Mobile.Droid.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity = global::EnixerPos.Mobile.Droid.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.item_touch_helper_swipe_escape_velocity = global::EnixerPos.Mobile.Droid.Resource.Dimension.item_touch_helper_swipe_escape_velocity;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.mr_controller_volume_group_list_item_height = global::EnixerPos.Mobile.Droid.Resource.Dimension.mr_controller_volume_group_list_item_height;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.mr_controller_volume_group_list_item_icon_size = global::EnixerPos.Mobile.Droid.Resource.Dimension.mr_controller_volume_group_list_item_icon_size;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.mr_controller_volume_group_list_max_height = global::EnixerPos.Mobile.Droid.Resource.Dimension.mr_controller_volume_group_list_max_height;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.mr_controller_volume_group_list_padding_top = global::EnixerPos.Mobile.Droid.Resource.Dimension.mr_controller_volume_group_list_padding_top;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.mr_dialog_fixed_width_major = global::EnixerPos.Mobile.Droid.Resource.Dimension.mr_dialog_fixed_width_major;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.mr_dialog_fixed_width_minor = global::EnixerPos.Mobile.Droid.Resource.Dimension.mr_dialog_fixed_width_minor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.notification_action_icon_size = global::EnixerPos.Mobile.Droid.Resource.Dimension.notification_action_icon_size;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.notification_action_text_size = global::EnixerPos.Mobile.Droid.Resource.Dimension.notification_action_text_size;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.notification_big_circle_margin = global::EnixerPos.Mobile.Droid.Resource.Dimension.notification_big_circle_margin;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.notification_content_margin_start = global::EnixerPos.Mobile.Droid.Resource.Dimension.notification_content_margin_start;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.notification_large_icon_height = global::EnixerPos.Mobile.Droid.Resource.Dimension.notification_large_icon_height;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.notification_large_icon_width = global::EnixerPos.Mobile.Droid.Resource.Dimension.notification_large_icon_width;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.notification_main_column_padding_top = global::EnixerPos.Mobile.Droid.Resource.Dimension.notification_main_column_padding_top;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.notification_media_narrow_margin = global::EnixerPos.Mobile.Droid.Resource.Dimension.notification_media_narrow_margin;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.notification_right_icon_size = global::EnixerPos.Mobile.Droid.Resource.Dimension.notification_right_icon_size;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.notification_right_side_padding_top = global::EnixerPos.Mobile.Droid.Resource.Dimension.notification_right_side_padding_top;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.notification_small_icon_background_padding = global::EnixerPos.Mobile.Droid.Resource.Dimension.notification_small_icon_background_padding;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.notification_small_icon_size_as_large = global::EnixerPos.Mobile.Droid.Resource.Dimension.notification_small_icon_size_as_large;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.notification_subtext_size = global::EnixerPos.Mobile.Droid.Resource.Dimension.notification_subtext_size;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.notification_top_pad = global::EnixerPos.Mobile.Droid.Resource.Dimension.notification_top_pad;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.notification_top_pad_large_text = global::EnixerPos.Mobile.Droid.Resource.Dimension.notification_top_pad_large_text;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.tooltip_corner_radius = global::EnixerPos.Mobile.Droid.Resource.Dimension.tooltip_corner_radius;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.tooltip_horizontal_padding = global::EnixerPos.Mobile.Droid.Resource.Dimension.tooltip_horizontal_padding;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.tooltip_margin = global::EnixerPos.Mobile.Droid.Resource.Dimension.tooltip_margin;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.tooltip_precise_anchor_extra_offset = global::EnixerPos.Mobile.Droid.Resource.Dimension.tooltip_precise_anchor_extra_offset;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.tooltip_precise_anchor_threshold = global::EnixerPos.Mobile.Droid.Resource.Dimension.tooltip_precise_anchor_threshold;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.tooltip_vertical_padding = global::EnixerPos.Mobile.Droid.Resource.Dimension.tooltip_vertical_padding;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.tooltip_y_offset_non_touch = global::EnixerPos.Mobile.Droid.Resource.Dimension.tooltip_y_offset_non_touch;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Dimension.tooltip_y_offset_touch = global::EnixerPos.Mobile.Droid.Resource.Dimension.tooltip_y_offset_touch;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_ab_share_pack_mtrl_alpha = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_ab_share_pack_mtrl_alpha;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_action_bar_item_background_material = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_action_bar_item_background_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_btn_borderless_material = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_btn_borderless_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_btn_check_material = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_btn_check_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_000 = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_000;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_015 = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_015;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_btn_colored_material = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_btn_colored_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_btn_default_mtrl_shape = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_btn_default_mtrl_shape;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_btn_radio_material = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_btn_radio_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_000 = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_000;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_015 = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_015;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001 = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012 = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_cab_background_internal_bg = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_cab_background_internal_bg;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_cab_background_top_material = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_cab_background_top_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_cab_background_top_mtrl_alpha = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_cab_background_top_mtrl_alpha;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_control_background_material = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_control_background_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_dialog_material_background = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_dialog_material_background;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_edit_text_material = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_edit_text_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_ic_ab_back_material = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_ic_ab_back_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_ic_arrow_drop_right_black_24dp = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_ic_arrow_drop_right_black_24dp;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_ic_clear_material = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_ic_clear_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_ic_go_search_api_material = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_ic_go_search_api_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_ic_menu_overflow_material = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_ic_menu_overflow_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_ic_menu_share_mtrl_alpha = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_ic_menu_share_mtrl_alpha;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_ic_search_api_material = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_ic_search_api_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_ic_star_black_16dp = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_ic_star_black_16dp;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_ic_star_black_36dp = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_ic_star_black_36dp;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_ic_star_black_48dp = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_ic_star_black_48dp;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_ic_star_half_black_16dp = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_ic_star_half_black_16dp;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_ic_star_half_black_36dp = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_ic_star_half_black_36dp;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_ic_star_half_black_48dp = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_ic_star_half_black_48dp;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_ic_voice_search_api_material = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_ic_voice_search_api_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_item_background_holo_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_item_background_holo_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_item_background_holo_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_item_background_holo_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_list_divider_mtrl_alpha = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_list_divider_mtrl_alpha;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_list_focused_holo = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_list_focused_holo;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_list_longpressed_holo = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_list_longpressed_holo;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_list_pressed_holo_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_list_pressed_holo_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_list_pressed_holo_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_list_pressed_holo_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_list_selector_background_transition_holo_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_list_selector_disabled_holo_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_list_selector_disabled_holo_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_list_selector_disabled_holo_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_list_selector_disabled_holo_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_list_selector_holo_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_list_selector_holo_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_list_selector_holo_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_list_selector_holo_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_popup_background_mtrl_mult = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_popup_background_mtrl_mult;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_ratingbar_indicator_material = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_ratingbar_indicator_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_ratingbar_material = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_ratingbar_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_ratingbar_small_material = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_ratingbar_small_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000 = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005 = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_scrubber_primary_mtrl_alpha = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_scrubber_primary_mtrl_alpha;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_scrubber_track_mtrl_alpha = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_scrubber_track_mtrl_alpha;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_seekbar_thumb_material = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_seekbar_thumb_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_seekbar_tick_mark_material = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_seekbar_tick_mark_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_seekbar_track_material = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_seekbar_track_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_spinner_mtrl_am_alpha = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_spinner_mtrl_am_alpha;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_spinner_textfield_background_material = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_spinner_textfield_background_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_switch_thumb_material = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_switch_thumb_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_switch_track_mtrl_alpha = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_switch_track_mtrl_alpha;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_tab_indicator_material = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_tab_indicator_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_tab_indicator_mtrl_alpha = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_tab_indicator_mtrl_alpha;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_textfield_activated_mtrl_alpha = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_textfield_activated_mtrl_alpha;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_textfield_default_mtrl_alpha = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_textfield_default_mtrl_alpha;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_textfield_search_default_mtrl_alpha = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_textfield_search_default_mtrl_alpha;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_textfield_search_material = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_textfield_search_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_text_cursor_material = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_text_cursor_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_text_select_handle_middle_mtrl_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_text_select_handle_middle_mtrl_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_text_select_handle_middle_mtrl_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_text_select_handle_middle_mtrl_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.abc_vector_test = global::EnixerPos.Mobile.Droid.Resource.Drawable.abc_vector_test;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.avd_hide_password = global::EnixerPos.Mobile.Droid.Resource.Drawable.avd_hide_password;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.avd_show_password = global::EnixerPos.Mobile.Droid.Resource.Drawable.avd_show_password;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.bottom_shadow = global::EnixerPos.Mobile.Droid.Resource.Drawable.bottom_shadow;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.design_bottom_navigation_item_background = global::EnixerPos.Mobile.Droid.Resource.Drawable.design_bottom_navigation_item_background;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.design_fab_background = global::EnixerPos.Mobile.Droid.Resource.Drawable.design_fab_background;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.design_ic_visibility = global::EnixerPos.Mobile.Droid.Resource.Drawable.design_ic_visibility;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.design_ic_visibility_off = global::EnixerPos.Mobile.Droid.Resource.Drawable.design_ic_visibility_off;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.design_password_eye = global::EnixerPos.Mobile.Droid.Resource.Drawable.design_password_eye;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.design_snackbar_background = global::EnixerPos.Mobile.Droid.Resource.Drawable.design_snackbar_background;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_audiotrack_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_audiotrack_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_audiotrack_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_audiotrack_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_dialog_close_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_dialog_close_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_dialog_close_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_dialog_close_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_group_collapse_00 = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_group_collapse_00;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_group_collapse_01 = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_group_collapse_01;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_group_collapse_02 = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_group_collapse_02;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_group_collapse_03 = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_group_collapse_03;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_group_collapse_04 = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_group_collapse_04;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_group_collapse_05 = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_group_collapse_05;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_group_collapse_06 = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_group_collapse_06;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_group_collapse_07 = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_group_collapse_07;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_group_collapse_08 = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_group_collapse_08;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_group_collapse_09 = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_group_collapse_09;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_group_collapse_10 = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_group_collapse_10;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_group_collapse_11 = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_group_collapse_11;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_group_collapse_12 = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_group_collapse_12;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_group_collapse_13 = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_group_collapse_13;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_group_collapse_14 = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_group_collapse_14;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_group_collapse_15 = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_group_collapse_15;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_group_expand_00 = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_group_expand_00;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_group_expand_01 = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_group_expand_01;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_group_expand_02 = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_group_expand_02;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_group_expand_03 = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_group_expand_03;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_group_expand_04 = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_group_expand_04;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_group_expand_05 = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_group_expand_05;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_group_expand_06 = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_group_expand_06;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_group_expand_07 = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_group_expand_07;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_group_expand_08 = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_group_expand_08;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_group_expand_09 = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_group_expand_09;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_group_expand_10 = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_group_expand_10;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_group_expand_11 = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_group_expand_11;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_group_expand_12 = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_group_expand_12;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_group_expand_13 = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_group_expand_13;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_group_expand_14 = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_group_expand_14;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_group_expand_15 = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_group_expand_15;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_media_pause_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_media_pause_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_media_pause_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_media_pause_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_media_play_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_media_play_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_media_play_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_media_play_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_media_stop_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_media_stop_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_media_stop_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_media_stop_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_00_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_00_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_00_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_00_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_01_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_01_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_01_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_01_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_02_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_02_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_02_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_02_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_03_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_03_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_03_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_03_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_04_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_04_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_04_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_04_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_05_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_05_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_05_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_05_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_06_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_06_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_06_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_06_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_07_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_07_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_07_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_07_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_08_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_08_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_08_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_08_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_09_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_09_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_09_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_09_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_10_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_10_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_10_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_10_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_11_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_11_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_11_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_11_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_12_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_12_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_12_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_12_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_13_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_13_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_13_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_13_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_14_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_14_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_14_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_14_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_15_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_15_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_15_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_15_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_16_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_16_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_16_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_16_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_17_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_17_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_17_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_17_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_18_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_18_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_18_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_18_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_19_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_19_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_19_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_19_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_20_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_20_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_20_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_20_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_21_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_21_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_21_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_21_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_22_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_22_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_22_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_22_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_23_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_23_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_23_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_23_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_24_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_24_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_24_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_24_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_25_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_25_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_25_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_25_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_26_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_26_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_26_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_26_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_27_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_27_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_27_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_27_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_28_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_28_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_28_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_28_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_29_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_29_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_29_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_29_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_30_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_30_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connected_30_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connected_30_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_00_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_00_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_00_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_00_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_01_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_01_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_01_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_01_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_02_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_02_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_02_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_02_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_03_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_03_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_03_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_03_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_04_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_04_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_04_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_04_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_05_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_05_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_05_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_05_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_06_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_06_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_06_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_06_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_07_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_07_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_07_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_07_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_08_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_08_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_08_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_08_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_09_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_09_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_09_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_09_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_10_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_10_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_10_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_10_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_11_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_11_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_11_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_11_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_12_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_12_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_12_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_12_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_13_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_13_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_13_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_13_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_14_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_14_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_14_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_14_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_15_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_15_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_15_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_15_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_16_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_16_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_16_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_16_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_17_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_17_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_17_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_17_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_18_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_18_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_18_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_18_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_19_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_19_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_19_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_19_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_20_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_20_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_20_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_20_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_21_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_21_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_21_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_21_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_22_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_22_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_22_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_22_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_23_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_23_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_23_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_23_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_24_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_24_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_24_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_24_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_25_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_25_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_25_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_25_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_26_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_26_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_26_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_26_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_27_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_27_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_27_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_27_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_28_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_28_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_28_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_28_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_29_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_29_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_29_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_29_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_30_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_30_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_connecting_30_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_connecting_30_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_disabled_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_disabled_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_disabled_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_disabled_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_disconnected_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_disconnected_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_disconnected_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_disconnected_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_mr_button_grey = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_mr_button_grey;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_vol_type_speaker_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_vol_type_speaker_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_vol_type_speaker_group_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_vol_type_speaker_group_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_vol_type_speaker_group_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_vol_type_speaker_group_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_vol_type_speaker_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_vol_type_speaker_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_vol_type_tv_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_vol_type_tv_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.ic_vol_type_tv_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.ic_vol_type_tv_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.mr_button_connected_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.mr_button_connected_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.mr_button_connected_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.mr_button_connected_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.mr_button_connecting_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.mr_button_connecting_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.mr_button_connecting_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.mr_button_connecting_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.mr_button_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.mr_button_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.mr_button_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.mr_button_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.mr_dialog_close_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.mr_dialog_close_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.mr_dialog_close_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.mr_dialog_close_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.mr_dialog_material_background_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.mr_dialog_material_background_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.mr_dialog_material_background_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.mr_dialog_material_background_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.mr_group_collapse = global::EnixerPos.Mobile.Droid.Resource.Drawable.mr_group_collapse;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.mr_group_expand = global::EnixerPos.Mobile.Droid.Resource.Drawable.mr_group_expand;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.mr_media_pause_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.mr_media_pause_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.mr_media_pause_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.mr_media_pause_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.mr_media_play_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.mr_media_play_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.mr_media_play_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.mr_media_play_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.mr_media_stop_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.mr_media_stop_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.mr_media_stop_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.mr_media_stop_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.mr_vol_type_audiotrack_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.mr_vol_type_audiotrack_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.mr_vol_type_audiotrack_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.mr_vol_type_audiotrack_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.navigation_empty_icon = global::EnixerPos.Mobile.Droid.Resource.Drawable.navigation_empty_icon;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.notification_action_background = global::EnixerPos.Mobile.Droid.Resource.Drawable.notification_action_background;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.notification_bg = global::EnixerPos.Mobile.Droid.Resource.Drawable.notification_bg;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.notification_bg_low = global::EnixerPos.Mobile.Droid.Resource.Drawable.notification_bg_low;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.notification_bg_low_normal = global::EnixerPos.Mobile.Droid.Resource.Drawable.notification_bg_low_normal;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.notification_bg_low_pressed = global::EnixerPos.Mobile.Droid.Resource.Drawable.notification_bg_low_pressed;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.notification_bg_normal = global::EnixerPos.Mobile.Droid.Resource.Drawable.notification_bg_normal;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.notification_bg_normal_pressed = global::EnixerPos.Mobile.Droid.Resource.Drawable.notification_bg_normal_pressed;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.notification_icon_background = global::EnixerPos.Mobile.Droid.Resource.Drawable.notification_icon_background;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.notification_template_icon_bg = global::EnixerPos.Mobile.Droid.Resource.Drawable.notification_template_icon_bg;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.notification_template_icon_low_bg = global::EnixerPos.Mobile.Droid.Resource.Drawable.notification_template_icon_low_bg;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.notification_tile_bg = global::EnixerPos.Mobile.Droid.Resource.Drawable.notification_tile_bg;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.notify_panel_notification_icon_bg = global::EnixerPos.Mobile.Droid.Resource.Drawable.notify_panel_notification_icon_bg;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.tooltip_frame_dark = global::EnixerPos.Mobile.Droid.Resource.Drawable.tooltip_frame_dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.tooltip_frame_light = global::EnixerPos.Mobile.Droid.Resource.Drawable.tooltip_frame_light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Drawable.top_shadow = global::EnixerPos.Mobile.Droid.Resource.Drawable.top_shadow;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.action0 = global::EnixerPos.Mobile.Droid.Resource.Id.action0;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.actions = global::EnixerPos.Mobile.Droid.Resource.Id.actions;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.action_bar = global::EnixerPos.Mobile.Droid.Resource.Id.action_bar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.action_bar_activity_content = global::EnixerPos.Mobile.Droid.Resource.Id.action_bar_activity_content;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.action_bar_container = global::EnixerPos.Mobile.Droid.Resource.Id.action_bar_container;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.action_bar_root = global::EnixerPos.Mobile.Droid.Resource.Id.action_bar_root;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.action_bar_spinner = global::EnixerPos.Mobile.Droid.Resource.Id.action_bar_spinner;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.action_bar_subtitle = global::EnixerPos.Mobile.Droid.Resource.Id.action_bar_subtitle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.action_bar_title = global::EnixerPos.Mobile.Droid.Resource.Id.action_bar_title;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.action_container = global::EnixerPos.Mobile.Droid.Resource.Id.action_container;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.action_context_bar = global::EnixerPos.Mobile.Droid.Resource.Id.action_context_bar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.action_divider = global::EnixerPos.Mobile.Droid.Resource.Id.action_divider;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.action_image = global::EnixerPos.Mobile.Droid.Resource.Id.action_image;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.action_menu_divider = global::EnixerPos.Mobile.Droid.Resource.Id.action_menu_divider;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.action_menu_presenter = global::EnixerPos.Mobile.Droid.Resource.Id.action_menu_presenter;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.action_mode_bar = global::EnixerPos.Mobile.Droid.Resource.Id.action_mode_bar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.action_mode_bar_stub = global::EnixerPos.Mobile.Droid.Resource.Id.action_mode_bar_stub;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.action_mode_close_button = global::EnixerPos.Mobile.Droid.Resource.Id.action_mode_close_button;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.action_text = global::EnixerPos.Mobile.Droid.Resource.Id.action_text;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.activity_chooser_view_content = global::EnixerPos.Mobile.Droid.Resource.Id.activity_chooser_view_content;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.add = global::EnixerPos.Mobile.Droid.Resource.Id.add;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.alertTitle = global::EnixerPos.Mobile.Droid.Resource.Id.alertTitle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.all = global::EnixerPos.Mobile.Droid.Resource.Id.all;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.ALT = global::EnixerPos.Mobile.Droid.Resource.Id.ALT;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.always = global::EnixerPos.Mobile.Droid.Resource.Id.always;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.async = global::EnixerPos.Mobile.Droid.Resource.Id.async;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.auto = global::EnixerPos.Mobile.Droid.Resource.Id.auto;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.beginning = global::EnixerPos.Mobile.Droid.Resource.Id.beginning;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.blocking = global::EnixerPos.Mobile.Droid.Resource.Id.blocking;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.bottom = global::EnixerPos.Mobile.Droid.Resource.Id.bottom;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.buttonPanel = global::EnixerPos.Mobile.Droid.Resource.Id.buttonPanel;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.cancel_action = global::EnixerPos.Mobile.Droid.Resource.Id.cancel_action;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.center = global::EnixerPos.Mobile.Droid.Resource.Id.center;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.center_horizontal = global::EnixerPos.Mobile.Droid.Resource.Id.center_horizontal;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.center_vertical = global::EnixerPos.Mobile.Droid.Resource.Id.center_vertical;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.checkbox = global::EnixerPos.Mobile.Droid.Resource.Id.checkbox;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.chronometer = global::EnixerPos.Mobile.Droid.Resource.Id.chronometer;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.clip_horizontal = global::EnixerPos.Mobile.Droid.Resource.Id.clip_horizontal;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.clip_vertical = global::EnixerPos.Mobile.Droid.Resource.Id.clip_vertical;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.collapseActionView = global::EnixerPos.Mobile.Droid.Resource.Id.collapseActionView;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.container = global::EnixerPos.Mobile.Droid.Resource.Id.container;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.contentPanel = global::EnixerPos.Mobile.Droid.Resource.Id.contentPanel;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.coordinator = global::EnixerPos.Mobile.Droid.Resource.Id.coordinator;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.CTRL = global::EnixerPos.Mobile.Droid.Resource.Id.CTRL;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.custom = global::EnixerPos.Mobile.Droid.Resource.Id.custom;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.customPanel = global::EnixerPos.Mobile.Droid.Resource.Id.customPanel;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.decor_content_parent = global::EnixerPos.Mobile.Droid.Resource.Id.decor_content_parent;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.default_activity_button = global::EnixerPos.Mobile.Droid.Resource.Id.default_activity_button;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.design_bottom_sheet = global::EnixerPos.Mobile.Droid.Resource.Id.design_bottom_sheet;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.design_menu_item_action_area = global::EnixerPos.Mobile.Droid.Resource.Id.design_menu_item_action_area;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.design_menu_item_action_area_stub = global::EnixerPos.Mobile.Droid.Resource.Id.design_menu_item_action_area_stub;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.design_menu_item_text = global::EnixerPos.Mobile.Droid.Resource.Id.design_menu_item_text;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.design_navigation_view = global::EnixerPos.Mobile.Droid.Resource.Id.design_navigation_view;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.disableHome = global::EnixerPos.Mobile.Droid.Resource.Id.disableHome;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.edit_query = global::EnixerPos.Mobile.Droid.Resource.Id.edit_query;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.end = global::EnixerPos.Mobile.Droid.Resource.Id.end;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.end_padder = global::EnixerPos.Mobile.Droid.Resource.Id.end_padder;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.enterAlways = global::EnixerPos.Mobile.Droid.Resource.Id.enterAlways;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.enterAlwaysCollapsed = global::EnixerPos.Mobile.Droid.Resource.Id.enterAlwaysCollapsed;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.exitUntilCollapsed = global::EnixerPos.Mobile.Droid.Resource.Id.exitUntilCollapsed;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.expanded_menu = global::EnixerPos.Mobile.Droid.Resource.Id.expanded_menu;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.expand_activities_button = global::EnixerPos.Mobile.Droid.Resource.Id.expand_activities_button;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.fill = global::EnixerPos.Mobile.Droid.Resource.Id.fill;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.fill_horizontal = global::EnixerPos.Mobile.Droid.Resource.Id.fill_horizontal;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.fill_vertical = global::EnixerPos.Mobile.Droid.Resource.Id.fill_vertical;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.@fixed = global::EnixerPos.Mobile.Droid.Resource.Id.@fixed;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.forever = global::EnixerPos.Mobile.Droid.Resource.Id.forever;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.FUNCTION = global::EnixerPos.Mobile.Droid.Resource.Id.FUNCTION;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.ghost_view = global::EnixerPos.Mobile.Droid.Resource.Id.ghost_view;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.home = global::EnixerPos.Mobile.Droid.Resource.Id.home;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.homeAsUp = global::EnixerPos.Mobile.Droid.Resource.Id.homeAsUp;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.icon = global::EnixerPos.Mobile.Droid.Resource.Id.icon;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.icon_group = global::EnixerPos.Mobile.Droid.Resource.Id.icon_group;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.ifRoom = global::EnixerPos.Mobile.Droid.Resource.Id.ifRoom;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.image = global::EnixerPos.Mobile.Droid.Resource.Id.image;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.info = global::EnixerPos.Mobile.Droid.Resource.Id.info;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.italic = global::EnixerPos.Mobile.Droid.Resource.Id.italic;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.item_touch_helper_previous_elevation = global::EnixerPos.Mobile.Droid.Resource.Id.item_touch_helper_previous_elevation;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.largeLabel = global::EnixerPos.Mobile.Droid.Resource.Id.largeLabel;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.left = global::EnixerPos.Mobile.Droid.Resource.Id.left;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.line1 = global::EnixerPos.Mobile.Droid.Resource.Id.line1;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.line3 = global::EnixerPos.Mobile.Droid.Resource.Id.line3;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.listMode = global::EnixerPos.Mobile.Droid.Resource.Id.listMode;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.list_item = global::EnixerPos.Mobile.Droid.Resource.Id.list_item;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.masked = global::EnixerPos.Mobile.Droid.Resource.Id.masked;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.media_actions = global::EnixerPos.Mobile.Droid.Resource.Id.media_actions;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.message = global::EnixerPos.Mobile.Droid.Resource.Id.message;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.META = global::EnixerPos.Mobile.Droid.Resource.Id.META;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.middle = global::EnixerPos.Mobile.Droid.Resource.Id.middle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.mini = global::EnixerPos.Mobile.Droid.Resource.Id.mini;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.mr_art = global::EnixerPos.Mobile.Droid.Resource.Id.mr_art;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.mr_chooser_list = global::EnixerPos.Mobile.Droid.Resource.Id.mr_chooser_list;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.mr_chooser_route_desc = global::EnixerPos.Mobile.Droid.Resource.Id.mr_chooser_route_desc;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.mr_chooser_route_icon = global::EnixerPos.Mobile.Droid.Resource.Id.mr_chooser_route_icon;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.mr_chooser_route_name = global::EnixerPos.Mobile.Droid.Resource.Id.mr_chooser_route_name;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.mr_chooser_title = global::EnixerPos.Mobile.Droid.Resource.Id.mr_chooser_title;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.mr_close = global::EnixerPos.Mobile.Droid.Resource.Id.mr_close;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.mr_control_divider = global::EnixerPos.Mobile.Droid.Resource.Id.mr_control_divider;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.mr_control_playback_ctrl = global::EnixerPos.Mobile.Droid.Resource.Id.mr_control_playback_ctrl;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.mr_control_subtitle = global::EnixerPos.Mobile.Droid.Resource.Id.mr_control_subtitle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.mr_control_title = global::EnixerPos.Mobile.Droid.Resource.Id.mr_control_title;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.mr_control_title_container = global::EnixerPos.Mobile.Droid.Resource.Id.mr_control_title_container;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.mr_custom_control = global::EnixerPos.Mobile.Droid.Resource.Id.mr_custom_control;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.mr_default_control = global::EnixerPos.Mobile.Droid.Resource.Id.mr_default_control;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.mr_dialog_area = global::EnixerPos.Mobile.Droid.Resource.Id.mr_dialog_area;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.mr_expandable_area = global::EnixerPos.Mobile.Droid.Resource.Id.mr_expandable_area;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.mr_group_expand_collapse = global::EnixerPos.Mobile.Droid.Resource.Id.mr_group_expand_collapse;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.mr_media_main_control = global::EnixerPos.Mobile.Droid.Resource.Id.mr_media_main_control;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.mr_name = global::EnixerPos.Mobile.Droid.Resource.Id.mr_name;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.mr_playback_control = global::EnixerPos.Mobile.Droid.Resource.Id.mr_playback_control;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.mr_title_bar = global::EnixerPos.Mobile.Droid.Resource.Id.mr_title_bar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.mr_volume_control = global::EnixerPos.Mobile.Droid.Resource.Id.mr_volume_control;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.mr_volume_group_list = global::EnixerPos.Mobile.Droid.Resource.Id.mr_volume_group_list;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.mr_volume_item_icon = global::EnixerPos.Mobile.Droid.Resource.Id.mr_volume_item_icon;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.mr_volume_slider = global::EnixerPos.Mobile.Droid.Resource.Id.mr_volume_slider;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.multiply = global::EnixerPos.Mobile.Droid.Resource.Id.multiply;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.navigation_header_container = global::EnixerPos.Mobile.Droid.Resource.Id.navigation_header_container;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.never = global::EnixerPos.Mobile.Droid.Resource.Id.never;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.none = global::EnixerPos.Mobile.Droid.Resource.Id.none;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.normal = global::EnixerPos.Mobile.Droid.Resource.Id.normal;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.notification_background = global::EnixerPos.Mobile.Droid.Resource.Id.notification_background;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.notification_main_column = global::EnixerPos.Mobile.Droid.Resource.Id.notification_main_column;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.notification_main_column_container = global::EnixerPos.Mobile.Droid.Resource.Id.notification_main_column_container;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.parallax = global::EnixerPos.Mobile.Droid.Resource.Id.parallax;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.parentPanel = global::EnixerPos.Mobile.Droid.Resource.Id.parentPanel;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.parent_matrix = global::EnixerPos.Mobile.Droid.Resource.Id.parent_matrix;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.pin = global::EnixerPos.Mobile.Droid.Resource.Id.pin;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.progress_circular = global::EnixerPos.Mobile.Droid.Resource.Id.progress_circular;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.progress_horizontal = global::EnixerPos.Mobile.Droid.Resource.Id.progress_horizontal;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.radio = global::EnixerPos.Mobile.Droid.Resource.Id.radio;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.right = global::EnixerPos.Mobile.Droid.Resource.Id.right;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.right_icon = global::EnixerPos.Mobile.Droid.Resource.Id.right_icon;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.right_side = global::EnixerPos.Mobile.Droid.Resource.Id.right_side;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.save_image_matrix = global::EnixerPos.Mobile.Droid.Resource.Id.save_image_matrix;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.save_non_transition_alpha = global::EnixerPos.Mobile.Droid.Resource.Id.save_non_transition_alpha;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.save_scale_type = global::EnixerPos.Mobile.Droid.Resource.Id.save_scale_type;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.screen = global::EnixerPos.Mobile.Droid.Resource.Id.screen;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.scroll = global::EnixerPos.Mobile.Droid.Resource.Id.scroll;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.scrollable = global::EnixerPos.Mobile.Droid.Resource.Id.scrollable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.scrollIndicatorDown = global::EnixerPos.Mobile.Droid.Resource.Id.scrollIndicatorDown;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.scrollIndicatorUp = global::EnixerPos.Mobile.Droid.Resource.Id.scrollIndicatorUp;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.scrollView = global::EnixerPos.Mobile.Droid.Resource.Id.scrollView;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.search_badge = global::EnixerPos.Mobile.Droid.Resource.Id.search_badge;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.search_bar = global::EnixerPos.Mobile.Droid.Resource.Id.search_bar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.search_button = global::EnixerPos.Mobile.Droid.Resource.Id.search_button;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.search_close_btn = global::EnixerPos.Mobile.Droid.Resource.Id.search_close_btn;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.search_edit_frame = global::EnixerPos.Mobile.Droid.Resource.Id.search_edit_frame;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.search_go_btn = global::EnixerPos.Mobile.Droid.Resource.Id.search_go_btn;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.search_mag_icon = global::EnixerPos.Mobile.Droid.Resource.Id.search_mag_icon;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.search_plate = global::EnixerPos.Mobile.Droid.Resource.Id.search_plate;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.search_src_text = global::EnixerPos.Mobile.Droid.Resource.Id.search_src_text;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.search_voice_btn = global::EnixerPos.Mobile.Droid.Resource.Id.search_voice_btn;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.select_dialog_listview = global::EnixerPos.Mobile.Droid.Resource.Id.select_dialog_listview;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.SHIFT = global::EnixerPos.Mobile.Droid.Resource.Id.SHIFT;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.shortcut = global::EnixerPos.Mobile.Droid.Resource.Id.shortcut;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.showCustom = global::EnixerPos.Mobile.Droid.Resource.Id.showCustom;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.showHome = global::EnixerPos.Mobile.Droid.Resource.Id.showHome;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.showTitle = global::EnixerPos.Mobile.Droid.Resource.Id.showTitle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.smallLabel = global::EnixerPos.Mobile.Droid.Resource.Id.smallLabel;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.snackbar_action = global::EnixerPos.Mobile.Droid.Resource.Id.snackbar_action;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.snackbar_text = global::EnixerPos.Mobile.Droid.Resource.Id.snackbar_text;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.snap = global::EnixerPos.Mobile.Droid.Resource.Id.snap;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.spacer = global::EnixerPos.Mobile.Droid.Resource.Id.spacer;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.split_action_bar = global::EnixerPos.Mobile.Droid.Resource.Id.split_action_bar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.src_atop = global::EnixerPos.Mobile.Droid.Resource.Id.src_atop;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.src_in = global::EnixerPos.Mobile.Droid.Resource.Id.src_in;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.src_over = global::EnixerPos.Mobile.Droid.Resource.Id.src_over;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.start = global::EnixerPos.Mobile.Droid.Resource.Id.start;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.status_bar_latest_event_content = global::EnixerPos.Mobile.Droid.Resource.Id.status_bar_latest_event_content;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.submenuarrow = global::EnixerPos.Mobile.Droid.Resource.Id.submenuarrow;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.submit_area = global::EnixerPos.Mobile.Droid.Resource.Id.submit_area;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.SYM = global::EnixerPos.Mobile.Droid.Resource.Id.SYM;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.tabMode = global::EnixerPos.Mobile.Droid.Resource.Id.tabMode;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.tag_transition_group = global::EnixerPos.Mobile.Droid.Resource.Id.tag_transition_group;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.text = global::EnixerPos.Mobile.Droid.Resource.Id.text;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.text2 = global::EnixerPos.Mobile.Droid.Resource.Id.text2;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.textinput_counter = global::EnixerPos.Mobile.Droid.Resource.Id.textinput_counter;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.textinput_error = global::EnixerPos.Mobile.Droid.Resource.Id.textinput_error;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.textSpacerNoButtons = global::EnixerPos.Mobile.Droid.Resource.Id.textSpacerNoButtons;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.textSpacerNoTitle = global::EnixerPos.Mobile.Droid.Resource.Id.textSpacerNoTitle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.text_input_password_toggle = global::EnixerPos.Mobile.Droid.Resource.Id.text_input_password_toggle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.time = global::EnixerPos.Mobile.Droid.Resource.Id.time;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.title = global::EnixerPos.Mobile.Droid.Resource.Id.title;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.titleDividerNoCustom = global::EnixerPos.Mobile.Droid.Resource.Id.titleDividerNoCustom;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.title_template = global::EnixerPos.Mobile.Droid.Resource.Id.title_template;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.top = global::EnixerPos.Mobile.Droid.Resource.Id.top;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.topPanel = global::EnixerPos.Mobile.Droid.Resource.Id.topPanel;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.touch_outside = global::EnixerPos.Mobile.Droid.Resource.Id.touch_outside;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.transition_current_scene = global::EnixerPos.Mobile.Droid.Resource.Id.transition_current_scene;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.transition_layout_save = global::EnixerPos.Mobile.Droid.Resource.Id.transition_layout_save;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.transition_position = global::EnixerPos.Mobile.Droid.Resource.Id.transition_position;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.transition_scene_layoutid_cache = global::EnixerPos.Mobile.Droid.Resource.Id.transition_scene_layoutid_cache;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.transition_transform = global::EnixerPos.Mobile.Droid.Resource.Id.transition_transform;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.uniform = global::EnixerPos.Mobile.Droid.Resource.Id.uniform;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.up = global::EnixerPos.Mobile.Droid.Resource.Id.up;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.useLogo = global::EnixerPos.Mobile.Droid.Resource.Id.useLogo;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.view_offset_helper = global::EnixerPos.Mobile.Droid.Resource.Id.view_offset_helper;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.visible = global::EnixerPos.Mobile.Droid.Resource.Id.visible;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.volume_item_container = global::EnixerPos.Mobile.Droid.Resource.Id.volume_item_container;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.withText = global::EnixerPos.Mobile.Droid.Resource.Id.withText;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Id.wrap_content = global::EnixerPos.Mobile.Droid.Resource.Id.wrap_content;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Integer.abc_config_activityDefaultDur = global::EnixerPos.Mobile.Droid.Resource.Integer.abc_config_activityDefaultDur;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Integer.abc_config_activityShortDur = global::EnixerPos.Mobile.Droid.Resource.Integer.abc_config_activityShortDur;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Integer.app_bar_elevation_anim_duration = global::EnixerPos.Mobile.Droid.Resource.Integer.app_bar_elevation_anim_duration;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Integer.bottom_sheet_slide_duration = global::EnixerPos.Mobile.Droid.Resource.Integer.bottom_sheet_slide_duration;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Integer.cancel_button_image_alpha = global::EnixerPos.Mobile.Droid.Resource.Integer.cancel_button_image_alpha;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Integer.config_tooltipAnimTime = global::EnixerPos.Mobile.Droid.Resource.Integer.config_tooltipAnimTime;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Integer.design_snackbar_text_max_lines = global::EnixerPos.Mobile.Droid.Resource.Integer.design_snackbar_text_max_lines;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Integer.hide_password_duration = global::EnixerPos.Mobile.Droid.Resource.Integer.hide_password_duration;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Integer.mr_controller_volume_group_list_animation_duration_ms = global::EnixerPos.Mobile.Droid.Resource.Integer.mr_controller_volume_group_list_animation_duration_ms;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Integer.mr_controller_volume_group_list_fade_in_duration_ms = global::EnixerPos.Mobile.Droid.Resource.Integer.mr_controller_volume_group_list_fade_in_duration_ms;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Integer.mr_controller_volume_group_list_fade_out_duration_ms = global::EnixerPos.Mobile.Droid.Resource.Integer.mr_controller_volume_group_list_fade_out_duration_ms;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Integer.show_password_duration = global::EnixerPos.Mobile.Droid.Resource.Integer.show_password_duration;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Integer.status_bar_notification_info_maxnum = global::EnixerPos.Mobile.Droid.Resource.Integer.status_bar_notification_info_maxnum;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Interpolator.mr_fast_out_slow_in = global::EnixerPos.Mobile.Droid.Resource.Interpolator.mr_fast_out_slow_in;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Interpolator.mr_linear_out_slow_in = global::EnixerPos.Mobile.Droid.Resource.Interpolator.mr_linear_out_slow_in;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.abc_action_bar_title_item = global::EnixerPos.Mobile.Droid.Resource.Layout.abc_action_bar_title_item;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.abc_action_bar_up_container = global::EnixerPos.Mobile.Droid.Resource.Layout.abc_action_bar_up_container;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.abc_action_menu_item_layout = global::EnixerPos.Mobile.Droid.Resource.Layout.abc_action_menu_item_layout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.abc_action_menu_layout = global::EnixerPos.Mobile.Droid.Resource.Layout.abc_action_menu_layout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.abc_action_mode_bar = global::EnixerPos.Mobile.Droid.Resource.Layout.abc_action_mode_bar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.abc_action_mode_close_item_material = global::EnixerPos.Mobile.Droid.Resource.Layout.abc_action_mode_close_item_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.abc_activity_chooser_view = global::EnixerPos.Mobile.Droid.Resource.Layout.abc_activity_chooser_view;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.abc_activity_chooser_view_list_item = global::EnixerPos.Mobile.Droid.Resource.Layout.abc_activity_chooser_view_list_item;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.abc_alert_dialog_button_bar_material = global::EnixerPos.Mobile.Droid.Resource.Layout.abc_alert_dialog_button_bar_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.abc_alert_dialog_material = global::EnixerPos.Mobile.Droid.Resource.Layout.abc_alert_dialog_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.abc_alert_dialog_title_material = global::EnixerPos.Mobile.Droid.Resource.Layout.abc_alert_dialog_title_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.abc_dialog_title_material = global::EnixerPos.Mobile.Droid.Resource.Layout.abc_dialog_title_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.abc_expanded_menu_layout = global::EnixerPos.Mobile.Droid.Resource.Layout.abc_expanded_menu_layout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.abc_list_menu_item_checkbox = global::EnixerPos.Mobile.Droid.Resource.Layout.abc_list_menu_item_checkbox;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.abc_list_menu_item_icon = global::EnixerPos.Mobile.Droid.Resource.Layout.abc_list_menu_item_icon;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.abc_list_menu_item_layout = global::EnixerPos.Mobile.Droid.Resource.Layout.abc_list_menu_item_layout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.abc_list_menu_item_radio = global::EnixerPos.Mobile.Droid.Resource.Layout.abc_list_menu_item_radio;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.abc_popup_menu_header_item_layout = global::EnixerPos.Mobile.Droid.Resource.Layout.abc_popup_menu_header_item_layout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.abc_popup_menu_item_layout = global::EnixerPos.Mobile.Droid.Resource.Layout.abc_popup_menu_item_layout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.abc_screen_content_include = global::EnixerPos.Mobile.Droid.Resource.Layout.abc_screen_content_include;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.abc_screen_simple = global::EnixerPos.Mobile.Droid.Resource.Layout.abc_screen_simple;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.abc_screen_simple_overlay_action_mode = global::EnixerPos.Mobile.Droid.Resource.Layout.abc_screen_simple_overlay_action_mode;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.abc_screen_toolbar = global::EnixerPos.Mobile.Droid.Resource.Layout.abc_screen_toolbar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.abc_search_dropdown_item_icons_2line = global::EnixerPos.Mobile.Droid.Resource.Layout.abc_search_dropdown_item_icons_2line;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.abc_search_view = global::EnixerPos.Mobile.Droid.Resource.Layout.abc_search_view;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.abc_select_dialog_material = global::EnixerPos.Mobile.Droid.Resource.Layout.abc_select_dialog_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.design_bottom_navigation_item = global::EnixerPos.Mobile.Droid.Resource.Layout.design_bottom_navigation_item;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.design_bottom_sheet_dialog = global::EnixerPos.Mobile.Droid.Resource.Layout.design_bottom_sheet_dialog;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.design_layout_snackbar = global::EnixerPos.Mobile.Droid.Resource.Layout.design_layout_snackbar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.design_layout_snackbar_include = global::EnixerPos.Mobile.Droid.Resource.Layout.design_layout_snackbar_include;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.design_layout_tab_icon = global::EnixerPos.Mobile.Droid.Resource.Layout.design_layout_tab_icon;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.design_layout_tab_text = global::EnixerPos.Mobile.Droid.Resource.Layout.design_layout_tab_text;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.design_menu_item_action_area = global::EnixerPos.Mobile.Droid.Resource.Layout.design_menu_item_action_area;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.design_navigation_item = global::EnixerPos.Mobile.Droid.Resource.Layout.design_navigation_item;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.design_navigation_item_header = global::EnixerPos.Mobile.Droid.Resource.Layout.design_navigation_item_header;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.design_navigation_item_separator = global::EnixerPos.Mobile.Droid.Resource.Layout.design_navigation_item_separator;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.design_navigation_item_subheader = global::EnixerPos.Mobile.Droid.Resource.Layout.design_navigation_item_subheader;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.design_navigation_menu = global::EnixerPos.Mobile.Droid.Resource.Layout.design_navigation_menu;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.design_navigation_menu_item = global::EnixerPos.Mobile.Droid.Resource.Layout.design_navigation_menu_item;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.design_text_input_password_icon = global::EnixerPos.Mobile.Droid.Resource.Layout.design_text_input_password_icon;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.mr_chooser_dialog = global::EnixerPos.Mobile.Droid.Resource.Layout.mr_chooser_dialog;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.mr_chooser_list_item = global::EnixerPos.Mobile.Droid.Resource.Layout.mr_chooser_list_item;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.mr_controller_material_dialog_b = global::EnixerPos.Mobile.Droid.Resource.Layout.mr_controller_material_dialog_b;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.mr_controller_volume_item = global::EnixerPos.Mobile.Droid.Resource.Layout.mr_controller_volume_item;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.mr_playback_control = global::EnixerPos.Mobile.Droid.Resource.Layout.mr_playback_control;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.mr_volume_control = global::EnixerPos.Mobile.Droid.Resource.Layout.mr_volume_control;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.notification_action = global::EnixerPos.Mobile.Droid.Resource.Layout.notification_action;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.notification_action_tombstone = global::EnixerPos.Mobile.Droid.Resource.Layout.notification_action_tombstone;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.notification_media_action = global::EnixerPos.Mobile.Droid.Resource.Layout.notification_media_action;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.notification_media_cancel_action = global::EnixerPos.Mobile.Droid.Resource.Layout.notification_media_cancel_action;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.notification_template_big_media = global::EnixerPos.Mobile.Droid.Resource.Layout.notification_template_big_media;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.notification_template_big_media_custom = global::EnixerPos.Mobile.Droid.Resource.Layout.notification_template_big_media_custom;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.notification_template_big_media_narrow = global::EnixerPos.Mobile.Droid.Resource.Layout.notification_template_big_media_narrow;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.notification_template_big_media_narrow_custom = global::EnixerPos.Mobile.Droid.Resource.Layout.notification_template_big_media_narrow_custom;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.notification_template_custom_big = global::EnixerPos.Mobile.Droid.Resource.Layout.notification_template_custom_big;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.notification_template_icon_group = global::EnixerPos.Mobile.Droid.Resource.Layout.notification_template_icon_group;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.notification_template_lines_media = global::EnixerPos.Mobile.Droid.Resource.Layout.notification_template_lines_media;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.notification_template_media = global::EnixerPos.Mobile.Droid.Resource.Layout.notification_template_media;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.notification_template_media_custom = global::EnixerPos.Mobile.Droid.Resource.Layout.notification_template_media_custom;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.notification_template_part_chronometer = global::EnixerPos.Mobile.Droid.Resource.Layout.notification_template_part_chronometer;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.notification_template_part_time = global::EnixerPos.Mobile.Droid.Resource.Layout.notification_template_part_time;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.select_dialog_item_material = global::EnixerPos.Mobile.Droid.Resource.Layout.select_dialog_item_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.select_dialog_multichoice_material = global::EnixerPos.Mobile.Droid.Resource.Layout.select_dialog_multichoice_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.select_dialog_singlechoice_material = global::EnixerPos.Mobile.Droid.Resource.Layout.select_dialog_singlechoice_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Layout.support_simple_spinner_dropdown_item = global::EnixerPos.Mobile.Droid.Resource.Layout.support_simple_spinner_dropdown_item;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.abc_action_bar_home_description = global::EnixerPos.Mobile.Droid.Resource.String.abc_action_bar_home_description;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.abc_action_bar_up_description = global::EnixerPos.Mobile.Droid.Resource.String.abc_action_bar_up_description;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.abc_action_menu_overflow_description = global::EnixerPos.Mobile.Droid.Resource.String.abc_action_menu_overflow_description;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.abc_action_mode_done = global::EnixerPos.Mobile.Droid.Resource.String.abc_action_mode_done;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.abc_activitychooserview_choose_application = global::EnixerPos.Mobile.Droid.Resource.String.abc_activitychooserview_choose_application;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.abc_activity_chooser_view_see_all = global::EnixerPos.Mobile.Droid.Resource.String.abc_activity_chooser_view_see_all;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.abc_capital_off = global::EnixerPos.Mobile.Droid.Resource.String.abc_capital_off;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.abc_capital_on = global::EnixerPos.Mobile.Droid.Resource.String.abc_capital_on;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.abc_font_family_body_1_material = global::EnixerPos.Mobile.Droid.Resource.String.abc_font_family_body_1_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.abc_font_family_body_2_material = global::EnixerPos.Mobile.Droid.Resource.String.abc_font_family_body_2_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.abc_font_family_button_material = global::EnixerPos.Mobile.Droid.Resource.String.abc_font_family_button_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.abc_font_family_caption_material = global::EnixerPos.Mobile.Droid.Resource.String.abc_font_family_caption_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.abc_font_family_display_1_material = global::EnixerPos.Mobile.Droid.Resource.String.abc_font_family_display_1_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.abc_font_family_display_2_material = global::EnixerPos.Mobile.Droid.Resource.String.abc_font_family_display_2_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.abc_font_family_display_3_material = global::EnixerPos.Mobile.Droid.Resource.String.abc_font_family_display_3_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.abc_font_family_display_4_material = global::EnixerPos.Mobile.Droid.Resource.String.abc_font_family_display_4_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.abc_font_family_headline_material = global::EnixerPos.Mobile.Droid.Resource.String.abc_font_family_headline_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.abc_font_family_menu_material = global::EnixerPos.Mobile.Droid.Resource.String.abc_font_family_menu_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.abc_font_family_subhead_material = global::EnixerPos.Mobile.Droid.Resource.String.abc_font_family_subhead_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.abc_font_family_title_material = global::EnixerPos.Mobile.Droid.Resource.String.abc_font_family_title_material;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.abc_searchview_description_clear = global::EnixerPos.Mobile.Droid.Resource.String.abc_searchview_description_clear;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.abc_searchview_description_query = global::EnixerPos.Mobile.Droid.Resource.String.abc_searchview_description_query;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.abc_searchview_description_search = global::EnixerPos.Mobile.Droid.Resource.String.abc_searchview_description_search;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.abc_searchview_description_submit = global::EnixerPos.Mobile.Droid.Resource.String.abc_searchview_description_submit;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.abc_searchview_description_voice = global::EnixerPos.Mobile.Droid.Resource.String.abc_searchview_description_voice;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.abc_search_hint = global::EnixerPos.Mobile.Droid.Resource.String.abc_search_hint;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.abc_shareactionprovider_share_with = global::EnixerPos.Mobile.Droid.Resource.String.abc_shareactionprovider_share_with;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.abc_shareactionprovider_share_with_application = global::EnixerPos.Mobile.Droid.Resource.String.abc_shareactionprovider_share_with_application;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.abc_toolbar_collapse_description = global::EnixerPos.Mobile.Droid.Resource.String.abc_toolbar_collapse_description;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.appbar_scrolling_view_behavior = global::EnixerPos.Mobile.Droid.Resource.String.appbar_scrolling_view_behavior;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.app_name = global::EnixerPos.Mobile.Droid.Resource.String.app_name;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.bottom_sheet_behavior = global::EnixerPos.Mobile.Droid.Resource.String.bottom_sheet_behavior;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.character_counter_pattern = global::EnixerPos.Mobile.Droid.Resource.String.character_counter_pattern;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.hello = global::EnixerPos.Mobile.Droid.Resource.String.hello;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.mr_button_content_description = global::EnixerPos.Mobile.Droid.Resource.String.mr_button_content_description;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.mr_cast_button_connected = global::EnixerPos.Mobile.Droid.Resource.String.mr_cast_button_connected;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.mr_cast_button_connecting = global::EnixerPos.Mobile.Droid.Resource.String.mr_cast_button_connecting;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.mr_cast_button_disconnected = global::EnixerPos.Mobile.Droid.Resource.String.mr_cast_button_disconnected;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.mr_chooser_searching = global::EnixerPos.Mobile.Droid.Resource.String.mr_chooser_searching;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.mr_chooser_title = global::EnixerPos.Mobile.Droid.Resource.String.mr_chooser_title;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.mr_controller_album_art = global::EnixerPos.Mobile.Droid.Resource.String.mr_controller_album_art;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.mr_controller_casting_screen = global::EnixerPos.Mobile.Droid.Resource.String.mr_controller_casting_screen;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.mr_controller_close_description = global::EnixerPos.Mobile.Droid.Resource.String.mr_controller_close_description;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.mr_controller_collapse_group = global::EnixerPos.Mobile.Droid.Resource.String.mr_controller_collapse_group;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.mr_controller_disconnect = global::EnixerPos.Mobile.Droid.Resource.String.mr_controller_disconnect;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.mr_controller_expand_group = global::EnixerPos.Mobile.Droid.Resource.String.mr_controller_expand_group;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.mr_controller_no_info_available = global::EnixerPos.Mobile.Droid.Resource.String.mr_controller_no_info_available;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.mr_controller_no_media_selected = global::EnixerPos.Mobile.Droid.Resource.String.mr_controller_no_media_selected;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.mr_controller_pause = global::EnixerPos.Mobile.Droid.Resource.String.mr_controller_pause;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.mr_controller_play = global::EnixerPos.Mobile.Droid.Resource.String.mr_controller_play;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.mr_controller_stop = global::EnixerPos.Mobile.Droid.Resource.String.mr_controller_stop;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.mr_controller_stop_casting = global::EnixerPos.Mobile.Droid.Resource.String.mr_controller_stop_casting;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.mr_controller_volume_slider = global::EnixerPos.Mobile.Droid.Resource.String.mr_controller_volume_slider;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.mr_system_route_name = global::EnixerPos.Mobile.Droid.Resource.String.mr_system_route_name;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.mr_user_route_category_name = global::EnixerPos.Mobile.Droid.Resource.String.mr_user_route_category_name;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.password_toggle_content_description = global::EnixerPos.Mobile.Droid.Resource.String.password_toggle_content_description;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.path_password_eye = global::EnixerPos.Mobile.Droid.Resource.String.path_password_eye;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.path_password_eye_mask_strike_through = global::EnixerPos.Mobile.Droid.Resource.String.path_password_eye_mask_strike_through;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.path_password_eye_mask_visible = global::EnixerPos.Mobile.Droid.Resource.String.path_password_eye_mask_visible;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.path_password_strike_through = global::EnixerPos.Mobile.Droid.Resource.String.path_password_strike_through;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.search_menu_title = global::EnixerPos.Mobile.Droid.Resource.String.search_menu_title;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.String.status_bar_notification_info_overflow = global::EnixerPos.Mobile.Droid.Resource.String.status_bar_notification_info_overflow;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.AlertDialog_AppCompat = global::EnixerPos.Mobile.Droid.Resource.Style.AlertDialog_AppCompat;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.AlertDialog_AppCompat_Light = global::EnixerPos.Mobile.Droid.Resource.Style.AlertDialog_AppCompat_Light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Animation_AppCompat_Dialog = global::EnixerPos.Mobile.Droid.Resource.Style.Animation_AppCompat_Dialog;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Animation_AppCompat_DropDownUp = global::EnixerPos.Mobile.Droid.Resource.Style.Animation_AppCompat_DropDownUp;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Animation_AppCompat_Tooltip = global::EnixerPos.Mobile.Droid.Resource.Style.Animation_AppCompat_Tooltip;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Animation_Design_BottomSheetDialog = global::EnixerPos.Mobile.Droid.Resource.Style.Animation_Design_BottomSheetDialog;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_AlertDialog_AppCompat = global::EnixerPos.Mobile.Droid.Resource.Style.Base_AlertDialog_AppCompat;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_AlertDialog_AppCompat_Light = global::EnixerPos.Mobile.Droid.Resource.Style.Base_AlertDialog_AppCompat_Light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Animation_AppCompat_Dialog = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Animation_AppCompat_Dialog;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Animation_AppCompat_DropDownUp = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Animation_AppCompat_DropDownUp;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Animation_AppCompat_Tooltip = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Animation_AppCompat_Tooltip;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_CardView = global::EnixerPos.Mobile.Droid.Resource.Style.Base_CardView;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_DialogWindowTitleBackground_AppCompat = global::EnixerPos.Mobile.Droid.Resource.Style.Base_DialogWindowTitleBackground_AppCompat;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_DialogWindowTitle_AppCompat = global::EnixerPos.Mobile.Droid.Resource.Style.Base_DialogWindowTitle_AppCompat;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_AppCompat;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body1 = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body1;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body2 = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body2;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Button = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_AppCompat_Button;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Caption = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_AppCompat_Caption;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display1 = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display1;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display2 = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display2;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display3 = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display3;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display4 = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_AppCompat_Display4;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Headline = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_AppCompat_Headline;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Inverse = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_AppCompat_Inverse;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Menu = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_AppCompat_Menu;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Tooltip = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_AppCompat_Tooltip;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Colored = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Colored;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Header = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Header;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title = global::EnixerPos.Mobile.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_ThemeOverlay_AppCompat = global::EnixerPos.Mobile.Droid.Resource.Style.Base_ThemeOverlay_AppCompat;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar = global::EnixerPos.Mobile.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark = global::EnixerPos.Mobile.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar = global::EnixerPos.Mobile.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog = global::EnixerPos.Mobile.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog_Alert = global::EnixerPos.Mobile.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog_Alert;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Light = global::EnixerPos.Mobile.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Theme_AppCompat = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Theme_AppCompat;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Theme_AppCompat_CompactMenu = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Theme_AppCompat_CompactMenu;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Theme_AppCompat_Dialog = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Theme_AppCompat_Dialog;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_Alert = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_Alert;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Theme_AppCompat_Light = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Theme_AppCompat_Light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog = global::EnixerPos.Mobile.Droid.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_V21_Theme_AppCompat = global::EnixerPos.Mobile.Droid.Resource.Style.Base_V21_Theme_AppCompat;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_V21_Theme_AppCompat_Dialog = global::EnixerPos.Mobile.Droid.Resource.Style.Base_V21_Theme_AppCompat_Dialog;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light = global::EnixerPos.Mobile.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog = global::EnixerPos.Mobile.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_V22_Theme_AppCompat = global::EnixerPos.Mobile.Droid.Resource.Style.Base_V22_Theme_AppCompat;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_V22_Theme_AppCompat_Light = global::EnixerPos.Mobile.Droid.Resource.Style.Base_V22_Theme_AppCompat_Light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_V23_Theme_AppCompat = global::EnixerPos.Mobile.Droid.Resource.Style.Base_V23_Theme_AppCompat;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_V23_Theme_AppCompat_Light = global::EnixerPos.Mobile.Droid.Resource.Style.Base_V23_Theme_AppCompat_Light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_V26_Theme_AppCompat = global::EnixerPos.Mobile.Droid.Resource.Style.Base_V26_Theme_AppCompat;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_V26_Theme_AppCompat_Light = global::EnixerPos.Mobile.Droid.Resource.Style.Base_V26_Theme_AppCompat_Light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_V26_Widget_AppCompat_Toolbar = global::EnixerPos.Mobile.Droid.Resource.Style.Base_V26_Widget_AppCompat_Toolbar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_V7_ThemeOverlay_AppCompat_Dialog = global::EnixerPos.Mobile.Droid.Resource.Style.Base_V7_ThemeOverlay_AppCompat_Dialog;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_V7_Theme_AppCompat = global::EnixerPos.Mobile.Droid.Resource.Style.Base_V7_Theme_AppCompat;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_V7_Theme_AppCompat_Dialog = global::EnixerPos.Mobile.Droid.Resource.Style.Base_V7_Theme_AppCompat_Dialog;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light = global::EnixerPos.Mobile.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog = global::EnixerPos.Mobile.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView = global::EnixerPos.Mobile.Droid.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_V7_Widget_AppCompat_EditText = global::EnixerPos.Mobile.Droid.Resource.Style.Base_V7_Widget_AppCompat_EditText;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_V7_Widget_AppCompat_Toolbar = global::EnixerPos.Mobile.Droid.Resource.Style.Base_V7_Widget_AppCompat_Toolbar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_ActionMode = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_ActionMode;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_ActivityChooserView = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_ActivityChooserView;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_Button = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_Button;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_Button_Colored = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_Button_Colored;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_Button_Small = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_Button_Small;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_EditText = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_EditText;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_ImageButton = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_ImageButton;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_ListMenuView = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_ListMenuView;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_ListPopupWindow = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_ListPopupWindow;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_ListView = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_ListView;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_ListView_DropDown = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_ListView_DropDown;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_ListView_Menu = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_ListView_Menu;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_PopupWindow = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_PopupWindow;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Small = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_RatingBar_Small;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_SearchView = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_SearchView;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_Spinner = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_Spinner;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Base_Widget_Design_TabLayout = global::EnixerPos.Mobile.Droid.Resource.Style.Base_Widget_Design_TabLayout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.CardView = global::EnixerPos.Mobile.Droid.Resource.Style.CardView;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.CardView_Dark = global::EnixerPos.Mobile.Droid.Resource.Style.CardView_Dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.CardView_Light = global::EnixerPos.Mobile.Droid.Resource.Style.CardView_Light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Platform_AppCompat = global::EnixerPos.Mobile.Droid.Resource.Style.Platform_AppCompat;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Platform_AppCompat_Light = global::EnixerPos.Mobile.Droid.Resource.Style.Platform_AppCompat_Light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat = global::EnixerPos.Mobile.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark = global::EnixerPos.Mobile.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Light = global::EnixerPos.Mobile.Droid.Resource.Style.Platform_ThemeOverlay_AppCompat_Light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Platform_V21_AppCompat = global::EnixerPos.Mobile.Droid.Resource.Style.Platform_V21_AppCompat;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Platform_V21_AppCompat_Light = global::EnixerPos.Mobile.Droid.Resource.Style.Platform_V21_AppCompat_Light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Platform_V25_AppCompat = global::EnixerPos.Mobile.Droid.Resource.Style.Platform_V25_AppCompat;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Platform_V25_AppCompat_Light = global::EnixerPos.Mobile.Droid.Resource.Style.Platform_V25_AppCompat_Light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Platform_Widget_AppCompat_Spinner = global::EnixerPos.Mobile.Droid.Resource.Style.Platform_Widget_AppCompat_Spinner;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat = global::EnixerPos.Mobile.Droid.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem = global::EnixerPos.Mobile.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon = global::EnixerPos.Mobile.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem = global::EnixerPos.Mobile.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup = global::EnixerPos.Mobile.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text = global::EnixerPos.Mobile.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon = global::EnixerPos.Mobile.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown = global::EnixerPos.Mobile.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1 = global::EnixerPos.Mobile.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2 = global::EnixerPos.Mobile.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query = global::EnixerPos.Mobile.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text = global::EnixerPos.Mobile.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton = global::EnixerPos.Mobile.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = global::EnixerPos.Mobile.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Body1 = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_Body1;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Body2 = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_Body2;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Button = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_Button;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Caption = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_Caption;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Display1 = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_Display1;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Display2 = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_Display2;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Display3 = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_Display3;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Display4 = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_Display4;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Headline = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_Headline;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Inverse = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_Inverse;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Large = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_Large;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Large_Inverse = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_Large_Inverse;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Medium = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_Medium;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Medium_Inverse = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_Medium_Inverse;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Menu = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_Menu;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Title = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_SearchResult_Title;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Small = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_Small;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Small_Inverse = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_Small_Inverse;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Subhead = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_Subhead;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Title = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_Title;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Title_Inverse = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_Title_Inverse;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Tooltip = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_Tooltip;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Borderless_Colored = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Borderless_Colored;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Colored = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Colored;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Header = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Header;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Switch = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_Widget_Switch;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_Compat_Notification = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_Compat_Notification;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_Compat_Notification_Info = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_Compat_Notification_Info;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_Compat_Notification_Info_Media = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_Compat_Notification_Info_Media;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2 = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2_Media = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2_Media;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_Compat_Notification_Media = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_Compat_Notification_Media;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_Compat_Notification_Time = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_Compat_Notification_Time;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_Compat_Notification_Time_Media = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_Compat_Notification_Time_Media;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_Compat_Notification_Title = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_Compat_Notification_Title;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_Compat_Notification_Title_Media = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_Compat_Notification_Title_Media;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_Design_CollapsingToolbar_Expanded = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_Design_CollapsingToolbar_Expanded;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_Design_Counter = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_Design_Counter;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_Design_Counter_Overflow = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_Design_Counter_Overflow;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_Design_Error = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_Design_Error;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_Design_Hint = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_Design_Hint;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_Design_Snackbar_Message = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_Design_Snackbar_Message;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_Design_Tab = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_Design_Tab;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_MediaRouter_PrimaryText = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_MediaRouter_PrimaryText;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_MediaRouter_SecondaryText = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_MediaRouter_SecondaryText;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_MediaRouter_Title = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_MediaRouter_Title;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title = global::EnixerPos.Mobile.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.ThemeOverlay_AppCompat = global::EnixerPos.Mobile.Droid.Resource.Style.ThemeOverlay_AppCompat;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.ThemeOverlay_AppCompat_ActionBar = global::EnixerPos.Mobile.Droid.Resource.Style.ThemeOverlay_AppCompat_ActionBar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark = global::EnixerPos.Mobile.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar = global::EnixerPos.Mobile.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog = global::EnixerPos.Mobile.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert = global::EnixerPos.Mobile.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.ThemeOverlay_AppCompat_Light = global::EnixerPos.Mobile.Droid.Resource.Style.ThemeOverlay_AppCompat_Light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.ThemeOverlay_MediaRouter_Dark = global::EnixerPos.Mobile.Droid.Resource.Style.ThemeOverlay_MediaRouter_Dark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.ThemeOverlay_MediaRouter_Light = global::EnixerPos.Mobile.Droid.Resource.Style.ThemeOverlay_MediaRouter_Light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Theme_AppCompat = global::EnixerPos.Mobile.Droid.Resource.Style.Theme_AppCompat;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Theme_AppCompat_CompactMenu = global::EnixerPos.Mobile.Droid.Resource.Style.Theme_AppCompat_CompactMenu;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Theme_AppCompat_DayNight = global::EnixerPos.Mobile.Droid.Resource.Style.Theme_AppCompat_DayNight;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar = global::EnixerPos.Mobile.Droid.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog = global::EnixerPos.Mobile.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge = global::EnixerPos.Mobile.Droid.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert = global::EnixerPos.Mobile.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth = global::EnixerPos.Mobile.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Theme_AppCompat_DayNight_NoActionBar = global::EnixerPos.Mobile.Droid.Resource.Style.Theme_AppCompat_DayNight_NoActionBar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Theme_AppCompat_Dialog = global::EnixerPos.Mobile.Droid.Resource.Style.Theme_AppCompat_Dialog;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Theme_AppCompat_DialogWhenLarge = global::EnixerPos.Mobile.Droid.Resource.Style.Theme_AppCompat_DialogWhenLarge;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Theme_AppCompat_Dialog_Alert = global::EnixerPos.Mobile.Droid.Resource.Style.Theme_AppCompat_Dialog_Alert;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Theme_AppCompat_Dialog_MinWidth = global::EnixerPos.Mobile.Droid.Resource.Style.Theme_AppCompat_Dialog_MinWidth;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Theme_AppCompat_Light = global::EnixerPos.Mobile.Droid.Resource.Style.Theme_AppCompat_Light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Theme_AppCompat_Light_DarkActionBar = global::EnixerPos.Mobile.Droid.Resource.Style.Theme_AppCompat_Light_DarkActionBar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Theme_AppCompat_Light_Dialog = global::EnixerPos.Mobile.Droid.Resource.Style.Theme_AppCompat_Light_Dialog;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge = global::EnixerPos.Mobile.Droid.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_Alert = global::EnixerPos.Mobile.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_Alert;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth = global::EnixerPos.Mobile.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Theme_AppCompat_Light_NoActionBar = global::EnixerPos.Mobile.Droid.Resource.Style.Theme_AppCompat_Light_NoActionBar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Theme_AppCompat_NoActionBar = global::EnixerPos.Mobile.Droid.Resource.Style.Theme_AppCompat_NoActionBar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Theme_Design = global::EnixerPos.Mobile.Droid.Resource.Style.Theme_Design;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Theme_Design_BottomSheetDialog = global::EnixerPos.Mobile.Droid.Resource.Style.Theme_Design_BottomSheetDialog;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Theme_Design_Light = global::EnixerPos.Mobile.Droid.Resource.Style.Theme_Design_Light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Theme_Design_Light_BottomSheetDialog = global::EnixerPos.Mobile.Droid.Resource.Style.Theme_Design_Light_BottomSheetDialog;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Theme_Design_Light_NoActionBar = global::EnixerPos.Mobile.Droid.Resource.Style.Theme_Design_Light_NoActionBar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Theme_Design_NoActionBar = global::EnixerPos.Mobile.Droid.Resource.Style.Theme_Design_NoActionBar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Theme_MediaRouter = global::EnixerPos.Mobile.Droid.Resource.Style.Theme_MediaRouter;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Theme_MediaRouter_Light = global::EnixerPos.Mobile.Droid.Resource.Style.Theme_MediaRouter_Light;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Theme_MediaRouter_LightControlPanel = global::EnixerPos.Mobile.Droid.Resource.Style.Theme_MediaRouter_LightControlPanel;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Theme_MediaRouter_Light_DarkControlPanel = global::EnixerPos.Mobile.Droid.Resource.Style.Theme_MediaRouter_Light_DarkControlPanel;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_ActionBar = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_ActionBar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_ActionBar_Solid = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_ActionBar_Solid;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabBar = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabBar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabText = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabText;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabView = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabView;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_ActionButton = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_ActionButton;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_ActionButton_CloseMode = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_ActionButton_CloseMode;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_ActionButton_Overflow = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_ActionButton_Overflow;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_ActionMode = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_ActionMode;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_ActivityChooserView = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_ActivityChooserView;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_AutoCompleteTextView = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_AutoCompleteTextView;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_Button = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_Button;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_ButtonBar = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_ButtonBar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_Button_Borderless = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_Button_Borderless;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_Button_Borderless_Colored = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_Button_Borderless_Colored;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_Button_Colored = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_Button_Colored;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_Button_Small = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_Button_Small;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_CompoundButton_Switch = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_CompoundButton_Switch;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_DrawerArrowToggle = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_DrawerArrowToggle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_DropDownItem_Spinner = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_DropDownItem_Spinner;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_EditText = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_EditText;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_ImageButton = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_ImageButton;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_Light_ActivityChooserView = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_Light_ActivityChooserView;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_Light_ListPopupWindow = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_Light_ListPopupWindow;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_Light_ListView_DropDown = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_Light_ListView_DropDown;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_Light_SearchView = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_Light_SearchView;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_ListMenuView = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_ListMenuView;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_ListPopupWindow = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_ListPopupWindow;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_ListView = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_ListView;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_ListView_DropDown = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_ListView_DropDown;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_ListView_Menu = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_ListView_Menu;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_PopupMenu = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_PopupMenu;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_PopupMenu_Overflow = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_PopupMenu_Overflow;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_PopupWindow = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_PopupWindow;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_ProgressBar = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_ProgressBar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_RatingBar = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_RatingBar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_RatingBar_Indicator = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_RatingBar_Indicator;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_RatingBar_Small = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_RatingBar_Small;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_SearchView = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_SearchView;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_SearchView_ActionBar = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_SearchView_ActionBar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_SeekBar = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_SeekBar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_SeekBar_Discrete = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_SeekBar_Discrete;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_Spinner = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_Spinner;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_Spinner_Underlined = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_Spinner_Underlined;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_TextView_SpinnerItem = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_TextView_SpinnerItem;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_Toolbar = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_Toolbar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_Compat_NotificationActionContainer = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_Compat_NotificationActionContainer;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_Compat_NotificationActionText = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_Compat_NotificationActionText;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_Design_AppBarLayout = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_Design_AppBarLayout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_Design_BottomNavigationView = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_Design_BottomNavigationView;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_Design_BottomSheet_Modal = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_Design_BottomSheet_Modal;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_Design_CollapsingToolbar = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_Design_CollapsingToolbar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_Design_FloatingActionButton = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_Design_FloatingActionButton;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_Design_NavigationView = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_Design_NavigationView;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_Design_ScrimInsetsFrameLayout = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_Design_ScrimInsetsFrameLayout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_Design_Snackbar = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_Design_Snackbar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_Design_TabLayout = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_Design_TabLayout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_Design_TextInputLayout = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_Design_TextInputLayout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_MediaRouter_Light_MediaRouteButton = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_MediaRouter_Light_MediaRouteButton;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Style.Widget_MediaRouter_MediaRouteButton = global::EnixerPos.Mobile.Droid.Resource.Style.Widget_MediaRouter_MediaRouteButton;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ActionBar = global::EnixerPos.Mobile.Droid.Resource.Styleable.ActionBar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ActionBarLayout = global::EnixerPos.Mobile.Droid.Resource.Styleable.ActionBarLayout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ActionBarLayout_android_layout_gravity = global::EnixerPos.Mobile.Droid.Resource.Styleable.ActionBarLayout_android_layout_gravity;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ActionBar_background = global::EnixerPos.Mobile.Droid.Resource.Styleable.ActionBar_background;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ActionBar_backgroundSplit = global::EnixerPos.Mobile.Droid.Resource.Styleable.ActionBar_backgroundSplit;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ActionBar_backgroundStacked = global::EnixerPos.Mobile.Droid.Resource.Styleable.ActionBar_backgroundStacked;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ActionBar_contentInsetEnd = global::EnixerPos.Mobile.Droid.Resource.Styleable.ActionBar_contentInsetEnd;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ActionBar_contentInsetEndWithActions = global::EnixerPos.Mobile.Droid.Resource.Styleable.ActionBar_contentInsetEndWithActions;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ActionBar_contentInsetLeft = global::EnixerPos.Mobile.Droid.Resource.Styleable.ActionBar_contentInsetLeft;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ActionBar_contentInsetRight = global::EnixerPos.Mobile.Droid.Resource.Styleable.ActionBar_contentInsetRight;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ActionBar_contentInsetStart = global::EnixerPos.Mobile.Droid.Resource.Styleable.ActionBar_contentInsetStart;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ActionBar_contentInsetStartWithNavigation = global::EnixerPos.Mobile.Droid.Resource.Styleable.ActionBar_contentInsetStartWithNavigation;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ActionBar_customNavigationLayout = global::EnixerPos.Mobile.Droid.Resource.Styleable.ActionBar_customNavigationLayout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ActionBar_displayOptions = global::EnixerPos.Mobile.Droid.Resource.Styleable.ActionBar_displayOptions;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ActionBar_divider = global::EnixerPos.Mobile.Droid.Resource.Styleable.ActionBar_divider;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ActionBar_elevation = global::EnixerPos.Mobile.Droid.Resource.Styleable.ActionBar_elevation;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ActionBar_height = global::EnixerPos.Mobile.Droid.Resource.Styleable.ActionBar_height;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ActionBar_hideOnContentScroll = global::EnixerPos.Mobile.Droid.Resource.Styleable.ActionBar_hideOnContentScroll;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ActionBar_homeAsUpIndicator = global::EnixerPos.Mobile.Droid.Resource.Styleable.ActionBar_homeAsUpIndicator;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ActionBar_homeLayout = global::EnixerPos.Mobile.Droid.Resource.Styleable.ActionBar_homeLayout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ActionBar_icon = global::EnixerPos.Mobile.Droid.Resource.Styleable.ActionBar_icon;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ActionBar_indeterminateProgressStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.ActionBar_indeterminateProgressStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ActionBar_itemPadding = global::EnixerPos.Mobile.Droid.Resource.Styleable.ActionBar_itemPadding;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ActionBar_logo = global::EnixerPos.Mobile.Droid.Resource.Styleable.ActionBar_logo;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ActionBar_navigationMode = global::EnixerPos.Mobile.Droid.Resource.Styleable.ActionBar_navigationMode;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ActionBar_popupTheme = global::EnixerPos.Mobile.Droid.Resource.Styleable.ActionBar_popupTheme;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ActionBar_progressBarPadding = global::EnixerPos.Mobile.Droid.Resource.Styleable.ActionBar_progressBarPadding;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ActionBar_progressBarStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.ActionBar_progressBarStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ActionBar_subtitle = global::EnixerPos.Mobile.Droid.Resource.Styleable.ActionBar_subtitle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ActionBar_subtitleTextStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.ActionBar_subtitleTextStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ActionBar_title = global::EnixerPos.Mobile.Droid.Resource.Styleable.ActionBar_title;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ActionBar_titleTextStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.ActionBar_titleTextStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ActionMenuItemView = global::EnixerPos.Mobile.Droid.Resource.Styleable.ActionMenuItemView;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ActionMenuItemView_android_minWidth = global::EnixerPos.Mobile.Droid.Resource.Styleable.ActionMenuItemView_android_minWidth;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ActionMenuView = global::EnixerPos.Mobile.Droid.Resource.Styleable.ActionMenuView;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ActionMode = global::EnixerPos.Mobile.Droid.Resource.Styleable.ActionMode;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ActionMode_background = global::EnixerPos.Mobile.Droid.Resource.Styleable.ActionMode_background;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ActionMode_backgroundSplit = global::EnixerPos.Mobile.Droid.Resource.Styleable.ActionMode_backgroundSplit;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ActionMode_closeItemLayout = global::EnixerPos.Mobile.Droid.Resource.Styleable.ActionMode_closeItemLayout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ActionMode_height = global::EnixerPos.Mobile.Droid.Resource.Styleable.ActionMode_height;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ActionMode_subtitleTextStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.ActionMode_subtitleTextStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ActionMode_titleTextStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.ActionMode_titleTextStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ActivityChooserView = global::EnixerPos.Mobile.Droid.Resource.Styleable.ActivityChooserView;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable = global::EnixerPos.Mobile.Droid.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ActivityChooserView_initialActivityCount = global::EnixerPos.Mobile.Droid.Resource.Styleable.ActivityChooserView_initialActivityCount;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AlertDialog = global::EnixerPos.Mobile.Droid.Resource.Styleable.AlertDialog;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AlertDialog_android_layout = global::EnixerPos.Mobile.Droid.Resource.Styleable.AlertDialog_android_layout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AlertDialog_buttonPanelSideLayout = global::EnixerPos.Mobile.Droid.Resource.Styleable.AlertDialog_buttonPanelSideLayout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AlertDialog_listItemLayout = global::EnixerPos.Mobile.Droid.Resource.Styleable.AlertDialog_listItemLayout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AlertDialog_listLayout = global::EnixerPos.Mobile.Droid.Resource.Styleable.AlertDialog_listLayout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AlertDialog_multiChoiceItemLayout = global::EnixerPos.Mobile.Droid.Resource.Styleable.AlertDialog_multiChoiceItemLayout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AlertDialog_showTitle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AlertDialog_showTitle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AlertDialog_singleChoiceItemLayout = global::EnixerPos.Mobile.Droid.Resource.Styleable.AlertDialog_singleChoiceItemLayout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppBarLayout = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppBarLayout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppBarLayoutStates = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppBarLayoutStates;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsed = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsed;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsible = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsible;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppBarLayout_android_background = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppBarLayout_android_background;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppBarLayout_android_keyboardNavigationCluster = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppBarLayout_android_keyboardNavigationCluster;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppBarLayout_android_touchscreenBlocksFocus = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppBarLayout_android_touchscreenBlocksFocus;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppBarLayout_elevation = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppBarLayout_elevation;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppBarLayout_expanded = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppBarLayout_expanded;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppBarLayout_Layout = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppBarLayout_Layout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollFlags = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollFlags;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollInterpolator = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollInterpolator;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatImageView = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatImageView;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatImageView_android_src = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatImageView_android_src;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatImageView_srcCompat = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatImageView_srcCompat;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatImageView_tint = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatImageView_tint;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatImageView_tintMode = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatImageView_tintMode;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatSeekBar = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatSeekBar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatSeekBar_android_thumb = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatSeekBar_android_thumb;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatSeekBar_tickMark = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatSeekBar_tickMark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatSeekBar_tickMarkTint = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatSeekBar_tickMarkTint;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatSeekBar_tickMarkTintMode = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatSeekBar_tickMarkTintMode;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTextHelper = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTextHelper;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableBottom = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableBottom;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableEnd = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableEnd;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableLeft = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableLeft;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableRight = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableRight;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableStart = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableStart;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableTop = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTextHelper_android_drawableTop;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTextHelper_android_textAppearance = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTextHelper_android_textAppearance;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTextView = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTextView;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTextView_android_textAppearance = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTextView_android_textAppearance;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTextView_autoSizeMaxTextSize = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTextView_autoSizeMaxTextSize;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTextView_autoSizeMinTextSize = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTextView_autoSizeMinTextSize;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTextView_autoSizePresetSizes = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTextView_autoSizePresetSizes;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTextView_autoSizeStepGranularity = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTextView_autoSizeStepGranularity;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTextView_autoSizeTextType = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTextView_autoSizeTextType;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTextView_fontFamily = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTextView_fontFamily;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTextView_textAllCaps = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTextView_textAllCaps;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_actionBarDivider = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_actionBarDivider;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_actionBarItemBackground = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_actionBarItemBackground;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_actionBarPopupTheme = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_actionBarPopupTheme;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_actionBarSize = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_actionBarSize;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_actionBarSplitStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_actionBarSplitStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_actionBarStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_actionBarStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_actionBarTabStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_actionBarTabStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_actionBarTheme = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_actionBarTheme;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_actionButtonStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_actionButtonStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_actionDropDownStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_actionDropDownStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextColor = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_actionMenuTextColor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_actionModeBackground = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_actionModeBackground;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_actionModeCutDrawable = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_actionModeCutDrawable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_actionModeFindDrawable = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_actionModeFindDrawable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_actionModePasteDrawable = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_actionModePasteDrawable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_actionModeShareDrawable = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_actionModeShareDrawable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_actionModeSplitBackground = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_actionModeSplitBackground;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_actionModeStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_actionModeStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_activityChooserViewStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_activityChooserViewStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_alertDialogStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_alertDialogStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_alertDialogTheme = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_alertDialogTheme;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_android_windowIsFloating = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_android_windowIsFloating;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_borderlessButtonStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_borderlessButtonStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_buttonBarStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_buttonBarStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_buttonStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_buttonStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_buttonStyleSmall = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_buttonStyleSmall;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_checkboxStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_checkboxStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_checkedTextViewStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_checkedTextViewStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_colorAccent = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_colorAccent;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_colorBackgroundFloating = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_colorBackgroundFloating;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_colorButtonNormal = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_colorButtonNormal;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_colorControlActivated = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_colorControlActivated;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_colorControlHighlight = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_colorControlHighlight;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_colorControlNormal = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_colorControlNormal;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_colorError = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_colorError;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_colorPrimary = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_colorPrimary;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_colorPrimaryDark = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_colorPrimaryDark;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_controlBackground = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_controlBackground;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_dialogPreferredPadding = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_dialogPreferredPadding;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_dialogTheme = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_dialogTheme;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_dividerHorizontal = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_dividerHorizontal;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_dividerVertical = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_dividerVertical;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_dropDownListViewStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_dropDownListViewStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_editTextBackground = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_editTextBackground;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_editTextColor = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_editTextColor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_editTextStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_editTextStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_homeAsUpIndicator = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_homeAsUpIndicator;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_imageButtonStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_imageButtonStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_listDividerAlertDialog = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_listDividerAlertDialog;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_listMenuViewStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_listMenuViewStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_listPopupWindowStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_listPopupWindowStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeight = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeight;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_panelBackground = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_panelBackground;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_panelMenuListTheme = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_panelMenuListTheme;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_panelMenuListWidth = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_panelMenuListWidth;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_popupMenuStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_popupMenuStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_popupWindowStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_popupWindowStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_radioButtonStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_radioButtonStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_searchViewStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_searchViewStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_seekBarStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_seekBarStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackground = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackground;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_spinnerStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_spinnerStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_switchStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_switchStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItem = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItem;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSecondary = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSecondary;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_textAppearancePopupMenuHeader = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_textAppearancePopupMenuHeader;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_textColorSearchUrl = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_textColorSearchUrl;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_toolbarStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_toolbarStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_tooltipForegroundColor = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_tooltipForegroundColor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_tooltipFrameBackground = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_tooltipFrameBackground;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_windowActionBar = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_windowActionBar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_windowActionBarOverlay = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_windowActionBarOverlay;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_windowActionModeOverlay = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_windowActionModeOverlay;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMajor = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMajor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMinor = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_windowMinWidthMinor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.AppCompatTheme_windowNoTitle = global::EnixerPos.Mobile.Droid.Resource.Styleable.AppCompatTheme_windowNoTitle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.BottomNavigationView = global::EnixerPos.Mobile.Droid.Resource.Styleable.BottomNavigationView;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.BottomNavigationView_elevation = global::EnixerPos.Mobile.Droid.Resource.Styleable.BottomNavigationView_elevation;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.BottomNavigationView_itemBackground = global::EnixerPos.Mobile.Droid.Resource.Styleable.BottomNavigationView_itemBackground;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.BottomNavigationView_itemIconTint = global::EnixerPos.Mobile.Droid.Resource.Styleable.BottomNavigationView_itemIconTint;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.BottomNavigationView_itemTextColor = global::EnixerPos.Mobile.Droid.Resource.Styleable.BottomNavigationView_itemTextColor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.BottomNavigationView_menu = global::EnixerPos.Mobile.Droid.Resource.Styleable.BottomNavigationView_menu;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.BottomSheetBehavior_Layout = global::EnixerPos.Mobile.Droid.Resource.Styleable.BottomSheetBehavior_Layout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_hideable = global::EnixerPos.Mobile.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_hideable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_peekHeight = global::EnixerPos.Mobile.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_peekHeight;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_skipCollapsed = global::EnixerPos.Mobile.Droid.Resource.Styleable.BottomSheetBehavior_Layout_behavior_skipCollapsed;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ButtonBarLayout = global::EnixerPos.Mobile.Droid.Resource.Styleable.ButtonBarLayout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ButtonBarLayout_allowStacking = global::EnixerPos.Mobile.Droid.Resource.Styleable.ButtonBarLayout_allowStacking;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CardView = global::EnixerPos.Mobile.Droid.Resource.Styleable.CardView;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CardView_android_minHeight = global::EnixerPos.Mobile.Droid.Resource.Styleable.CardView_android_minHeight;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CardView_android_minWidth = global::EnixerPos.Mobile.Droid.Resource.Styleable.CardView_android_minWidth;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CardView_cardBackgroundColor = global::EnixerPos.Mobile.Droid.Resource.Styleable.CardView_cardBackgroundColor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CardView_cardCornerRadius = global::EnixerPos.Mobile.Droid.Resource.Styleable.CardView_cardCornerRadius;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CardView_cardElevation = global::EnixerPos.Mobile.Droid.Resource.Styleable.CardView_cardElevation;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CardView_cardMaxElevation = global::EnixerPos.Mobile.Droid.Resource.Styleable.CardView_cardMaxElevation;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CardView_cardPreventCornerOverlap = global::EnixerPos.Mobile.Droid.Resource.Styleable.CardView_cardPreventCornerOverlap;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CardView_cardUseCompatPadding = global::EnixerPos.Mobile.Droid.Resource.Styleable.CardView_cardUseCompatPadding;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CardView_contentPadding = global::EnixerPos.Mobile.Droid.Resource.Styleable.CardView_contentPadding;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CardView_contentPaddingBottom = global::EnixerPos.Mobile.Droid.Resource.Styleable.CardView_contentPaddingBottom;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CardView_contentPaddingLeft = global::EnixerPos.Mobile.Droid.Resource.Styleable.CardView_contentPaddingLeft;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CardView_contentPaddingRight = global::EnixerPos.Mobile.Droid.Resource.Styleable.CardView_contentPaddingRight;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CardView_contentPaddingTop = global::EnixerPos.Mobile.Droid.Resource.Styleable.CardView_contentPaddingTop;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CollapsingToolbarLayout = global::EnixerPos.Mobile.Droid.Resource.Styleable.CollapsingToolbarLayout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleGravity = global::EnixerPos.Mobile.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleGravity;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleTextAppearance = global::EnixerPos.Mobile.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleTextAppearance;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CollapsingToolbarLayout_contentScrim = global::EnixerPos.Mobile.Droid.Resource.Styleable.CollapsingToolbarLayout_contentScrim;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleGravity = global::EnixerPos.Mobile.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleGravity;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMargin = global::EnixerPos.Mobile.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMargin;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginBottom = global::EnixerPos.Mobile.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginBottom;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginEnd = global::EnixerPos.Mobile.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginEnd;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginStart = global::EnixerPos.Mobile.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginStart;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginTop = global::EnixerPos.Mobile.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginTop;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleTextAppearance = global::EnixerPos.Mobile.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleTextAppearance;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout = global::EnixerPos.Mobile.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseMode = global::EnixerPos.Mobile.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseMode;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier = global::EnixerPos.Mobile.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimAnimationDuration = global::EnixerPos.Mobile.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimAnimationDuration;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimVisibleHeightTrigger = global::EnixerPos.Mobile.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimVisibleHeightTrigger;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CollapsingToolbarLayout_statusBarScrim = global::EnixerPos.Mobile.Droid.Resource.Styleable.CollapsingToolbarLayout_statusBarScrim;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CollapsingToolbarLayout_title = global::EnixerPos.Mobile.Droid.Resource.Styleable.CollapsingToolbarLayout_title;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CollapsingToolbarLayout_titleEnabled = global::EnixerPos.Mobile.Droid.Resource.Styleable.CollapsingToolbarLayout_titleEnabled;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CollapsingToolbarLayout_toolbarId = global::EnixerPos.Mobile.Droid.Resource.Styleable.CollapsingToolbarLayout_toolbarId;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ColorStateListItem = global::EnixerPos.Mobile.Droid.Resource.Styleable.ColorStateListItem;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ColorStateListItem_alpha = global::EnixerPos.Mobile.Droid.Resource.Styleable.ColorStateListItem_alpha;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ColorStateListItem_android_alpha = global::EnixerPos.Mobile.Droid.Resource.Styleable.ColorStateListItem_android_alpha;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ColorStateListItem_android_color = global::EnixerPos.Mobile.Droid.Resource.Styleable.ColorStateListItem_android_color;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CompoundButton = global::EnixerPos.Mobile.Droid.Resource.Styleable.CompoundButton;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CompoundButton_android_button = global::EnixerPos.Mobile.Droid.Resource.Styleable.CompoundButton_android_button;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CompoundButton_buttonTint = global::EnixerPos.Mobile.Droid.Resource.Styleable.CompoundButton_buttonTint;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CompoundButton_buttonTintMode = global::EnixerPos.Mobile.Droid.Resource.Styleable.CompoundButton_buttonTintMode;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CoordinatorLayout = global::EnixerPos.Mobile.Droid.Resource.Styleable.CoordinatorLayout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CoordinatorLayout_keylines = global::EnixerPos.Mobile.Droid.Resource.Styleable.CoordinatorLayout_keylines;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CoordinatorLayout_Layout = global::EnixerPos.Mobile.Droid.Resource.Styleable.CoordinatorLayout_Layout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity = global::EnixerPos.Mobile.Droid.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor = global::EnixerPos.Mobile.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity = global::EnixerPos.Mobile.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior = global::EnixerPos.Mobile.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges = global::EnixerPos.Mobile.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge = global::EnixerPos.Mobile.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline = global::EnixerPos.Mobile.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.CoordinatorLayout_statusBarBackground = global::EnixerPos.Mobile.Droid.Resource.Styleable.CoordinatorLayout_statusBarBackground;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.DesignTheme = global::EnixerPos.Mobile.Droid.Resource.Styleable.DesignTheme;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.DesignTheme_bottomSheetDialogTheme = global::EnixerPos.Mobile.Droid.Resource.Styleable.DesignTheme_bottomSheetDialogTheme;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.DesignTheme_bottomSheetStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.DesignTheme_bottomSheetStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.DrawerArrowToggle = global::EnixerPos.Mobile.Droid.Resource.Styleable.DrawerArrowToggle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.DrawerArrowToggle_arrowHeadLength = global::EnixerPos.Mobile.Droid.Resource.Styleable.DrawerArrowToggle_arrowHeadLength;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.DrawerArrowToggle_arrowShaftLength = global::EnixerPos.Mobile.Droid.Resource.Styleable.DrawerArrowToggle_arrowShaftLength;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.DrawerArrowToggle_barLength = global::EnixerPos.Mobile.Droid.Resource.Styleable.DrawerArrowToggle_barLength;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.DrawerArrowToggle_color = global::EnixerPos.Mobile.Droid.Resource.Styleable.DrawerArrowToggle_color;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.DrawerArrowToggle_drawableSize = global::EnixerPos.Mobile.Droid.Resource.Styleable.DrawerArrowToggle_drawableSize;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.DrawerArrowToggle_gapBetweenBars = global::EnixerPos.Mobile.Droid.Resource.Styleable.DrawerArrowToggle_gapBetweenBars;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.DrawerArrowToggle_spinBars = global::EnixerPos.Mobile.Droid.Resource.Styleable.DrawerArrowToggle_spinBars;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.DrawerArrowToggle_thickness = global::EnixerPos.Mobile.Droid.Resource.Styleable.DrawerArrowToggle_thickness;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.FloatingActionButton = global::EnixerPos.Mobile.Droid.Resource.Styleable.FloatingActionButton;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.FloatingActionButton_backgroundTint = global::EnixerPos.Mobile.Droid.Resource.Styleable.FloatingActionButton_backgroundTint;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.FloatingActionButton_backgroundTintMode = global::EnixerPos.Mobile.Droid.Resource.Styleable.FloatingActionButton_backgroundTintMode;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout = global::EnixerPos.Mobile.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide = global::EnixerPos.Mobile.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.FloatingActionButton_borderWidth = global::EnixerPos.Mobile.Droid.Resource.Styleable.FloatingActionButton_borderWidth;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.FloatingActionButton_elevation = global::EnixerPos.Mobile.Droid.Resource.Styleable.FloatingActionButton_elevation;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.FloatingActionButton_fabSize = global::EnixerPos.Mobile.Droid.Resource.Styleable.FloatingActionButton_fabSize;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.FloatingActionButton_pressedTranslationZ = global::EnixerPos.Mobile.Droid.Resource.Styleable.FloatingActionButton_pressedTranslationZ;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.FloatingActionButton_rippleColor = global::EnixerPos.Mobile.Droid.Resource.Styleable.FloatingActionButton_rippleColor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.FloatingActionButton_useCompatPadding = global::EnixerPos.Mobile.Droid.Resource.Styleable.FloatingActionButton_useCompatPadding;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.FontFamily = global::EnixerPos.Mobile.Droid.Resource.Styleable.FontFamily;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.FontFamilyFont = global::EnixerPos.Mobile.Droid.Resource.Styleable.FontFamilyFont;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.FontFamilyFont_android_font = global::EnixerPos.Mobile.Droid.Resource.Styleable.FontFamilyFont_android_font;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.FontFamilyFont_android_fontStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.FontFamilyFont_android_fontStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.FontFamilyFont_android_fontWeight = global::EnixerPos.Mobile.Droid.Resource.Styleable.FontFamilyFont_android_fontWeight;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.FontFamilyFont_font = global::EnixerPos.Mobile.Droid.Resource.Styleable.FontFamilyFont_font;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.FontFamilyFont_fontStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.FontFamilyFont_fontStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.FontFamilyFont_fontWeight = global::EnixerPos.Mobile.Droid.Resource.Styleable.FontFamilyFont_fontWeight;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.FontFamily_fontProviderAuthority = global::EnixerPos.Mobile.Droid.Resource.Styleable.FontFamily_fontProviderAuthority;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.FontFamily_fontProviderCerts = global::EnixerPos.Mobile.Droid.Resource.Styleable.FontFamily_fontProviderCerts;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.FontFamily_fontProviderFetchStrategy = global::EnixerPos.Mobile.Droid.Resource.Styleable.FontFamily_fontProviderFetchStrategy;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.FontFamily_fontProviderFetchTimeout = global::EnixerPos.Mobile.Droid.Resource.Styleable.FontFamily_fontProviderFetchTimeout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.FontFamily_fontProviderPackage = global::EnixerPos.Mobile.Droid.Resource.Styleable.FontFamily_fontProviderPackage;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.FontFamily_fontProviderQuery = global::EnixerPos.Mobile.Droid.Resource.Styleable.FontFamily_fontProviderQuery;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ForegroundLinearLayout = global::EnixerPos.Mobile.Droid.Resource.Styleable.ForegroundLinearLayout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ForegroundLinearLayout_android_foreground = global::EnixerPos.Mobile.Droid.Resource.Styleable.ForegroundLinearLayout_android_foreground;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity = global::EnixerPos.Mobile.Droid.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding = global::EnixerPos.Mobile.Droid.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.LinearLayoutCompat = global::EnixerPos.Mobile.Droid.Resource.Styleable.LinearLayoutCompat;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAligned = global::EnixerPos.Mobile.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAligned;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex = global::EnixerPos.Mobile.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.LinearLayoutCompat_android_gravity = global::EnixerPos.Mobile.Droid.Resource.Styleable.LinearLayoutCompat_android_gravity;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.LinearLayoutCompat_android_orientation = global::EnixerPos.Mobile.Droid.Resource.Styleable.LinearLayoutCompat_android_orientation;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.LinearLayoutCompat_android_weightSum = global::EnixerPos.Mobile.Droid.Resource.Styleable.LinearLayoutCompat_android_weightSum;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.LinearLayoutCompat_divider = global::EnixerPos.Mobile.Droid.Resource.Styleable.LinearLayoutCompat_divider;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.LinearLayoutCompat_dividerPadding = global::EnixerPos.Mobile.Droid.Resource.Styleable.LinearLayoutCompat_dividerPadding;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.LinearLayoutCompat_Layout = global::EnixerPos.Mobile.Droid.Resource.Styleable.LinearLayoutCompat_Layout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity = global::EnixerPos.Mobile.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height = global::EnixerPos.Mobile.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight = global::EnixerPos.Mobile.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width = global::EnixerPos.Mobile.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild = global::EnixerPos.Mobile.Droid.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.LinearLayoutCompat_showDividers = global::EnixerPos.Mobile.Droid.Resource.Styleable.LinearLayoutCompat_showDividers;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ListPopupWindow = global::EnixerPos.Mobile.Droid.Resource.Styleable.ListPopupWindow;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset = global::EnixerPos.Mobile.Droid.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset = global::EnixerPos.Mobile.Droid.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MediaRouteButton = global::EnixerPos.Mobile.Droid.Resource.Styleable.MediaRouteButton;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MediaRouteButton_android_minHeight = global::EnixerPos.Mobile.Droid.Resource.Styleable.MediaRouteButton_android_minHeight;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MediaRouteButton_android_minWidth = global::EnixerPos.Mobile.Droid.Resource.Styleable.MediaRouteButton_android_minWidth;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MediaRouteButton_externalRouteEnabledDrawable = global::EnixerPos.Mobile.Droid.Resource.Styleable.MediaRouteButton_externalRouteEnabledDrawable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MediaRouteButton_mediaRouteButtonTint = global::EnixerPos.Mobile.Droid.Resource.Styleable.MediaRouteButton_mediaRouteButtonTint;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MenuGroup = global::EnixerPos.Mobile.Droid.Resource.Styleable.MenuGroup;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MenuGroup_android_checkableBehavior = global::EnixerPos.Mobile.Droid.Resource.Styleable.MenuGroup_android_checkableBehavior;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MenuGroup_android_enabled = global::EnixerPos.Mobile.Droid.Resource.Styleable.MenuGroup_android_enabled;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MenuGroup_android_id = global::EnixerPos.Mobile.Droid.Resource.Styleable.MenuGroup_android_id;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MenuGroup_android_menuCategory = global::EnixerPos.Mobile.Droid.Resource.Styleable.MenuGroup_android_menuCategory;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MenuGroup_android_orderInCategory = global::EnixerPos.Mobile.Droid.Resource.Styleable.MenuGroup_android_orderInCategory;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MenuGroup_android_visible = global::EnixerPos.Mobile.Droid.Resource.Styleable.MenuGroup_android_visible;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MenuItem = global::EnixerPos.Mobile.Droid.Resource.Styleable.MenuItem;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MenuItem_actionLayout = global::EnixerPos.Mobile.Droid.Resource.Styleable.MenuItem_actionLayout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MenuItem_actionProviderClass = global::EnixerPos.Mobile.Droid.Resource.Styleable.MenuItem_actionProviderClass;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MenuItem_actionViewClass = global::EnixerPos.Mobile.Droid.Resource.Styleable.MenuItem_actionViewClass;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MenuItem_alphabeticModifiers = global::EnixerPos.Mobile.Droid.Resource.Styleable.MenuItem_alphabeticModifiers;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MenuItem_android_alphabeticShortcut = global::EnixerPos.Mobile.Droid.Resource.Styleable.MenuItem_android_alphabeticShortcut;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MenuItem_android_checkable = global::EnixerPos.Mobile.Droid.Resource.Styleable.MenuItem_android_checkable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MenuItem_android_checked = global::EnixerPos.Mobile.Droid.Resource.Styleable.MenuItem_android_checked;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MenuItem_android_enabled = global::EnixerPos.Mobile.Droid.Resource.Styleable.MenuItem_android_enabled;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MenuItem_android_icon = global::EnixerPos.Mobile.Droid.Resource.Styleable.MenuItem_android_icon;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MenuItem_android_id = global::EnixerPos.Mobile.Droid.Resource.Styleable.MenuItem_android_id;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MenuItem_android_menuCategory = global::EnixerPos.Mobile.Droid.Resource.Styleable.MenuItem_android_menuCategory;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MenuItem_android_numericShortcut = global::EnixerPos.Mobile.Droid.Resource.Styleable.MenuItem_android_numericShortcut;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MenuItem_android_onClick = global::EnixerPos.Mobile.Droid.Resource.Styleable.MenuItem_android_onClick;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MenuItem_android_orderInCategory = global::EnixerPos.Mobile.Droid.Resource.Styleable.MenuItem_android_orderInCategory;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MenuItem_android_title = global::EnixerPos.Mobile.Droid.Resource.Styleable.MenuItem_android_title;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MenuItem_android_titleCondensed = global::EnixerPos.Mobile.Droid.Resource.Styleable.MenuItem_android_titleCondensed;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MenuItem_android_visible = global::EnixerPos.Mobile.Droid.Resource.Styleable.MenuItem_android_visible;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MenuItem_contentDescription = global::EnixerPos.Mobile.Droid.Resource.Styleable.MenuItem_contentDescription;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MenuItem_iconTint = global::EnixerPos.Mobile.Droid.Resource.Styleable.MenuItem_iconTint;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MenuItem_iconTintMode = global::EnixerPos.Mobile.Droid.Resource.Styleable.MenuItem_iconTintMode;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MenuItem_numericModifiers = global::EnixerPos.Mobile.Droid.Resource.Styleable.MenuItem_numericModifiers;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MenuItem_showAsAction = global::EnixerPos.Mobile.Droid.Resource.Styleable.MenuItem_showAsAction;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MenuItem_tooltipText = global::EnixerPos.Mobile.Droid.Resource.Styleable.MenuItem_tooltipText;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MenuView = global::EnixerPos.Mobile.Droid.Resource.Styleable.MenuView;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MenuView_android_headerBackground = global::EnixerPos.Mobile.Droid.Resource.Styleable.MenuView_android_headerBackground;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MenuView_android_horizontalDivider = global::EnixerPos.Mobile.Droid.Resource.Styleable.MenuView_android_horizontalDivider;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MenuView_android_itemBackground = global::EnixerPos.Mobile.Droid.Resource.Styleable.MenuView_android_itemBackground;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MenuView_android_itemIconDisabledAlpha = global::EnixerPos.Mobile.Droid.Resource.Styleable.MenuView_android_itemIconDisabledAlpha;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MenuView_android_itemTextAppearance = global::EnixerPos.Mobile.Droid.Resource.Styleable.MenuView_android_itemTextAppearance;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MenuView_android_verticalDivider = global::EnixerPos.Mobile.Droid.Resource.Styleable.MenuView_android_verticalDivider;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MenuView_android_windowAnimationStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.MenuView_android_windowAnimationStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MenuView_preserveIconSpacing = global::EnixerPos.Mobile.Droid.Resource.Styleable.MenuView_preserveIconSpacing;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.MenuView_subMenuArrow = global::EnixerPos.Mobile.Droid.Resource.Styleable.MenuView_subMenuArrow;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.NavigationView = global::EnixerPos.Mobile.Droid.Resource.Styleable.NavigationView;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.NavigationView_android_background = global::EnixerPos.Mobile.Droid.Resource.Styleable.NavigationView_android_background;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.NavigationView_android_fitsSystemWindows = global::EnixerPos.Mobile.Droid.Resource.Styleable.NavigationView_android_fitsSystemWindows;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.NavigationView_android_maxWidth = global::EnixerPos.Mobile.Droid.Resource.Styleable.NavigationView_android_maxWidth;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.NavigationView_elevation = global::EnixerPos.Mobile.Droid.Resource.Styleable.NavigationView_elevation;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.NavigationView_headerLayout = global::EnixerPos.Mobile.Droid.Resource.Styleable.NavigationView_headerLayout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.NavigationView_itemBackground = global::EnixerPos.Mobile.Droid.Resource.Styleable.NavigationView_itemBackground;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.NavigationView_itemIconTint = global::EnixerPos.Mobile.Droid.Resource.Styleable.NavigationView_itemIconTint;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.NavigationView_itemTextAppearance = global::EnixerPos.Mobile.Droid.Resource.Styleable.NavigationView_itemTextAppearance;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.NavigationView_itemTextColor = global::EnixerPos.Mobile.Droid.Resource.Styleable.NavigationView_itemTextColor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.NavigationView_menu = global::EnixerPos.Mobile.Droid.Resource.Styleable.NavigationView_menu;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.PopupWindow = global::EnixerPos.Mobile.Droid.Resource.Styleable.PopupWindow;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.PopupWindowBackgroundState = global::EnixerPos.Mobile.Droid.Resource.Styleable.PopupWindowBackgroundState;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor = global::EnixerPos.Mobile.Droid.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.PopupWindow_android_popupAnimationStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.PopupWindow_android_popupAnimationStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.PopupWindow_android_popupBackground = global::EnixerPos.Mobile.Droid.Resource.Styleable.PopupWindow_android_popupBackground;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.PopupWindow_overlapAnchor = global::EnixerPos.Mobile.Droid.Resource.Styleable.PopupWindow_overlapAnchor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.RecycleListView = global::EnixerPos.Mobile.Droid.Resource.Styleable.RecycleListView;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.RecycleListView_paddingBottomNoButtons = global::EnixerPos.Mobile.Droid.Resource.Styleable.RecycleListView_paddingBottomNoButtons;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.RecycleListView_paddingTopNoTitle = global::EnixerPos.Mobile.Droid.Resource.Styleable.RecycleListView_paddingTopNoTitle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.RecyclerView = global::EnixerPos.Mobile.Droid.Resource.Styleable.RecyclerView;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.RecyclerView_android_descendantFocusability = global::EnixerPos.Mobile.Droid.Resource.Styleable.RecyclerView_android_descendantFocusability;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.RecyclerView_android_orientation = global::EnixerPos.Mobile.Droid.Resource.Styleable.RecyclerView_android_orientation;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.RecyclerView_fastScrollEnabled = global::EnixerPos.Mobile.Droid.Resource.Styleable.RecyclerView_fastScrollEnabled;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.RecyclerView_fastScrollHorizontalThumbDrawable = global::EnixerPos.Mobile.Droid.Resource.Styleable.RecyclerView_fastScrollHorizontalThumbDrawable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.RecyclerView_fastScrollHorizontalTrackDrawable = global::EnixerPos.Mobile.Droid.Resource.Styleable.RecyclerView_fastScrollHorizontalTrackDrawable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.RecyclerView_fastScrollVerticalThumbDrawable = global::EnixerPos.Mobile.Droid.Resource.Styleable.RecyclerView_fastScrollVerticalThumbDrawable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.RecyclerView_fastScrollVerticalTrackDrawable = global::EnixerPos.Mobile.Droid.Resource.Styleable.RecyclerView_fastScrollVerticalTrackDrawable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.RecyclerView_layoutManager = global::EnixerPos.Mobile.Droid.Resource.Styleable.RecyclerView_layoutManager;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.RecyclerView_reverseLayout = global::EnixerPos.Mobile.Droid.Resource.Styleable.RecyclerView_reverseLayout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.RecyclerView_spanCount = global::EnixerPos.Mobile.Droid.Resource.Styleable.RecyclerView_spanCount;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.RecyclerView_stackFromEnd = global::EnixerPos.Mobile.Droid.Resource.Styleable.RecyclerView_stackFromEnd;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ScrimInsetsFrameLayout = global::EnixerPos.Mobile.Droid.Resource.Styleable.ScrimInsetsFrameLayout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground = global::EnixerPos.Mobile.Droid.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ScrollingViewBehavior_Layout = global::EnixerPos.Mobile.Droid.Resource.Styleable.ScrollingViewBehavior_Layout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ScrollingViewBehavior_Layout_behavior_overlapTop = global::EnixerPos.Mobile.Droid.Resource.Styleable.ScrollingViewBehavior_Layout_behavior_overlapTop;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.SearchView = global::EnixerPos.Mobile.Droid.Resource.Styleable.SearchView;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.SearchView_android_focusable = global::EnixerPos.Mobile.Droid.Resource.Styleable.SearchView_android_focusable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.SearchView_android_imeOptions = global::EnixerPos.Mobile.Droid.Resource.Styleable.SearchView_android_imeOptions;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.SearchView_android_inputType = global::EnixerPos.Mobile.Droid.Resource.Styleable.SearchView_android_inputType;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.SearchView_android_maxWidth = global::EnixerPos.Mobile.Droid.Resource.Styleable.SearchView_android_maxWidth;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.SearchView_closeIcon = global::EnixerPos.Mobile.Droid.Resource.Styleable.SearchView_closeIcon;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.SearchView_commitIcon = global::EnixerPos.Mobile.Droid.Resource.Styleable.SearchView_commitIcon;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.SearchView_defaultQueryHint = global::EnixerPos.Mobile.Droid.Resource.Styleable.SearchView_defaultQueryHint;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.SearchView_goIcon = global::EnixerPos.Mobile.Droid.Resource.Styleable.SearchView_goIcon;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.SearchView_iconifiedByDefault = global::EnixerPos.Mobile.Droid.Resource.Styleable.SearchView_iconifiedByDefault;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.SearchView_layout = global::EnixerPos.Mobile.Droid.Resource.Styleable.SearchView_layout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.SearchView_queryBackground = global::EnixerPos.Mobile.Droid.Resource.Styleable.SearchView_queryBackground;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.SearchView_queryHint = global::EnixerPos.Mobile.Droid.Resource.Styleable.SearchView_queryHint;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.SearchView_searchHintIcon = global::EnixerPos.Mobile.Droid.Resource.Styleable.SearchView_searchHintIcon;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.SearchView_searchIcon = global::EnixerPos.Mobile.Droid.Resource.Styleable.SearchView_searchIcon;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.SearchView_submitBackground = global::EnixerPos.Mobile.Droid.Resource.Styleable.SearchView_submitBackground;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.SearchView_suggestionRowLayout = global::EnixerPos.Mobile.Droid.Resource.Styleable.SearchView_suggestionRowLayout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.SearchView_voiceIcon = global::EnixerPos.Mobile.Droid.Resource.Styleable.SearchView_voiceIcon;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.SnackbarLayout = global::EnixerPos.Mobile.Droid.Resource.Styleable.SnackbarLayout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.SnackbarLayout_android_maxWidth = global::EnixerPos.Mobile.Droid.Resource.Styleable.SnackbarLayout_android_maxWidth;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.SnackbarLayout_elevation = global::EnixerPos.Mobile.Droid.Resource.Styleable.SnackbarLayout_elevation;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.SnackbarLayout_maxActionInlineWidth = global::EnixerPos.Mobile.Droid.Resource.Styleable.SnackbarLayout_maxActionInlineWidth;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.Spinner = global::EnixerPos.Mobile.Droid.Resource.Styleable.Spinner;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.Spinner_android_dropDownWidth = global::EnixerPos.Mobile.Droid.Resource.Styleable.Spinner_android_dropDownWidth;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.Spinner_android_entries = global::EnixerPos.Mobile.Droid.Resource.Styleable.Spinner_android_entries;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.Spinner_android_popupBackground = global::EnixerPos.Mobile.Droid.Resource.Styleable.Spinner_android_popupBackground;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.Spinner_android_prompt = global::EnixerPos.Mobile.Droid.Resource.Styleable.Spinner_android_prompt;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.Spinner_popupTheme = global::EnixerPos.Mobile.Droid.Resource.Styleable.Spinner_popupTheme;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.SwitchCompat = global::EnixerPos.Mobile.Droid.Resource.Styleable.SwitchCompat;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.SwitchCompat_android_textOff = global::EnixerPos.Mobile.Droid.Resource.Styleable.SwitchCompat_android_textOff;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.SwitchCompat_android_textOn = global::EnixerPos.Mobile.Droid.Resource.Styleable.SwitchCompat_android_textOn;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.SwitchCompat_android_thumb = global::EnixerPos.Mobile.Droid.Resource.Styleable.SwitchCompat_android_thumb;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.SwitchCompat_showText = global::EnixerPos.Mobile.Droid.Resource.Styleable.SwitchCompat_showText;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.SwitchCompat_splitTrack = global::EnixerPos.Mobile.Droid.Resource.Styleable.SwitchCompat_splitTrack;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.SwitchCompat_switchMinWidth = global::EnixerPos.Mobile.Droid.Resource.Styleable.SwitchCompat_switchMinWidth;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.SwitchCompat_switchPadding = global::EnixerPos.Mobile.Droid.Resource.Styleable.SwitchCompat_switchPadding;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.SwitchCompat_switchTextAppearance = global::EnixerPos.Mobile.Droid.Resource.Styleable.SwitchCompat_switchTextAppearance;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.SwitchCompat_thumbTextPadding = global::EnixerPos.Mobile.Droid.Resource.Styleable.SwitchCompat_thumbTextPadding;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.SwitchCompat_thumbTint = global::EnixerPos.Mobile.Droid.Resource.Styleable.SwitchCompat_thumbTint;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.SwitchCompat_thumbTintMode = global::EnixerPos.Mobile.Droid.Resource.Styleable.SwitchCompat_thumbTintMode;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.SwitchCompat_track = global::EnixerPos.Mobile.Droid.Resource.Styleable.SwitchCompat_track;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.SwitchCompat_trackTint = global::EnixerPos.Mobile.Droid.Resource.Styleable.SwitchCompat_trackTint;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.SwitchCompat_trackTintMode = global::EnixerPos.Mobile.Droid.Resource.Styleable.SwitchCompat_trackTintMode;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TabItem = global::EnixerPos.Mobile.Droid.Resource.Styleable.TabItem;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TabItem_android_icon = global::EnixerPos.Mobile.Droid.Resource.Styleable.TabItem_android_icon;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TabItem_android_layout = global::EnixerPos.Mobile.Droid.Resource.Styleable.TabItem_android_layout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TabItem_android_text = global::EnixerPos.Mobile.Droid.Resource.Styleable.TabItem_android_text;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TabLayout = global::EnixerPos.Mobile.Droid.Resource.Styleable.TabLayout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TabLayout_tabBackground = global::EnixerPos.Mobile.Droid.Resource.Styleable.TabLayout_tabBackground;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TabLayout_tabContentStart = global::EnixerPos.Mobile.Droid.Resource.Styleable.TabLayout_tabContentStart;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TabLayout_tabGravity = global::EnixerPos.Mobile.Droid.Resource.Styleable.TabLayout_tabGravity;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TabLayout_tabIndicatorColor = global::EnixerPos.Mobile.Droid.Resource.Styleable.TabLayout_tabIndicatorColor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TabLayout_tabIndicatorHeight = global::EnixerPos.Mobile.Droid.Resource.Styleable.TabLayout_tabIndicatorHeight;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TabLayout_tabMaxWidth = global::EnixerPos.Mobile.Droid.Resource.Styleable.TabLayout_tabMaxWidth;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TabLayout_tabMinWidth = global::EnixerPos.Mobile.Droid.Resource.Styleable.TabLayout_tabMinWidth;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TabLayout_tabMode = global::EnixerPos.Mobile.Droid.Resource.Styleable.TabLayout_tabMode;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TabLayout_tabPadding = global::EnixerPos.Mobile.Droid.Resource.Styleable.TabLayout_tabPadding;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TabLayout_tabPaddingBottom = global::EnixerPos.Mobile.Droid.Resource.Styleable.TabLayout_tabPaddingBottom;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TabLayout_tabPaddingEnd = global::EnixerPos.Mobile.Droid.Resource.Styleable.TabLayout_tabPaddingEnd;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TabLayout_tabPaddingStart = global::EnixerPos.Mobile.Droid.Resource.Styleable.TabLayout_tabPaddingStart;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TabLayout_tabPaddingTop = global::EnixerPos.Mobile.Droid.Resource.Styleable.TabLayout_tabPaddingTop;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TabLayout_tabSelectedTextColor = global::EnixerPos.Mobile.Droid.Resource.Styleable.TabLayout_tabSelectedTextColor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TabLayout_tabTextAppearance = global::EnixerPos.Mobile.Droid.Resource.Styleable.TabLayout_tabTextAppearance;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TabLayout_tabTextColor = global::EnixerPos.Mobile.Droid.Resource.Styleable.TabLayout_tabTextColor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TextAppearance = global::EnixerPos.Mobile.Droid.Resource.Styleable.TextAppearance;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TextAppearance_android_fontFamily = global::EnixerPos.Mobile.Droid.Resource.Styleable.TextAppearance_android_fontFamily;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TextAppearance_android_shadowColor = global::EnixerPos.Mobile.Droid.Resource.Styleable.TextAppearance_android_shadowColor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TextAppearance_android_shadowDx = global::EnixerPos.Mobile.Droid.Resource.Styleable.TextAppearance_android_shadowDx;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TextAppearance_android_shadowDy = global::EnixerPos.Mobile.Droid.Resource.Styleable.TextAppearance_android_shadowDy;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TextAppearance_android_shadowRadius = global::EnixerPos.Mobile.Droid.Resource.Styleable.TextAppearance_android_shadowRadius;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TextAppearance_android_textColor = global::EnixerPos.Mobile.Droid.Resource.Styleable.TextAppearance_android_textColor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TextAppearance_android_textColorHint = global::EnixerPos.Mobile.Droid.Resource.Styleable.TextAppearance_android_textColorHint;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TextAppearance_android_textColorLink = global::EnixerPos.Mobile.Droid.Resource.Styleable.TextAppearance_android_textColorLink;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TextAppearance_android_textSize = global::EnixerPos.Mobile.Droid.Resource.Styleable.TextAppearance_android_textSize;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TextAppearance_android_textStyle = global::EnixerPos.Mobile.Droid.Resource.Styleable.TextAppearance_android_textStyle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TextAppearance_android_typeface = global::EnixerPos.Mobile.Droid.Resource.Styleable.TextAppearance_android_typeface;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TextAppearance_fontFamily = global::EnixerPos.Mobile.Droid.Resource.Styleable.TextAppearance_fontFamily;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TextAppearance_textAllCaps = global::EnixerPos.Mobile.Droid.Resource.Styleable.TextAppearance_textAllCaps;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TextInputLayout = global::EnixerPos.Mobile.Droid.Resource.Styleable.TextInputLayout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TextInputLayout_android_hint = global::EnixerPos.Mobile.Droid.Resource.Styleable.TextInputLayout_android_hint;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TextInputLayout_android_textColorHint = global::EnixerPos.Mobile.Droid.Resource.Styleable.TextInputLayout_android_textColorHint;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TextInputLayout_counterEnabled = global::EnixerPos.Mobile.Droid.Resource.Styleable.TextInputLayout_counterEnabled;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TextInputLayout_counterMaxLength = global::EnixerPos.Mobile.Droid.Resource.Styleable.TextInputLayout_counterMaxLength;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TextInputLayout_counterOverflowTextAppearance = global::EnixerPos.Mobile.Droid.Resource.Styleable.TextInputLayout_counterOverflowTextAppearance;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TextInputLayout_counterTextAppearance = global::EnixerPos.Mobile.Droid.Resource.Styleable.TextInputLayout_counterTextAppearance;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TextInputLayout_errorEnabled = global::EnixerPos.Mobile.Droid.Resource.Styleable.TextInputLayout_errorEnabled;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TextInputLayout_errorTextAppearance = global::EnixerPos.Mobile.Droid.Resource.Styleable.TextInputLayout_errorTextAppearance;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TextInputLayout_hintAnimationEnabled = global::EnixerPos.Mobile.Droid.Resource.Styleable.TextInputLayout_hintAnimationEnabled;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TextInputLayout_hintEnabled = global::EnixerPos.Mobile.Droid.Resource.Styleable.TextInputLayout_hintEnabled;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TextInputLayout_hintTextAppearance = global::EnixerPos.Mobile.Droid.Resource.Styleable.TextInputLayout_hintTextAppearance;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TextInputLayout_passwordToggleContentDescription = global::EnixerPos.Mobile.Droid.Resource.Styleable.TextInputLayout_passwordToggleContentDescription;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TextInputLayout_passwordToggleDrawable = global::EnixerPos.Mobile.Droid.Resource.Styleable.TextInputLayout_passwordToggleDrawable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TextInputLayout_passwordToggleEnabled = global::EnixerPos.Mobile.Droid.Resource.Styleable.TextInputLayout_passwordToggleEnabled;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TextInputLayout_passwordToggleTint = global::EnixerPos.Mobile.Droid.Resource.Styleable.TextInputLayout_passwordToggleTint;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.TextInputLayout_passwordToggleTintMode = global::EnixerPos.Mobile.Droid.Resource.Styleable.TextInputLayout_passwordToggleTintMode;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.Toolbar = global::EnixerPos.Mobile.Droid.Resource.Styleable.Toolbar;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.Toolbar_android_gravity = global::EnixerPos.Mobile.Droid.Resource.Styleable.Toolbar_android_gravity;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.Toolbar_android_minHeight = global::EnixerPos.Mobile.Droid.Resource.Styleable.Toolbar_android_minHeight;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.Toolbar_buttonGravity = global::EnixerPos.Mobile.Droid.Resource.Styleable.Toolbar_buttonGravity;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.Toolbar_collapseContentDescription = global::EnixerPos.Mobile.Droid.Resource.Styleable.Toolbar_collapseContentDescription;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.Toolbar_collapseIcon = global::EnixerPos.Mobile.Droid.Resource.Styleable.Toolbar_collapseIcon;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.Toolbar_contentInsetEnd = global::EnixerPos.Mobile.Droid.Resource.Styleable.Toolbar_contentInsetEnd;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.Toolbar_contentInsetEndWithActions = global::EnixerPos.Mobile.Droid.Resource.Styleable.Toolbar_contentInsetEndWithActions;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.Toolbar_contentInsetLeft = global::EnixerPos.Mobile.Droid.Resource.Styleable.Toolbar_contentInsetLeft;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.Toolbar_contentInsetRight = global::EnixerPos.Mobile.Droid.Resource.Styleable.Toolbar_contentInsetRight;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.Toolbar_contentInsetStart = global::EnixerPos.Mobile.Droid.Resource.Styleable.Toolbar_contentInsetStart;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.Toolbar_contentInsetStartWithNavigation = global::EnixerPos.Mobile.Droid.Resource.Styleable.Toolbar_contentInsetStartWithNavigation;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.Toolbar_logo = global::EnixerPos.Mobile.Droid.Resource.Styleable.Toolbar_logo;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.Toolbar_logoDescription = global::EnixerPos.Mobile.Droid.Resource.Styleable.Toolbar_logoDescription;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.Toolbar_maxButtonHeight = global::EnixerPos.Mobile.Droid.Resource.Styleable.Toolbar_maxButtonHeight;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.Toolbar_navigationContentDescription = global::EnixerPos.Mobile.Droid.Resource.Styleable.Toolbar_navigationContentDescription;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.Toolbar_navigationIcon = global::EnixerPos.Mobile.Droid.Resource.Styleable.Toolbar_navigationIcon;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.Toolbar_popupTheme = global::EnixerPos.Mobile.Droid.Resource.Styleable.Toolbar_popupTheme;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.Toolbar_subtitle = global::EnixerPos.Mobile.Droid.Resource.Styleable.Toolbar_subtitle;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.Toolbar_subtitleTextAppearance = global::EnixerPos.Mobile.Droid.Resource.Styleable.Toolbar_subtitleTextAppearance;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.Toolbar_subtitleTextColor = global::EnixerPos.Mobile.Droid.Resource.Styleable.Toolbar_subtitleTextColor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.Toolbar_title = global::EnixerPos.Mobile.Droid.Resource.Styleable.Toolbar_title;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.Toolbar_titleMargin = global::EnixerPos.Mobile.Droid.Resource.Styleable.Toolbar_titleMargin;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.Toolbar_titleMarginBottom = global::EnixerPos.Mobile.Droid.Resource.Styleable.Toolbar_titleMarginBottom;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.Toolbar_titleMarginEnd = global::EnixerPos.Mobile.Droid.Resource.Styleable.Toolbar_titleMarginEnd;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.Toolbar_titleMargins = global::EnixerPos.Mobile.Droid.Resource.Styleable.Toolbar_titleMargins;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.Toolbar_titleMarginStart = global::EnixerPos.Mobile.Droid.Resource.Styleable.Toolbar_titleMarginStart;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.Toolbar_titleMarginTop = global::EnixerPos.Mobile.Droid.Resource.Styleable.Toolbar_titleMarginTop;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.Toolbar_titleTextAppearance = global::EnixerPos.Mobile.Droid.Resource.Styleable.Toolbar_titleTextAppearance;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.Toolbar_titleTextColor = global::EnixerPos.Mobile.Droid.Resource.Styleable.Toolbar_titleTextColor;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.View = global::EnixerPos.Mobile.Droid.Resource.Styleable.View;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ViewBackgroundHelper = global::EnixerPos.Mobile.Droid.Resource.Styleable.ViewBackgroundHelper;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ViewBackgroundHelper_android_background = global::EnixerPos.Mobile.Droid.Resource.Styleable.ViewBackgroundHelper_android_background;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTint = global::EnixerPos.Mobile.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTint;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode = global::EnixerPos.Mobile.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ViewStubCompat = global::EnixerPos.Mobile.Droid.Resource.Styleable.ViewStubCompat;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ViewStubCompat_android_id = global::EnixerPos.Mobile.Droid.Resource.Styleable.ViewStubCompat_android_id;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId = global::EnixerPos.Mobile.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.ViewStubCompat_android_layout = global::EnixerPos.Mobile.Droid.Resource.Styleable.ViewStubCompat_android_layout;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.View_android_focusable = global::EnixerPos.Mobile.Droid.Resource.Styleable.View_android_focusable;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.View_android_theme = global::EnixerPos.Mobile.Droid.Resource.Styleable.View_android_theme;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.View_paddingEnd = global::EnixerPos.Mobile.Droid.Resource.Styleable.View_paddingEnd;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.View_paddingStart = global::EnixerPos.Mobile.Droid.Resource.Styleable.View_paddingStart;
+			global::Sharpnado.Presentation.Forms.Droid.Resource.Styleable.View_theme = global::EnixerPos.Mobile.Droid.Resource.Styleable.View_theme;
 			global::Xamarin.Essentials.Resource.Attribute.alpha = global::EnixerPos.Mobile.Droid.Resource.Attribute.alpha;
 			global::Xamarin.Essentials.Resource.Attribute.coordinatorLayoutStyle = global::EnixerPos.Mobile.Droid.Resource.Attribute.coordinatorLayoutStyle;
 			global::Xamarin.Essentials.Resource.Attribute.font = global::EnixerPos.Mobile.Droid.Resource.Attribute.font;
@@ -12695,763 +14934,772 @@ namespace EnixerPos.Mobile.Droid
 			public const int back = 2131165277;
 			
 			// aapt resource value: 0x7F07005E
-			public const int Cash = 2131165278;
+			public const int bottom_shadow = 2131165278;
 			
 			// aapt resource value: 0x7F07005F
-			public const int Credit = 2131165279;
+			public const int Cash = 2131165279;
 			
 			// aapt resource value: 0x7F070060
-			public const int Debit = 2131165280;
+			public const int Credit = 2131165280;
 			
 			// aapt resource value: 0x7F070061
-			public const int design_bottom_navigation_item_background = 2131165281;
+			public const int Debit = 2131165281;
 			
 			// aapt resource value: 0x7F070062
-			public const int design_fab_background = 2131165282;
+			public const int design_bottom_navigation_item_background = 2131165282;
 			
 			// aapt resource value: 0x7F070063
-			public const int design_ic_visibility = 2131165283;
+			public const int design_fab_background = 2131165283;
 			
 			// aapt resource value: 0x7F070064
-			public const int design_ic_visibility_off = 2131165284;
+			public const int design_ic_visibility = 2131165284;
 			
 			// aapt resource value: 0x7F070065
-			public const int design_password_eye = 2131165285;
+			public const int design_ic_visibility_off = 2131165285;
 			
 			// aapt resource value: 0x7F070066
-			public const int design_snackbar_background = 2131165286;
+			public const int design_password_eye = 2131165286;
 			
 			// aapt resource value: 0x7F070067
-			public const int discount = 2131165287;
+			public const int design_snackbar_background = 2131165287;
 			
 			// aapt resource value: 0x7F070068
-			public const int Down = 2131165288;
-			
-			// aapt resource value: 0x7F07012D
-			public const int iconcheckmark = 2131165485;
-			
-			// aapt resource value: 0x7F07012E
-			public const int iconsprint = 2131165486;
-			
-			// aapt resource value: 0x7F07012F
-			public const int iconstimemachine = 2131165487;
-			
-			// aapt resource value: 0x7F07011D
-			public const int icon_cart = 2131165469;
-			
-			// aapt resource value: 0x7F07011E
-			public const int icon_clock = 2131165470;
-			
-			// aapt resource value: 0x7F07011F
-			public const int icon_Correct = 2131165471;
-			
-			// aapt resource value: 0x7F070120
-			public const int icon_dot_menu = 2131165472;
-			
-			// aapt resource value: 0x7F070121
-			public const int icon_Error = 2131165473;
-			
-			// aapt resource value: 0x7F070122
-			public const int icon_gear = 2131165474;
-			
-			// aapt resource value: 0x7F070123
-			public const int icon_hamburger = 2131165475;
-			
-			// aapt resource value: 0x7F070124
-			public const int icon_left = 2131165476;
-			
-			// aapt resource value: 0x7F070125
-			public const int icon_list = 2131165477;
-			
-			// aapt resource value: 0x7F070126
-			public const int icon_lock_circle = 2131165478;
-			
-			// aapt resource value: 0x7F070127
-			public const int icon_receipt = 2131165479;
-			
-			// aapt resource value: 0x7F070128
-			public const int icon_search_2 = 2131165480;
-			
-			// aapt resource value: 0x7F070129
-			public const int icon_tag = 2131165481;
-			
-			// aapt resource value: 0x7F07012A
-			public const int icon_user_add = 2131165482;
-			
-			// aapt resource value: 0x7F07012B
-			public const int icon_Warning = 2131165483;
-			
-			// aapt resource value: 0x7F07012C
-			public const int Icon_x = 2131165484;
+			public const int discount = 2131165288;
 			
 			// aapt resource value: 0x7F070069
-			public const int ic_audiotrack_dark = 2131165289;
+			public const int Down = 2131165289;
 			
-			// aapt resource value: 0x7F07006A
-			public const int ic_audiotrack_light = 2131165290;
+			// aapt resource value: 0x7F07012E
+			public const int iconcheckmark = 2131165486;
 			
-			// aapt resource value: 0x7F07006B
-			public const int ic_dialog_close_dark = 2131165291;
-			
-			// aapt resource value: 0x7F07006C
-			public const int ic_dialog_close_light = 2131165292;
-			
-			// aapt resource value: 0x7F07006D
-			public const int ic_group_collapse_00 = 2131165293;
-			
-			// aapt resource value: 0x7F07006E
-			public const int ic_group_collapse_01 = 2131165294;
-			
-			// aapt resource value: 0x7F07006F
-			public const int ic_group_collapse_02 = 2131165295;
-			
-			// aapt resource value: 0x7F070070
-			public const int ic_group_collapse_03 = 2131165296;
-			
-			// aapt resource value: 0x7F070071
-			public const int ic_group_collapse_04 = 2131165297;
-			
-			// aapt resource value: 0x7F070072
-			public const int ic_group_collapse_05 = 2131165298;
-			
-			// aapt resource value: 0x7F070073
-			public const int ic_group_collapse_06 = 2131165299;
-			
-			// aapt resource value: 0x7F070074
-			public const int ic_group_collapse_07 = 2131165300;
-			
-			// aapt resource value: 0x7F070075
-			public const int ic_group_collapse_08 = 2131165301;
-			
-			// aapt resource value: 0x7F070076
-			public const int ic_group_collapse_09 = 2131165302;
-			
-			// aapt resource value: 0x7F070077
-			public const int ic_group_collapse_10 = 2131165303;
-			
-			// aapt resource value: 0x7F070078
-			public const int ic_group_collapse_11 = 2131165304;
-			
-			// aapt resource value: 0x7F070079
-			public const int ic_group_collapse_12 = 2131165305;
-			
-			// aapt resource value: 0x7F07007A
-			public const int ic_group_collapse_13 = 2131165306;
-			
-			// aapt resource value: 0x7F07007B
-			public const int ic_group_collapse_14 = 2131165307;
-			
-			// aapt resource value: 0x7F07007C
-			public const int ic_group_collapse_15 = 2131165308;
-			
-			// aapt resource value: 0x7F07007D
-			public const int ic_group_expand_00 = 2131165309;
-			
-			// aapt resource value: 0x7F07007E
-			public const int ic_group_expand_01 = 2131165310;
-			
-			// aapt resource value: 0x7F07007F
-			public const int ic_group_expand_02 = 2131165311;
-			
-			// aapt resource value: 0x7F070080
-			public const int ic_group_expand_03 = 2131165312;
-			
-			// aapt resource value: 0x7F070081
-			public const int ic_group_expand_04 = 2131165313;
-			
-			// aapt resource value: 0x7F070082
-			public const int ic_group_expand_05 = 2131165314;
-			
-			// aapt resource value: 0x7F070083
-			public const int ic_group_expand_06 = 2131165315;
-			
-			// aapt resource value: 0x7F070084
-			public const int ic_group_expand_07 = 2131165316;
-			
-			// aapt resource value: 0x7F070085
-			public const int ic_group_expand_08 = 2131165317;
-			
-			// aapt resource value: 0x7F070086
-			public const int ic_group_expand_09 = 2131165318;
-			
-			// aapt resource value: 0x7F070087
-			public const int ic_group_expand_10 = 2131165319;
-			
-			// aapt resource value: 0x7F070088
-			public const int ic_group_expand_11 = 2131165320;
-			
-			// aapt resource value: 0x7F070089
-			public const int ic_group_expand_12 = 2131165321;
-			
-			// aapt resource value: 0x7F07008A
-			public const int ic_group_expand_13 = 2131165322;
-			
-			// aapt resource value: 0x7F07008B
-			public const int ic_group_expand_14 = 2131165323;
-			
-			// aapt resource value: 0x7F07008C
-			public const int ic_group_expand_15 = 2131165324;
-			
-			// aapt resource value: 0x7F07008D
-			public const int ic_media_pause_dark = 2131165325;
-			
-			// aapt resource value: 0x7F07008E
-			public const int ic_media_pause_light = 2131165326;
-			
-			// aapt resource value: 0x7F07008F
-			public const int ic_media_play_dark = 2131165327;
-			
-			// aapt resource value: 0x7F070090
-			public const int ic_media_play_light = 2131165328;
-			
-			// aapt resource value: 0x7F070091
-			public const int ic_media_stop_dark = 2131165329;
-			
-			// aapt resource value: 0x7F070092
-			public const int ic_media_stop_light = 2131165330;
-			
-			// aapt resource value: 0x7F070093
-			public const int ic_mr_button_connected_00_dark = 2131165331;
-			
-			// aapt resource value: 0x7F070094
-			public const int ic_mr_button_connected_00_light = 2131165332;
-			
-			// aapt resource value: 0x7F070095
-			public const int ic_mr_button_connected_01_dark = 2131165333;
-			
-			// aapt resource value: 0x7F070096
-			public const int ic_mr_button_connected_01_light = 2131165334;
-			
-			// aapt resource value: 0x7F070097
-			public const int ic_mr_button_connected_02_dark = 2131165335;
-			
-			// aapt resource value: 0x7F070098
-			public const int ic_mr_button_connected_02_light = 2131165336;
-			
-			// aapt resource value: 0x7F070099
-			public const int ic_mr_button_connected_03_dark = 2131165337;
-			
-			// aapt resource value: 0x7F07009A
-			public const int ic_mr_button_connected_03_light = 2131165338;
-			
-			// aapt resource value: 0x7F07009B
-			public const int ic_mr_button_connected_04_dark = 2131165339;
-			
-			// aapt resource value: 0x7F07009C
-			public const int ic_mr_button_connected_04_light = 2131165340;
-			
-			// aapt resource value: 0x7F07009D
-			public const int ic_mr_button_connected_05_dark = 2131165341;
-			
-			// aapt resource value: 0x7F07009E
-			public const int ic_mr_button_connected_05_light = 2131165342;
-			
-			// aapt resource value: 0x7F07009F
-			public const int ic_mr_button_connected_06_dark = 2131165343;
-			
-			// aapt resource value: 0x7F0700A0
-			public const int ic_mr_button_connected_06_light = 2131165344;
-			
-			// aapt resource value: 0x7F0700A1
-			public const int ic_mr_button_connected_07_dark = 2131165345;
-			
-			// aapt resource value: 0x7F0700A2
-			public const int ic_mr_button_connected_07_light = 2131165346;
-			
-			// aapt resource value: 0x7F0700A3
-			public const int ic_mr_button_connected_08_dark = 2131165347;
-			
-			// aapt resource value: 0x7F0700A4
-			public const int ic_mr_button_connected_08_light = 2131165348;
-			
-			// aapt resource value: 0x7F0700A5
-			public const int ic_mr_button_connected_09_dark = 2131165349;
-			
-			// aapt resource value: 0x7F0700A6
-			public const int ic_mr_button_connected_09_light = 2131165350;
-			
-			// aapt resource value: 0x7F0700A7
-			public const int ic_mr_button_connected_10_dark = 2131165351;
-			
-			// aapt resource value: 0x7F0700A8
-			public const int ic_mr_button_connected_10_light = 2131165352;
-			
-			// aapt resource value: 0x7F0700A9
-			public const int ic_mr_button_connected_11_dark = 2131165353;
-			
-			// aapt resource value: 0x7F0700AA
-			public const int ic_mr_button_connected_11_light = 2131165354;
-			
-			// aapt resource value: 0x7F0700AB
-			public const int ic_mr_button_connected_12_dark = 2131165355;
-			
-			// aapt resource value: 0x7F0700AC
-			public const int ic_mr_button_connected_12_light = 2131165356;
-			
-			// aapt resource value: 0x7F0700AD
-			public const int ic_mr_button_connected_13_dark = 2131165357;
-			
-			// aapt resource value: 0x7F0700AE
-			public const int ic_mr_button_connected_13_light = 2131165358;
-			
-			// aapt resource value: 0x7F0700AF
-			public const int ic_mr_button_connected_14_dark = 2131165359;
-			
-			// aapt resource value: 0x7F0700B0
-			public const int ic_mr_button_connected_14_light = 2131165360;
-			
-			// aapt resource value: 0x7F0700B1
-			public const int ic_mr_button_connected_15_dark = 2131165361;
-			
-			// aapt resource value: 0x7F0700B2
-			public const int ic_mr_button_connected_15_light = 2131165362;
-			
-			// aapt resource value: 0x7F0700B3
-			public const int ic_mr_button_connected_16_dark = 2131165363;
-			
-			// aapt resource value: 0x7F0700B4
-			public const int ic_mr_button_connected_16_light = 2131165364;
-			
-			// aapt resource value: 0x7F0700B5
-			public const int ic_mr_button_connected_17_dark = 2131165365;
-			
-			// aapt resource value: 0x7F0700B6
-			public const int ic_mr_button_connected_17_light = 2131165366;
-			
-			// aapt resource value: 0x7F0700B7
-			public const int ic_mr_button_connected_18_dark = 2131165367;
-			
-			// aapt resource value: 0x7F0700B8
-			public const int ic_mr_button_connected_18_light = 2131165368;
-			
-			// aapt resource value: 0x7F0700B9
-			public const int ic_mr_button_connected_19_dark = 2131165369;
-			
-			// aapt resource value: 0x7F0700BA
-			public const int ic_mr_button_connected_19_light = 2131165370;
-			
-			// aapt resource value: 0x7F0700BB
-			public const int ic_mr_button_connected_20_dark = 2131165371;
-			
-			// aapt resource value: 0x7F0700BC
-			public const int ic_mr_button_connected_20_light = 2131165372;
-			
-			// aapt resource value: 0x7F0700BD
-			public const int ic_mr_button_connected_21_dark = 2131165373;
-			
-			// aapt resource value: 0x7F0700BE
-			public const int ic_mr_button_connected_21_light = 2131165374;
-			
-			// aapt resource value: 0x7F0700BF
-			public const int ic_mr_button_connected_22_dark = 2131165375;
-			
-			// aapt resource value: 0x7F0700C0
-			public const int ic_mr_button_connected_22_light = 2131165376;
-			
-			// aapt resource value: 0x7F0700C1
-			public const int ic_mr_button_connected_23_dark = 2131165377;
-			
-			// aapt resource value: 0x7F0700C2
-			public const int ic_mr_button_connected_23_light = 2131165378;
-			
-			// aapt resource value: 0x7F0700C3
-			public const int ic_mr_button_connected_24_dark = 2131165379;
-			
-			// aapt resource value: 0x7F0700C4
-			public const int ic_mr_button_connected_24_light = 2131165380;
-			
-			// aapt resource value: 0x7F0700C5
-			public const int ic_mr_button_connected_25_dark = 2131165381;
-			
-			// aapt resource value: 0x7F0700C6
-			public const int ic_mr_button_connected_25_light = 2131165382;
-			
-			// aapt resource value: 0x7F0700C7
-			public const int ic_mr_button_connected_26_dark = 2131165383;
-			
-			// aapt resource value: 0x7F0700C8
-			public const int ic_mr_button_connected_26_light = 2131165384;
-			
-			// aapt resource value: 0x7F0700C9
-			public const int ic_mr_button_connected_27_dark = 2131165385;
-			
-			// aapt resource value: 0x7F0700CA
-			public const int ic_mr_button_connected_27_light = 2131165386;
-			
-			// aapt resource value: 0x7F0700CB
-			public const int ic_mr_button_connected_28_dark = 2131165387;
-			
-			// aapt resource value: 0x7F0700CC
-			public const int ic_mr_button_connected_28_light = 2131165388;
-			
-			// aapt resource value: 0x7F0700CD
-			public const int ic_mr_button_connected_29_dark = 2131165389;
-			
-			// aapt resource value: 0x7F0700CE
-			public const int ic_mr_button_connected_29_light = 2131165390;
-			
-			// aapt resource value: 0x7F0700CF
-			public const int ic_mr_button_connected_30_dark = 2131165391;
-			
-			// aapt resource value: 0x7F0700D0
-			public const int ic_mr_button_connected_30_light = 2131165392;
-			
-			// aapt resource value: 0x7F0700D1
-			public const int ic_mr_button_connecting_00_dark = 2131165393;
-			
-			// aapt resource value: 0x7F0700D2
-			public const int ic_mr_button_connecting_00_light = 2131165394;
-			
-			// aapt resource value: 0x7F0700D3
-			public const int ic_mr_button_connecting_01_dark = 2131165395;
-			
-			// aapt resource value: 0x7F0700D4
-			public const int ic_mr_button_connecting_01_light = 2131165396;
-			
-			// aapt resource value: 0x7F0700D5
-			public const int ic_mr_button_connecting_02_dark = 2131165397;
-			
-			// aapt resource value: 0x7F0700D6
-			public const int ic_mr_button_connecting_02_light = 2131165398;
-			
-			// aapt resource value: 0x7F0700D7
-			public const int ic_mr_button_connecting_03_dark = 2131165399;
-			
-			// aapt resource value: 0x7F0700D8
-			public const int ic_mr_button_connecting_03_light = 2131165400;
-			
-			// aapt resource value: 0x7F0700D9
-			public const int ic_mr_button_connecting_04_dark = 2131165401;
-			
-			// aapt resource value: 0x7F0700DA
-			public const int ic_mr_button_connecting_04_light = 2131165402;
-			
-			// aapt resource value: 0x7F0700DB
-			public const int ic_mr_button_connecting_05_dark = 2131165403;
-			
-			// aapt resource value: 0x7F0700DC
-			public const int ic_mr_button_connecting_05_light = 2131165404;
-			
-			// aapt resource value: 0x7F0700DD
-			public const int ic_mr_button_connecting_06_dark = 2131165405;
-			
-			// aapt resource value: 0x7F0700DE
-			public const int ic_mr_button_connecting_06_light = 2131165406;
-			
-			// aapt resource value: 0x7F0700DF
-			public const int ic_mr_button_connecting_07_dark = 2131165407;
-			
-			// aapt resource value: 0x7F0700E0
-			public const int ic_mr_button_connecting_07_light = 2131165408;
-			
-			// aapt resource value: 0x7F0700E1
-			public const int ic_mr_button_connecting_08_dark = 2131165409;
-			
-			// aapt resource value: 0x7F0700E2
-			public const int ic_mr_button_connecting_08_light = 2131165410;
-			
-			// aapt resource value: 0x7F0700E3
-			public const int ic_mr_button_connecting_09_dark = 2131165411;
-			
-			// aapt resource value: 0x7F0700E4
-			public const int ic_mr_button_connecting_09_light = 2131165412;
-			
-			// aapt resource value: 0x7F0700E5
-			public const int ic_mr_button_connecting_10_dark = 2131165413;
-			
-			// aapt resource value: 0x7F0700E6
-			public const int ic_mr_button_connecting_10_light = 2131165414;
-			
-			// aapt resource value: 0x7F0700E7
-			public const int ic_mr_button_connecting_11_dark = 2131165415;
-			
-			// aapt resource value: 0x7F0700E8
-			public const int ic_mr_button_connecting_11_light = 2131165416;
-			
-			// aapt resource value: 0x7F0700E9
-			public const int ic_mr_button_connecting_12_dark = 2131165417;
-			
-			// aapt resource value: 0x7F0700EA
-			public const int ic_mr_button_connecting_12_light = 2131165418;
-			
-			// aapt resource value: 0x7F0700EB
-			public const int ic_mr_button_connecting_13_dark = 2131165419;
-			
-			// aapt resource value: 0x7F0700EC
-			public const int ic_mr_button_connecting_13_light = 2131165420;
-			
-			// aapt resource value: 0x7F0700ED
-			public const int ic_mr_button_connecting_14_dark = 2131165421;
-			
-			// aapt resource value: 0x7F0700EE
-			public const int ic_mr_button_connecting_14_light = 2131165422;
-			
-			// aapt resource value: 0x7F0700EF
-			public const int ic_mr_button_connecting_15_dark = 2131165423;
-			
-			// aapt resource value: 0x7F0700F0
-			public const int ic_mr_button_connecting_15_light = 2131165424;
-			
-			// aapt resource value: 0x7F0700F1
-			public const int ic_mr_button_connecting_16_dark = 2131165425;
-			
-			// aapt resource value: 0x7F0700F2
-			public const int ic_mr_button_connecting_16_light = 2131165426;
-			
-			// aapt resource value: 0x7F0700F3
-			public const int ic_mr_button_connecting_17_dark = 2131165427;
-			
-			// aapt resource value: 0x7F0700F4
-			public const int ic_mr_button_connecting_17_light = 2131165428;
-			
-			// aapt resource value: 0x7F0700F5
-			public const int ic_mr_button_connecting_18_dark = 2131165429;
-			
-			// aapt resource value: 0x7F0700F6
-			public const int ic_mr_button_connecting_18_light = 2131165430;
-			
-			// aapt resource value: 0x7F0700F7
-			public const int ic_mr_button_connecting_19_dark = 2131165431;
-			
-			// aapt resource value: 0x7F0700F8
-			public const int ic_mr_button_connecting_19_light = 2131165432;
-			
-			// aapt resource value: 0x7F0700F9
-			public const int ic_mr_button_connecting_20_dark = 2131165433;
-			
-			// aapt resource value: 0x7F0700FA
-			public const int ic_mr_button_connecting_20_light = 2131165434;
-			
-			// aapt resource value: 0x7F0700FB
-			public const int ic_mr_button_connecting_21_dark = 2131165435;
-			
-			// aapt resource value: 0x7F0700FC
-			public const int ic_mr_button_connecting_21_light = 2131165436;
-			
-			// aapt resource value: 0x7F0700FD
-			public const int ic_mr_button_connecting_22_dark = 2131165437;
-			
-			// aapt resource value: 0x7F0700FE
-			public const int ic_mr_button_connecting_22_light = 2131165438;
-			
-			// aapt resource value: 0x7F0700FF
-			public const int ic_mr_button_connecting_23_dark = 2131165439;
-			
-			// aapt resource value: 0x7F070100
-			public const int ic_mr_button_connecting_23_light = 2131165440;
-			
-			// aapt resource value: 0x7F070101
-			public const int ic_mr_button_connecting_24_dark = 2131165441;
-			
-			// aapt resource value: 0x7F070102
-			public const int ic_mr_button_connecting_24_light = 2131165442;
-			
-			// aapt resource value: 0x7F070103
-			public const int ic_mr_button_connecting_25_dark = 2131165443;
-			
-			// aapt resource value: 0x7F070104
-			public const int ic_mr_button_connecting_25_light = 2131165444;
-			
-			// aapt resource value: 0x7F070105
-			public const int ic_mr_button_connecting_26_dark = 2131165445;
-			
-			// aapt resource value: 0x7F070106
-			public const int ic_mr_button_connecting_26_light = 2131165446;
-			
-			// aapt resource value: 0x7F070107
-			public const int ic_mr_button_connecting_27_dark = 2131165447;
-			
-			// aapt resource value: 0x7F070108
-			public const int ic_mr_button_connecting_27_light = 2131165448;
-			
-			// aapt resource value: 0x7F070109
-			public const int ic_mr_button_connecting_28_dark = 2131165449;
-			
-			// aapt resource value: 0x7F07010A
-			public const int ic_mr_button_connecting_28_light = 2131165450;
-			
-			// aapt resource value: 0x7F07010B
-			public const int ic_mr_button_connecting_29_dark = 2131165451;
-			
-			// aapt resource value: 0x7F07010C
-			public const int ic_mr_button_connecting_29_light = 2131165452;
-			
-			// aapt resource value: 0x7F07010D
-			public const int ic_mr_button_connecting_30_dark = 2131165453;
-			
-			// aapt resource value: 0x7F07010E
-			public const int ic_mr_button_connecting_30_light = 2131165454;
-			
-			// aapt resource value: 0x7F07010F
-			public const int ic_mr_button_disabled_dark = 2131165455;
-			
-			// aapt resource value: 0x7F070110
-			public const int ic_mr_button_disabled_light = 2131165456;
-			
-			// aapt resource value: 0x7F070111
-			public const int ic_mr_button_disconnected_dark = 2131165457;
-			
-			// aapt resource value: 0x7F070112
-			public const int ic_mr_button_disconnected_light = 2131165458;
-			
-			// aapt resource value: 0x7F070113
-			public const int ic_mr_button_grey = 2131165459;
-			
-			// aapt resource value: 0x7F070114
-			public const int ic_mtrl_chip_checked_black = 2131165460;
-			
-			// aapt resource value: 0x7F070115
-			public const int ic_mtrl_chip_checked_circle = 2131165461;
-			
-			// aapt resource value: 0x7F070116
-			public const int ic_mtrl_chip_close_circle = 2131165462;
-			
-			// aapt resource value: 0x7F070117
-			public const int ic_vol_type_speaker_dark = 2131165463;
-			
-			// aapt resource value: 0x7F070118
-			public const int ic_vol_type_speaker_group_dark = 2131165464;
-			
-			// aapt resource value: 0x7F070119
-			public const int ic_vol_type_speaker_group_light = 2131165465;
-			
-			// aapt resource value: 0x7F07011A
-			public const int ic_vol_type_speaker_light = 2131165466;
-			
-			// aapt resource value: 0x7F07011B
-			public const int ic_vol_type_tv_dark = 2131165467;
-			
-			// aapt resource value: 0x7F07011C
-			public const int ic_vol_type_tv_light = 2131165468;
+			// aapt resource value: 0x7F07012F
+			public const int iconscustermerandroid = 2131165487;
 			
 			// aapt resource value: 0x7F070130
-			public const int loading = 2131165488;
+			public const int iconsprint = 2131165488;
 			
 			// aapt resource value: 0x7F070131
-			public const int logo = 2131165489;
+			public const int iconstimemachine = 2131165489;
+			
+			// aapt resource value: 0x7F07011E
+			public const int icon_cart = 2131165470;
+			
+			// aapt resource value: 0x7F07011F
+			public const int icon_clock = 2131165471;
+			
+			// aapt resource value: 0x7F070120
+			public const int icon_Correct = 2131165472;
+			
+			// aapt resource value: 0x7F070121
+			public const int icon_dot_menu = 2131165473;
+			
+			// aapt resource value: 0x7F070122
+			public const int icon_Error = 2131165474;
+			
+			// aapt resource value: 0x7F070123
+			public const int icon_gear = 2131165475;
+			
+			// aapt resource value: 0x7F070124
+			public const int icon_hamburger = 2131165476;
+			
+			// aapt resource value: 0x7F070125
+			public const int icon_left = 2131165477;
+			
+			// aapt resource value: 0x7F070126
+			public const int icon_list = 2131165478;
+			
+			// aapt resource value: 0x7F070127
+			public const int icon_lock_circle = 2131165479;
+			
+			// aapt resource value: 0x7F070128
+			public const int icon_receipt = 2131165480;
+			
+			// aapt resource value: 0x7F070129
+			public const int icon_search_2 = 2131165481;
+			
+			// aapt resource value: 0x7F07012A
+			public const int icon_tag = 2131165482;
+			
+			// aapt resource value: 0x7F07012B
+			public const int icon_user_add = 2131165483;
+			
+			// aapt resource value: 0x7F07012C
+			public const int icon_Warning = 2131165484;
+			
+			// aapt resource value: 0x7F07012D
+			public const int Icon_x = 2131165485;
+			
+			// aapt resource value: 0x7F07006A
+			public const int ic_audiotrack_dark = 2131165290;
+			
+			// aapt resource value: 0x7F07006B
+			public const int ic_audiotrack_light = 2131165291;
+			
+			// aapt resource value: 0x7F07006C
+			public const int ic_dialog_close_dark = 2131165292;
+			
+			// aapt resource value: 0x7F07006D
+			public const int ic_dialog_close_light = 2131165293;
+			
+			// aapt resource value: 0x7F07006E
+			public const int ic_group_collapse_00 = 2131165294;
+			
+			// aapt resource value: 0x7F07006F
+			public const int ic_group_collapse_01 = 2131165295;
+			
+			// aapt resource value: 0x7F070070
+			public const int ic_group_collapse_02 = 2131165296;
+			
+			// aapt resource value: 0x7F070071
+			public const int ic_group_collapse_03 = 2131165297;
+			
+			// aapt resource value: 0x7F070072
+			public const int ic_group_collapse_04 = 2131165298;
+			
+			// aapt resource value: 0x7F070073
+			public const int ic_group_collapse_05 = 2131165299;
+			
+			// aapt resource value: 0x7F070074
+			public const int ic_group_collapse_06 = 2131165300;
+			
+			// aapt resource value: 0x7F070075
+			public const int ic_group_collapse_07 = 2131165301;
+			
+			// aapt resource value: 0x7F070076
+			public const int ic_group_collapse_08 = 2131165302;
+			
+			// aapt resource value: 0x7F070077
+			public const int ic_group_collapse_09 = 2131165303;
+			
+			// aapt resource value: 0x7F070078
+			public const int ic_group_collapse_10 = 2131165304;
+			
+			// aapt resource value: 0x7F070079
+			public const int ic_group_collapse_11 = 2131165305;
+			
+			// aapt resource value: 0x7F07007A
+			public const int ic_group_collapse_12 = 2131165306;
+			
+			// aapt resource value: 0x7F07007B
+			public const int ic_group_collapse_13 = 2131165307;
+			
+			// aapt resource value: 0x7F07007C
+			public const int ic_group_collapse_14 = 2131165308;
+			
+			// aapt resource value: 0x7F07007D
+			public const int ic_group_collapse_15 = 2131165309;
+			
+			// aapt resource value: 0x7F07007E
+			public const int ic_group_expand_00 = 2131165310;
+			
+			// aapt resource value: 0x7F07007F
+			public const int ic_group_expand_01 = 2131165311;
+			
+			// aapt resource value: 0x7F070080
+			public const int ic_group_expand_02 = 2131165312;
+			
+			// aapt resource value: 0x7F070081
+			public const int ic_group_expand_03 = 2131165313;
+			
+			// aapt resource value: 0x7F070082
+			public const int ic_group_expand_04 = 2131165314;
+			
+			// aapt resource value: 0x7F070083
+			public const int ic_group_expand_05 = 2131165315;
+			
+			// aapt resource value: 0x7F070084
+			public const int ic_group_expand_06 = 2131165316;
+			
+			// aapt resource value: 0x7F070085
+			public const int ic_group_expand_07 = 2131165317;
+			
+			// aapt resource value: 0x7F070086
+			public const int ic_group_expand_08 = 2131165318;
+			
+			// aapt resource value: 0x7F070087
+			public const int ic_group_expand_09 = 2131165319;
+			
+			// aapt resource value: 0x7F070088
+			public const int ic_group_expand_10 = 2131165320;
+			
+			// aapt resource value: 0x7F070089
+			public const int ic_group_expand_11 = 2131165321;
+			
+			// aapt resource value: 0x7F07008A
+			public const int ic_group_expand_12 = 2131165322;
+			
+			// aapt resource value: 0x7F07008B
+			public const int ic_group_expand_13 = 2131165323;
+			
+			// aapt resource value: 0x7F07008C
+			public const int ic_group_expand_14 = 2131165324;
+			
+			// aapt resource value: 0x7F07008D
+			public const int ic_group_expand_15 = 2131165325;
+			
+			// aapt resource value: 0x7F07008E
+			public const int ic_media_pause_dark = 2131165326;
+			
+			// aapt resource value: 0x7F07008F
+			public const int ic_media_pause_light = 2131165327;
+			
+			// aapt resource value: 0x7F070090
+			public const int ic_media_play_dark = 2131165328;
+			
+			// aapt resource value: 0x7F070091
+			public const int ic_media_play_light = 2131165329;
+			
+			// aapt resource value: 0x7F070092
+			public const int ic_media_stop_dark = 2131165330;
+			
+			// aapt resource value: 0x7F070093
+			public const int ic_media_stop_light = 2131165331;
+			
+			// aapt resource value: 0x7F070094
+			public const int ic_mr_button_connected_00_dark = 2131165332;
+			
+			// aapt resource value: 0x7F070095
+			public const int ic_mr_button_connected_00_light = 2131165333;
+			
+			// aapt resource value: 0x7F070096
+			public const int ic_mr_button_connected_01_dark = 2131165334;
+			
+			// aapt resource value: 0x7F070097
+			public const int ic_mr_button_connected_01_light = 2131165335;
+			
+			// aapt resource value: 0x7F070098
+			public const int ic_mr_button_connected_02_dark = 2131165336;
+			
+			// aapt resource value: 0x7F070099
+			public const int ic_mr_button_connected_02_light = 2131165337;
+			
+			// aapt resource value: 0x7F07009A
+			public const int ic_mr_button_connected_03_dark = 2131165338;
+			
+			// aapt resource value: 0x7F07009B
+			public const int ic_mr_button_connected_03_light = 2131165339;
+			
+			// aapt resource value: 0x7F07009C
+			public const int ic_mr_button_connected_04_dark = 2131165340;
+			
+			// aapt resource value: 0x7F07009D
+			public const int ic_mr_button_connected_04_light = 2131165341;
+			
+			// aapt resource value: 0x7F07009E
+			public const int ic_mr_button_connected_05_dark = 2131165342;
+			
+			// aapt resource value: 0x7F07009F
+			public const int ic_mr_button_connected_05_light = 2131165343;
+			
+			// aapt resource value: 0x7F0700A0
+			public const int ic_mr_button_connected_06_dark = 2131165344;
+			
+			// aapt resource value: 0x7F0700A1
+			public const int ic_mr_button_connected_06_light = 2131165345;
+			
+			// aapt resource value: 0x7F0700A2
+			public const int ic_mr_button_connected_07_dark = 2131165346;
+			
+			// aapt resource value: 0x7F0700A3
+			public const int ic_mr_button_connected_07_light = 2131165347;
+			
+			// aapt resource value: 0x7F0700A4
+			public const int ic_mr_button_connected_08_dark = 2131165348;
+			
+			// aapt resource value: 0x7F0700A5
+			public const int ic_mr_button_connected_08_light = 2131165349;
+			
+			// aapt resource value: 0x7F0700A6
+			public const int ic_mr_button_connected_09_dark = 2131165350;
+			
+			// aapt resource value: 0x7F0700A7
+			public const int ic_mr_button_connected_09_light = 2131165351;
+			
+			// aapt resource value: 0x7F0700A8
+			public const int ic_mr_button_connected_10_dark = 2131165352;
+			
+			// aapt resource value: 0x7F0700A9
+			public const int ic_mr_button_connected_10_light = 2131165353;
+			
+			// aapt resource value: 0x7F0700AA
+			public const int ic_mr_button_connected_11_dark = 2131165354;
+			
+			// aapt resource value: 0x7F0700AB
+			public const int ic_mr_button_connected_11_light = 2131165355;
+			
+			// aapt resource value: 0x7F0700AC
+			public const int ic_mr_button_connected_12_dark = 2131165356;
+			
+			// aapt resource value: 0x7F0700AD
+			public const int ic_mr_button_connected_12_light = 2131165357;
+			
+			// aapt resource value: 0x7F0700AE
+			public const int ic_mr_button_connected_13_dark = 2131165358;
+			
+			// aapt resource value: 0x7F0700AF
+			public const int ic_mr_button_connected_13_light = 2131165359;
+			
+			// aapt resource value: 0x7F0700B0
+			public const int ic_mr_button_connected_14_dark = 2131165360;
+			
+			// aapt resource value: 0x7F0700B1
+			public const int ic_mr_button_connected_14_light = 2131165361;
+			
+			// aapt resource value: 0x7F0700B2
+			public const int ic_mr_button_connected_15_dark = 2131165362;
+			
+			// aapt resource value: 0x7F0700B3
+			public const int ic_mr_button_connected_15_light = 2131165363;
+			
+			// aapt resource value: 0x7F0700B4
+			public const int ic_mr_button_connected_16_dark = 2131165364;
+			
+			// aapt resource value: 0x7F0700B5
+			public const int ic_mr_button_connected_16_light = 2131165365;
+			
+			// aapt resource value: 0x7F0700B6
+			public const int ic_mr_button_connected_17_dark = 2131165366;
+			
+			// aapt resource value: 0x7F0700B7
+			public const int ic_mr_button_connected_17_light = 2131165367;
+			
+			// aapt resource value: 0x7F0700B8
+			public const int ic_mr_button_connected_18_dark = 2131165368;
+			
+			// aapt resource value: 0x7F0700B9
+			public const int ic_mr_button_connected_18_light = 2131165369;
+			
+			// aapt resource value: 0x7F0700BA
+			public const int ic_mr_button_connected_19_dark = 2131165370;
+			
+			// aapt resource value: 0x7F0700BB
+			public const int ic_mr_button_connected_19_light = 2131165371;
+			
+			// aapt resource value: 0x7F0700BC
+			public const int ic_mr_button_connected_20_dark = 2131165372;
+			
+			// aapt resource value: 0x7F0700BD
+			public const int ic_mr_button_connected_20_light = 2131165373;
+			
+			// aapt resource value: 0x7F0700BE
+			public const int ic_mr_button_connected_21_dark = 2131165374;
+			
+			// aapt resource value: 0x7F0700BF
+			public const int ic_mr_button_connected_21_light = 2131165375;
+			
+			// aapt resource value: 0x7F0700C0
+			public const int ic_mr_button_connected_22_dark = 2131165376;
+			
+			// aapt resource value: 0x7F0700C1
+			public const int ic_mr_button_connected_22_light = 2131165377;
+			
+			// aapt resource value: 0x7F0700C2
+			public const int ic_mr_button_connected_23_dark = 2131165378;
+			
+			// aapt resource value: 0x7F0700C3
+			public const int ic_mr_button_connected_23_light = 2131165379;
+			
+			// aapt resource value: 0x7F0700C4
+			public const int ic_mr_button_connected_24_dark = 2131165380;
+			
+			// aapt resource value: 0x7F0700C5
+			public const int ic_mr_button_connected_24_light = 2131165381;
+			
+			// aapt resource value: 0x7F0700C6
+			public const int ic_mr_button_connected_25_dark = 2131165382;
+			
+			// aapt resource value: 0x7F0700C7
+			public const int ic_mr_button_connected_25_light = 2131165383;
+			
+			// aapt resource value: 0x7F0700C8
+			public const int ic_mr_button_connected_26_dark = 2131165384;
+			
+			// aapt resource value: 0x7F0700C9
+			public const int ic_mr_button_connected_26_light = 2131165385;
+			
+			// aapt resource value: 0x7F0700CA
+			public const int ic_mr_button_connected_27_dark = 2131165386;
+			
+			// aapt resource value: 0x7F0700CB
+			public const int ic_mr_button_connected_27_light = 2131165387;
+			
+			// aapt resource value: 0x7F0700CC
+			public const int ic_mr_button_connected_28_dark = 2131165388;
+			
+			// aapt resource value: 0x7F0700CD
+			public const int ic_mr_button_connected_28_light = 2131165389;
+			
+			// aapt resource value: 0x7F0700CE
+			public const int ic_mr_button_connected_29_dark = 2131165390;
+			
+			// aapt resource value: 0x7F0700CF
+			public const int ic_mr_button_connected_29_light = 2131165391;
+			
+			// aapt resource value: 0x7F0700D0
+			public const int ic_mr_button_connected_30_dark = 2131165392;
+			
+			// aapt resource value: 0x7F0700D1
+			public const int ic_mr_button_connected_30_light = 2131165393;
+			
+			// aapt resource value: 0x7F0700D2
+			public const int ic_mr_button_connecting_00_dark = 2131165394;
+			
+			// aapt resource value: 0x7F0700D3
+			public const int ic_mr_button_connecting_00_light = 2131165395;
+			
+			// aapt resource value: 0x7F0700D4
+			public const int ic_mr_button_connecting_01_dark = 2131165396;
+			
+			// aapt resource value: 0x7F0700D5
+			public const int ic_mr_button_connecting_01_light = 2131165397;
+			
+			// aapt resource value: 0x7F0700D6
+			public const int ic_mr_button_connecting_02_dark = 2131165398;
+			
+			// aapt resource value: 0x7F0700D7
+			public const int ic_mr_button_connecting_02_light = 2131165399;
+			
+			// aapt resource value: 0x7F0700D8
+			public const int ic_mr_button_connecting_03_dark = 2131165400;
+			
+			// aapt resource value: 0x7F0700D9
+			public const int ic_mr_button_connecting_03_light = 2131165401;
+			
+			// aapt resource value: 0x7F0700DA
+			public const int ic_mr_button_connecting_04_dark = 2131165402;
+			
+			// aapt resource value: 0x7F0700DB
+			public const int ic_mr_button_connecting_04_light = 2131165403;
+			
+			// aapt resource value: 0x7F0700DC
+			public const int ic_mr_button_connecting_05_dark = 2131165404;
+			
+			// aapt resource value: 0x7F0700DD
+			public const int ic_mr_button_connecting_05_light = 2131165405;
+			
+			// aapt resource value: 0x7F0700DE
+			public const int ic_mr_button_connecting_06_dark = 2131165406;
+			
+			// aapt resource value: 0x7F0700DF
+			public const int ic_mr_button_connecting_06_light = 2131165407;
+			
+			// aapt resource value: 0x7F0700E0
+			public const int ic_mr_button_connecting_07_dark = 2131165408;
+			
+			// aapt resource value: 0x7F0700E1
+			public const int ic_mr_button_connecting_07_light = 2131165409;
+			
+			// aapt resource value: 0x7F0700E2
+			public const int ic_mr_button_connecting_08_dark = 2131165410;
+			
+			// aapt resource value: 0x7F0700E3
+			public const int ic_mr_button_connecting_08_light = 2131165411;
+			
+			// aapt resource value: 0x7F0700E4
+			public const int ic_mr_button_connecting_09_dark = 2131165412;
+			
+			// aapt resource value: 0x7F0700E5
+			public const int ic_mr_button_connecting_09_light = 2131165413;
+			
+			// aapt resource value: 0x7F0700E6
+			public const int ic_mr_button_connecting_10_dark = 2131165414;
+			
+			// aapt resource value: 0x7F0700E7
+			public const int ic_mr_button_connecting_10_light = 2131165415;
+			
+			// aapt resource value: 0x7F0700E8
+			public const int ic_mr_button_connecting_11_dark = 2131165416;
+			
+			// aapt resource value: 0x7F0700E9
+			public const int ic_mr_button_connecting_11_light = 2131165417;
+			
+			// aapt resource value: 0x7F0700EA
+			public const int ic_mr_button_connecting_12_dark = 2131165418;
+			
+			// aapt resource value: 0x7F0700EB
+			public const int ic_mr_button_connecting_12_light = 2131165419;
+			
+			// aapt resource value: 0x7F0700EC
+			public const int ic_mr_button_connecting_13_dark = 2131165420;
+			
+			// aapt resource value: 0x7F0700ED
+			public const int ic_mr_button_connecting_13_light = 2131165421;
+			
+			// aapt resource value: 0x7F0700EE
+			public const int ic_mr_button_connecting_14_dark = 2131165422;
+			
+			// aapt resource value: 0x7F0700EF
+			public const int ic_mr_button_connecting_14_light = 2131165423;
+			
+			// aapt resource value: 0x7F0700F0
+			public const int ic_mr_button_connecting_15_dark = 2131165424;
+			
+			// aapt resource value: 0x7F0700F1
+			public const int ic_mr_button_connecting_15_light = 2131165425;
+			
+			// aapt resource value: 0x7F0700F2
+			public const int ic_mr_button_connecting_16_dark = 2131165426;
+			
+			// aapt resource value: 0x7F0700F3
+			public const int ic_mr_button_connecting_16_light = 2131165427;
+			
+			// aapt resource value: 0x7F0700F4
+			public const int ic_mr_button_connecting_17_dark = 2131165428;
+			
+			// aapt resource value: 0x7F0700F5
+			public const int ic_mr_button_connecting_17_light = 2131165429;
+			
+			// aapt resource value: 0x7F0700F6
+			public const int ic_mr_button_connecting_18_dark = 2131165430;
+			
+			// aapt resource value: 0x7F0700F7
+			public const int ic_mr_button_connecting_18_light = 2131165431;
+			
+			// aapt resource value: 0x7F0700F8
+			public const int ic_mr_button_connecting_19_dark = 2131165432;
+			
+			// aapt resource value: 0x7F0700F9
+			public const int ic_mr_button_connecting_19_light = 2131165433;
+			
+			// aapt resource value: 0x7F0700FA
+			public const int ic_mr_button_connecting_20_dark = 2131165434;
+			
+			// aapt resource value: 0x7F0700FB
+			public const int ic_mr_button_connecting_20_light = 2131165435;
+			
+			// aapt resource value: 0x7F0700FC
+			public const int ic_mr_button_connecting_21_dark = 2131165436;
+			
+			// aapt resource value: 0x7F0700FD
+			public const int ic_mr_button_connecting_21_light = 2131165437;
+			
+			// aapt resource value: 0x7F0700FE
+			public const int ic_mr_button_connecting_22_dark = 2131165438;
+			
+			// aapt resource value: 0x7F0700FF
+			public const int ic_mr_button_connecting_22_light = 2131165439;
+			
+			// aapt resource value: 0x7F070100
+			public const int ic_mr_button_connecting_23_dark = 2131165440;
+			
+			// aapt resource value: 0x7F070101
+			public const int ic_mr_button_connecting_23_light = 2131165441;
+			
+			// aapt resource value: 0x7F070102
+			public const int ic_mr_button_connecting_24_dark = 2131165442;
+			
+			// aapt resource value: 0x7F070103
+			public const int ic_mr_button_connecting_24_light = 2131165443;
+			
+			// aapt resource value: 0x7F070104
+			public const int ic_mr_button_connecting_25_dark = 2131165444;
+			
+			// aapt resource value: 0x7F070105
+			public const int ic_mr_button_connecting_25_light = 2131165445;
+			
+			// aapt resource value: 0x7F070106
+			public const int ic_mr_button_connecting_26_dark = 2131165446;
+			
+			// aapt resource value: 0x7F070107
+			public const int ic_mr_button_connecting_26_light = 2131165447;
+			
+			// aapt resource value: 0x7F070108
+			public const int ic_mr_button_connecting_27_dark = 2131165448;
+			
+			// aapt resource value: 0x7F070109
+			public const int ic_mr_button_connecting_27_light = 2131165449;
+			
+			// aapt resource value: 0x7F07010A
+			public const int ic_mr_button_connecting_28_dark = 2131165450;
+			
+			// aapt resource value: 0x7F07010B
+			public const int ic_mr_button_connecting_28_light = 2131165451;
+			
+			// aapt resource value: 0x7F07010C
+			public const int ic_mr_button_connecting_29_dark = 2131165452;
+			
+			// aapt resource value: 0x7F07010D
+			public const int ic_mr_button_connecting_29_light = 2131165453;
+			
+			// aapt resource value: 0x7F07010E
+			public const int ic_mr_button_connecting_30_dark = 2131165454;
+			
+			// aapt resource value: 0x7F07010F
+			public const int ic_mr_button_connecting_30_light = 2131165455;
+			
+			// aapt resource value: 0x7F070110
+			public const int ic_mr_button_disabled_dark = 2131165456;
+			
+			// aapt resource value: 0x7F070111
+			public const int ic_mr_button_disabled_light = 2131165457;
+			
+			// aapt resource value: 0x7F070112
+			public const int ic_mr_button_disconnected_dark = 2131165458;
+			
+			// aapt resource value: 0x7F070113
+			public const int ic_mr_button_disconnected_light = 2131165459;
+			
+			// aapt resource value: 0x7F070114
+			public const int ic_mr_button_grey = 2131165460;
+			
+			// aapt resource value: 0x7F070115
+			public const int ic_mtrl_chip_checked_black = 2131165461;
+			
+			// aapt resource value: 0x7F070116
+			public const int ic_mtrl_chip_checked_circle = 2131165462;
+			
+			// aapt resource value: 0x7F070117
+			public const int ic_mtrl_chip_close_circle = 2131165463;
+			
+			// aapt resource value: 0x7F070118
+			public const int ic_vol_type_speaker_dark = 2131165464;
+			
+			// aapt resource value: 0x7F070119
+			public const int ic_vol_type_speaker_group_dark = 2131165465;
+			
+			// aapt resource value: 0x7F07011A
+			public const int ic_vol_type_speaker_group_light = 2131165466;
+			
+			// aapt resource value: 0x7F07011B
+			public const int ic_vol_type_speaker_light = 2131165467;
+			
+			// aapt resource value: 0x7F07011C
+			public const int ic_vol_type_tv_dark = 2131165468;
+			
+			// aapt resource value: 0x7F07011D
+			public const int ic_vol_type_tv_light = 2131165469;
 			
 			// aapt resource value: 0x7F070132
-			public const int mr_button_connected_dark = 2131165490;
+			public const int loading = 2131165490;
 			
 			// aapt resource value: 0x7F070133
-			public const int mr_button_connected_light = 2131165491;
+			public const int logo = 2131165491;
 			
 			// aapt resource value: 0x7F070134
-			public const int mr_button_connecting_dark = 2131165492;
+			public const int mr_button_connected_dark = 2131165492;
 			
 			// aapt resource value: 0x7F070135
-			public const int mr_button_connecting_light = 2131165493;
+			public const int mr_button_connected_light = 2131165493;
 			
 			// aapt resource value: 0x7F070136
-			public const int mr_button_dark = 2131165494;
+			public const int mr_button_connecting_dark = 2131165494;
 			
 			// aapt resource value: 0x7F070137
-			public const int mr_button_light = 2131165495;
+			public const int mr_button_connecting_light = 2131165495;
 			
 			// aapt resource value: 0x7F070138
-			public const int mr_dialog_close_dark = 2131165496;
+			public const int mr_button_dark = 2131165496;
 			
 			// aapt resource value: 0x7F070139
-			public const int mr_dialog_close_light = 2131165497;
+			public const int mr_button_light = 2131165497;
 			
 			// aapt resource value: 0x7F07013A
-			public const int mr_dialog_material_background_dark = 2131165498;
+			public const int mr_dialog_close_dark = 2131165498;
 			
 			// aapt resource value: 0x7F07013B
-			public const int mr_dialog_material_background_light = 2131165499;
+			public const int mr_dialog_close_light = 2131165499;
 			
 			// aapt resource value: 0x7F07013C
-			public const int mr_group_collapse = 2131165500;
+			public const int mr_dialog_material_background_dark = 2131165500;
 			
 			// aapt resource value: 0x7F07013D
-			public const int mr_group_expand = 2131165501;
+			public const int mr_dialog_material_background_light = 2131165501;
 			
 			// aapt resource value: 0x7F07013E
-			public const int mr_media_pause_dark = 2131165502;
+			public const int mr_group_collapse = 2131165502;
 			
 			// aapt resource value: 0x7F07013F
-			public const int mr_media_pause_light = 2131165503;
+			public const int mr_group_expand = 2131165503;
 			
 			// aapt resource value: 0x7F070140
-			public const int mr_media_play_dark = 2131165504;
+			public const int mr_media_pause_dark = 2131165504;
 			
 			// aapt resource value: 0x7F070141
-			public const int mr_media_play_light = 2131165505;
+			public const int mr_media_pause_light = 2131165505;
 			
 			// aapt resource value: 0x7F070142
-			public const int mr_media_stop_dark = 2131165506;
+			public const int mr_media_play_dark = 2131165506;
 			
 			// aapt resource value: 0x7F070143
-			public const int mr_media_stop_light = 2131165507;
+			public const int mr_media_play_light = 2131165507;
 			
 			// aapt resource value: 0x7F070144
-			public const int mr_vol_type_audiotrack_dark = 2131165508;
+			public const int mr_media_stop_dark = 2131165508;
 			
 			// aapt resource value: 0x7F070145
-			public const int mr_vol_type_audiotrack_light = 2131165509;
+			public const int mr_media_stop_light = 2131165509;
 			
 			// aapt resource value: 0x7F070146
-			public const int mtrl_snackbar_background = 2131165510;
+			public const int mr_vol_type_audiotrack_dark = 2131165510;
 			
 			// aapt resource value: 0x7F070147
-			public const int mtrl_tabs_default_indicator = 2131165511;
+			public const int mr_vol_type_audiotrack_light = 2131165511;
 			
 			// aapt resource value: 0x7F070148
-			public const int navigation_empty_icon = 2131165512;
+			public const int mtrl_snackbar_background = 2131165512;
 			
 			// aapt resource value: 0x7F070149
-			public const int Next = 2131165513;
+			public const int mtrl_tabs_default_indicator = 2131165513;
 			
 			// aapt resource value: 0x7F07014A
-			public const int notification_action_background = 2131165514;
+			public const int navigation_empty_icon = 2131165514;
 			
 			// aapt resource value: 0x7F07014B
-			public const int notification_bg = 2131165515;
+			public const int Next = 2131165515;
 			
 			// aapt resource value: 0x7F07014C
-			public const int notification_bg_low = 2131165516;
+			public const int notification_action_background = 2131165516;
 			
 			// aapt resource value: 0x7F07014D
-			public const int notification_bg_low_normal = 2131165517;
+			public const int notification_bg = 2131165517;
 			
 			// aapt resource value: 0x7F07014E
-			public const int notification_bg_low_pressed = 2131165518;
+			public const int notification_bg_low = 2131165518;
 			
 			// aapt resource value: 0x7F07014F
-			public const int notification_bg_normal = 2131165519;
+			public const int notification_bg_low_normal = 2131165519;
 			
 			// aapt resource value: 0x7F070150
-			public const int notification_bg_normal_pressed = 2131165520;
+			public const int notification_bg_low_pressed = 2131165520;
 			
 			// aapt resource value: 0x7F070151
-			public const int notification_icon_background = 2131165521;
+			public const int notification_bg_normal = 2131165521;
 			
 			// aapt resource value: 0x7F070152
-			public const int notification_template_icon_bg = 2131165522;
+			public const int notification_bg_normal_pressed = 2131165522;
 			
 			// aapt resource value: 0x7F070153
-			public const int notification_template_icon_low_bg = 2131165523;
+			public const int notification_icon_background = 2131165523;
 			
 			// aapt resource value: 0x7F070154
-			public const int notification_tile_bg = 2131165524;
+			public const int notification_template_icon_bg = 2131165524;
 			
 			// aapt resource value: 0x7F070155
-			public const int notify_panel_notification_icon_bg = 2131165525;
+			public const int notification_template_icon_low_bg = 2131165525;
 			
 			// aapt resource value: 0x7F070156
-			public const int plus = 2131165526;
+			public const int notification_tile_bg = 2131165526;
 			
 			// aapt resource value: 0x7F070157
-			public const int Prev = 2131165527;
+			public const int notify_panel_notification_icon_bg = 2131165527;
 			
 			// aapt resource value: 0x7F070158
-			public const int tooltip_frame_dark = 2131165528;
+			public const int plus = 2131165528;
 			
 			// aapt resource value: 0x7F070159
-			public const int tooltip_frame_light = 2131165529;
+			public const int Prev = 2131165529;
 			
 			// aapt resource value: 0x7F07015A
-			public const int Up = 2131165530;
+			public const int tooltip_frame_dark = 2131165530;
+			
+			// aapt resource value: 0x7F07015B
+			public const int tooltip_frame_light = 2131165531;
+			
+			// aapt resource value: 0x7F07015C
+			public const int top_shadow = 2131165532;
+			
+			// aapt resource value: 0x7F07015D
+			public const int Up = 2131165533;
 			
 			static Drawable()
 			{
@@ -14794,125 +17042,131 @@ namespace EnixerPos.Mobile.Droid
 			// aapt resource value: 0x7F0D0026
 			public const int abc_toolbar_collapse_description = 2131558438;
 			
-			// aapt resource value: 0x7F0D0027
-			public const int appbar_scrolling_view_behavior = 2131558439;
-			
 			// aapt resource value: 0x7F0D0028
-			public const int bottom_sheet_behavior = 2131558440;
+			public const int appbar_scrolling_view_behavior = 2131558440;
+			
+			// aapt resource value: 0x7F0D0027
+			public const int app_name = 2131558439;
 			
 			// aapt resource value: 0x7F0D0029
-			public const int character_counter_content_description = 2131558441;
+			public const int bottom_sheet_behavior = 2131558441;
 			
 			// aapt resource value: 0x7F0D002A
-			public const int character_counter_pattern = 2131558442;
+			public const int character_counter_content_description = 2131558442;
 			
 			// aapt resource value: 0x7F0D002B
-			public const int fab_transformation_scrim_behavior = 2131558443;
+			public const int character_counter_pattern = 2131558443;
 			
 			// aapt resource value: 0x7F0D002C
-			public const int fab_transformation_sheet_behavior = 2131558444;
+			public const int fab_transformation_scrim_behavior = 2131558444;
 			
 			// aapt resource value: 0x7F0D002D
-			public const int hide_bottom_view_on_scroll_behavior = 2131558445;
+			public const int fab_transformation_sheet_behavior = 2131558445;
 			
 			// aapt resource value: 0x7F0D002E
-			public const int library_name = 2131558446;
+			public const int hello = 2131558446;
 			
 			// aapt resource value: 0x7F0D002F
-			public const int mr_button_content_description = 2131558447;
+			public const int hide_bottom_view_on_scroll_behavior = 2131558447;
 			
 			// aapt resource value: 0x7F0D0030
-			public const int mr_cast_button_connected = 2131558448;
+			public const int library_name = 2131558448;
 			
 			// aapt resource value: 0x7F0D0031
-			public const int mr_cast_button_connecting = 2131558449;
+			public const int mr_button_content_description = 2131558449;
 			
 			// aapt resource value: 0x7F0D0032
-			public const int mr_cast_button_disconnected = 2131558450;
+			public const int mr_cast_button_connected = 2131558450;
 			
 			// aapt resource value: 0x7F0D0033
-			public const int mr_cast_dialog_title_view_placeholder = 2131558451;
+			public const int mr_cast_button_connecting = 2131558451;
 			
 			// aapt resource value: 0x7F0D0034
-			public const int mr_chooser_searching = 2131558452;
+			public const int mr_cast_button_disconnected = 2131558452;
 			
 			// aapt resource value: 0x7F0D0035
-			public const int mr_chooser_title = 2131558453;
+			public const int mr_cast_dialog_title_view_placeholder = 2131558453;
 			
 			// aapt resource value: 0x7F0D0036
-			public const int mr_controller_album_art = 2131558454;
+			public const int mr_chooser_searching = 2131558454;
 			
 			// aapt resource value: 0x7F0D0037
-			public const int mr_controller_casting_screen = 2131558455;
+			public const int mr_chooser_title = 2131558455;
 			
 			// aapt resource value: 0x7F0D0038
-			public const int mr_controller_close_description = 2131558456;
+			public const int mr_controller_album_art = 2131558456;
 			
 			// aapt resource value: 0x7F0D0039
-			public const int mr_controller_collapse_group = 2131558457;
+			public const int mr_controller_casting_screen = 2131558457;
 			
 			// aapt resource value: 0x7F0D003A
-			public const int mr_controller_disconnect = 2131558458;
+			public const int mr_controller_close_description = 2131558458;
 			
 			// aapt resource value: 0x7F0D003B
-			public const int mr_controller_expand_group = 2131558459;
+			public const int mr_controller_collapse_group = 2131558459;
 			
 			// aapt resource value: 0x7F0D003C
-			public const int mr_controller_no_info_available = 2131558460;
+			public const int mr_controller_disconnect = 2131558460;
 			
 			// aapt resource value: 0x7F0D003D
-			public const int mr_controller_no_media_selected = 2131558461;
+			public const int mr_controller_expand_group = 2131558461;
 			
 			// aapt resource value: 0x7F0D003E
-			public const int mr_controller_pause = 2131558462;
+			public const int mr_controller_no_info_available = 2131558462;
 			
 			// aapt resource value: 0x7F0D003F
-			public const int mr_controller_play = 2131558463;
+			public const int mr_controller_no_media_selected = 2131558463;
 			
 			// aapt resource value: 0x7F0D0040
-			public const int mr_controller_stop = 2131558464;
+			public const int mr_controller_pause = 2131558464;
 			
 			// aapt resource value: 0x7F0D0041
-			public const int mr_controller_stop_casting = 2131558465;
+			public const int mr_controller_play = 2131558465;
 			
 			// aapt resource value: 0x7F0D0042
-			public const int mr_controller_volume_slider = 2131558466;
+			public const int mr_controller_stop = 2131558466;
 			
 			// aapt resource value: 0x7F0D0043
-			public const int mr_dialog_device_header = 2131558467;
+			public const int mr_controller_stop_casting = 2131558467;
 			
 			// aapt resource value: 0x7F0D0044
-			public const int mr_dialog_route_header = 2131558468;
+			public const int mr_controller_volume_slider = 2131558468;
 			
 			// aapt resource value: 0x7F0D0045
-			public const int mr_system_route_name = 2131558469;
+			public const int mr_dialog_device_header = 2131558469;
 			
 			// aapt resource value: 0x7F0D0046
-			public const int mr_user_route_category_name = 2131558470;
+			public const int mr_dialog_route_header = 2131558470;
 			
 			// aapt resource value: 0x7F0D0047
-			public const int mtrl_chip_close_icon_content_description = 2131558471;
+			public const int mr_system_route_name = 2131558471;
 			
 			// aapt resource value: 0x7F0D0048
-			public const int password_toggle_content_description = 2131558472;
+			public const int mr_user_route_category_name = 2131558472;
 			
 			// aapt resource value: 0x7F0D0049
-			public const int path_password_eye = 2131558473;
+			public const int mtrl_chip_close_icon_content_description = 2131558473;
 			
 			// aapt resource value: 0x7F0D004A
-			public const int path_password_eye_mask_strike_through = 2131558474;
+			public const int password_toggle_content_description = 2131558474;
 			
 			// aapt resource value: 0x7F0D004B
-			public const int path_password_eye_mask_visible = 2131558475;
+			public const int path_password_eye = 2131558475;
 			
 			// aapt resource value: 0x7F0D004C
-			public const int path_password_strike_through = 2131558476;
+			public const int path_password_eye_mask_strike_through = 2131558476;
 			
 			// aapt resource value: 0x7F0D004D
-			public const int search_menu_title = 2131558477;
+			public const int path_password_eye_mask_visible = 2131558477;
 			
 			// aapt resource value: 0x7F0D004E
-			public const int status_bar_notification_info_overflow = 2131558478;
+			public const int path_password_strike_through = 2131558478;
+			
+			// aapt resource value: 0x7F0D004F
+			public const int search_menu_title = 2131558479;
+			
+			// aapt resource value: 0x7F0D0050
+			public const int status_bar_notification_info_overflow = 2131558480;
 			
 			static String()
 			{
