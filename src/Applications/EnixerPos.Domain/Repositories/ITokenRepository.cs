@@ -12,5 +12,6 @@ namespace EnixerPos.Domain.Repositories
         bool UpdateUserId(int storeId, int userId);
         bool DeleteUserAndToken(int storeId);
         int CountUser(int id);
+        bool CreateTokenByStoreId(int storeId);
     }
 }

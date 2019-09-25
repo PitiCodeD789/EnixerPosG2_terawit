@@ -67,6 +67,9 @@
                 <Label VerticalOptions="FillAndExpand"  VerticalTextAlignment="Center"  Text="Item" FontSize="24"/>
             </StackLayout>
             <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped ="Setting_Tapped"/>
+                </StackLayout.GestureRecognizers>
                 <Image Source="icon_gear" Aspect="AspectFit" HeightRequest="25" VerticalOptions="Center" Margin="10,0"/>
                 <Label VerticalOptions="FillAndExpand"  VerticalTextAlignment="Center" Text="Setting" FontSize="24"/>
             </StackLayout>
@@ -75,14 +78,14 @@
                 <Image Source="icon_gear" Aspect="AspectFit" HeightRequest="25" VerticalOptions="Center" Margin="10,0"/>
                 <Label VerticalOptions="FillAndExpand"  VerticalTextAlignment="Center" Text="Back Office" FontSize="24"/>
             </StackLayout>
-            <BoxView BackgroundColor="LightGray" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="10,0"/>
-            <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+            <!--<BoxView BackgroundColor="LightGray" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="10,0"/>-->
+            <!--<StackLayout Padding="15,10" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
                 <StackLayout.GestureRecognizers>
                     <TapGestureRecognizer Tapped="Item_Tapped"/>
                 </StackLayout.GestureRecognizers>
                 <Image Source="icon_gear" Aspect="AspectFit" HeightRequest="25" VerticalOptions="Center" Margin="10,0"/>
                 <Label VerticalOptions="FillAndExpand"  VerticalTextAlignment="Center" Text="Log Out" FontSize="24" TextColor="Red"/>
-            </StackLayout>
+            </StackLayout>-->
         </StackLayout>
     </Grid>
 </pages:PopupPage>

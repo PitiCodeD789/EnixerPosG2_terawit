@@ -6,6 +6,7 @@
              x:Name="TheItemPage"
              xmlns:binding="clr-namespace:EnixerPos.Mobile.ViewModels.ItemPage"
              mc:Ignorable="d"
+             xmlns:component="clr-namespace:EnixerPos.Mobile.Components"
              NavigationPage.HasNavigationBar="False"
              x:Class="EnixerPos.Mobile.Views.ItemPage">
     <ContentPage.BindingContext>
@@ -22,8 +23,25 @@
                             <Picker IsVisible="{Binding Picker}" Title="All Item" TitleColor="Black" FontSize="28" TextColor="Black" ItemsSource="{Binding CategoryName}" SelectedItem="{Binding ChangeCategory}"/>
                             <Label IsVisible="{Binding Laber}" Text="{Binding NamePage}" FontSize="28" TextColor="Black"/>
                         </StackLayout>
-                        
-                        <ImageButton Source="icon_search_2" Aspect="AspectFit" VerticalOptions="Center" Margin="20,0" HeightRequest="30" BackgroundColor="Transparent" HorizontalOptions="EndAndExpand"/>
+
+                        <StackLayout VerticalOptions="CenterAndExpand" Margin="0,0,0,0" Orientation="Horizontal"
+                                     HorizontalOptions="EndAndExpand" HeightRequest="50">
+                            <component:Pos_EntryView Placeholder="search" 
+                                                     IsVisible="{Binding IsEntityVisible,Mode=TwoWay}"
+                                                     HorizontalOptions="End"   
+                                                     HeightRequest="40"
+                                                     WidthRequest="500"/>                           
+                            
+                        </StackLayout>
+                        <ImageButton Source="{Binding ImageName, Mode=TwoWay}" 
+                                         Aspect="AspectFill"  
+                                         VerticalOptions="Center" 
+                                         Margin="0,0,80,0" 
+                                         Command="{Binding ShowSerachEntityCommand}"
+                                         HeightRequest="40" WidthRequest="40"
+                                         BackgroundColor="Transparent" 
+                                         HorizontalOptions="EndAndExpand"/>
+
                     </StackLayout>
 
                 </Frame>

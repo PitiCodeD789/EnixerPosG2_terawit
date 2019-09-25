@@ -6,6 +6,7 @@ using EnixerPos.Mobile.Components;
 using EnixerPos.Mobile.Models;
 using EnixerPos.Mobile.Views;
 using EnixerPos.Mobile.Views.Popup;
+using EnixerPos.Service.Interfaces;
 using EnixerPos.Service.Models;
 using EnixerPos.Service.Services;
 using Rg.Plugins.Popup.Services;
@@ -23,7 +24,7 @@ namespace EnixerPos.Mobile.ViewModels
 {
     public class SaleViewModel : INotifyPropertyChanged
     {
-        ProductService _service = new ProductService();
+        IProductService _service = new ProductService();
         public SaleViewModel()
         {
             ShowOpenButton = true;
@@ -85,7 +86,7 @@ namespace EnixerPos.Mobile.ViewModels
                     VerticalOptions = LayoutOptions.FillAndExpand,
                     Content = grid
                 };
-
+                ViewChildren.Add(scrollView);
                 TabChildren.Add(new TabItem(category.CategoryName, scrollView));
             };
             QuantityChangeCommand = new Command<string>((change) => QuantityChange(change));
@@ -160,7 +161,8 @@ namespace EnixerPos.Mobile.ViewModels
             }
 
             CurrentTicket = CurrentTicket;
-            PopupNavigation.PopAllAsync();
+            if (PopupNavigation.Instance.PopupStack.Any())
+                PopupNavigation.PopAllAsync();
             CurrentItem = new ItemModel();
             CurrentOption = new List<string>();
             CurrentSelectedOptionIndex = 0;
@@ -170,6 +172,7 @@ namespace EnixerPos.Mobile.ViewModels
         void OpenOption(ItemModel item)
         {
             CurrentItem = item;
+            CurrentOption = new List<string>();
             OptionList = new List<ItemOptionModel>();
 
             if (!string.IsNullOrEmpty(item.Option1))
@@ -184,15 +187,25 @@ namespace EnixerPos.Mobile.ViewModels
             if (!string.IsNullOrEmpty(item.Option4))
                 OptionList.Add(new ItemOptionModel() { OptionName = item.Option4, Price = item.Option4Price });
 
-            CurrentOption = new List<string>();
             foreach (var option in OptionList)
             {
-                CurrentOption.Add(option.OptionName + "  ( +" + ((option.Price > 0) ? option.Price.ToString("#.00") : "") + " )");
+                CurrentOption.Add(option.OptionName + "  ( +" + option.Price.ToString("#.00") + " )");
             }
 
             CurrentItemPrice = item.Price;
 
-            PopupNavigation.PushAsync(new ItemPopup(this));
+            if (item.Option2 == null && item.Option3 == null && item.Option4 == null)
+            {
+                if (!string.IsNullOrEmpty(item.Option1))
+                    OptionList.Add(new ItemOptionModel() { OptionName = item.Option1, Price = item.Option1Price });
+                CurrentSelectedOptionIndex = 0;
+                CurrentItemPrice = item.Price;
+                SaveItemToTicket();
+            }
+            else
+            {
+                PopupNavigation.PushAsync(new ItemPopup(this));
+            }
         }
         void SetItemMenu()
         {
@@ -216,9 +229,10 @@ namespace EnixerPos.Mobile.ViewModels
                 }
             }
             ItemsViewModel items = _service.GetItems();
-            if (items == null || items.Items.Count == 0)
+            if (items.Items == null || items.Items.Count == 0)
             {
-                Application.Current.MainPage.DisplayAlert("", "ไม่พบรายการอาหารในระบบ", "OK");
+                //Application.Current.MainPage.DisplayAlert("", "ไม่พบรายการอาหารในระบบ", "OK");
+                //PopupNavigation.PushAsync(new Error(new ErrorViewModel("ไม่พบรายการอาหารในระบบ")));
                 return;
             }
 
@@ -289,6 +303,11 @@ namespace EnixerPos.Mobile.ViewModels
         }
         void Charge()
         {
+            if (CurrentTicket == null || CurrentTicket.Count == 0)
+            {
+                PopupNavigation.PushAsync(new Error(new ErrorViewModel("Please add item to ticket before proceeding")));
+                return;
+            }
             ReceiptViewModel receipt = new ReceiptViewModel()
             {
                 ItemList = CurrentTicket.ToList(),
@@ -446,6 +465,7 @@ namespace EnixerPos.Mobile.ViewModels
         }
 
         public List<TabItem> TabChildren = new List<TabItem>();
+        public List<View> ViewChildren = new List<View>();
 
         #endregion
 

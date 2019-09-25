@@ -86,7 +86,15 @@ namespace EnixerPos.DataAccess.Repositories
         {
             try
             {
-                return _context.Store.Where(x => x.Email.ToLower() == audience.ToLower()).FirstOrDefault().Id;
+                var store = _context.Store;
+                var where = store.Where(x => x.Email.ToLower() == audience.ToLower());
+                var item = where.FirstOrDefault();
+                if (item == null)
+                {
+                    return 0;
+                }
+                int id = item.Id;
+                return id;
             }
             catch (Exception e)
             {

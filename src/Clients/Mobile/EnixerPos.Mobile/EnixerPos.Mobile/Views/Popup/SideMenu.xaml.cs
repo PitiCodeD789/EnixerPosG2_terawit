@@ -46,6 +46,11 @@ namespace EnixerPos.Mobile.Views.Popup
             BaseViewModel baseViewModel = new BaseViewModel();
             baseViewModel.NomalLogout();
         }
+        private void Setting_Tapped(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new SettingPage());
+            PopupNavigation.PopAllAsync();
+        }
 
         private void LockButton_Clicked(object sender, EventArgs e)
         {

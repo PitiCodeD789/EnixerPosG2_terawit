@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1 class="text-center ">Login</h1>
+<form action="/Register/CallApiLogin" method="post">
+    <div class="form-group col-md-4 offset-4">
+        <h3 class="text-center">Email</h3>
+        <input type="email" placeholder="Email" class="form-control" name="email" required />
+        <h3 class="text-center">Password</h3>
+        <input type="password" placeholder="Password" class="form-control" name="password" pattern="^([A-Z0-9a-z])+$" required />
+        <br />
+        <button type="submit" class="form-control">Login</button>
+        <br />
+        <button type="reset" class="form-control">Cancel</button>
+        <br />
+        <button type="button" class="form-control">@Html.ActionLink("Back", "Index", "Register")</button>
+    </div>
+</form>
+
