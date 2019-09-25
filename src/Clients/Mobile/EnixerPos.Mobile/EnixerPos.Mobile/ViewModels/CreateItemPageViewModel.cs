@@ -29,9 +29,15 @@ namespace EnixerPos.Mobile.ViewModels
         }
         public CreateItemPageViewModel(ItemModel item)
         {
+            _productService = new ProductService();
+            ColorSelectCommand = new Command(ColorSelect);
+            CreateItemCommand = new Command(CreateItem);
+            GetAllCateAsync();
+            CategoriesName = Categories.Select(x => x.Name).ToList();
             SetShowItem(item);
             UpdateItem = item;
             IsUpdate = true;
+            SelectedCategory = item.CategoryName;
             TitleAndButtonText = "Update item";
         }
 
@@ -320,8 +326,12 @@ namespace EnixerPos.Mobile.ViewModels
         {
             get { return price2; }
             set {
-                price2 = value;
-                OnPropertyChanged();
+                if (!String.IsNullOrEmpty(Option2))
+                {
+                    price2 = value;
+                    OnPropertyChanged();
+                }
+                
             }
         }
 
@@ -346,8 +356,12 @@ namespace EnixerPos.Mobile.ViewModels
         {
             get { return price3; }
             set {
+                if (!String.IsNullOrEmpty(Option3))
+                {
                 price3 = value;
                 OnPropertyChanged();
+
+                }
             }
         }
 
@@ -361,6 +375,7 @@ namespace EnixerPos.Mobile.ViewModels
         {
             get { return option4; }
             set {
+
                 option4 = value;
                 OnPropertyChanged();
             }
@@ -372,8 +387,11 @@ namespace EnixerPos.Mobile.ViewModels
         {
             get { return price4; }
             set {
+                if (!String.IsNullOrEmpty(Option4))
+                {
                 price4 = value;
                 OnPropertyChanged();
+                }
             }
         }
 

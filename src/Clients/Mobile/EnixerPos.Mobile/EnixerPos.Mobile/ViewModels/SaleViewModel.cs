@@ -196,20 +196,25 @@ namespace EnixerPos.Mobile.ViewModels
         }
         void SetItemMenu()
         {
-            CategoriesList = _service.GetCategories();
-            if(CategoriesList == null)
+            var getCate = _service.GetAllCategories();
+            if (!getCate.Result.IsError)
+            {
+                CategoriesList = getCate.Result.Categories;
+
+            }
+            if (CategoriesList == null)
             {
                 CategoriesList = new List<CategoryModel>();
-            }
-            foreach (var category in CategoriesList)
-            {
-                AllMenu.Add(new MenuModel()
-                {
-                    CategoryName = category.Name,
-                    Items = new ObservableCollection<ItemModel>()
-                });
-            }
 
+                foreach (var category in CategoriesList)
+                {
+                    AllMenu.Add(new MenuModel()
+                    {
+                        CategoryName = category.Name,
+                        Items = new ObservableCollection<ItemModel>()
+                    });
+                }
+            }
             ItemsViewModel items = _service.GetItems();
             if (items.Items == null || items.Items.Count == 0)
             {

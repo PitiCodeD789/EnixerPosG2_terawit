@@ -21,7 +21,9 @@ namespace EnixerPos.DataAccess.Repositories
             {
                 if (email == null)
                     return null;
-                return _context.Store.Where(x => x.Email.ToLower() == email.ToLower()).FirstOrDefault();
+                var store = _context.Store.Where(x => x.Email.ToLower() == email.ToLower()).OrderBy(x=>x.Id).FirstOrDefault();
+
+                return store;
             }
             catch (Exception e)
             {

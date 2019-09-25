@@ -26,10 +26,14 @@ namespace EnixerPos.Api.AutoMapperConfig
             CreateMap<ManageCashCommand, ManageCashDto>().ReverseMap();
             CreateMap<ItemDto, ItemEntity>();
             CreateMap<CategoryDto, CategoryEntity>();
-            CreateMap<DiscountDto, DiscountEntity>();
-            CreateMap<ItemEntity, ItemDto>();
             CreateMap<CategoryEntity, CategoryDto>();
+            CreateMap<CategoryModel, CategoryDto>();
+            CreateMap<CategoryModel, CategoryDto>().ReverseMap();
+            CreateMap<DiscountDto, DiscountEntity>();
             CreateMap<DiscountEntity, DiscountDto>().ReverseMap();
+            CreateMap<DiscountModel, DiscountDto>();
+            CreateMap<DiscountModel, DiscountDto>().ReverseMap();
+            CreateMap<ItemEntity, ItemDto>();
             CreateMap<ItemDto, ItemModel>().ReverseMap();
             CreateMap<List<ItemModel>, List<ItemDto>>().ReverseMap();
             CreateMap<List<ReceiptDto>, List<ReceiptViewModel>>();

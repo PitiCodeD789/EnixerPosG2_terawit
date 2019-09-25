@@ -2,6 +2,7 @@
 using EnixerPos.Mobile.Models;
 using EnixerPos.Mobile.Views.Item;
 using EnixerPos.Service.Helpers;
+using EnixerPos.Service.Interfaces;
 using EnixerPos.Service.Services;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,7 @@ namespace EnixerPos.Mobile.ViewModels.ItemPage
 {
     public class SubItemViewModel : BaseViewModel, INotifyPropertyChanged
     {
-        ProductService service = new ProductService();
+        IProductService _service = new ProductService();
 
         public SubItemViewModel()
         {
@@ -165,9 +166,13 @@ namespace EnixerPos.Mobile.ViewModels.ItemPage
             }
             set
             {
-                selectedData = value;
-                OnPropertyChanged();
-                EditDataMethod();
+                if ( value != null)
+                {
+                    selectedData = value;
+                    OnPropertyChanged();
+                    EditDataMethod();
+                }
+                
             }
         }
 
@@ -183,7 +188,7 @@ namespace EnixerPos.Mobile.ViewModels.ItemPage
         private async Task<List<ItemModel>> GetItemData()
         {
 
-            List<ItemModel> mock = service.GetItems().Items;
+            List<ItemModel> mock = _service.GetItems().Items;
 
             var result = mock;
             return result;
@@ -191,15 +196,27 @@ namespace EnixerPos.Mobile.ViewModels.ItemPage
 
         private async Task<List<CategoryModel>> GetCategoryData()
         {
-            List<CategoryModel> mock = service.GetCategories();
+            try
+            {
+                var result = new List<CategoryModel>();
+                var cate = _service.GetAllCategories();
+                if (cate.Result != null)
+                {
+                    result = cate.Result.Categories;
+                }
+                return result;
+            }
+            catch (Exception)
+            {
 
-            var result = mock;
-            return result;
+                return new List<CategoryModel>();
+            }
+            
         }
 
         private async Task<List<DiscountModel>> GetDiscountData()
         {
-            List<DiscountModel> mock = service.GetDiscounts().Discounts;
+            List<DiscountModel> mock = _service.GetDiscounts().Discounts;
 
             var result = mock;
             return result;
