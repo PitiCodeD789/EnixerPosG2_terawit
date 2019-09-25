@@ -4,12 +4,14 @@
 }
 
     <h1 class="text-center ">Add Staff</h1>
-<form action="/Register/CallAPIRegisUser?email=@ViewBag.Email" method="post">
+<form action="/Register/CallAPIRegisUser?email=@ViewBag.Email" method="post" oninput='rePassword.setCustomValidity(rePin.value != pin.value ? "Pin do not match." : "")'>
     <div class="form-group col-md-4 offset-4">
         <h3 class="text-center">Operator Name</h3>
         <input type="text" placeholder="Operator Name" class="form-control" name="nameUser" pattern="^([A-Za-z]+)$" required />
         <h3 class="text-center">Pin (Number 4 Digit)</h3>
         <input type="password" placeholder="Pin" class="form-control" name="pin" pattern="^(\d{4})$" maxlength="4" required />
+        <h3 class="text-center">Re-Pin (Number 4 Digit)</h3>
+        <input type="password" placeholder="Re-Pin" class="form-control" name="rePin" pattern="^(\d{4})$" maxlength="4" required />
         <br />
         <button type="submit" class="form-control">Add Staff</button>
         <br />
