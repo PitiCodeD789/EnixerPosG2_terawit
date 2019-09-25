@@ -77,9 +77,27 @@ namespace EnixerPos.DataAccess.Repositories
             return category;
         }
 
+        public int GetCategoryIdByNameAndStoreId(string name,int storeId)
+        {
+            var result = _context.Categories.Where(x=>x.StoreId == storeId)
+                .LastOrDefault(x => x.Name == name);
+            return result.Id;
+        }
+
         public bool Update(int storeId, CategoryDto categoryDto)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var category = _mapper.Map<CategoryEntity>(categoryDto);
+                _context.Categories.Update(category);
+                _context.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
         }
     }
 }

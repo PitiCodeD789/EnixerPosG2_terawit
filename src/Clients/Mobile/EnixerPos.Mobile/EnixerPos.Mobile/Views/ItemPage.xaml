@@ -55,14 +55,14 @@
                         </Frame>
                     </StackLayout>
                     <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
-                        <ListView ItemsSource="{Binding TheData}" SelectedItem="{Binding SelectedData}" HasUnevenRows="True">
+                        <ListView ItemsSource="{Binding TheData}"  SelectedItem="{Binding SelectedData}" HasUnevenRows="True">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>
                                         <StackLayout Orientation="Horizontal" HeightRequest="100" VerticalOptions="StartAndExpand">
-                                            <StackLayout.GestureRecognizers>
+                                            <!--<StackLayout.GestureRecognizers>
                                                 <TapGestureRecognizer Command="{Binding EditData, Source={x:Reference TheItemPage}}" CommandParameter="{Binding DataName, Source={x:Reference TheItemPage}}"/>
-                                            </StackLayout.GestureRecognizers>
+                                            </StackLayout.GestureRecognizers>-->
                                             <Frame CornerRadius="180" WidthRequest="55" HeightRequest="55" BackgroundColor="{Binding Color}" Padding="0" Margin="15" VerticalOptions="CenterAndExpand"/>
                                             <StackLayout VerticalOptions="CenterAndExpand">
                                                 <Label Text="{Binding DataName}" FontSize="24" TextColor="Black"/>

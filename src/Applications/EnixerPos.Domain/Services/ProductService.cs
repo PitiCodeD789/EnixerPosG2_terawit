@@ -306,8 +306,8 @@ namespace EnixerPos.Domain.Services
                 if (storeId == 0)
                     throw new FileNotFoundException();
 
-                //TODO Map category to categoryDto
-                CategoryDto categoryDto = new CategoryDto();
+                CategoryDto categoryDto = _mapper.Map<CategoryDto>(category);
+                categoryDto.StoreId = storeId;
                 bool result = _categoryRepository.Update(storeId, categoryDto);
 
                 resultViewModel.IsError = !result;
@@ -331,8 +331,8 @@ namespace EnixerPos.Domain.Services
                 if (storeId == 0)
                     throw new FileNotFoundException();
 
-                //TODO Map category to categoryDto
-                DiscountDto discountDto = new DiscountDto();
+                DiscountDto discountDto = _mapper.Map<DiscountDto>(discount);
+                discountDto.StoreId = storeId;
                 bool result = _discountRepository.Update(storeId, discountDto);
 
                 resultViewModel.IsError = !result;
@@ -356,8 +356,9 @@ namespace EnixerPos.Domain.Services
                 if (storeId == 0)
                     throw new FileNotFoundException();
 
-                //TODO Map ItemModel to ItemDto
-                ItemDto itemDto = new ItemDto();
+                ItemDto itemDto = _mapper.Map<ItemDto>(item);
+                itemDto.CategoryId = _categoryRepository.GetCategoryIdByNameAndStoreId(itemDto.CategoryName,storeId);
+                itemDto.StoreId = storeId;
                 bool result = _itemRepository.Update(storeId, itemDto);
 
                 resultViewModel.IsError = !result;
