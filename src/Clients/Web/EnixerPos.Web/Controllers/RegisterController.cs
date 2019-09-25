@@ -50,12 +50,12 @@ namespace EnixerPos.Web.Controllers
             bool isEmail = _authService.ChechEmail(email);
             if (isEmail)
             {
-                return RedirectToAction("Error(", "Register", new { message = "E-Mail นี้ถูกใช้งานแล้ว" });
+                return RedirectToAction("Error", "Register", new { message = "E-Mail นี้ถูกใช้งานแล้ว" });
             }
             bool isStroe = _authService.CheckStore(storeName);
             if (isStroe)
             {
-                return RedirectToAction("Error(", "Register", new { message = "ชื่อร้านนี้ถูกใช้งานแล้ว" });
+                return RedirectToAction("Error", "Register", new { message = "ชื่อร้านนี้ถูกใช้งานแล้ว" });
             }
 
             RegisterStoreDtoCommand command = new RegisterStoreDtoCommand()
@@ -72,7 +72,7 @@ namespace EnixerPos.Web.Controllers
             }
             else
             {
-                return RedirectToAction("Error(", "Register", new { message = "ไม่สามารถลงทะเบียนได้" });
+                return RedirectToAction("Error", "Register", new { message = "ไม่สามารถลงทะเบียนได้" });
             }
         }
 
