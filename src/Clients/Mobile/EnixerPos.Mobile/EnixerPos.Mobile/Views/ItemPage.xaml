@@ -22,6 +22,7 @@
                             <Picker IsVisible="{Binding Picker}" Title="All Item" TitleColor="Black" FontSize="28" TextColor="Black" ItemsSource="{Binding CategoryName}" SelectedItem="{Binding ChangeCategory}"/>
                             <Label IsVisible="{Binding Laber}" Text="{Binding NamePage}" FontSize="28" TextColor="Black"/>
                         </StackLayout>
+                        
                         <ImageButton Source="icon_search_2" Aspect="AspectFit" VerticalOptions="Center" Margin="20,0" HeightRequest="30" BackgroundColor="Transparent" HorizontalOptions="EndAndExpand"/>
                     </StackLayout>
 
@@ -60,9 +61,6 @@
                                 <DataTemplate>
                                     <ViewCell>
                                         <StackLayout Orientation="Horizontal" HeightRequest="100" VerticalOptions="StartAndExpand">
-                                            <!--<StackLayout.GestureRecognizers>
-                                                <TapGestureRecognizer Command="{Binding EditData, Source={x:Reference TheItemPage}}" CommandParameter="{Binding DataName, Source={x:Reference TheItemPage}}"/>
-                                            </StackLayout.GestureRecognizers>-->
                                             <Frame CornerRadius="180" WidthRequest="55" HeightRequest="55" BackgroundColor="{Binding Color}" Padding="0" Margin="15" VerticalOptions="CenterAndExpand"/>
                                             <StackLayout VerticalOptions="CenterAndExpand">
                                                 <Label Text="{Binding DataName}" FontSize="24" TextColor="Black"/>
