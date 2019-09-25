@@ -40,11 +40,77 @@ namespace EnixerPos.DataAccess.Repositories
             }
         }
 
+        public bool DeleteUserByEmialAndUser(int storeId, string user)
+        {
+            try
+            {
+                var userData = _context.User.Where(x => x.StoreId == storeId && x.NameUser == user).Single();
+
+                _context.User.Remove(userData);
+
+                _context.SaveChanges();
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error : " + e.Message);
+                return false;
+            }
+        }
+
+        public bool EditUserInStore(int storeId, string pin, string nameUser, string oldUser)
+        {
+            try
+            {
+                var userData = _context.User.Where(x => x.StoreId == storeId && x.NameUser == oldUser).Single();
+
+                userData.NameUser = nameUser;
+
+                userData.Pin = pin;
+
+                _context.SaveChanges();
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error : " + e.Message);
+                return false;
+            }
+        }
+
+        public List<UserEntity> GetAllUserInStore(int storeId)
+        {
+            try
+            {
+                return _context.User.Where(x => x.StoreId == storeId).ToList();
+            }
+            catch (Exception)
+            {
+
+                return null;
+            }
+        }
+
         public UserEntity GetUserByEmialAndPin(int storeId, string hashPin)
         {
             try
             {
                 return _context.User.Where(x => x.StoreId == storeId).Where(x => x.Pin == hashPin).FirstOrDefault();
+            }
+            catch (Exception)
+            {
+
+                return null;
+            }
+        }
+
+        public UserEntity GetUserByEmialAndUser(int storeId, string user)
+        {
+            try
+            {
+                return _context.User.Where(x => x.StoreId == storeId).Where(x => x.NameUser == user).FirstOrDefault();
             }
             catch (Exception)
             {

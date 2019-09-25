@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewData["Title"] = "UserEdit";
+}
+
+<<h1 class="text-center ">User Edit</h1>
+<form action="/User/CallEditUser?oldUser=@ViewBag.NameUser" method="post" oninput='rePassword.setCustomValidity(rePin.value != pin.value ? "Pin do not match." : "")'>
+    <div class="form-group col-md-4 offset-4">
+        <h3 class="text-center">Operator Name</h3>
+        <input type="text" value="@ViewBag.NameUser" placeholder="Operator Name" class="form-control" name="nameUser" pattern="^([A-Za-z]+)$"/>
+        <h3 class="text-center">New Pin (Number 4 Digit)</h3>
+        <input type="password" placeholder="Pin" class="form-control" name="pin" pattern="^(\d{4})$" maxlength="4" />
+        <h3 class="text-center">New Re-Pin (Number 4 Digit)</h3>
+        <input type="password" placeholder="Re-Pin" class="form-control" name="rePin" pattern="^(\d{4})$" maxlength="4" />
+        <br />
+        <button type="submit" class="form-control">Add Staff</button>
+        <br />
+        <button type="reset" class="form-control">Cancel</button>
+        <br />
+        <button type="button" class="form-control">@Html.ActionLink("Back", "Index", "Register")</button>
+    </div>
+</form>
+

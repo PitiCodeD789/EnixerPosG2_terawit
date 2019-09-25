@@ -6,6 +6,7 @@ using EnixerPos.Domain.Interfaces;
 using EnixerPos.Domain.Repositories;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
@@ -259,6 +260,83 @@ namespace EnixerPos.Domain.Services
                 return false;
             }
             return true;
+        }
+
+        public bool ChechNameUser(CheckNameUserDtoCommand checkNameUser)
+        {
+            string email = checkNameUser.Email.ToLower();
+            string user = checkNameUser.NameUser;
+
+            int storeId = _storeRepository.GetStoreIdByEmail(email);
+            if (storeId == default || storeId == 0)
+            {
+                return false;
+            }
+
+            UserEntity userEntity = _userRepository.GetUserByEmialAndUser(storeId, user);
+            if (userEntity == default)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public List<StaffDto> GetUserInStore(string email)
+        {
+            bool isEmail = Generator.CheckEmailFormat(email);
+            if (!isEmail)
+            {
+                return null;
+            }
+
+            int storeId = _storeRepository.GetStoreIdByEmail(email);
+            if (storeId == default || storeId == 0)
+            {
+                return null;
+            }
+
+            List<UserEntity> userEntities = _userRepository.GetAllUserInStore(storeId);
+            if (userEntities == null)
+            {
+                return null;
+            }
+
+            List<StaffDto> staffDtos = userEntities.Select(x => new StaffDto()
+            {
+                Name = x.NameUser
+            }).ToList();
+
+            return staffDtos;
+        }
+
+        public bool DeleteNameUser(CheckNameUserDtoCommand checkNameUser)
+        {
+            string email = checkNameUser.Email.ToLower();
+            string user = checkNameUser.NameUser;
+
+            int storeId = _storeRepository.GetStoreIdByEmail(email);
+            if (storeId == default || storeId == 0)
+            {
+                return false;
+            }
+
+            return _userRepository.DeleteUserByEmialAndUser(storeId, user);
+        }
+
+        public bool EditUserInStore(EditUserInStoreDtoCommand command)
+        {
+            string email = command.Email.ToLower();
+            string pin = command.Pin;
+            string nameUser = command.NameUser;
+            string oldUser = command.OldUser;
+
+            int storeId = _storeRepository.GetStoreIdByEmail(email);
+            if (storeId == default || storeId == 0)
+            {
+                return false;
+            }
+
+            return _userRepository.EditUserInStore(storeId, pin, nameUser, oldUser);
         }
     }
 }
