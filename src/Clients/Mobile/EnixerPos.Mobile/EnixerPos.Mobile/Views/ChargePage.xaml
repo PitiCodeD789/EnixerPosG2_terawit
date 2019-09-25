@@ -106,7 +106,7 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="*"/> 
                 </Grid.RowDefinitions>
-                <Label Text="{Binding TotalPrice}" TextColor="Black" FontSize="35" HorizontalOptions="Center" VerticalOptions="End" Grid.Row="0" Grid.ColumnSpan="4" />
+                <Label Text="{Binding TotalPrice, StringFormat='{#,0.00}'}" TextColor="Black" FontSize="35" HorizontalOptions="Center" VerticalOptions="End" Grid.Row="0" Grid.ColumnSpan="4" />
                 <Label Text="Total Amount" HorizontalOptions="Center" VerticalOptions="Start" Grid.Row="1" Grid.ColumnSpan="4"/>
                 <Label Text="Cash Received" TextColor="#E96722" FontSize="Medium" Grid.Row="2"/>
                 <components:Pos_EntryView TextEntry="{Binding Cash}" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="3" HorizontalTextAlignment="Center"/>
