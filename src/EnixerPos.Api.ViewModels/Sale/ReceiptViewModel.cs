@@ -27,5 +27,17 @@ namespace EnixerPos.Api.ViewModels.Sale
         {
             get{ return CreateDateTime.AddHours(7).ToString("HH:mm");}
         }
+
+        public bool GetIsTotalDiscount
+        {
+            get
+            {
+                if (Discount <= 0)
+                {
+                    return false;
+                }
+                return true;
+            }
+        }
     }
 }

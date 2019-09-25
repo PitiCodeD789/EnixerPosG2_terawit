@@ -113,9 +113,11 @@
                                     <ColumnDefinition Width="auto"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                <BoxView Grid.Row="0" VerticalOptions="Center" HorizontalOptions="FillAndExpand" HeightRequest="1" Color="Gray" Grid.ColumnSpan="2"/>
-                                <Label Text="{Binding DiscountAll,StringFormat='{}Discount: {0}'}"  FontSize="Medium" TextColor="Black" Grid.Row="1" Grid.Column="0" HorizontalOptions="StartAndExpand"/>
-                                <Label Grid.Row="1" Text="{Binding DiscountValue}" FontSize="Medium" TextColor="Black" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" Grid.Column="1"/>
+                                <BoxView Grid.Row="0" VerticalOptions="Center" HorizontalOptions="FillAndExpand" HeightRequest="1" Color="Gray" Grid.ColumnSpan="2" IsVisible="{Binding IsSelectItemDiscount}"/>
+                                <Label Text="{Binding DiscountAll,StringFormat='{}Discount: {0}'}"  FontSize="Medium" TextColor="Black" Grid.Row="1" Grid.Column="0" HorizontalOptions="StartAndExpand"
+                                       IsVisible="{Binding IsSelectItemDiscount}"/>
+                                <Label Grid.Row="1" Text="{Binding DiscountValue}" FontSize="Medium" TextColor="Black" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" Grid.Column="1"
+                                       IsVisible="{Binding IsSelectItemDiscount}"/>
                                 <BoxView Grid.Row="2" VerticalOptions="Center" HorizontalOptions="FillAndExpand" HeightRequest="1" Color="Gray"  Grid.ColumnSpan="2"/>
                                 <Label Text="Total"  FontSize="Medium" TextColor="Black" Grid.Row="3" Grid.Column="0" HorizontalOptions="StartAndExpand"/>
                                 <Label Grid.Row="3" Text="{Binding TotalPrice,StringFormat='{0:N2}'}" FontSize="Medium" TextColor="Black" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" Grid.Column="1"/>

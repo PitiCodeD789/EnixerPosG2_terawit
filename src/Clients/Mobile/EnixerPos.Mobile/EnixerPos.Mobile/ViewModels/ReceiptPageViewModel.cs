@@ -1,11 +1,13 @@
 ﻿using EnixerPos.Api.ViewModels.Sale;
 using EnixerPos.Mobile.Models;
+using EnixerPos.Mobile.Views;
 using EnixerPos.Service.Interfaces;
 using EnixerPos.Service.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace EnixerPos.Mobile.ViewModels
@@ -121,9 +123,10 @@ namespace EnixerPos.Mobile.ViewModels
                 OnPropertyChanged();
                 if (SelectedReceipt != null)
                 {
-                    TotalPrice = GetTotalPrice();
+                    TotalPrice = SelectedReceipt.Total;
                     DiscountAll = GetDiscountString(selectedReceipt.Discount, selectedReceipt.IsDiscountPercentage);
                     DiscountValue = GetDiscountValue();
+                    IsSelectItemDiscount = SelectedReceipt.IsDiscountPercentage;
                     GetShowOrder();
                 }
             }
@@ -139,16 +142,16 @@ namespace EnixerPos.Mobile.ViewModels
             return "-"+discount;
         }
 
-        private decimal GetTotalPrice()
-        {
-            var total = SelectedReceipt.Total;
-            decimal discount = SelectedReceipt.Discount;
-            if (SelectedReceipt.IsDiscountPercentage)
-            {
-                discount = total * (SelectedReceipt.Discount / 100);
-            }
-            return total - discount;
-        }
+        //private decimal GetTotalPrice()
+        //{
+        //    var total = SelectedReceipt.Total;
+        //    decimal discount = SelectedReceipt.Discount;
+        //    if (SelectedReceipt.IsDiscountPercentage)
+        //    {
+        //        discount = total * (SelectedReceipt.Discount / 100);
+        //    }
+        //    return total - discount;
+        //}
 
         private List<ShowOrderModel> selectItem;
 
@@ -269,6 +272,24 @@ namespace EnixerPos.Mobile.ViewModels
             ShowReciept = AllReciept;
         }
 
+        public void SaveReceipt()
+        {
+            if (SelectedReceipt!=null)
+            {
+                Task.Run(() => { new ReceiptPage(SelectedReceipt); });
+            }
+        }
+
+        private bool isSelectItemDiscount;
+
+        public bool IsSelectItemDiscount
+        {
+            get { return isSelectItemDiscount; }
+            set {
+                isSelectItemDiscount = value;
+                OnPropertyChanged();
+            }
+        }
 
     }
 }

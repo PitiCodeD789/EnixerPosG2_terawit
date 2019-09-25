@@ -224,7 +224,7 @@ namespace EnixerPos.Mobile.ViewModels
                 case 4: return "#c6dbfc";
                 case 5: return "#ffccf9";
                 case 6: return "#e0e0e0";
-                default: return null;
+                default: return "#ffffff";
             }
         }
 
@@ -239,7 +239,7 @@ namespace EnixerPos.Mobile.ViewModels
                 case "#c6dbfc": return 4;
                 case "#ffccf9": return 5;
                 case "#e0e0e0": return 6;
-                default: return 0;
+                default: return 1;
             }
         }
 
@@ -249,7 +249,15 @@ namespace EnixerPos.Mobile.ViewModels
             {
                 if (price != null)
                 {
-                    return Decimal.Parse(price);
+                    var convPrice = Decimal.Parse(price);
+                    if (convPrice >= 0)
+                    {
+                        return convPrice;
+                    }
+                    else
+                    {
+                        return 0;
+                    }
                 }
                 return 0;
             }
