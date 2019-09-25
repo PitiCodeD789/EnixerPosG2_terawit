@@ -30,7 +30,6 @@ namespace EnixerPos.Mobile
             InitializeComponent();
             TicketList = new List<ReceiptViewModel>();
 
-            MainPage = new NavigationPage(new SaleView());
             // MainPage = new MainPage();
             //  MainPage = new SaleView();
             //CategoryPageViewModel viewModel = new CategoryPageViewModel();
@@ -47,22 +46,23 @@ namespace EnixerPos.Mobile
             var refreshToken = await SecureStorage.GetAsync("RefreshToken");
             Email = await SecureStorage.GetAsync("Email");
             StoreName = await SecureStorage.GetAsync("StoreName");
-            if (String.IsNullOrEmpty(refreshToken) || String.IsNullOrEmpty(Email) || String.IsNullOrEmpty(StoreName))
-            {
-                MainPage = new NavigationPage(new Login())
-                {
-                    BackgroundColor = Color.White
-                };
-                PermissionReq();
-            }
-            else
-            {
-                MainPage = new NavigationPage(new EnterPin())
-                {
-                    BackgroundColor = Color.White
-                };
-                PermissionReq();
-            }
+            //if (String.IsNullOrEmpty(refreshToken) || String.IsNullOrEmpty(Email) || String.IsNullOrEmpty(StoreName))
+            //{
+            //    MainPage = new NavigationPage(new Login())
+            //    {
+            //        BackgroundColor = Color.White
+            //    };
+            //    PermissionReq();
+            //}
+            //else
+            //{
+            //    MainPage = new NavigationPage(new EnterPin())
+            //    {
+            //        BackgroundColor = Color.White
+            //    };
+            //    PermissionReq();
+            //}
+            MainPage = new NavigationPage(new SaleView());
         }
 
         protected override void OnSleep()
