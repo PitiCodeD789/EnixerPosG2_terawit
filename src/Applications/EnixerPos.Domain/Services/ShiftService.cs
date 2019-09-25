@@ -157,7 +157,7 @@ namespace EnixerPos.Domain.Services
             }
             if(cashStatus == ManageCashStatus.PayOut)
             {
-                decimal expectedcashamount = shiftEntity.StartingCash + shiftEntity.CashPayment + shiftEntity.Paidin - shiftEntity.Discount - shiftEntity.Paidout - shiftEntity.Refunds;
+                decimal expectedcashamount = shiftEntity.StartingCash + shiftEntity.CashPayment + shiftEntity.Paidin - shiftEntity.Paidout - shiftEntity.Refunds;
                 if(expectedcashamount < amount)
                 {
                     return false;

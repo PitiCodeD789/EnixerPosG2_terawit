@@ -367,7 +367,7 @@ namespace EnixerPos.Mobile.ViewModels
                 ItemList = CurrentTicket.ToList(),
                 Total = TotalPrice,
                 CreateDateTime = DateTime.Now,
-                TotalDiscount = totalDiscount,
+                TotalDiscount = totalDiscount+ CurrentDiscountAmount,
                 Discount = CurrentDiscountAmount,
             };
             Application.Current.MainPage.Navigation.PushAsync(new ChargePage(receipt));
