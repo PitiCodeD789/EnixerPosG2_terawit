@@ -30,7 +30,9 @@
                                                      IsVisible="{Binding IsEntityVisible,Mode=TwoWay}"
                                                      HorizontalOptions="End"   
                                                      HeightRequest="40"
-                                                     WidthRequest="500"/>                           
+                                                     WidthRequest="500"
+                                                     TextSize="18"
+                                                     TextEntry="{Binding SearchingText}"/>                           
                             
                         </StackLayout>
                         <ImageButton Source="{Binding ImageName, Mode=TwoWay}" 
@@ -79,9 +81,6 @@
                                 <DataTemplate>
                                     <ViewCell>
                                         <StackLayout Orientation="Horizontal" HeightRequest="100" VerticalOptions="StartAndExpand">
-                                            <!--<StackLayout.GestureRecognizers>
-                                                <TapGestureRecognizer Command="{Binding EditData, Source={x:Reference TheItemPage}}" CommandParameter="{Binding DataName, Source={x:Reference TheItemPage}}"/>
-                                            </StackLayout.GestureRecognizers>-->
                                             <Frame CornerRadius="180" WidthRequest="55" HeightRequest="55" BackgroundColor="{Binding Color}" Padding="0" Margin="15" VerticalOptions="CenterAndExpand"/>
                                             <StackLayout VerticalOptions="CenterAndExpand">
                                                 <Label Text="{Binding DataName}" FontSize="24" TextColor="Black"/>

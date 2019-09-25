@@ -18,6 +18,8 @@ namespace EnixerPos.Mobile.Views.Popup
         public SideMenu()
         {
             InitializeComponent();
+            PosUser.Text = App.User;
+            StoneName.Text = App.StoreName;
         }
 
         private void Sale_Tapped(object sender, EventArgs e)

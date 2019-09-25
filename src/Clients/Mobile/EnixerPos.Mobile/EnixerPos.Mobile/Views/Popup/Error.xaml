@@ -24,9 +24,11 @@
         <Frame BackgroundColor="White"
                    CornerRadius="10"
                    VerticalOptions="Center"                   
-                   HorizontalOptions="FillAndExpand"
+                   HorizontalOptions="Center"
                    Margin="20,0"
-                   HeightRequest="250" WidthRequest="300">
+               MinimumHeightRequest="300"
+               MinimumWidthRequest="300"
+                   >
             <StackLayout>
                 <Image Source="{Binding ImageError}" HorizontalOptions="CenterAndExpand" Margin="0,30"/>
                 <Label Text="{Binding TextError}" TextColor="Orange" HorizontalOptions="CenterAndExpand" FontSize="20"/>

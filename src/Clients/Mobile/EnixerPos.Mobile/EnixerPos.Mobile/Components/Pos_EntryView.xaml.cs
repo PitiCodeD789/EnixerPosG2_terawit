@@ -32,6 +32,20 @@ namespace EnixerPos.Mobile.Components
         }
         #endregion
 
+        #region TextSize
+        private double textSize;
+
+        public double TextSize
+        {
+            get { return textSize; }
+            set {
+                textSize = value;
+                mEntry.FontSize = TextSize;
+            }
+        }
+
+        #endregion
+
         #region Placeholder
         private string placeholder;
 

@@ -25,7 +25,7 @@ namespace EnixerPos.Api.ViewModels.Sale
 
         public string GetCreateTimeString
         {
-            get{ return CreateDateTime.ToString("HH:mm");}
+            get{ return CreateDateTime.AddHours(7).ToString("HH:mm");}
         }
     }
 }

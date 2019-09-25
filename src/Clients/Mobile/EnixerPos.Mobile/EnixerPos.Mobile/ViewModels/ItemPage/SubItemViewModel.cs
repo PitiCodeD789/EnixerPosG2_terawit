@@ -28,6 +28,7 @@ namespace EnixerPos.Mobile.ViewModels.ItemPage
             GotoCategory = new Command(CategoryMethod);
             GotoDiscount = new Command(DiscountMethod);
             ShowSerachEntityCommand = new Command(ShowSerachEntity);
+            IsSearching = true;
         }
 
         private void ShowSerachEntity(object obj)
@@ -36,15 +37,22 @@ namespace EnixerPos.Mobile.ViewModels.ItemPage
             if(IsEntityVisible)
             {
                 ImageName = "iconsxbox";
-            }else
+                IsSearching = false;
+                SearchingText = "";
+                IsSearching = true;
+            }
+            else
             {
                 ImageName = "icon_search_2";
+                IsSearching = false;
+                SearchingText = "";
+                IsSearching = true;
             }
         }
 
         public ICommand ShowSerachEntityCommand { get; set; }
 
-        private bool isEntityVisible = true;
+        private bool isEntityVisible = false;
 
         public bool IsEntityVisible
         {
@@ -273,6 +281,7 @@ namespace EnixerPos.Mobile.ViewModels.ItemPage
                     Number = x.Price.ToString("#,###.00"),
                     NumberVisible = true
                 }).ToList();
+                SearchData = TheData;
                 CategoryName = categoryData.Select(x => x.Name).ToList();
                 CategoryName.Add("All Items");
                 Picker = true;
@@ -293,6 +302,7 @@ namespace EnixerPos.Mobile.ViewModels.ItemPage
                     CountItemVisible = true,
                     NumberVisible = false
                 }).ToList();
+                SearchData = TheData;
                 NamePage = "Categories";
                 Picker = false;
                 Laber = true;
@@ -312,6 +322,7 @@ namespace EnixerPos.Mobile.ViewModels.ItemPage
                     Number = (!x.IsPercentage) ? x.Amount.ToString("#,###.00") : (x.Amount/100).ToString("#%"),
                     NumberVisible = true
                 }).ToList();
+                SearchData = TheData;
                 NamePage = "Discounts";
                 Picker = false;
                 Laber = true;
@@ -384,7 +395,10 @@ namespace EnixerPos.Mobile.ViewModels.ItemPage
 
         private void ChangeItem()
         {
-            if( changeCategory == null || changeCategory == "All Items" )
+            IsSearching = false;
+            SearchingText = "";
+            IsSearching = true;
+            if ( changeCategory == null || changeCategory == "All Items" )
             {
                 InputDataToBinding();
             }
@@ -399,7 +413,48 @@ namespace EnixerPos.Mobile.ViewModels.ItemPage
                     Number = x.Price.ToString("#,###.00"),
                     NumberVisible = true
                 }).ToList();
+                SearchData = TheData;
+
             }
         }
+
+        private string searchingText;
+
+        public string SearchingText
+        {
+            get { return searchingText; }
+            set {
+                searchingText = value;
+                OnPropertyChanged();
+                if (IsSearching)
+                {
+                    if (SearchingText != value && string.IsNullOrEmpty(value))
+                    {
+                        ChangeItem();
+                    }
+                    else
+                    {
+                        TheData = SearchData.Where(x => x.DataName.ToLower().Contains(SearchingText.ToLower())).ToList();
+                    }
+                }
+            }
+        }
+
+        private List<ItemPageModel> searchData;
+        public List<ItemPageModel> SearchData
+        {
+            get
+            {
+                return searchData;
+            }
+            set
+            {
+                searchData = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public bool IsSearching { get; set; }
+
     }
 }
