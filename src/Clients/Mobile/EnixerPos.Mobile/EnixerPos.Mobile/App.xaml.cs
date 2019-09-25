@@ -38,7 +38,7 @@ namespace EnixerPos.Mobile
             //CreateDiscountPageViewModel createDiscount = new CreateDiscountPageViewModel();
             //MainPage = new NavigationPage(new Views.Item.CreateDiscountPage(createDiscount));
             //MainPage = new NavigationPage(new SaleView());
-          //  MainPage = new NavigationPage(new Views.SettingPage());
+            //  MainPage = new NavigationPage(new Views.ItemPage());
            // PermissionReq();
         }
 
@@ -63,7 +63,6 @@ namespace EnixerPos.Mobile
                 };
                 PermissionReq();
             }
-            //MainPage = new NavigationPage(new SaleView());
         }
 
         protected override void OnSleep()

@@ -162,21 +162,42 @@ namespace EnixerPos.Domain.Services
             string otp = Generator.GenerateRandomString(20);
 
             bool isCreateStore = _storeRepository.CreateStore(email, storeName, eWalletAccNo, otp);
-            if (isCreateStore)
+            if (!isCreateStore)
             {
-                string value = SentEmailValue + $"SetPassword?otp={otp}&&email={email}";
-                SendEmail(email, value);
-                return true;
+                return false;
+                
             }
-            else
+
+            int storeId = _storeRepository.GetStoreIdByEmail(email);
+            if (storeId == default)
             {
                 return false;
             }
+
+            bool isCreateToken = _tokenRepository.CreateTokenByStoreId(storeId);
+            if (!isCreateStore)
+            {
+                return false;
+            }
+
+            string value = SentEmailValue + $"SetPassword?otp={otp}&&email={email}";
+            SendEmail(email, value);
+            return true;
         }
 
         public bool RegisterUserInStore(RegisterUserInStoreDtoCommand command)
         {
-            throw new NotImplementedException();
+            string email = command.Email.ToLower();
+            string pin = command.Pin;
+            string nameUser = command.NameUser;
+
+            int storeId = _storeRepository.GetStoreIdByEmail(email);
+            if (storeId == default || storeId == 0)
+            {
+                return false;
+            }
+
+            return _userRepository.CreateUserInStore(storeId, pin, nameUser);
         }
 
         public bool Logout(string email)
@@ -219,6 +240,25 @@ namespace EnixerPos.Domain.Services
             string hashPass = Generator.HashPassword(password, salt);
 
             return _storeRepository.AddPassword(email, hashPass, salt, otp);
+        }
+
+        public bool CheckPin(CheckPinDtoCommand checkPinDto)
+        {
+            string email = checkPinDto.Email.ToLower();
+            string pin = checkPinDto.Pin;
+
+            int storeId = _storeRepository.GetStoreIdByEmail(email);
+            if (storeId == default || storeId == 0)
+            {
+                return false;
+            }
+
+            UserEntity userEntity = _userRepository.GetUserByEmialAndPin(storeId, pin);
+            if (userEntity == default)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

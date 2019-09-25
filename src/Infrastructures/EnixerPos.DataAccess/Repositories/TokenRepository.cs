@@ -29,6 +29,28 @@ namespace EnixerPos.DataAccess.Repositories
             }
         }
 
+        public bool CreateTokenByStoreId(int storeId)
+        {
+            try
+            {
+                TokenEntity tokenEntity = new TokenEntity()
+                {
+                    StoreId = storeId,
+                    UserId = 0,
+                };
+
+                _context.Token.Add(tokenEntity);
+                _context.SaveChanges();
+
+                return true;
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Error : " + e.Message);
+                return false;
+            }
+        }
+
         public bool DeleteUserAndToken(int storeId)
         {
             try

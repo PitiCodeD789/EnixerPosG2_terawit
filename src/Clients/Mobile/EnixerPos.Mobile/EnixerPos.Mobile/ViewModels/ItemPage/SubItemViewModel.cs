@@ -27,7 +27,40 @@ namespace EnixerPos.Mobile.ViewModels.ItemPage
             GotoItem = new Command(ItemMethod);
             GotoCategory = new Command(CategoryMethod);
             GotoDiscount = new Command(DiscountMethod);
+            ShowSerachEntityCommand = new Command(ShowSerachEntity);
         }
+
+        private void ShowSerachEntity(object obj)
+        {
+            IsEntityVisible = !IsEntityVisible;
+            if(IsEntityVisible)
+            {
+                ImageName = "iconsxbox";
+            }else
+            {
+                ImageName = "icon_search_2";
+            }
+        }
+
+        public ICommand ShowSerachEntityCommand { get; set; }
+
+        private bool isEntityVisible = true;
+
+        public bool IsEntityVisible
+        {
+            get { return isEntityVisible; }
+            set { isEntityVisible = value; OnPropertyChanged(); }
+        }
+
+        private string imageName = "icon_search_2";
+
+        public string ImageName
+        {
+            get { return imageName; }
+            set { imageName = value; OnPropertyChanged(); }
+        }
+
+
 
         private string itemColor;
         public string ItemColor

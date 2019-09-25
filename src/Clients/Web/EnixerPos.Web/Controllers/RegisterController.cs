@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EnixerPos.Api.ViewModels.Helpers;
 using EnixerPos.Domain.DtoModels.Auth;
 using EnixerPos.Domain.Interfaces;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EnixerPos.Web.Controllers
@@ -28,6 +30,25 @@ namespace EnixerPos.Web.Controllers
         }
 
         public IActionResult RegisUser()
+        {
+            try
+            {
+                string email = HttpContext.Session.GetString("Email");
+                if (String.IsNullOrEmpty(email))
+                {
+                    return RedirectToAction("Index", "Register");
+                }
+                ViewBag.Email = email;
+                return View();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error : " + e.Message);
+                return RedirectToAction("Index", "Register");
+            }
+        }
+
+        public IActionResult Login()
         {
             return View();
         }
@@ -75,10 +96,56 @@ namespace EnixerPos.Web.Controllers
                 return RedirectToAction("Error", "Register", new { message = "ไม่สามารถลงทะเบียนได้" });
             }
         }
-
-        public IActionResult CallAPIRegisUser(string nameUser, string pin)
+        public IActionResult CallApiLogin(string email, string password)
         {
-            return RedirectToAction("SuccessPage", "Register", "OK");
+            email = email.ToLower();
+            bool isEmail = _authService.ChechEmail(email);
+            if (!isEmail)
+            {
+                return RedirectToAction("Error", "Register", new { message = "E-Mail ไม่มีอยู่ในระบบโปรดลงทะเบียนใหม่" });
+            }
+
+            var loginData = _authService.LoginMerchant(email, password);
+            if(loginData == null)
+            {
+                return RedirectToAction("Error", "Register", new { message = "E-Mail ไม่มีอยู่ในระบบโปรดลงทะเบียนใหม่" });
+            }
+            HttpContext.Session.SetString("Email", email);
+            return RedirectToAction("Index", "Management");
+        }
+
+        public IActionResult CallAPIRegisUser(string email, string nameUser, string pin)
+        {
+            email = email.ToLower();
+            bool isEmail = _authService.ChechEmail(email);
+            if (!isEmail)
+            {
+                return RedirectToAction("Error", "Management", new { message = "E-Mail ไม่มีอยู่ในระบบโปรดลงทะเบียนใหม่" });
+            }
+
+            CheckPinDtoCommand checkPinDto = new CheckPinDtoCommand()
+            {
+                Email = email,
+                Pin = pin
+            };
+            bool isPin = _authService.CheckPin(checkPinDto);
+            if (isPin)
+            {
+                return RedirectToAction("Error", "Management", new { message = "Pin นี้ถูกใช้งานในร้านค้านี้เรียบร้อย" });
+            }
+
+            RegisterUserInStoreDtoCommand command = new RegisterUserInStoreDtoCommand()
+            {
+                Email = email,
+                NameUser = nameUser,
+                Pin = pin
+            };
+            bool isRegisUser = _authService.RegisterUserInStore(command);
+            if (!isRegisUser)
+            {
+                return RedirectToAction("Error", "Management", new { message = "ไม่สามารถเพิ่มพนักงานได้" });
+            }
+            return RedirectToAction("SuccessPage", "Management", new { message = "เพิ่มพนักงานสำเร็จ" });
         }
     }
 }

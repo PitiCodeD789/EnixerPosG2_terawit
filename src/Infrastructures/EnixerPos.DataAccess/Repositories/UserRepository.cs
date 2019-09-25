@@ -16,6 +16,30 @@ namespace EnixerPos.DataAccess.Repositories
             _context = context;
         }
 
+        public bool CreateUserInStore(int storeId, string pin, string nameUser)
+        {
+            try
+            {
+                UserEntity userEntity = new UserEntity()
+                {
+                    StoreId = storeId,
+                    Pin = pin,
+                    NameUser = nameUser
+                };
+
+                _context.User.Add(userEntity);
+
+                _context.SaveChanges();
+
+                return true;
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Error : " + e.Message);
+                return false;
+            }
+        }
+
         public UserEntity GetUserByEmialAndPin(int storeId, string hashPin)
         {
             try

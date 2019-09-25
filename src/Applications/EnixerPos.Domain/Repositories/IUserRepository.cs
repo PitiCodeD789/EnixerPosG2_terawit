@@ -9,5 +9,6 @@ namespace EnixerPos.Domain.Repositories
     {
         UserEntity GetUserByUserName(string user);
         UserEntity GetUserByEmialAndPin(int storeId, string hashPin);
+        bool CreateUserInStore(int storeId, string pin, string nameUser);
     }
 }
