@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace EnixerPos.DataAccess.Migrations
 {
-    public partial class testauthno01 : Migration
+    public partial class posdatno01 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -157,7 +157,9 @@ namespace EnixerPos.DataAccess.Migrations
                     Email = table.Column<string>(nullable: true),
                     Password = table.Column<string>(nullable: true),
                     Salt = table.Column<string>(nullable: true),
-                    StoreName = table.Column<string>(nullable: true)
+                    StoreName = table.Column<string>(nullable: true),
+                    EWalletAccountNo = table.Column<string>(nullable: true),
+                    OTP = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EnixerPos.DataAccess.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20190923210822_addRelationUserandshift")]
-    partial class addRelationUserandshift
+    [Migration("20190925173228_posdatno01")]
+    partial class posdatno01
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -238,11 +238,7 @@ namespace EnixerPos.DataAccess.Migrations
                         .ValueGeneratedOnAddOrUpdate()
                         .HasDefaultValueSql("GetUtcDate()");
 
-                    b.Property<int?>("UserEntityId");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("UserEntityId");
 
                     b.ToTable("Shift");
                 });
@@ -257,7 +253,11 @@ namespace EnixerPos.DataAccess.Migrations
                         .ValueGeneratedOnAddOrUpdate()
                         .HasDefaultValueSql("GetUtcDate()");
 
+                    b.Property<string>("EWalletAccountNo");
+
                     b.Property<string>("Email");
+
+                    b.Property<string>("OTP");
 
                     b.Property<string>("Password");
 
@@ -322,13 +322,6 @@ namespace EnixerPos.DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("User");
-                });
-
-            modelBuilder.Entity("EnixerPos.Domain.Entities.ShiftEntity", b =>
-                {
-                    b.HasOne("EnixerPos.Domain.Entities.UserEntity", "UserEntity")
-                        .WithMany("ShiftEntities")
-                        .HasForeignKey("UserEntityId");
                 });
 #pragma warning restore 612, 618
         }
