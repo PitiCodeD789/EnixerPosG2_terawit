@@ -35,8 +35,8 @@
                         <zxcm:EncodingOptions Width="300" Height="300" />
                     </zxing:ZXingBarcodeImageView.BarcodeOptions>
                 </zxing:ZXingBarcodeImageView>
-                <components:Pos_ButtonView BackgroundButton="#E85F16" TextColor="White" Command="{Binding QrPaymentCompleteCommand}"
-                                             VerticalOptions="EndAndExpand" TextButton="Complete"/>
+                <Label HorizontalOptions="Center" Text="Waiting for payment"/>
+                <ActivityIndicator HorizontalOptions="Center" IsRunning="true" HeightRequest="10"/>
                 <components:Pos_ButtonView BackgroundButton="#FFFFFF" TextColor="Red" Command="{Binding ClosePopupCommand}"
                                              VerticalOptions="EndAndExpand" TextButton="Cancel"/>
             </StackLayout>

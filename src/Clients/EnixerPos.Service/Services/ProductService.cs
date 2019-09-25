@@ -17,7 +17,7 @@ namespace EnixerPos.Service.Services
     public class ProductService : BaseService, IProductService
     {
         private string serviceUrl = Helper.BaseUrl + "Product/";
-        private string checkPaymentUrl = "http://192.168.1.18:30000/api/transaction/CheckReference/1234";
+        private string checkPaymentUrl = "http://192.168.1.18:20000/api/transaction/CheckReference/";
 
         private string accessToken = SecureStorage.GetAsync("Token").Result;
         public async Task<ResultViewModel> CreateItem(ItemModel item)
@@ -220,7 +220,7 @@ namespace EnixerPos.Service.Services
             try
             {
                 HttpClient client = new HttpClient();
-                var result = client.GetAsync(checkPaymentUrl).Result;
+                var result = client.GetAsync(checkPaymentUrl + referenceNumber).Result;
                 client.Timeout = TimeSpan.FromSeconds(20);
                 bool boolResult = Convert.ToBoolean(result.Content.ReadAsStringAsync().Result);
                 return boolResult;

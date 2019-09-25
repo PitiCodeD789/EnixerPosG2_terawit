@@ -83,6 +83,7 @@ namespace EnixerPos.Mobile.ViewModels
                         App.StoreName = await SecureStorage.GetAsync("StoreName");
                         App.User = loginData.Model.User;
                         App.UserId = loginData.Model.UserId;
+                        //App.AccountNumber = loginData.Model.AccountNumber TODO:!!
                         int shiftId = loginData.Model.ShiftId;
                         if(shiftId > 0)
                         {

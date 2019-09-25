@@ -4,6 +4,7 @@ using EnixerPos.Mobile.Views;
 using EnixerPos.Mobile.Views.Popup;
 using EnixerPos.Service.Services;
 using Newtonsoft.Json;
+using Rg.Plugins.Popup.Contracts;
 using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,7 @@ namespace EnixerPos.Mobile.ViewModels
 {
     public class ChargeViewModel : INotifyPropertyChanged
     {
+        private IPopupNavigation _popup;
         private ReceiptViewModel _receipt;
         public ReceiptViewModel Receipt
         {
@@ -29,6 +31,10 @@ namespace EnixerPos.Mobile.ViewModels
             set { _receipt = value; }
         }
         ProductService _service = new ProductService();
+        public ChargeViewModel(IPopupNavigation popup)
+        {
+            _popup = popup;
+        }
         public ChargeViewModel(ReceiptViewModel receipt)
         {
             Receipt = receipt;
@@ -130,12 +136,13 @@ namespace EnixerPos.Mobile.ViewModels
                     GeneratePaymentModel model = new GeneratePaymentModel()
                     {
                         Amount = TotalPrice,
-                        AccountNumber = App.AccountNumber,
+                        AccountNumber = "0100000056",//App.AccountNumber,
                         FirstName = App.StoreName,
                         TransactionReference = unixTimestamp.ToString() + App.User,
                     };
                     QrValue = JsonConvert.SerializeObject(model);
                     await PopupNavigation.PushAsync(new QrPage(this));
+                    await Task.Delay(2000);
                     PollCode(unixTimestamp.ToString() + App.User);
                     break;
                 default:
@@ -171,8 +178,9 @@ namespace EnixerPos.Mobile.ViewModels
                 Application.Current.MainPage.DisplayAlert("Payment Error", "Payment not completed please try again.", "Ok");
             }
         }
-        async Task<bool> PollCode(string referenceNumber)
+        async void PollCode(string referenceNumber)
         {
+            IsPolling = true;
             try
             {
                 Stopwatch stopwatch = new Stopwatch();
@@ -182,17 +190,25 @@ namespace EnixerPos.Mobile.ViewModels
                 while (!result)
                 {
                     result = _service.CheckQrPayment(referenceNumber);
-                    Task.Delay(delay);
-                    if (stopwatch.Elapsed.TotalSeconds >= delay*20)
+                    await Task.Delay(delay);
+                    if (stopwatch.Elapsed.TotalMilliseconds >= delay*20)
                         break;
                 }
                 PopupNavigation.PopAllAsync();
-                return result;
+                if (result)
+                {
+                    IsPolling = false;
+                    QrPaymentComplete();
+                }
+                else
+                {
+                    Application.Current.MainPage.DisplayAlert("Payment Error", "Payment not completed please try again.", "Ok");
+                }
             }
             catch (global::System.Exception e)
             {
-                return false;
             }
+            IsPolling = false;
         }
 
         public void QrPaymentComplete()
@@ -220,6 +236,15 @@ namespace EnixerPos.Mobile.ViewModels
         }
 
         #region propfull
+        private bool _isPolling;
+
+        public bool IsPolling
+        {
+            get { return _isPolling; }
+            set { _isPolling = value; }
+        }
+
+
         private string _qrValue;
         public string QrValue
         {
