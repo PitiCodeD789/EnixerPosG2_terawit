@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:bd="clr-namespace:EnixerPos.Mobile.ViewModels"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="EnixerPos.Mobile.Views.SettingPage">
+    <ContentPage.BindingContext>
+        <bd:SettingPageViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid ColumnSpacing="0" BackgroundColor="#E3E3E3" HorizontalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            <Frame Padding="0" HorizontalOptions="FillAndExpand" 
+                   Margin="0" Grid.Column="0" Grid.ColumnSpan="3"
+                   Grid.Row="0" HasShadow="True">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <ImageButton Source="icon_hamburger" Aspect="AspectFit" 
+                                 VerticalOptions="Center" Margin="20,0"
+                                 HeightRequest="30" 
+                                 BackgroundColor="Transparent" 
+                                 Clicked="Button_Clicked">
+                        <ImageButton.GestureRecognizers>
+                            <TapGestureRecognizer  Tapped="Button_Clicked"/>
+                        </ImageButton.GestureRecognizers>
+                    </ImageButton>
+                    <Label Text="Setting" TextColor="Black" 
+                           FontSize="30" FontAttributes="Bold"
+                           VerticalOptions="Center" 
+                           HorizontalOptions="Start"  />
+                </StackLayout>
+            </Frame>
+            <Frame Padding="0" HorizontalOptions="FillAndExpand" Margin="0" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" HasShadow="True" >
+                <StackLayout Orientation="Vertical" Margin="10" HorizontalOptions="FillAndExpand">
+                    <StackLayout Orientation="Horizontal" Margin="5,10,5,5">
+                    <Image Source="iconsprint" Margin ="5,5,5,0" 
+                           HorizontalOptions="Start" 
+                           VerticalOptions="Start" Aspect="AspectFill"  HeightRequest="30"  />
+                    <Label Text="Printing" FontSize="Medium"/>                        
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Margin="5,10,5,5">
+                        <Image Source="iconscustermerandroid" Margin="5,5,5,0" 
+                           HorizontalOptions="Start" 
+                           VerticalOptions="Start" Aspect="AspectFill" HeightRequest="30"  />
+                        <Label Text="Customer Displays" FontSize="Medium" Margin="5,5,5,0" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Margin="5,10,5,5" VerticalOptions="FillAndExpand">
+                        <Image Source="icon_list" 
+                           HorizontalOptions="Start" 
+                           VerticalOptions="Start" Aspect="AspectFill" HeightRequest="30" Margin="5,5,5,0"   />
+                        <Label Text="Genneral" FontSize="Medium" Margin="5,5,5,0"/>
+                    </StackLayout>
+                    <Label Text="{Binding UserEmail}" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                    <Button Text="SIGN OUT" Command="{Binding LogOutClickCommand}" />
+                </StackLayout>
+            </Frame>
+            
+
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

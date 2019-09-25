@@ -144,7 +144,7 @@ namespace EnixerPos.Mobile.ViewModels
                         Price = ConvertPrice(ItemPrice),
                         Cost = ConvertPrice(ItemCost),
                         Color = GetColor(),
-                        Option1 = Option1,
+                        Option1 = SetDefaultOption(),
                         Option1Price = ConvertPrice(Price1),
                         Option2 = Option2,
                         Option2Price = ConvertPrice(Price2),
@@ -203,6 +203,15 @@ namespace EnixerPos.Mobile.ViewModels
                 throw;
             }
             
+        }
+
+        private string SetDefaultOption()
+        {
+            if (String.IsNullOrEmpty(Option1))
+            {
+                return "Default";
+            }
+            return Option1;
         }
 
         private string GetColor()
@@ -286,9 +295,9 @@ namespace EnixerPos.Mobile.ViewModels
             }
         }
 
-        private string option1;
-            
-        public string Option1
+        private string option1 = "Default";
+
+        public string Option1 
         {
             get { return option1; }
             set {
@@ -297,7 +306,7 @@ namespace EnixerPos.Mobile.ViewModels
             }
         }
 
-        private string price1;
+        private string price1 = "0";
 
         public string Price1
         {

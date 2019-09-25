@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewData["Title"] = "ForgotPass";
+}
+
+<h1 class="text-center ">Forgot Pass</h1>
+<form action="/ForgotPass/CallApiForgotPass" method="post">
+    <div class="form-group col-md-4 offset-4">
+        <h3 class="text-center">Email</h3>
+        <h6 class="text-center text-primary">โปรดใส่ E-Mail เพื่อรับ Password</h6>
+        <input type="email" placeholder="Email" name="email" class="form-control"/>
+        <br />
+        <button type="submit" class="form-control">Sent ot E-Mail</button>
+        <br />
+        <button type="reset" class="form-control">Cancel</button>
+    </div>
+</form>

@@ -23,7 +23,20 @@
                  HorizontalOptions="Center"                       
                  BackgroundColor="White">
         <Frame HasShadow="True">
-            <Label Text="Shift" TextColor="Black" FontSize="Medium"/>
+            <StackLayout Orientation="Horizontal">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding  ClosePopupCommand}"/>
+                </StackLayout.GestureRecognizers>
+                
+                <Image Source="Icon_x" 
+                       Aspect="AspectFill" 
+                       HorizontalOptions="Start"
+                       VerticalOptions="Start"
+                       Margin="0,5,0,0"
+                       HeightRequest="15"
+                       WidthRequest="15" />
+                <Label Text="Shift" TextColor="Black" Margin="5,0,0,0" FontSize="Medium"/>
+            </StackLayout>
         </Frame>
         <ListView ItemsSource="{Binding GetShiftListViewModel }" Margin="30,0,30,0"  
                   SelectedItem="{Binding  ShiftSelect}"
@@ -33,12 +46,12 @@
                     <ViewCell>
 
                         <StackLayout VerticalOptions="Start">
-                            <Label Text="{Binding CreateDateTime,StringFormat='{}{0:dd ddd}'}" 
+                            <Label x:Name="ShowCreateDay" Text="{Binding CreateDateTime,StringFormat='{}{0:dd ddd}'}" 
                                    TextColor="Black"
                                    FontSize="Large"/>
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="{Binding CreateDateTime,StringFormat='{}{0:hh tt} -'}"  />
-                                <Label Text="{Binding UpdateDateTime,StringFormat='{}{0:hh tt} '}"  />
+                                <Label x:Name="CreateDateTime" Text="{Binding CreateDateTime,StringFormat='{}{0:hh tt} -'}"  />
+                                <Label x:Name="UpdateDateTime" Text="{Binding UpdateDateTime,StringFormat='{}{0:hh tt} '}"  />
                             </StackLayout>
                             
                         </StackLayout>                      
@@ -47,10 +60,7 @@
             </ListView.ItemTemplate>
         </ListView>
         
-        
-        
-      
-        
+   
     </StackLayout>
        
 

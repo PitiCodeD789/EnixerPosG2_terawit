@@ -22,14 +22,22 @@ namespace EnixerPos.Mobile.ViewModels
         public BaseViewModel()
         {
             BackButton = new Command(BackPageMethod);
+            ClosePopupCommand = new Command(ClosePopup);
         }
+
+        private void ClosePopup(object obj)
+        {
+            PopupNavigation.Instance.PopAsync();
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
         public virtual ICommand BackButton { get; set; }
+        public ICommand ClosePopupCommand { get; set; }
         public async virtual void BackPageMethod()
         {
             await Application.Current.MainPage.Navigation.PopAsync();
         }
-
+      
         public async virtual void NomalLogout()
         {
             var isClose = _shiftService.CloseListShift(App.OpenShiftId, App.UserId);

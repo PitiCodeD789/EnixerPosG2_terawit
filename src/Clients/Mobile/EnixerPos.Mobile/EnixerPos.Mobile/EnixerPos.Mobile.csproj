@@ -101,7 +101,7 @@
     <EmbeddedResource Update="Components\Pos_ItemView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Shells\SalePageCategoryShell.xaml">
+    <EmbeddedResource Update="Views\SettingPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\ShiftPage.xaml">

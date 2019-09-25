@@ -1,4 +1,5 @@
-﻿using EnixerPos.Mobile.Views;
+﻿using EnixerPos.Api.ViewModels.Helpers;
+using EnixerPos.Mobile.Views;
 using EnixerPos.Mobile.Views.Popup;
 using EnixerPos.Service.Helpers;
 using EnixerPos.Service.Interfaces;
@@ -8,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -57,6 +59,8 @@ namespace EnixerPos.Mobile.ViewModels
         }
 
         public ICommand GotoLogin { get; set; }
+
+       
         public async void LoginByStore()
         {
             bool isCheck = false;
@@ -81,7 +85,9 @@ namespace EnixerPos.Mobile.ViewModels
             }
             else
             {
+                await PopupNavigation.Instance.PushAsync(new Views.Popup.LoadingPopup());
                 var loginData = await _authService.Login(email, password);
+                await PopupNavigation.Instance.PopAsync();
                 if (loginData == null)
                 {
                     ErrorViewModel errorViewModel = new ErrorViewModel("ไม่สามารถเข้าสู่ระบบได้", 1);
@@ -110,14 +116,20 @@ namespace EnixerPos.Mobile.ViewModels
         public ICommand GotoForgotPass { get; set; }
         public async void ForgotPasswordMethod()
         {
-
+            string url = StaticValue.BaseUrl;
+            Uri uri = new Uri(url);
+            await Browser.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
         }
 
         public ICommand GotoRegis { get; set; }
         public async void RegisterMethod()
         {
-
+            string url = StaticValue.BaseUrl;
+            Uri uri = new Uri(url);
+            await Browser.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
         }
+    
+      
 
     }
 }

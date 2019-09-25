@@ -1,4 +1,5 @@
-﻿using EnixerPos.Domain.DtoModels.Auth;
+﻿using EnixerPos.Api.ViewModels.Helpers;
+using EnixerPos.Domain.DtoModels.Auth;
 using EnixerPos.Domain.Entities;
 using EnixerPos.Domain.Helpers;
 using EnixerPos.Domain.Interfaces;
@@ -7,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Net.Mail;
 using System.Text;
+using System.Threading.Tasks;
+using static EnixerPos.Domain.Helpers.Status;
 
 namespace EnixerPos.Domain.Services
 {
@@ -16,6 +19,7 @@ namespace EnixerPos.Domain.Services
         private readonly ITokenRepository _tokenRepository;
         private readonly IUserRepository _userRepository;
         private readonly IShiftRepository _shiftRepository;
+        private readonly string SentEmailValue = StaticValue.BaseUrl + ":20000/";
 
         public AuthService(IStoreRepository storeRepository, 
                            ITokenRepository tokenRepository, 
@@ -39,7 +43,6 @@ namespace EnixerPos.Domain.Services
             }
             return true;
         }
-
         public bool CheckRefresh(string email, string refreshToken)
         {
             StoreEntity storeEntity = _storeRepository.GetStoreByEmail(email);
@@ -53,9 +56,10 @@ namespace EnixerPos.Domain.Services
 
         public void ForgotPassword(string email)
         {
-            string newPass = Generator.GenerateRandomString(10);
-            _storeRepository.UpdatePassword(email, newPass);
-            SendEmail(email, newPass);
+            string otp = Generator.GenerateRandomString(20);
+            _storeRepository.UpdateOtp(email, otp);
+            string value = SentEmailValue + $"SetPassword?otp={otp}&&email={email}";
+            SendEmail(email, value);
         }
 
         private void SendEmail(string email, string value)
@@ -65,8 +69,8 @@ namespace EnixerPos.Domain.Services
 
             mail.From = new MailAddress("student@enixer.net");
             mail.To.Add(email);
-            mail.Subject = @"New Password";
-            mail.Body = $"New Password : {value}";
+            mail.Subject = @"Set Password";
+            mail.Body = value;
             SmtpServer.Port = 587;
             SmtpServer.Credentials = new System.Net.NetworkCredential("student@enixer.net", "Gg123456789");
             SmtpServer.EnableSsl = true;
@@ -152,7 +156,22 @@ namespace EnixerPos.Domain.Services
 
         public bool RegisterStore(RegisterStoreDtoCommand command)
         {
-            throw new NotImplementedException();
+            string email = command.Email.ToLower();
+            string storeName = command.StoreName;
+            string eWalletAccNo = command.EWalletAccNo;
+            string otp = Generator.GenerateRandomString(20);
+
+            bool isCreateStore = _storeRepository.CreateStore(email, storeName, eWalletAccNo, otp);
+            if (isCreateStore)
+            {
+                string value = SentEmailValue + $"SetPassword?otp={otp}&&email={email}";
+                SendEmail(email, value);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public bool RegisterUserInStore(RegisterUserInStoreDtoCommand command)
@@ -169,6 +188,37 @@ namespace EnixerPos.Domain.Services
                 return false;
             }
             return true;
+        }
+
+        public bool ChechEmail(string email)
+        {
+            int storeId = _storeRepository.GetStoreIdByEmail(email);
+            if (storeId != default)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool CheckStore(string storeName)
+        {
+            int storeId = _storeRepository.GetStoreIdByStoreName(storeName);
+            if (storeId != default)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool SetPassword(SetPasswordDtoCommand command)
+        {
+            string email = command.Email.ToLower();
+            string password = command.Password;
+            string otp = command.OTP;
+            string salt = Generator.GenerateRandomString(10);
+            string hashPass = Generator.HashPassword(password, salt);
+
+            return _storeRepository.AddPassword(email, hashPass, salt, otp);
         }
     }
 }

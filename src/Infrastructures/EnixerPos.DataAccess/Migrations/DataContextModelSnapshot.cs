@@ -251,7 +251,11 @@ namespace EnixerPos.DataAccess.Migrations
                         .ValueGeneratedOnAddOrUpdate()
                         .HasDefaultValueSql("GetUtcDate()");
 
+                    b.Property<string>("EWalletAccountNo");
+
                     b.Property<string>("Email");
+
+                    b.Property<string>("OTP");
 
                     b.Property<string>("Password");
 

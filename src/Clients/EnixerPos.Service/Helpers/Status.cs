@@ -11,6 +11,7 @@ namespace EnixerPos.Service.Helpers
             Item,
             Categories,
             Discount
+            
         }
     }
 }
