@@ -1,5 +1,6 @@
 ﻿using EnixerPos.Api.ViewModels.Shifts;
 using Rg.Plugins.Popup.Pages;
+using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,18 +19,25 @@ namespace EnixerPos.Mobile.Views.Popup
         public ShiftReportPopup(GetShiftViewModel vM)
         {
             InitializeComponent();
-            BindingContext = _vM = vM;         
-           
-            Shiftopened.RightTexLable = vM.CreateDateTime.ToString("dd MMM YYYY HH:mm:ss");
-            Startingcash.RightTexLable = vM.StartingCash.ToString("#,#.00");
-            Cashpayment.RightTexLable = vM.CashPayment.ToString("#,#.00");
-            Cashrefunds.RightTexLable = vM.CashRefunds.ToString("#,#.00");
-            Paidin.RightTexLable = vM.Paidin.ToString("#,#.00");
-            Paidout.RightTexLable = vM.Paidout.ToString("#,#.00");
-            Expectedcashamount.RightTexLable = vM.ExpectedCashAmount.ToString("#,#.00");
-            Grosssales.RightTexLable = vM.Grosssales.ToString("#,#.00");
-            Refunds.RightTexLable = vM.Refunds.ToString("#,#.00");
-            Discount.RightTexLable = vM.Discount.ToString("#,#.00");
+            BindingContext = _vM = vM;
+            decimal expectedcashamount = _vM.StartingCash + _vM.CashPayment + _vM.Paidin - _vM.Refunds - _vM.Paidout;
+            decimal netsell = _vM.CashPayment + _vM.QRCode + _vM.DebitCard + _vM.CreditCard;
+            decimal grosssales = netsell + _vM.Refunds + _vM.Discount;         
+            Shiftopened.RightTexLable = vM.CreateDateTime.ToLocalTime().ToString("dd MMM yyyy HH:mm:ss");
+            Startingcash.RightTexLable = vM.StartingCash.ToString("#,0.00");
+            Cashpayment.RightTexLable = vM.CashPayment.ToString("#,0.00");
+            Cashrefunds.RightTexLable = vM.CashRefunds.ToString("#,0.00");
+            Paidin.RightTexLable = vM.Paidin.ToString("#,0.00");
+            Paidout.RightTexLable = vM.Paidout.ToString("#,0.00");
+            Expectedcashamount.RightTexLable = expectedcashamount.ToString("#,0.00");
+            Grosssales.RightTexLable = grosssales.ToString("#,0.00");
+            Refunds.RightTexLable = vM.Refunds.ToString("#,0.00");
+            Discount.RightTexLable = vM.Discount.ToString("#,0.00");
+        }
+
+        private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+          await  PopupNavigation.Instance.PopAsync();
         }
     }
 }

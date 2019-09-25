@@ -17,5 +17,20 @@ namespace EnixerPos.Mobile.Views.Popup
         {
             InitializeComponent();
         }
+
+        protected override bool OnBackButtonPressed()
+        {
+            // Prevent hide popup
+            //return base.OnBackButtonPressed();
+            return true;
+        }
+
+        // Invoced when background is clicked
+        protected override bool OnBackgroundClicked()
+        {
+            // Return default value - CloseWhenBackgroundIsClicked
+            // return base.OnBackgroundClicked();
+            return true;
+        }
     }
 }

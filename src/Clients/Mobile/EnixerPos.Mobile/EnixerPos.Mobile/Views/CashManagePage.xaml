@@ -13,8 +13,17 @@
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
+           
             <Frame HasShadow="True">
+                <StackLayout Orientation="Horizontal">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding BackButton}"/>
+                    </StackLayout.GestureRecognizers>
+                <Image Source="icon_left" HorizontalOptions="Start" Margin="20,0" HeightRequest="30" VerticalOptions="Center">
+                   
+                </Image>
                 <Label Text="Shift" TextColor="Black" FontSize="Medium"/>
+                </StackLayout>
             </Frame>
             <Frame HasShadow="True" VerticalOptions="Start"
                    WidthRequest="750"

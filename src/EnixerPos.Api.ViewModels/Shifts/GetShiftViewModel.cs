@@ -12,16 +12,16 @@ namespace EnixerPos.Api.ViewModels.Shifts
         public decimal CashRefunds { get; set; }
         public decimal Paidin { get; set; }
         public decimal Paidout { get; set; }
-        public decimal ExpectedCashAmount { get; set; }
-        public decimal Grosssales { get; set; }
+        
+       
         public decimal Refunds { get; set; }
         public decimal Discount { get; set; }
-        public decimal NetSales { get; set; }
-        public decimal  Cash { get; set; }
+       
+      
         public decimal DebitCard { get; set; }
         public decimal CreditCard { get; set; }
         public decimal QRCode { get; set; }
-        public decimal Taxes { get; set; }
+      
         public DateTime CreateDateTime { get; set; }
         public DateTime UpdateDateTime { get; set; }
 
