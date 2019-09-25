@@ -108,7 +108,7 @@ namespace EnixerPos.Web.Controllers
             var loginData = _authService.LoginMerchant(email, password);
             if(loginData == null)
             {
-                return RedirectToAction("Error", "Register", new { message = "E-Mail ไม่มีอยู่ในระบบโปรดลงทะเบียนใหม่" });
+                return RedirectToAction("Error", "Register", new { message = "ลงทะเบียนไม่สำเร็จ" });
             }
             HttpContext.Session.SetString("Email", email);
             return RedirectToAction("Index", "Management");
