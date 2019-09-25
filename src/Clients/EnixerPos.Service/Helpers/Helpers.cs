@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EnixerPos.Api.ViewModels.Helpers;
+using System;
 using System.Collections.Generic;
 using System.Net.Mail;
 using System.Text;
@@ -8,7 +9,7 @@ namespace EnixerPos.Service.Helpers
 {
     public static class Helper
     {
-        public static string BaseUrl { get; set; } = "http://10.0.2.2:30000/api/";
+        public static string BaseUrl { get; set; } = StaticValue.BaseUrl + ":30000/api/";
 
         public static bool CheckEmailFormat(string email)
         {

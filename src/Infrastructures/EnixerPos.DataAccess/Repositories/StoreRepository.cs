@@ -15,6 +15,57 @@ namespace EnixerPos.DataAccess.Repositories
         {
             _context = context;
         }
+
+        public bool AddPassword(string email, string hashPass, string salt, string otp)
+        {
+            try
+            {
+                var store = _context.Store.Where(x => x.Email.ToLower() == email.ToLower() && x.OTP == otp).SingleOrDefault();
+                if (store == default)
+                {
+                    return false;
+                }
+
+                store.Password = hashPass;
+                store.Salt = salt;
+                store.OTP = null;
+
+                _context.SaveChanges();
+                return true;
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error : " + e.Message);
+                return false;
+            }
+        }
+
+        public bool CreateStore(string email, string storeName, string eWalletAccNo, string otp)
+        {
+            try
+            {
+                StoreEntity storeEntity = new StoreEntity()
+                {
+                    Email = email,
+                    StoreName = storeName,
+                    EWalletAccountNo = eWalletAccNo,
+                    OTP = otp
+                };
+
+                _context.Store.Add(storeEntity);
+
+                _context.SaveChanges();
+
+                return true;
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Error : " + e.Message);
+                return false;
+            }
+        }
+
         public StoreEntity GetStoreByEmail(string email)
         {
             try
@@ -37,18 +88,32 @@ namespace EnixerPos.DataAccess.Repositories
             {
                 return _context.Store.Where(x => x.Email.ToLower() == audience.ToLower()).FirstOrDefault().Id;
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw;
+                Console.WriteLine("Error : " + e.Message);
+                return default;
             }
         }
 
-        public void UpdatePassword(string email, string newPass)
+        public int GetStoreIdByStoreName(string storeName)
+        {
+            try
+            {
+                return _context.Store.Where(x => x.StoreName == storeName).Select(x => x.Id).SingleOrDefault();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error : " + e.Message);
+                return default;
+            }
+        }
+
+        public void UpdateOtp(string email, string otp)
         {
             try
             {
                 var store = _context.Store.Where(x => x.Email.ToLower() == email.ToLower()).FirstOrDefault();
-                store.Password = newPass;
+                store.OTP = otp;
 
                 _context.SaveChanges();
             }
