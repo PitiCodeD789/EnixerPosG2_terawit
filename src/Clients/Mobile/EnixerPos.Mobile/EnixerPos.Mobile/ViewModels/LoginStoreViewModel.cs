@@ -1,4 +1,5 @@
-﻿using EnixerPos.Mobile.Views;
+﻿using EnixerPos.Api.ViewModels.Helpers;
+using EnixerPos.Mobile.Views;
 using EnixerPos.Mobile.Views.Popup;
 using EnixerPos.Service.Helpers;
 using EnixerPos.Service.Interfaces;
@@ -115,14 +116,16 @@ namespace EnixerPos.Mobile.ViewModels
         public ICommand GotoForgotPass { get; set; }
         public async void ForgotPasswordMethod()
         {
-            Uri uri = new Uri("https://www.google.com/");
+            string url = StaticValue.BaseUrl;
+            Uri uri = new Uri(url);
             await Browser.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
         }
 
         public ICommand GotoRegis { get; set; }
         public async void RegisterMethod()
         {
-            Uri uri = new Uri("http://10.0.2.2:20000/");
+            string url = StaticValue.BaseUrl;
+            Uri uri = new Uri(url);
             await Browser.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
         }
     

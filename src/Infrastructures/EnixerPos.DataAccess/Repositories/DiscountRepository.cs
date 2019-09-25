@@ -70,7 +70,18 @@ namespace EnixerPos.DataAccess.Repositories
 
         public bool Update(int storeId, DiscountDto discountDto)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var discount = _mapper.Map<DiscountEntity>(discountDto);
+                _context.Discounts.Update(discount);
+                _context.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
         }
     }
 }

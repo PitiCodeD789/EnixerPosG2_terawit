@@ -90,6 +90,7 @@ namespace EnixerPos.DataAccess.Repositories
             {
                 var item = _mapper.Map<ItemEntity>(itemDto);
                 _context.Items.Update(item);
+                _context.SaveChanges();
                 return true;
             }
             catch (Exception e)

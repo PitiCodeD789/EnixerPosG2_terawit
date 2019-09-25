@@ -14,7 +14,6 @@ namespace EnixerPos.Service.Services
     public class ReceiptService : BaseService,IReceiptService
     {
         private string serviceUrl = Helper.BaseUrl + "Receipt/";
-        private string accessToken = SecureStorage.GetAsync("Token").Result;
         public List<ReceiptViewModel> GetReceiptByShiftId(int shiftId)
         {
             #region Mockup
@@ -112,14 +111,6 @@ namespace EnixerPos.Service.Services
 
             try
             {
-                //var client = new HttpClient();
-                //client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-                //HttpResponseMessage response = client.GetAsync(serviceUrl+ "GetReceipts1DayByShiftId/"+ shiftId).Result;
-                //response.EnsureSuccessStatusCode();
-                //string responseBody = response.Content.ReadAsStringAsync().Result;
-                //var result = JsonConvert.DeserializeObject<List<ReceiptViewModel>>(responseBody);
-                //return result;
-
                 string url = serviceUrl + "GetReceipts1DayByShiftId/" + shiftId.ToString();
                 var result = Get<List<ReceiptViewModel>>(url).Result;
                 if (result != null || result.IsError == System.Net.HttpStatusCode.OK)
@@ -131,7 +122,7 @@ namespace EnixerPos.Service.Services
             catch (Exception)
             {
 
-                return null;
+                return new List<ReceiptViewModel>();
             }
 
 

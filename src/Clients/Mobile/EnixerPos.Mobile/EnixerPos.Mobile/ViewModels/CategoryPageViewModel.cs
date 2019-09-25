@@ -26,6 +26,9 @@ namespace EnixerPos.Mobile.ViewModels
         }
         public CategoryPageViewModel(CategoryModel category)
         {
+            ColorSelectCommand = new Command(ColorSelect);
+            CreateCategoryCommand = new Command(CreateCategory);
+            CancelCategoryCommand = new Command(CancelCategory);
             SetShowCategory(category);
             UpdateCategory = category;
             IsUpdate = true;

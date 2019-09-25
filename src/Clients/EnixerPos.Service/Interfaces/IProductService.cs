@@ -16,6 +16,8 @@ namespace EnixerPos.Service.Interfaces
         Task<ResultViewModel> UpdateItem(ItemModel item);
         Task<ResultViewModel> UpdateCategory (CategoryModel category);
         Task<ResultViewModel> UpdateDiscount (DiscountModel discount);
+        ItemsViewModel GetItems();
+        DiscountsViewModel GetDiscounts();
 
     }
 }

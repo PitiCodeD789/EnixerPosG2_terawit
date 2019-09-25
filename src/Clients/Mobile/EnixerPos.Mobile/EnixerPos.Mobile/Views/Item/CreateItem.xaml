@@ -31,17 +31,6 @@
                             TitleColor="LightGray"
                             ItemsSource="{Binding CategoriesName}"
                             SelectedItem="{Binding SelectedCategory}">
-                        <!--<Picker.ItemsSource>
-                            <x:Array Type="{x:Type x:String}">
-                                <x:String>Baboon</x:String>
-                                <x:String>Capuchin Monkey</x:String>
-                                <x:String>Blue Monkey</x:String>
-                                <x:String>Squirrel Monkey</x:String>
-                                <x:String>Golden Lion Tamarin</x:String>
-                                <x:String>Howler Monkey</x:String>
-                                <x:String>Japanese Macaque</x:String>
-                            </x:Array>
-                        </Picker.ItemsSource>-->
                     </Picker>
                     </Frame>
             <StackLayout Orientation="Horizontal">
@@ -75,12 +64,13 @@
                                          Margin="10,5,10,0"
                                          WidthRequest="360"  
                                          TextEntry="{Binding Option1}"
-                                         Placeholder="Option1(Required)"/>
+                                         Placeholder="Default Option"/>
                         <component:Pos_EntryView HorizontalOptions="EndAndExpand" 
                                          Margin="10,5,10,0"
                                          KeyboardType="Numeric" 
                                          TextEntry="{Binding Price1}"
-                                          WidthRequest="360"
+                                         WidthRequest="360"
+                                         IsEnabled="False"
                                          Placeholder="Price"/>
                     </StackLayout>
                     <StackLayout Orientation="Horizontal">

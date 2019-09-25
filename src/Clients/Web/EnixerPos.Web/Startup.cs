@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EnixerPos.DataAccess.Contexts;
+using EnixerPos.DataAccess.Repositories;
+using EnixerPos.Domain.Interfaces;
+using EnixerPos.Domain.Repositories;
+using EnixerPos.Domain.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -31,6 +36,21 @@ namespace EnixerPos.Web
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddScoped<DataContext>();
+            services.AddScoped<IAuthService, AuthService>();
+            services.AddScoped<IShiftService, ShiftService>();
+            services.AddScoped<IShiftRepository, ShiftRepository>();
+            services.AddScoped<IStoreRepository, StoreRepository>();
+            services.AddScoped<ITokenRepository, TokenRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IManageCashRepository, ManageCashRepository>();
+            services.AddScoped<IReceiptRepository, ReceiptRepository>();
+            services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<IItemRepository, ItemRepository>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<IDiscountRepository, DiscountRepository>();
+            services.AddScoped<ISaleService, SaleService>();
+            services.AddScoped<IReceiptService, ReceiptService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
@@ -57,7 +77,7 @@ namespace EnixerPos.Web
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Register}/{action=Index}/{id?}");
             });
         }
     }

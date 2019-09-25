@@ -25,6 +25,8 @@ namespace EnixerPos.Mobile.ViewModels
 
         public CreateDiscountPageViewModel(DiscountModel discount)
         {
+            CreateDiscountCommand = new Command(CreateDiscount);
+            CancelCategoryCommand = new Command(Cancel);
             SetShowDiscount(discount);
             updateDiscount = discount;
             IsUpdate = true;
