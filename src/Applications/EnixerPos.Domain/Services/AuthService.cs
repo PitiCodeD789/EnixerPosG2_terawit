@@ -162,16 +162,23 @@ namespace EnixerPos.Domain.Services
             string otp = Generator.GenerateRandomString(20);
 
             bool isCreateStore = _storeRepository.CreateStore(email, storeName, eWalletAccNo, otp);
-            if (isCreateStore)
+            if (!isCreateStore)
             {
-                string value = SentEmailValue + $"SetPassword?otp={otp}&&email={email}";
-                SendEmail(email, value);
-                return true;
+                return false;
+                
             }
-            else
+
+            int storeId = _storeRepository.GetStoreIdByEmail(email);
+            if (storeId == default)
             {
                 return false;
             }
+
+            bool isCreateToken = _tokenRepository.CreateTokenByStoreId(storeId);
+
+            string value = SentEmailValue + $"SetPassword?otp={otp}&&email={email}";
+            SendEmail(email, value);
+            return true;
         }
 
         public bool RegisterUserInStore(RegisterUserInStoreDtoCommand command)

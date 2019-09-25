@@ -4,7 +4,7 @@
 }
 
 <h1 class="text-center ">Add Operator</h1>
-<form action="/Register/CallAPIRegisUser" method="post">
+<form action="/Register/CallAPIRegisUser?email=@ViewBag.Email" method="post">
     <div class="form-group col-md-4 offset-4">
         <h3 class="text-center">Operator Name</h3>
         <input type="text" placeholder="Operator Name" class="form-control" name="nameUser" pattern="^([A-Za-z]+)$" required />
@@ -15,7 +15,7 @@
         <br />
         <button type="reset" class="form-control">Cancel</button>
         <br />
-        <button type="button" class="btn-light offset-5 btn-lg">@Html.ActionLink("Back", "Index", "Register")</button>
+        <button type="button" class="form-control">@Html.ActionLink("Back", "Index", "Register")</button>
     </div>
 </form>
 
