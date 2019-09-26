@@ -71,6 +71,9 @@ namespace EnixerPos.Mobile.ViewModels
                         button.Text = item.Name;
                         button.HeightRequest = 150;
                         button.WidthRequest = 150;
+                        button.BorderColor = Color.Gray;
+                        button.BorderWidth = 2;
+                        button.CornerRadius = 10;
                         button.HorizontalOptions = LayoutOptions.Center;
                         button.VerticalOptions = LayoutOptions.Center;
                         button.Command = new Command<ItemModel>((itemModel) => OpenOption(itemModel));
