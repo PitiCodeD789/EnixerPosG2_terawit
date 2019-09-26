@@ -76,25 +76,24 @@ namespace EnixerPos.Mobile
 
         protected async override void OnResume()
         {
-            var refreshToken = await SecureStorage.GetAsync("RefreshToken");
-            Email = await SecureStorage.GetAsync("Email");
-            StoreName = await SecureStorage.GetAsync("StoreName");
-            if (String.IsNullOrEmpty(refreshToken) || String.IsNullOrEmpty(Email) || String.IsNullOrEmpty(StoreName))
-            {
-                Application.Current.MainPage = new NavigationPage(new Login())
-                {
-                    BackgroundColor = Color.White
-                };
-                PermissionReq();
-            }
-            else
-            {
-                Application.Current.MainPage = new NavigationPage(new EnterPin())
-                {
-                    BackgroundColor = Color.White
-                };
-                PermissionReq();
-            }
+            //var refreshToken = await SecureStorage.GetAsync("RefreshToken");
+            //Email = await SecureStorage.GetAsync("Email");
+            //StoreName = await SecureStorage.GetAsync("StoreName");
+            //AccountNumber = await SecureStorage.GetAsync("AccountNumber");
+            //if (String.IsNullOrEmpty(refreshToken) || String.IsNullOrEmpty(Email) || String.IsNullOrEmpty(StoreName) || String.IsNullOrEmpty(AccountNumber))
+            //{
+            //    Application.Current.MainPage = new NavigationPage(new Login())
+            //    {
+            //        BackgroundColor = Color.White
+            //    };
+            //}
+            //else
+            //{
+            //    Application.Current.MainPage = new NavigationPage(new EnterPin())
+            //    {
+            //        BackgroundColor = Color.White
+            //    };
+            //}
         }
 
         private async void PermissionReq()
