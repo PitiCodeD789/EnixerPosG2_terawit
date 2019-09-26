@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewData["Title"] = "EditItem";
+}
+
+<h1 class="text-center ">Edit Item</h1>
+<section class="content">
+    <div class="row">
+        <div class="col-sm-12">
+
+
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Staff</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <table id="example1" class="table table-bordered table-striped text-center">
+                        <thead>
+                            <tr>
+                                <th>Item Name</th>
+                                <th>Category</th>
+                                <th>Price</th>
+                                <th>Cost</th>
+                                <th>	</th>
+                            </tr>
+                        </thead>
+                        <tbody id="carTable">
+                            @if ((List<ItemWebModel>)ViewData["Items"] == null)
+                            {
+                                <tr class="odd">
+                                    <td valign="top" colspan="10" class="dataTables_empty">No data available in table</td>
+                                </tr>
+                            }
+                            else
+                            {
+                                foreach (var item in (List<ItemWebModel>)ViewData["Items"])
+                                {
+                                    <tr>
+                                        <td><h3>@item.Name</h3></td>
+                                        <td><h3>@item.CategoryName</h3></td>
+                                        <td><h3>@item.Price</h3></td>
+                                        <td><h3>@item.Cost</h3></td>
+                                        <td><button type="button" class="btn-light offset-5 btn-lg">@Html.ActionLink("Delete", "EditItem", "Product")</button></td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table><br />
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+<br />
+<br />
+<button type="button" class="btn-light offset-5 btn-lg">@Html.ActionLink("Back", "Index", "Product")</button>
+
