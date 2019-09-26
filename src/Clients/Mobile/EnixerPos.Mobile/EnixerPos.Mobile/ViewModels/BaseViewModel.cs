@@ -40,9 +40,9 @@ namespace EnixerPos.Mobile.ViewModels
       
         public async virtual void NomalLogout()
         {
-            var isClose = _shiftService.CloseListShift(App.OpenShiftId, App.UserId);
-            if (isClose)
-            {
+            //var isClose = _shiftService.CloseListShift(App.OpenShiftId, App.UserId);
+            //if (isClose)
+            //{
                 App.CheckShift = false;
                 var logoutData = await _authService.Logout(App.Email);
                 if (logoutData == null)
@@ -61,12 +61,12 @@ namespace EnixerPos.Mobile.ViewModels
                     await PopupNavigation.Instance.PopAllAsync();
                     Application.Current.MainPage = new NavigationPage(new Login());
                 }
-            }
-            else
-            {
-                ErrorViewModel errorViewModel = new ErrorViewModel("ไม่สามารถปิดกะได้", 1);
-                await PopupNavigation.Instance.PushAsync(new Error(errorViewModel));
-            }
+            //}
+            //else
+            //{
+            //    ErrorViewModel errorViewModel = new ErrorViewModel("ไม่สามารถปิดกะได้", 1);
+            //    await PopupNavigation.Instance.PushAsync(new Error(errorViewModel));
+            //}
         }
 
         public async virtual void ForceLogout()
