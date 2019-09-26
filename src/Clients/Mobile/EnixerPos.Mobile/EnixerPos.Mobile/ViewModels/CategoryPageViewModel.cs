@@ -104,7 +104,7 @@ namespace EnixerPos.Mobile.ViewModels
 
                 var result = _productService.UpdateCategory(category).Result;
 
-                if (result != null || result.IsError)
+                if (result != null && !result.IsError)
                 {
                     ErrorViewModel errorViewModel = new ErrorViewModel("บันทึกรายการสำเร็จ", 3);
                     PopupNavigation.Instance.PushAsync(new Error(errorViewModel));

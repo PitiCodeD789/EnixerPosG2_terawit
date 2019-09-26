@@ -161,30 +161,33 @@ namespace EnixerPos.Mobile.ViewModels
                 }
                 else
                 {
-                    ItemModel item = new ItemModel()
+                    if (String.IsNullOrEmpty(SelectedCategory)|| SelectedCategory == "0")
                     {
-                        Name = ItemName,
-                        CategoryName = SelectedCategory,
-                        Price = ConvertPrice(ItemPrice),
-                        Cost = ConvertPrice(ItemCost),
-                        Color = GetColor(),
-                        Option1 = Option1,
-                        Option1Price = ConvertPrice(Price1),
-                        Option2 = Option2,
-                        Option2Price = ConvertPrice(Price2),
-                        Option3 = Option3,
-                        Option3Price = ConvertPrice(Price3),
-                        Option4 = Option4,
-                        Option4Price = ConvertPrice(Price4)
 
-                    };
-
-                    result = await _productService.CreateItem(item);
-
+                    }
+                    else
+                    {
+                        ItemModel item = new ItemModel()
+                        {
+                            Name = ItemName,
+                            CategoryName = SelectedCategory,
+                            Price = ConvertPrice(ItemPrice),
+                            Cost = ConvertPrice(ItemCost),
+                            Color = GetColor(),
+                            Option1 = Option1,
+                            Option1Price = ConvertPrice(Price1),
+                            Option2 = Option2,
+                            Option2Price = ConvertPrice(Price2),
+                            Option3 = Option3,
+                            Option3Price = ConvertPrice(Price3),
+                            Option4 = Option4,
+                            Option4Price = ConvertPrice(Price4)
+                        };
+                        result = await _productService.CreateItem(item);
+                    }
                 }
 
-
-                if ((result != null || !result.IsError))
+                if (result != null && !result.IsError)
                 {
                     ErrorViewModel errorViewModel = new ErrorViewModel("บันทึกรายการสำเร็จ", 3);
                     PopupNavigation.Instance.PushAsync(new Error(errorViewModel));
@@ -195,7 +198,6 @@ namespace EnixerPos.Mobile.ViewModels
                     ErrorViewModel error = new ErrorViewModel("ผิดพลาด", 1);
                     PopupNavigation.Instance.PushAsync(new Error(error));
                 }
-
             }
             catch (Exception)
             {
