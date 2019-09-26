@@ -36,7 +36,8 @@ namespace EnixerPos.Domain.Services
                     IsDiscountPercentage = s.IsDiscountPercentage,
                     Total = s.Total,
                     TotalDiscount = s.TotalDiscount,
-                    CreateDateTime = s.CreateDateTime
+                    CreateDateTime = s.CreateDateTime,
+                    PaymentType = s.PaymentType
                 }).ToList();
 
                 return receiptDto;
