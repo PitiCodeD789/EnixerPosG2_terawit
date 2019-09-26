@@ -25,14 +25,29 @@
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
             <Frame Padding="0" HorizontalOptions="FillAndExpand" Margin="0" Grid.Column="0" Grid.Row="0" HasShadow="True">
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                     <ImageButton Source="icon_hamburger" Aspect="AspectFit" VerticalOptions="Center" Margin="20,0" HeightRequest="30" Clicked="Button_Clicked" BackgroundColor="Transparent">
                         <ImageButton.GestureRecognizers>
                             <TapGestureRecognizer Tapped="Button_Clicked"/>
                         </ImageButton.GestureRecognizers>
                     </ImageButton>
 
-                    <Label x:Name="HeaderLabel" TextColor="Black" FontSize="30" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start" />
+                    <Label x:Name="HeaderLabel" TextColor="Black" FontSize="30" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+                    <Grid>                        
+                    <Image Source="icons_cloudsync"  Grid.Column="0" Grid.Row="0"
+                           Margin="0,0,10,0"  Aspect="AspectFit"
+                           HeightRequest="40" WidthRequest="40" 
+                           HorizontalOptions="EndAndExpand" >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding CloudsyncClickCommand}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                        <ActivityIndicator HeightRequest="25" WidthRequest="25" 
+                                           Grid.Column="0" Grid.Row="0" 
+                                           HorizontalOptions="Center" VerticalOptions="Center"
+                                           Color="White" IsRunning="True" 
+                                           IsVisible="{Binding IsLoadding, Mode=TwoWay}"/>
+                    </Grid>
                 </StackLayout>
             </Frame>
             

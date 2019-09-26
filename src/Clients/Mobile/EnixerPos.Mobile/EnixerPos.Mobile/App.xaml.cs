@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.Essentials;
+using EnixerPos.Api.ViewModels.Product;
 
 namespace EnixerPos.Mobile
 {
@@ -24,6 +25,8 @@ namespace EnixerPos.Mobile
         public static bool CheckShift { get; set; } = false;
         public static int OpenShiftId { get; set; }
         public static string AccountNumber { get; set; }
+        public static List<CategoryModel> ListCategoryModels { get; set; }
+        public static ItemsViewModel ItemsManuViewModel { get; set; }
         public App()
         {
             //SecureStorage.SetAsync("Token","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWVpIjoiMTIzNDU2Nzg5IiwibmJmIjoxNTY5MDQxMDA2LCJleHAiOjE1NzkxNTEzMDYsImlzcyI6IkVuaXhlclBvc0cyIiwiYXVkIjoiZUBlIiwidXNlciI6Ik5hdCJ9.KenpoWXIjdFh1OulXkLftQZ1to4aBM33Lv-FmwYRTyY");

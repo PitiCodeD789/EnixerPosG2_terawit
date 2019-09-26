@@ -97,6 +97,7 @@ namespace EnixerPos.Mobile.ViewModels
             OpenTicketCommand = new Command<int>((ticketNumber) => OpenTicket(ticketNumber));
             ChargeCommand = new Command(Charge);
             DeleteItemCommand = new Command<OrderItemModel>(DeleteItem);
+            CloudsyncClickCommand = new Command(CloudsyncClick);
             GetDiscount();
         }
 
@@ -108,6 +109,7 @@ namespace EnixerPos.Mobile.ViewModels
         public Command ChargeCommand { get; set; }
         public Command DeleteItemCommand { get; set; }
         public Command AddDiscountCommand { get; set; }
+        public Command CloudsyncClickCommand { get; set; }
 
         public void QuantityChange(string change)
         {
@@ -255,11 +257,19 @@ namespace EnixerPos.Mobile.ViewModels
         }
         void SetItemMenu()
         {
-            var getCate = _service.GetAllCategories();
-            if (!getCate.Result.IsError)
+            if (App.ListCategoryModels == null)
             {
-                CategoriesList = getCate.Result.Categories;
 
+                var getCate = _service.GetAllCategories();
+
+                if (!getCate.Result.IsError)
+                {
+                    CategoriesList = getCate.Result.Categories;
+                    App.ListCategoryModels = CategoriesList;
+                }
+            }else
+            {
+                CategoriesList = App.ListCategoryModels;
             }
             if (CategoriesList == null)
             {
@@ -274,7 +284,16 @@ namespace EnixerPos.Mobile.ViewModels
                     });
                 }
             }
-            ItemsViewModel items = _service.GetItems();
+            ItemsViewModel items;
+            if (App.ItemsManuViewModel == null || App.ItemsManuViewModel.Items.Count == 0)
+            {
+             items = _service.GetItems();
+                App.ItemsManuViewModel = items;
+            }
+            else
+            {
+                items = App.ItemsManuViewModel;
+            }
             if (items.Items == null || items.Items.Count == 0)
             {
                 //Application.Current.MainPage.DisplayAlert("", "ไม่พบรายการอาหารในระบบ", "OK");
@@ -410,6 +429,32 @@ namespace EnixerPos.Mobile.ViewModels
             CurrentTicket.Remove(model);
             CalculateTotalAmount();
         }
+        void CloudsyncClick()
+        {
+            IsLoadding = true;
+            var getCate = _service.GetAllCategories();
+
+            if (!getCate.Result.IsError)
+            {
+                CategoriesList = getCate.Result.Categories;
+                App.ListCategoryModels = CategoriesList;
+            }
+
+           
+              var  items = _service.GetItems();
+           
+           
+            if (items.Items == null || items.Items.Count == 0)
+            {
+                //Application.Current.MainPage.DisplayAlert("", "ไม่พบรายการอาหารในระบบ", "OK");
+                //PopupNavigation.PushAsync(new Error(new ErrorViewModel("ไม่พบรายการอาหารในระบบ")));
+                return;
+            }
+           App.ItemsManuViewModel = items;
+            Application.Current.MainPage = new NavigationPage(new Views.SaleView());
+
+
+        }
 
         #region Propfull
         private decimal _currentDiscountAmount;
@@ -431,6 +476,14 @@ namespace EnixerPos.Mobile.ViewModels
         {
             get { return _discounts; }
             set { _discounts = value; }
+        }
+
+        private bool isLoadding = false;
+
+        public bool IsLoadding
+        {
+            get { return isLoadding = false; }
+            set { isLoadding  = value; OnPropertyChanged(); }
         }
 
 
