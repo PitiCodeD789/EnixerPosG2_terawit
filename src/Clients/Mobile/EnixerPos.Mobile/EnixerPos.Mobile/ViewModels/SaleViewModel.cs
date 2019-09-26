@@ -640,6 +640,7 @@ namespace EnixerPos.Mobile.ViewModels
             {
                 if (_totalDiscount2 != value)
                 {
+                    _totalDiscount2 = value;
                     if (value)
                     {
                         TotalDiscount1 = false;
@@ -660,6 +661,7 @@ namespace EnixerPos.Mobile.ViewModels
             {
                 if (_totalDiscount3 != value)
                 {
+                    _totalDiscount3 = value;
                     if (value)
                     {
                         TotalDiscount2 = false;
@@ -680,6 +682,7 @@ namespace EnixerPos.Mobile.ViewModels
             {
                 if (_totalDiscount4 != value)
                 {
+                    _totalDiscount4 = value;
                     if (value)
                     {
                         TotalDiscount2 = false;
