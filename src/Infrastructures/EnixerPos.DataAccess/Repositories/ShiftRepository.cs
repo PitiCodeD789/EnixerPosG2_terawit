@@ -38,7 +38,8 @@ namespace EnixerPos.DataAccess.Repositories
 
         public List<ShiftEntity> GetLast30DayShift(string storeEmail, string posUserId)
         {
-            return _context.Shift.Where(x => x.StoreEmail == storeEmail  && x.UpdateDateTime > DateTime.UtcNow.AddDays(-30)).ToList();
+            return _context.Shift.Where(x => x.StoreEmail == storeEmail  && x.UpdateDateTime > DateTime.UtcNow.AddDays(-30))
+                .OrderByDescending(x=>x.Id).ToList();
 
         }
 

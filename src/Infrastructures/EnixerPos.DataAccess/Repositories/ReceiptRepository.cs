@@ -24,14 +24,14 @@ namespace EnixerPos.DataAccess.Repositories
 
         public List<ReceiptEntity> GetReceiptByShiftId(int shiftId, string storeEmail)
         {
-            List<ReceiptEntity> receipts = _context.Receipt.Where(x => x.ShiftId == shiftId).Where(x=>x.StoreEmail == storeEmail.ToLower()).ToList();
+            List<ReceiptEntity> receipts = _context.Receipt.Where(x => x.ShiftId == shiftId).Where(x=>x.StoreEmail == storeEmail.ToLower()).OrderByDescending(x=>x.Id).ToList();
             return receipts;
         }
 
         public List<ReceiptEntity> GetReceiptsByDateAndShift(DateTime date ,int shiftId)
         {
             List<ReceiptEntity> receipts = _context.Receipt.Where(x => x.CreateDateTime.Date == date)
-                .Where(x=>x.ShiftId == shiftId).ToList();
+                .Where(x=>x.ShiftId == shiftId).OrderByDescending(x=>x.Id).ToList();
             return receipts;
         }
 
