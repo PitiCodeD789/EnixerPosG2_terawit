@@ -24,7 +24,7 @@ namespace EnixerPos.Mobile.ViewModels
         {
             email = "";
             password = "";
-            GotoLogin = new Command(LoginByStore);
+            GotoLogin = new Command(async => LoginByStore());
             GotoForgotPass = new Command(ForgotPasswordMethod);
             GotoRegis = new Command(RegisterMethod);
         }
@@ -61,7 +61,7 @@ namespace EnixerPos.Mobile.ViewModels
         public ICommand GotoLogin { get; set; }
 
        
-        public async void LoginByStore()
+        public async Task LoginByStore()
         {
             bool isCheck = false;
             bool isEmail = Helper.CheckEmailFormat(email);
