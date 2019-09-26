@@ -50,7 +50,8 @@ namespace EnixerPos.Mobile
             var refreshToken = await SecureStorage.GetAsync("RefreshToken");
             Email = await SecureStorage.GetAsync("Email");
             StoreName = await SecureStorage.GetAsync("StoreName");
-            if (String.IsNullOrEmpty(refreshToken) || String.IsNullOrEmpty(Email) || String.IsNullOrEmpty(StoreName))
+            AccountNumber = await SecureStorage.GetAsync("AccountNumber");
+            if (String.IsNullOrEmpty(refreshToken) || String.IsNullOrEmpty(Email) || String.IsNullOrEmpty(StoreName) || String.IsNullOrEmpty(AccountNumber))
             {
                 MainPage = new NavigationPage(new Login())
                 {

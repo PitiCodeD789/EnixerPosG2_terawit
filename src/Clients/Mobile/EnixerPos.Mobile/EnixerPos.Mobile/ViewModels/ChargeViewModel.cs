@@ -136,7 +136,7 @@ namespace EnixerPos.Mobile.ViewModels
                     GeneratePaymentModel model = new GeneratePaymentModel()
                     {
                         Amount = TotalPrice,
-                        AccountNumber = "0100000056",//App.AccountNumber,
+                        AccountNumber = App.AccountNumber,
                         FirstName = App.StoreName,
                         TransactionReference = unixTimestamp.ToString() + App.User,
                     };

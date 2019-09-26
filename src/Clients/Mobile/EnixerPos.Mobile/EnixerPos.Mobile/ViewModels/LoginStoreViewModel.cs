@@ -104,6 +104,8 @@ namespace EnixerPos.Mobile.ViewModels
                     {
                         await SecureStorage.SetAsync("RefreshToken", loginData.Model.RefreshToken);
                         await SecureStorage.SetAsync("Email", email);
+                        await SecureStorage.SetAsync("AccountNumber", loginData.Model.EWalletAccNo);
+                        App.AccountNumber = loginData.Model.EWalletAccNo;
                         App.Email = email;
                         await SecureStorage.SetAsync("StoreName", loginData.Model.StoreName);
                         App.StoreName = loginData.Model.StoreName;

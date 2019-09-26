@@ -4,7 +4,7 @@
 }
 
 <h1 class="text-center ">Add Staff</h1>
-<form action="/Register/CallAPIRegisUser?email=@ViewBag.Email" method="post" oninput='rePassword.setCustomValidity(rePin.value != pin.value ? "Pin do not match." : "")'>
+<form action="/Register/CallAPIRegisUser?email=@ViewBag.Email" method="post" oninput='rePin.setCustomValidity(rePin.value != pin.value ? "Pin do not match." : "")'>
     <div class="form-group col-md-4 offset-4">
         <h3 class="text-center">Operator Name</h3>
         <input type="text" placeholder="Operator Name" class="form-control" name="nameUser" pattern="^([A-Za-z]+)$" required />

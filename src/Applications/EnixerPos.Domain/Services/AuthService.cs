@@ -105,6 +105,7 @@ namespace EnixerPos.Domain.Services
             LoginDto loginDto = new LoginDto()
             {
                 StoreName = storeEntity.StoreName,
+                EWalletAccNo = storeEntity.EWalletAccountNo
             };
             return loginDto;
         }

@@ -49,6 +49,7 @@ namespace EnixerPos.Api.Controllers
                 {
                     RefreshToken = refreshToken,
                     StoreName = loginDto.StoreName,
+                    EWalletAccNo = loginDto.EWalletAccNo
                 };
 
                 return Ok(model);
