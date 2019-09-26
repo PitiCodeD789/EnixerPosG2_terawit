@@ -112,24 +112,33 @@ namespace EnixerPos.Mobile.ViewModels
                 }
                 else
                 {
-                    ErrorViewModel error = new ErrorViewModel("ผิดพลาด", 1);
+                    ErrorViewModel error = new ErrorViewModel("ผิดพลาด ไม่สามารถทำรายการได้", 1);
                     PopupNavigation.Instance.PushAsync(new Error(error));
                 }
             }
             else
             {
-                bool result = _productService.AddCategory(CategoryName, GetColor()).Result;
-                if (result)
+                if (!String.IsNullOrEmpty(CategoryName))
                 {
-                    ErrorViewModel errorViewModel = new ErrorViewModel("บันทึกรายการสำเร็จ", 3);
-                    PopupNavigation.Instance.PushAsync(new Error(errorViewModel));
-                    BackPageMethod();
+                    bool result = _productService.AddCategory(CategoryName, GetColor()).Result;
+                    if (result)
+                    {
+                        ErrorViewModel errorViewModel = new ErrorViewModel("บันทึกรายการสำเร็จ", 3);
+                        PopupNavigation.Instance.PushAsync(new Error(errorViewModel));
+                        BackPageMethod();
+                    }
+                    else
+                    {
+                        ErrorViewModel error = new ErrorViewModel("ผิดพลาด ไม่สามารถทำรายการได้", 1);
+                        PopupNavigation.Instance.PushAsync(new Error(error));
+                    }
                 }
                 else
                 {
-                    ErrorViewModel error = new ErrorViewModel("ผิดพลาด", 1);
+                    ErrorViewModel error = new ErrorViewModel("ผิดพลาด ไม่สามารถทำรายการได้", 1);
                     PopupNavigation.Instance.PushAsync(new Error(error));
                 }
+                
             }
         }
 

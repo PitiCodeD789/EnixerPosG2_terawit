@@ -18,16 +18,15 @@
             DurationOut="200"
             EasingIn="SinOut"
             EasingOut="SinIn"
-            HasBackgroundAnimation="True"/>
+            HasBackgroundAnimation="True"
+            />
     </pages:PopupPage.Animation>
     <StackLayout VerticalOptions="CenterAndExpand">
         <Frame BackgroundColor="White"
                    CornerRadius="10"
                    VerticalOptions="Center"                   
-                   HorizontalOptions="Center"
+                   HorizontalOptions="CenterAndExpand"
                    Margin="20,0"
-               MinimumHeightRequest="300"
-               MinimumWidthRequest="300"
                    >
             <StackLayout>
                 <Image Source="{Binding ImageError}" HorizontalOptions="CenterAndExpand" Margin="0,30"/>
