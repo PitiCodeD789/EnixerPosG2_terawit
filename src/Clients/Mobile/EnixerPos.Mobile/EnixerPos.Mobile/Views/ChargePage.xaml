@@ -40,6 +40,7 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
                 <ListView Grid.Row="0" ItemsSource="{Binding CurrentTicket}" SelectionMode="None" HasUnevenRows="True">
                     <ListView.ItemTemplate>
@@ -92,8 +93,8 @@
                 <BoxView BackgroundColor="LightGray" HorizontalOptions="FillAndExpand" Margin="20,0" Grid.Row="1" VerticalOptions="Center" HeightRequest="1"/>
                 <Label Text="Discount" TextColor="Black" FontSize="Large" HorizontalOptions="Start" Grid.Row="3" Margin="20,0" IsVisible="{Binding IsDiscount}"/>
                 <Label Text="{Binding TotalDiscount}" TextColor="Black" FontSize="Large" HorizontalOptions="End" Grid.Row="3" Margin="20,0" IsVisible="{Binding IsDiscount}"/>
-                <Label Text="Total" TextColor="Black" FontSize="Large" HorizontalOptions="Start" Grid.Row="3" Margin="20,0"/>
-                <Label Text="{Binding TotalPrice}" TextColor="Black" FontSize="Large" HorizontalOptions="End" Grid.Row="3" Margin="20,0"/>
+                <Label Text="Total" TextColor="Black" FontSize="Large" HorizontalOptions="Start" Grid.Row="4" Margin="20,0"/>
+                <Label Text="{Binding TotalPrice}" TextColor="Black" FontSize="Large" HorizontalOptions="End" Grid.Row="4" Margin="20,0"/>
             </Grid>
             <Grid Grid.Row="1" Grid.Column="2" Padding="20">
                 <Grid.RowDefinitions>

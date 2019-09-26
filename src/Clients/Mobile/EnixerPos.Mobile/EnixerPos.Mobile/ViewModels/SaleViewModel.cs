@@ -61,12 +61,12 @@ namespace EnixerPos.Mobile.ViewModels
                 {
                     foreach (var item in category.Items)
                     {
-                        if (col%4 == 0 && col != 0)
+                        if (col % 4 == 0 && col != 0)
                         {
                             row++;
                             col = 0;
                         }
-                        
+
                         var button = new Button();
                         button.Text = item.Name;
                         button.HeightRequest = 150;
@@ -76,7 +76,7 @@ namespace EnixerPos.Mobile.ViewModels
                         button.Command = new Command<ItemModel>((itemModel) => OpenOption(itemModel));
                         button.CommandParameter = item;
                         button.BackgroundColor = Color.FromHex(item.Color);
-                        grid.Children.Add(button,col,row);
+                        grid.Children.Add(button, col, row);
                         col++;
                     }
                 }
@@ -143,7 +143,9 @@ namespace EnixerPos.Mobile.ViewModels
                     currentDiscount = new DiscountModel { DiscountName = Discounts[3].DiscountName, Amount = Discounts[3].Amount, IsPercentage = Discounts[3].IsPercentage };
                 else
                     isDiscount = false;
-                decimal discountedAmount = (currentDiscount.IsPercentage) ? currentDiscount.Amount / 100 * (CurrentItem.Price + optionPrice) * Quantity : currentDiscount.Amount;
+                decimal discountedAmount = (currentDiscount.IsPercentage) ? 
+                    (currentDiscount.Amount / 100 * (CurrentItem.Price + optionPrice) * Quantity) 
+                    : ((currentDiscount.Amount < (CurrentItem.Price + optionPrice) * Quantity) ? currentDiscount.Amount : (CurrentItem.Price + optionPrice) * Quantity);
 
                 CurrentTicket.Add(new OrderItemModel
                 {
@@ -154,7 +156,7 @@ namespace EnixerPos.Mobile.ViewModels
                     OptionName = OptionList[CurrentSelectedOptionIndex].OptionName,
                     OptionPrice = OptionList[CurrentSelectedOptionIndex].Price,
                     DiscountName = CurrentTotalDiscount.DiscountName,
-                    DiscountedPrice = (CurrentItem.Price + optionPrice - discountedAmount) * Quantity,
+                    DiscountedPrice = (CurrentItem.Price + optionPrice ) * Quantity - discountedAmount,
                     IsDiscountPercentage = currentDiscount.IsPercentage,
                     ItemDiscount = currentDiscount.Amount
                 });
@@ -168,7 +170,7 @@ namespace EnixerPos.Mobile.ViewModels
             }
             catch (Exception e)
             {
-                Application.Current.MainPage.DisplayAlert("Error","Cannot add item to ticket","Ok");
+                Application.Current.MainPage.DisplayAlert("Error", "Cannot add item to ticket", "Ok");
             }
 
             CurrentTicket = CurrentTicket;
@@ -199,9 +201,9 @@ namespace EnixerPos.Mobile.ViewModels
             decimal _totalPrice = 0;
             foreach (var item in CurrentTicket)
             {
-                decimal discount = item.IsDiscountPercentage ? item.ItemDiscount * item.ItemPrice / 100 : item.ItemDiscount;
-                _totalPrice += ((item.ItemPrice + item.OptionPrice) - discount) * Quantity;
+                _totalPrice += item.DiscountedPrice;
             }
+            CurrentDiscountAmount = (currentAmountWithoutDiscount - CurrentDiscountAmount > 0) ? CurrentDiscountAmount : currentAmountWithoutDiscount;
             TotalPrice = _totalPrice - CurrentDiscountAmount;
         }
         void SetTotalDiscount()
@@ -267,7 +269,7 @@ namespace EnixerPos.Mobile.ViewModels
                     CategoriesList = getCate.Result.Categories;
                     App.ListCategoryModels = CategoriesList;
                 }
-            }else
+            } else
             {
                 CategoriesList = App.ListCategoryModels;
             }
@@ -287,7 +289,7 @@ namespace EnixerPos.Mobile.ViewModels
             ItemsViewModel items;
             if (App.ItemsManuViewModel == null || App.ItemsManuViewModel.Items.Count == 0)
             {
-             items = _service.GetItems();
+                items = _service.GetItems();
                 App.ItemsManuViewModel = items;
             }
             else
@@ -361,6 +363,8 @@ namespace EnixerPos.Mobile.ViewModels
         void OpenTicket(int ticketNumber)
         {
             var ticket = App.TicketList.Where(t => t.TicketNumber == ticketNumber).FirstOrDefault();
+            if (ticket.ItemList == null || ticket.ItemList.Count == 0)
+                return;
             foreach (var item in ticket.ItemList)
             {
                 CurrentTicket.Add(item);
