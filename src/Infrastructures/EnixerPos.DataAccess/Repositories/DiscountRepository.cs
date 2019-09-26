@@ -59,7 +59,7 @@ namespace EnixerPos.DataAccess.Repositories
         {
             try
             {
-                var items = _context.Discounts.Where(i => i.StoreId == storeId).ToList();
+                var items = _context.Discounts.Where(i => i.StoreId == storeId).OrderByDescending(x=>x.UpdateDateTime).ToList();
                 return _mapper.Map<List<DiscountDto>>(items);
             }
             catch (Exception e)

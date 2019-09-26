@@ -27,7 +27,7 @@
                    WidthRequest="750" CornerRadius="3"
                    HorizontalOptions="CenterAndExpand">
                 <StackLayout>
-                    <component:Pos_EntryView Margin="10,30,10,30" TextEntry="{Binding CategoryName}" Placeholder="Name"/>                   
+                    <component:Pos_EntryView Margin="10,30,10,30" TextEntry="{Binding CategoryName}" Placeholder="Name" TextLength="30"/>                   
                    
                 </StackLayout>
             </Frame>

@@ -31,7 +31,8 @@
                 <StackLayout>                    
             <component:Pos_EntryView Margin="10,10,10,0" 
                                      TextEntry="{Binding ItemName}" 
-                                     Placeholder="Name"/>
+                                     Placeholder="Name"
+                                     TextLength="60"/>
                     <Frame HasShadow="True" Padding="4,3,0,3" 
                            Margin="10,5,10,0">                        
                     <Picker x:Name="categorypicker"
@@ -74,7 +75,8 @@
                                          Margin="10,5,10,0"
                                          WidthRequest="360"  
                                          TextEntry="{Binding Option1}"
-                                         Placeholder="Default Option"/>
+                                         Placeholder="Default Option"
+                                         TextLength="30"/>
                         <component:Pos_EntryView HorizontalOptions="EndAndExpand" 
                                          Margin="10,5,10,0"
                                          KeyboardType="Numeric" 
@@ -88,7 +90,7 @@
                                          Margin="10,5,10,0"
                                          WidthRequest="360"   
                                          TextEntry="{Binding Option2}"
-                                         Placeholder="Option2"/>
+                                         Placeholder="Option2" TextLength="30"/>
                         <component:Pos_EntryView HorizontalOptions="EndAndExpand" 
                                          Margin="10,5,10,0"
                                          KeyboardType="Numeric" 
@@ -101,7 +103,7 @@
                                          Margin="10,5,10,0"
                                          WidthRequest="360" 
                                          TextEntry="{Binding Option3}"
-                                         Placeholder="Option3"/>
+                                         Placeholder="Option3" TextLength="30"/>
                         <component:Pos_EntryView HorizontalOptions="EndAndExpand" 
                                          Margin="10,5,10,0"
                                          KeyboardType="Numeric"                                         
@@ -114,7 +116,7 @@
                                          Margin="10,5,10,0"
                                          WidthRequest="360" 
                                          TextEntry="{Binding Option4}"
-                                         Placeholder="Option4"/>
+                                         Placeholder="Option4" TextLength="30"/>
                         <component:Pos_EntryView HorizontalOptions="EndAndExpand" 
                                          Margin="10,5,10,0"
                                          KeyboardType="Numeric" 
