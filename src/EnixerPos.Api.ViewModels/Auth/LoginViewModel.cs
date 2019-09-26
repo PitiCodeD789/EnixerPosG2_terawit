@@ -8,5 +8,6 @@ namespace EnixerPos.Api.ViewModels.Auth
     {
         public string RefreshToken { get; set; }
         public string StoreName { get; set; }
+        public string EWalletAccNo { get; set; }
     }
 }
