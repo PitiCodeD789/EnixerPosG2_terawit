@@ -28,7 +28,8 @@
                 <StackLayout>
                     <component:Pos_EntryView Margin="10,20,10,0"  
                                              TextEntry="{Binding DiscountName}"
-                                             Placeholder="Name"/>
+                                             Placeholder="Name"
+                                             TextLength="30"/>
                     <Frame HasShadow="True" Padding="4,3,0,3" Margin="10,20,10,0">
                         <Picker x:Name="categorypicker"
                             Title="Category"
