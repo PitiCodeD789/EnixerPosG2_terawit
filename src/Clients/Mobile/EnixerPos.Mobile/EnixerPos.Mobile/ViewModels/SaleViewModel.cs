@@ -211,11 +211,11 @@ namespace EnixerPos.Mobile.ViewModels
             DiscountModel currentDiscount = new DiscountModel();
             if (TotalDiscount1)
                 currentDiscount = new DiscountModel { DiscountName = Discounts[0].DiscountName, Amount = Discounts[0].Amount, IsPercentage = Discounts[0].IsPercentage };
-            else if (TotalDiscount1)
+            else if (TotalDiscount2)
                 currentDiscount = new DiscountModel { DiscountName = Discounts[1].DiscountName, Amount = Discounts[1].Amount, IsPercentage = Discounts[1].IsPercentage };
-            else if (TotalDiscount1)
+            else if (TotalDiscount3)
                 currentDiscount = new DiscountModel { DiscountName = Discounts[2].DiscountName, Amount = Discounts[2].Amount, IsPercentage = Discounts[2].IsPercentage };
-            else if (TotalDiscount1)
+            else if (TotalDiscount4)
                 currentDiscount = new DiscountModel { DiscountName = Discounts[3].DiscountName, Amount = Discounts[3].Amount, IsPercentage = Discounts[3].IsPercentage };
             CurrentTotalDiscount = currentDiscount;
         }
