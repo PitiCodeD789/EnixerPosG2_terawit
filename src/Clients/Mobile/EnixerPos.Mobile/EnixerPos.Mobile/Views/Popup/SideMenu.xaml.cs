@@ -57,8 +57,8 @@ namespace EnixerPos.Mobile.Views.Popup
 
         private void LockButton_Clicked(object sender, EventArgs e)
         {
-            BaseViewModel baseViewModel = new BaseViewModel();
-            baseViewModel.NomalLogout();
+            Application.Current.MainPage = new NavigationPage(new EnterPin());
+            PopupNavigation.PopAllAsync();
         }
 
         private async void BackOffice_Tapped(object sender, EventArgs e)
