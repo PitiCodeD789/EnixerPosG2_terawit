@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using EnixerPos.Api.ViewModels.Helpers;
 using EnixerPos.Domain.DtoModels.Auth;
 using EnixerPos.Domain.Interfaces;
+using EnixerPos.Web.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace EnixerPos.Web.Controllers
 {
@@ -79,6 +82,11 @@ namespace EnixerPos.Web.Controllers
                 return RedirectToAction("Error", "Register", new { message = "ชื่อร้านนี้ถูกใช้งานแล้ว" });
             }
 
+            if (!CheckEWalletAccNo(eWalletAccNo))
+            {
+                return RedirectToAction("Error", "Register", new { message = "Account Number ของ Application EnixerWallet ไม่มีอยู่ในระบบ" });
+            }
+
             RegisterStoreDtoCommand command = new RegisterStoreDtoCommand()
             {
                 Email = email,
@@ -96,6 +104,25 @@ namespace EnixerPos.Web.Controllers
                 return RedirectToAction("Error", "Register", new { message = "ไม่สามารถลงทะเบียนได้" });
             }
         }
+
+        private bool CheckEWalletAccNo(string eWalletAccNo)
+        {
+            string url = $"http://192.168.1.18:20000/api/user/userbyaccno/{eWalletAccNo}";
+            HttpClient client = new HttpClient();
+            client.Timeout = TimeSpan.FromSeconds(20);
+            var result = client.GetAsync(url).Result;
+            if (result.IsSuccessStatusCode)
+            {
+                var json_result = result.Content.ReadAsStringAsync().Result;
+                MerchantbyAccountViewModel checkAcc = JsonConvert.DeserializeObject<MerchantbyAccountViewModel>(json_result);
+                return checkAcc.CheckMerchant;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public IActionResult CallApiLogin(string email, string password)
         {
             email = email.ToLower();
